@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="content">
+    <app-navbar></app-navbar>
+    <h1>Alle winkels met actieve kortingscodes</h1>
+
+    <ul class="webshop-list">
+      @for (group of groupedWinkels; track group) {
+        <li class="group-heading">{{ group.letter }}</li>
+
+        @for (winkel of group.winkels; track winkel) {
+          <li>
+            <a [routerLink]="['/', winkel.toLowerCase()]">{{ winkel }}</a>
+          </li>
+        }
+      }
+    </ul>
+  </div>
+  <app-footer></app-footer>
+</div>
