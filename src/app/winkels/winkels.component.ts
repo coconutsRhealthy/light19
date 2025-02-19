@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { DiscountsService } from '../services/discounts.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
@@ -6,13 +7,13 @@ import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-winkels',
-  imports: [FooterComponent, NavbarComponent],
+  imports: [RouterModule, FooterComponent, NavbarComponent],
   templateUrl: './winkels.component.html',
   styleUrls: ['./winkels.component.css', './../app.component.css']
 })
 export class WinkelsComponent implements OnInit {
 
-  groupedWinkels: { letter: string, winkels: string[] }[];
+  groupedWinkels: { letter: string, winkels: string[] }[] = [];
 
   isMenuCollapsed = true;
 
@@ -59,7 +60,7 @@ export class WinkelsComponent implements OnInit {
     return groupedWinkels;
   }
 
-  removePartsInBracketsAndDoubleEntries(combinedWinkels) {
+  removePartsInBracketsAndDoubleEntries(combinedWinkels: string[]) {
     const seen = new Set<string>();
     return combinedWinkels.map(shop => {
         const index = shop.indexOf(" (");

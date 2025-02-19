@@ -7,7 +7,7 @@ import { switchMap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class DiscountsService {
-  private manifestUrl = 'assets/manifest.json';
+  private manifestUrl = '/manifest.json';
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +16,7 @@ export class DiscountsService {
     const cacheBustedUrl = `${this.manifestUrl}?cache-bust=${timestamp}`;
 
     return this.http.get<{ latestDiscounts: string }>(cacheBustedUrl).pipe(
-      switchMap(manifest => this.http.get<string[]>(`assets/${manifest.latestDiscounts}`))
+      switchMap(manifest => this.http.get<string[]>(`/${manifest.latestDiscounts}`))
     );
   }
 }
