@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class WebshopNameService {
 
-  private webshopNames = {
+  private webshopNames: { [key: string]: string } = {
     'airup': 'air up',
     'bathandbodyworksnl': 'Bath and Body Works',
     'bjornborg': 'Björn Borg',

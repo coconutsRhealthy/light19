@@ -1,19 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-
+import { RouterModule } from '@angular/router';
 import { LOCALE_ID } from '@angular/core';
 import { ElementRef } from '@angular/core';
-
 import { DiscountsService } from '../services/discounts.service';
 import { WebshopNameService } from '../services/webshop-name.service';
 import { CompanySeoTextService } from '../services/company-seo-text.service';
 import { MetaService } from '../services/meta.service';
+import { FooterComponent } from '../footer/footer.component';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 declare let gtag: Function;
 
 @Component({
   selector: 'app-company-codes',
+  imports: [
+    CommonModule,
+    RouterModule,
+    FooterComponent,
+    NavbarComponent,
+    NotFoundComponent
+  ],
   templateUrl: './company-codes.component.html',
   styleUrls: ['./company-codes.component.css', './../app.component.css'],
   providers: [
@@ -22,9 +32,9 @@ declare let gtag: Function;
   ]
 })
 export class CompanyCodesComponent implements OnInit {
-  company: string;
-  webshopName: string;
-  companySeoText: string;
+  company: string = "";
+  webshopName: string = "";
+  companySeoText: string = "";
   discountCodes: { code: string, discount: string, date: string }[] = [];
   isLoading = true;
 
@@ -34,7 +44,7 @@ export class CompanyCodesComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.company = params.get('company');
+      this.company = params.get('company') as string;
       this.extractDiscountCodes(this.company);
 
       if(this.discountCodes.length > 0) {
@@ -80,7 +90,7 @@ export class CompanyCodesComponent implements OnInit {
 
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);
-        this.companySeoText = this.companySeoTextService.getCompanySeoText(this.company);
+        this.companySeoText = this.companySeoTextService.getCompanySeoText(this.company) ?? '';
         var monthYear = this.meta.getDateString();
         this.meta.updateTitle("Werkende " + this.webshopName + " kortingscode in " + monthYear);
         this.meta.updateMetaInfo("De nieuwste werkende kortingscode van " + this.webshopName + " in " + monthYear + "; Bespaar met deze kortingscode op online shoppen bij " + this.webshopName, "diski.nl", this.webshopName + ", Kortingscode, Korting");
@@ -106,7 +116,7 @@ export class CompanyCodesComponent implements OnInit {
 
   formatDate(date: string): string {
     const formattedDate = this.getDateFromDateString(date);
-    return this.datePipe.transform(formattedDate, 'd MMM', '', 'nl');
+    return this.datePipe.transform(formattedDate, 'd MMM', '', 'nl') ?? '';
   }
 
   getCurrentDateAsString(): string {
@@ -114,11 +124,11 @@ export class CompanyCodesComponent implements OnInit {
     return String(currentDate.getMonth() + 1).padStart(2, '0') + '-' + String(currentDate.getDate()).padStart(2, '0');
   }
 
-  getDateFromDateString(dateString) {
+  getDateFromDateString(dateString: string) {
     dateString = dateString + "";
     var dateStringArray = dateString.split("-");
-    var month = dateStringArray[0] - 1;
-    var day = dateStringArray[1];
+    var month = Number(dateStringArray[0]) - 1;
+    var day = Number(dateStringArray[1]);
     const currentYear = new Date().getFullYear();
     return new Date(currentYear, month, day);
   }
@@ -133,10 +143,10 @@ export class CompanyCodesComponent implements OnInit {
     return webshopName;
   }
 
-  shouldDisplayPercent(discount) {
-    var shouldDisplayPercent = false;
+  shouldDisplayPercent(discount: string | number): boolean {
+    let shouldDisplayPercent = false;
 
-    if(isFinite(discount) && discount.indexOf('€') === -1) {
+    if (isFinite(Number(discount)) && discount.toString().indexOf('€') === -1) {
       shouldDisplayPercent = true;
     }
 
