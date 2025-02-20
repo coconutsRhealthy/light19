@@ -3,7 +3,6 @@ import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { LOCALE_ID } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { DiscountsService } from '../services/discounts.service';
 import { WebshopNameService } from '../services/webshop-name.service';
@@ -26,10 +25,7 @@ declare let gtag: Function;
   ],
   templateUrl: './company-codes.component.html',
   styleUrls: ['./company-codes.component.css', './../app.component.css'],
-  providers: [
-    DatePipe,
-    { provide: LOCALE_ID, useValue: 'nl' },
-  ]
+  providers: [DatePipe]
 })
 export class CompanyCodesComponent implements OnInit {
   company: string = "";
@@ -116,7 +112,7 @@ export class CompanyCodesComponent implements OnInit {
 
   formatDate(date: string): string {
     const formattedDate = this.getDateFromDateString(date);
-    return this.datePipe.transform(formattedDate, 'd MMM', '', 'nl') ?? '';
+    return this.datePipe.transform(formattedDate, 'd MMM') ?? '';
   }
 
   getCurrentDateAsString(): string {

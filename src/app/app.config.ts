@@ -6,6 +6,8 @@ import { registerLocaleData } from '@angular/common';
 import localeNl from '@angular/common/locales/nl';
 import { LOCALE_ID } from '@angular/core';
 
+registerLocaleData(localeNl, 'nl');
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
