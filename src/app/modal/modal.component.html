@@ -1,0 +1,61 @@
+@if (isVisible) {
+    <div class="modal-backdrop" (click)="closeModal()"></div>
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ discount.company | uppercase }}</h5>
+                    <button type="button" (click)="closeModal()" class="close-button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @if (discount) {
+                    <div class="modal-body">
+                        <div class="modal-body-row">
+                            <div class="modal-body-labels">
+                                <p><strong>Code:</strong></p>
+                                <p><strong>Korting:</strong></p>
+                                <p><strong>Gespot op:</strong></p>
+                            </div>
+                            <div class="modal-body-values">
+                                <p>
+                                    @if (discount.discountCode.startsWith('http')) {
+                                        <a [routerLink]="['/giftcards', (discount.company | lowercase)]" target="_blank" (click)="sendGiftcardEventsToGa(discount.company)">KLIK</a>
+                                    } @else {
+                                        {{ discount.discountCode }}
+                                        <span class="tooltip-container">
+                                            <button (click)="copyToClipboard(discount.discountCode); sendEventToGa('CodeDetailModal', discount.company)" class="copy-button">
+                                                Copy
+                                            </button>
+                                            @if (isCopied) {
+                                                <span class="tooltip">
+                                                    Copied!
+                                                </span>
+                                            }
+                                        </span>
+                                    }
+                                </p>
+                                <p>{{ getCorrectFormatDiscountPercentage(discount.percentage) }}</p>
+                                <p>{{ getCorrectFormatOfCodeDate(discount.date) }}</p>
+                            </div>
+                        </div>
+                        @if (discount.company.startsWith('aliexpress')) {
+                            <div class="row">
+                                <div class="col-12" style="color: blue; font-size: 14px;">
+                                    Code geldig op geselecteerde producten. Zie <a href="https://best.aliexpress.com/" target="_blank" style="text-decoration: underline;">hier</a>
+                                </div>
+                            </div>
+                        }
+                        @if (discount.company.startsWith('temu')) {
+                            <div class="row">
+                                <div class="col-12" style="color: blue; font-size: 14px;">
+                                    Code te gebruiken in de Temu app met een nieuwe account. Code geeft €200 shoptegoed en 30% korting. Download de app <a href="https://temu.to/m/u0p32ew176i" target="_blank" style="text-decoration: underline;">hier</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
