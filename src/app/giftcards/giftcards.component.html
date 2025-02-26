@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="content">
+    <app-navbar></app-navbar>
+    @if (giftCardCompany) {
+      <div class="text-center">
+        <h1>{{ getFormattedGiftCardCompany() }} €7.50 giftcard</h1>
+        <div class="steps-notice">Verzilver je {{ giftCardCompany }} giftcard via onderstaande stappen (simpel en snel!) {{ checkmarkEmoji }}</div>
+        <a [href]="giftCardUrl" class="big-button" target="_blank" (click)="sendGiftcardEventsToGa()">Ontvang {{ getFormattedGiftCardCompany() }} Giftcard {{ starsEmoji }}</a>
+      </div>
+    } @else {
+      <h1>Handleiding €7.50 giftcards</h1>
+
+      <div class="row mb-4">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <div class="social-banner alert alert-success" role="alert" style="background-color: yellow;">
+            De links naar de giftcards vind je <a href="https://linktr.ee/wiegeeftkorting" target="_blank">HIER</a>
+          </div>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    }
+
+    <div class="row">
+      @for (step of steps; track step.title) {
+        <div class="col-12 col-md-4">
+          <div class="step">
+            <p><strong>{{ step.title }}</strong> {{ step.description }}</p>
+            <img [src]="step.imageUrl" alt="Step Image" class="step-image">
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
