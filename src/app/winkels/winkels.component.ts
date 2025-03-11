@@ -15,8 +15,6 @@ export class WinkelsComponent implements OnInit {
 
   groupedWinkels: { letter: string, winkels: string[] }[] = [];
 
-  isMenuCollapsed = true;
-
   ngOnInit(): void {
     this.discountsService.getDiscounts().subscribe((data) => {
       const combinedWinkels = Array.from(

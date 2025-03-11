@@ -7,7 +7,7 @@ export class AffiliateLinkService {
 
   private affiliateLinks: { [key: string]: string } = {
     'bylashbabe': 'https://bylashbabe.com?sca_ref=3638091.TQRuyJNRG1',
-    'myproteinnl': 'https://www.stylink.it/L3q2QUyG0l',
+    'myproteinnl': 'https://tidd.ly/3Dvhdyg',
     'veromoda': 'https://www.stylink.it/AdZbXhpwmw',
     'ginatricot': 'https://www.stylink.it/ryMdpCQqA3q',
     'hunkemoller': 'https://www.stylink.it/7oZm3T2Y0n',

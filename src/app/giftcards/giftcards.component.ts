@@ -15,7 +15,6 @@ declare let gtag: Function;
 })
 export class GiftcardsComponent implements OnInit {
 
-  isMenuCollapsed = true;
   giftCardCompany: string | null = null;
   giftCardUrl: string | null = null;
 
