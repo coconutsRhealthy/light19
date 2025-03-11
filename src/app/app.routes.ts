@@ -1,17 +1,32 @@
 import { Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { WinkelsComponent } from './winkels/winkels.component';
-import { CompanyCodesComponent } from './company-codes/company-codes.component';
-import { DiscountsTableComponent } from './discounts-table/discounts-table.component';
-import { GiftcardsComponent } from './giftcards/giftcards.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
-    { path: '', component: DiscountsTableComponent},
-    { path: 'winkels', component: WinkelsComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'giftcards', component: GiftcardsComponent},
-    { path: 'giftcards/:company', component: GiftcardsComponent},
-    { path: ':company', component: CompanyCodesComponent},
-    { path: '**', component: NotFoundComponent},
+    {
+        path: '',
+        loadComponent: () => import('./discounts-table/discounts-table.component').then(m => m.DiscountsTableComponent)
+    },
+    {
+        path: 'winkels',
+        loadComponent: () => import('./winkels/winkels.component').then(m => m.WinkelsComponent)
+    },
+    {
+        path: 'contact',
+        loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent)
+    },
+    {
+        path: 'giftcards',
+        loadComponent: () => import('./giftcards/giftcards.component').then(m => m.GiftcardsComponent)
+    },
+    {
+        path: 'giftcards/:company',
+        loadComponent: () => import('./giftcards/giftcards.component').then(m => m.GiftcardsComponent)
+    },
+    {
+        path: ':company',
+        loadComponent: () => import('./company-codes/company-codes.component').then(m => m.CompanyCodesComponent)
+    },
+    {
+        path: '**',
+        loadComponent: () => import('./not-found/not-found.component').then(m => m.NotFoundComponent)
+    }
 ];
