@@ -110,3 +110,13 @@
 .pagination-container span {
   font-size: 11px;
 }
+
+.highlight-row {
+    font-weight: 600;
+    border: 2px solid #ccc;
+    padding: 8px 12px;
+}
+
+.highlight-button {
+    font-weight: 600;
+}

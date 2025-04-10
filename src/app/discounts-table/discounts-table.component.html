@@ -56,16 +56,23 @@
             </tr>
             </thead>
             <tbody>
-              @for (discount of paginatedDiscounts; track discount) {
+              @for (discount of paginatedDiscounts; track discount; let $i = $index) {
                 <tr>
-                  <td id="companyRow{{discount.index}}">{{ discount.company }}</td>
-                  <td><button class="diski-table-button btn btn-outline-secondary" (click)="sendCopyCodeToGa(discount.index); affiliateModalAction(discount)">pak code</button></td>
-                  <td>{{ discount.percentage }}</td>
-                  <td>{{ formatDate(discount.date) }}</td>
+                  <td [class.highlight-row]="$i === 0" id="companyRow{{discount.index}}">{{ discount.company }}</td>
+                  <td [class.highlight-row]="$i === 0" ><button class="diski-table-button btn btn-outline-secondary" [class.highlight-button]="$i === 0" (click)="sendCopyCodeToGa(discount.index); affiliateModalAction(discount)">pak code</button></td>
+                  <td [class.highlight-row]="$i === 0">{{ discount.percentage }}</td>
+                  <td [class.highlight-row]="$i === 0">{{ formatDate(discount.date) }}</td>
                 </tr>
-                @if ($index === 4) {
+                @if ($index === 3) {
                   <tr>
                     <td class="banner-table-cell giftcard-highlight" colspan="4">€7.50 gift cards voor heel veel shops! (o.a. Zalando, My Jewellery) <a href="https://linktr.ee/wiegeeftkorting" target="_blank" onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_intable_homepage'});">KLIK</a></td>
+                    <td class="hidden-cell"></td>
+                    <td class="hidden-cell"></td>
+                    <td class="hidden-cell"></td>
+                  </tr>
+                  <tr>
+<!--                    <td class="banner-table-cell giftcard-highlight" colspan="4"><a href="https://tidd.ly/3Dvhdyg" target="_blank" onclick="gtag('event', 'myprotein_banner', {'event_category': 'Myprotein_banner', 'event_label': 'myprotein_intable_homepage'});">Myprotein</a> bestsellers 30+10% korting met code MPDISKI</td>-->
+                    <td class="banner-table-cell giftcard-highlight" colspan="4"><a href="https://tidd.ly/3EcUbwi" target="_blank" onclick="gtag('event', 'lookfantastic_banner', {'event_category': 'Lookfantastic_banner', 'event_label': 'lookfantastic_intable_homepage'});">Lookfantastic</a> geselecteerde producten 25% korting met code LFDISKI</td>
                     <td class="hidden-cell"></td>
                     <td class="hidden-cell"></td>
                     <td class="hidden-cell"></td>
