@@ -96,16 +96,6 @@ export class CompanyCodesComponent implements OnInit {
       }
 
       this.discountCodes.sort((a, b) => a.code.startsWith(urlString) ? -1 : 1);
-
-      if(this.company === 'leolive') {
-        const firstGiftCard = this.discountCodes.find(code => code.code.startsWith(urlString));
-        this.discountCodes = firstGiftCard ? [firstGiftCard] : [{
-            code: 'Zie laatste insta post @wiegeeftkorting voor Le Olive code',
-            discount: '10',
-            date: this.getCurrentDateAsString()
-        }];
-      }
-
       this.isLoading = false;
     });
   }

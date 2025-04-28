@@ -47,9 +47,6 @@
                   @if (code.code.startsWith('http')) {
                     <a [routerLink]="['/giftcards', company]" target="_blank" (click)="sendGiftcardEventsToGa()" class="bold-underlined-link">{{ webshopName | uppercase }} GIFTCARD</a>
                     <div class="footnote">Werkt bovenop eventuele andere kortingscodes</div>
-                    @if (company === 'leolive') {
-                      <div class="footnote">(zie laatste post <a href="https://www.instagram.com/wiegeeftkorting/" onclick="gtag('event', 'leolive', {'event_category': 'Leolive', 'event_label': 'leolive_link_insta'});">&#64;wiegeeftkorting</a> voor actieve Le Olive kortingscodes)</div>
-                    }
                   } @else {
                     <span>{{ code.code }}</span>
                   }
