@@ -18,10 +18,6 @@
       <div class="col-sm-4"></div>
     </div>
 
-    <div class="banner-container" style="margin-top: 22px; margin-bottom: 14px;">
-      <img src="/zzzlf.png" alt="Banner" class="img-fluid banner-image" />
-    </div>
-
     <div class="row">
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
@@ -62,10 +58,10 @@
             <tbody>
               @for (discount of paginatedDiscounts; track discount) {
                 <tr>
-                  <td [class.highlight-row]="discount === highlightedDiscount" id="companyRow{{discount.index}}">{{ discount.company }}</td>
-                  <td [class.highlight-row]="discount === highlightedDiscount"><button class="diski-table-button btn btn-outline-secondary" [class.highlight-button]="discount === highlightedDiscount" (click)="sendCopyCodeToGa(discount.index); affiliateModalAction(discount)">pak code</button></td>
-                  <td [class.highlight-row]="discount === highlightedDiscount">{{ discount.percentage }}</td>
-                  <td [class.highlight-row]="discount === highlightedDiscount">{{ formatDate(discount.date) }}</td>
+                  <td id="companyRow{{discount.index}}">{{ discount.company }}</td>
+                  <td><button class="diski-table-button btn btn-outline-secondary" (click)="sendCopyCodeToGa(discount.index); affiliateModalAction(discount)">pak code</button></td>
+                  <td>{{ discount.percentage }}</td>
+                  <td>{{ formatDate(discount.date) }}</td>
                 </tr>
                 @if ($index === 3) {
                   <tr>
@@ -76,8 +72,6 @@
                   </tr>
                   <tr>
                     <td class="banner-table-cell giftcard-highlight" colspan="4"><a href="https://tidd.ly/3EcUbwi" target="_blank" onclick="gtag('event', 'lookfantastic_banner', {'event_category': 'Lookfantastic_banner', 'event_label': 'lookfantastic_intable_homepage'});">Lookfantastic</a> geselecteerde producten 25% korting met code LFDISKI</td>
-<!--                    <td class="banner-table-cell giftcard-highlight" colspan="4">Elle Smart Shopping weekend -> alle codes op deze pagina (en <a href="https://www.elle.com/nl/mode/mode-nieuws/a63933682/elle-smart-shopping-day-lente-2025/" target="_blank" onclick="gtag('event', 'elle_banner', {'event_category': 'Elle_banner', 'event_label': 'elle_intable_homepage'});">hier</a>)</td>-->
-<!--                    <td class="banner-table-cell giftcard-highlight" colspan="4"><a href="https://tidd.ly/3EcUbwi" target="_blank" onclick="gtag('event', 'lookfantastic_banner', {'event_category': 'Lookfantastic_banner', 'event_label': 'lookfantastic_intable_homepage'});">Lookfantastic</a> code ELLELF vandaag nog 40+11% korting</td>-->
                     <td class="hidden-cell"></td>
                     <td class="hidden-cell"></td>
                     <td class="hidden-cell"></td>

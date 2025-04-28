@@ -172,12 +172,4 @@ export class DiscountsTableComponent implements OnInit {
     window.open(url, '_blank');
     location.href = affiliateLink;
   }
-
-  get highlightedDiscount(): Discount | null {
-    if (this.page === 1 && this.searchTerm === '' && this.paginatedDiscounts.length > 0) {
-      return this.paginatedDiscounts[0];
-    }
-
-    return null;
-  }
 }
