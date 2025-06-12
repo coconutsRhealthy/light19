@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-community',
@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommunityComponent implements OnInit {
 
-  webhookUrl = 'https://script.google.com/macros/s/AKfycbyfUyX9yE-cfZaJcyNi7skXgg0VZqLqo-kZsW4VZqGwSg5KqkWCFsj-lMEG0l9323Oc/exec';
+  webhookUrl = 'https://script.google.com/macros/s/AKfycbwtzvmRMxK8GklpS_z3W8DvPd9sNRAKazy8FPRC0k80cgKYAEQ_Sny073hUH7rp8fgK/exec';
   rows: any[] = [];
 
   constructor(private http: HttpClient) {}
@@ -19,17 +19,20 @@ export class CommunityComponent implements OnInit {
   }
 
   addRow() {
-    const body = { text: "text to add" };
-
-    this.http.post(this.webhookUrl, body, { responseType: 'text' }).subscribe({
-      next: () => {
-        alert('Added!');
-      },
-      error: (err) => {
-        console.error(err);
-        alert('Something went wrong');
-      },
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
     });
+
+    const body = new HttpParams().set('text', 'safari text to add');
+
+    this.http.post(this.webhookUrl, body.toString(), { headers, responseType: 'text' })
+      .subscribe({
+        next: () => alert('Added!'),
+        error: (err) => {
+          console.error(err);
+          alert('Something went wrong');
+        },
+      });
   }
 
   readDataFromSheet() {
