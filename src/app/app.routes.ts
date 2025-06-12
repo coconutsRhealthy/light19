@@ -22,6 +22,10 @@ export const routes: Routes = [
         loadComponent: () => import('./giftcards/giftcards.component').then(m => m.GiftcardsComponent)
     },
     {
+        path: 'community',
+        loadComponent: () => import('./community/community.component').then(m => m.CommunityComponent)
+    },
+    {
         path: ':company',
         loadComponent: () => import('./company-codes/company-codes.component').then(m => m.CompanyCodesComponent)
     },

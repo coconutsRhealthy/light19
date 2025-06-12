@@ -1,0 +1,5 @@
+@for (row of rows; track row) {
+    <div>{{ row.join(' | ') }}</div>
+}
+
+<button (click)="addRow()">Toevoegen</button>
