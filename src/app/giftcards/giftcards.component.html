@@ -3,12 +3,12 @@
     <app-navbar></app-navbar>
     @if (giftCardCompany) {
       <div class="text-center">
-        <h1>{{ getFormattedGiftCardCompany() }} €7.50 giftcard</h1>
+        <h1>{{ getFormattedGiftCardCompany() }} €5 giftcard</h1>
         <div class="steps-notice">Verzilver je {{ giftCardCompany }} giftcard via onderstaande stappen (simpel en snel!) {{ checkmarkEmoji }}</div>
         <a [href]="giftCardUrl" class="big-button" target="_blank" (click)="sendGiftcardEventsToGa()">Ontvang {{ getFormattedGiftCardCompany() }} Giftcard {{ starsEmoji }}</a>
       </div>
     } @else {
-      <h1>Handleiding €7.50 giftcards</h1>
+      <h1>Handleiding €5 giftcards</h1>
 
       <div class="row mb-4">
         <div class="col-sm-4"></div>
