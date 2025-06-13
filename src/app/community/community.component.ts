@@ -1,17 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-community',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './community.component.html',
   styleUrls: ['./../app.component.css']
 })
 export class CommunityComponent implements OnInit {
-
-  webhookUrl = 'https://script.google.com/macros/s/AKfycbwtzvmRMxK8GklpS_z3W8DvPd9sNRAKazy8FPRC0k80cgKYAEQ_Sny073hUH7rp8fgK/exec';
+  webhookUrl = 'https://script.google.com/macros/s/AKfycbzEMMokt67Oz0PwOHEKHwxyZLpw0rwfVyzCXnerdNSwrxf4pKX6pz9_-KX48APoe_AX/exec';
   rows: string[][] = [];
   headers: string[] = [];
+
+    newRow = {
+      webshop: '',
+      code: '',
+      percentage: '',
+      date: '',
+      name: ''
+    };
 
   constructor(private http: HttpClient) {}
 
@@ -49,7 +57,12 @@ export class CommunityComponent implements OnInit {
       'Content-Type': 'application/x-www-form-urlencoded',
     });
 
-    const body = new HttpParams().set('text', 'safari text to add');
+    const body = new HttpParams()
+      .set('webshop', this.newRow.webshop)
+      .set('code', this.newRow.code)
+      .set('percentage', this.newRow.percentage)
+      .set('date', this.newRow.date)
+      .set('name', this.newRow.name);
 
     this.http.post(this.webhookUrl, body.toString(), { headers, responseType: 'text' })
       .subscribe({
@@ -60,6 +73,5 @@ export class CommunityComponent implements OnInit {
         },
       });
   }
-
 
 }

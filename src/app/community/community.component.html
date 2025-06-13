@@ -16,3 +16,11 @@
         }
     </tbody>
 </table>
+
+<input [(ngModel)]="newRow.webshop" placeholder="Webshop" name="webshop">
+<input [(ngModel)]="newRow.code" placeholder="Kortingscode" name="code">
+<input [(ngModel)]="newRow.percentage" placeholder="%" name="percentage" type="number">
+<input [(ngModel)]="newRow.date" placeholder="Datum" name="date" type="date">
+<input [(ngModel)]="newRow.name" placeholder="Jouw naam" name="name">
+
+<button (click)="addRow()">Toevoegen</button>
