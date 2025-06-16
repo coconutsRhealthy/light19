@@ -88,7 +88,7 @@ export class GiftcardsComponent implements OnInit {
           {
             imageUrl: 'https://i.ibb.co/TmTgFw9/Screenshot-20241009-195417-3.png',
             title: 'Stap 6:',
-            description: this.getStepDescription(6, "Nadat je je bankrekening gekoppeld hebt wordt de giftcard vrijgegeven. Je kunt nu gewoon op de normale manier een aankoop doen bij de shop waar de giftcard voor is (dit hoeft dus niet via de Woolsocks app). Zodra je de aankoop gedaan hebt zal Woolsocks dit automatisch detecteren en de €7.50 giftcard aan je uitkeren in de Woolsocks app. Dit kun je in de app zien in de 'Money' tab (icoontje rechtsonderin), linksboven zie je een icoontje met jouw teruggekregen geld.")
+            description: this.getStepDescription(6, "Nadat je je bankrekening gekoppeld hebt wordt de giftcard vrijgegeven. Je kunt nu gewoon op de normale manier een aankoop doen bij de shop waar de giftcard voor is (dit hoeft dus niet via de Woolsocks app). Zodra je de aankoop gedaan hebt zal Woolsocks dit automatisch detecteren en de €5 giftcard aan je uitkeren in de Woolsocks app. Dit kun je in de app zien in de 'Money' tab (icoontje rechtsonderin), linksboven zie je een icoontje met jouw teruggekregen geld.")
           },
           {
             imageUrl: 'https://i.ibb.co/txvp42q/Screenshot-20241009-195538-3.png',
@@ -188,11 +188,11 @@ export class GiftcardsComponent implements OnInit {
 
   private updateMeta() {
      if(this.giftCardCompany) {
-        this.meta.updateTitle(this.getFormattedGiftCardCompany() + " €7.50 giftcard");
-        this.meta.updateMetaInfo("Bespaar met deze giftcard €7.50 bij " + this.getFormattedGiftCardCompany(), "diski.nl", this.getFormattedGiftCardCompany() + ", Giftcard, Besparen, Tegoedbon");
+        this.meta.updateTitle(this.getFormattedGiftCardCompany() + " €5 giftcard");
+        this.meta.updateMetaInfo("Bespaar met deze giftcard €5 bij " + this.getFormattedGiftCardCompany(), "diski.nl", this.getFormattedGiftCardCompany() + ", Giftcard, Besparen, Tegoedbon");
      } else {
-        this.meta.updateTitle("Diski €7.50 giftcards voor heel veel webshops");
-        this.meta.updateMetaInfo("Bespaar met giftcards €7.50 bij heel veel webshops zoals Zalando, MyJewellery en Wehkamp", "diski.nl", "Tegoedbon, Giftcard, Besparen");
+        this.meta.updateTitle("Diski €5 giftcards voor heel veel webshops");
+        this.meta.updateMetaInfo("Bespaar met giftcards €5 bij heel veel webshops zoals Zalando, MyJewellery en Wehkamp", "diski.nl", "Tegoedbon, Giftcard, Besparen");
      }
 
      this.meta.setNoIndex();
