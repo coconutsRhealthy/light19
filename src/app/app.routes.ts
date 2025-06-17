@@ -14,14 +14,6 @@ export const routes: Routes = [
         loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent)
     },
     {
-        path: 'giftcards',
-        loadComponent: () => import('./giftcards/giftcards.component').then(m => m.GiftcardsComponent)
-    },
-    {
-        path: 'giftcards/:company',
-        loadComponent: () => import('./giftcards/giftcards.component').then(m => m.GiftcardsComponent)
-    },
-    {
         path: ':company',
         loadComponent: () => import('./company-codes/company-codes.component').then(m => m.CompanyCodesComponent)
     },
