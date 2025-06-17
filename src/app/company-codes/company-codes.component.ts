@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { RouterModule } from '@angular/router';
 import { ElementRef } from '@angular/core';
 import { DiscountsService } from '../services/discounts.service';
 import { WebshopNameService } from '../services/webshop-name.service';
@@ -18,7 +17,6 @@ declare let gtag: Function;
   selector: 'app-company-codes',
   imports: [
     CommonModule,
-    RouterModule,
     FooterComponent,
     NavbarComponent,
     NotFoundComponent

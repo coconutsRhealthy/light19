@@ -20,7 +20,7 @@
                             <div class="modal-body-values">
                                 <p>
                                     @if (discount.discountCode.startsWith('http')) {
-                                        <a [routerLink]="['/giftcards', (discount.company | lowercase)]" target="_blank" (click)="sendGiftcardEventsToGa(discount.company)">KLIK</a>
+                                        <a [href]="discount.discountCode" target="_blank" (click)="sendGiftcardEventsToGa(discount.company)">KLIK</a>
                                     } @else {
                                         {{ discount.discountCode }}
                                         <span class="tooltip-container">
