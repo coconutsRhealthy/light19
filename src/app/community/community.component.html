@@ -17,10 +17,10 @@
     </tbody>
 </table>
 
-<input [(ngModel)]="newRow.webshop" placeholder="Webshop" name="webshop">
-<input [(ngModel)]="newRow.code" placeholder="Kortingscode" name="code">
-<input [(ngModel)]="newRow.percentage" placeholder="%" name="percentage" type="number">
-<input [(ngModel)]="newRow.date" placeholder="Datum" name="date" type="date">
-<input [(ngModel)]="newRow.name" placeholder="Jouw naam" name="name">
+<button class="btn btn-primary" (click)="showModal()">Voeg kortingscode toe</button>
 
-<button (click)="addRow()">Toevoegen</button>
+<app-community-modal
+        [isVisible]="modalVisible"
+        (closed)="modalVisible = false"
+        (added)="onCodeAdded($event)">
+</app-community-modal>

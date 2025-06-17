@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { CommunityModalComponent } from '../community-modal/community-modal.component';
 
 @Component({
   selector: 'app-community',
-  imports: [FormsModule],
+  imports: [CommunityModalComponent],
   templateUrl: './community.component.html',
   styleUrls: ['./../app.component.css']
 })
@@ -12,6 +12,7 @@ export class CommunityComponent implements OnInit {
   webhookUrl = 'https://script.google.com/macros/s/AKfycbzEMMokt67Oz0PwOHEKHwxyZLpw0rwfVyzCXnerdNSwrxf4pKX6pz9_-KX48APoe_AX/exec';
   rows: string[][] = [];
   headers: string[] = [];
+  modalVisible = false;
 
     newRow = {
       webshop: '',
@@ -74,4 +75,7 @@ export class CommunityComponent implements OnInit {
       });
   }
 
+  showModal() {
+    this.modalVisible = true;
+  }
 }
