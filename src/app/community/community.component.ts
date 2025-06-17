@@ -14,14 +14,6 @@ export class CommunityComponent implements OnInit {
   headers: string[] = [];
   modalVisible = false;
 
-    newRow = {
-      webshop: '',
-      code: '',
-      percentage: '',
-      date: '',
-      name: ''
-    };
-
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -53,21 +45,32 @@ export class CommunityComponent implements OnInit {
     });
   }
 
-  addRow() {
+  showModal() {
+    this.modalVisible = true;
+  }
+
+  onCodeAdded(newCode: any) {
+    console.log('Nieuwe kortingscode:', newCode);
+
+    // Voeg hier je logica toe om de nieuwe kortingscode op te slaan, bijv. in array of server
+
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
     });
 
     const body = new HttpParams()
-      .set('webshop', this.newRow.webshop)
-      .set('code', this.newRow.code)
-      .set('percentage', this.newRow.percentage)
-      .set('date', this.newRow.date)
-      .set('name', this.newRow.name);
+      .set('webshop', newCode.webshop)
+      .set('code', newCode.code)
+      .set('percentage', newCode.percentage)
+      .set('date', newCode.date)
+      .set('name', newCode.name);
 
     this.http.post(this.webhookUrl, body.toString(), { headers, responseType: 'text' })
       .subscribe({
-        next: () => alert('Added!'),
+        next: () => {
+          console.log('Added!');
+          this.modalVisible = false;
+        },
         error: (err) => {
           console.error(err);
           alert('Something went wrong');
@@ -75,7 +78,4 @@ export class CommunityComponent implements OnInit {
       });
   }
 
-  showModal() {
-    this.modalVisible = true;
-  }
 }

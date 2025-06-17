@@ -26,12 +26,11 @@ export class CommunityModalComponent {
   }
 
   submit() {
-    // Optional: add validation here
+    // Optional: validate form here
+    this.added.emit(this.newRow); // let the parent decide what to do next
+  }
 
-    this.added.emit(this.newRow);
-    this.closeModal();
-
-    // Reset form for next time
+  resetForm() {
     this.newRow = {
       webshop: '',
       code: '',
