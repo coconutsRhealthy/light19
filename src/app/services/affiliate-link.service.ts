@@ -77,6 +77,7 @@ export class AffiliateLinkService {
     'malelions': 'https://tidd.ly/3Z1dr7b',
     'fotocadeau.nl': 'https://tidd.ly/3Z1dIXL',
     '123jaloezie.nl': 'https://tidd.ly/3SR4dqy',
+    'upfront': 'https://tidd.ly/4nfNOdh',
   };
 
   constructor() { }
