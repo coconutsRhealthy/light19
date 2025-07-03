@@ -12,24 +12,24 @@
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVP906XC65"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<!--  <script>-->
+<!--    window.dataLayer = window.dataLayer || [];-->
+<!--    function gtag(){dataLayer.push(arguments);}-->
+<!--    gtag('js', new Date());-->
 
-    gtag('config', 'G-DVP906XC65');
-  </script>
+<!--    gtag('config', 'G-DVP906XC65');-->
+<!--  </script>-->
 
-  <script>
-    function sendCopyCodeToGa(element_id_index) {
-      var company = document.getElementById('companyRow' + element_id_index).textContent;
-      if(company === undefined) {
-        company = "unknown";
-      }
-      company = company.split(" (")[0];
-      gtag('event', 'CopyCode', {'event_category': 'CopyCode', 'event_label': company});
-    }
-  </script>
+<!--  <script>-->
+<!--    function sendCopyCodeToGa(element_id_index) {-->
+<!--      var company = document.getElementById('companyRow' + element_id_index).textContent;-->
+<!--      if(company === undefined) {-->
+<!--        company = "unknown";-->
+<!--      }-->
+<!--      company = company.split(" (")[0];-->
+<!--      gtag('event', 'CopyCode', {'event_category': 'CopyCode', 'event_label': company});-->
+<!--    }-->
+<!--  </script>-->
 
   <script>
     function sendEventToGa(eventName, eventLabel) {
