@@ -78,6 +78,8 @@ export class AffiliateLinkService {
     'fotocadeau.nl': 'https://tidd.ly/3Z1dIXL',
     '123jaloezie.nl': 'https://tidd.ly/3SR4dqy',
     'upfront': 'https://tidd.ly/4nfNOdh',
+    'lounge by zalando': 'https://tidd.ly/3ZknIvm',
+    'jhpfashion.nl': 'https://tidd.ly/4kaBWGU',
   };
 
   constructor() { }
