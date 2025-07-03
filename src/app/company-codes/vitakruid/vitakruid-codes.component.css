@@ -1,0 +1,19 @@
+.bold-underlined-link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.footnote {
+  font-size: 0.85em;
+  font-style: italic;
+  color: #555555;
+  margin-top: 4px;
+}
+
+.vertical-centered {
+  vertical-align: middle;
+}
+
+.table {
+  margin-bottom: 23px;
+}

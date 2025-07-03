@@ -3,32 +3,29 @@ import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ElementRef } from '@angular/core';
-import { DiscountsService } from '../services/discounts.service';
-import { WebshopNameService } from '../services/webshop-name.service';
-import { CompanySeoTextService } from '../services/company-seo-text.service';
-import { MetaService } from '../services/meta.service';
-import { FooterComponent } from '../footer/footer.component';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { NotFoundComponent } from '../not-found/not-found.component';
-
-import { VitakruidCodesComponent } from '../company-codes/vitakruid/vitakruid-codes.component';
+import { DiscountsService } from '../../services/discounts.service';
+import { WebshopNameService } from '../../services/webshop-name.service';
+import { CompanySeoTextService } from '../../services/company-seo-text.service';
+import { MetaService } from '../../services/meta.service';
+import { FooterComponent } from '../../footer/footer.component';
+import { NavbarComponent } from '../../navbar/navbar.component';
+import { NotFoundComponent } from '../../not-found/not-found.component';
 
 declare let gtag: Function;
 
 @Component({
-  selector: 'app-company-codes',
+  selector: 'app-vitakruid-codes',
   imports: [
     CommonModule,
     FooterComponent,
     NavbarComponent,
-    NotFoundComponent,
-    VitakruidCodesComponent
+    NotFoundComponent
   ],
-  templateUrl: './company-codes.component.html',
-  styleUrls: ['./company-codes.component.css', './../app.component.css'],
+  templateUrl: './vitakruid-codes.component.html',
+  styleUrls: ['./vitakruid-codes.component.css', './../app.component.css'],
   providers: [DatePipe]
 })
-export class CompanyCodesComponent implements OnInit {
+export class VitakruidCodesComponent implements OnInit {
   company: string = "";
   webshopName: string = "";
   companySeoText: string = "";
