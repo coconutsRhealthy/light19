@@ -163,4 +163,8 @@ export class WieheeftsaleComponent implements OnInit {
     window.open(url, '_blank');
     location.href = affiliateLink;
   }
+
+  openUrlInNewTab(url: string) {
+    window.open(url, '_blank');
+  }
 }

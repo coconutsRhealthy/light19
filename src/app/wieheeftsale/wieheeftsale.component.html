@@ -51,7 +51,14 @@
               @for (entry of wieheeftsaleData; track entry.name) {
                 <tr>
                   <td>{{ entry.name }}</td>
-                  <a [href]="entry.url" target="_blank">naar de sale</a>
+                  <td>
+                    <button
+                            class="diski-table-button btn btn-outline-secondary"
+                            (click)="openUrlInNewTab(entry.url)"
+                    >
+                      naar de sale
+                    </button>
+                  </td>
                 </tr>
               }
             </tbody>
@@ -79,21 +86,7 @@
       <div class="col-sm-1"></div>
     </div>
   </div>
-  <div class="row mt-4">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-10">
-      <p class="description">
-        Webshops zoals <a href="https://nl.shein.com/">Shein</a>, <a href="https://www.loavies.com/nl/">Loavies</a> en
-        <a href="https://www.na-kd.com/nl">Nakd</a> verspreiden regelmatig een kortingscode via social media. Door deze in te vullen
-        in hun webshop krijg je korting op je bestelling. Meestal is een kortingscode enkele dagen geldig. De kortingscodes
-        worden gedeeld door influencers en content creators. Op deze pagina hou ik een overzicht bij van alle kortingscodes
-        die ik voorbij zie komen op Instagram. Gebruik het zoekveld bovenaan de pagina om eenvoudig te zoeken naar bijvoorbeeld
-        een Nakd kortingscode of een Loavies kortingscode. Neem ook eens een kijkje op mijn instagram account:
-        <a href="https://www.instagram.com/wiegeeftkorting/">&#64;wiegeeftkorting</a>
-      </p>
-    </div>
-    <div class="col-sm-1"></div>
-  </div>
+
   <app-footer></app-footer>
 </div>
 
