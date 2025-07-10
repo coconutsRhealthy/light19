@@ -29,7 +29,7 @@ export class AffiliateLinkService {
     'zaful': 'https://lt45.net/c/?si=14546&li=1774866&wi=387380&ws=zaful',
     'superdry': 'https://rkn3.net/c/?si=14965&li=1650750&wi=387380&ws=superdry',
     'aliexpress': 'https://tidd.ly/44qRvWs',
-    'adidas.nl': 'https://tc.tradetracker.net/?c=31384&m=1634602&a=448474&r=disad&u=',
+    'adidas': 'https://tidd.ly/4iTlN7Q',
     'nanabeebi': 'https://tc.tradetracker.net/?c=30770&m=12&a=448474&r=disna&u=%2F',
     'reginajewelry': 'https://www.reginajewelry.co/?ref=bb-jezj8p',
     'only': 'https://www.stylink.it/5xZndfMoYe',
@@ -80,6 +80,7 @@ export class AffiliateLinkService {
     'upfront': 'https://tidd.ly/4nfNOdh',
     'lounge by zalando': 'https://tidd.ly/3ZknIvm',
     'jhpfashion.nl': 'https://tidd.ly/4kaBWGU',
+    'picnic': 'https://tidd.ly/4jkKLxg',
   };
 
   constructor() { }
