@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
-
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { WieheeftsaleService } from '../services/wieheeftsale.service';
 
 declare global {
@@ -33,18 +33,30 @@ export class WieheeftsaleComponent implements OnInit {
   sortByDateAscending = false;
   sendCopyCodeToGa = window.sendCopyCodeToGa;
 
-  constructor(private meta: MetaService, private wieheeftsaleService: WieheeftsaleService) {
+  constructor(private meta: MetaService, private wieheeftsaleService: WieheeftsaleService, private http: HttpClient) {
     var monthYear = this.meta.getDateString();
     this.meta.updateTitle("Diski | Online shoppen met kortingscodes in " + monthYear);
     this.meta.updateMetaInfo("De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl", "diski.nl", "Kortingscode, Korting");
   }
 
   ngOnInit() {
-    this.wieheeftsaleService.getWieheeftsaleLinks().subscribe((data) => {
-      this.wieheeftsaleData = Object.entries(data).map(([company, url]) => ({
-        company,
-        url
-      }));
+    this.readDataFromSheet();
+  }
+
+  readDataFromSheet() {
+    const url = 'https://docs.google.com/spreadsheets/d/1giW6eqsJZ2w6DO-8f3oiZYaQ4HN3tt2pdS5Lt0XkYJ0/gviz/tq?tqx=out:json';
+
+    this.http.get(url, { responseType: 'text' }).subscribe(response => {
+      const json = JSON.parse(response.replace(/^[^\(]*\(/, '').replace(/\);$/, ''));
+      const table = json.table;
+
+      this.wieheeftsaleData = table.rows.slice(1).map((row: any) => {
+        const cells = row.c.map((cell: any) => cell?.v ?? '');
+        return {
+          company: cells[0],
+          url: cells[1]
+        } as WhsEntry;
+      });
       this.filteredWieheeftsaleData = this.wieheeftsaleData;
     });
   }
