@@ -4,7 +4,6 @@ import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { WieheeftsaleService } from '../services/wieheeftsale.service';
 
 declare global {
   interface Window {
@@ -33,10 +32,10 @@ export class WieheeftsaleComponent implements OnInit {
   sortByDateAscending = false;
   sendCopyCodeToGa = window.sendCopyCodeToGa;
 
-  constructor(private meta: MetaService, private wieheeftsaleService: WieheeftsaleService, private http: HttpClient) {
+  constructor(private meta: MetaService, private http: HttpClient) {
     var monthYear = this.meta.getDateString();
-    this.meta.updateTitle("Diski | Online shoppen met kortingscodes in " + monthYear);
-    this.meta.updateMetaInfo("De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl", "diski.nl", "Kortingscode, Korting");
+    this.meta.updateTitle("Diski | Overzicht van actuele sales en aanbiedingen in " + monthYear);
+    this.meta.updateMetaInfo("De nieuwste sales acties en aanbiedingen van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl", "diski.nl", "Kortingscode, Korting");
   }
 
   ngOnInit() {
