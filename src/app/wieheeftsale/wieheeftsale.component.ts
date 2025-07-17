@@ -34,8 +34,8 @@ export class WieheeftsaleComponent implements OnInit {
 
   constructor(private meta: MetaService, private http: HttpClient) {
     var monthYear = this.meta.getDateString();
-    this.meta.updateTitle("Diski | Overzicht van actuele sales en aanbiedingen in " + monthYear);
-    this.meta.updateMetaInfo("De nieuwste sales acties en aanbiedingen van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl", "diski.nl", "Kortingscode, Korting");
+    this.meta.updateTitle("Overzicht van actuele sales en aanbiedingen in " + monthYear + " | Diski")
+    this.meta.updateMetaInfo("Bekijk de nieuwste sales en aanbiedingen van populaire webshops. Bespaar eenvoudig online in " + monthYear + " via diski.nl.", "diski.nl", "kortingscode, korting, sale, aanbiedingen");
   }
 
   ngOnInit() {
