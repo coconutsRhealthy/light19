@@ -110,3 +110,12 @@
 .pagination-container span {
   font-size: 11px;
 }
+
+.subtle-homepage-company-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.subtle-homepage-company-link:hover {
+  text-decoration: underline;
+}

@@ -8,6 +8,7 @@ import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ModalComponent } from '../modal/modal.component';
+import { RouterModule } from '@angular/router';
 
 declare global {
   interface Window {
@@ -25,7 +26,7 @@ interface Discount {
 
 @Component({
   selector: 'app-discounts-table',
-  imports: [FooterComponent, NavbarComponent, FormsModule, ModalComponent],
+  imports: [FooterComponent, NavbarComponent, FormsModule, ModalComponent, RouterModule],
   templateUrl: './discounts-table.component.html',
   styleUrls: ['./discounts-table.component.css', './../app.component.css'],
   providers: [

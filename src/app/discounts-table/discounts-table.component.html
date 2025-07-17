@@ -58,7 +58,9 @@
             <tbody>
               @for (discount of paginatedDiscounts; track discount) {
                 <tr>
-                  <td id="companyRow{{discount.index}}">{{ discount.company }}</td>
+                  <td id="companyRow{{discount.index}}">
+                    <a [routerLink]="['/', discount.company]" class="subtle-homepage-company-link" onclick="gtag('event', 'homepage_subtle', {'event_category': 'Homepage_subtle', 'event_label': 'homepage_subtle'});">{{ discount.company }}</a>
+                  </td>
                   <td><button class="diski-table-button btn btn-outline-secondary" (click)="sendCopyCodeToGa(discount.index); affiliateModalAction(discount)">pak code</button></td>
                   <td>{{ discount.percentage }}</td>
                   <td>{{ formatDate(discount.date) }}</td>
