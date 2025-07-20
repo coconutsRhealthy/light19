@@ -119,3 +119,7 @@
 .subtle-homepage-company-link:hover {
   text-decoration: underline;
 }
+
+.wieheeftsale-highlight {
+  background-color: rgb(255, 250, 150);
+}

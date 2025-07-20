@@ -5,6 +5,8 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 
+import { AnalyticsEventService } from '../services/analytics-event.service';
+
 declare global {
   interface Window {
     sendCopyCodeToGa: (element_id_index: number) => void;
@@ -32,7 +34,7 @@ export class WieheeftsaleComponent implements OnInit {
   sortByDateAscending = false;
   sendCopyCodeToGa = window.sendCopyCodeToGa;
 
-  constructor(private meta: MetaService, private http: HttpClient) {
+  constructor(private meta: MetaService, private http: HttpClient, private analyticsEventService: AnalyticsEventService) {
     var monthYear = this.meta.getDateString();
     this.meta.updateTitle("Overzicht van actuele sales en aanbiedingen in " + monthYear + " | Diski")
     this.meta.updateMetaInfo("Bekijk de nieuwste sales en aanbiedingen van populaire webshops. Bespaar eenvoudig online in " + monthYear + " via diski.nl.", "diski.nl", "kortingscode, korting, sale, aanbiedingen");
@@ -95,5 +97,10 @@ export class WieheeftsaleComponent implements OnInit {
 
   openUrlInNewTab(url: string) {
     window.open(url, '_blank');
+  }
+
+  sendEventToGa(eventName: string, eventLabel: string): void {
+    var eventLabelToUse = "ww" + eventLabel.toLowerCase();
+    this.analyticsEventService.sendEventToGa(eventName, eventLabelToUse);
   }
 }

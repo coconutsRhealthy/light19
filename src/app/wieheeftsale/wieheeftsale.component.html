@@ -53,7 +53,7 @@
                   <td>
                     <button
                             class="diski-table-button btn btn-outline-secondary"
-                            (click)="openUrlInNewTab(whsEntry.url)"
+                            (click)="openUrlInNewTab(whsEntry.url); sendEventToGa('WieHeeftSalePagina', whsEntry.company)"
                     >
                       naar de sale
                     </button>
