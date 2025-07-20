@@ -38,7 +38,7 @@ export class AffiliateLinkService {
     'stylevana': 'https://tidd.ly/4dsPX0F',
     'temu': 'https://temu.to/m/u0p32ew176i',
     'temu (gratis producten)': 'https://temu.to/m/e74veq9vg5u',
-    'easytoys': 'https://www.stylink.it/gNp4OigJPOA',
+    'easytoys': 'https://tidd.ly/4ntIXoT',
     'iciparisxl': 'https://tidd.ly/4lMFsJA',
     'yehwang_wholesale': 'https://bit.ly/43fOjKa',
     'desenio': 'https://desen.io/?ref=bb-m47m59',
@@ -81,6 +81,14 @@ export class AffiliateLinkService {
     'lounge by zalando': 'https://tidd.ly/3ZknIvm',
     'jhpfashion.nl': 'https://tidd.ly/4kaBWGU',
     'picnic': 'https://tidd.ly/4jkKLxg',
+    'amazon': 'https://amzn.to/4lyoE8A',
+    'tefal': 'https://tidd.ly/44tjrJB',
+    'tennis-point.nl': 'https://tidd.ly/4kB6hPn',
+    'lampenlicht.nl': 'https://tidd.ly/3Tlo5m2',
+    'shein': 'https://tidd.ly/4i3O8YM',
+    'earkings.nl': 'https://tidd.ly/3UjR75T',
+    'large.nl': 'https://tidd.ly/3TiNQ6E',
+    'cashbackxl': 'https://www.cashbackxl.nl?share=wouter-c9c3bf',
   };
 
   constructor() { }
