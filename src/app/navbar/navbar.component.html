@@ -10,22 +10,22 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'});">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/winkels" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/winkels" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
                         Shops
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/wieheeftsale" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/wieheeftsale" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">
                         WieHeeftSale
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/contact" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/contact" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
                         Contact
                     </a>
                 </li>

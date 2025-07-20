@@ -100,7 +100,7 @@ export class WieheeftsaleComponent implements OnInit {
   }
 
   sendEventToGa(eventName: string, eventLabel: string): void {
-    var eventLabelToUse = "ww" + eventLabel.toLowerCase();
+    var eventLabelToUse = "whs_company_click_" + eventLabel.toLowerCase();
     this.analyticsEventService.sendEventToGa(eventName, eventLabelToUse);
   }
 }
