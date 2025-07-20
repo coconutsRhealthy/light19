@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { CommunityModalComponent } from '../community-modal/community-modal.component';
 
+interface DiscountCode {
+  webshop: string;
+  code: string;
+  percentage: number;
+  date: string;
+  added_by: string;
+}
+
 @Component({
   selector: 'app-community',
   imports: [CommunityModalComponent],
@@ -10,8 +18,7 @@ import { CommunityModalComponent } from '../community-modal/community-modal.comp
 })
 export class CommunityComponent implements OnInit {
   webhookUrl = 'https://script.google.com/macros/s/AKfycbzEMMokt67Oz0PwOHEKHwxyZLpw0rwfVyzCXnerdNSwrxf4pKX6pz9_-KX48APoe_AX/exec';
-  rows: string[][] = [];
-  headers: string[] = [];
+  discountCodes: DiscountCode[] = [];
   modalVisible = false;
 
   constructor(private http: HttpClient) {}
@@ -27,21 +34,18 @@ export class CommunityComponent implements OnInit {
       const json = JSON.parse(response.replace(/^[^\(]*\(/, '').replace(/\);$/, ''));
       const table = json.table;
 
-      this.headers = table.cols.map((col: any) => col.label);
-      this.rows = table.rows.map((row: any) =>
-        row.c.map((cell: any) => {
-          const raw = cell?.v ?? '';
+      this.discountCodes = table.rows.map((row: any) => {
+        const cells = row.c.map((cell: any) => cell?.v ?? '');
+        const [webshop, code, percentage, date, added_by] = cells;
 
-          const dateMatch = typeof raw === 'string' && raw.match(/^Date\((\d+),(\d+),(\d+)\)$/);
-          if (dateMatch) {
-            const [_, year, month, day] = dateMatch;
-            const jsDate = new Date(+year, +month, +day);
-            return jsDate.toLocaleDateString('nl-NL');
-          }
-
-          return raw;
-        })
-      );
+        return {
+          webshop,
+          code,
+          percentage: +percentage,
+          date,
+          added_by,
+        } as DiscountCode;
+      }).reverse();
     });
   }
 

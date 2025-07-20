@@ -1,17 +1,19 @@
 <table class="table table-bordered table-striped table-hover mt-3">
     <thead class="thead-light">
         <tr>
-            @for (header of headers; track header) {
-                <th>{{ header }}</th>
-            }
+            <th>Shop</th>
+            <th>Code</th>
+            <th>%</th>
+            <th>Datum</th>
         </tr>
     </thead>
     <tbody>
-        @for (row of rows; track row) {
+        @for (item of discountCodes; track item) {
             <tr>
-                @for (cell of row; track cell) {
-                    <td>{{ cell }}</td>
-                }
+                <td>{{ item.webshop }}</td>
+                <td>{{ item.code }}</td>
+                <td>{{ item.percentage }}%</td>
+                <td>{{ item.date }}</td>
             </tr>
         }
     </tbody>
