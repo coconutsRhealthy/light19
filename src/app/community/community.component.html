@@ -1,0 +1,28 @@
+<table class="table table-bordered table-striped table-hover mt-3">
+    <thead class="thead-light">
+        <tr>
+            <th>Shop</th>
+            <th>Code</th>
+            <th>%</th>
+            <th>Datum</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of discountCodes; track item) {
+            <tr>
+                <td>{{ item.webshop }}</td>
+                <td>{{ item.code }}</td>
+                <td>{{ item.percentage }}%</td>
+                <td>{{ item.date }}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button class="btn btn-primary" (click)="showModal()">Voeg kortingscode toe</button>
+
+<app-community-modal
+        [isVisible]="modalVisible"
+        (closed)="modalVisible = false"
+        (added)="onCodeAdded($event)">
+</app-community-modal>
