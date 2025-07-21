@@ -2,12 +2,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-community-modal',
+  selector: 'app-prikbord-modal',
   imports: [FormsModule],
-  templateUrl: './community-modal.component.html',
+  templateUrl: './prikbord-modal.component.html',
   styleUrls: ['./modal.component.css', './../modal/modal.component.css']
 })
-export class CommunityModalComponent {
+export class PrikbordModalComponent {
   @Input() isVisible = false;
   @Output() closed = new EventEmitter<void>();
   @Output() added = new EventEmitter<any>();

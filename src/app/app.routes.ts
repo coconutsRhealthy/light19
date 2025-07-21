@@ -18,8 +18,8 @@ export const routes: Routes = [
         loadComponent: () => import('./wieheeftsale/wieheeftsale.component').then(m => m.WieheeftsaleComponent)
     },
     {
-        path: 'community',
-        loadComponent: () => import('./community/community.component').then(m => m.CommunityComponent)
+        path: 'prikbord',
+        loadComponent: () => import('./prikbord/prikbord.component').then(m => m.PrikbordComponent)
     },
     {
         path: ':company',

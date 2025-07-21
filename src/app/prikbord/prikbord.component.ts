@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { CommunityModalComponent } from '../community-modal/community-modal.component';
+import { PrikbordModalComponent } from '../prikbord-modal/prikbord-modal.component';
 
 import { MetaService } from '../services/meta.service';
 
@@ -13,12 +13,12 @@ interface DiscountCode {
 }
 
 @Component({
-  selector: 'app-community',
-  imports: [CommunityModalComponent],
-  templateUrl: './community.component.html',
+  selector: 'app-prikbord',
+  imports: [PrikbordModalComponent],
+  templateUrl: './prikbord.component.html',
   styleUrls: ['./../app.component.css']
 })
-export class CommunityComponent implements OnInit {
+export class PrikbordComponent implements OnInit {
   webhookUrl = 'https://script.google.com/macros/s/AKfycbzEMMokt67Oz0PwOHEKHwxyZLpw0rwfVyzCXnerdNSwrxf4pKX6pz9_-KX48APoe_AX/exec';
   discountCodes: DiscountCode[] = [];
   modalVisible = false;
