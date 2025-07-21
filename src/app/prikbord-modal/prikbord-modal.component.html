@@ -12,16 +12,24 @@
                 </div>
 
                 <div class="modal-body">
-                    <input [(ngModel)]="newRow.webshop" class="form-control mb-2" placeholder="Webshop" name="webshop" />
-                    <input [(ngModel)]="newRow.code" class="form-control mb-2" placeholder="Kortingscode" name="code" />
-                    <input [(ngModel)]="newRow.percentage" class="form-control mb-2" placeholder="%" name="percentage" type="number" />
-                    <input [(ngModel)]="newRow.date" class="form-control mb-2" placeholder="Datum" name="date" type="date" />
-                    <input [(ngModel)]="newRow.name" class="form-control mb-2" placeholder="Jouw naam" name="name" />
+                    @if (!submitted) {
+                        <input [(ngModel)]="newRow.webshop" class="form-control mb-2" placeholder="Webshop" name="webshop" />
+                        <input [(ngModel)]="newRow.code" class="form-control mb-2" placeholder="Kortingscode" name="code" />
+                        <input [(ngModel)]="newRow.percentage" class="form-control mb-2" placeholder="%" name="percentage" type="number" />
+                        <input [(ngModel)]="newRow.date" class="form-control mb-2" placeholder="Datum" name="date" type="date" />
+                        <input [(ngModel)]="newRow.name" class="form-control mb-2" placeholder="Jouw naam" name="name" />
+                    } @else {
+                        <p>Dank je, de code is toegevoegd!</p>
+                    }
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" (click)="closeModal()">Annuleren</button>
-                    <button type="button" class="btn btn-success" (click)="submit()">Toevoegen</button>
+                    @if (!submitted) {
+                        <button type="button" class="btn btn-secondary" (click)="closeModal()">Annuleren</button>
+                        <button type="button" class="btn btn-success" (click)="submit()">Toevoegen</button>
+                    } @else {
+                        <button type="button" class="btn btn-primary" (click)="closeModal()">Sluiten</button>
+                    }
                 </div>
 
             </div>

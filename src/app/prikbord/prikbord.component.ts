@@ -74,13 +74,9 @@ export class PrikbordComponent implements OnInit {
 
     this.http.post(this.webhookUrl, body.toString(), { headers, responseType: 'text' })
       .subscribe({
-        next: () => {
-          console.log('Added!');
-          this.modalVisible = false;
-        },
+        next: () => {},
         error: (err) => {
           console.error(err);
-          alert('Something went wrong');
         },
       });
   }

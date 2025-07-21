@@ -20,14 +20,18 @@ export class PrikbordModalComponent {
     name: ''
   };
 
+  submitted = false;
+
   closeModal() {
     this.isVisible = false;
     this.closed.emit();
+    this.submitted = false;
   }
 
   submit() {
     // Optional: validate form here
     this.added.emit(this.newRow); // let the parent decide what to do next
+    this.submitted = true;
   }
 
   resetForm() {
