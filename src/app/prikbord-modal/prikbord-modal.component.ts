@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-prikbord-modal',
   imports: [FormsModule],
   templateUrl: './prikbord-modal.component.html',
-  styleUrls: ['./modal.component.css', './../modal/modal.component.css']
+  styleUrls: ['./prikbord-modal.component.css']
 })
 export class PrikbordModalComponent {
   @Input() isVisible = false;
