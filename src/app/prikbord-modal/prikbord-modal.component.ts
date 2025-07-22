@@ -26,6 +26,14 @@ export class PrikbordModalComponent {
     this.isVisible = false;
     this.closed.emit();
     this.submitted = false;
+
+    this.newRow = {
+      webshop: '',
+      code: '',
+      percentage: '',
+      date: '',
+      name: ''
+    };
   }
 
   submit() {

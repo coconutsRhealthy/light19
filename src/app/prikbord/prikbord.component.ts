@@ -55,7 +55,6 @@ export class PrikbordComponent implements OnInit {
 
   ngOnInit() {
     this.readDataFromSheet();
-    this.meta.setNoIndex();
   }
 
   readDataFromSheet() {
@@ -83,7 +82,6 @@ export class PrikbordComponent implements OnInit {
   }
 
   onCodeAdded(newCode: any) {
-    console.log('Nieuwe kortingscode:', newCode);
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
     });
