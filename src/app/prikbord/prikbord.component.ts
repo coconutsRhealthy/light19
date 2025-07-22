@@ -40,9 +40,7 @@ export class PrikbordComponent implements OnInit {
   filteredprikbordData: PrikbordEntry[] = [];
   searchTerm: string = '';
   page: number = 1;
-  itemsPerPage: number = 50;
-  sortByCompanyAscending = false;
-  sortByDateAscending = false;
+  itemsPerPage: number = 20;
   sendCopyCodeToGa = window.sendCopyCodeToGa;
   webhookUrl = 'https://script.google.com/macros/s/AKfycbzEMMokt67Oz0PwOHEKHwxyZLpw0rwfVyzCXnerdNSwrxf4pKX6pz9_-KX48APoe_AX/exec';
   modalVisible = false;
@@ -67,6 +65,7 @@ export class PrikbordComponent implements OnInit {
       this.prikbordData = table.rows.map((row: any) => {
         const cells = row.c.map((cell: any) => cell?.v ?? '');
         const [webshop, code, percentage, rawDate, added_by] = cells;
+        const addedBy = added_by.trim() === '' ? 'anoniem' : added_by;
         const date = this.parseGoogleDate(rawDate);
 
         return {
@@ -74,7 +73,7 @@ export class PrikbordComponent implements OnInit {
           code,
           percentage: +percentage,
           date,
-          added_by,
+          added_by: addedBy,
         } as PrikbordEntry;
       }).reverse();
       this.filteredprikbordData = this.prikbordData;
@@ -127,14 +126,6 @@ export class PrikbordComponent implements OnInit {
     return Math.ceil(this.filteredprikbordData.length / this.itemsPerPage);
   }
 
-  sortByCompany() {
-    this.sortByCompanyAscending = !this.sortByCompanyAscending;
-    this.filteredprikbordData.sort((a, b) => {
-      const comparison = a.webshop.localeCompare(b.webshop);
-      return this.sortByCompanyAscending ? comparison : -comparison;
-    });
-  }
-
   formatDate(date: string): string {
     const formattedDate = this.getDateFromDateString(date);
     return this.datePipe.transform(formattedDate, 'd MMM') ?? '';
@@ -175,30 +166,5 @@ export class PrikbordComponent implements OnInit {
       }
     }
     return value;
-  }
-
-  sortByDate() {
-    this.sortByDateAscending = !this.sortByDateAscending;
-    this.filteredprikbordData.sort((a, b) => {
-      const dateA = this.getDateFromDateString(a.date);
-      const dateB = this.getDateFromDateString(b.date);
-
-      const currentYear = new Date().getFullYear();
-      const nextYear = currentYear + 1;
-
-      const adjustedDateA = (dateA.getMonth() === 0 || dateA.getMonth() === 1 || dateA.getMonth() === 2) &&
-        (dateB.getMonth() === 11 || dateB.getMonth() === 10 || dateB.getMonth() === 9)
-        ? new Date(nextYear, dateA.getMonth(), dateA.getDate())
-        : new Date(currentYear, dateA.getMonth(), dateA.getDate());
-
-      const adjustedDateB = (dateB.getMonth() === 0 || dateB.getMonth() === 1 || dateB.getMonth() === 2) &&
-        (dateA.getMonth() === 11 || dateA.getMonth() === 10 || dateA.getMonth() === 9)
-        ? new Date(nextYear, dateB.getMonth(), dateB.getDate())
-        : new Date(currentYear, dateB.getMonth(), dateB.getDate());
-
-      return this.sortByDateAscending
-        ? adjustedDateA.getTime() - adjustedDateB.getTime()
-        : adjustedDateB.getTime() - adjustedDateA.getTime();
-    });
   }
 }
