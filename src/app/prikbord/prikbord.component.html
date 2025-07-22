@@ -37,7 +37,10 @@
                             </th>
                             <th>Code</th>
                             <th>%</th>
-                            <th>Datum</th>
+                            <th>
+                                Datum
+                                <button class="btn btn-sm btn-link sort-button" (click)="sortByDate()" title="Sort by date">▲▼</button>
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -46,7 +49,7 @@
                                 <td>{{ item.webshop }}</td>
                                 <td>{{ item.code }}</td>
                                 <td>{{ item.percentage }}%</td>
-                                <td>{{ item.date }}</td>
+                                <td>{{ formatDate(item.date) }}</td>
                             </tr>
                         }
                         </tbody>
