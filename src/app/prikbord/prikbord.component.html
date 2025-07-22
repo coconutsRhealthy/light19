@@ -1,25 +1,83 @@
-<table class="table table-bordered table-striped table-hover mt-3">
-    <thead class="thead-light">
-        <tr>
-            <th>Shop</th>
-            <th>Code</th>
-            <th>%</th>
-            <th>Datum</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (item of discountCodes; track item) {
-            <tr>
-                <td>{{ item.webshop }}</td>
-                <td>{{ item.code }}</td>
-                <td>{{ item.percentage }}%</td>
-                <td>{{ item.date }}</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="container-fluid">
+    <div class="content">
+        <app-navbar></app-navbar>
+        <h1>Diski prikbord: deel kortingscodes met elkaar!</h1>
 
-<button class="btn btn-primary" (click)="showModal()">Voeg kortingscode toe</button>
+        <button class="btn btn-primary" (click)="showModal()">Voeg kortingscode toe</button>
+
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="mb-3 table-search-input">
+                    <div class="input-wrapper">
+                        <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Zoek op webshop..."
+                                [(ngModel)]="searchTerm"
+                                (input)="onSearch()"
+                        />
+                        @if (searchTerm) {
+                        <button
+                                type="button"
+                                class="btn-close"
+                                (click)="searchTerm = ''; onSearch()"
+                                aria-label="Clear"
+                        >&times;</button>
+                        }
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>
+                                Shop
+                                <button class="btn btn-sm btn-link sort-button" (click)="sortByCompany()" title="Sort by company">▲▼</button>
+                            </th>
+                            <th>Code</th>
+                            <th>%</th>
+                            <th>Datum</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @for (item of filteredWieheeftsaleData; track item) {
+                            <tr>
+                                <td>{{ item.webshop }}</td>
+                                <td>{{ item.code }}</td>
+                                <td>{{ item.percentage }}%</td>
+                                <td>{{ item.date }}</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+
+                    <div class="pagination-container">
+                        <button
+                                class="btn btn-primary btn-sm"
+                                (click)="prevPage()"
+                                [disabled]="page === 1"
+                        >
+                            Vorige
+                        </button>
+                        <span>Pagina {{ page }} van {{ totalPages }}</span>
+                        <button
+                                class="btn btn-primary btn-sm"
+                                (click)="nextPage()"
+                                [disabled]="page === totalPages"
+                        >
+                            Volgende
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>
+
 
 <app-prikbord-modal
         [isVisible]="modalVisible"
