@@ -49,8 +49,8 @@ export class PrikbordComponent implements OnInit {
 
   constructor(private meta: MetaService, private http: HttpClient, private analyticsEventService: AnalyticsEventService, private datePipe: DatePipe) {
     var monthYear = this.meta.getDateString();
-    this.meta.updateTitle("Overzicht van actuele sales en aanbiedingen in " + monthYear + " | Diski")
-    this.meta.updateMetaInfo("Bekijk de nieuwste sales en aanbiedingen van populaire webshops. Bespaar eenvoudig online in " + monthYear + " via diski.nl.", "diski.nl", "kortingscode, korting, sale, aanbiedingen");
+    this.meta.updateTitle("Voeg je kortingscode toe en bespaar samen meer – Prikbord | Diski")
+    this.meta.updateMetaInfo("Gespot? Deel je kortingscode op het prikbord van Diski en help anderen besparen. Ontdek zelf ook nieuwe codes die net gedeeld zijn!", "diski.nl", "kortingscode, korting, kortingscode toevoegen, kortingscode delen, kortingscode zoeken, diski prikbord");
   }
 
   ngOnInit() {
