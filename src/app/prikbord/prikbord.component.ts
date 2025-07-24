@@ -76,11 +76,13 @@ export class PrikbordComponent implements OnInit {
           added_by: addedBy,
         } as PrikbordEntry;
       }).reverse();
-      this.filteredprikbordData = this.prikbordData;
+      this.filteredprikbordData = [...this.prikbordData];
     });
   }
 
   onCodeAdded(newCode: any) {
+    this.instantAddNewCodeToScreen(newCode);
+
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
     });
@@ -99,6 +101,18 @@ export class PrikbordComponent implements OnInit {
           console.error(err);
         },
       });
+  }
+
+  instantAddNewCodeToScreen(newCode: any) {
+    this.prikbordData.unshift({
+      webshop: newCode.webshop,
+      code: newCode.code,
+      percentage: +newCode.percentage,
+      date: new Date().toLocaleString('sv-SE'),
+      added_by: newCode.name.trim() === '' ? 'anoniem' : newCode.name
+    });
+
+    this.filteredprikbordData = [...this.prikbordData];
   }
 
   onSearch() {
