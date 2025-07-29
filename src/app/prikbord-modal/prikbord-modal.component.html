@@ -17,7 +17,7 @@
                     @if (!submitted) {
                         <input [(ngModel)]="newRow.webshop" class="form-control mb-2" placeholder="Webshop" name="webshop" />
                         <input [(ngModel)]="newRow.code" class="form-control mb-2" placeholder="Kortingscode" name="code" />
-                        <input [(ngModel)]="newRow.percentage" class="form-control mb-2" placeholder="%" name="percentage" type="number" />
+                        <input [(ngModel)]="newRow.percentage" class="form-control mb-2" placeholder="Hoeveel korting? (bijv '10%' of '€5')" name="percentage" />
                         <input [(ngModel)]="newRow.name" class="form-control mb-2" placeholder="Jouw naam (niet verplicht)" name="name" />
                     } @else {
                         <p class="alert alert-success mt-3">Dank je, de code is toegevoegd!</p>

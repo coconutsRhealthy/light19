@@ -20,7 +20,7 @@ declare global {
 interface PrikbordEntry {
   webshop: string;
   code: string;
-  percentage: number;
+  percentage: string;
   date: string;
   added_by: string;
 }
@@ -40,7 +40,7 @@ export class PrikbordComponent implements OnInit {
   filteredprikbordData: PrikbordEntry[] = [];
   searchTerm: string = '';
   page: number = 1;
-  itemsPerPage: number = 20;
+  itemsPerPage: number = 24;
   sendCopyCodeToGa = window.sendCopyCodeToGa;
   webhookUrl = 'https://script.google.com/macros/s/AKfycbzEMMokt67Oz0PwOHEKHwxyZLpw0rwfVyzCXnerdNSwrxf4pKX6pz9_-KX48APoe_AX/exec';
   modalVisible = false;
@@ -71,7 +71,7 @@ export class PrikbordComponent implements OnInit {
         return {
           webshop,
           code,
-          percentage: +percentage,
+          percentage: percentage,
           date,
           added_by: addedBy,
         } as PrikbordEntry;
@@ -81,6 +81,8 @@ export class PrikbordComponent implements OnInit {
   }
 
   onCodeAdded(newCode: any) {
+    newCode.webshop = this.removeHttpIfNeeded(newCode.webshop);
+    newCode.percentage = this.formatPercentage(newCode.percentage);
     this.instantAddNewCodeToScreen(newCode);
 
     const headers = new HttpHeaders({
@@ -103,11 +105,29 @@ export class PrikbordComponent implements OnInit {
       });
   }
 
+  private removeHttpIfNeeded(webshop: string): string {
+    if (!/^https?:\/\//.test(webshop) && !/^www\./.test(webshop)) {
+      return webshop;
+    }
+
+    webshop = webshop.replace(/^https?:\/\//, '');
+    webshop = webshop.replace(/^www\./, '');
+    webshop = webshop.split('/')[0];
+    return webshop;
+  }
+
+  private formatPercentage(percentage: string): string {
+    if (/^\d+$/.test(percentage)) {
+      return percentage + '%';
+    }
+    return percentage;
+  }
+
   instantAddNewCodeToScreen(newCode: any) {
     this.prikbordData.unshift({
       webshop: newCode.webshop,
       code: newCode.code,
-      percentage: +newCode.percentage,
+      percentage: newCode.percentage,
       date: new Date().toLocaleString('sv-SE'),
       added_by: newCode.name.trim() === '' ? 'anoniem' : newCode.name
     });

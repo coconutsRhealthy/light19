@@ -55,7 +55,6 @@ export class AffiliateLinkService {
     'esn': 'https://tidd.ly/3F1sqHD',
     'otrium': 'https://tidd.ly/3FpcLSm',
     'zelesta.nl': 'https://tidd.ly/4dyxrUU',
-    'hellofresh.nl': 'https://tidd.ly/3FgGL2U',
     'smartphoto.nl': 'https://www.smartphoto.nl/foto_tt?tt=4903_12_448474_&r=%2F',
     'secretsales.nl': 'https://tidd.ly/43Atcoa',
     'keepitsneaker': 'https://tidd.ly/4deFHcA',

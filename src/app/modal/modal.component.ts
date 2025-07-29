@@ -101,7 +101,7 @@ export class ModalComponent {
   }
 
   sendEventToGa(eventName: string, eventLabel: string): void {
-    var eventLabelToUse = "zz" + eventLabel.toLowerCase();
+    var eventLabelToUse = "copycode_" + eventLabel.toLowerCase();
     this.analyticsEventService.sendEventToGa(eventName, eventLabelToUse);
   }
 
