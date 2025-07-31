@@ -1,14 +1,1 @@
-.webshop-list {
-  list-style: none;
-}
 
-.group-heading {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-.webshop-list li:not(.group-heading) {
-  margin-bottom: 5px;
-}
