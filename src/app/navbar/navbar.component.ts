@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -7,17 +7,13 @@ import { RouterModule } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+
   constructor() {}
 
-  ngOnInit(): void {
-    const toggler = document.querySelector('.navbar-toggler');
-    const collapse = document.querySelector('.navbar-collapse');
+  menuOpen = false;
 
-    if (toggler && collapse) {
-      toggler.addEventListener('click', () => {
-        collapse.classList.toggle('show');
-      });
-    }
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 }

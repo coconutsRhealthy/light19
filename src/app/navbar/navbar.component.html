@@ -1,40 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="">
-            <img src="/avatar.jpeg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
-            Diski
+<header class="bg-pink-100 border-b border-pink-200">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a class="flex items-center space-x-2" href="">
+            <img src="/avatar.jpeg" alt="logo" class="w-11 h-11 rounded-full" />
+            <span class="font-semibold text-xl">Diski</span>
         </a>
-        <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+
+        <button
+                class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                (click)="toggleMenu()"
+                aria-label="Toggle menu"
+        >
+            @if (!menuOpen) {
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            } @else {
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            }
         </button>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'});">
-                        Kortingscodes
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/winkels" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
-                        Shops
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/prikbord" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
-                        Prikbord
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/wieheeftsale" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">
-                        Wie heeft sale
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/contact" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
-                        Contact
-                    </a>
-                </li>
-            </ul>
-        </div>
+
+        <nav
+                class="space-x-4 text-sm flex-col sm:flex-row sm:flex sm:space-x-4 sm:space-y-0"
+                [class.flex]="menuOpen"
+                [class.hidden]="!menuOpen"
+        >
+            <a routerLink="/" class="hover:underline font-semibold block py-2 sm:inline" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'});">Kortingscodes</a>
+            <a routerLink="/shops" class="hover:underline block py-2 sm:inline" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">Shops</a>
+            <a routerLink="/prikbord" class="hover:underline block py-2 sm:inline" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">Prikbord</a>
+            <a routerLink="/wieheeftsale" class="hover:underline block py-2 sm:inline" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">Wie heeft sale</a>
+            <a routerLink="/contact" class="hover:underline block py-2 sm:inline" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">Contact</a>
+        </nav>
     </div>
-</nav>
+</header>
