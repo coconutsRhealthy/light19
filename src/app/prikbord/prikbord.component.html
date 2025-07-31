@@ -1,82 +1,77 @@
-<div class="container-fluid">
-    <div class="content">
-        <app-navbar></app-navbar>
-        <h1>Diski prikbord: deel kortingscodes met elkaar</h1>
+<div class="min-h-screen bg-white text-gray-800">
+    <app-navbar></app-navbar>
 
-        <div class="text-center">
-            <button class="btn btn-success mb-3" (click)="showModal(); sendEventToGa('Prikbord', 'voeg_code_toe')">Voeg kortingscode toe</button>
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-center mb-6">Diski prikbord: deel kortingscodes met elkaar</h1>
+
+        <div class="text-center mb-8">
+            <button
+                    class="bg-green-600 text-white font-medium px-6 py-2 rounded-lg hover:bg-green-700 transition"
+                    (click)="showModal(); sendEventToGa('Prikbord', 'voeg_code_toe')"
+            >
+                Voeg kortingscode toe
+            </button>
         </div>
 
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-10">
-                <div class="mb-3 table-search-input">
-                    <div class="input-wrapper">
-                        <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Zoek op webshop..."
-                                [(ngModel)]="searchTerm"
-                                (input)="onSearch()"
-                        />
-                        @if (searchTerm) {
-                        <button
-                                type="button"
-                                class="btn-close"
-                                (click)="searchTerm = ''; onSearch()"
-                                aria-label="Clear"
-                        >&times;</button>
-                        }
-                    </div>
+        <div class="mb-6 max-w-md mx-auto relative">
+            <input
+                    type="text"
+                    [(ngModel)]="searchTerm"
+                    (input)="onSearch()"
+                    placeholder="Zoek op webshop..."
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            @if (searchTerm) {
+            <button
+                    (click)="searchTerm = ''; onSearch()"
+                    aria-label="Clear"
+                    class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-red-500 text-lg"
+            >
+                &times;
+            </button>
+            }
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @for (item of paginatedPrikbordEntries; track item) {
+            <div class="bg-gray-50 rounded-xl shadow-sm p-4 flex flex-col justify-between h-full border border-gray-100">
+                <div>
+                    <h2 class="text-lg font-semibold mb-2">{{ item.webshop }}</h2>
+                    <p class="mb-1"><span class="font-medium">Code:</span> {{ item.code }}</p>
+                    <p><span class="font-medium">Korting:</span> {{ item.percentage }}</p>
                 </div>
-                <div class="container mt-3">
-                    <div class="row">
-                        @for (item of paginatedPrikbordEntries; track item) {
-                            <div class="col-12 col-md-6 col-lg-4 mb-3">
-                                <div class="card h-100 shadow-sm">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ item.webshop }}</h5>
-                                        <p class="card-text">
-                                            <strong>Code:</strong> {{ item.code }}<br>
-                                            <strong>Korting: </strong>
-                                            <span>{{ item.percentage }}</span>
-                                        </p>
-                                    </div>
-                                    <div class="card-footer text-muted text-right small">
-                                        Toegevoegd door <strong>{{ item.added_by }}</strong> op {{ formatDate(item.date) }}
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    </div>
-                </div>
-                <div class="pagination-container">
-                    <button
-                            class="btn btn-primary btn-sm"
-                            (click)="prevPage()"
-                            [disabled]="page === 1"
-                    >
-                        Vorige
-                    </button>
-                    <span>Pagina {{ page }} van {{ totalPages }}</span>
-                    <button
-                            class="btn btn-primary btn-sm"
-                            (click)="nextPage()"
-                            [disabled]="page === totalPages"
-                    >
-                        Volgende
-                    </button>
+                <div class="mt-4 text-sm text-gray-500 text-right">
+                    Toegevoegd door <span class="font-semibold text-gray-700">{{ item.added_by }}</span><br />
+                    op {{ formatDate(item.date) }}
                 </div>
             </div>
-            <div class="col-sm-1"></div>
+            }
+        </div>
+
+        <div class="flex justify-center items-center gap-4 mt-8">
+            <button
+                    class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm disabled:opacity-40 hover:bg-blue-700 transition"
+                    (click)="prevPage()"
+                    [disabled]="page === 1"
+            >
+                Vorige
+            </button>
+            <span class="text-sm">Pagina {{ page }} van {{ totalPages }}</span>
+            <button
+                    class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm disabled:opacity-40 hover:bg-blue-700 transition"
+                    (click)="nextPage()"
+                    [disabled]="page === totalPages"
+            >
+                Volgende
+            </button>
         </div>
     </div>
 
     <app-footer></app-footer>
-</div>
 
-<app-prikbord-modal
-        [isVisible]="modalVisible"
-        (closed)="modalVisible = false"
-        (added)="onCodeAdded($event)">
-</app-prikbord-modal>
+    <app-prikbord-modal
+            [isVisible]="modalVisible"
+            (closed)="modalVisible = false"
+            (added)="onCodeAdded($event)"
+    ></app-prikbord-modal>
+</div>
