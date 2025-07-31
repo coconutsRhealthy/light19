@@ -1,68 +1,69 @@
 @if (isVisible) {
-    <div class="modal-backdrop" (click)="closeModal()"></div>
-    <div class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">{{ discount.company | uppercase }}</h5>
-                    <button type="button" (click)="closeModal()" class="close-button">
-                        <span aria-hidden="true">&times;</span>
+    <!-- Backdrop -->
+    <div
+            class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+            (click)="closeModal()"
+    ></div>
+
+    <!-- Modal -->
+    <div
+            class="fixed inset-0 flex items-center justify-center z-50 px-6"
+            role="dialog"
+            aria-modal="true"
+    >
+        <div class="bg-white max-w-md w-full rounded-xl shadow-lg overflow-hidden">
+            <!-- Header -->
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+                <h3 class="font-extrabold text-lg uppercase tracking-wide text-gray-900">
+                    {{ discount.company }}
+                </h3>
+                <button
+                        (click)="closeModal()"
+                        aria-label="Sluiten"
+                        class="text-gray-400 hover:text-gray-700 transition"
+                >
+                    <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                    >
+                        <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Content -->
+            @if (discount) {
+            <div class="px-6 py-6 space-y-4 text-gray-800 text-sm">
+                <div class="grid grid-cols-[auto_1fr_auto] items-center gap-x-4">
+                    <span class="font-semibold text-gray-700">Code:</span>
+                    <span class="font-mono text-gray-900">{{ discount.discountCode }}</span>
+                    <button
+                            (click)="copyToClipboard(discount.discountCode); sendEventToGa('CodeDetailModal', discount.company)"
+                            class="px-3 py-1 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition"
+                    >
+                        Copy
                     </button>
                 </div>
-                @if (discount) {
-                    <div class="modal-body">
-                        <div class="modal-body-row">
-                            <div class="modal-body-labels">
-                                <p><strong>Code:</strong></p>
-                                <p><strong>Korting:</strong></p>
-                                <p><strong>Gespot op:</strong></p>
-                            </div>
-                            <div class="modal-body-values">
-                                <p>
-                                    @if (discount.discountCode.startsWith('http')) {
-                                        <a [href]="discount.discountCode" target="_blank" (click)="sendGiftcardEventsToGa(discount.company)">KLIK</a>
-                                    } @else {
-                                        {{ discount.discountCode }}
-                                        <span class="tooltip-container">
-                                            <button (click)="copyToClipboard(discount.discountCode); sendEventToGa('CodeDetailModal', discount.company)" class="copy-button">
-                                                Copy
-                                            </button>
-                                            @if (isCopied) {
-                                                <span class="tooltip">
-                                                    Copied!
-                                                </span>
-                                            }
-                                        </span>
-                                    }
-                                </p>
-                                <p>{{ getCorrectFormatDiscountPercentage(discount.percentage) }}</p>
-                                <p>{{ getCorrectFormatOfCodeDate(discount.date) }}</p>
-                            </div>
-                        </div>
-                        @if (discount.company.startsWith('aliexpress')) {
-                            <div class="row">
-                                <div class="col-12" style="color: blue; font-size: 14px;">
-                                    Code geldig op geselecteerde producten. Zie <a href="https://best.aliexpress.com/" target="_blank" style="text-decoration: underline;">hier</a>
-                                </div>
-                            </div>
-                        }
-                        @if (discount.company.startsWith('temu')) {
-                            <div class="row">
-                                <div class="col-12" style="color: blue; font-size: 14px;">
-                                    Code te gebruiken in de Temu app met een nieuwe account. Code geeft €100 shoptegoed en 30% korting. Download de app <a href="https://temu.to/m/u0p32ew176i" target="_blank" style="text-decoration: underline;">hier</a>
-                                </div>
-                            </div>
-                        }
-                        @if (discount.company.startsWith('cashbackxl')) {
-                            <div class="row">
-                                <div class="col-12" style="color: blue; font-size: 14px;">
-                                    Verdien snel €2,50 + cashback op al je aankopen! Klik <a href="https://www.cashbackxl.nl?share=wouter-c9c3bf" target="_blank" style="text-decoration: underline;">HIER</a>
-                                </div>
-                            </div>
-                        }
-                    </div>
-                }
+
+                <div class="grid grid-cols-[auto_1fr] gap-x-4">
+                    <span class="font-semibold text-gray-700">Korting:</span>
+                    <span>{{ getCorrectFormatDiscountPercentage(discount.percentage) }}</span>
+                </div>
+
+                <div class="grid grid-cols-[auto_1fr] gap-x-4">
+                    <span class="font-semibold text-gray-700">Gespot op:</span>
+                    <span>{{ getCorrectFormatOfCodeDate(discount.date) }}</span>
+                </div>
             </div>
+            }
         </div>
     </div>
 }

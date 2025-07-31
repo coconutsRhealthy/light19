@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
 
 import { AnalyticsEventService } from '../services/analytics-event.service';
 
@@ -7,7 +6,6 @@ declare let gtag: Function;
 
 @Component({
   selector: 'app-modal',
-  imports: [UpperCasePipe],
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
