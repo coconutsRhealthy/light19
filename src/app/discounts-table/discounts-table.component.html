@@ -17,17 +17,6 @@
     </a>
   </div>
 
-  <!-- Zomersale banner -->
-  <div class="mb-6 text-center text-yellow-800 bg-yellow-100 px-4 py-2 rounded text-sm">
-    Alle zomersales overzichtelijk verzameld op één pagina:
-    <a routerLink="/wieheeftsale" class="underline font-semibold"
-       onclick="gtag('event', 'wieheeftsale', {event_category: 'Wieheeftsale', event_label: 'wieheeftsale_intable_homepage'})">
-      diski.nl/wieheeftsale
-    </a>
-    –
-    <a routerLink="/wieheeftsale" class="underline">Klik hier</a>
-  </div>
-
   <!-- Zoekveld -->
   <div class="mb-6 flex justify-center">
     <input
@@ -51,7 +40,7 @@
           </a>
         </h2>
         <p class="text-sm text-gray-500">
-          {{ discount.percentage ? discount.percentage + '% korting' : 'Korting' }} · Geüpdatet: {{ formatDate(discount.date) }}
+          {{ discount.percentage ? discount.percentage + '% korting' : 'Korting' }} · gespot: {{ formatDate(discount.date) }}
         </p>
       </div>
       <button
