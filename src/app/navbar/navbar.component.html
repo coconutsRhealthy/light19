@@ -26,9 +26,13 @@
         </div>
 
         <nav
-                class="mt-2 flex-col space-y-2 sm:mt-0 sm:flex sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0"
+                class="transition-all duration-300 ease-in-out overflow-hidden text-sm flex-col space-y-2 sm:mt-0 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0"
                 [class.flex]="menuOpen || screenIsLarge"
                 [class.hidden]="!menuOpen && !screenIsLarge"
+                [class.opacity-0]="!menuOpen && !screenIsLarge"
+                [class.opacity-100]="menuOpen || screenIsLarge"
+                [class.translate-y-2]="menuOpen && !screenIsLarge"
+                [class.-translate-y-2]="!menuOpen && !screenIsLarge"
         >
             <a
                     routerLink="/"
