@@ -16,4 +16,14 @@ export class NavbarComponent {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
+
+  closeMenuOnNavigate() {
+    if (window.innerWidth < 640) {
+      this.menuOpen = false;
+    }
+  }
+
+  get screenIsLarge(): boolean {
+    return window.innerWidth >= 640;
+  }
 }

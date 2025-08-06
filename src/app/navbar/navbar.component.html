@@ -1,38 +1,71 @@
 <header class="bg-pink-100 border-b border-pink-200">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-        <a class="flex items-center space-x-2" href="">
-            <img src="/avatar.jpeg" alt="logo" class="w-11 h-11 rounded-full" />
-            <span class="font-semibold text-xl">Diski</span>
-        </a>
+    <div class="max-w-5xl mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <a class="flex items-center space-x-2" href="">
+                <img src="/avatar.jpeg" alt="logo" class="w-11 h-11 rounded-full" />
+                <span class="font-semibold text-xl">Diski</span>
+            </a>
 
-        <button
-                class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
-                (click)="toggleMenu()"
-                aria-label="Toggle menu"
-        >
-            @if (!menuOpen) {
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-                     stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <path d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            } @else {
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-                     stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <path d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            }
-        </button>
+            <button
+                    class="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+                    (click)="toggleMenu()"
+                    aria-label="Toggle menu"
+            >
+                @if (!menuOpen) {
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                } @else {
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                }
+            </button>
+        </div>
 
         <nav
-                class="text-sm flex-col sm:flex-row sm:flex sm:space-x-4 sm:space-y-0"
-                [class.flex]="menuOpen"
-                [class.hidden]="!menuOpen"
+                class="mt-2 flex-col space-y-2 sm:mt-0 sm:flex sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0"
+                [class.flex]="menuOpen || screenIsLarge"
+                [class.hidden]="!menuOpen && !screenIsLarge"
         >
-            <a routerLink="/" class="hover:underline block py-2 sm:inline" [routerLinkActive]="['font-semibold']" [routerLinkActiveOptions]="{ exact: true }" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'});">Kortingscodes</a>
-            <a routerLink="/winkels" class="hover:underline block py-2 sm:inline" [routerLinkActive]="['font-semibold']" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">Shops</a>
-            <a routerLink="/prikbord" class="hover:underline block py-2 sm:inline" [routerLinkActive]="['font-semibold']" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">Prikbord</a>
-            <a routerLink="/wieheeftsale" class="hover:underline block py-2 sm:inline" [routerLinkActive]="['font-semibold']" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">Wie heeft sale</a>
-            <a routerLink="/contact" class="hover:underline block py-2 sm:inline" [routerLinkActive]="['font-semibold']" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">Contact</a>
+            <a
+                    routerLink="/"
+                    class="hover:underline block py-2 sm:inline"
+                    [routerLinkActive]="['font-semibold']"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    (click)="closeMenuOnNavigate()"
+            >Kortingscodes</a
+            >
+            <a
+                    routerLink="/winkels"
+                    class="hover:underline block py-2 sm:inline"
+                    [routerLinkActive]="['font-semibold']"
+                    (click)="closeMenuOnNavigate()"
+            >Shops</a
+            >
+            <a
+                    routerLink="/prikbord"
+                    class="hover:underline block py-2 sm:inline"
+                    [routerLinkActive]="['font-semibold']"
+                    (click)="closeMenuOnNavigate()"
+            >Prikbord</a
+            >
+            <a
+                    routerLink="/wieheeftsale"
+                    class="hover:underline block py-2 sm:inline"
+                    [routerLinkActive]="['font-semibold']"
+                    (click)="closeMenuOnNavigate()"
+            >Wie heeft sale</a
+            >
+            <a
+                    routerLink="/contact"
+                    class="hover:underline block py-2 sm:inline"
+                    [routerLinkActive]="['font-semibold']"
+                    (click)="closeMenuOnNavigate()"
+            >Contact</a
+            >
         </nav>
     </div>
 </header>
