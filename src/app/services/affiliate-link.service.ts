@@ -84,10 +84,12 @@ export class AffiliateLinkService {
     'tefal': 'https://tidd.ly/44tjrJB',
     'tennis-point.nl': 'https://tidd.ly/4kB6hPn',
     'lampenlicht.nl': 'https://tidd.ly/3Tlo5m2',
-    'shein': 'https://tidd.ly/4i3O8YM',
     'earkings.nl': 'https://tidd.ly/3UjR75T',
     'large.nl': 'https://tidd.ly/3TiNQ6E',
     'cashbackxl': 'https://www.cashbackxl.nl?share=wouter-c9c3bf',
+    'dyson': 'https://tidd.ly/4dloiic',
+    'coolblue': 'https://tidd.ly/3GSohGZ',
+    'douglas': 'https://tidd.ly/4ldZ0VD',
   };
 
   constructor() { }
