@@ -90,6 +90,7 @@ export class AffiliateLinkService {
     'dyson': 'https://tidd.ly/4dloiic',
     'coolblue': 'https://tidd.ly/3GSohGZ',
     'douglas': 'https://tidd.ly/4ldZ0VD',
+    'shein': 'https://www.awin1.com/cread.php?awinmid=18055&awinaffid=1870794&ued=https%3A%2F%2Fnl.shein.com%2F',
   };
 
   constructor() { }

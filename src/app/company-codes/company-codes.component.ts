@@ -11,8 +11,6 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 
-import { VitakruidCodesComponent } from '../company-codes/vitakruid/vitakruid-codes.component';
-
 declare let gtag: Function;
 
 @Component({
@@ -21,8 +19,7 @@ declare let gtag: Function;
     CommonModule,
     FooterComponent,
     NavbarComponent,
-    NotFoundComponent,
-    VitakruidCodesComponent
+    NotFoundComponent
   ],
   templateUrl: './company-codes.component.html',
   styleUrls: ['./company-codes.component.css', './../app.component.css'],
