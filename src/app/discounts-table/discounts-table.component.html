@@ -65,7 +65,7 @@
                   <td>{{ discount.percentage }}</td>
                   <td>{{ formatDate(discount.date) }}</td>
                 </tr>
-                @if ($index === 3) {
+                @if ($index === 2) {
                   <tr>
 <!--                    <td class="banner-table-cell extra-table-highlight" colspan="4"><strong>Alle zomersales overzichtelijk verzameld op één pagina: <a [routerLink]="['/wieheeftsale']" onclick="gtag('event', 'wieheeftsale', {'event_category': 'Wieheeftsale', 'event_label': 'wieheeftsale_intable_homepage'});">diski.nl/wieheeftsale</a></strong></td>-->
 <!--                    <td class="banner-table-cell extra-table-highlight" colspan="4"><strong>Vandaag (zondag 27 juli) nieuwe Zalando beauty code op <a [routerLink]="['/prikbord']" onclick="gtag('event', 'zalando_banner', {'event_category': 'ZalandoBanner', 'event_label': 'zalando_intable_homepage'});">het prikbord</a></strong></td>-->
@@ -76,6 +76,22 @@
                   </tr>
                   <tr>
                     <td class="banner-table-cell giftcard-highlight" colspan="4">€7.50 gift cards voor heel veel shops! (o.a. Zalando, My Jewellery) <a href="https://linktr.ee/wiegeeftkorting" target="_blank" onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_intable_homepage'});">KLIK</a></td>
+                    <td class="hidden-cell"></td>
+                    <td class="hidden-cell"></td>
+                    <td class="hidden-cell"></td>
+                  </tr>
+                }
+                @if ($index === 5) {
+                  <tr>
+                    <td class="visual-banner-homepage-table" colspan="4">
+                      <a target="_blank" rel="sponsored noopener noreferrer" class="banner-mobile" href="https://www.awin1.com/cread.php?s=4350277&v=50509&q=567082&r=1870794" onclick="gtag('event', 'visual_banner', {'event_category': 'VisualBanner', 'event_label': 'visual_banner_intable_homepage_smallscreen'});">
+                        <img src="https://www.awin1.com/cshow.php?s=4350277&v=50509&q=567082&r=1870794" border="0">
+                      </a>
+
+                      <a target="_blank" rel="sponsored noopener noreferrer" class="banner-desktop" href="https://www.awin1.com/cread.php?s=4489255&v=50509&q=469479&r=1870794" onclick="gtag('event', 'visual_banner', {'event_category': 'VisualBanner', 'event_label': 'visual_banner_intable_homepage_bigscreen'});">
+                        <img src="https://www.awin1.com/cshow.php?s=4489255&v=50509&q=469479&r=1870794" border="0">
+                      </a>
+                    </td>
                     <td class="hidden-cell"></td>
                     <td class="hidden-cell"></td>
                     <td class="hidden-cell"></td>

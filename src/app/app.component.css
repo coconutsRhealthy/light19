@@ -20,6 +20,27 @@ h1 {
   background-color: rgb(255, 255, 200);
 }
 
+.visual-banner-homepage-table {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.banner-mobile {
+  display: none;
+}
+.banner-desktop {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .banner-mobile {
+    display: block;
+  }
+  .banner-desktop {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
     .container-fluid,
     .col-sm-1,
