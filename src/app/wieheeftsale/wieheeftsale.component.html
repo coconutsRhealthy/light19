@@ -1,90 +1,52 @@
-<div class="container-fluid">
-  <div class="content">
-    <app-navbar></app-navbar>
-    <h1>Webshops met lopende sales en aanbiedingen</h1>
-
-    <div class="row">
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4">
-        <div class="social-banner alert alert-success" role="alert">
-          Volg <a href="https://www.instagram.com/wieheeftsale/" onclick="gtag('event', 'insta_whs', {'event_category': 'Social', 'event_label': 'insta_whs_top'});">&#64;wieheeftsale</a> op insta voor updates
-        </div>
-      </div>
-      <div class="col-sm-4"></div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
-        <div class="mb-3 table-search-input">
-          <div class="input-wrapper">
-            <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Zoek op webshop..."
-                    [(ngModel)]="searchTerm"
-                    (input)="onSearch()"
-            />
-            @if (searchTerm) {
-              <button
-                      type="button"
-                      class="btn-close"
-                      (click)="searchTerm = ''; onSearch()"
-                      aria-label="Clear"
-              >&times;</button>
-            }
-          </div>
-        </div>
-        <div class="table-responsive">
-          <table class="table table-striped table-hover table-bordered">
-            <thead class="thead-dark">
-            <tr>
-              <th>
-                Korting bij
-                <button class="btn btn-sm btn-link sort-button" (click)="sortByCompany()" title="Sort by company">▲▼</button>
-              </th>
-              <th>Link</th>
-            </tr>
-            </thead>
-            <tbody>
-              @for (whsEntry of paginatedWhsEntries; track whsEntry) {
-                <tr>
-                  <td>{{ whsEntry.company }}</td>
-                  <td>
-                    <button
-                            class="diski-table-button btn btn-outline-secondary"
-                            (click)="openUrlInNewTab(whsEntry.url); sendEventToGa('WieHeeftSalePagina', whsEntry.company)"
-                    >
-                      naar de sale
-                    </button>
-                  </td>
-                </tr>
-              }
-            </tbody>
-          </table>
-
-          <div class="pagination-container">
-            <button
-                    class="btn btn-primary btn-sm"
-                    (click)="prevPage()"
-                    [disabled]="page === 1"
-            >
-              Vorige
-            </button>
-            <span>Pagina {{ page }} van {{ totalPages }}</span>
-            <button
-                    class="btn btn-primary btn-sm"
-                    (click)="nextPage()"
-                    [disabled]="page === totalPages"
-            >
-              Volgende
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-1"></div>
-    </div>
+<div class="container my-4">
+  <!-- Search -->
+  <div class="form-group">
+    <input
+            type="text"
+            class="form-control"
+            placeholder="Zoek op bedrijf..."
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+    />
   </div>
 
-  <app-footer></app-footer>
+  <!-- Cards grid -->
+  <div class="row">
+    @for (entry of filteredWieheeftsaleData; track entry) {
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm d-flex flex-column">
+
+        <!-- Card body (top: company + date + button) -->
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title mb-1">{{ entry.company }}</h5>
+          <p class="card-text mb-2">
+            <small class="text-muted">Datum: {{ entry.date }}</small>
+          </p>
+          <a
+                  class="btn btn-primary btn-sm mb-2"
+                  (click)="openUrlInNewTab(entry)"
+          >Bekijk aanbieding</a
+          >
+        </div>
+
+        <!-- Square image (fills card width, no padding) -->
+        <div
+                class="w-100 bg-light"
+                style="aspect-ratio: 1 / 1; overflow: hidden; margin: 0;"
+        >
+          <img
+                  [src]="entry.img"
+                  [alt]="entry.company"
+                  style="width: 100%; height: 100%; object-fit: contain; display: block;"
+          />
+        </div>
+
+      </div>
+    </div>
+    } @empty {
+    <div class="col-12">
+      <p class="text-muted text-center mt-4">Geen resultaten gevonden.</p>
+    </div>
+    }
+  </div>
 </div>

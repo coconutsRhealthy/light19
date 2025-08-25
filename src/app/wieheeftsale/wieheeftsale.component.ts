@@ -3,19 +3,14 @@ import { FormsModule } from '@angular/forms';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-
+import { HttpClient } from '@angular/common/http';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 
-declare global {
-  interface Window {
-    sendCopyCodeToGa: (element_id_index: number) => void;
-  }
-}
-
 interface WhsEntry {
-  company: string;
   url: string;
+  img: string;
+  date: string;
+  company: string;
 }
 
 @Component({
@@ -28,11 +23,6 @@ export class WieheeftsaleComponent implements OnInit {
   wieheeftsaleData: WhsEntry[] = [];
   filteredWieheeftsaleData: WhsEntry[] = [];
   searchTerm: string = '';
-  page: number = 1;
-  itemsPerPage: number = 50;
-  sortByCompanyAscending = false;
-  sortByDateAscending = false;
-  sendCopyCodeToGa = window.sendCopyCodeToGa;
 
   constructor(private meta: MetaService, private http: HttpClient, private analyticsEventService: AnalyticsEventService) {
     var monthYear = this.meta.getDateString();
@@ -45,17 +35,20 @@ export class WieheeftsaleComponent implements OnInit {
   }
 
   readDataFromSheet() {
-    const url = 'https://docs.google.com/spreadsheets/d/1giW6eqsJZ2w6DO-8f3oiZYaQ4HN3tt2pdS5Lt0XkYJ0/gviz/tq?tqx=out:json';
+    //const url = 'https://docs.google.com/spreadsheets/d/1giW6eqsJZ2w6DO-8f3oiZYaQ4HN3tt2pdS5Lt0XkYJ0/gviz/tq?tqx=out:json';
+    const url = 'https://docs.google.com/spreadsheets/d/1ci6w8mhRf8HeMe740zsjpYWwenaFE5n5w1-xIiwa7xA/gviz/tq?tqx=out:json&sheet=Sheet5';
 
-    this.http.get(url, { responseType: 'text' }).subscribe(response => {
+    this.http.get(url, { responseType: 'text' }).subscribe((response) => {
       const json = JSON.parse(response.replace(/^[^\(]*\(/, '').replace(/\);$/, ''));
       const table = json.table;
 
       this.wieheeftsaleData = table.rows.slice(1).map((row: any) => {
         const cells = row.c.map((cell: any) => cell?.v ?? '');
         return {
-          company: cells[0],
-          url: cells[1]
+          url: cells[0],
+          img: cells[1],
+          date: cells[2],
+          company: cells[3]
         } as WhsEntry;
       });
       this.filteredWieheeftsaleData = this.wieheeftsaleData;
@@ -63,44 +56,13 @@ export class WieheeftsaleComponent implements OnInit {
   }
 
   onSearch() {
-    this.filteredWieheeftsaleData = this.wieheeftsaleData.filter((whsEntry) =>
-      whsEntry.company.toLowerCase().includes(this.searchTerm.toLowerCase())
+    this.filteredWieheeftsaleData = this.wieheeftsaleData.filter((entry) =>
+      entry.company.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
-    this.page = 1;
   }
 
-  get paginatedWhsEntries(): WhsEntry[] {
-    const start = (this.page - 1) * this.itemsPerPage;
-    const end = start + this.itemsPerPage;
-    return this.filteredWieheeftsaleData.slice(start, end);
-  }
-
-  nextPage() {
-    if (this.page < this.totalPages) this.page++;
-  }
-
-  prevPage() {
-    if (this.page > 1) this.page--;
-  }
-
-  get totalPages(): number {
-    return Math.ceil(this.filteredWieheeftsaleData.length / this.itemsPerPage);
-  }
-
-  sortByCompany() {
-    this.sortByCompanyAscending = !this.sortByCompanyAscending;
-    this.filteredWieheeftsaleData.sort((a, b) => {
-      const comparison = a.company.localeCompare(b.company);
-      return this.sortByCompanyAscending ? comparison : -comparison;
-    });
-  }
-
-  openUrlInNewTab(url: string) {
-    window.open(url, '_blank');
-  }
-
-  sendEventToGa(eventName: string, eventLabel: string): void {
-    var eventLabelToUse = "whs_company_click_" + eventLabel.toLowerCase();
-    this.analyticsEventService.sendEventToGa(eventName, eventLabelToUse);
+  openUrlInNewTab(entry: WhsEntry) {
+    window.open(entry.url, '_blank');
+    this.analyticsEventService.sendEventToGa('click', `whs_company_click_${entry.company.toLowerCase()}`);
   }
 }
