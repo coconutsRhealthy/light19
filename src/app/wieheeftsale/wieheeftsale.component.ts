@@ -7,10 +7,10 @@ import { HttpClient } from '@angular/common/http';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 
 interface WhsEntry {
-  url: string;
-  img: string;
-  date: string;
   company: string;
+  date: string;
+  img: string;
+  url: string;
 }
 
 @Component({
@@ -45,10 +45,10 @@ export class WieheeftsaleComponent implements OnInit {
       this.wieheeftsaleData = table.rows.slice(1).map((row: any) => {
         const cells = row.c.map((cell: any) => cell?.v ?? '');
         return {
-          url: cells[0],
-          img: cells[1],
-          date: cells[2],
-          company: cells[3]
+          company: cells[0],
+          date: cells[1],
+          img: cells[2],
+          url: cells[3]
         } as WhsEntry;
       });
       this.filteredWieheeftsaleData = this.wieheeftsaleData;

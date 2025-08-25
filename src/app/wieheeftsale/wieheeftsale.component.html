@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container my-4">
   <!-- Search -->
   <div class="form-group">
@@ -29,17 +30,18 @@
           >
         </div>
 
-        <!-- Square image (fills card width, no padding) -->
-        <div
+        <!-- Square image (fills card width, no padding, clickable) -->
+        <a
+                (click)="openUrlInNewTab(entry)"
                 class="w-100 bg-light"
-                style="aspect-ratio: 1 / 1; overflow: hidden; margin: 0;"
+                style="aspect-ratio: 1 / 1; overflow: hidden; margin: 0; cursor: pointer; text-decoration: none;"
         >
           <img
                   [src]="entry.img"
                   [alt]="entry.company"
                   style="width: 100%; height: 100%; object-fit: contain; display: block;"
           />
-        </div>
+        </a>
 
       </div>
     </div>
@@ -50,3 +52,4 @@
     }
   </div>
 </div>
+<app-footer></app-footer>
