@@ -24,6 +24,11 @@ interface Discount {
   index: number;
 }
 
+interface Banner {
+  href: string;
+  imgSrc: string;
+}
+
 @Component({
   selector: 'app-discounts-table',
   imports: [FooterComponent, NavbarComponent, FormsModule, ModalComponent, RouterModule],
@@ -46,6 +51,55 @@ export class DiscountsTableComponent implements OnInit {
   sortByDateAscending = false;
   sendCopyCodeToGa = window.sendCopyCodeToGa;
 
+  bannerMobile?: Banner;
+  bannerDesktop?: Banner;
+
+  private mobileBanners: Banner[] = [
+    {
+      href: 'https://www.awin1.com/cread.php?s=4350277&v=50509&q=567082&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=4350277&v=50509&q=567082&r=1870794'
+    },
+    {
+      href: 'https://www.awin1.com/cread.php?s=3609838&v=8391&q=487802&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=3609838&v=8391&q=487802&r=1870794'
+    },
+    {
+      href: 'https://www.awin1.com/cread.php?s=4488641&v=102995&q=505249&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=4488641&v=102995&q=505249&r=1870794'
+    },
+    {
+      href: 'https://www.awin1.com/cread.php?s=4492706&v=25897&q=579542&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=4492706&v=25897&q=579542&r=1870794'
+    },
+    {
+      href: 'https://www.awin1.com/cread.php?s=4488599&v=77016&q=495582&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=4488599&v=77016&q=495582&r=1870794'
+    },
+  ];
+
+  private desktopBanners: Banner[] = [
+    {
+      href: 'https://www.awin1.com/cread.php?s=4489255&v=50509&q=469479&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=4489255&v=50509&q=469479&r=1870794'
+    },
+    {
+      href: 'https://www.awin1.com/cread.php?s=3609840&v=8391&q=487802&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=3609840&v=8391&q=487802&r=1870794'
+    },
+    {
+      href: 'https://www.awin1.com/cread.php?s=4487546&v=47183&q=460552&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=4487546&v=47183&q=460552&r=1870794'
+    },
+    {
+      href: 'https://www.awin1.com/cread.php?s=4492709&v=25897&q=579542&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=4492709&v=25897&q=579542&r=1870794'
+    },
+    {
+      href: 'https://www.awin1.com/cread.php?s=4488603&v=77016&q=495582&r=1870794',
+      imgSrc: 'https://www.awin1.com/cshow.php?s=4488603&v=77016&q=495582&r=1870794'
+    },
+  ];
+
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
                 private meta: MetaService, private datePipe: DatePipe) {
     var monthYear = this.meta.getDateString();
@@ -54,6 +108,8 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.bannerMobile = this.getRandomBanner(this.mobileBanners);
+    this.bannerDesktop = this.getRandomBanner(this.desktopBanners);
     this.discountsService.getDiscounts().subscribe((data) => {
       this.discounts = data.map((line, index) => {
         const [company, discountCode, percentage, , date] = line.split(', ');
@@ -172,5 +228,10 @@ export class DiscountsTableComponent implements OnInit {
     var url = 'https://www.diski.nl?i=' + encodeURIComponent(codeTableIndex)
     window.open(url, '_blank');
     location.href = affiliateLink;
+  }
+
+  private getRandomBanner(banners: Banner[]): Banner {
+    const index = Math.floor(Math.random() * banners.length);
+    return banners[index];
   }
 }

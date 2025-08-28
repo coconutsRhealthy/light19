@@ -18,7 +18,7 @@ export class AffiliateLinkService {
     'samsung': 'https://tidd.ly/42Jik72',
     'yesstyle': 'https://www.yesstyle.com/en/home.html?rco=YESGIRL23&utm_term=YESGIRL23&utm_medium=Influencer&utm_source=dynamic&mcg=influencer',
     'asos': 'https://www.stylink.it/lg3mpUa423',
-    'stevemaddeneu': 'https://www.stylink.it/AdZbXh7gYM',
+    'stevemadden': 'https://www.stylink.it/AdZbXh7gYM',
     'lookfantastic': 'https://tidd.ly/4iykJXb',
     'hm': 'https://www.stylink.it/jnNwDTowPY',
     'h&m': 'https://www.stylink.it/jnNwDTowPY',

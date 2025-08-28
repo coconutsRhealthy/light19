@@ -23,11 +23,13 @@ export class WieheeftsaleComponent implements OnInit {
   wieheeftsaleData: WhsEntry[] = [];
   filteredWieheeftsaleData: WhsEntry[] = [];
   searchTerm: string = '';
+  h1Title: string = '';
 
   constructor(private meta: MetaService, private http: HttpClient, private analyticsEventService: AnalyticsEventService) {
     var monthYear = this.meta.getDateString();
     this.meta.updateTitle("Overzicht van actuele sales en aanbiedingen in " + monthYear + " | Diski")
     this.meta.updateMetaInfo("Bekijk de nieuwste sales en aanbiedingen van populaire webshops. Bespaar eenvoudig online in " + monthYear + " via diski.nl.", "diski.nl", "kortingscode, korting, sale, aanbiedingen");
+    this.h1Title = "Nieuwe aanbiedingen & kortingen – " + monthYear;
   }
 
   ngOnInit() {
@@ -35,8 +37,7 @@ export class WieheeftsaleComponent implements OnInit {
   }
 
   readDataFromSheet() {
-    //const url = 'https://docs.google.com/spreadsheets/d/1giW6eqsJZ2w6DO-8f3oiZYaQ4HN3tt2pdS5Lt0XkYJ0/gviz/tq?tqx=out:json';
-    const url = 'https://docs.google.com/spreadsheets/d/1ci6w8mhRf8HeMe740zsjpYWwenaFE5n5w1-xIiwa7xA/gviz/tq?tqx=out:json&sheet=Sheet5';
+    const url = 'https://docs.google.com/spreadsheets/d/1giW6eqsJZ2w6DO-8f3oiZYaQ4HN3tt2pdS5Lt0XkYJ0/gviz/tq?tqx=out:json&sheet=Banners';
 
     this.http.get(url, { responseType: 'text' }).subscribe((response) => {
       const json = JSON.parse(response.replace(/^[^\(]*\(/, '').replace(/\);$/, ''));
