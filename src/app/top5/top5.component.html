@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container my-4">
     <h1 class="text-center mb-3">Top 5 Shops</h1>
-    <p class="text-center text-muted mb-5">
+    <p class="text-center text-muted top5-subtitle">
         De top shops van {{ currentMonth }} volgens diski.nl
     </p>
 
@@ -17,7 +17,8 @@
                         {{ categoriesOpen[$index] ? '▲' : '▼' }}
                     </span>
                 </div>
-                <ul class="list-group list-group-flush" [class.d-none]="!categoriesOpen[$index]">
+                <ul class="list-group list-group-flush collapsible"
+                    [class.open]="categoriesOpen[$index]">
                     @for (shop of category.shops; track $index) {
                     <li class="list-group-item d-flex align-items-center">
                         <span class="badge badge-custom mr-3">{{ $index + 1 }}</span>

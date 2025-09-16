@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { MetaService } from '../services/meta.service';
 
 interface TopShop {
   name: string;
@@ -56,12 +57,63 @@ export class Top5Component {
         { name: 'Adidas', url: 'https://www.adidas.com' },
         { name: 'Puma', url: 'https://www.puma.com' }
       ]
+    },
+    {
+      title: 'Bespaartips',
+      shops: [
+        { name: 'Secret Sales', url: '...' },
+        { name: 'Etsy', url: '...' },
+        { name: 'Eurojackpot', url: '...' },
+        { name: 'Lucky Day', url: '...' },
+        { name: 'CashbackXL', url: '...' }
+      ]
+    },
+    {
+      title: 'Deals',
+      shops: [
+        { name: 'Otrium', url: '...' },
+        { name: 'Action', url: '...' },
+        { name: 'Lounge by Zalando', url: '...' },
+        { name: 'Aliexpress', url: '...' },
+        { name: 'Temu', url: '...' }
+      ]
+    },
+    {
+      title: 'Electronica',
+      shops: [
+        { name: 'Dyson', url: '...' },
+        { name: 'Shark', url: '...' },
+        { name: 'Samsung', url: '...' },
+        { name: 'Coolblue', url: '...' },
+        { name: 'Amazon', url: '...' }
+      ]
+    },
+    {
+      title: 'Huis & Tuin',
+      shops: [
+        { name: 'VidaXL', url: '...' },
+        { name: '123jaloezie', url: '...' },
+        { name: 'Lampenlicht', url: '...' },
+        { name: 'Tuinmeubelshop', url: '...' },
+        { name: 'NADUVI', url: '...' }
+      ]
+    },
+    {
+      title: 'Koken',
+      shops: [
+        { name: 'KitchenAid', url: '...' },
+        { name: 'Ninja', url: '...' },
+        { name: 'Tefal', url: '...' },
+        { name: 'Picnic', url: '...' },
+        { name: 'HelloFresh', url: '...' }
+      ]
     }
   ];
 
   categoriesOpen: boolean[] = [];
 
-  constructor() {
+  constructor(private meta: MetaService) {
+    this.meta.setNoIndex()
     const today = new Date();
     const monthName = today.toLocaleString('nl-NL', { month: 'long' });
     const year = today.getFullYear();
