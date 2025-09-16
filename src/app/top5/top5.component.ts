@@ -11,7 +11,7 @@ interface TopShop {
   selector: 'app-top5',
   imports: [FooterComponent, NavbarComponent],
   templateUrl: './top5.component.html',
-  styleUrls: ['./top5.component.css', './../app.component.css']
+  styleUrls: ['./top5.component.css']
 })
 export class Top5Component {
   currentMonth: string;
@@ -59,10 +59,18 @@ export class Top5Component {
     }
   ];
 
+  categoriesOpen: boolean[] = [];
+
   constructor() {
     const today = new Date();
     const monthName = today.toLocaleString('nl-NL', { month: 'long' });
     const year = today.getFullYear();
     this.currentMonth = `${monthName} ${year}`;
+
+    this.categoriesOpen = this.categories.map(() => false);
+  }
+
+  toggleCategory(index: number) {
+    this.categoriesOpen[index] = !this.categoriesOpen[index];
   }
 }
