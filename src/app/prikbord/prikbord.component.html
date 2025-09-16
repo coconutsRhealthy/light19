@@ -7,8 +7,19 @@
             <button class="btn btn-success mb-3" (click)="showModal(); sendEventToGa('Prikbord', 'voeg_code_toe')">Voeg kortingscode toe</button>
         </div>
 
-        <div class="social-banner alert alert-success" role="alert">
-            €7.50 gift cards voor heel veel shops! (o.a. Zalando) <a href="https://linktr.ee/wiegeeftkorting" target="_blank" onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_prikbord_banner'});">KLIK</a>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="social-banner alert alert-success" role="alert">
+                    <div>
+                        €7.50 gift cards voor heel veel shops! (o.a. Zalando) <a href="https://linktr.ee/wiegeeftkorting" target="_blank" onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_prikbord_banner'});">KLIK</a>
+                    </div>
+                    <div>
+                        €100 <a href="https://temu.to/m/u0p32ew176i" target="_blank" onclick="gtag('event', 'temu', {'event_category': 'Temu', 'event_label': 'temu_prikbord_banner'});">shoptegoed</a> en 30% korting bij Temu
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
         </div>
 
         <div class="row">
@@ -46,8 +57,12 @@
                                             <span>{{ item.percentage }}</span>
                                         </p>
                                     </div>
-                                    <div class="card-footer text-muted text-right small">
-                                        Toegevoegd door <strong>{{ item.added_by }}</strong> op {{ formatDate(item.date) }}
+                                    <div class="card-footer text-muted text-right small" [class.valuable-contributor]="item.isValuable">
+                                        Toegevoegd door <strong>{{ item.added_by }}</strong>
+                                        @if (item.isValuable) {
+                                            <img src="/blue_checkmark.png" class="ml-1 rounded-circle" style="width: 16px; height: 16px;"/>
+                                        }
+                                        op {{ formatDate(item.date) }}
                                     </div>
                                 </div>
                             </div>

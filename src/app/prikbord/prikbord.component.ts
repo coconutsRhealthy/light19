@@ -23,6 +23,7 @@ interface PrikbordEntry {
   percentage: string;
   date: string;
   added_by: string;
+  isValuable: boolean;
 }
 
 @Component({
@@ -74,6 +75,7 @@ export class PrikbordComponent implements OnInit {
           percentage: percentage,
           date,
           added_by: addedBy,
+          isValuable: this.isValuableContributor(addedBy)
         } as PrikbordEntry;
       }).reverse();
       this.filteredprikbordData = [...this.prikbordData];
@@ -129,7 +131,8 @@ export class PrikbordComponent implements OnInit {
       code: newCode.code,
       percentage: newCode.percentage,
       date: new Date().toLocaleString('sv-SE'),
-      added_by: newCode.name.trim() === '' ? 'anoniem' : newCode.name
+      added_by: newCode.name.trim() === '' ? 'anoniem' : newCode.name,
+      isValuable: this.isValuableContributor(newCode.name)
     });
 
     this.filteredprikbordData = [...this.prikbordData];
@@ -200,5 +203,12 @@ export class PrikbordComponent implements OnInit {
       }
     }
     return value;
+  }
+
+  isValuableContributor(name: string): boolean {
+    const valuableContributors = ['diski', 'claudia'];
+    return valuableContributors.some(
+      contributor => contributor.toLowerCase() === name.toLowerCase()
+    );
   }
 }

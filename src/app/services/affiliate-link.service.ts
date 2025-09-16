@@ -46,7 +46,6 @@ export class AffiliateLinkService {
     'stradivarius': 'https://tidd.ly/3YTQORZ',
     'greetz.nl': 'https://tidd.ly/42NSCOV',
     'albelli': 'https://tidd.ly/4ms3olS',
-    'esn': 'https://tidd.ly/3F1sqHD',
     'otrium': 'https://tidd.ly/3FpcLSm',
     'zelesta.nl': 'https://tidd.ly/4dyxrUU',
     'smartphoto.nl': 'https://www.smartphoto.nl/foto_tt?tt=4903_12_448474_&r=%2F',
@@ -119,6 +118,10 @@ export class AffiliateLinkService {
     '50plusmobiel': 'https://tidd.ly/3TNztXZ',
     'lucovitaal': 'https://tidd.ly/4l8jxfd',
     'guess': 'https://tidd.ly/3I55PuV',
+    'happy-size.nl': 'https://tidd.ly/3VAKX1Y',
+    'koreanskincare': 'https://tidd.ly/4peUaus',
+    'wildrefill': 'https://tidd.ly/4mUIifD',
+    'tenways': 'https://tidd.ly/42mKnsj',
   };
 
   constructor() { }
