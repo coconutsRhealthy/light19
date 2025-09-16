@@ -1,0 +1,68 @@
+import { Component } from '@angular/core';
+import { FooterComponent } from '../footer/footer.component';
+import { NavbarComponent } from '../navbar/navbar.component';
+
+interface TopShop {
+  name: string;
+  url: string;
+}
+
+@Component({
+  selector: 'app-top5',
+  imports: [FooterComponent, NavbarComponent],
+  templateUrl: './top5.component.html',
+  styleUrls: ['./top5.component.css', './../app.component.css']
+})
+export class Top5Component {
+  currentMonth: string;
+
+  categories: { title: string; shops: TopShop[] }[] = [
+    {
+      title: 'Beauty',
+      shops: [
+        { name: 'Douglas', url: 'https://www.douglas.nl' },
+        { name: 'The Body Shop', url: 'https://www.thebodyshop.com' },
+        { name: 'ICI Paris XL', url: 'https://www.iciparisxl.nl' },
+        { name: 'Sephora', url: 'https://www.sephora.com' },
+        { name: 'Rituals', url: 'https://www.rituals.com' }
+      ]
+    },
+    {
+      title: 'Fashion',
+      shops: [
+        { name: 'Zalando', url: 'https://www.zalando.nl' },
+        { name: 'ASOS', url: 'https://www.asos.com' },
+        { name: 'H&M', url: 'https://www2.hm.com' },
+        { name: 'Nike', url: 'https://www.nike.com' },
+        { name: 'Adidas', url: 'https://www.adidas.com' }
+      ]
+    },
+    {
+      title: 'Lifestyle',
+      shops: [
+        { name: 'Bol.com', url: 'https://www.bol.com' },
+        { name: 'Coolblue', url: 'https://www.coolblue.nl' },
+        { name: 'FonQ', url: 'https://www.fonq.nl' },
+        { name: 'HEMA', url: 'https://www.hema.nl' },
+        { name: 'Blokker', url: 'https://www.blokker.nl' }
+      ]
+    },
+    {
+      title: 'Sport',
+      shops: [
+        { name: 'Decathlon', url: 'https://www.decathlon.nl' },
+        { name: 'Intersport', url: 'https://www.intersport.nl' },
+        { name: 'Nike', url: 'https://www.nike.com' },
+        { name: 'Adidas', url: 'https://www.adidas.com' },
+        { name: 'Puma', url: 'https://www.puma.com' }
+      ]
+    }
+  ];
+
+  constructor() {
+    const today = new Date();
+    const monthName = today.toLocaleString('nl-NL', { month: 'long' });
+    const year = today.getFullYear();
+    this.currentMonth = `${monthName} ${year}`;
+  }
+}

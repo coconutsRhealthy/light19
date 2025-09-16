@@ -22,6 +22,10 @@ export const routes: Routes = [
         loadComponent: () => import('./prikbord/prikbord.component').then(m => m.PrikbordComponent)
     },
     {
+        path: 'top5',
+        loadComponent: () => import('./top5/top5.component').then(m => m.Top5Component)
+    },
+    {
         path: ':company',
         loadComponent: () => import('./company-codes/company-codes.component').then(m => m.CompanyCodesComponent)
     },

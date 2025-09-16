@@ -1,0 +1,51 @@
+.card {
+  border-radius: 0.75rem;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  font-size: 1.2rem;
+}
+
+.list-group-item a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.list-group-item a:hover {
+  text-decoration: underline;
+}
+
+/* compactere badge */
+.badge-custom {
+  background-color: rgb(238, 205, 210);
+  color: #333;
+  font-weight: 600;
+  border-radius: 50%;
+  font-size: 0.85rem;       /* kleiner nummer */
+  padding: 0.4rem 0.7rem;   /* compacter cirkeltje */
+  min-width: 1.8rem;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* shopnaam iets groter en vetter */
+.shop-link {
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.shop-link:hover {
+  text-decoration: underline;
+}
+
+/* extra marge tussen nummer en shopnaam */
+.list-group-item .badge-custom {
+  margin-right: 0.75rem; /* meer ruimte dan standaard mr-2 */
+}
+
+
