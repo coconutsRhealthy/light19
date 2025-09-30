@@ -123,3 +123,12 @@
 .extra-table-highlight {
   background-color: rgb(255, 250, 150);
 }
+
+.promo-header {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 550;
+  color: #000;
+}

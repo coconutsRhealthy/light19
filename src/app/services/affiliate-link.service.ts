@@ -122,6 +122,8 @@ export class AffiliateLinkService {
     'koreanskincare': 'https://tidd.ly/4peUaus',
     'wildrefill': 'https://tidd.ly/4mUIifD',
     'tenways': 'https://tidd.ly/42mKnsj',
+    'olivida.nl': 'https://olivida.nl/diski',
+    'bydreamlash.nl': 'https://bydreamlash.nl?sca_ref=9354637.Pe3nBHQSbeg8',
   };
 
   constructor() { }
