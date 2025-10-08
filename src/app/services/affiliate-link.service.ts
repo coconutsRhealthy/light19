@@ -473,6 +473,10 @@ export class AffiliateLinkService {
     'bydreamlash.nl': {
         url: 'https://bydreamlash.nl?sca_ref=9354637.Pe3nBHQSbeg8',
         dummyCode: 'EVA15'
+    },
+    'heine': {
+        url: 'https://tidd.ly/46RrzTN',
+        dummyCode: '45569'
     }
   };
 

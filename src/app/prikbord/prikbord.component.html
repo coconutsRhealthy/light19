@@ -52,7 +52,12 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{ item.webshop }}</h5>
                                         <p class="card-text">
-                                            <strong>Code:</strong> {{ item.code }}<br>
+                                            <strong>Code: </strong>
+                                                @if (item.code.startsWith('http')) {
+                                                    <a [href]="item.code" target="_blank" onclick="gtag('event', 'prikbord_linkje', {'event_category': 'PrikbordLinkje', 'event_label': 'prikbord_linkje'});">linkje</a>
+                                                } @else {
+                                                    {{ item.code }}
+                                                }<br>
                                             <strong>Korting: </strong>
                                             <span>{{ item.percentage }}</span>
                                         </p>
