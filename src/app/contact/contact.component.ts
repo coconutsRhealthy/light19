@@ -7,7 +7,7 @@ import { MetaService } from '../services/meta.service';
   selector: 'app-contact',
   imports: [FooterComponent, NavbarComponent],
   templateUrl: './contact.component.html',
-  styleUrls: ['./../app.component.css']
+  styleUrls: ['./../app.component.css', './../app-tailwind.component.css']
 })
 export class ContactComponent implements OnInit {
 
