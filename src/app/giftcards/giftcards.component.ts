@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DiscountsService } from '../services/discounts.service';
+import { AnalyticsEventService } from '../services/analytics-event.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { MetaService } from '../services/meta.service';
@@ -25,7 +26,7 @@ export class GiftcardsComponent implements OnInit {
   loading = true;
   sortMode: 'popular' | 'alphabetical' = 'popular';
 
-  constructor(private discountsService: DiscountsService, private meta: MetaService) {
+  constructor(private discountsService: DiscountsService, private analyticsEventService: AnalyticsEventService, private meta: MetaService) {
     this.meta.updateTitle("€7,50 Giftcards voor Populaire Webshops | Diski.nl");
     this.meta.updateMetaInfo(
       "Ontvang direct €7,50 giftcards voor jouw favoriete webshops via Diski.nl. Bekijk de volledige lijst van populaire shops en claim je cadeaubon eenvoudig online!",
@@ -67,5 +68,10 @@ export class GiftcardsComponent implements OnInit {
     } else {
       this.discounts = [...this.originalOrder];
     }
+  }
+
+  sendEventToGa(eventName: string, eventLabel: string): void {
+    var eventLabelToUse = "giftcards_page_" + eventLabel.toLowerCase();
+    this.analyticsEventService.sendEventToGa(eventName, eventLabelToUse);
   }
 }
