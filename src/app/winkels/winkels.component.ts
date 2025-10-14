@@ -9,7 +9,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   selector: 'app-winkels',
   imports: [RouterModule, FooterComponent, NavbarComponent],
   templateUrl: './winkels.component.html',
-  styleUrls: ['./winkels.component.css', './../app.component.css']
+  styleUrls: ['./winkels.component.css', './../app.component.css', './../app-tailwind.component.css']
 })
 export class WinkelsComponent implements OnInit {
 
@@ -45,7 +45,12 @@ export class WinkelsComponent implements OnInit {
     winkels.sort((a, b) => a.localeCompare(b));
 
     winkels.forEach((winkel) => {
-      const firstLetter = winkel.charAt(0).toUpperCase();
+      let firstLetter = winkel.charAt(0).toUpperCase();
+
+      if (/[0-9]/.test(firstLetter)) {
+        firstLetter = "0-9";
+      }
+
       const group = groupedWinkels.find((g) => g.letter === firstLetter);
 
       if (group) {
