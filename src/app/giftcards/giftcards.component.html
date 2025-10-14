@@ -1,31 +1,57 @@
 <div class="max-w-lg mx-auto mt-10 p-4">
-    <h2 class="text-2xl font-semibold mb-4 text-center">
+    <h1 class="text-3xl font-semibold text-center mb-3">
         €7,50 Giftcards voor Populaire Webshops
-    </h2>
+    </h1>
+
+    <div class="flex items-center justify-center gap-6 mb-6">
+        <label class="flex items-center gap-2 cursor-pointer">
+            <input
+                    type="radio"
+                    name="sort"
+                    value="popular"
+                    [(ngModel)]="sortMode"
+                    (change)="onSortChange('popular')"
+                    class="accent-indigo-600"
+            />
+            <span class="text-sm text-gray-700">Populair</span>
+        </label>
+
+        <label class="flex items-center gap-2 cursor-pointer">
+            <input
+                    type="radio"
+                    name="sort"
+                    value="alphabetical"
+                    [(ngModel)]="sortMode"
+                    (change)="onSortChange('alphabetical')"
+                    class="accent-indigo-600"
+            />
+            <span class="text-sm text-gray-700">Alfabetisch</span>
+        </label>
+    </div>
 
     @if (loading) {
-    <p class="text-center text-gray-500">Laden...</p>
+        <p class="text-center text-gray-500">Laden...</p>
     } @else {
-    @if (discounts.length === 0) {
-    <p class="text-center text-gray-500">Geen giftcards gevonden.</p>
-    } @else {
-    <ul class="space-y-3">
-        @for (d of discounts; track d.index) {
-            <li>
-                <a
+        @if (discounts.length === 0) {
+            <p class="text-center text-gray-500">Geen giftcards gevonden.</p>
+        } @else {
+            <ul class="space-y-3">
+                @for (d of discounts; track d.index) {
+                <li>
+                    <a
                         [href]="d.discountCode"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="flex items-center justify-between bg-white shadow-sm hover:shadow-md rounded-xl px-4 py-3 transition border border-gray-100 hover:border-indigo-300 hover:text-indigo-600"
-                >
-                    <span class="font-medium">{{ d.company }}</span>
-                    <span class="text-sm text-green-600 font-semibold">
-                    🎁 €7,50
-                  </span>
-                </a>
-            </li>
+                    >
+                        <span class="font-medium">{{ d.company }}</span>
+                        <span class="text-sm text-green-600 font-semibold">
+                            🎁 €7,50
+                        </span>
+                    </a>
+                </li>
+                }
+            </ul>
         }
-    </ul>
-    }
     }
 </div>
