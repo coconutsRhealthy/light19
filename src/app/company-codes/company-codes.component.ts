@@ -10,6 +10,7 @@ import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 
 declare let gtag: Function;
 
@@ -19,10 +20,11 @@ declare let gtag: Function;
     CommonModule,
     FooterComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RouterModule
   ],
   templateUrl: './company-codes.component.html',
-  styleUrls: ['./company-codes.component.css', './../app.component.css'],
+  styleUrls: ['./company-codes.component.css', './../app.component.css', './../app-tailwind.component.css'],
   providers: [DatePipe]
 })
 export class CompanyCodesComponent implements OnInit {
