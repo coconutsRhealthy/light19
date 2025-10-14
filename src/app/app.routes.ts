@@ -26,6 +26,10 @@ export const routes: Routes = [
         loadComponent: () => import('./top5/top5.component').then(m => m.Top5Component)
     },
     {
+        path: 'giftcards',
+        loadComponent: () => import('./giftcards/giftcards.component').then(m => m.GiftcardsComponent)
+    },
+    {
         path: ':company',
         loadComponent: () => import('./company-codes/company-codes.component').then(m => m.CompanyCodesComponent)
     },

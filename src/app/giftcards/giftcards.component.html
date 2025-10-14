@@ -1,0 +1,31 @@
+<div class="max-w-lg mx-auto mt-10 p-4">
+    <h2 class="text-2xl font-semibold mb-4 text-center">
+        €7,50 Giftcards voor Populaire Webshops
+    </h2>
+
+    @if (loading) {
+    <p class="text-center text-gray-500">Laden...</p>
+    } @else {
+    @if (discounts.length === 0) {
+    <p class="text-center text-gray-500">Geen giftcards gevonden.</p>
+    } @else {
+    <ul class="space-y-3">
+        @for (d of discounts; track d.index) {
+            <li>
+                <a
+                        [href]="d.discountCode"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center justify-between bg-white shadow-sm hover:shadow-md rounded-xl px-4 py-3 transition border border-gray-100 hover:border-indigo-300 hover:text-indigo-600"
+                >
+                    <span class="font-medium">{{ d.company }}</span>
+                    <span class="text-sm text-green-600 font-semibold">
+                    🎁 €7,50
+                  </span>
+                </a>
+            </li>
+        }
+    </ul>
+    }
+    }
+</div>
