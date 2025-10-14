@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DiscountsService } from '../services/discounts.service';
+import { FooterComponent } from '../footer/footer.component';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { MetaService } from '../services/meta.service';
 
 interface Discount {
   company: string;
@@ -12,7 +15,7 @@ interface Discount {
 
 @Component({
   selector: 'app-giftcards',
-  imports: [FormsModule],
+  imports: [FooterComponent, NavbarComponent, FormsModule],
   templateUrl: './giftcards.component.html',
   styleUrls: ['./../app.component.css', './../app-tailwind.component.css']
 })
@@ -22,7 +25,14 @@ export class GiftcardsComponent implements OnInit {
   loading = true;
   sortMode: 'popular' | 'alphabetical' = 'popular';
 
-  constructor(private discountsService: DiscountsService) {}
+  constructor(private discountsService: DiscountsService, private meta: MetaService) {
+    this.meta.updateTitle("€7,50 Giftcards voor Populaire Webshops | Diski.nl");
+    this.meta.updateMetaInfo(
+      "Ontvang direct €7,50 giftcards voor jouw favoriete webshops via Diski.nl. Bekijk de volledige lijst van populaire shops en claim je cadeaubon eenvoudig online!",
+      "diski.nl",
+      "giftcards, €7,50 giftcard, populaire webshops, cadeaubon, online shop, korting, Diski"
+    );
+  }
 
   ngOnInit() {
     this.discountsService.getDiscounts().subscribe({
