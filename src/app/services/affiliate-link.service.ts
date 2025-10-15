@@ -478,9 +478,9 @@ export class AffiliateLinkService {
         url: 'https://tidd.ly/46RrzTN',
         dummyCode: '45569'
     },
-    'v&d': {
-        url: 'https://tidd.ly/47boVs7',
-        dummyCode: 'NL25'
+    'to-be-dressed.nl': {
+        url: 'https://tidd.ly/4n9ETZL',
+        dummyCode: 'DISKI10'
     },
     'size': {
         url: 'https://tidd.ly/3J5p8F7',
@@ -493,6 +493,18 @@ export class AffiliateLinkService {
     'mysteryvoetbalbox': {
         url: '',
         dummyCode: 'MVBDISKI10%'
+    },
+    'zenhotels': {
+        url: 'https://tidd.ly/3WFvBd0',
+        dummyCode: 'ZENEUR20'
+    },
+    'grundig': {
+        url: 'https://tidd.ly/3J0QUCQ',
+        dummyCode: '15OFF'
+    },
+    'v&d': {
+        url: 'https://www.awin1.com/cread.php?awinmid=64748&awinaffid=1870794',
+        dummyCode: 'DISKI10'
     }
   };
 
