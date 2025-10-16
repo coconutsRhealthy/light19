@@ -31,7 +31,7 @@
   </div>
 
   <!-- Resultaatkaarten -->
-  <div class="tw-grid tw-gap-4">
+  <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4">
     @for (discount of paginatedDiscounts; track discount) {
     <div class="tw-bg-white tw-shadow tw-rounded-lg tw-p-4 tw-flex tw-justify-between tw-items-center hover:tw-shadow-md tw-transition">
       <div>
@@ -43,14 +43,10 @@
           </a>
         </h2>
         <p class="tw-text-sm tw-text-gray-500">
-          {{ discount.percentage ? discount.percentage + '% korting' : 'Korting' }} · gespot: {{ formatDate(discount.date) }}
+          {{ formatDate(discount.date) }}
         </p>
       </div>
-      <button
-              class="tw-bg-black tw-text-white tw-text-sm tw-px-4 tw-py-2 tw-rounded-full hover:tw-bg-gray-800"
-              (click)="affiliateModalAction(discount)">
-        Pak code
-      </button>
+      {{ discount.percentage ? discount.percentage + '%' : '' }}
     </div>
     }
   </div>
