@@ -1,67 +1,67 @@
 @if (!isLoading && discountCodes.length === 0) {
-<div class="flex justify-center items-center py-16">
+<div class="tw-flex tw-justify-center tw-items-center tw-py-16">
   <app-not-found></app-not-found>
 </div>
 }
 
 @if (!isLoading && discountCodes.length > 0) {
-<div class="flex flex-col min-h-screen bg-pink-50">
+<div class="tw-flex tw-flex-col tw-min-h-screen tw-bg-pink-50">
   <app-navbar></app-navbar>
-  <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="tw-w-full tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">
 
-    <h1 class="text-3xl md:text-4xl font-extrabold text-700 mt-8 mb-6 text-center">{{ webshopName }} kortingscode</h1>
+    <h1 class="tw-text-3xl md:tw-text-4xl tw-font-extrabold tw-text-700 tw-mt-8 tw-mb-6 tw-text-center">{{ webshopName }} kortingscode</h1>
 
     <!-- Social Banners -->
-    <div class="flex flex-col items-center space-y-3 mb-3">
+    <div class="tw-flex tw-flex-col tw-items-center tw-space-y-3 tw-mb-3">
       <!-- Kleine Info Banner -->
-      <div class="w-full md:w-1/2 max-w-4xl mx-auto mb-1 px-3 py-1.5 bg-green-100 text-pink-800 text-xs text-center font-small border border-green-200">
+      <div class="tw-w-full md:tw-w-1/2 tw-max-w-4xl tw-mx-auto mb-1 tw-px-3 tw-py-1.5 tw-bg-green-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200">
         Volg mij op
         <a href="https://www.instagram.com/wiegeeftkorting/"
            onclick="gtag('event', 'insta', {'event_category': 'Social', 'event_label': 'insta_top'});"
-           class="underline font-semibold hover:text-blue-500 text-blue-600 transition-colors">insta</a> en
+           class="tw-underline tw-font-semibold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">insta</a> en
         <a href="https://www.tiktok.com/&#64;wiegeeftkorting2"
            onclick="gtag('event', 'tiktok', {'event_category': 'Social', 'event_label': 'tiktok_top'});"
-           class="underline font-semibold hover:text-blue-500 text-blue-600 transition-colors">tiktok</a>
+           class="tw-underline tw-font-semibold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">tiktok</a>
         voor de nieuwste {{ webshopName }} kortingscodes
       </div>
 
       <!-- Giftcard Banner -->
       @if (!hasHttpCodes) {
-      <div class="w-full md:w-1/2 max-w-4xl mx-auto mb-1 mt-1 px-3 py-1.5 bg-yellow-100 text-pink-800 text-xs text-center font-small border border-pink-200">
+      <div class="tw-w-full md:tw-w-1/2 tw-max-w-4xl tw-mb-1 tw-px-7 tw-py-1.5 tw-bg-yellow-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200">
         €7.50 gift cards voor veel shops! (o.a. Zalando, My Jewellery)
         <a [routerLink]="['/giftcards']"
            onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_companypage_topteaser'});"
-           class="underline font-bold hover:text-blue-500 text-blue-600 transition-colors">KLIK</a>
+           class="tw-underline tw-font-bold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">KLIK</a>
       </div>
       }
     </div>
 
     <!-- Discount Codes Cards -->
-    <div class="space-y-4 mt-4 mb-6">
+    <div class="tw-space-y-4 tw-mt-7 tw-mb-6">
       @for (code of discountCodes; track code) {
       @if (code.code.startsWith('http')) {
       <!-- Giftcard card, full clickable -->
-      <a [href]="code.code" target="_blank" (click)="sendGiftcardEventsToGa()" class="block">
-        <div class="bg-yellow-100 p-4 rounded-2xl shadow-md hover:bg-yellow-200 transition-colors">
-          <div class="flex justify-between items-center mb-2">
-              <span class="font-semibold underline text-blue-600 text-lg">
+      <a [href]="code.code" target="_blank" (click)="sendGiftcardEventsToGa()" class="tw-block">
+        <div class="tw-bg-yellow-100 tw-p-4 tw-rounded-2xl tw-shadow-md hover:tw-bg-yellow-200 tw-transition-colors">
+          <div class="tw-flex tw-justify-between tw-items-center tw-mb-2">
+              <span class="tw-font-semibold tw-underline tw-text-blue-600 tw-text-lg">
                 {{ webshopName | uppercase }} GIFTCARD
               </span>
-            <span class="font-medium text-gray-700">
-                {{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }}
+            <span class="tw-font-medium tw-text-gray-700">
+              {{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }}
               </span>
           </div>
-          <div class="text-xs text-pink-600 mt-1">Werkt bovenop eventuele andere kortingscodes</div>
+          <div class="tw-text-xs tw-text-pink-600 tw-mt-1">Werkt bovenop eventuele andere kortingscodes</div>
         </div>
       </a>
       } @else {
       <!-- Regular code card -->
-      <div class="bg-white p-4 rounded-2xl shadow-md">
-        <div class="flex justify-between items-center mb-2">
-          <span class="font-semibold text-pink-700 text-lg">{{ code.code }}</span>
-          <span class="font-medium text-gray-700">{{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }}</span>
+      <div class="tw-bg-white tw-p-4 tw-rounded-2xl tw-shadow-md">
+        <div class="tw-flex tw-justify-between tw-items-center tw-mb-2">
+          <span class="tw-font-semibold tw-text-pink-700 tw-text-lg">{{ code.code }}</span>
+          <span class="tw-font-medium tw-text-gray-700">{{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }}</span>
         </div>
-        <div class="text-sm text-gray-500">{{ formatDate(code.date) }}</div>
+        <div class="tw-text-sm tw-text-gray-500">{{ formatDate(code.date) }}</div>
       </div>
       }
       }
@@ -69,12 +69,12 @@
 
     <!-- SEO Text -->
     @if (companySeoText) {
-    <div class="mt-6 text-pink-800 prose prose-pink max-w-none">
+    <div class="tw-mt-6 tw-text-pink-800 tw-prose tw-prose-pink tw-max-w-none">
       <p [innerHTML]="companySeoText"></p>
     </div>
     }
   </div>
 
-  <app-footer class="mt-auto"></app-footer>
+  <app-footer class="tw-mt-auto"></app-footer>
 </div>
 }

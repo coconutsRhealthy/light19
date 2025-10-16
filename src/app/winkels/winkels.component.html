@@ -1,24 +1,24 @@
-<div class="min-h-screen bg-white text-gray-800">
+<div class="tw-min-h-screen tw-bg-white tw-text-gray-800">
   <app-navbar></app-navbar>
 
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <h1 class="text-3xl sm:text-4xl font-bold mb-10 text-center">
+  <main class="tw-max-w-4xl tw-mx-auto tw-px-4 tw-py-12">
+    <h1 class="tw-text-3xl sm:tw-text-4xl tw-font-bold tw-mb-10 tw-text-center">
       Alle winkels met actieve kortingscodes
     </h1>
 
-    <ul class="space-y-8">
+    <ul class="tw-space-y-8">
       @for (group of groupedWinkels; track group) {
         <li>
-          <h2 class="text-xl font-semibold text-pink-700 border-b border-pink-200 pb-1 mb-4">
+          <h2 class="tw-text-xl tw-font-semibold tw-text-pink-700 tw-border-b tw-border-pink-200 tw-pb-1 tw-mb-4">
             {{ group.letter }}
           </h2>
 
-          <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          <ul class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-3">
             @for (winkel of group.winkels; track winkel) {
               <li>
                 <a
                         [routerLink]="['/', winkel.toLowerCase()]"
-                        class="block p-3 rounded-lg bg-pink-50 hover:bg-pink-100 text-pink-900 hover:text-pink-700 transition"
+                        class="tw-block tw-p-3 tw-rounded-lg tw-bg-pink-50 hover:tw-bg-pink-100 tw-text-pink-900 hover:tw-text-pink-700 tw-transition"
                 >
                   {{ winkel }}
                 </a>

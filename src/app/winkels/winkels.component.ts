@@ -9,7 +9,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   selector: 'app-winkels',
   imports: [RouterModule, FooterComponent, NavbarComponent],
   templateUrl: './winkels.component.html',
-  styleUrls: ['./winkels.component.css', './../app.component.css', './../app-tailwind.component.css']
+  styleUrls: ['./winkels.component.css']
 })
 export class WinkelsComponent implements OnInit {
 
