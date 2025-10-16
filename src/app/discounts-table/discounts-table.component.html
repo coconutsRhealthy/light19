@@ -1,153 +1,82 @@
-<div class="container-fluid">
-  <div class="content">
-    <app-navbar></app-navbar>
-    <h1>Online shoppen met kortingscodes</h1>
+<!-- Header -->
+<app-navbar></app-navbar>
 
-    <div class="row">
-      <div class="col-sm-4"></div>
-      <div class="col-sm-4">
-        <div class="social-banner alert alert-success" role="alert">
-          Volg mij op <a href="https://www.instagram.com/wiegeeftkorting/" onclick="gtag('event', 'insta', {'event_category': 'Social', 'event_label': 'insta_top'});">insta</a> en
-          <a href="https://www.tiktok.com/&#64;wiegeeftkorting2" onclick="gtag('event', 'tiktok', {'event_category': 'Social', 'event_label': 'tiktok_top'});">tiktok</a> voor code updates
-        </div>
+<!-- Main content -->
+<main class="tw-max-w-5xl tw-mx-auto tw-px-4 tw-py-8">
+  <h1 class="tw-text-3xl tw-font-bold tw-mb-4 tw-text-center">Online shoppen met kortingscodes</h1>
 
-        <div class="social-banner alert alert-success" role="alert">
-          €100 shoptegoed en 30% korting bij Temu, klik <a href="https://temu.to/m/u0p32ew176i" target="_blank" onclick="gtag('event', 'temu', {'event_category': 'Temu', 'event_label': 'try_temu'});">hier</a>
-        </div>
-      </div>
-      <div class="col-sm-4"></div>
-    </div>
-
-    <div class="row my-2">
-      <div class="col-12 col-md-8 offset-md-2">
-        <a rel="sponsored"
-           onclick="gtag('event', 'diski_pick', {'event_category': 'Diski_Pick', 'event_label': 'diski_pick_homepage'});"
-           href="https://www.awin1.com/cread.php?s=4546909&v=72399&q=491926&r=1870794"
-           target="_blank"
-           class="card shadow-sm text-decoration-none d-block">
-
-          <div class="card-header promo-header text-center">
-            Diski Pick 🔥 Tenways vroege Black Friday deals!
-          </div>
-
-          <div class="card-body p-0 text-center">
-            <img src="https://www.awin1.com/cshow.php?s=4546909&v=72399&q=491926&r=1870794"
-                 class="img-fluid"
-                 alt="Hunkemoller banner">
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
-        <div class="mb-3 table-search-input">
-          <div class="input-wrapper">
-            <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Zoek op webshop..."
-                    [(ngModel)]="searchTerm"
-                    (input)="onSearch()"
-            />
-            @if (searchTerm) {
-              <button
-                      type="button"
-                      class="btn-close"
-                      (click)="searchTerm = ''; onSearch()"
-                      aria-label="Clear"
-              >&times;</button>
-            }
-          </div>
-        </div>
-        <div class="table-responsive">
-          <table class="table table-striped table-hover table-bordered">
-            <thead class="thead-dark">
-            <tr>
-              <th>
-                Korting bij
-                <button class="btn btn-sm btn-link sort-button" (click)="sortByCompany()" title="Sort by company">▲▼</button>
-              </th>
-              <th>Met code</th>
-              <th>%</th>
-              <th>
-                Datum <button class="btn btn-sm btn-link sort-button" (click)="sortByDate()" title="Sort by date">▲▼</button>
-              </th>
-            </tr>
-            </thead>
-            <tbody>
-              @for (discount of paginatedDiscounts; track discount) {
-                <tr>
-                  <td id="companyRow{{discount.index}}">
-                    <a [routerLink]="['/', discount.company.split('(')[0].trim()]" class="subtle-homepage-company-link" onclick="gtag('event', 'homepage_subtle', {'event_category': 'Homepage_subtle', 'event_label': 'homepage_subtle'});">{{ discount.company }}</a>
-                  </td>
-                  <td><button class="diski-table-button btn btn-outline-secondary" (click)="sendCopyCodeToGa(discount.index); affiliateModalAction(discount)">pak code</button></td>
-                  <td>{{ discount.percentage }}</td>
-                  <td>{{ formatDate(discount.date) }}</td>
-                </tr>
-                @if ($index === 2) {
-                  <tr>
-<!--                    <td class="banner-table-cell extra-table-highlight" colspan="4"><strong>Alle zomersales overzichtelijk verzameld op één pagina: <a [routerLink]="['/wieheeftsale']" onclick="gtag('event', 'wieheeftsale', {'event_category': 'Wieheeftsale', 'event_label': 'wieheeftsale_intable_homepage'});">diski.nl/wieheeftsale</a></strong></td>-->
-<!--                    <td class="banner-table-cell extra-table-highlight" colspan="4"><strong>Vandaag (zondag 27 juli) nieuwe Zalando beauty code op <a [routerLink]="['/prikbord']" onclick="gtag('event', 'zalando_banner', {'event_category': 'ZalandoBanner', 'event_label': 'zalando_intable_homepage'});">het prikbord</a></strong></td>-->
-                    <td class="banner-table-cell extra-table-highlight" colspan="4"><strong>Deel kortingscodes met elkaar op het <a [routerLink]="['/prikbord']" onclick="gtag('event', 'prikbord', {'event_category': 'Prikbord', 'event_label': 'prikbord_intable_homepage'});">diski prikbord!</a></strong></td>
-                    <td class="hidden-cell"></td>
-                    <td class="hidden-cell"></td>
-                    <td class="hidden-cell"></td>
-                  </tr>
-                  <tr>
-                    <td class="banner-table-cell giftcard-highlight" colspan="4">€7.50 gift cards voor heel veel shops! (o.a. Zalando, My Jewellery) <a [routerLink]="['/giftcards']" onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_intable_homepage'});">KLIK</a></td>
-                    <td class="hidden-cell"></td>
-                    <td class="hidden-cell"></td>
-                    <td class="hidden-cell"></td>
-                  </tr>
-                }
-              }
-            </tbody>
-          </table>
-
-          <div class="pagination-container">
-            <button
-                    class="btn btn-primary btn-sm"
-                    (click)="prevPage()"
-                    [disabled]="page === 1"
-            >
-              Vorige
-            </button>
-            <span>Pagina {{ page }} van {{ totalPages }}</span>
-            <button
-                    class="btn btn-primary btn-sm"
-                    (click)="nextPage()"
-                    [disabled]="page === totalPages"
-            >
-              Volgende
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-1"></div>
-    </div>
+  <!-- Banners -->
+  <div class="tw-flex tw-flex-col sm:tw-flex-row tw-justify-center tw-gap-4 tw-mb-6 tw-text-sm">
+    <a href="https://www.instagram.com/wiegeeftkorting/"
+       class="tw-bg-green-100 tw-text-green-800 tw-px-4 tw-py-2 tw-rounded hover:tw-bg-green-200"
+       onclick="gtag('event', 'insta', {event_category: 'Social', event_label: 'insta_top'})">
+      Volg mij op insta en tiktok
+    </a>
+    <a href="https://temu.to/m/u0p32ew176i" target="_blank"
+       class="tw-bg-green-100 tw-text-green-800 tw-px-4 tw-py-2 tw-rounded hover:tw-bg-green-200"
+       onclick="gtag('event', 'temu', {event_category: 'Temu', event_label: 'try_temu'})">
+      €100 shoptegoed en 30% korting bij Temu
+    </a>
   </div>
-  <div class="row mt-4">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-10">
-      <p class="description">
-        Webshops zoals <a href="https://nl.shein.com/">Shein</a>, <a href="https://www.loavies.com/nl/">Loavies</a> en
-        <a href="https://www.na-kd.com/nl">Nakd</a> verspreiden regelmatig een kortingscode via social media. Door deze in te vullen
-        in hun webshop krijg je korting op je bestelling. Meestal is een kortingscode enkele dagen geldig. De kortingscodes
-        worden gedeeld door influencers en content creators. Op deze pagina hou ik een overzicht bij van alle kortingscodes
-        die ik voorbij zie komen op Instagram. Gebruik het zoekveld bovenaan de pagina om eenvoudig te zoeken naar bijvoorbeeld
-        een Nakd kortingscode of een Loavies kortingscode. Neem ook eens een kijkje op mijn instagram account:
-        <a href="https://www.instagram.com/wiegeeftkorting/">&#64;wiegeeftkorting</a>
-      </p>
-    </div>
-    <div class="col-sm-1"></div>
+
+  <!-- Zoekveld -->
+  <div class="tw-mb-6 tw-flex tw-justify-center">
+    <input
+            type="text"
+            class="tw-w-full sm:tw-w-1/2 tw-px-4 tw-py-2 tw-border tw-rounded tw-shadow-sm focus:tw-outline-none focus:tw-ring"
+            placeholder="Zoek op webshop..."
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+    />
   </div>
-  <app-footer></app-footer>
-</div>
+
+  <!-- Resultaatkaarten -->
+  <div class="tw-grid tw-gap-4">
+    @for (discount of paginatedDiscounts; track discount) {
+    <div class="tw-bg-white tw-shadow tw-rounded-lg tw-p-4 tw-flex tw-justify-between tw-items-center hover:tw-shadow-md tw-transition">
+      <div>
+        <h2 class="tw-text-lg tw-font-semibold">
+          <a [routerLink]="['/', discount.company]"
+             class="hover:tw-underline tw-text-blue-700"
+             onclick="gtag('event', 'homepage_subtle', {event_category: 'Homepage_subtle', event_label: 'homepage_subtle'})">
+            {{ discount.company }}
+          </a>
+        </h2>
+        <p class="tw-text-sm tw-text-gray-500">
+          {{ discount.percentage ? discount.percentage + '% korting' : 'Korting' }} · gespot: {{ formatDate(discount.date) }}
+        </p>
+      </div>
+      <button
+              class="tw-bg-black tw-text-white tw-text-sm tw-px-4 tw-py-2 tw-rounded-full hover:tw-bg-gray-800"
+              (click)="affiliateModalAction(discount)">
+        Pak code
+      </button>
+    </div>
+    }
+  </div>
+
+  <!-- Paginatie -->
+  <div class="tw-flex tw-items-center tw-justify-center tw-mt-8 tw-gap-4">
+    <button
+            class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-sm tw-px-4 tw-py-2 tw-rounded disabled:tw-opacity-50"
+            (click)="prevPage()"
+            [disabled]="page === 1">
+      Vorige
+    </button>
+    <span class="tw-text-sm">Pagina {{ page }} van {{ totalPages }}</span>
+    <button
+            class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-sm tw-px-4 tw-py-2 tw-rounded disabled:tw-opacity-50"
+            (click)="nextPage()"
+            [disabled]="page === totalPages">
+      Volgende
+    </button>
+  </div>
+</main>
 
 <app-modal
         [isVisible]="isModalVisible"
         [discount]="selectedDiscount"
         (closed)="closeModal()">
 </app-modal>
+
+<app-footer></app-footer>
