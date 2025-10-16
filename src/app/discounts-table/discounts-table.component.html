@@ -30,26 +30,66 @@
     />
   </div>
 
+  <div class="tw-max-w-sm tw-mx-auto tw-p-3">
+    <button
+            class="tw-w-full tw-text-left tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100"
+    >
+      <div>
+        <h2 class="tw-text-lg tw-font-semibold tw-text-gray-900">Bol.com</h2>
+        <p class="tw-text-sm tw-text-gray-600 tw-mt-1">💸 20% korting met code</p>
+        <p class="tw-text-xs tw-text-gray-400 tw-mt-2">Gespot op: 14 oktober 2025</p>
+      </div>
+      <div class="tw-flex tw-items-center tw-justify-center tw-w-9 tw-h-9 tw-rounded-full tw-bg-gray-100">
+        <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="tw-w-5 tw-h-5 tw-text-gray-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+    </button>
+  </div>
+
+
   <!-- Resultaatkaarten -->
   <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4">
     @for (discount of paginatedDiscounts; track discount) {
-    <div class="tw-bg-white tw-shadow tw-rounded-lg tw-p-4 tw-flex tw-justify-between tw-items-center hover:tw-shadow-md tw-transition">
-      <div>
-        <h2 class="tw-text-lg tw-font-semibold">
-          <a [routerLink]="['/', discount.company]"
-             class="hover:tw-underline tw-text-blue-700"
-             onclick="gtag('event', 'homepage_subtle', {event_category: 'Homepage_subtle', event_label: 'homepage_subtle'})">
-            {{ discount.company }}
-          </a>
+    <div
+            class="tw-bg-white tw-shadow tw-rounded-lg tw-p-4 tw-transition tw-duration-200 tw-ease-in-out hover:tw-shadow-lg active:tw-bg-gray-100 active:tw-scale-95 tw-cursor-pointer focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400"
+            tabindex="0"
+            (click)="affiliateModalAction(discount)">
+
+      <!-- Top row: bedrijfsnaam links, percentage rechts -->
+      <div class="tw-flex tw-justify-between tw-items-start tw-mb-4">
+        <h2 class="tw-text-lg tw-font-semibold tw-text-blue-700 hover:tw-underline">
+          {{ discount.company }}
         </h2>
+        <span class="tw-font-bold tw-text-gray-800">
+        {{ discount.percentage ? discount.percentage + '' : '' }}
+      </span>
+      </div>
+
+      <!-- Bottom row: datum links, subtiele pijl-knop rechts -->
+      <div class="tw-flex tw-justify-between tw-items-end">
         <p class="tw-text-sm tw-text-gray-500">
           {{ formatDate(discount.date) }}
         </p>
+
+          &gt;
+
       </div>
-      {{ discount.percentage ? discount.percentage + '%' : '' }}
     </div>
     }
   </div>
+
+
+
+
+
 
   <!-- Paginatie -->
   <div class="tw-flex tw-items-center tw-justify-center tw-mt-8 tw-gap-4">
