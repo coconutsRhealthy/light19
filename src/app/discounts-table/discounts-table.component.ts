@@ -28,7 +28,7 @@ interface Discount {
   selector: 'app-discounts-table',
   imports: [FooterComponent, NavbarComponent, FormsModule, ModalComponent, RouterModule],
   templateUrl: './discounts-table.component.html',
-  styleUrls: ['./discounts-table.component.css', './../app.component.css'],
+  styleUrls: ['./discounts-table.component.css'],
   providers: [
     DatePipe,
     { provide: LOCALE_ID, useValue: 'nl' },
@@ -39,7 +39,7 @@ export class DiscountsTableComponent implements OnInit {
   filteredDiscounts: Discount[] = [];
   searchTerm: string = '';
   page: number = 1;
-  itemsPerPage: number = 50;
+  itemsPerPage: number = 51;
   isModalVisible = false;
   selectedDiscount: any = null;
   sortByCompanyAscending = false;
@@ -172,5 +172,13 @@ export class DiscountsTableComponent implements OnInit {
     var url = 'https://www.diski.nl?i=' + encodeURIComponent(codeTableIndex)
     window.open(url, '_blank');
     location.href = affiliateLink;
+  }
+
+  getCorrectFormatDiscountPercentage(rawDiscountPercentage: string): string {
+    if(!rawDiscountPercentage.includes("€") && !rawDiscountPercentage.includes("vzk") && !rawDiscountPercentage.includes("gifts")) {
+      rawDiscountPercentage = rawDiscountPercentage + "%";
+    }
+
+    return rawDiscountPercentage;
   }
 }

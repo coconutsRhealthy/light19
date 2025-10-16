@@ -2,36 +2,21 @@
 <app-navbar></app-navbar>
 
 <!-- Main content -->
-<main class="tw-max-w-5xl tw-mx-auto tw-px-4 tw-py-8">
-  <h1 class="tw-text-3xl tw-font-bold tw-mb-4 tw-text-center">Online shoppen met kortingscodes</h1>
+<main class="tw-max-w-5xl tw-mx-auto tw-px-4 tw-pt-4 tw-pb-8">
+  <h1 class="tw-text-3xl sm:tw-text-4xl tw-font-bold tw-mb-7 tw-text-center">Online shoppen met kortingscodes</h1>
 
-  <!-- Banners -->
-  <div class="tw-flex tw-flex-col sm:tw-flex-row tw-justify-center tw-gap-4 tw-mb-6 tw-text-sm">
-    <a href="https://www.instagram.com/wiegeeftkorting/"
-       class="tw-bg-green-100 tw-text-green-800 tw-px-4 tw-py-2 tw-rounded hover:tw-bg-green-200"
-       onclick="gtag('event', 'insta', {event_category: 'Social', event_label: 'insta_top'})">
-      Volg mij op insta en tiktok
-    </a>
-    <a href="https://temu.to/m/u0p32ew176i" target="_blank"
-       class="tw-bg-green-100 tw-text-green-800 tw-px-4 tw-py-2 tw-rounded hover:tw-bg-green-200"
-       onclick="gtag('event', 'temu', {event_category: 'Temu', event_label: 'try_temu'})">
-      €100 shoptegoed en 30% korting bij Temu
-    </a>
-  </div>
-
+  <!-- Banner -->
   <a
           rel="sponsored"
           onclick="gtag('event', 'diski_pick', { event_category: 'Diski_Pick', event_label: 'diski_pick_homepage' })"
           href="https://www.awin1.com/cread.php?s=4546909&v=72399&q=491926&r=1870794"
           target="_blank"
-          class="tw-block tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-border tw-border-gray-100 tw-mb-4 lg:tw-mb-5"
+          class="tw-block tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-border tw-border-gray-100 tw-mb-5"
   >
-    <!-- Header -->
     <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">
       Diski Pick 🔥 Tenways vroege Black Friday deals!
     </div>
 
-    <!-- Image -->
     <div class="tw-text-center tw-bg-white">
       <img
               src="https://www.awin1.com/cshow.php?s=4546909&v=72399&q=491926&r=1870794"
@@ -42,10 +27,10 @@
   </a>
 
   <!-- Zoekveld -->
-  <div class="tw-mb-6 tw-flex tw-justify-center">
+  <div class="tw-mb-6">
     <input
             type="text"
-            class="tw-w-full sm:tw-w-1/2 tw-px-4 tw-py-2 tw-border tw-rounded tw-shadow-sm focus:tw-outline-none focus:tw-ring"
+            class="tw-w-full tw-px-4 tw-py-2 tw-border tw-rounded tw-shadow-sm focus:tw-outline-none focus:tw-ring"
             placeholder="Zoek op webshop..."
             [(ngModel)]="searchTerm"
             (input)="onSearch()"
@@ -53,14 +38,14 @@
   </div>
 
   <!-- Resultaatkaarten -->
-  <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4 tw-px-2 lg:tw-px-4 tw-max-w-7xl tw-mx-auto">
+  <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4">
     @for (discount of paginatedDiscounts; track discount) {
     <button
             class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100 tw-text-left tw-h-full"
     >
       <div>
         <h2 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900">{{ discount.company }}</h2>
-        <p class="tw-text-sm tw-text-gray-600 tw-mt-1">💸 {{ discount.percentage }} korting</p>
+        <p class="tw-text-sm tw-text-gray-600 tw-mt-1">💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting</p>
         <p class="tw-text-xs tw-text-gray-400 tw-mt-2">Gespot op: {{ formatDate(discount.date) }}</p>
       </div>
       <div class="tw-flex tw-items-center tw-justify-center tw-w-8 tw-h-8 lg:tw-w-9 lg:tw-h-9 tw-rounded-full tw-bg-gray-100">
