@@ -1,42 +1,42 @@
 <app-navbar></app-navbar>
-<div class="max-w-lg mx-auto mt-3 p-4">
-    <h1 class="text-3xl font-semibold text-center mb-3">
+<div class="tw-max-w-lg tw-mx-auto tw-mt-3 tw-p-4">
+    <h1 class="tw-text-3xl tw-font-semibold tw-text-center tw-mb-3">
         €7,50 Giftcards voor Populaire Webshops
     </h1>
 
-    <div class="flex items-center justify-center gap-6 mt-4 mb-6">
-        <label class="flex items-center gap-2 cursor-pointer">
+    <div class="tw-flex tw-items-center tw-justify-center tw-gap-6 tw-mt-4 tw-mb-6">
+        <label class="tw-flex tw-items-center tw-gap-2 tw-cursor-pointer">
             <input
                     type="radio"
                     name="sort"
                     value="popular"
                     [(ngModel)]="sortMode"
                     (change)="onSortChange('popular'); sendEventToGa('Giftcards', 'sorting-popular')"
-                    class="accent-indigo-600"
+                    class="tw-accent-indigo-600"
             />
-            <span class="text-sm text-gray-700">Populair</span>
+            <span class="tw-text-sm tw-text-gray-700">Populair</span>
         </label>
 
-        <label class="flex items-center gap-2 cursor-pointer">
+        <label class="tw-flex tw-items-center tw-gap-2 tw-cursor-pointer">
             <input
                     type="radio"
                     name="sort"
                     value="alphabetical"
                     [(ngModel)]="sortMode"
                     (change)="onSortChange('alphabetical'); sendEventToGa('Giftcards', 'sorting-alphabetical')"
-                    class="accent-indigo-600"
+                    class="tw-accent-indigo-600"
             />
-            <span class="text-sm text-gray-700">Alfabetisch</span>
+            <span class="tw-text-sm tw-text-gray-700">Alfabetisch</span>
         </label>
     </div>
 
     @if (loading) {
-        <p class="text-center text-gray-500">Laden...</p>
+        <p class="tw-text-center tw-text-gray-500">Laden...</p>
     } @else {
         @if (discounts.length === 0) {
-            <p class="text-center text-gray-500">Geen giftcards gevonden.</p>
+            <p class="tw-text-center tw-text-gray-500">Geen giftcards gevonden.</p>
         } @else {
-            <ul class="space-y-3">
+            <ul class="tw-space-y-3">
                 @for (d of discounts; track d.index) {
                     <li>
                         <a
@@ -44,10 +44,10 @@
                             target="_blank"
                             (click)="sendEventToGa('Giftcards', d.company)"
                             rel="noopener noreferrer"
-                            class="flex items-center justify-between bg-white shadow-sm hover:shadow-md rounded-xl px-4 py-3 transition border border-gray-100 hover:border-indigo-300 hover:text-indigo-600"
+                            class="tw-flex tw-items-center tw-justify-between tw-bg-white tw-shadow-sm hover:tw-shadow-md tw-rounded-xl tw-px-6 tw-py-4 tw-transition tw-border tw-border-gray-200 hover:tw-border-indigo-300 hover:tw-text-indigo-600"
                         >
-                            <span class="font-medium">{{ d.company }}</span>
-                            <span class="text-sm text-green-600 font-semibold">
+                            <span class="tw-font-medium">{{ d.company }}</span>
+                            <span class="tw-text-sm tw-text-green-600 tw-font-semibold">
                                 🎁 €7,50
                             </span>
                         </a>

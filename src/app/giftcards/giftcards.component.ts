@@ -17,8 +17,7 @@ interface Discount {
 @Component({
   selector: 'app-giftcards',
   imports: [FooterComponent, NavbarComponent, FormsModule],
-  templateUrl: './giftcards.component.html',
-  styleUrls: ['./../app.component.css', './../app-tailwind.component.css']
+  templateUrl: './giftcards.component.html'
 })
 export class GiftcardsComponent implements OnInit {
   discounts: Discount[] = [];
