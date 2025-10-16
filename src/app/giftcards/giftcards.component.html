@@ -1,38 +1,36 @@
-<app-navbar></app-navbar>
-<div class="tw-max-w-lg tw-mx-auto tw-mt-3 tw-p-4">
-    <h1 class="tw-text-3xl tw-font-semibold tw-text-center tw-mb-3">
-        €7,50 Giftcards voor Populaire Webshops
-    </h1>
+@if (!loading) {
+    <app-navbar></app-navbar>
+    <div class="tw-max-w-lg tw-mx-auto tw-mt-3 tw-p-4">
+        <h1 class="tw-text-3xl tw-font-semibold tw-text-center tw-mb-3">
+            €7,50 Giftcards voor Populaire Webshops
+        </h1>
 
-    <div class="tw-flex tw-items-center tw-justify-center tw-gap-6 tw-mt-4 tw-mb-6">
-        <label class="tw-flex tw-items-center tw-gap-2 tw-cursor-pointer">
-            <input
-                    type="radio"
-                    name="sort"
-                    value="popular"
-                    [(ngModel)]="sortMode"
-                    (change)="onSortChange('popular'); sendEventToGa('Giftcards', 'sorting-popular')"
-                    class="tw-accent-indigo-600"
-            />
-            <span class="tw-text-sm tw-text-gray-700">Populair</span>
-        </label>
+        <div class="tw-flex tw-items-center tw-justify-center tw-gap-6 tw-mt-4 tw-mb-6">
+            <label class="tw-flex tw-items-center tw-gap-2 tw-cursor-pointer">
+                <input
+                        type="radio"
+                        name="sort"
+                        value="popular"
+                        [(ngModel)]="sortMode"
+                        (change)="onSortChange('popular'); sendEventToGa('Giftcards', 'sorting-popular')"
+                        class="tw-accent-indigo-600"
+                />
+                <span class="tw-text-sm tw-text-gray-700">Populair</span>
+            </label>
 
-        <label class="tw-flex tw-items-center tw-gap-2 tw-cursor-pointer">
-            <input
-                    type="radio"
-                    name="sort"
-                    value="alphabetical"
-                    [(ngModel)]="sortMode"
-                    (change)="onSortChange('alphabetical'); sendEventToGa('Giftcards', 'sorting-alphabetical')"
-                    class="tw-accent-indigo-600"
-            />
-            <span class="tw-text-sm tw-text-gray-700">Alfabetisch</span>
-        </label>
-    </div>
+            <label class="tw-flex tw-items-center tw-gap-2 tw-cursor-pointer">
+                <input
+                        type="radio"
+                        name="sort"
+                        value="alphabetical"
+                        [(ngModel)]="sortMode"
+                        (change)="onSortChange('alphabetical'); sendEventToGa('Giftcards', 'sorting-alphabetical')"
+                        class="tw-accent-indigo-600"
+                />
+                <span class="tw-text-sm tw-text-gray-700">Alfabetisch</span>
+            </label>
+        </div>
 
-    @if (loading) {
-        <p class="tw-text-center tw-text-gray-500">Laden...</p>
-    } @else {
         @if (discounts.length === 0) {
             <p class="tw-text-center tw-text-gray-500">Geen giftcards gevonden.</p>
         } @else {
@@ -55,6 +53,6 @@
                 }
             </ul>
         }
-    }
-</div>
-<app-footer></app-footer>
+    </div>
+    <app-footer></app-footer>
+}
