@@ -79,7 +79,7 @@ export class AffiliateLinkService {
         dummyCode: 'IDEAL15BD'
     },
     'aliexpress': {
-        url: 'https://tidd.ly/44qRvWs',
+        url: 'https://tidd.ly/3J3ARnG',
         dummyCode: 'ALIE15LM0'
     },
     'adidas': {
@@ -477,6 +477,34 @@ export class AffiliateLinkService {
     'heine': {
         url: 'https://tidd.ly/46RrzTN',
         dummyCode: '45569'
+    },
+    'to-be-dressed.nl': {
+        url: 'https://tidd.ly/4n9ETZL',
+        dummyCode: 'DISKI10'
+    },
+    'size': {
+        url: 'https://tidd.ly/3J5p8F7',
+        dummyCode: 'sanx15'
+    },
+    'hema': {
+        url: 'https://partner.hema.nl/c?c=25436&m=12&a=448474&r=&u=%2F',
+        dummyCode: '2025FC'
+    },
+    'mysteryvoetbalbox': {
+        url: '',
+        dummyCode: 'MVBDISKI10%'
+    },
+    'zenhotels': {
+        url: 'https://tidd.ly/3WFvBd0',
+        dummyCode: 'ZENEUR20'
+    },
+    'grundig': {
+        url: 'https://tidd.ly/3J0QUCQ',
+        dummyCode: '15OFF'
+    },
+    'v&d': {
+        url: 'https://www.awin1.com/cread.php?awinmid=64748&awinaffid=1870794',
+        dummyCode: 'DISKI10'
     }
   };
 

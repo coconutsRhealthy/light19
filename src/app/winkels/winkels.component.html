@@ -1,19 +1,34 @@
-<div class="container-fluid">
-  <div class="content">
-    <app-navbar></app-navbar>
-    <h1>Alle winkels met actieve kortingscodes</h1>
+<div class="min-h-screen bg-white text-gray-800">
+  <app-navbar></app-navbar>
 
-    <ul class="webshop-list">
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-10 text-center">
+      Alle winkels met actieve kortingscodes
+    </h1>
+
+    <ul class="space-y-8">
       @for (group of groupedWinkels; track group) {
-        <li class="group-heading">{{ group.letter }}</li>
+        <li>
+          <h2 class="text-xl font-semibold text-pink-700 border-b border-pink-200 pb-1 mb-4">
+            {{ group.letter }}
+          </h2>
 
-        @for (winkel of group.winkels; track winkel) {
-          <li>
-            <a [routerLink]="['/', winkel.toLowerCase()]">{{ winkel }}</a>
-          </li>
-        }
+          <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            @for (winkel of group.winkels; track winkel) {
+              <li>
+                <a
+                        [routerLink]="['/', winkel.toLowerCase()]"
+                        class="block p-3 rounded-lg bg-pink-50 hover:bg-pink-100 text-pink-900 hover:text-pink-700 transition"
+                >
+                  {{ winkel }}
+                </a>
+              </li>
+            }
+          </ul>
+        </li>
       }
     </ul>
-  </div>
+  </main>
+
   <app-footer></app-footer>
 </div>

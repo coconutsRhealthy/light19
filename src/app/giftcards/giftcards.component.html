@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<div class="max-w-lg mx-auto mt-3 p-4">
+    <h1 class="text-3xl font-semibold text-center mb-3">
+        €7,50 Giftcards voor Populaire Webshops
+    </h1>
+
+    <div class="flex items-center justify-center gap-6 mt-4 mb-6">
+        <label class="flex items-center gap-2 cursor-pointer">
+            <input
+                    type="radio"
+                    name="sort"
+                    value="popular"
+                    [(ngModel)]="sortMode"
+                    (change)="onSortChange('popular'); sendEventToGa('Giftcards', 'sorting-popular')"
+                    class="accent-indigo-600"
+            />
+            <span class="text-sm text-gray-700">Populair</span>
+        </label>
+
+        <label class="flex items-center gap-2 cursor-pointer">
+            <input
+                    type="radio"
+                    name="sort"
+                    value="alphabetical"
+                    [(ngModel)]="sortMode"
+                    (change)="onSortChange('alphabetical'); sendEventToGa('Giftcards', 'sorting-alphabetical')"
+                    class="accent-indigo-600"
+            />
+            <span class="text-sm text-gray-700">Alfabetisch</span>
+        </label>
+    </div>
+
+    @if (loading) {
+        <p class="text-center text-gray-500">Laden...</p>
+    } @else {
+        @if (discounts.length === 0) {
+            <p class="text-center text-gray-500">Geen giftcards gevonden.</p>
+        } @else {
+            <ul class="space-y-3">
+                @for (d of discounts; track d.index) {
+                    <li>
+                        <a
+                            [href]="d.discountCode"
+                            target="_blank"
+                            (click)="sendEventToGa('Giftcards', d.company)"
+                            rel="noopener noreferrer"
+                            class="flex items-center justify-between bg-white shadow-sm hover:shadow-md rounded-xl px-4 py-3 transition border border-gray-100 hover:border-indigo-300 hover:text-indigo-600"
+                        >
+                            <span class="font-medium">{{ d.company }}</span>
+                            <span class="text-sm text-green-600 font-semibold">
+                                🎁 €7,50
+                            </span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+    }
+</div>
+<app-footer></app-footer>
