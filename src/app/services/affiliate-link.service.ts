@@ -483,7 +483,7 @@ export class AffiliateLinkService {
         dummyCode: 'DISKI10'
     },
     'size': {
-        url: 'https://tidd.ly/3J5p8F7',
+        url: 'https://tidd.ly/4nPrgjn',
         dummyCode: 'sanx15'
     },
     'hema': {
