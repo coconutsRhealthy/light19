@@ -24,7 +24,7 @@ declare let gtag: Function;
     RouterModule
   ],
   templateUrl: './company-codes.component.html',
-  styleUrls: ['./company-codes.component.css', './../app.component.css', './../app-tailwind.component.css'],
+  styleUrls: ['./company-codes.component.css', './../app.component.css'],
   providers: [DatePipe]
 })
 export class CompanyCodesComponent implements OnInit {
