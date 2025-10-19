@@ -11,7 +11,7 @@
           onclick="gtag('event', 'diski_pick', { event_category: 'Diski_Pick', event_label: 'diski_pick_homepage' })"
           href="https://www.awin1.com/cread.php?s=4546909&v=72399&q=491926&r=1870794"
           target="_blank"
-          class="tw-block tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-border tw-border-gray-100 tw-mb-5"
+          class="tw-block tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-border tw-border-gray-100 tw-mb-5 tw-no-underline hover:tw-no-underline focus:tw-no-underline"
   >
     <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">
       Diski Pick 🔥 Tenways vroege Black Friday deals!
@@ -40,27 +40,28 @@
   <!-- Resultaatkaarten -->
   <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4">
     @for (discount of paginatedDiscounts; track discount) {
-    <button
-            class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100 tw-text-left tw-h-full"
-    >
-      <div>
-        <h2 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900">{{ discount.company }}</h2>
-        <p class="tw-text-sm tw-text-gray-600 tw-mt-1">💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting</p>
-        <p class="tw-text-xs tw-text-gray-400 tw-mt-2">Gespot op: {{ formatDate(discount.date) }}</p>
-      </div>
-      <div class="tw-flex tw-items-center tw-justify-center tw-w-8 tw-h-8 lg:tw-w-9 lg:tw-h-9 tw-rounded-full tw-bg-gray-100">
-        <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="tw-w-4 tw-h-4 lg:tw-w-5 lg:tw-h-5 tw-text-gray-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-    </button>
+      <button
+              class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100 tw-text-left tw-h-full"
+              (click)="sendCopyCodeToGa(discount.index); affiliateModalAction(discount)"
+      >
+        <div>
+          <h2 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900">{{ discount.company }}</h2>
+          <p class="tw-text-sm tw-text-gray-600 tw-mt-1">💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting</p>
+          <p class="tw-text-xs tw-text-gray-400 tw-mt-2">Gespot op: {{ formatDate(discount.date) }}</p>
+        </div>
+        <div class="tw-flex tw-items-center tw-justify-center tw-w-8 tw-h-8 lg:tw-w-9 lg:tw-h-9 tw-rounded-full tw-bg-gray-100">
+          <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="tw-w-4 tw-h-4 lg:tw-w-5 lg:tw-h-5 tw-text-gray-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </button>
     }
   </div>
 
