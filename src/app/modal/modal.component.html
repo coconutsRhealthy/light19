@@ -38,7 +38,7 @@
                 <div class="tw-relative tw-flex tw-items-center tw-gap-2">
                     <button
                             (click)="copyToClipboard(discount.discountCode)"
-                            class="tw-group tw-flex tw-items-center tw-gap-2 tw-font-mono tw-text-gray-900 tw-text-base tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-md tw-px-3 tw-py-1.5 hover:tw-bg-gray-100 tw-transition tw-w-fit"
+                            class="tw-group tw-flex tw-items-center tw-gap-2 tw-font-mono tw-text-gray-900 tw-text-base tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-md tw-px-3 tw-py-1.5 hover:tw-bg-gray-100 tw-transition tw-relative tw-w-fit"
                     >
                         <span>{{ discount.discountCode }}</span>
                         <svg
@@ -49,11 +49,19 @@
                                 stroke="currentColor"
                                 stroke-width="2"
                         >
-                            <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M8 16h8M8 12h8m-7 8h6a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v16l3-2z"
-                            />
+                            <!-- Masker voor het bovenste (voorste) papiertje -->
+                            <mask id="frontPaperMask">
+                                <!-- Alles wit = zichtbaar -->
+                                <rect x="0" y="0" width="24" height="24" fill="white"/>
+                                <!-- Papier dat bedekt wordt = zwart -->
+                                <rect x="4" y="6" width="14" height="16" rx="2" ry="2" fill="black"/>
+                            </mask>
+
+                            <!-- Achterste papiertje, zichtbaar alleen buiten bovenste papiertje -->
+                            <rect x="8" y="2" width="14" height="16" rx="2" ry="2" stroke-width="2" mask="url(#frontPaperMask)"/>
+
+                            <!-- Voorste papiertje -->
+                            <rect x="4" y="6" width="14" height="16" rx="2" ry="2" stroke-width="2"/>
                         </svg>
 
                         @if (isCopied) {
