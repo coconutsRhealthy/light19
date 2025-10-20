@@ -33,6 +33,7 @@ export class CompanyCodesComponent implements OnInit {
   companySeoText: string = "";
   discountCodes: { code: string, discount: string, date: string }[] = [];
   isLoading = true;
+  copiedCode: string | null = null;
 
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
                 private discountsService: DiscountsService, private webshopNameService: WebshopNameService,
@@ -157,5 +158,17 @@ export class CompanyCodesComponent implements OnInit {
     } else {
       console.error('gtag is not defined');
     }
+  }
+
+  copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text).then(
+      () => {
+        this.copiedCode = text;
+        setTimeout(() => this.copiedCode = null, 2000);
+      },
+      (err) => {
+        console.error('Failed to copy: ', err);
+      }
+    );
   }
 }
