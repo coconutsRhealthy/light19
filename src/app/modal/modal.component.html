@@ -1,75 +1,57 @@
 @if (isVisible) {
 <!-- Backdrop -->
 <div
-        class="tw-fixed tw-inset-0 tw-bg-black/30 tw-backdrop-blur-sm tw-z-40"
+        class="tw-fixed tw-inset-0 tw-bg-black/40 tw-backdrop-blur-sm tw-z-40 tw-animate-fadeIn"
         (click)="closeModal()"
 ></div>
 
 <!-- Modal -->
 <div
-        class="tw-fixed tw-inset-0 tw-flex tw-items-center tw-justify-center tw-z-50 tw-px-6"
-        role="dialog"
-        aria-modal="true"
+        class="tw-fixed tw-inset-0 tw-flex tw-items-center tw-justify-center tw-z-50"
 >
     <div
-            class="tw-bg-white tw-max-w-md tw-w-full tw-rounded-xl tw-shadow-lg tw-overflow-hidden"
+            class="tw-bg-white tw-rounded-3xl tw-shadow-2xl tw-border tw-border-gray-100 tw-w-[90%] sm:tw-w-[420px] tw-overflow-hidden tw-animate-slideUp"
     >
         <!-- Header -->
         <div
                 class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-gray-200"
         >
-            <h3
-                    class="tw-font-extrabold tw-text-lg tw-uppercase tw-tracking-wide tw-text-gray-900"
-            >
-                {{ discount.company }}
-            </h3>
+            <h2 class="tw-font-bold tw-text-lg tw-text-gray-900">
+                🎉 {{ discount.company  }} kortingscode
+            </h2>
             <button
                     (click)="closeModal()"
-                    aria-label="Sluiten"
-                    class="tw-text-gray-400 hover:tw-text-gray-700 tw-transition"
+                    class="tw-text-gray-400 hover:tw-text-gray-600 tw-transition"
+                    aria-label="Close"
             >
-                <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="tw-h-6 tw-w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                >
-                    <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6 18L18 6M6 6l12 12"
-                    />
-                </svg>
+                ✕
             </button>
         </div>
 
-        <!-- Content -->
+        <!-- Body -->
         @if (discount) {
-        <div
-                class="tw-px-6 tw-py-6 tw-space-y-3 tw-text-gray-800 tw-text-sm"
-        >
-            <!-- Row 1: Code -->
-            <div
-                    class="tw-grid tw-grid-cols-[auto_1fr_auto] tw-items-center tw-gap-x-4"
-            >
-                <span class="tw-font-semibold tw-text-gray-700">Code:</span>
-                <span class="tw-font-mono tw-text-gray-900">{{
-              discount.discountCode
-            }}</span>
+        <div class="tw-px-6 tw-py-6 tw-space-y-5">
+            <!-- Code -->
+            <div class="tw-flex tw-items-center tw-justify-between">
+                <span class="tw-font-semibold tw-text-gray-600">Code</span>
 
-                <div class="tw-relative">
+                <div class="tw-relative tw-flex tw-items-center tw-gap-2">
+              <span
+                      class="tw-font-mono tw-text-gray-900 tw-text-base tw-bg-gray-50 tw-px-2 tw-py-1 tw-rounded-md tw-border tw-border-gray-200 tw-select-all"
+              >
+                {{ discount.discountCode }}
+              </span>
+
                     <button
-                            (click)="copyToClipboard(discount.discountCode); sendEventToGa('CodeDetailModal', discount.company)"
-                            class="tw-px-3 tw-py-1 tw-border tw-border-gray-300 tw-rounded-md tw-text-gray-700 hover:tw-bg-gray-100 tw-transition"
+                            (click)="copyToClipboard(discount.discountCode)"
+                            class="tw-text-xs tw-bg-gray-900 tw-text-white tw-rounded-md tw-px-3 tw-py-1 hover:tw-bg-gray-800 tw-transition"
                     >
                         Copy
                     </button>
 
                     @if (isCopied) {
                     <div
-                            class="tw-absolute tw-bottom-full tw-left-1/2 tw--translate-x-1/2 tw-mb-1 tw-bg-gray-800 tw-text-white tw-text-xs tw-rounded tw-px-2 tw-py-1 tw-whitespace-nowrap tw-shadow-sm tw-animate-fadeIn"
+                            class="tw-absolute tw--top-6 tw-left-1/2 tw--translate-x-1/2 tw-bg-gray-900 tw-text-white tw-text-xs tw-rounded tw-px-2 tw-py-[2px] tw-shadow-md tw-animate-fadeIn"
                     >
                         Copied!
                     </div>
@@ -77,27 +59,35 @@
                 </div>
             </div>
 
-            <!-- Row 2: Korting -->
-            <div
-                    class="tw-grid tw-grid-cols-[auto_1fr_auto] tw-items-center tw-gap-x-4 tw-space-y-3"
-            >
-                <span class="tw-font-semibold tw-text-gray-700">Korting:</span>
-                <span>{{
+            <!-- Discount -->
+            <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
+                <span>Korting</span>
+                <span class="tw-font-medium">{{
               getCorrectFormatDiscountPercentage(discount.percentage)
             }}</span>
-                <span></span>
             </div>
 
-            <!-- Row 3: Gespot op -->
-            <div
-                    class="tw-grid tw-grid-cols-[auto_1fr_auto] tw-items-center tw-gap-x-4"
-            >
-                <span class="tw-font-semibold tw-text-gray-700">Gespot op:</span>
+            <!-- Date -->
+            <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
+                <span>Gespot op</span>
                 <span>{{ getCorrectFormatOfCodeDate(discount.date) }}</span>
-                <span></span>
             </div>
         </div>
         }
+
+        <!-- Footer -->
+        <div
+                class="tw-bg-gray-50 tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-gray-200"
+        >
+            <a
+                    [href]="getDiscountUrl()"
+                    target="_blank"
+                    rel="sponsored"
+                    class="tw-bg-amber-500 hover:tw-bg-amber-600 tw-text-white tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
+            >
+                Naar winkel →
+            </a>
+        </div>
     </div>
 </div>
 }

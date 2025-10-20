@@ -121,4 +121,14 @@ export class ModalComponent {
       console.error('gtag is not defined');
     }
   }
+
+  getDiscountUrl(): string {
+    if (this.discount?.url) {
+      return this.discount.url;
+    }
+
+    const query = encodeURIComponent(`${this.discount.company} nl`);
+    return `https://www.google.com/search?q=${query}`;
+  }
+
 }
