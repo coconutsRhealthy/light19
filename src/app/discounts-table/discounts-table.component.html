@@ -1,8 +1,9 @@
-<!-- Header -->
-<app-navbar></app-navbar>
+<div class="tw-flex tw-flex-col tw-min-h-screen">
+  <!-- Header -->
+  <app-navbar></app-navbar>
 
 <!-- Main content -->
-<main class="tw-max-w-5xl tw-mx-auto tw-px-4 tw-pt-4 tw-pb-8">
+  <main class="tw-flex-1 tw-max-w-5xl tw-mx-auto tw-px-4 tw-pt-4 tw-pb-8">
   <h1 class="tw-text-3xl sm:tw-text-4xl tw-font-bold tw-mb-7 tw-text-center">Online shoppen met kortingscodes</h1>
 
   <!-- Banner -->
@@ -42,7 +43,7 @@
     @for (discount of paginatedDiscounts; track discount) {
       <button
               class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100 tw-text-left tw-h-full"
-              (click)="sendCopyCodeToGa(discount.index); affiliateModalAction(discount)"
+              (click)="affiliateModalAction(discount)"
       >
         <div>
           <h2 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900">{{ discount.company }}</h2>
@@ -81,7 +82,23 @@
       Volgende
     </button>
   </div>
-</main>
+
+    <div class="tw-mt-8 tw-flex tw-justify-center">
+      <div class="tw-w-full sm:tw-w-10/12 lg:tw-w-10/12">
+        <p class="tw-text-gray-800 tw-text-sm sm:tw-text-base tw-leading-relaxed">
+          Webshops zoals <a href="https://nl.shein.com/" class="tw-text-blue-600 hover:tw-underline">Shein</a>,
+          <a href="https://www.loavies.com/nl/" class="tw-text-blue-600 hover:tw-underline">Loavies</a> en
+          <a href="https://www.na-kd.com/nl" class="tw-text-blue-600 hover:tw-underline">Nakd</a> verspreiden regelmatig een kortingscode via social media. Door deze in te vullen
+          in hun webshop krijg je korting op je bestelling. Meestal is een kortingscode enkele dagen geldig. De kortingscodes
+          worden gedeeld door influencers en content creators. Op deze pagina hou ik een overzicht bij van alle kortingscodes
+          die ik voorbij zie komen op Instagram. Gebruik het zoekveld bovenaan de pagina om eenvoudig te zoeken naar bijvoorbeeld
+          een Nakd kortingscode of een Loavies kortingscode. Neem ook eens een kijkje op mijn instagram account:
+          <a href="https://www.instagram.com/wiegeeftkorting/" class="tw-text-blue-600 hover:tw-underline">&#64;wiegeeftkorting</a>
+        </p>
+      </div>
+    </div>
+
+  </main>
 
 <app-modal
         [isVisible]="isModalVisible"
@@ -90,3 +107,5 @@
 </app-modal>
 
 <app-footer></app-footer>
+
+</div>
