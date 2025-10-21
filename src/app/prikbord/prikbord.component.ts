@@ -6,6 +6,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { PrikbordModalComponent } from '../prikbord-modal/prikbord-modal.component';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { DatePipe } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
@@ -28,7 +29,7 @@ interface PrikbordEntry {
 
 @Component({
   selector: 'app-prikbord',
-  imports: [PrikbordModalComponent, FooterComponent, NavbarComponent, FormsModule],
+  imports: [PrikbordModalComponent, FooterComponent, NavbarComponent, FormsModule, RouterModule],
   templateUrl: './prikbord.component.html',
   styleUrls: ['./prikbord.component.css', './../app.component.css'],
   providers: [
