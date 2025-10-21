@@ -39,7 +39,7 @@ export class DiscountsTableComponent implements OnInit {
   filteredDiscounts: Discount[] = [];
   searchTerm: string = '';
   page: number = 1;
-  itemsPerPage: number = 51;
+  itemsPerPage: number = 30;
   isModalVisible = false;
   selectedDiscount: any = null;
   sortByCompanyAscending = false;

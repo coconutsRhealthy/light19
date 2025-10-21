@@ -1,10 +1,32 @@
-<div class="tw-flex tw-flex-col tw-min-h-screen">
-  <!-- Header -->
-  <app-navbar></app-navbar>
+<app-navbar></app-navbar>
+<main class="tw-flex-1 tw-max-w-5xl tw-mx-auto tw-px-4 tw-pt-4 tw-pb-8">
+  <h1 class="tw-text-3xl sm:tw-text-4xl tw-font-bold tw-mb-7 tw-text-center">
+    Online shoppen met kortingscodes
+  </h1>
 
-<!-- Main content -->
-  <main class="tw-flex-1 tw-max-w-5xl tw-mx-auto tw-px-4 tw-pt-4 tw-pb-8">
-  <h1 class="tw-text-3xl sm:tw-text-4xl tw-font-bold tw-mb-7 tw-text-center">Online shoppen met kortingscodes</h1>
+  <!-- Social Banners -->
+  <div class="tw-mb-3 tw-w-full tw-max-w-7xl tw-mx-auto">
+    <div class="tw-flex tw-flex-col tw-items-center">
+      <!-- Kleine Info Banner -->
+      <div class="tw-w-full tw-px-3 tw-py-1.5 tw-bg-green-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200 tw-rounded-lg tw-mb-1">
+        <div>
+          Volg mij op insta en tiktok voor code updates
+        </div>
+        <div>
+          €100
+          <a
+                  href="https://temu.to/m/u0p32ew176i"
+                  target="_blank"
+                  class="tw-text-blue-600 hover:tw-text-blue-800 hover:tw-underline"
+                  onclick="gtag('event', 'temu', {'event_category': 'Temu', 'event_label': 'temu_prikbord_banner'});"
+          >
+            <strong>shoptegoed</strong>
+          </a>
+          en 30% korting bij Temu
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Banner -->
   <a
@@ -12,7 +34,7 @@
           onclick="gtag('event', 'diski_pick', { event_category: 'Diski_Pick', event_label: 'diski_pick_homepage' })"
           href="https://www.awin1.com/cread.php?s=4546909&v=72399&q=491926&r=1870794"
           target="_blank"
-          class="tw-block tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-border tw-border-gray-100 tw-mb-6 tw-no-underline hover:tw-no-underline focus:tw-no-underline"
+          class="tw-block tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-border tw-border-gray-100 tw-mb-6 tw-no-underline"
   >
     <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">
       Diski Pick 🔥 Tenways vroege Black Friday deals!
@@ -27,35 +49,41 @@
     </div>
   </a>
 
-  <!-- Zoekveld -->
-  <div class="tw-mb-2">
-    <input
-            type="text"
-            class="tw-w-full tw-px-4 tw-py-2 tw-border tw-rounded tw-shadow-sm focus:tw-outline-none focus:tw-ring"
-            placeholder="Zoek op webshop..."
-            [(ngModel)]="searchTerm"
-            (input)="onSearch()"
-    />
-  </div>
+  <!-- ✅ GEGROEPEERDE SECTIE MET ACHTERGROND -->
+  <div class="tw-bg-white/70 tw-rounded-2xl tw-shadow-sm tw-p-4 sm:tw-p-6 tw-border tw-border-gray-100 tw-backdrop-blur-sm">
 
-<!--    helpertekst-->
-<!--    <div class="tw-text-xs tw-text-gray-500 tw-mb-2 tw-text-center tw-bg-gray-200 tw-px-3 tw-py-1 tw-rounded">-->
-    <div class="tw-text-xs tw-text-gray-700 tw-mb-2 tw-text-center tw-bg-blue-100 tw-px-3 tw-py-1 tw-rounded">
-      <div>Nieuwste codes bovenaan️</div>
-      <div>bijgewerkt t/m 15 oktober 17:58 ⬇️</div>
+    <h2 class="tw-font-semibold tw-text-gray-900 tw-mb-4 tw-text-center">
+      Nieuwste kortingscodes 🔥
+    </h2>
+
+    <!-- Zoekveld -->
+    <div class="tw-mb-2">
+      <input
+              type="text"
+              class="tw-w-full tw-px-4 tw-py-2 tw-border tw-rounded tw-shadow-sm focus:tw-outline-none focus:tw-ring"
+              placeholder="Zoek op webshop..."
+              [(ngModel)]="searchTerm"
+              (input)="onSearch()"
+      />
     </div>
 
-  <!-- Resultaatkaarten -->
-  <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4">
-    @for (discount of paginatedDiscounts; track discount) {
+    <!-- Resultaatkaarten -->
+    <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4">
+      @for (discount of paginatedDiscounts; track discount) {
       <button
               class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100 tw-text-left tw-h-full"
               (click)="sendCopyCodeToGa(discount.company); affiliateModalAction(discount)"
       >
         <div>
-          <h2 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900">{{ discount.company }}</h2>
-          <p class="tw-text-sm tw-text-gray-600 tw-mt-1">💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting</p>
-          <p class="tw-text-xs tw-text-gray-400 tw-mt-2">Gespot op: {{ formatDate(discount.date) }}</p>
+          <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900">
+            {{ discount.company }}
+          </h3>
+          <p class="tw-text-sm tw-text-gray-600 tw-mt-1">
+            💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
+          </p>
+          <p class="tw-text-xs tw-text-gray-400 tw-mt-2">
+            Gespot op: {{ formatDate(discount.date) }}
+          </p>
         </div>
         <div class="tw-flex tw-items-center tw-justify-center tw-w-8 tw-h-8 lg:tw-w-9 lg:tw-h-9 tw-rounded-full tw-bg-gray-100">
           <svg
@@ -70,42 +98,43 @@
           </svg>
         </div>
       </button>
-    }
-  </div>
-
-  <!-- Paginatie -->
-  <div class="tw-flex tw-items-center tw-justify-center tw-mt-8 tw-gap-4">
-    <button
-            class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-sm tw-px-4 tw-py-2 tw-rounded disabled:tw-opacity-50"
-            (click)="prevPage()"
-            [disabled]="page === 1">
-      Vorige
-    </button>
-    <span class="tw-text-sm">Pagina {{ page }} van {{ totalPages }}</span>
-    <button
-            class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-sm tw-px-4 tw-py-2 tw-rounded disabled:tw-opacity-50"
-            (click)="nextPage()"
-            [disabled]="page === totalPages">
-      Volgende
-    </button>
-  </div>
-
-    <div class="tw-mt-8 tw-flex tw-justify-center">
-      <div class="tw-w-full sm:tw-w-10/12 lg:tw-w-10/12">
-        <p class="tw-text-gray-800 tw-text-sm sm:tw-text-base tw-leading-relaxed">
-          Webshops zoals <a href="https://nl.shein.com/" class="tw-text-blue-600 hover:tw-underline">Shein</a>,
-          <a href="https://www.loavies.com/nl/" class="tw-text-blue-600 hover:tw-underline">Loavies</a> en
-          <a href="https://www.na-kd.com/nl" class="tw-text-blue-600 hover:tw-underline">Nakd</a> verspreiden regelmatig een kortingscode via social media. Door deze in te vullen
-          in hun webshop krijg je korting op je bestelling. Meestal is een kortingscode enkele dagen geldig. De kortingscodes
-          worden gedeeld door influencers en content creators. Op deze pagina hou ik een overzicht bij van alle kortingscodes
-          die ik voorbij zie komen op Instagram. Gebruik het zoekveld bovenaan de pagina om eenvoudig te zoeken naar bijvoorbeeld
-          een Nakd kortingscode of een Loavies kortingscode. Neem ook eens een kijkje op mijn instagram account:
-          <a href="https://www.instagram.com/wiegeeftkorting/" class="tw-text-blue-600 hover:tw-underline">&#64;wiegeeftkorting</a>
-        </p>
-      </div>
+      }
     </div>
 
-  </main>
+    <!-- Paginatie -->
+    <div class="tw-flex tw-items-center tw-justify-center tw-mt-8 tw-gap-4">
+      <button
+              class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-sm tw-px-4 tw-py-2 tw-rounded disabled:tw-opacity-50"
+              (click)="prevPage()"
+              [disabled]="page === 1">
+        Vorige
+      </button>
+      <span class="tw-text-sm">Pagina {{ page }} van {{ totalPages }}</span>
+      <button
+              class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-sm tw-px-4 tw-py-2 tw-rounded disabled:tw-opacity-50"
+              (click)="nextPage()"
+              [disabled]="page === totalPages">
+        Volgende
+      </button>
+    </div>
+  </div>
+  <!-- EINDE VAN DE GEGROEPEERDE SECTIE -->
+
+  <div class="tw-mt-8 tw-flex tw-justify-center">
+    <div class="tw-w-full sm:tw-w-10/12 lg:tw-w-10/12">
+      <p class="tw-text-gray-800 tw-text-sm sm:tw-text-base tw-leading-relaxed">
+        Webshops zoals <a href="https://nl.shein.com/" class="tw-text-blue-600 hover:tw-underline">Shein</a>,
+        <a href="https://www.loavies.com/nl/" class="tw-text-blue-600 hover:tw-underline">Loavies</a> en
+        <a href="https://www.na-kd.com/nl" class="tw-text-blue-600 hover:tw-underline">Nakd</a> verspreiden regelmatig een kortingscode via social media. Door deze in te vullen
+        in hun webshop krijg je korting op je bestelling. Meestal is een kortingscode enkele dagen geldig. De kortingscodes
+        worden gedeeld door influencers en content creators. Op deze pagina hou ik een overzicht bij van alle kortingscodes
+        die ik voorbij zie komen op Instagram. Gebruik het zoekveld bovenaan de pagina om eenvoudig te zoeken naar bijvoorbeeld
+        een Nakd kortingscode of een Loavies kortingscode. Neem ook eens een kijkje op mijn instagram account:
+        <a href="https://www.instagram.com/wiegeeftkorting/" class="tw-text-blue-600 hover:tw-underline">&#64;wiegeeftkorting</a>
+      </p>
+    </div>
+  </div>
+</main>
 
 <app-modal
         [isVisible]="isModalVisible"
@@ -114,5 +143,3 @@
 </app-modal>
 
 <app-footer></app-footer>
-
-</div>
