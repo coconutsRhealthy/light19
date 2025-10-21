@@ -1,23 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterModule],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  constructor() {}
+export class NavbarComponent {
+  menuOpen = false;
+  menuItems = ['Home', 'Over', 'Diensten', 'Projecten', 'Contact'];
 
-  ngOnInit(): void {
-    const toggler = document.querySelector('.navbar-toggler');
-    const collapse = document.querySelector('.navbar-collapse');
-
-    if (toggler && collapse) {
-      toggler.addEventListener('click', () => {
-        collapse.classList.toggle('show');
-      });
-    }
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
   }
 }

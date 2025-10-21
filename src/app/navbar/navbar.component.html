@@ -1,40 +1,68 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="">
-            <img src="/avatar.jpeg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
-            Diski
-        </a>
-        <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'});">
-                        Kortingscodes
+<nav class="tw-bg-white tw-shadow-md">
+    <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">
+        <div class="tw-flex tw-justify-between tw-h-16">
+            <!-- Logo + naam -->
+            <div class="tw-flex tw-items-center tw-space-x-3">
+                <div class="tw-w-10 tw-h-10 tw-rounded-full tw-overflow-hidden tw-border tw-border-gray-200">
+                    <img
+                            src="/avatar.jpeg"
+                            alt="Logo"
+                            class="tw-w-full tw-h-full tw-object-cover"
+                    />
+                </div>
+                <span class="tw-text-xl tw-font-bold tw-text-gray-800">Diski</span>
+            </div>
+
+            <!-- Desktop menu -->
+            <div class="tw-hidden md:tw-flex tw-items-center tw-space-x-8">
+                @for (item of menuItems; track item) {
+                    <a
+                            href="#"
+                            class="tw-text-gray-600 hover:tw-text-gray-900 tw-transition"
+                    >
+                        {{ item }}
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/winkels" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
-                        Shops
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/prikbord" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
-                        Prikbord
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/wieheeftsale" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">
-                        Wie heeft sale
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/contact" routerLinkActive="active" onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
-                        Contact
-                    </a>
-                </li>
-            </ul>
+                }
+            </div>
+
+            <!-- Mobile menu knop -->
+            <div class="md:tw-hidden tw-flex tw-items-center">
+                <button (click)="toggleMenu()" class="tw-text-gray-700 focus:tw-outline-none">
+                    @if (!menuOpen) {
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="tw-h-6 tw-w-6"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        } @else {
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 class="tw-h-6 tw-w-6"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                    }
+                </button>
+            </div>
         </div>
     </div>
+
+    <!-- Mobile menu -->
+    @if (menuOpen) {
+        <div class="md:tw-hidden tw-bg-white tw-shadow-inner">
+            <div class="tw-px-4 tw-pt-2 tw-pb-3 tw-space-y-1">
+                @for (item of menuItems; track item) {
+                    <a href="#"
+                       class="tw-block tw-text-gray-700 hover:tw-bg-gray-100 tw-rounded-md tw-px-3 tw-py-2">
+                        {{ item }}
+                    </a>
+                }
+            </div>
+        </div>
+    }
 </nav>
