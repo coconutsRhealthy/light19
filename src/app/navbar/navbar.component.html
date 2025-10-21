@@ -44,13 +44,13 @@
 
     <!-- Mobile menu -->
     @if (menuOpen) {
-        <div class="md:tw-hidden tw-bg-[rgb(252,212,220)] tw-shadow-inner">
+        <div class="md:tw-hidden tw-bg-[rgb(252,212,220)] tw-shadow-inner tw-animate-[fadeDown_0.3s_ease-out]">
             <div class="tw-px-4 tw-pt-2 tw-pb-3 tw-space-y-1">
                 @for (item of menuItems; track item) {
-                <a href="#"
-                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2">
-                    {{ item }}
-                </a>
+                    <a href="#"
+                       class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2">
+                        {{ item }}
+                    </a>
                 }
             </div>
         </div>
