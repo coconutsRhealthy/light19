@@ -43,7 +43,7 @@
     @for (discount of paginatedDiscounts; track discount) {
       <button
               class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100 tw-text-left tw-h-full"
-              (click)="sendCopyCodeToGa(discount.index); affiliateModalAction(discount)"
+              (click)="sendCopyCodeToGa(discount.company); affiliateModalAction(discount)"
       >
         <div>
           <h2 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900">{{ discount.company }}</h2>

@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 
 declare global {
   interface Window {
-    sendCopyCodeToGa: (element_id_index: number) => void;
+    sendCopyCodeToGa: (company: string) => void;
   }
 }
 

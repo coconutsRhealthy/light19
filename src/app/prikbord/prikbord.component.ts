@@ -12,12 +12,6 @@ import { DatePipe } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 
 
-declare global {
-  interface Window {
-    sendCopyCodeToGa: (element_id_index: number) => void;
-  }
-}
-
 interface PrikbordEntry {
   webshop: string;
   code: string;
@@ -43,7 +37,6 @@ export class PrikbordComponent implements OnInit {
   searchTerm: string = '';
   page: number = 1;
   itemsPerPage: number = 24;
-  sendCopyCodeToGa = window.sendCopyCodeToGa;
   webhookUrl = 'https://script.google.com/macros/s/AKfycbzEMMokt67Oz0PwOHEKHwxyZLpw0rwfVyzCXnerdNSwrxf4pKX6pz9_-KX48APoe_AX/exec';
   modalVisible = false;
 
