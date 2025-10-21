@@ -505,6 +505,10 @@ export class AffiliateLinkService {
     'v&d': {
         url: 'https://www.awin1.com/cread.php?awinmid=64748&awinaffid=1870794',
         dummyCode: 'DISKI10'
+    },
+    'xiaomi': {
+        url: 'https://tidd.ly/46WW1Ny',
+        dummyCode: 'XIAOMIPAD2025'
     }
   };
 
