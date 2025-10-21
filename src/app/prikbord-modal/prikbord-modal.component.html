@@ -1,39 +1,38 @@
 @if (isVisible) {
-    <div class="modal-backdrop" (click)="closeModal()"></div>
-    <div class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
+    <!-- Backdrop -->
+    <div class="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-50 tw-backdrop-blur-sm tw-animate-fadeIn" (click)="closeModal()"></div>
 
+    <!-- Modal -->
+    <div class="tw-fixed tw-inset-0 tw-flex tw-items-center tw-justify-center tw-p-4">
+        <div class="tw-bg-white tw-rounded-xl tw-shadow-xl tw-w-full tw-max-w-md tw-overflow-hidden tw-animate-slideUp">
+
+            @if (!submitted) {
+                <div class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-border-b tw-border-gray-200">
+                    <h2 class="tw-text-lg tw-font-semibold">Nieuwe code toevoegen</h2>
+                    <button type="button" (click)="closeModal()" class="tw-text-gray-500 hover:tw-text-gray-700 tw-text-2xl tw-font-bold">&times;</button>
+                </div>
+            }
+
+            <div class="tw-p-4">
                 @if (!submitted) {
-                    <div class="modal-header">
-                        <h5 class="modal-title">Nieuwe code toevoegen</h5>
-                        <button type="button" (click)="closeModal()" class="close-button">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                    <input [(ngModel)]="newRow.webshop" class="tw-w-full tw-border tw-border-gray-300 tw-rounded tw-px-3 tw-py-2 tw-mb-2 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" placeholder="Webshop" name="webshop" />
+                    <input [(ngModel)]="newRow.code" class="tw-w-full tw-border tw-border-gray-300 tw-rounded tw-px-3 tw-py-2 tw-mb-2 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" placeholder="Kortingscode" name="code" />
+                    <input [(ngModel)]="newRow.percentage" class="tw-w-full tw-border tw-border-gray-300 tw-rounded tw-px-3 tw-py-2 tw-mb-2 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" placeholder="Hoeveel korting? (bijv '10%' of '€5')" name="percentage" />
+                    <input [(ngModel)]="newRow.name" class="tw-w-full tw-border tw-border-gray-300 tw-rounded tw-px-3 tw-py-2 tw-mb-2 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" placeholder="Jouw naam (niet verplicht)" name="name" />
+                } @else {
+                    <p class="tw-bg-green-100 tw-text-green-800 tw-p-3 tw-rounded tw-mt-3">Dank je, de code is toegevoegd!</p>
                 }
-
-                <div class="modal-body">
-                    @if (!submitted) {
-                        <input [(ngModel)]="newRow.webshop" class="form-control mb-2" placeholder="Webshop" name="webshop" />
-                        <input [(ngModel)]="newRow.code" class="form-control mb-2" placeholder="Kortingscode" name="code" />
-                        <input [(ngModel)]="newRow.percentage" class="form-control mb-2" placeholder="Hoeveel korting? (bijv '10%' of '€5')" name="percentage" />
-                        <input [(ngModel)]="newRow.name" class="form-control mb-2" placeholder="Jouw naam (niet verplicht)" name="name" />
-                    } @else {
-                        <p class="alert alert-success mt-3">Dank je, de code is toegevoegd!</p>
-                    }
-                </div>
-
-                <div class="modal-footer">
-                    @if (!submitted) {
-                        <button type="button" class="btn btn-secondary" (click)="closeModal()">Annuleren</button>
-                        <button type="button" class="btn btn-success" (click)="submit()">Toevoegen</button>
-                    } @else {
-                        <button type="button" class="btn btn-primary" (click)="closeModal()">Sluiten</button>
-                    }
-                </div>
-
             </div>
+
+            <div class="tw-flex tw-justify-end tw-gap-2 tw-p-4 tw-border-t tw-border-gray-200">
+                @if (!submitted) {
+                    <button type="button" class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-gray-700 tw-px-4 tw-py-2 tw-rounded" (click)="closeModal()">Annuleren</button>
+                    <button type="button" class="tw-bg-green-500 hover:tw-bg-green-600 tw-text-white tw-px-4 tw-py-2 tw-rounded" (click)="submit()">Toevoegen</button>
+                } @else {
+                    <button type="button" class="tw-bg-blue-500 hover:tw-bg-blue-600 tw-text-white tw-px-4 tw-py-2 tw-rounded" (click)="closeModal()">Sluiten</button>
+                }
+            </div>
+
         </div>
     </div>
 }
