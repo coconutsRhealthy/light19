@@ -11,14 +11,42 @@
 
             <!-- Desktop menu -->
             <div class="tw-hidden md:tw-flex tw-items-center tw-space-x-8">
-                @for (item of menuItems; track item) {
-                    <a
-                            href="#"
-                            class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
-                    >
-                        {{ item }}
-                    </a>
-                }
+                <a
+                    routerLink="/"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
+                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
+                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'})">
+                        Kortingscodes
+                </a>
+                <a
+                    routerLink="/winkels"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
+                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
+                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
+                        Shops
+                </a>
+                <a
+                    routerLink="/prikbord"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
+                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
+                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
+                        Prikbord
+                </a>
+                <a
+                    routerLink="/wieheeftsale"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
+                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
+                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">
+                        Wie heeft sale
+                </a>
+                <a
+                    routerLink="/contact"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
+                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
+                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
+                        Contact
+                </a>
+
             </div>
 
             <!-- Mobile menu knop -->
@@ -46,12 +74,31 @@
     @if (menuOpen) {
         <div class="md:tw-hidden tw-bg-[rgb(252,212,220)] tw-shadow-inner tw-animate-[fadeDown_0.3s_ease-out]">
             <div class="tw-px-4 tw-pt-2 tw-pb-3 tw-space-y-1">
-                @for (item of menuItems; track item) {
-                    <a href="#"
-                       class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2">
-                        {{ item }}
-                    </a>
-                }
+                <a routerLink="/"
+                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'})">
+                        Kortingscodes
+                </a>
+                <a routerLink="/winkels"
+                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
+                        Shops
+                </a>
+                <a routerLink="/prikbord"
+                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
+                        Prikbord
+                </a>
+                <a routerLink="/wieheeftsale"
+                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">
+                        Wie heeft sale
+                </a>
+                <a routerLink="/contact"
+                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
+                        Contact
+                </a>
             </div>
         </div>
     }
