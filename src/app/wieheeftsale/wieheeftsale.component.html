@@ -1,11 +1,14 @@
 <app-navbar></app-navbar>
-<div class="container my-4">
-  <h1 class="mb-4">{{ h1Title }}</h1>
+<div class="tw-container tw-mx-auto tw-my-4 tw-px-4">
+  <h1 class="tw-text-2xl tw-font-bold tw-my-6 tw-text-center">
+    {{ h1Title }}
+  </h1>
+
   <!-- Search -->
-  <div class="form-group">
+  <div class="tw-mb-4">
     <input
             type="text"
-            class="form-control"
+            class="tw-w-full tw-border tw-border-gray-300 tw-rounded tw-px-3 tw-py-2 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400"
             placeholder="Zoek op bedrijf..."
             [(ngModel)]="searchTerm"
             (input)="onSearch()"
@@ -13,42 +16,37 @@
   </div>
 
   <!-- Cards grid -->
-  <div class="row">
+  <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4">
     @for (entry of filteredWieheeftsaleData; track entry) {
-    <div class="col-md-4 mb-4">
-      <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="tw-flex tw-flex-col tw-rounded-xl tw-border tw-border-gray-300 tw-shadow-lg tw-overflow-hidden tw-bg-white">
 
-        <!-- Card body (top: company + date + button) -->
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-1">{{ entry.company }}</h5>
-          <p class="card-text mb-2">
-            <small class="text-muted">Datum: {{ entry.date }}</small>
-          </p>
-          <a
-                  class="btn btn-primary btn-sm mb-2"
-                  (click)="openUrlInNewTab(entry)"
-          >Bekijk aanbieding</a
-          >
-        </div>
-
-        <!-- Square image (fills card width, no padding, clickable) -->
-        <a
+      <!-- Card body (top: company + date + button) -->
+      <div class="tw-p-4 tw-flex tw-flex-col tw-gap-1 tw-flex-1">
+        <h5 class="tw-font-semibold">{{ entry.company }}</h5>
+        <p class="tw-text-sm tw-text-gray-500">Datum: {{ entry.date }}</p>
+        <button
+                class="tw-bg-blue-500 hover:tw-bg-blue-600 tw-text-white tw-text-sm tw-px-3 tw-py-1 tw-rounded tw-mt-2 tw-w-max"
                 (click)="openUrlInNewTab(entry)"
-                class="w-100 bg-light"
-                style="aspect-ratio: 1 / 1; overflow: hidden; margin: 0; cursor: pointer; text-decoration: none;"
-        >
-          <img
-                  [src]="entry.img"
-                  [alt]="entry.company"
-                  style="width: 100%; height: 100%; object-fit: contain; display: block;"
-          />
-        </a>
-
+        >Bekijk aanbieding</button>
       </div>
+
+      <!-- Square image (fills card width, clickable, background kleur bij lege ruimte) -->
+      <a
+              (click)="openUrlInNewTab(entry)"
+              class="tw-w-full tw-cursor-pointer tw-overflow-hidden tw-bg-gray-100"
+              style="aspect-ratio: 1 / 1;"
+      >
+        <img
+                [src]="entry.img"
+                [alt]="entry.company"
+                class="tw-w-full tw-h-full tw-object-contain tw-rounded-b-xl"
+        />
+      </a>
+
     </div>
     } @empty {
-    <div class="col-12">
-      <p class="text-muted text-center mt-4">Geen resultaten gevonden.</p>
+    <div class="tw-col-span-full">
+      <p class="tw-text-gray-500 tw-text-center tw-mt-4">Geen resultaten gevonden.</p>
     </div>
     }
   </div>
