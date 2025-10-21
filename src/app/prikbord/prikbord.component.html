@@ -42,7 +42,7 @@
         <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-6">
             @for (item of paginatedPrikbordEntries; track item) {
             <div>
-                <div class="tw-bg-white tw-border tw-border-gray-200 tw-rounded-lg tw-shadow-sm tw-flex tw-flex-col tw-h-full">
+                <div class="tw-bg-white tw-border tw-border-gray-300 tw-rounded-lg tw-shadow-sm tw-flex tw-flex-col tw-h-full hover:tw-shadow-md transition-shadow duration-200">
                     <div class="tw-p-4 tw-flex-1">
                         <h5 class="tw-font-semibold tw-text-lg">{{ item.webshop }}</h5>
                         <p class="tw-mt-2">
@@ -64,10 +64,10 @@
                         </p>
                     </div>
                     <div
-                            class="tw-bg-pink-100 tw-px-4 tw-py-2 tw-text-gray-700 tw-text-sm tw-flex tw-items-center tw-justify-end tw-rounded-b-lg"
+                            class="tw-bg-gray-100 tw-border-t tw-border-gray-300 tw-px-4 tw-py-2 tw-text-gray-700 tw-text-sm tw-flex tw-items-center tw-justify-end tw-rounded-b-lg"
                             [class.valuable-contributor]="item.isValuable"
                     >
-                        Toegevoegd door <strong>{{ item.added_by }}</strong>
+                        Toegevoegd door&nbsp;<strong>{{ item.added_by }}</strong>
                         @if (item.isValuable) {
                         <img
                                 src="/blue_checkmark.png"
@@ -75,7 +75,7 @@
                                 style="width: 16px; height: 16px;"
                         />
                         }
-                        op {{ formatDate(item.date) }}
+                        &nbsp;op {{ formatDate(item.date) }}
                     </div>
                 </div>
             </div>
