@@ -39,7 +39,7 @@ export class DiscountsTableComponent implements OnInit {
   filteredDiscounts: Discount[] = [];
   searchTerm: string = '';
   page: number = 1;
-  itemsPerPage: number = 30;
+  itemsPerPage: number = 18;
   isModalVisible = false;
   selectedDiscount: any = null;
   sortByCompanyAscending = false;
@@ -54,6 +54,8 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.itemsPerPage = window.innerWidth < 768 ? 18 : 30;
+
     this.discountsService.getDiscounts().subscribe((data) => {
       this.discounts = data.map((line, index) => {
         const [company, discountCode, percentage, , date] = line.split(', ');
