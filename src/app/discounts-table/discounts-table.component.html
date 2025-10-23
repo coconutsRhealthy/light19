@@ -73,14 +73,24 @@
     </h2>
 
     <!-- Zoekveld -->
-    <div class="tw-mb-2">
+    <div class="tw-mb-2 tw-relative">
       <input
               type="text"
-              class="tw-w-full tw-px-4 tw-py-2 tw-border tw-rounded tw-shadow-sm focus:tw-outline-none focus:tw-ring"
+              class="tw-w-full tw-px-4 tw-pr-8 tw-py-2 tw-border tw-rounded tw-shadow-sm focus:tw-outline-none focus:tw-ring"
               placeholder="Zoek op webshop..."
               [(ngModel)]="searchTerm"
               (input)="onSearch()"
       />
+      @if(searchTerm) {
+        <button
+                type="button"
+                (click)="searchTerm = ''; onSearch()"
+                aria-label="Clear"
+                class="tw-absolute tw-right-2 tw-top-1/2 tw-transform tw--translate-y-1/2 tw-text-gray-500 hover:tw-text-gray-600 tw-transition tw-rounded-full tw-w-6 tw-h-6 tw-flex tw-items-center tw-justify-center tw-bg-gray-100 hover:tw-bg-gray-200"
+        >
+          &times;
+        </button>
+      }
     </div>
 
     <!-- Text Banners -->
