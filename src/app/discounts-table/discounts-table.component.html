@@ -1,10 +1,10 @@
 <app-navbar></app-navbar>
 <main class="tw-flex-1 tw-max-w-5xl tw-mx-auto tw-px-4 tw-pt-4 tw-pb-8">
-  <h1 class="tw-text-3xl sm:tw-text-4xl tw-font-bold tw-mb-7 tw-text-center">
+  <h1 class="tw-text-3xl sm:tw-text-4xl tw-font-bold tw-mb-6 tw-text-center">
     Online shoppen met kortingscodes
   </h1>
 
-  <!-- Social Banners -->
+  <!-- Text Banners -->
   <div class="tw-mb-3 tw-w-full tw-max-w-7xl tw-mx-auto">
     <div class="tw-flex tw-flex-col tw-items-center">
       <!-- Kleine Info Banner -->
@@ -81,6 +81,12 @@
               [(ngModel)]="searchTerm"
               (input)="onSearch()"
       />
+    </div>
+
+    <!-- Text Banners -->
+    <div class="tw-w-full tw-px-3 tw-py-1.5 tw-bg-gray-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200 tw-rounded-lg tw-mb-2">
+      <div>&rarr; Extra korting met <a class="tw-text-blue-600 hover:tw-text-blue-800 tw-underline" [routerLink]="['/giftcards']" onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_intable_homepage'});">€7.50 giftcards</a> voor veel shops</div>
+      <div>&rarr; Deel kortingscodes met elkaar op het <a class="tw-text-blue-600 hover:tw-text-blue-800 tw-underline" [routerLink]="['/prikbord']" onclick="gtag('event', 'prikbord', {'event_category': 'Prikbord', 'event_label': 'prikbord_intable_homepage'});">diski prikbord</a></div>
     </div>
 
     <!-- Resultaatkaarten -->
