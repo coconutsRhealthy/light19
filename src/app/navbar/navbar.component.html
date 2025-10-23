@@ -3,10 +3,10 @@
         <div class="tw-flex tw-justify-between tw-h-16">
             <!-- Logo + naam -->
             <div class="tw-flex tw-items-center tw-space-x-3">
-                <div class="tw-w-10 tw-h-10 tw-rounded-full tw-overflow-hidden">
+                <a href="" class="tw-w-10 tw-h-10 tw-rounded-full tw-overflow-hidden">
                     <img src="/avatar.jpeg" alt="Logo" class="tw-w-full tw-h-full tw-object-cover" />
-                </div>
-                <span class="tw-text-xl tw-font-bold tw-text-gray-900">Diski</span>
+                </a>
+                <a href="" class="tw-text-xl tw-font-bold tw-text-gray-900">Diski</a>
             </div>
 
             <!-- Desktop menu -->
@@ -75,26 +75,31 @@
         <div class="md:tw-hidden tw-bg-[rgb(252,212,220)] tw-shadow-inner tw-animate-[fadeDown_0.3s_ease-out]">
             <div class="tw-px-4 tw-pt-2 tw-pb-3 tw-space-y-1">
                 <a routerLink="/"
-                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
-                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'})">
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'})">
                         Kortingscodes
                 </a>
                 <a routerLink="/winkels"
-                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
-                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
                         Shops
                 </a>
                 <a routerLink="/prikbord"
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
                         Prikbord
                 </a>
                 <a routerLink="/wieheeftsale"
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">
                         Wie heeft sale
                 </a>
                 <a routerLink="/contact"
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
                         Contact
