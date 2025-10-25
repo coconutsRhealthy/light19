@@ -100,7 +100,7 @@ export class AffiliateLinkService {
     },
     'stylevana': {
         url: 'https://tidd.ly/4dsPX0F',
-        dummyCode: 'STYL20YJ3'
+        dummyCode: 'AFFDISKI20'
     },
     'temu': {
         url: 'https://temu.to/m/u0p32ew176i',
@@ -509,6 +509,22 @@ export class AffiliateLinkService {
     'xiaomi': {
         url: 'https://tidd.ly/46WW1Ny',
         dummyCode: 'XIAOMIPAD2025'
+    },
+    'thejewellershop': {
+        url: 'https://tidd.ly/48EXTf7',
+        dummyCode: '6G9UY9NL'
+    },
+    'stronger': {
+        url: 'https://tidd.ly/49dYqon',
+        dummyCode: 'SOCIAL15'
+    },
+    'unitedconsumers': {
+        url: 'https://tidd.ly/4or4Ncu',
+        dummyCode: 'ZON10'
+    },
+    'goyu': {
+        url: 'https://getgoyu.com/',
+        dummyCode: 'GO10'
     }
   };
 
