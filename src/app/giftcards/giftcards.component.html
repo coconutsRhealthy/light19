@@ -42,13 +42,17 @@
                         <a
                             [href]="d.discountCode"
                             target="_blank"
-                            (click)="sendEventToGa('Giftcards', d.company)"
+                            (click)="sendEventToGa('Giftcards', d.company, d.discountCode)"
                             rel="noopener noreferrer"
                             class="flex items-center justify-between bg-white shadow-sm hover:shadow-md rounded-xl px-4 py-3 transition border border-gray-100 hover:border-indigo-300 hover:text-indigo-600"
                         >
                             <span class="font-medium">{{ d.company }}</span>
                             <span class="text-sm text-green-600 font-semibold">
-                                🎁 €7,50
+                                @if (d.discountCode.includes('foldersnl')) {
+                                    🔁💰cashback
+                                } @else {
+                                    🎁 €7,50
+                                }
                             </span>
                         </a>
                     </li>

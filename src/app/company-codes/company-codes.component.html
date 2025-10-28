@@ -45,10 +45,15 @@
         <tr [ngClass]="{'giftcard-highlight': code.code.startsWith('http')}">
           <td>
             @if (code.code.startsWith('http')) {
-            <a [href]="code.code" target="_blank" (click)="sendGiftcardEventsToGa()" class="bold-underlined-link">{{ webshopName | uppercase }} GIFTCARD</a>
-            <div class="footnote">Werkt bovenop eventuele andere kortingscodes</div>
+              @if (code.code.includes('foldersnl')) {
+                <a [href]="code.code" target="_blank" (click)="sendCashbackEventsToGa()" class="bold-underlined-link">{{ webshopName | uppercase }} cashback</a>
+                <div class="footnote">Op al je online bestellingen bij  {{ webshopName }}</div>
+              } @else {
+                <a [href]="code.code" target="_blank" (click)="sendGiftcardEventsToGa()" class="bold-underlined-link">{{ webshopName | uppercase }} GIFTCARD</a>
+                <div class="footnote">Werkt bovenop eventuele andere kortingscodes</div>
+              }
             } @else {
-            <span>{{ code.code }}</span>
+              <span>{{ code.code }}</span>
             }
           </td>
           <td [ngClass]="{'vertical-centered': code.code.startsWith('http')}">{{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }}</td>
