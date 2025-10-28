@@ -106,21 +106,28 @@
               class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100 tw-text-left tw-h-full"
               (click)="sendCopyCodeToGa(discount.company); affiliateModalAction(discount)"
       >
-        <div>
-          <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900">
-            {{ discount.company }}
-          </h3>
-          <p class="tw-text-sm tw-text-gray-600 tw-mt-1">
-            💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
-          </p>
-          <p class="tw-text-xs tw-text-gray-400 tw-mt-2">
-            Gespot op: {{ formatDate(discount.date) }}
-          </p>
+        <div class="tw-flex tw-items-center tw-space-x-3">
+          <img
+                  [src]="getLogoUrl(discount.company)"
+                  [alt]="discount.company + ' logo'"
+                  class="tw-w-12 tw-h-12 lg:tw-w-9 lg:tw-h-9 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100"
+          />
+          <div>
+            <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900">
+              {{ discount.company }}
+            </h3>
+            <p class="tw-text-sm tw-text-gray-600 tw-mt-1">
+              💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
+            </p>
+            <p class="tw-text-xs tw-text-gray-400 tw-mt-1">
+              Gespot op: {{ formatDate(discount.date) }}
+            </p>
+          </div>
         </div>
         <div class="tw-flex tw-items-center tw-justify-center tw-w-8 tw-h-8 lg:tw-w-9 lg:tw-h-9 tw-rounded-full tw-bg-gray-100">
           <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="tw-w-4 tw-h-4 lg:tw-w-5 lg:tw-h-5 tw-text-gray-600"
+                  class="tw-w-4 tw-h-4 lg:tw-w-5 lg-h-5 tw-text-gray-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

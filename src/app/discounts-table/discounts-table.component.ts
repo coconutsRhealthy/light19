@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { LOCALE_ID } from '@angular/core';
 import { DiscountsService } from '../services/discounts.service';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
+import { LogosService } from '../services/logos.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -45,9 +46,10 @@ export class DiscountsTableComponent implements OnInit {
   sortByCompanyAscending = false;
   sortByDateAscending = false;
   sendCopyCodeToGa = window.sendCopyCodeToGa;
+  logos: { [companyName: string]: string } = {};
 
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
-                private meta: MetaService, private datePipe: DatePipe) {
+                private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService) {
     var monthYear = this.meta.getDateString();
     this.meta.updateTitle("Diski | Online shoppen met kortingscodes in " + monthYear);
     this.meta.updateMetaInfo("De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl", "diski.nl", "Kortingscode, Korting");
@@ -75,6 +77,10 @@ export class DiscountsTableComponent implements OnInit {
           this.openModal(this.discounts[index]);
         }
       }
+    });
+
+    this.logosService.getAllLogos().subscribe(data => {
+      this.logos = data;
     });
   }
 
@@ -182,5 +188,10 @@ export class DiscountsTableComponent implements OnInit {
     }
 
     return rawDiscountPercentage;
+  }
+
+  getLogoUrl(companyName: string): string {
+    const cleanName = companyName.replace(/\s*\(.*$/, '');
+    return this.logos[cleanName] || this.logos["default"];
   }
 }
