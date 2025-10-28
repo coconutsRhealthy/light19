@@ -523,7 +523,7 @@ export class AffiliateLinkService {
         dummyCode: 'ZON10'
     },
     'goyu': {
-        url: 'https://getgoyu.com/',
+        url: 'https://tidd.ly/3WVuxlk',
         dummyCode: 'GO10'
     }
   };
