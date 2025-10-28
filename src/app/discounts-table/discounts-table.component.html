@@ -121,13 +121,15 @@
         </div>
 
         <!-- Rechterzijde: logo -->
-        <div class="tw-flex-shrink-0">
-          <img
-                  [src]="getLogoUrl(discount.company)"
-                  [alt]="discount.company + ' logo'"
-                  class="tw-w-16 tw-h-16 lg:tw-w-14 lg:tw-h-14 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100 tw-ml-auto"
-          />
-        </div>
+        @if (getLogoUrl(discount.company)) {
+          <div class="tw-flex-shrink-0">
+            <img
+                    [src]="getLogoUrl(discount.company)"
+                    [alt]="discount.company + ' logo'"
+                    class="tw-w-16 tw-h-16 lg:tw-w-14 lg:tw-h-14 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100 tw-ml-auto"
+            />
+          </div>
+        }
       </button>
       }
     </div>

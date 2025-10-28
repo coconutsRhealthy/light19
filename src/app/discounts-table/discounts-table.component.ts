@@ -177,7 +177,7 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   openNewPageWithCodeDetailModal(codeTableIndex: number, affiliateLink: string) {
-    var url = 'https://www.diski.nl?i=' + encodeURIComponent(codeTableIndex)
+    var url = 'https://www.dutchtoy.nl?i=' + encodeURIComponent(codeTableIndex)
     window.open(url, '_blank');
     location.href = affiliateLink;
   }
@@ -190,8 +190,8 @@ export class DiscountsTableComponent implements OnInit {
     return rawDiscountPercentage;
   }
 
-  getLogoUrl(companyName: string): string {
+  getLogoUrl(companyName: string): string | undefined {
     const cleanName = companyName.replace(/\s*\(.*$/, '');
-    return this.logos[cleanName] || this.logos["default"];
+    return this.logos[cleanName];
   }
 }
