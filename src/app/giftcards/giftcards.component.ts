@@ -69,8 +69,15 @@ export class GiftcardsComponent implements OnInit {
     }
   }
 
-  sendEventToGa(eventName: string, eventLabel: string): void {
-    var eventLabelToUse = "giftcards_page_" + eventLabel.toLowerCase();
+  sendEventToGa(eventName: string, eventLabel: string, url: string = ''): void {
+    let eventLabelToUse: string;
+
+    if (url.includes('foldersnl')) {
+      eventLabelToUse = 'giftcards_page_cashback_' + eventLabel.toLowerCase();
+    } else {
+      eventLabelToUse = 'giftcards_page_' + eventLabel.toLowerCase();
+    }
+
     this.analyticsEventService.sendEventToGa(eventName, eventLabelToUse);
   }
 }

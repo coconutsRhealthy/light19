@@ -160,6 +160,22 @@ export class CompanyCodesComponent implements OnInit {
     }
   }
 
+  sendCashbackEventsToGa() {
+    if (typeof gtag === 'function') {
+      gtag('event', 'cashback', {
+        'event_category': 'Cashback',
+        'event_label': 'cashback_companypage_table'
+      });
+
+      gtag('event', 'cashback', {
+        'event_category': 'Cashback',
+        'event_label': 'cashback_companypage_table_' + this.company
+      });
+    } else {
+      console.error('gtag is not defined');
+    }
+  }
+
   copyToClipboard(text: string) {
     navigator.clipboard.writeText(text).then(
       () => {
