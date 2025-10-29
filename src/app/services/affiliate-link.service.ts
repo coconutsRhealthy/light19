@@ -100,7 +100,7 @@ export class AffiliateLinkService {
     },
     'stylevana': {
         url: 'https://tidd.ly/4dsPX0F',
-        dummyCode: 'STYL20YJ3'
+        dummyCode: 'AFFDISKI20'
     },
     'temu': {
         url: 'https://temu.to/m/u0p32ew176i',
@@ -483,7 +483,7 @@ export class AffiliateLinkService {
         dummyCode: 'DISKI10'
     },
     'size': {
-        url: 'https://tidd.ly/3J5p8F7',
+        url: 'https://tidd.ly/4nPrgjn',
         dummyCode: 'sanx15'
     },
     'hema': {
@@ -505,6 +505,26 @@ export class AffiliateLinkService {
     'v&d': {
         url: 'https://www.awin1.com/cread.php?awinmid=64748&awinaffid=1870794',
         dummyCode: 'DISKI10'
+    },
+    'xiaomi': {
+        url: 'https://tidd.ly/46WW1Ny',
+        dummyCode: 'XIAOMIPAD2025'
+    },
+    'thejewellershop': {
+        url: 'https://tidd.ly/48EXTf7',
+        dummyCode: '6G9UY9NL'
+    },
+    'stronger': {
+        url: 'https://tidd.ly/49dYqon',
+        dummyCode: 'SOCIAL15'
+    },
+    'unitedconsumers': {
+        url: 'https://tidd.ly/4or4Ncu',
+        dummyCode: 'ZON10'
+    },
+    'goyu': {
+        url: 'https://tidd.ly/3WVuxlk',
+        dummyCode: 'GO10'
     }
   };
 
