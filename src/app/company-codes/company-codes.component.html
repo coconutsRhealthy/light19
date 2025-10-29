@@ -42,37 +42,30 @@
     <div class="tw-flex tw-flex-col tw-space-y-4 tw-mt-6 tw-mb-6">
       @for (code of discountCodes; track code) {
           @if (code.code.startsWith('http')) {
-            @if (code.code.includes('foldersnl')) {
-                <!-- Cashback card, full clickable -->
-                <a [href]="code.code" target="_blank" (click)="sendCashbackEventsToGa()" class="tw-block">
-                    <div class="tw-bg-yellow-100 tw-p-4 tw-rounded-2xl tw-shadow-md hover:tw-bg-yellow-200 tw-transition-colors">
-                        <div class="tw-flex tw-justify-between tw-items-center tw-mb-2">
-                              <span class="tw-font-semibold tw-underline tw-text-blue-600 tw-text-lg">
-                                {{ webshopName | uppercase }} cashback
-                              </span>
-                            <span class="tw-font-medium tw-text-gray-700">
-                              {{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }}
-                              </span>
-                        </div>
-                        <div class="tw-text-xs tw-text-pink-600 tw-mt-1">Op al je online bestellingen bij  {{ webshopName }}</div>
-                    </div>
-                </a>
-            } @else {
               <!-- Giftcard card, full clickable -->
-              <a [href]="code.code" target="_blank" (click)="sendGiftcardEventsToGa()" class="tw-block">
+              <a [href]="code.code" target="_blank" (click)="sendGiftcardEventsToGa(code.code)" class="tw-block">
                 <div class="tw-bg-yellow-100 tw-p-4 tw-rounded-2xl tw-shadow-md hover:tw-bg-yellow-200 tw-transition-colors">
                   <div class="tw-flex tw-justify-between tw-items-center tw-mb-2">
                       <span class="tw-font-semibold tw-underline tw-text-blue-600 tw-text-lg">
-                        {{ webshopName | uppercase }} GIFTCARD
+                        @if (code.code.includes('foldersnl')) {
+                          {{ webshopName | uppercase }} cashback
+                        } @else {
+                          {{ webshopName | uppercase }} GIFTCARD
+                        }
                       </span>
                     <span class="tw-font-medium tw-text-gray-700">
                       {{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }}
                       </span>
                   </div>
-                  <div class="tw-text-xs tw-text-pink-600 tw-mt-1">Werkt bovenop eventuele andere kortingscodes</div>
+                  <div class="tw-text-xs tw-text-pink-600 tw-mt-1">
+                    @if (code.code.includes('foldersnl')) {
+                      Op al je online bestellingen bij  {{ webshopName }}
+                    } @else {
+                      Werkt bovenop eventuele andere kortingscodes
+                    }
+                  </div>
                 </div>
               </a>
-            }
           } @else {
               <!-- Regular code card -->
               <div class="tw-bg-white tw-p-4 tw-rounded-2xl tw-shadow-md">

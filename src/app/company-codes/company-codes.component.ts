@@ -144,32 +144,23 @@ export class CompanyCodesComponent implements OnInit {
     return this.discountCodes.some(code => code.code.startsWith('http'));
   }
 
-  sendGiftcardEventsToGa() {
+  sendGiftcardEventsToGa(wlsckUrl: string) {
+    const isCashback = wlsckUrl.includes("foldersnl");
+
+    const event = isCashback ? 'cashback' : 'giftcard';
+    const eventCategory = isCashback ? 'Cashback' : 'Giftcard';
+    const eventLabelOverall = isCashback ? 'cashback_companypage_table' : 'giftcard_companypage_table';
+    const eventLabelSpecific = `${eventLabelOverall}_${this.company}`;
+
     if (typeof gtag === 'function') {
-      gtag('event', 'giftcard', {
-        'event_category': 'Giftcard',
-        'event_label': 'giftcard_companypage_table'
+      gtag('event', event, {
+        'event_category': eventCategory,
+        'event_label': eventLabelOverall
       });
 
-      gtag('event', 'giftcard', {
-        'event_category': 'Giftcard',
-        'event_label': 'giftcard_companypage_table_' + this.company
-      });
-    } else {
-      console.error('gtag is not defined');
-    }
-  }
-
-  sendCashbackEventsToGa() {
-    if (typeof gtag === 'function') {
-      gtag('event', 'cashback', {
-        'event_category': 'Cashback',
-        'event_label': 'cashback_companypage_table'
-      });
-
-      gtag('event', 'cashback', {
-        'event_category': 'Cashback',
-        'event_label': 'cashback_companypage_table_' + this.company
+      gtag('event', event, {
+        'event_category': eventCategory,
+        'event_label': eventLabelSpecific
       });
     } else {
       console.error('gtag is not defined');
