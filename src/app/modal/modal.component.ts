@@ -121,8 +121,8 @@ export class ModalComponent {
   }
 
   getDiscountUrl(): string {
-    if (this.discount?.url) {
-      return this.discount.url;
+    if (this.discount?.affiliateLink) {
+      return this.discount.affiliateLink;
     }
 
     const query = encodeURIComponent(`${this.discount.company} nl`);

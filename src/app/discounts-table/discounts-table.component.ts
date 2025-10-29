@@ -23,6 +23,7 @@ interface Discount {
   percentage: string;
   date: string;
   index: number;
+  affiliateLink?: string | null;
 }
 
 @Component({
@@ -74,6 +75,7 @@ export class DiscountsTableComponent implements OnInit {
       if(queryParams.has('i')) {
         const index = Number(queryParams.get('i'));
         if (!isNaN(index) && index >= 0 && index < this.discounts.length) {
+          this.discounts[index].affiliateLink = this.affiliateLinkService.getAffiliateLink(this.discounts[index].company)
           this.openModal(this.discounts[index]);
         }
       }
