@@ -17,7 +17,7 @@
 
   <!-- Cards grid -->
   <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4">
-    @for (entry of filteredWieheeftsaleData; track entry) {
+    @for (entry of paginatedWieheeftsaleEntries; track entry) {
     <div class="tw-flex tw-flex-col tw-rounded-xl tw-border tw-border-gray-300 tw-shadow-lg tw-overflow-hidden tw-bg-white">
 
       <!-- Card body (top: company + date + button) -->
@@ -50,5 +50,25 @@
     </div>
     }
   </div>
+
+  <!-- Pagination -->
+  <div class="tw-flex tw-justify-center tw-items-center tw-mt-6 tw-space-x-4">
+    <button
+            class="tw-bg-blue-500 tw-hover:bg-blue-600 tw-text-white tw-font-semibold tw-py-1 tw-px-3 tw-rounded-lg disabled:tw-bg-gray-300 disabled:tw-cursor-not-allowed"
+            (click)="prevPage()"
+            [disabled]="page === 1"
+    >
+      Vorige
+    </button>
+    <span>Pagina {{ page }} van {{ totalPages }}</span>
+    <button
+            class="tw-bg-blue-500 tw-hover:bg-blue-600 tw-text-white tw-font-semibold tw-py-1 tw-px-3 tw-rounded-lg disabled:tw-bg-gray-300 disabled:tw-cursor-not-allowed"
+            (click)="nextPage()"
+            [disabled]="page === totalPages"
+    >
+      Volgende
+    </button>
+  </div>
+
 </div>
 <app-footer></app-footer>

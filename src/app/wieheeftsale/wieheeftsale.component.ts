@@ -24,6 +24,8 @@ export class WieheeftsaleComponent implements OnInit {
   filteredWieheeftsaleData: WhsEntry[] = [];
   searchTerm: string = '';
   h1Title: string = '';
+  page: number = 1;
+  itemsPerPage: number = 21;
 
   constructor(private meta: MetaService, private http: HttpClient, private analyticsEventService: AnalyticsEventService) {
     var monthYear = this.meta.getDateString();
@@ -65,5 +67,23 @@ export class WieheeftsaleComponent implements OnInit {
   openUrlInNewTab(entry: WhsEntry) {
     window.open(entry.url, '_blank');
     this.analyticsEventService.sendEventToGa('click', `whs_company_click_${entry.company.toLowerCase()}`);
+  }
+
+  get paginatedWieheeftsaleEntries(): WhsEntry[] {
+    const start = (this.page - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+    return this.filteredWieheeftsaleData.slice(start, end);
+  }
+
+  nextPage() {
+    if (this.page < this.totalPages) this.page++;
+  }
+
+  prevPage() {
+    if (this.page > 1) this.page--;
+  }
+
+  get totalPages(): number {
+    return Math.ceil(this.filteredWieheeftsaleData.length / this.itemsPerPage);
   }
 }
