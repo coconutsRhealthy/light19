@@ -48,6 +48,8 @@ export class DiscountsTableComponent implements OnInit {
   sortByDateAscending = false;
   sendCopyCodeToGa = window.sendCopyCodeToGa;
   logos: { [companyName: string]: string } = {};
+  isExpanded = false;
+  isBannerVisible = true;
 
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
                 private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService) {
@@ -195,5 +197,14 @@ export class DiscountsTableComponent implements OnInit {
   getLogoUrl(companyName: string): string | undefined {
     const cleanName = companyName.replace(/\s*\(.*$/, '');
     return this.logos[cleanName];
+  }
+
+  toggleNewLookBanner() {
+    this.isExpanded = !this.isExpanded;
+  }
+
+  closeNewLookBanner(event: MouseEvent) {
+    event.stopPropagation();
+    this.isBannerVisible = false;
   }
 }
