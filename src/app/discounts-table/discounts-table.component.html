@@ -7,10 +7,10 @@
   >
     <!-- Header: hoofdtekst + kruisje -->
     <div
-            class="tw-flex tw-justify-center tw-items-center tw-gap-2 tw-cursor-pointer tw-px-4 tw-h-10"
+            class="tw-flex tw-justify-center tw-items-center tw-gap-2 tw-cursor-pointer tw-px-4 tw-py-0.5"
             (click)="toggleNewlookBanner()"
     >
-      <span class="tw-leading-none">Nieuwe look! Zelfde kwaliteit kortingscodes :)</span>
+      <span class="tw-leading-none">Nieuwe look! Zelfde kwaliteit kortingscodes 😊</span>
       <button
               class="tw-ml-2 tw-text-yellow-900 hover:tw-text-yellow-800 tw-font-bold tw-text-base"
               (click)="closeNewlookBanner($event)"
@@ -22,13 +22,15 @@
 
     <!-- Extra tekst zichtbaar bij uitklappen -->
     <div
-            class="tw-px-4 tw-text-xs tw-text-yellow-800 tw-text-left tw-transition-[max-height,opacity] tw-duration-500 tw-ease-in-out tw-overflow-hidden"
+            class="tw-px-4 tw-text-xs tw-text-yellow-900 tw-text-center tw-transition-[max-height,opacity] tw-duration-500 tw-ease-in-out tw-overflow-hidden tw-flex tw-items-center tw-justify-center"
             [class.tw-max-h-0]="!isNewlookBannerExpanded"
             [class.tw-max-h-72]="isNewlookBannerExpanded"
             [class.tw-opacity-0]="!isNewlookBannerExpanded"
             [class.tw-opacity-100]="isNewlookBannerExpanded"
     >
-      Diski.nl gaat met z’n tijd mee! De site heeft een frisse nieuwe look gekregen, maar de kortingscodes zijn nog steeds van dezelfde hoge kwaliteit die je van Diski.nl gewend bent.
+         <span class="tw-text-[0.65rem] tw-text-yellow-800 tw-leading-relaxed">
+          Diski.nl gaat met z’n tijd mee! De site heeft een frisse nieuwe look gekregen. Wat niet veranderd is zijn de kortingscodes: nog steeds van dezelfde hoge kwaliteit die je van Diski.nl gewend bent.
+         </span>
     </div>
   </div>
 }
