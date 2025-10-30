@@ -525,6 +525,58 @@ export class AffiliateLinkService {
     'goyu': {
         url: 'https://tidd.ly/3WVuxlk',
         dummyCode: 'GO10'
+    },
+    'etsy': {
+        url: 'https://tidd.ly/44z3z7O',
+        dummyCode: 'ET-student-5'
+    },
+    'ziggo': {
+        url: 'https://tidd.ly/4o8EtnB',
+        dummyCode: 'zizo10'
+    },
+    'marleyspoon.nl': {
+        url: 'https://tidd.ly/42XIJhl',
+        dummyCode: 'Kleinpepertje'
+    },
+    'vevor': {
+        url: 'https://tidd.ly/3J9uyiC',
+        dummyCode: 'VEVORHOT2'
+    },
+    'odido zakelijk breedband': {
+        url: 'https://tidd.ly/48T1t5s',
+        dummyCode: 'SOPHIE10BB'
+    },
+    'iscooter': {
+        url: 'https://tidd.ly/431ZRm2',
+        dummyCode: 'LARS10V'
+    },
+    'ohcascas amsterdam': {
+        url: 'https://tidd.ly/43JsnJo',
+        dummyCode: 'RESTOCK10'
+    },
+    'cronjager': {
+        url: 'https://tidd.ly/3X1iiDT',
+        dummyCode: 'CRONJOB'
+    },
+    'marie-stella-maris': {
+        url: 'https://tidd.ly/4mD3fvh',
+        dummyCode: 'MSM10'
+    },
+    'overstappen.nl': {
+        url: 'https://tidd.ly/4qrCWuF',
+        dummyCode: 'switch5'
+    },
+    'zorgkiezer': {
+        url: 'https://tidd.ly/3WomNZ9',
+        dummyCode: 'EXTRA5'
+    },
+    'FBTO Zorg': {
+        url: 'https://tidd.ly/43GpzN7',
+        dummyCode: 'Extra5'
+    },
+    'Independer Zorg': {
+        url: 'https://tidd.ly/3Wr9Nly',
+        dummyCode: 'Extra5'
     }
   };
 
