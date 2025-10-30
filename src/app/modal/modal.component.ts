@@ -125,7 +125,9 @@ export class ModalComponent {
       return this.discount.affiliateLink;
     }
 
-    const query = encodeURIComponent(`${this.discount.company} nl`);
+    let companyName = this.discount.company?.replace(/\s*\(.*?\)\s*$/, '') ?? '';
+
+    const query = encodeURIComponent(`${companyName} nl`);
     return `https://www.google.com/search?q=${query}`;
   }
 
