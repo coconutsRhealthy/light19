@@ -48,8 +48,8 @@ export class DiscountsTableComponent implements OnInit {
   sortByDateAscending = false;
   sendCopyCodeToGa = window.sendCopyCodeToGa;
   logos: { [companyName: string]: string } = {};
-  isExpanded = false;
-  isBannerVisible = true;
+  isNewlookBannerExpanded = false;
+  isNewlookBannerVisible = true;
 
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
                 private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService) {
@@ -199,12 +199,12 @@ export class DiscountsTableComponent implements OnInit {
     return this.logos[cleanName];
   }
 
-  toggleNewLookBanner() {
-    this.isExpanded = !this.isExpanded;
+  toggleNewlookBanner() {
+    this.isNewlookBannerExpanded = !this.isNewlookBannerExpanded;
   }
 
-  closeNewLookBanner(event: MouseEvent) {
+  closeNewlookBanner(event: MouseEvent) {
     event.stopPropagation();
-    this.isBannerVisible = false;
+    this.isNewlookBannerVisible = false;
   }
 }

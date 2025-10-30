@@ -1,18 +1,19 @@
 <app-navbar></app-navbar>
 
 <!-- Nieuwe look banner -->
-@if(isBannerVisible) {
+@if(isNewlookBannerVisible) {
   <div
-          class="tw-relative tw-bg-yellow-100 tw-text-yellow-900 tw-text-center tw-text-sm tw-font-medium tw-cursor-pointer tw-transition-all tw-duration-300 tw-overflow-hidden tw-flex tw-justify-center tw-items-center tw-px-4 tw-h-10"
-          [class.tw-h-auto]="isExpanded"
-          [class.tw-max-h-10]="!isExpanded"
-          (click)="toggleNewLookBanner()"
+          class="tw-relative tw-bg-yellow-100 tw-text-yellow-900 tw-text-sm tw-font-medium tw-transition-all tw-overflow-hidden"
   >
-    <div class="tw-flex tw-justify-center tw-items-center tw-gap-2 tw-w-full">
-      <span class="tw-leading-none">Nieuwe look! Zelfde kwaliteit kortingscodes 😊</span>
+    <!-- Header: hoofdtekst + kruisje -->
+    <div
+            class="tw-flex tw-justify-center tw-items-center tw-gap-2 tw-cursor-pointer tw-px-4 tw-h-10"
+            (click)="toggleNewlookBanner()"
+    >
+      <span class="tw-leading-none">Nieuwe look! Zelfde kwaliteit kortingscodes :)</span>
       <button
               class="tw-ml-2 tw-text-yellow-900 hover:tw-text-yellow-800 tw-font-bold tw-text-base"
-              (click)="closeNewLookBanner($event)"
+              (click)="closeNewlookBanner($event)"
               aria-label="Sluit banner"
       >
         &times;
@@ -20,11 +21,15 @@
     </div>
 
     <!-- Extra tekst zichtbaar bij uitklappen -->
-    @if(isExpanded) {
-      <div class="tw-mt-2 tw-text-xs tw-text-yellow-800 tw-transition-opacity tw-duration-300 tw-text-left tw-px-4 tw-w-full">
-        Diski.nl gaat met z’n tijd mee! De site heeft een frisse nieuwe look gekregen. Wat niet veranderd is zijn de kortingscodes: nog steeds van dezelfde hoge kwaliteit die je van Diski.nl gewend bent.
-      </div>
-    }
+    <div
+            class="tw-px-4 tw-text-xs tw-text-yellow-800 tw-text-left tw-transition-[max-height,opacity] tw-duration-500 tw-ease-in-out tw-overflow-hidden"
+            [class.tw-max-h-0]="!isNewlookBannerExpanded"
+            [class.tw-max-h-72]="isNewlookBannerExpanded"
+            [class.tw-opacity-0]="!isNewlookBannerExpanded"
+            [class.tw-opacity-100]="isNewlookBannerExpanded"
+    >
+      Diski.nl gaat met z’n tijd mee! De site heeft een frisse nieuwe look gekregen, maar de kortingscodes zijn nog steeds van dezelfde hoge kwaliteit die je van Diski.nl gewend bent.
+    </div>
   </div>
 }
 
