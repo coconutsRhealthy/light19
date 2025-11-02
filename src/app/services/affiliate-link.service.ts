@@ -577,6 +577,10 @@ export class AffiliateLinkService {
     'Independer Zorg': {
         url: 'https://tidd.ly/3Wr9Nly',
         dummyCode: 'Extra5'
+    },
+    'rowenta': {
+        url: 'https://tidd.ly/434aipc',
+        dummyCode: 'EXTRA10'
     }
   };
 
