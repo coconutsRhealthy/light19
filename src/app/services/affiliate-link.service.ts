@@ -581,6 +581,14 @@ export class AffiliateLinkService {
     'rowenta': {
         url: 'https://tidd.ly/434aipc',
         dummyCode: 'EXTRA10'
+    },
+    'vanbeekumspecerijen': {
+        url: 'https://tidd.ly/4oc3HBD',
+        dummyCode: 'BLACK15'
+    },
+    'dorina': {
+        url: 'https://tidd.ly/4oerzV9',
+        dummyCode: 'EXTRA10'
     }
   };
 
