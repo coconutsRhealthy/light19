@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
+import { DiscountsTableComponent } from './discounts-table/discounts-table.component';
 
 export const routes: Routes = [
     {
-        path: '',
-        loadComponent: () => import('./discounts-table/discounts-table.component').then(m => m.DiscountsTableComponent)
+      path: '',
+      component: DiscountsTableComponent
     },
     {
         path: 'winkels',
