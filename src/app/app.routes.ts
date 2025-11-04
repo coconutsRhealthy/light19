@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
 import { DiscountsTableComponent } from './discounts-table/discounts-table.component';
+import { CompanyCodesComponent } from './company-codes/company-codes.component';
 
 export const routes: Routes = [
     {
-      path: '',
-      component: DiscountsTableComponent
+        path: '',
+        component: DiscountsTableComponent
     },
     {
         path: 'winkels',
@@ -28,7 +29,7 @@ export const routes: Routes = [
     },
     {
         path: ':company',
-        loadComponent: () => import('./company-codes/company-codes.component').then(m => m.CompanyCodesComponent)
+        component: CompanyCodesComponent
     },
     {
         path: '**',
