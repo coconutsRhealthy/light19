@@ -202,10 +202,6 @@ export class AffiliateLinkService {
         url: 'https://tidd.ly/3GZs30J',
         dummyCode: 'BOOH2506Z'
     },
-    'sansbeaute': {
-        url: 'https://tidd.ly/3EZGXUh',
-        dummyCode: 'SANS20KIH'
-    },
     'bstn.com': {
         url: 'https://tidd.ly/3FgECUP',
         dummyCode: 'PROMO54VH'
@@ -588,6 +584,14 @@ export class AffiliateLinkService {
     },
     'dorina': {
         url: 'https://tidd.ly/4oerzV9',
+        dummyCode: 'EXTRA10'
+    },
+    'yvesrocher': {
+        url: 'https://tidd.ly/4oz5pgz',
+        dummyCode: 'HELLO'
+    },
+    'intergard': {
+        url: 'https://tidd.ly/4oi2AQS',
         dummyCode: 'EXTRA10'
     }
   };
