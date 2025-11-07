@@ -169,7 +169,7 @@
             }
           </button>
         }
-      } @else {
+      } @else if (initialPageLoad) {
         <!-- Skeleton loaders -->
         @for (s of [1,2,3,4,5,6,7,8,9]; track s) {
           <div class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow tw-p-4 tw-border tw-border-gray-100 tw-h-[100px] tw-flex tw-justify-between tw-items-center">

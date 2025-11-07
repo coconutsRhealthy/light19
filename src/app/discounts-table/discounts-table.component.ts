@@ -50,6 +50,7 @@ export class DiscountsTableComponent implements OnInit {
   logos: { [companyName: string]: string } = {};
   isNewlookBannerExpanded = false;
   isNewlookBannerVisible = true;
+  initialPageLoad = true;
 
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
                 private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService) {
@@ -59,6 +60,7 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.initialPageLoad = true;
     this.itemsPerPage = window.innerWidth < 768 ? 18 : 30;
 
     this.discountsService.getDiscounts().subscribe((data) => {
@@ -81,6 +83,7 @@ export class DiscountsTableComponent implements OnInit {
           this.openModal(this.discounts[index]);
         }
       }
+      this.initialPageLoad = false;
     });
 
     this.logosService.getAllLogos().subscribe(data => {
