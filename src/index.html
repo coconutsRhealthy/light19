@@ -9,6 +9,23 @@
   <meta name="tradetracker-site-verification" content="725a2cb17a0221aad41e1fa39a4e1a0d4cd27a92" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
+  <script>
+    fetch('manifest.json')
+      .then(response => response.json())
+      .then(manifest => {
+        const jsonFile = manifest.latestDiscounts;
+        if (jsonFile) {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'fetch';
+          link.href = jsonFile;
+          link.crossOrigin = 'anonymous';
+          document.head.appendChild(link);
+        }
+      })
+      .catch(err => console.error('Could not load manifest.json:', err));
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVP906XC65"></script>
   <script>
@@ -18,8 +35,6 @@
 
     gtag('config', 'G-DVP906XC65');
   </script>
-
-  <link rel="preload" href="discounts.v298.json" as="fetch" crossorigin>
 
   <script>
     function sendCopyCodeToGa(company) {
