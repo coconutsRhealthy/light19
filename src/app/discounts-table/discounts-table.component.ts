@@ -184,7 +184,7 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   openNewPageWithCodeDetailModal(codeTableIndex: number, affiliateLink: string) {
-    var url = 'https://www.diski.nl?i=' + encodeURIComponent(codeTableIndex)
+    var url = 'https://diski.nl?i=' + encodeURIComponent(codeTableIndex)
     window.open(url, '_blank');
     location.href = affiliateLink;
   }
