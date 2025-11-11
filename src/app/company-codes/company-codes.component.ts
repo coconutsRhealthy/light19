@@ -12,12 +12,15 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 
+import { ModalComponent } from '../modal/modal.component';
+
 declare let gtag: Function;
 
 @Component({
   selector: 'app-company-codes',
   imports: [
     CommonModule,
+    ModalComponent,
     FooterComponent,
     NavbarComponent,
     NotFoundComponent,
@@ -34,6 +37,9 @@ export class CompanyCodesComponent implements OnInit {
   discountCodes: { code: string, discount: string, date: string }[] = [];
   isLoading = true;
   copiedCode: string | null = null;
+
+  isModalVisible = false;
+  selectedDiscount: any = null;
 
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
                 private discountsService: DiscountsService, private webshopNameService: WebshopNameService,
@@ -68,7 +74,10 @@ export class CompanyCodesComponent implements OnInit {
       const urlString = 'https://';
 
       this.discountCodes = allDiscountCodes
-        .filter(entry => entry.company.startsWith(companyName) || entry.company.startsWith(companyName))
+          .filter(entry => {
+            const companyNoBrackets = entry.company.replace(/\s*\(.*?\)\s*/g, '');
+            return companyNoBrackets.toLowerCase() === companyName.toLowerCase();
+          })
         .map(entry => {
           let date;
 
@@ -178,4 +187,17 @@ export class CompanyCodesComponent implements OnInit {
       }
     );
   }
+
+
+
+
+    openModal() {
+
+      this.isModalVisible = true;
+    }
+
+    closeModal() {
+
+      this.isModalVisible = false;
+    }
 }
