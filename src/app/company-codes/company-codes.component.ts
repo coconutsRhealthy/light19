@@ -68,7 +68,10 @@ export class CompanyCodesComponent implements OnInit {
       const urlString = 'https://';
 
       this.discountCodes = allDiscountCodes
-        .filter(entry => entry.company.startsWith(companyName) || entry.company.startsWith(companyName))
+          .filter(entry => {
+            const companyNoBrackets = entry.company.replace(/\s*\(.*?\)\s*/g, '');
+            return companyNoBrackets.toLowerCase() === companyName.toLowerCase();
+          })
         .map(entry => {
           let date;
 

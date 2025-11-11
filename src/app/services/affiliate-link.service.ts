@@ -593,6 +593,10 @@ export class AffiliateLinkService {
     'intergard': {
         url: 'https://tidd.ly/4oi2AQS',
         dummyCode: 'EXTRA10'
+    },
+    'milezbracelets': {
+        url: 'https://tidd.ly/4nGulkV',
+        dummyCode: 'EXTRA10'
     }
   };
 
