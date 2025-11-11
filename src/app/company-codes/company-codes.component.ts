@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ElementRef } from '@angular/core';
 import { DiscountsService } from '../services/discounts.service';
+import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { WebshopNameService } from '../services/webshop-name.service';
 import { CompanySeoTextService } from '../services/company-seo-text.service';
 import { MetaService } from '../services/meta.service';
@@ -15,6 +16,15 @@ import { RouterModule } from '@angular/router';
 import { ModalComponent } from '../modal/modal.component';
 
 declare let gtag: Function;
+
+interface Discount {
+  company: string;
+  discountCode: string;
+  percentage: string;
+  date: string;
+  index: number;
+  affiliateLink?: string | null;
+}
 
 @Component({
   selector: 'app-company-codes',
@@ -38,12 +48,14 @@ export class CompanyCodesComponent implements OnInit {
   isLoading = true;
   copiedCode: string | null = null;
 
+  affiliateLink: string | undefined;
   isModalVisible = false;
   selectedDiscount: any = null;
 
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
-                private discountsService: DiscountsService, private webshopNameService: WebshopNameService,
-                private companySeoTextService: CompanySeoTextService, private meta: MetaService) { }
+                private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
+                private webshopNameService: WebshopNameService, private companySeoTextService: CompanySeoTextService,
+                private meta: MetaService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -105,6 +117,7 @@ export class CompanyCodesComponent implements OnInit {
         this.meta.updateMetaInfo("404 Deze pagina bestaat niet op diski.nl", "diski.nl", "404");
       }
 
+      this.affiliateLink = this.affiliateLinkService.getAffiliateLink(companyName)
       this.discountCodes.sort((a, b) => a.code.startsWith(urlString) ? -1 : 1);
       this.isLoading = false;
     });
@@ -188,16 +201,21 @@ export class CompanyCodesComponent implements OnInit {
     );
   }
 
+  openModal(code: any) {
+    this.selectedDiscount = {
+      company: code.company,
+      discountCode: code.code,
+      percentage: code.discount,
+      date: code.date,
+      index: code.index ?? -1,
+      affiliateLink: this.affiliateLink
+    };
 
+    this.isModalVisible = true;
+  }
 
-
-    openModal() {
-
-      this.isModalVisible = true;
-    }
-
-    closeModal() {
-
-      this.isModalVisible = false;
-    }
+  closeModal() {
+    this.isModalVisible = false;
+    this.selectedDiscount = null;
+  }
 }
