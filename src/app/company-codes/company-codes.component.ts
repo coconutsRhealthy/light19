@@ -198,6 +198,27 @@ export class CompanyCodesComponent implements OnInit {
     }
   }
 
+  sendAffEventsToGa() {
+    const event = 'comp_codes';
+    const eventCategory = 'Comp_codes';
+    const eventLabelOverall = 'comp_codes_aff_open';
+    const eventLabelSpecific = `${eventLabelOverall}_${this.company}`;
+
+    if (typeof gtag === 'function') {
+      gtag('event', event, {
+        'event_category': eventCategory,
+        'event_label': eventLabelOverall
+      });
+
+      gtag('event', event, {
+        'event_category': eventCategory,
+        'event_label': eventLabelSpecific
+      });
+    } else {
+      console.error('gtag is not defined');
+    }
+  }
+
   copyToClipboard(text: string) {
     navigator.clipboard.writeText(text).then(
       () => {
