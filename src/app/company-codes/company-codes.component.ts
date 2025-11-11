@@ -201,6 +201,52 @@ export class CompanyCodesComponent implements OnInit {
     );
   }
 
+getCardText(company: string, discount: string | number, entry: number): string {
+  // Bepaal eenmaal of we % moeten tonen
+  const discountText = this.shouldDisplayPercent(discount) ? `${discount}%` : discount.toString();
+
+  const templates = [
+    `Bespaar ${discountText} bij je volgende aankoop bij ${company}`,
+    `Scoor ${discountText} korting met deze ${company} kortingscode`,
+    `Gebruik deze code en krijg ${discountText} off bij ${company}`,
+    `Profiteer van ${discountText} korting op alles bij ${company}`,
+    `${company} deal: ${discountText} korting direct`,
+    `Pak ${discountText} korting met deze ${company} code`,
+    `Extra ${discountText} korting bij ${company} – vandaag geldig!`,
+    `Ontvang ${discountText} korting op je bestelling bij ${company}`,
+    `${company} kortingsactie: bespaar ${discountText} nu`,
+    `Scoor vandaag ${discountText} korting met ${company} code`,
+    `Bespaar direct ${discountText} op alles bij ${company}`,
+    `Gebruik deze ${company} kortingscode voor ${discountText} off`,
+    `${company} korting: ${discountText} op je hele order`,
+    `Krijg ${discountText} korting met deze ${company} deal`,
+    `Profiteer vandaag nog van ${discountText} korting bij ${company}`,
+    `${company} promo: ${discountText} korting op je bestelling`,
+    `Pak ${discountText} korting via deze ${company} kortingscode`,
+    `Extra ${discountText} off bij ${company} – mis het niet!`,
+    `Bespaar ${discountText} op je order met ${company} code`,
+    `${company} kortingsdeal: ${discountText} korting nu beschikbaar`,
+    `Scoor ${discountText} korting direct bij ${company}`,
+    `${company} actie: ontvang ${discountText} korting vandaag`,
+    `Gebruik deze ${company} code en bespaar ${discountText}`,
+    `${company} deal: extra ${discountText} korting op alles`,
+    `Pak vandaag ${discountText} korting met ${company} code`,
+    `${company} kortingscode geeft ${discountText} korting op je bestelling`,
+    `Bespaar ${discountText} direct bij ${company} met deze code`,
+    `Scoor nu ${discountText} korting op ${company} producten`,
+    `${company} actie: ${discountText} korting voor jou`,
+    `Ontvang ${discountText} korting vandaag nog bij ${company}`
+  ];
+
+  // Entry gebruiken, clamp naar laatste element indien nodig
+  const index = Math.min(entry - 1, templates.length - 1);
+
+  return templates[index];
+}
+
+
+
+
   openModal(code: any) {
     this.selectedDiscount = {
       company: code.company,
