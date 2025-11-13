@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { LOCALE_ID } from '@angular/core';
 import { DiscountsService } from '../services/discounts.service';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
+import { AnalyticsEventService } from '../services/analytics-event.service';
 import { LogosService } from '../services/logos.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
@@ -51,8 +52,9 @@ export class DiscountsTableComponent implements OnInit {
   isNewlookBannerExpanded = false;
   isNewlookBannerVisible = true;
   initialPageLoad = true;
+  lastSentTerm: string = '';
 
-  constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
+  constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
                 private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService) {
     var monthYear = this.meta.getDateString();
     this.meta.updateTitle("Diski | Online shoppen met kortingscodes in " + monthYear);
@@ -96,6 +98,14 @@ export class DiscountsTableComponent implements OnInit {
       discount.company.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
     this.page = 1;
+
+    if (this.searchTerm.length >= 5) {
+      const termToSend = this.searchTerm.trim().slice(0, 5);
+      if (termToSend !== this.lastSentTerm) {
+        this.lastSentTerm = termToSend;
+        this.analyticsEventService.sendEventToGa("Search_typing", "search_typing_" + termToSend);
+      }
+    }
   }
 
   get paginatedDiscounts(): Discount[] {

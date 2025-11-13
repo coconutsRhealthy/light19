@@ -71,6 +71,26 @@
 
         <!-- Prikbord items -->
         <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-6">
+            <!-- Skeletons -->
+            @if (!paginatedPrikbordEntries.length) {
+                @for (i of [1,2,3,4,5,6,7,8,9]; track i) {
+                    <div>
+                        <div class="tw-bg-white tw-border tw-border-gray-200 tw-rounded-lg tw-shadow-sm tw-flex tw-flex-col tw-h-full tw-animate-pulse">
+                            <div class="tw-p-4 tw-flex-1">
+                                <div class="tw-h-5 tw-bg-gray-200 tw-rounded tw-w-2/3"></div>
+                                <div class="tw-mt-4 tw-space-y-2">
+                                    <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-3/4"></div>
+                                    <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-1/2"></div>
+                                </div>
+                            </div>
+                            <div class="tw-bg-gray-100 tw-border-t tw-border-gray-200 tw-px-4 tw-py-2 tw-flex tw-items-center tw-justify-end tw-rounded-b-lg">
+                                <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-2/3"></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
             @for (item of paginatedPrikbordEntries; track item) {
             <div>
                 <div class="tw-bg-white tw-border tw-border-gray-300 tw-rounded-lg tw-shadow-sm tw-flex tw-flex-col tw-h-full hover:tw-shadow-md transition-shadow duration-200">

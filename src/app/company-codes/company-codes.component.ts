@@ -88,7 +88,15 @@ export class CompanyCodesComponent implements OnInit {
       this.discountCodes = allDiscountCodes
           .filter(entry => {
             const companyNoBrackets = entry.company.replace(/\s*\(.*?\)\s*/g, '');
-            return companyNoBrackets.toLowerCase() === companyName.toLowerCase();
+            const companyNoBracketsLc = companyNoBrackets.toLowerCase();
+
+            if(companyNoBracketsLc === 'leolive') {
+                if(!entry.discountCode.startsWith(urlString)) {
+                    return false;
+                }
+            }
+
+            return companyNoBracketsLc === companyName.toLowerCase();
           })
         .map(entry => {
           let date;
