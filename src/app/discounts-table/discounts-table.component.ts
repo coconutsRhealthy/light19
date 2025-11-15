@@ -100,7 +100,7 @@ export class DiscountsTableComponent implements OnInit {
     this.page = 1;
 
     if (this.searchTerm.length >= 5) {
-      const termToSend = this.searchTerm.trim().slice(0, 5);
+      const termToSend = this.searchTerm.trim().slice(0, 5).toLowerCase();
       if (termToSend !== this.lastSentTerm) {
         this.lastSentTerm = termToSend;
         this.analyticsEventService.sendEventToGa("Search_typing", "search_typing_" + termToSend);
