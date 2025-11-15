@@ -28,6 +28,10 @@ export const routes: Routes = [
         loadComponent: () => import('./giftcards/giftcards.component').then(m => m.GiftcardsComponent)
     },
     {
+        path: 'ambassador',
+        loadComponent: () => import('./ambassador/ambassador.component').then(m => m.AmbassadorComponent)
+    },
+    {
         path: ':company',
         component: CompanyCodesComponent
     },
