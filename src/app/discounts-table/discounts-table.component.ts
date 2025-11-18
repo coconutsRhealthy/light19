@@ -220,4 +220,8 @@ export class DiscountsTableComponent implements OnInit {
     event.stopPropagation();
     this.isNewlookBannerVisible = false;
   }
+
+  isBlackFriday(discount: any): boolean {
+    return discount?.discountCode?.startsWith('BF_');
+  }
 }

@@ -131,4 +131,8 @@ export class ModalComponent {
     return `https://www.google.com/search?q=${query}`;
   }
 
+    isBlackFriday(discount: any): boolean {
+      return discount?.discountCode?.startsWith('BF_');
+    }
+
 }

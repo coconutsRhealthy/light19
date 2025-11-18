@@ -139,35 +139,70 @@
     <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4">
       @if (paginatedDiscounts.length > 0) {
         @for (discount of paginatedDiscounts; track discount) {
-          <button
-                  class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100 tw-text-left tw-h-full"
-                  (click)="sendCopyCodeToGa(discount.company); affiliateModalAction(discount)"
-          >
-            <!-- Linkerzijde: tekst -->
-            <div class="tw-flex-1 tw-pr-3">
-              <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900 tw-truncate lg:tw-max-w-[180px]">
-                {{ discount.company }}
-              </h3>
+          @if (isBlackFriday(discount)) {
+            <button
+                    (click)="sendCopyCodeToGa(discount.company); affiliateModalAction(discount)"
+                    class="tw-w-full tw-rounded-2xl tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-text-left tw-h-full
+                   tw-bg-gray-900 tw-text-white tw-border tw-border-yellow-400 tw-shadow-xl active:tw-scale-[0.98] tw-transition-all tw-duration-200"
+            >
+              <div class="tw-flex-1 tw-pr-3">
+                <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-truncate lg:tw-max-w-[180px]">
+                  {{ discount.company }}
+                </h3>
 
-              <p class="tw-text-sm tw-text-gray-600 tw-mt-1">
-                💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
-              </p>
-              <p class="tw-text-xs tw-text-gray-400 tw-mt-1">
-                Gespot op: {{ formatDate(discount.date) }}
-              </p>
-            </div>
+                <span class="tw-inline-block tw-bg-yellow-400 tw-text-black tw-text-[10px] tw-font-bold tw-rounded-full tw-px-2 tw-py-[2px] tw-mt-1">
+                BLACK FRIDAY 🔥
+              </span>
 
-            <!-- Rechterzijde: logo -->
-            @if (getLogoUrl(discount.company)) {
+                <p class="tw-text-sm tw-mt-2">
+                  💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
+                </p>
+                <p class="tw-text-xs tw-mt-1 tw-text-gray-300">
+                  Gespot op: {{ formatDate(discount.date) }}
+                </p>
+              </div>
+
+              @if (getLogoUrl(discount.company)) {
+                <div class="tw-flex-shrink-0">
+                  <img
+                          [src]="getLogoUrl(discount.company)"
+                          [alt]="discount.company + ' logo'"
+                          class="tw-w-16 tw-h-16 lg:tw-w-14 lg:tw-h-14 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100"
+                  />
+                </div>
+              }
+            </button>
+          } @else {
+            <button
+                    (click)="sendCopyCodeToGa(discount.company); affiliateModalAction(discount)"
+                    class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98]
+                   tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center
+                   tw-border tw-border-gray-100 tw-text-left tw-h-full"
+            >
+              <div class="tw-flex-1 tw-pr-3">
+                <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900 tw-truncate lg:tw-max-w-[180px]">
+                  {{ discount.company }}
+                </h3>
+
+                <p class="tw-text-sm tw-text-gray-600 tw-mt-1">
+                  💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
+                </p>
+                <p class="tw-text-xs tw-text-gray-400 tw-mt-1">
+                  Gespot op: {{ formatDate(discount.date) }}
+                </p>
+              </div>
+
+              @if (getLogoUrl(discount.company)) {
               <div class="tw-flex-shrink-0">
                 <img
                         [src]="getLogoUrl(discount.company)"
                         [alt]="discount.company + ' logo'"
-                        class="tw-w-16 tw-h-16 lg:tw-w-14 lg:tw-h-14 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100 tw-ml-auto"
+                        class="tw-w-16 tw-h-16 lg:tw-w-14 lg:tw-h-14 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100"
                 />
               </div>
-            }
-          </button>
+              }
+            </button>
+          }
         }
       } @else if (initialPageLoad) {
         <!-- Skeleton loaders -->
