@@ -10,16 +10,16 @@
 
     <!-- ⚫ BLACK FRIDAY MODAL -->
     @if(isBlackFriday(discount)) {
-    <div class="tw-bg-gray-900 tw-rounded-3xl tw-shadow-2xl tw-border tw-border-amber-500 tw-w-[90%] sm:tw-w-[420px] tw-overflow-hidden tw-animate-slideUp">
+    <div class="tw-bg-white tw-rounded-3xl tw-shadow-2xl tw-border tw-border-gray-100 tw-w-[90%] sm:tw-w-[420px] tw-overflow-hidden tw-animate-slideUp">
 
         <!-- Header -->
-        <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-amber-500/40">
-            <h2 class="tw-font-bold tw-text-lg tw-text-amber-400">
+        <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-gray-200">
+            <h2 class="tw-font-bold tw-text-lg tw-text-gray-900">
                 🖤 BLACK FRIDAY • {{ discount.company }}
             </h2>
             <button
                     (click)="closeModal()"
-                    class="tw-text-amber-400 hover:tw-text-amber-300 tw-transition"
+                    class="tw-text-gray-400 hover:tw-text-gray-600 tw-transition"
                     aria-label="Close"
             >
                 ✕
@@ -27,13 +27,13 @@
         </div>
 
         <!-- Body -->
-        <div class="tw-px-6 tw-py-6 tw-space-y-5 tw-text-amber-100">
+        <div class="tw-px-6 tw-py-6 tw-space-y-5">
 
             <p class="tw-text-sm tw-leading-relaxed">
                 {{ discount.discountCode.replace('BF_', '') }}
             </p>
 
-            <div class="tw-flex tw-justify-between tw-text-xs tw-text-amber-300/80">
+            <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
                 <span>Gespot op</span>
                 <span>{{ getCorrectFormatOfCodeDate(discount.date) }}</span>
             </div>
@@ -41,12 +41,12 @@
         </div>
 
         <!-- Footer -->
-        <div class="tw-bg-gray-800 tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-amber-500/40">
+        <div class="tw-bg-gray-50 tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-gray-200">
             <a
                     [href]="getDiscountUrl()"
                     target="_blank"
                     rel="sponsored"
-                    class="tw-bg-amber-500 hover:tw-bg-amber-600 tw-text-black tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
+                    class="tw-bg-amber-500 hover:tw-bg-amber-600 tw-text-white tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
             >
                 Naar winkel →
             </a>

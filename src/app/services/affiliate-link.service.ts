@@ -11,7 +11,7 @@ export class AffiliateLinkService {
         dummyCode: 'STARLASH'
     },
     'myproteinnl': {
-        url: 'https://tidd.ly/3Dvhdyg',
+        url: 'https://tidd.ly/4phxxVC',
         dummyCode: 'MPDISKI'
     },
     'smartphonehoesjes.nl': {
@@ -27,7 +27,7 @@ export class AffiliateLinkService {
         dummyCode: 'VIP20QZJ'
     },
     'hunkemoller': {
-        url: 'https://tidd.ly/4j17AXp',
+        url: 'https://tidd.ly/4i22ydx',
         dummyCode: 'HUNK5CUZ'
     },
     'thuisbezorgd': {
@@ -39,7 +39,7 @@ export class AffiliateLinkService {
         dummyCode: 'FOOT25JUV'
     },
     'ninjakitchen': {
-        url: 'https://tidd.ly/42pkFTr',
+        url: 'https://tidd.ly/47Ywcfg',
         dummyCode: 'NINJ15BBG'
     },
     'samsung': {
@@ -83,7 +83,7 @@ export class AffiliateLinkService {
         dummyCode: 'ALIE15LM0'
     },
     'adidas': {
-        url: 'https://tidd.ly/4iTlN7Q',
+        url: 'https://tidd.ly/4lCgvA9',
         dummyCode: 'SOPHIE15RUS'
     },
     'only': {
@@ -111,7 +111,7 @@ export class AffiliateLinkService {
         dummyCode: 'EASY30HOV'
     },
     'iciparisxl': {
-        url: 'https://tidd.ly/4lMFsJA',
+        url: 'https://tidd.ly/4a19DZS',
         dummyCode: 'ICIP30GYR'
     },
     'yehwang_wholesale': {
@@ -267,7 +267,7 @@ export class AffiliateLinkService {
         dummyCode: 'PICN30TL0'
     },
     'amazon': {
-        url: 'https://amzn.to/4lyoE8A',
+        url: 'https://amzn.to/3JThSg3',
         dummyCode: 'SUMMER5SQE'
     },
     'tefal': {
@@ -295,7 +295,7 @@ export class AffiliateLinkService {
         dummyCode: 'geen code nodig'
     },
     'dyson': {
-        url: 'https://tidd.ly/4dloiic',
+        url: 'https://tidd.ly/3WZaFOw',
         dummyCode: 'WELCOME5XME'
     },
     'coolblue': {
@@ -515,7 +515,7 @@ export class AffiliateLinkService {
         dummyCode: 'SOCIAL15'
     },
     'unitedconsumers': {
-        url: 'https://tidd.ly/4or4Ncu',
+        url: 'https://www.awin1.com/awclick.php?gid=316477&mid=8311&awinaffid=1870794&linkid=4541134&clickref=',
         dummyCode: 'ZON10'
     },
     'goyu': {
@@ -597,7 +597,15 @@ export class AffiliateLinkService {
     'milezbracelets': {
         url: 'https://tidd.ly/4nGulkV',
         dummyCode: 'EXTRA10'
-    }
+    },
+    'paxraamdecoratie': {
+        url: 'https://www.paxraamdecoratie.nl/staffelkortingen-meer-bestellen-is-meer-korting',
+        dummyCode: 'EXTRA10'
+    },
+    'oduree.nl': {
+        url: 'https://oduree.nl/collections/bf-25',
+        dummyCode: 'WGK10'
+    },
   };
 
   constructor() { }

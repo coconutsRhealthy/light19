@@ -252,7 +252,7 @@ export class CompanyCodesComponent implements OnInit {
 
   openModal(code: any) {
     this.selectedDiscount = {
-      company: code.company,
+      company: this.webshopName,
       discountCode: code.code,
       percentage: code.discount,
       date: code.date,
@@ -266,5 +266,21 @@ export class CompanyCodesComponent implements OnInit {
   closeModal() {
     this.isModalVisible = false;
     this.selectedDiscount = null;
+  }
+
+  getCardButtonText(discountCode: string) {
+    if(discountCode.startsWith("BF_")) {
+        return "Black Friday Deal";
+    } else {
+        return "PAK CODE";
+    }
+  }
+
+  getCardButtonClasses(discountCode: string) {
+    if(discountCode.startsWith("BF_")) {
+        return "tw-font-semibold tw-text-white tw-bg-gray-900 hover:tw-bg-gray-1000 tw-rounded-md tw-px-4 tw-py-2 tw-transition tw-duration-200 tw-shadow-sm hover:tw-shadow-md tw-uppercase";
+    } else {
+        return "tw-font-semibold tw-text-white tw-bg-sky-500 hover:tw-bg-sky-600 tw-rounded-md tw-px-4 tw-py-2 tw-transition tw-duration-200 tw-shadow-sm hover:tw-shadow-md tw-uppercase";
+    }
   }
 }
