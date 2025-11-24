@@ -7,35 +7,39 @@
 @if (!isLoading && discountCodes.length > 0) {
 <div class="tw-flex tw-flex-col tw-min-h-screen tw-bg-pink-50">
   <app-navbar></app-navbar>
+    <!-- Social & Giftcard Banner: schermbreed -->
+    <div class="tw-w-full tw-bg-yellow-100 tw-text-pink-800 tw-text-[10px] md:tw-text-xs tw-text-center tw-font-small tw-border-b tw-border-gray-200 tw-relative">
+
+        <!-- Sluitknop -->
+        <button
+                class="tw-absolute tw-top-0 tw-right-0 tw-m-1 tw-text-pink-800 hover:tw-text-pink-900 tw-font-bold tw-text-sm"
+                onclick="this.parentElement.style.display='none'">&times;</button>
+
+        <!-- Social tekst -->
+        <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8 tw-py-1">
+            &rarr; Volg mij op
+            <a href="https://www.instagram.com/wiegeeftkorting/"
+               onclick="gtag('event', 'insta', {'event_category': 'Social', 'event_label': 'insta_top'});"
+               class="tw-underline tw-font-semibold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">insta</a> en
+            <a href="https://www.tiktok.com/&#64;wiegeeftkorting2"
+               onclick="gtag('event', 'tiktok', {'event_category': 'Social', 'event_label': 'tiktok_top'});"
+               class="tw-underline tw-font-semibold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">tiktok</a>
+            voor de nieuwste {{ webshopName }} kortingscodes
+        </div>
+
+        <!-- Giftcard tekst -->
+        <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8 tw-py-0.5">
+            &rarr; €7.50 gift cards voor veel shops! (o.a. Zalando, My Jewellery)
+            <a [routerLink]="['/giftcards']"
+               onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_companypage_topteaser'});"
+               class="tw-underline tw-font-bold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">KLIK</a>
+        </div>
+
+    </div>
+
   <div class="tw-w-full tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">
-
     <h1 class="tw-text-3xl md:tw-text-4xl tw-font-extrabold tw-text-700 tw-mt-8 tw-mb-6 tw-text-center">{{ webshopName }} kortingscode</h1>
-
-    <!-- Social Banners -->
-    <div class="tw-flex tw-flex-col tw-items-center tw-mb-3">
-      <!-- Kleine Info Banner -->
-      <div class="tw-w-full md:tw-w-1/2 tw-max-w-4xl tw-mx-auto tw-mb-1 tw-px-3 tw-py-1.5 tw-bg-green-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200">
-          Volg mij op
-        <a href="https://www.instagram.com/wiegeeftkorting/"
-           onclick="gtag('event', 'insta', {'event_category': 'Social', 'event_label': 'insta_top'});"
-           class="tw-underline tw-font-semibold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">insta</a> en
-        <a href="https://www.tiktok.com/&#64;wiegeeftkorting2"
-           onclick="gtag('event', 'tiktok', {'event_category': 'Social', 'event_label': 'tiktok_top'});"
-           class="tw-underline tw-font-semibold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">tiktok</a>
-        voor de nieuwste {{ webshopName }} kortingscodes
-      </div>
-
-      <!-- Giftcard Banner -->
-      @if (!hasHttpCodes) {
-      <div class="tw-w-full md:tw-w-1/2 tw-max-w-4xl tw-mb-1 tw-mt-1 tw-px-7 tw-py-1.5 tw-bg-yellow-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200">
-          €7.50 gift cards voor veel shops! (o.a. Zalando, My Jewellery)
-        <a [routerLink]="['/giftcards']"
-           onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_companypage_topteaser'});"
-           class="tw-underline tw-font-bold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">KLIK</a>
-      </div>
-      }
-  </div>
-
+    <h2 class="tw-text-center">Alle werkende {{ webshopName }} kortingscodes in {{ monthYear }}</h2>
     <!-- Discount Codes Cards -->
     <div class="tw-flex tw-flex-col tw-space-y-4 tw-mt-6 tw-mb-6">
       @for (code of discountCodes; track code; let i = $index) {

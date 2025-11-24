@@ -52,6 +52,8 @@ export class CompanyCodesComponent implements OnInit {
   isModalVisible = false;
   selectedDiscount: any = null;
 
+  monthYear: string = "";
+
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
                 private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
                 private webshopNameService: WebshopNameService, private companySeoTextService: CompanySeoTextService,
@@ -117,9 +119,9 @@ export class CompanyCodesComponent implements OnInit {
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);
         this.companySeoText = this.companySeoTextService.getCompanySeoText(this.company) ?? '';
-        var monthYear = this.meta.getDateString();
-        this.meta.updateTitle("Werkende " + this.webshopName + " kortingscode in " + monthYear);
-        this.meta.updateMetaInfo("De nieuwste werkende kortingscode van " + this.webshopName + " in " + monthYear + "; Bespaar met deze kortingscode op online shoppen bij " + this.webshopName, "diski.nl", this.webshopName + ", Kortingscode, Korting");
+        this.monthYear = this.meta.getDateString();
+        this.meta.updateTitle("Werkende " + this.webshopName + " kortingscode in " + this.monthYear);
+        this.meta.updateMetaInfo("De nieuwste werkende kortingscode van " + this.webshopName + " in " + this.monthYear + "; Bespaar met deze kortingscode op online shoppen bij " + this.webshopName, "diski.nl", this.webshopName + ", Kortingscode, Korting");
       } else {
         this.meta.updateTitle("404 Deze pagina is niet gevonden op diski.nl");
         this.meta.updateMetaInfo("404 Deze pagina bestaat niet op diski.nl", "diski.nl", "404");
