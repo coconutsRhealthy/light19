@@ -67,7 +67,7 @@ export class AffiliateLinkService {
         dummyCode: 'PROMO10Q17'
     },
     'bodyandfit.com': {
-        url: 'https://tidd.ly/3Rbf9yz',
+        url: 'https://tidd.ly/4pE1OOD',
         dummyCode: 'LOVELY258E2'
     },
     'westwing': {
@@ -211,7 +211,7 @@ export class AffiliateLinkService {
         dummyCode: 'ANNA15VGZ'
     },
     'prenatal': {
-        url: 'https://tidd.ly/43lmYHH',
+        url: 'https://tidd.ly/4oS5f46',
         dummyCode: 'PREN20935'
     },
     'wish.com': {
@@ -299,7 +299,7 @@ export class AffiliateLinkService {
         dummyCode: 'WELCOME5XME'
     },
     'coolblue': {
-        url: 'https://tidd.ly/3GSohGZ',
+        url: 'https://tidd.ly/4oOJpyl',
         dummyCode: 'COOL30SR8'
     },
     'douglas': {
@@ -605,6 +605,34 @@ export class AffiliateLinkService {
     'oduree.nl': {
         url: 'https://oduree.nl/collections/bf-25',
         dummyCode: 'WGK10'
+    },
+    'koro.com': {
+        url: 'https://tidd.ly/47P0Rg7',
+        dummyCode: 'MIRJANNE'
+    },
+    'yfn': {
+        url: 'https://tidd.ly/4858Ioy',
+        dummyCode: 'EXTRA10'
+    },
+    '8849tech': {
+        url: 'https://tidd.ly/4i90wZf',
+        dummyCode: 'EXTRA10'
+    },
+    'jbl': {
+        url: 'https://tidd.ly/4i7fpv4',
+        dummyCode: 'JBL10'
+    },
+    'printabout': {
+        url: 'https://tidd.ly/49vByB6',
+        dummyCode: 'EXTRA10'
+    },
+    'lampen24': {
+        url: 'https://tidd.ly/4oT4iIJ',
+        dummyCode: 'BLACK25'
+    },
+    'workliving.nl': {
+        url: 'https://tidd.ly/3MfJ4Gr',
+        dummyCode: 'EXTRA10'
     },
   };
 
