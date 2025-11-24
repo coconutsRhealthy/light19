@@ -128,7 +128,7 @@ export class ModalComponent {
     let companyName = this.discount.company?.replace(/\s*\(.*?\)\s*$/, '') ?? '';
 
     const query = encodeURIComponent(`${companyName} nl`);
-    return `https://www.google.com/search?q=${query}`;
+    return `https://search.brave.com/search?q=${query}`;
   }
 
     isBlackFriday(discount: any): boolean {

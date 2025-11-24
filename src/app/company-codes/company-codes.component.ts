@@ -272,7 +272,7 @@ export class CompanyCodesComponent implements OnInit {
 
   getCardButtonText(discountCode: string) {
     if(discountCode.startsWith("BF_")) {
-        return "Black Friday Deal";
+        return "Black Friday";
     } else {
         return "PAK CODE";
     }
