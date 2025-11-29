@@ -125,6 +125,10 @@ export class ModalComponent {
       return this.discount.affiliateLink;
     }
 
+    if (this.discount?.discountCode.startsWith('http')) {
+      return this.discount.discountCode;
+    }
+
     let companyName = this.discount.company?.replace(/\s*\(.*?\)\s*$/, '') ?? '';
 
     const query = encodeURIComponent(`${companyName} nl`);
