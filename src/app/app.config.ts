@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { registerLocaleData } from '@angular/common';
 import localeNl from '@angular/common/locales/nl';
 import { LOCALE_ID } from '@angular/core';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 registerLocaleData(localeNl, 'nl');
 
@@ -13,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(),
-    { provide: LOCALE_ID, useValue: 'nl' }
+    { provide: LOCALE_ID, useValue: 'nl' }, provideClientHydration(withEventReplay())
   ]
 };
