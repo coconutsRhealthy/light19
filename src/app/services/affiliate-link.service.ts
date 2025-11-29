@@ -634,6 +634,18 @@ export class AffiliateLinkService {
         url: 'https://tidd.ly/3MfJ4Gr',
         dummyCode: 'EXTRA10'
     },
+    'koffievoordeel': {
+        url: 'https://tc.tradetracker.net/?c=25521&m=12&a=448474&r=&u=%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'wijnvoordeel': {
+        url: 'https://tc.tradetracker.net/?c=6520&m=12&a=448474&r=&u=%2F',
+        dummyCode: 'BLACK'
+    },
+    'flexispot': {
+        url: 'https://deals.flexispot.nl/c?c=36652&m=12&a=448474&r=&u=%2F',
+        dummyCode: 'FSBF10'
+    },
   };
 
   constructor() { }
