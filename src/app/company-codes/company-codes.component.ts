@@ -130,7 +130,9 @@ export class CompanyCodesComponent implements OnInit {
       this.affiliateLink = this.affiliateLinkService.getAffiliateLink(companyName)
       this.discountCodes.sort((a, b) => a.code.startsWith(urlString) ? -1 : 1);
 
-      const queryParams = new URLSearchParams(window.location.search);
+      //TODO:
+      //const queryParams = new URLSearchParams(window.location.search);
+      const queryParams = new URLSearchParams("zzz");
       if(queryParams.has('i')) {
         const index = Number(queryParams.get('i'));
         if (!isNaN(index) && index >= 0 && index < this.discountCodes.length) {
@@ -242,10 +244,13 @@ export class CompanyCodesComponent implements OnInit {
   }
 
   openNewPageWithCodeDetailModal(codeTableIndex: number) {
-    const baseUrl = window.location.origin;
+    //TODO
+    //const baseUrl = window.location.origin;
+    const baseUrl = "zzz";
     const url = `${baseUrl}/${this.company}?i=${encodeURIComponent(codeTableIndex)}`;
 
-    window.open(url, '_blank');
+    //TODO
+    //window.open(url, '_blank');
 
     if(this.affiliateLink !== undefined) {
         location.href = this.affiliateLink;
