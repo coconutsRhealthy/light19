@@ -12,11 +12,12 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { ModalComponent } from '../modal/modal.component';
 import { RouterModule } from '@angular/router';
 
-declare global {
-  interface Window {
-    sendCopyCodeToGa: (company: string) => void;
-  }
-}
+//TODO:
+// declare global {
+//   interface Window {
+//     sendCopyCodeToGa: (company: string) => void;
+//   }
+// }
 
 interface Discount {
   company: string;
@@ -47,7 +48,8 @@ export class DiscountsTableComponent implements OnInit {
   selectedDiscount: any = null;
   sortByCompanyAscending = false;
   sortByDateAscending = false;
-  sendCopyCodeToGa = window.sendCopyCodeToGa;
+  //TODO:
+  //sendCopyCodeToGa = window.sendCopyCodeToGa;
   logos: { [companyName: string]: string } = {};
   isNewlookBannerExpanded = false;
   isNewlookBannerVisible = true;
@@ -63,7 +65,9 @@ export class DiscountsTableComponent implements OnInit {
 
   ngOnInit() {
     this.initialPageLoad = true;
-    this.itemsPerPage = window.innerWidth < 768 ? 18 : 30;
+    //TODO
+    this.itemsPerPage = 30;
+    //this.itemsPerPage = window.innerWidth < 768 ? 18 : 30;
 
     this.discountsService.getDiscounts().subscribe((data) => {
       this.discounts = data.map((line, index) => {
@@ -77,7 +81,9 @@ export class DiscountsTableComponent implements OnInit {
         };
       });
       this.filteredDiscounts = this.discounts;
-      const queryParams = new URLSearchParams(window.location.search);
+      //TODO
+      //const queryParams = new URLSearchParams(window.location.search);
+      const queryParams = new URLSearchParams("zzz");
       if(queryParams.has('i')) {
         const index = Number(queryParams.get('i'));
         if (!isNaN(index) && index >= 0 && index < this.discounts.length) {

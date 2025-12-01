@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+
+// Statische JSON importeren
+//TODO: correct location
+import logosData from './logos_static_test.json';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LogosService {
-  private logosUrl = 'logos.json';
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
+  // Huidige getLogos() vervangt HTTP-call door statische data
   getAllLogos(): Observable<{ [companyName: string]: string }> {
-    return this.http.get<{ [companyName: string]: string }>(this.logosUrl);
+    return of(logosData);
   }
 }
