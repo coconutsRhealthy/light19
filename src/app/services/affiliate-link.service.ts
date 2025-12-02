@@ -646,6 +646,10 @@ export class AffiliateLinkService {
         url: 'https://deals.flexispot.nl/c?c=36652&m=12&a=448474&r=&u=%2F',
         dummyCode: 'FSBF10'
     },
+    'gymshark': {
+        url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
+        dummyCode: 'AFSPORTPOEDER'
+    },
   };
 
   constructor() { }
