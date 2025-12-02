@@ -11,6 +11,9 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ModalComponent } from '../modal/modal.component';
 import { RouterModule } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 //TODO:
 // declare global {
@@ -55,9 +58,11 @@ export class DiscountsTableComponent implements OnInit {
   isNewlookBannerVisible = true;
   initialPageLoad = true;
   lastSentTerm: string = '';
+  isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private platformId = inject(PLATFORM_ID);
 
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
-                private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService) {
+                private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute,) {
     var monthYear = this.meta.getDateString();
     this.meta.updateTitle("Diski | Online shoppen met kortingscodes in " + monthYear);
     this.meta.updateMetaInfo("De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl", "diski.nl", "Kortingscode, Korting");
@@ -65,9 +70,12 @@ export class DiscountsTableComponent implements OnInit {
 
   ngOnInit() {
     this.initialPageLoad = true;
-    //TODO
-    this.itemsPerPage = 30;
-    //this.itemsPerPage = window.innerWidth < 768 ? 18 : 30;
+
+    if (this.isBrowser && window.innerWidth < 768) {
+      this.itemsPerPage = 18;
+    } else {
+      this.itemsPerPage = 30;
+    }
 
     this.discountsService.getDiscounts().subscribe((data) => {
       this.discounts = data.map((line, index) => {
@@ -81,16 +89,23 @@ export class DiscountsTableComponent implements OnInit {
         };
       });
       this.filteredDiscounts = this.discounts;
-      //TODO
-      //const queryParams = new URLSearchParams(window.location.search);
-      const queryParams = new URLSearchParams("zzz");
-      if(queryParams.has('i')) {
-        const index = Number(queryParams.get('i'));
-        if (!isNaN(index) && index >= 0 && index < this.discounts.length) {
-          this.discounts[index].affiliateLink = this.affiliateLinkService.getAffiliateLink(this.discounts[index].company)
-          this.openModal(this.discounts[index]);
+
+      this.route.fragment.subscribe(fragment => {
+        if (!fragment) return;
+
+        const params = new URLSearchParams(fragment);
+        if (params.has('i')) {
+          const index = Number(params.get('i'));
+
+          if (!isNaN(index) && index >= 0 && index < this.discounts.length) {
+            const item = this.discounts[index];
+
+            item.affiliateLink = this.affiliateLinkService.getAffiliateLink(item.company);
+            this.openModal(item);
+          }
         }
-      }
+      });
+
       this.initialPageLoad = false;
     });
 
@@ -200,7 +215,8 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   openNewPageWithCodeDetailModal(codeTableIndex: number, affiliateLink: string) {
-    var url = 'https://diski.nl?i=' + encodeURIComponent(codeTableIndex)
+    //TODO, aanpassen naar diski
+    var url = 'https://dutchtoy.nl#i=' + encodeURIComponent(codeTableIndex)
     window.open(url, '_blank');
     location.href = affiliateLink;
   }
