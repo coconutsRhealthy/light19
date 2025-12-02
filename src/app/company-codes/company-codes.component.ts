@@ -272,7 +272,7 @@ export class CompanyCodesComponent implements OnInit {
 
   getCardButtonText(discountCode: string) {
     if(discountCode.startsWith("BF_")) {
-        return "Black Friday";
+        return "Bekijk Deal";
     } else {
         return "PAK CODE";
     }
@@ -280,7 +280,7 @@ export class CompanyCodesComponent implements OnInit {
 
   getCardButtonClasses(discountCode: string) {
     if(discountCode.startsWith("BF_")) {
-        return "tw-font-semibold tw-text-white tw-bg-gray-900 hover:tw-bg-gray-1000 tw-rounded-md tw-px-4 tw-py-2 tw-transition tw-duration-200 tw-shadow-sm hover:tw-shadow-md tw-uppercase";
+        return "tw-font-semibold tw-text-white tw-bg-blue-900 hover:tw-bg-blue-1000 tw-rounded-md tw-px-4 tw-py-2 tw-transition tw-duration-200 tw-shadow-sm hover:tw-shadow-md tw-uppercase";
     } else {
         return "tw-font-semibold tw-text-white tw-bg-sky-500 hover:tw-bg-sky-600 tw-rounded-md tw-px-4 tw-py-2 tw-transition tw-duration-200 tw-shadow-sm hover:tw-shadow-md tw-uppercase";
     }

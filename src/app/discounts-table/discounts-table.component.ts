@@ -227,7 +227,7 @@ export class DiscountsTableComponent implements OnInit {
 
   getBlackFridayButtonClasses(index: number) {
      if(index < 6) {
-         return "tw-w-full tw-rounded-2xl tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-text-left tw-h-full tw-bg-gray-900 tw-text-white tw-border tw-border-yellow-400 tw-shadow-xl active:tw-scale-[0.98] tw-transition-all tw-duration-200";
+         return "tw-w-full tw-rounded-2xl tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-text-left tw-h-full tw-border tw-border-yellow-400 tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200";
      } else {
         return "tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98] tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center tw-border tw-border-gray-100 tw-text-left tw-h-full"
      }
@@ -235,7 +235,7 @@ export class DiscountsTableComponent implements OnInit {
 
   getBlackFridaySpottedAtTextClasses(index: number) {
       if(index < 6) {
-          return "tw-text-xs tw-mt-1 tw-text-gray-300";
+          return "tw-text-xs tw-mt-1 tw-text-gray-700";
       } else {
           return "tw-text-xs tw-text-gray-400 tw-mt-1";
       }
