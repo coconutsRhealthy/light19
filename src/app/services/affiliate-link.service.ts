@@ -11,7 +11,7 @@ export class AffiliateLinkService {
         dummyCode: 'STARLASH'
     },
     'myproteinnl': {
-        url: 'https://tidd.ly/4phxxVC',
+        url: 'https://tidd.ly/3Dvhdyg',
         dummyCode: 'MPDISKI'
     },
     'smartphonehoesjes.nl': {
@@ -27,7 +27,7 @@ export class AffiliateLinkService {
         dummyCode: 'VIP20QZJ'
     },
     'hunkemoller': {
-        url: 'https://tidd.ly/4i22ydx',
+        url: 'https://tidd.ly/4j17AXp',
         dummyCode: 'HUNK5CUZ'
     },
     'thuisbezorgd': {
@@ -39,7 +39,7 @@ export class AffiliateLinkService {
         dummyCode: 'FOOT25JUV'
     },
     'ninjakitchen': {
-        url: 'https://tidd.ly/47Ywcfg',
+        url: 'https://tidd.ly/4ix2TFn',
         dummyCode: 'NINJ15BBG'
     },
     'samsung': {
@@ -67,7 +67,7 @@ export class AffiliateLinkService {
         dummyCode: 'PROMO10Q17'
     },
     'bodyandfit.com': {
-        url: 'https://tidd.ly/4pE1OOD',
+        url: 'https://tidd.ly/4iv95h4',
         dummyCode: 'LOVELY258E2'
     },
     'westwing': {
@@ -83,7 +83,7 @@ export class AffiliateLinkService {
         dummyCode: 'ALIE15LM0'
     },
     'adidas': {
-        url: 'https://tidd.ly/4lCgvA9',
+        url: 'https://tidd.ly/4iTlN7Q',
         dummyCode: 'SOPHIE15RUS'
     },
     'only': {
@@ -111,7 +111,7 @@ export class AffiliateLinkService {
         dummyCode: 'EASY30HOV'
     },
     'iciparisxl': {
-        url: 'https://tidd.ly/4a19DZS',
+        url: 'https://tidd.ly/4lMFsJA',
         dummyCode: 'ICIP30GYR'
     },
     'yehwang_wholesale': {
@@ -211,7 +211,7 @@ export class AffiliateLinkService {
         dummyCode: 'ANNA15VGZ'
     },
     'prenatal': {
-        url: 'https://tidd.ly/4oS5f46',
+        url: 'https://tidd.ly/43lmYHH',
         dummyCode: 'PREN20935'
     },
     'wish.com': {
@@ -267,7 +267,7 @@ export class AffiliateLinkService {
         dummyCode: 'PICN30TL0'
     },
     'amazon': {
-        url: 'https://amzn.to/3JThSg3',
+        url: 'https://amzn.to/4lyoE8A',
         dummyCode: 'SUMMER5SQE'
     },
     'tefal': {
@@ -295,11 +295,11 @@ export class AffiliateLinkService {
         dummyCode: 'geen code nodig'
     },
     'dyson': {
-        url: 'https://tidd.ly/3WZaFOw',
+        url: 'https://tidd.ly/4dloiic',
         dummyCode: 'WELCOME5XME'
     },
     'coolblue': {
-        url: 'https://tidd.ly/4oOJpyl',
+        url: 'https://tidd.ly/3GSohGZ',
         dummyCode: 'COOL30SR8'
     },
     'douglas': {
@@ -597,14 +597,6 @@ export class AffiliateLinkService {
     'milezbracelets': {
         url: 'https://tidd.ly/4nGulkV',
         dummyCode: 'EXTRA10'
-    },
-    'paxraamdecoratie': {
-        url: 'https://www.paxraamdecoratie.nl/staffelkortingen-meer-bestellen-is-meer-korting',
-        dummyCode: 'EXTRA10'
-    },
-    'oduree.nl': {
-        url: 'https://oduree.nl/collections/bf-25',
-        dummyCode: 'WGK10'
     },
     'koro.com': {
         url: 'https://tidd.ly/47P0Rg7',
