@@ -642,6 +642,86 @@ export class AffiliateLinkService {
         url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
         dummyCode: 'AFSPORTPOEDER'
     },
+    '123watches': {
+        url: 'https://partner.123watches.nl/c?c=40171&m=12&a=448474&r=&u=%2F',
+        dummyCode: 'EXTRA10'
+    },
+    '24uomo': {
+        url: 'https://tc.tradetracker.net/?c=37672&m=12&a=448474&r=&u=%2F',
+        dummyCode: '12EXTRA'
+    },
+    'armband.nl': {
+        url: 'https://armband.nl/tt?tt=40313_12_448474_&r=%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'bandanawinkel': {
+        url: 'https://partner.bandanawinkel.nl/c?c=3156&m=12&a=448474&r=&u=%2F',
+        dummyCode: 'BANDA10'
+    },
+    'bigsizeshirts': {
+        url: 'https://partner.bigsizeshirts.com/c?c=421&m=12&a=448474&r=&u=%2F',
+        dummyCode: 'SIZEXL10'
+    },
+    'cosmopolitan': {
+        url: 'https://tc.tradetracker.net/?c=30806&m=12&a=448474&r=&u=',
+        dummyCode: 'COSMO5'
+    },
+    'outfitrer': {
+        url: 'https://tidd.ly/49JPhEC',
+        dummyCode: 'EXTRA10'
+    },
+    'osloskinlab': {
+        url: 'https://tidd.ly/487Nms4',
+        dummyCode: 'OSL10'
+    },
+    'tiqets': {
+        url: 'https://tidd.ly/4aft6Gf',
+        dummyCode: 'TIQ5'
+    },
+    'mytrip': {
+        url: 'https://tidd.ly/48CwFVP',
+        dummyCode: 'TRIP10'
+    },
+    'michaelkors': {
+        url: 'https://tidd.ly/4ioLw9y',
+        dummyCode: 'MK10'
+    },
+    'banden.nl': {
+        url: 'https://tidd.ly/4psaNly',
+        dummyCode: 'TIRE5'
+    },
+    'horloge.nl': {
+        url: 'https://tidd.ly/4pgdqXW',
+        dummyCode: 'EXTRA5'
+    },
+    'padelmarket': {
+        url: 'https://tidd.ly/487NTdy',
+        dummyCode: 'PAD10'
+    },
+    'sport-korting.nl': {
+        url: 'https://tidd.ly/487x02N',
+        dummyCode: 'SK10'
+    },
+    'plutosport': {
+        url: 'https://tidd.ly/4ixWppW',
+        dummyCode: 'MAUD10'
+    },
+    'awbridal': {
+        url: 'https://tidd.ly/4pyoT55',
+        dummyCode: 'AWB10'
+    },
+    'footpatrol': {
+        url: 'https://tidd.ly/3M1XqKK',
+        dummyCode: 'CYBER20'
+    },
+    'pogodesignshop': {
+        url: 'https://tidd.ly/3Kjh44n',
+        dummyCode: 'POGO10'
+    },
+    'glazen.nl': {
+        url: 'https://tidd.ly/4ivGkkB',
+        dummyCode: 'GLAS10'
+    },
   };
 
   constructor() { }
