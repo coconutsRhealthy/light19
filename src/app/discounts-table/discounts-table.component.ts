@@ -15,12 +15,11 @@ import { ActivatedRoute } from '@angular/router';
 import { PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-//TODO:
-// declare global {
-//   interface Window {
-//     sendCopyCodeToGa: (company: string) => void;
-//   }
-// }
+declare global {
+  interface Window {
+    sendCopyCodeToGa: (company: string) => void;
+  }
+}
 
 interface Discount {
   company: string;
@@ -51,8 +50,6 @@ export class DiscountsTableComponent implements OnInit {
   selectedDiscount: any = null;
   sortByCompanyAscending = false;
   sortByDateAscending = false;
-  //TODO:
-  //sendCopyCodeToGa = window.sendCopyCodeToGa;
   logos: { [companyName: string]: string } = {};
   isNewlookBannerExpanded = false;
   isNewlookBannerVisible = true;
@@ -62,7 +59,7 @@ export class DiscountsTableComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
 
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
-                private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute,) {
+                private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute) {
     var monthYear = this.meta.getDateString();
     this.meta.updateTitle("Diski | Online shoppen met kortingscodes in " + monthYear);
     this.meta.updateMetaInfo("De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl", "diski.nl", "Kortingscode, Korting");
@@ -215,8 +212,11 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   openNewPageWithCodeDetailModal(codeTableIndex: number, affiliateLink: string) {
-    //TODO, aanpassen naar diski
-    var url = 'https://dutchtoy.nl#i=' + encodeURIComponent(codeTableIndex)
+    if (!this.isBrowser) return;
+
+    const baseUrl = window.location.origin;
+    const url = `${baseUrl}#i=${encodeURIComponent(codeTableIndex)}`;
+
     window.open(url, '_blank');
     location.href = affiliateLink;
   }
@@ -261,5 +261,12 @@ export class DiscountsTableComponent implements OnInit {
       } else {
           return "tw-text-xs tw-text-gray-400 tw-mt-1";
       }
+  }
+
+  get sendCopyCodeToGa() {
+    if (this.isBrowser) {
+      return window.sendCopyCodeToGa;
+    }
+    return () => {};
   }
 }

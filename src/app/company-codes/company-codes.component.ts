@@ -12,6 +12,8 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { RouterModule } from '@angular/router';
+import { PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 import { ModalComponent } from '../modal/modal.component';
 
@@ -53,6 +55,8 @@ export class CompanyCodesComponent implements OnInit {
   selectedDiscount: any = null;
 
   monthYear: string = "";
+
+  isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
                 private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
@@ -130,15 +134,18 @@ export class CompanyCodesComponent implements OnInit {
       this.affiliateLink = this.affiliateLinkService.getAffiliateLink(companyName)
       this.discountCodes.sort((a, b) => a.code.startsWith(urlString) ? -1 : 1);
 
-      //TODO:
-      //const queryParams = new URLSearchParams(window.location.search);
-      const queryParams = new URLSearchParams("zzz");
-      if(queryParams.has('i')) {
-        const index = Number(queryParams.get('i'));
-        if (!isNaN(index) && index >= 0 && index < this.discountCodes.length) {
-          this.openModal(this.discountCodes[index]);
+      this.route.fragment.subscribe(fragment => {
+        if (!fragment) return;
+
+        const params = new URLSearchParams(fragment);
+        if (params.has('i')) {
+          const index = Number(params.get('i'));
+
+          if (!isNaN(index) && index >= 0 && index < this.discountCodes.length) {
+              this.openModal(this.discountCodes[index]);
+          }
         }
-      }
+      });
 
       this.isLoading = false;
     });
@@ -244,13 +251,12 @@ export class CompanyCodesComponent implements OnInit {
   }
 
   openNewPageWithCodeDetailModal(codeTableIndex: number) {
-    //TODO
-    //const baseUrl = window.location.origin;
-    const baseUrl = "zzz";
-    const url = `${baseUrl}/${this.company}?i=${encodeURIComponent(codeTableIndex)}`;
+    if (!this.isBrowser) return;
 
-    //TODO
-    //window.open(url, '_blank');
+    const baseUrl = window.location.origin;
+    const url = `${baseUrl}/${this.company}#i=${encodeURIComponent(codeTableIndex)}`;
+
+    window.open(url, '_blank');
 
     if(this.affiliateLink !== undefined) {
         location.href = this.affiliateLink;
