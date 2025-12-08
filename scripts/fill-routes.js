@@ -3,7 +3,7 @@ const path = require('path');
 
 // routes-extractor.js
 // Hardcoded input file path
-const inputPath = path.join(__dirname, '../src/app/services/discounts_static_test.json');
+const inputPath = path.join(__dirname, '../src/app/data/discounts_static_test.json');
 
 // Load JSON file
 const raw = fs.readFileSync(inputPath, 'utf8');
@@ -27,6 +27,10 @@ json.forEach((line) => {
     }
   }
 });
+
+// --- Add hardcoded routes ---
+const hardcodedRoutes = ['/giftcards', '/winkels', '/prikbord', '/wieheeftsale', '/'];
+hardcodedRoutes.forEach(route => results.add(route.replace(/^\//, '')));
 
 // Sort alphabetically
 const sorted = Array.from(results).sort((a, b) => a.localeCompare(b));
