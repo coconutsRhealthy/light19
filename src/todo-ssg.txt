@@ -1,0 +1,8 @@
+todo:
+- build script dat seo texten vult
+- /winkels met ssg DONE
+- /wieheeftsale met ssg DONE
+- /prikbord met ssg DONE
+- /giftcards met ssg DONE
+- public map opruimen
+- url about you -> about-you

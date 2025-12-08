@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "serve:ssr:light19": "node dist/light19/server/server.mjs"
+    "serve:ssr:light19": "node dist/light19/server/server.mjs",
+    "build:prod": "ng build --configuration production",
+    "postbuild:prod": "node scripts/inject-seo-texts.js"
   },
   "private": true,
   "dependencies": {
