@@ -61,7 +61,11 @@
         <!-- Header -->
         <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-gray-200">
             <h2 class="tw-font-bold tw-text-lg tw-text-gray-900">
-                🎉 {{ discount.company }} kortingscode
+                @if (discount.discountCode.startsWith('http')) {
+                    🎉 {{ discount.company }} giftcard
+                } @else {
+                    🎉 {{ discount.company }} kortingscode
+                }
             </h2>
             <button
                     (click)="closeModal()"
@@ -147,7 +151,11 @@
                     rel="sponsored"
                     class="tw-bg-amber-500 hover:tw-bg-amber-600 tw-text-white tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
             >
-                Naar winkel →
+                @if (discount.discountCode.startsWith('http')) {
+                    Naar giftcard →
+                } @else {
+                    Naar winkel →
+                }
             </a>
         </div>
     </div>
