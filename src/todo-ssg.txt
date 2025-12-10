@@ -6,3 +6,5 @@ todo:
 - /giftcards met ssg DONE
 - public map opruimen
 - url about you -> about-you
+- CompanySeoTextService opruimen
+- fill-routes.js moet altijd als pre-step uitgevoerd worden

@@ -1,49 +1,88 @@
-const fs = require('fs');
+const fs = require('fs/promises');
 const path = require('path');
 
-const DIST_PATH = path.join(process.cwd(), 'dist', 'light19', 'browser');
-const SEO_TEXTS_PATH = path.join(process.cwd(), 'seo-texts');
+const ROOT = process.cwd();
+const DIST = path.join(ROOT, 'dist', 'light19', 'browser');
+const SEO = path.join(ROOT, 'seo-texts');
 
-// Detecteer alle companies
-const companies = fs.readdirSync(SEO_TEXTS_PATH).filter(f => f.endsWith('.json'));
+async function main() {
+  console.log('Starting SEO injector…');
 
-companies.forEach(fileName => {
-  const company = path.basename(fileName, '.json');
-
-  const htmlPath = path.join(DIST_PATH, company, 'index.html');
-  if (!fs.existsSync(htmlPath)) {
-    console.warn(`HTML file not found for ${company}, skipping SEO injection.`);
+  let items;
+  try {
+    items = await fs.readdir(DIST);
+  } catch (err) {
+    console.error('Cannot read dist folder:', err);
     return;
   }
 
-  let seoContent = '';
-  const seoFilePath = path.join(SEO_TEXTS_PATH, fileName);
-  if (fs.existsSync(seoFilePath)) {
+  for (const item of items) {
+    const itemPath = path.join(DIST, item);
+
+    // Alleen directories behandelen
+    let stat;
     try {
-      const seoObj = JSON.parse(fs.readFileSync(seoFilePath, 'utf-8'));
-      seoContent = seoObj.text?.trim() || '';
+      stat = await fs.stat(itemPath);
     } catch (err) {
-      console.error(`Error parsing SEO JSON for ${company}:`, err);
+      console.warn(`Cannot stat path for ${item}:`, err.message);
+      continue;
+    }
+    if (!stat.isDirectory()) {
+      console.log(`Skipping non-directory: ${item}`);
+      continue;
+    }
+
+    const htmlPath = path.join(itemPath, 'index.html');
+    const seoPath = path.join(SEO, `${item}.json`);
+
+    console.log(`Processing company: ${item}`);
+
+    // Lees HTML
+    let html;
+    try {
+      html = await fs.readFile(htmlPath, 'utf8');
+    } catch (err) {
+      console.warn(`Cannot read HTML file for ${item}:`, err.message);
+      continue;
+    }
+
+    // Lees SEO text als aanwezig
+    let seoText = '';
+    try {
+      const seoObj = JSON.parse(await fs.readFile(seoPath, 'utf8'));
+      seoText = seoObj.text?.trim() || '';
+    } catch (_) {
+      // Geen JSON aanwezig = gewoon verwijderen
+      seoText = '';
+    }
+
+    // Check of placeholder aanwezig is
+    if (html.includes('webshop-description-placeholder')) {
+      console.log('Placeholder found in HTML');
+    } else {
+      console.warn('Placeholder NOT found in HTML!');
+    }
+
+    // Vervang of verwijder placeholder
+    let newHtml;
+    if (seoText.length > 0) {
+      console.log(`Injecting SEO text for ${item}`);
+      newHtml = html.replace(/webshop-description-placeholder/g, `<div class="webshop-description">${seoText}</div>`);
+    } else {
+      console.log(`Removing placeholder for ${item}`);
+      newHtml = html.replace(/webshop-description-placeholder/g, '');
+    }
+
+    // Schrijf HTML terug
+    try {
+      await fs.writeFile(htmlPath, newHtml, 'utf8');
+      console.log(`Done processing ${item}`);
+    } catch (err) {
+      console.error(`Error writing HTML for ${item}:`, err.message);
     }
   }
 
-  const html = fs.readFileSync(htmlPath, 'utf-8');
+  console.log('All done!');
+}
 
-  // Regex: match <div id="companySeoTextPlaceholder" ...></div> inclusief Angular attributen
-  const placeholderRegex = /<div[^>]*id=["']companySeoTextPlaceholder["'][^>]*><\/div>/;
-
-  let injectedHtml;
-  if (seoContent.length > 0) {
-    injectedHtml = html.replace(
-      placeholderRegex,
-      `<div id="companySeoText">${seoContent}</div>`
-    );
-  } else {
-    // verwijder placeholder volledig
-    //todo: het verwijderen werkt nog niet
-    injectedHtml = html.replace(placeholderRegex, '');
-  }
-
-  fs.writeFileSync(htmlPath, injectedHtml, 'utf-8');
-  console.log(`SEO text injected for ${company}`);
-});
+main();
