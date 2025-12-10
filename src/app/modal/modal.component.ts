@@ -121,12 +121,12 @@ export class ModalComponent {
   }
 
   getDiscountUrl(): string {
-    if (this.discount?.affiliateLink) {
-      return this.discount.affiliateLink;
-    }
-
     if (this.discount?.discountCode.startsWith('http')) {
       return this.discount.discountCode;
+    }
+
+    if (this.discount?.affiliateLink) {
+      return this.discount.affiliateLink;
     }
 
     let companyName = this.discount.company?.replace(/\s*\(.*?\)\s*$/, '') ?? '';
