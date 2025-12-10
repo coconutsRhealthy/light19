@@ -722,6 +722,14 @@ export class AffiliateLinkService {
         url: 'https://tidd.ly/4ivGkkB',
         dummyCode: 'GLAS10'
     },
+    'joom': {
+        url: 'https://tidd.ly/3Mmn39f',
+        dummyCode: 'EXTRA10'
+    },
+    'danielwellington': {
+        url: 'https://tidd.ly/4aBGx3t',
+        dummyCode: 'DW10'
+    },
   };
 
   constructor() { }
