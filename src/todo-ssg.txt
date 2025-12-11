@@ -1,5 +1,5 @@
 todo:
-- build script dat seo texten vult
+- build script dat seo texten vult DONE
 - /winkels met ssg DONE
 - /wieheeftsale met ssg DONE
 - /prikbord met ssg DONE
@@ -9,3 +9,5 @@ todo:
 - url about you -> about-you
 - CompanySeoTextService opruimen
 - fill-routes.js moet altijd als pre-step uitgevoerd worden DONE
+- preload discounts.json hoeft niet meer
+- meer SEO texten aanmaken
