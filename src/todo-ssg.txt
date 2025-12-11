@@ -5,9 +5,9 @@ todo:
 - /prikbord met ssg DONE
 - /giftcards met ssg DONE
 - bugfix interne navigatie toont CSR DONE
-- public map opruimen
+- public map opruimen DONE
 - url about you -> about-you
-- CompanySeoTextService opruimen
+- CompanySeoTextService opruimen DONE
 - fill-routes.js moet altijd als pre-step uitgevoerd worden DONE
-- preload discounts.json hoeft niet meer
+- preload discounts.json hoeft niet meer DONE
 - meer SEO texten aanmaken
