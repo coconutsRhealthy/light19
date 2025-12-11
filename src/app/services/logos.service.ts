@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import logosData from '../data/logos_static_test.json';
+import logosData from '../data/logos.json';
 
 @Injectable({
   providedIn: 'root',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import discountsData from '../data/discounts_static_test.json';
+import discountsData from '../data/discounts.json';
 
 @Injectable({
   providedIn: 'root',
