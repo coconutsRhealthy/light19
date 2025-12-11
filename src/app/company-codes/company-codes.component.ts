@@ -6,7 +6,6 @@ import { ElementRef } from '@angular/core';
 import { DiscountsService } from '../services/discounts.service';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { WebshopNameService } from '../services/webshop-name.service';
-import { CompanySeoTextService } from '../services/company-seo-text.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -45,7 +44,6 @@ interface Discount {
 export class CompanyCodesComponent implements OnInit {
   company: string = "";
   webshopName: string = "";
-  companySeoText: string = "";
   discountCodes: { code: string, discount: string, date: string }[] = [];
   isLoading = true;
   copiedCode: string | null = null;
@@ -60,8 +58,7 @@ export class CompanyCodesComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
                 private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
-                private webshopNameService: WebshopNameService, private companySeoTextService: CompanySeoTextService,
-                private meta: MetaService) { }
+                private webshopNameService: WebshopNameService, private meta: MetaService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -122,7 +119,6 @@ export class CompanyCodesComponent implements OnInit {
 
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);
-        this.companySeoText = this.companySeoTextService.getCompanySeoText(this.company) ?? '';
         this.monthYear = this.meta.getDateString();
         this.meta.updateTitle("Werkende " + this.webshopName + " kortingscode in " + this.monthYear);
         this.meta.updateMetaInfo("De nieuwste werkende kortingscode van " + this.webshopName + " in " + this.monthYear + "; Bespaar met deze kortingscode op online shoppen bij " + this.webshopName, "diski.nl", this.webshopName + ", Kortingscode, Korting");
