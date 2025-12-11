@@ -4,7 +4,8 @@ todo:
 - /wieheeftsale met ssg DONE
 - /prikbord met ssg DONE
 - /giftcards met ssg DONE
+- bugfix interne navigatie toont CSR DONE
 - public map opruimen
 - url about you -> about-you
 - CompanySeoTextService opruimen
-- fill-routes.js moet altijd als pre-step uitgevoerd worden
+- fill-routes.js moet altijd als pre-step uitgevoerd worden DONE
