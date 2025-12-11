@@ -3,7 +3,7 @@ const path = require('path');
 
 // routes-extractor.js
 // Hardcoded input file path
-const inputPath = path.join(__dirname, '../src/app/data/discounts_static_test.json');
+const inputPath = path.join(__dirname, '../src/app/data/discounts.json');
 
 // Load JSON file
 const raw = fs.readFileSync(inputPath, 'utf8');
