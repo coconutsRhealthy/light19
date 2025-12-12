@@ -25,6 +25,7 @@ interface Discount {
   company: string;
   discountCode: string;
   percentage: string;
+  influencer: string;
   date: string;
   index: number;
   affiliateLink?: string | null;
@@ -76,11 +77,12 @@ export class DiscountsTableComponent implements OnInit {
 
     this.discountsService.getDiscounts().subscribe((data) => {
       this.discounts = data.map((line, index) => {
-        const [company, discountCode, percentage, , date] = line.split(', ');
+        const [company, discountCode, percentage, influencer, date] = line.split(', ');
         return {
           company,
           discountCode,
           percentage,
+          influencer,
           date,
           index: index
         };
@@ -244,7 +246,7 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   isBlackFriday(discount: any): boolean {
-    return discount?.discountCode?.startsWith('BF_');
+    return discount?.influencer?.startsWith('BF_');
   }
 
   getBlackFridayButtonClasses(index: number) {

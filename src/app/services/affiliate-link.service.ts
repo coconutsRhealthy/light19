@@ -730,6 +730,18 @@ export class AffiliateLinkService {
         url: 'https://tidd.ly/4aBGx3t',
         dummyCode: 'DW10'
     },
+   'podobrace': {
+        url: 'https://tidd.ly/44oKPaK',
+        dummyCode: 'EXTRA10'
+    },
+   'perfumetrader': {
+        url: 'https://tidd.ly/3Ymd3iR',
+        dummyCode: 'EXTRA10'
+    },
+   'delta fiber': {
+        url: 'https://tidd.ly/4rPjNDh',
+        dummyCode: 'DF10'
+    },
   };
 
   constructor() { }
