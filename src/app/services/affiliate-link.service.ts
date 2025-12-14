@@ -74,10 +74,6 @@ export class AffiliateLinkService {
         url: 'https://www.stylink.it/ZqG7gSdn0q',
         dummyCode: 'WEST20UYH'
     },
-    'idealofsweden': {
-        url: 'https://www.idealofsweden.eu/?utm_medium=brand-ambassador&ref=bb-m47m59',
-        dummyCode: 'IDEAL15BD'
-    },
     'aliexpress': {
         url: 'https://tidd.ly/3J3ARnG',
         dummyCode: 'ALIE15LM0'
@@ -117,10 +113,6 @@ export class AffiliateLinkService {
     'yehwang_wholesale': {
         url: 'https://bit.ly/43fOjKa',
         dummyCode: 'HAPPY10SZI'
-    },
-    'desenio': {
-        url: 'https://desen.io/?ref=bb-m47m59',
-        dummyCode: 'PROMO15756'
     },
     'ullapopken.nl': {
         url: 'https://tidd.ly/4mmCMCH',
@@ -249,10 +241,6 @@ export class AffiliateLinkService {
     '123jaloezie.nl': {
         url: 'https://tidd.ly/3SR4dqy',
         dummyCode: '123J30FG2'
-    },
-    'upfront': {
-        url: 'https://tidd.ly/4nfNOdh',
-        dummyCode: 'ACTIE10'
     },
     'lounge by zalando': {
         url: 'https://tidd.ly/3ZknIvm',
