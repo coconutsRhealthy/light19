@@ -1,0 +1,106 @@
+<app-navbar></app-navbar>
+
+<div class="tw-max-w-5xl tw-mx-auto tw-px-4 tw-my-8">
+
+    <h1 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-3">
+        Top 5 webshops per categorie
+    </h1>
+
+    <p class="tw-text-center tw-text-gray-500 tw-mb-6">
+        De top shops van {{ currentMonth }} volgens diski.nl
+    </p>
+
+    <!-- Categorieën -->
+    <div class="tw-space-y-10">
+        @for (category of categories; track $index) {
+            <section>
+                <!-- Accordion -->
+                <div class="tw-border tw-rounded-xl tw-shadow-sm tw-overflow-hidden">
+
+                    <!-- Header -->
+                    <button
+                            type="button"
+                            (click)="toggleCategory($index)"
+                            class="tw-w-full tw-flex tw-justify-between tw-items-center
+                       tw-px-4 tw-py-3 tw-font-semibold
+                       tw-bg-gray-50 hover:tw-bg-gray-100
+                       tw-transition"
+                    >
+                <span class="tw-mx-auto">
+                  <h2>Bekijk top 5 {{ category.title }}</h2>
+                </span>
+
+                        <svg
+                                class="tw-w-5 tw-h-5 tw-ml-2 tw-transition-transform tw-duration-200"
+                                [class.tw-rotate-180]="expandedIndex === $index"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                        >
+                            <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </button>
+
+                    <!-- Content -->
+                    @if (expandedIndex === $index) {
+                    <ul class="tw-divide-y">
+                        @for (shop of category.shops; track $index) {
+                        <li class="tw-flex tw-items-center tw-px-4 tw-py-3">
+                      <span
+                              class="tw-flex tw-items-center tw-justify-center
+                               tw-w-7 tw-h-7 tw-mr-3
+                               tw-rounded-full tw-bg-indigo-600
+                               tw-text-white tw-text-sm tw-font-bold"
+                      >
+                        {{ $index + 1 }}
+                      </span>
+
+                            <a
+                                    [href]="shop.url"
+                                    target="_blank"
+                                    class="tw-text-indigo-600 hover:tw-underline tw-font-medium"
+                            >
+                                {{ shop.name }}
+                            </a>
+                        </li>
+                        }
+                    </ul>
+                    }
+
+                </div>
+            </section>
+        }
+    </div>
+
+    <section class="tw-max-w-3xl tw-mx-auto tw-mt-16 tw-text-gray-700">
+        <h2 class="tw-text-xl tw-font-semibold tw-mb-3">
+            Hoe bepaalt diski.nl deze top 5 webshops?
+        </h2>
+
+        <p class="tw-mb-3">
+            Op diski.nl vergelijken we dagelijks kortingscodes, deals en acties van honderden webshops.
+            Op basis van populariteit, betrouwbaarheid en actuele aanbiedingen stellen wij per categorie
+            een Top 5 webshops samen. Hierboven vind je onze selectie voor deze maand.
+        </p>
+
+        <p class="tw-mb-3">
+            De top 5 webshops per categorie worden samengesteld op basis van
+            populariteit bij onze bezoekers, actuele kortingscodes, betrouwbaarheid
+            en gebruikservaring. We volgen dagelijks welke deals het meest worden
+            gebruikt op diski.nl.
+        </p>
+
+        <p>
+            Mis je een webshop of denk je dat een shop hoger hoort te staan?
+            Neem gerust contact met ons op — onze lijsten worden regelmatig bijgewerkt.
+        </p>
+    </section>
+</div>
+
+<app-footer></app-footer>
