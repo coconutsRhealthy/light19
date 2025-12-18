@@ -24,11 +24,15 @@ function processFolder(folderPath) {
       html = html.replace('<!--  canonical placeholder-->', `<link rel="canonical" href="${canonicalUrl}" />`);
 
       fs.writeFileSync(fullPath, html, 'utf8');
-      console.log(`Updated canonical for ${fullPath}: ${canonicalUrl}`);
     }
   });
 }
 
 // Start
-processFolder(DIST_FOLDER);
+try {
+  processFolder(DIST_FOLDER);
+} catch (err) {
+  console.error('Unexpected error:', err);
+}
+
 console.log('All index.html files processed.');

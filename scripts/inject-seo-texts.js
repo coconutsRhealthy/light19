@@ -35,8 +35,6 @@ async function main() {
     const htmlPath = path.join(itemPath, 'index.html');
     const seoPath = path.join(SEO, `${item}.json`);
 
-    console.log(`Processing company: ${item}`);
-
     // Lees HTML
     let html;
     try {
@@ -57,26 +55,21 @@ async function main() {
     }
 
     // Check of placeholder aanwezig is
-    if (html.includes('webshop-description-placeholder')) {
-      console.log('Placeholder found in HTML');
-    } else {
-      console.warn('Placeholder NOT found in HTML!');
+    if (!html.includes('webshop-description-placeholder')) {
+      console.warn(`Placeholder NOT found in HTML: ${htmlPath}`);
     }
 
     // Vervang of verwijder placeholder
     let newHtml;
     if (seoText.length > 0) {
-      console.log(`Injecting SEO text for ${item}`);
       newHtml = html.replace(/webshop-description-placeholder/g, `<div class="webshop-description">${seoText}</div>`);
     } else {
-      console.log(`Removing placeholder for ${item}`);
       newHtml = html.replace(/webshop-description-placeholder/g, '');
     }
 
     // Schrijf HTML terug
     try {
       await fs.writeFile(htmlPath, newHtml, 'utf8');
-      console.log(`Done processing ${item}`);
     } catch (err) {
       console.error(`Error writing HTML for ${item}:`, err.message);
     }
