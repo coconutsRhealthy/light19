@@ -43,7 +43,7 @@ export class AffiliateLinkService {
         dummyCode: 'NINJ15BBG'
     },
     'samsung': {
-        url: 'https://tidd.ly/42Jik72',
+        url: 'https://tidd.ly/4aeQOCL',
         dummyCode: 'SAMS5HR9'
     },
     'yesstyle': {
@@ -331,7 +331,7 @@ export class AffiliateLinkService {
         dummyCode: 'LOVELY259AQ'
     },
     'lycamobile': {
-        url: 'https://clk.tradedoubler.com/click?p=335732&a=3427761&url=https%3A%2F%2Fwww.lycamobile.nl%2Fnl%2F%3Fsrsltid%3DAfmBOooraQEWMEo01s4s6rdU6wIjdzSKc_WeseYPUlJv7Ukv-RcyQxEW',
+        url: 'https://tidd.ly/3YvpKI9',
         dummyCode: 'LYCA2563B'
     },
     'fotogeschenk': {
@@ -730,6 +730,14 @@ export class AffiliateLinkService {
         url: 'https://tidd.ly/4rPjNDh',
         dummyCode: 'DF10'
     },
+   'simpel': {
+        url: 'simpel',
+        dummyCode: 'SIM10'
+    },
+   'stiksen': {
+        url: 'https://www.awin1.com/cread.php?awinmid=83167&awinaffid=1870794',
+        dummyCode: 'DISKI10'
+    }
   };
 
   constructor() { }
