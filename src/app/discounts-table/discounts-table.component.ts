@@ -58,6 +58,14 @@ export class DiscountsTableComponent implements OnInit {
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private platformId = inject(PLATFORM_ID);
 
+  bannerSrc!: string;
+  private readonly DESKTOP_SRC =
+    'https://cdn.jsdelivr.net/gh/wgknl/diski-assets/banners/Samsung_banner_1_smallwide.webp';
+  private readonly MOBILE_SRC =
+    'https://cdn.jsdelivr.net/gh/wgknl/diski-assets/banners/Samsung_banner_3.webp';
+  private readonly SSG_FALLBACK_SRC =
+    'https://cdn.jsdelivr.net/gh/wgknl/diski-assets/banners/Samsung_banner_1_smallwide.webp';
+
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
                 private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute) {
     var monthYear = this.meta.getDateString();
@@ -67,6 +75,7 @@ export class DiscountsTableComponent implements OnInit {
 
   ngOnInit() {
     this.initialPageLoad = true;
+    this.bannerSrc = this.getBannerSrc();
 
     if (this.isBrowser && window.innerWidth < 768) {
       this.itemsPerPage = 18;
@@ -269,5 +278,14 @@ export class DiscountsTableComponent implements OnInit {
       return window.sendCopyCodeToGa;
     }
     return () => {};
+  }
+
+  private getBannerSrc(): string {
+    if (!this.isBrowser) {
+      return this.SSG_FALLBACK_SRC;
+    }
+
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    return isMobile ? this.MOBILE_SRC : this.DESKTOP_SRC;
   }
 }
