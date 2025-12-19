@@ -18,36 +18,36 @@
             <!-- Desktop menu -->
             <div class="tw-hidden md:tw-flex tw-items-center tw-space-x-8">
                 <a
-                    href="/"
-                    [ngClass]="{ 'tw-font-bold tw-underline': isActive('/') }"
+                    routerLink="/"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                     class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
                     onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'})">
                         Kortingscodes
                 </a>
                 <a
-                    href="/winkels/"
-                    [ngClass]="{ 'tw-font-bold tw-underline': isActive('/winkels', false) }"
+                    routerLink="/winkels"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                     class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
                     onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
                         Shops
                 </a>
                 <a
-                    href="/prikbord"
-                    [ngClass]="{ 'tw-font-bold tw-underline': isActive('/prikbord', false) }"
+                    routerLink="/prikbord"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                     class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
                     onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
                         Prikbord
                 </a>
                 <a
-                    href="/wieheeftsale"
-                    [ngClass]="{ 'tw-font-bold tw-underline': isActive('/wieheeftsale', false) }"
+                    routerLink="/wieheeftsale"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                     class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
                     onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">
                         Wie heeft sale
                 </a>
                 <a
-                    href="/contact/"
-                    [ngClass]="{ 'tw-font-bold tw-underline': isActive('/contact') }"
+                    routerLink="/contact"
+                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                     class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
                     onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
                         Contact
@@ -80,32 +80,32 @@
     @if (menuOpen) {
         <div class="md:tw-hidden tw-bg-[rgb(252,212,220)] tw-shadow-inner tw-animate-[fadeDown_0.3s_ease-out]">
             <div class="tw-px-4 tw-pt-2 tw-pb-3 tw-space-y-1">
-                <a href="/"
-                   [ngClass]="{ 'tw-font-bold tw-underline': isActive('/') }"
+                <a routerLink="/"
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'})">
                         Kortingscodes
                 </a>
-                <a href="/winkels/"
-                   [ngClass]="{ 'tw-font-bold tw-underline': isActive('/winkels', false) }"
+                <a routerLink="/winkels"
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
                         Shops
                 </a>
-                <a href="/prikbord/"
-                   [ngClass]="{ 'tw-font-bold tw-underline': isActive('/prikbord', false) }"
+                <a routerLink="/prikbord"
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
                         Prikbord
                 </a>
-                <a href="/wieheeftsale/"
-                   [ngClass]="{ 'tw-font-bold tw-underline': isActive('/wieheeftsale', false) }"
+                <a routerLink="/wieheeftsale"
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_wieheeftsale'});">
                         Wie heeft sale
                 </a>
-                <a href="/contact/"
-                   [ngClass]="{ 'tw-font-bold tw-underline': isActive('/contact') }"
+                <a routerLink="/contact"
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
                         Contact

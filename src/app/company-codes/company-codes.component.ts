@@ -10,6 +10,7 @@ import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
+import { RouterModule } from '@angular/router';
 import { PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -33,7 +34,8 @@ interface Discount {
     ModalComponent,
     FooterComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RouterModule
   ],
   templateUrl: './company-codes.component.html',
   styleUrls: ['./company-codes.component.css'],
