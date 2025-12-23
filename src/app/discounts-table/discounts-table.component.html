@@ -92,13 +92,19 @@
       Diski Pick 🔥 Samsung Holiday Offer
     </div>
 
-    <div class="tw-aspect-[728/90] tw-w-full tw-flex tw-items-center tw-justify-center">
-      <img
-              [src]="bannerSrc"
-              alt="diski-pick-banner"
-              class="tw-w-full tw-h-auto tw-object-contain"
-      />
-    </div>
+    <picture class="tw-block tw-aspect-[728/90] tw-w-full">
+        <source
+                media="(max-width: 767px)"
+                srcset="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/banners/Samsung_banner_3.webp"
+        />
+
+        <img
+                src="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/banners/Samsung_banner_1_smallwide.webp"
+                alt="diski-pick-banner"
+                fetchpriority="high"
+                class="tw-w-full tw-h-auto tw-object-contain"
+        />
+      </picture>
   </a>
 
   <!-- ✅ GEGROEPEERDE SECTIE MET ACHTERGROND -->
