@@ -1,38 +1,3 @@
-<!-- Nieuwe look banner -->
-@if(isNewlookBannerVisible) {
-  <div
-          class="tw-relative tw-bg-yellow-100 tw-text-yellow-900 tw-text-xs tw-font-medium tw-transition-all tw-overflow-hidden"
-  >
-    <!-- Header: hoofdtekst + kruisje -->
-    <div
-            class="tw-flex tw-justify-center tw-items-center tw-gap-2 tw-cursor-pointer tw-px-4 tw-py-0.1"
-            (click)="toggleNewlookBanner()"
-    >
-      <span class="tw-leading-none">Nieuwe look! <a class="tw-text-blue-600 hover:tw-text-blue-800 tw-underline">Zelfde kwaliteit</a> kortingscodes 😊</span>
-      <button
-              class="tw-ml-2 tw-text-yellow-900 hover:tw-text-yellow-800 tw-font-bold tw-text-base"
-              (click)="closeNewlookBanner($event)"
-              aria-label="Sluit banner"
-      >
-        &times;
-      </button>
-    </div>
-
-    <!-- Extra tekst zichtbaar bij uitklappen -->
-    <div
-            class="tw-px-4 tw-text-xs tw-text-yellow-900 tw-text-center tw-transition-[max-height,opacity] tw-duration-500 tw-ease-in-out tw-overflow-hidden tw-flex tw-items-center tw-justify-center"
-            [class.tw-max-h-0]="!isNewlookBannerExpanded"
-            [class.tw-max-h-72]="isNewlookBannerExpanded"
-            [class.tw-opacity-0]="!isNewlookBannerExpanded"
-            [class.tw-opacity-100]="isNewlookBannerExpanded"
-    >
-           <span class="tw-text-[0.62rem] tw-text-yellow-800 tw-leading-relaxed">
-            Diski.nl heeft een frisse nieuwe look gekregen! Wat niet is veranderd zijn de kortingscodes: deze zijn nog steeds van dezelfde hoge kwaliteit die je van Diski.nl gewend bent 👍
-           </span>
-    </div>
-  </div>
-}
-
 <app-navbar></app-navbar>
 
 <main class="tw-flex-1 tw-max-w-5xl tw-mx-auto tw-px-4 tw-pt-4 tw-pb-8">
@@ -84,22 +49,22 @@
   <a
           rel="sponsored"
           onclick="gtag('event', 'diski_pick', { event_category: 'Diski_Pick', event_label: 'diski_pick_homepage' })"
-          href="https://tidd.ly/4aeQOCL"
+          href="https://tidd.ly/4dFlWeo"
           target="_blank"
           class="tw-block tw-bg-grey tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-mb-6 tw-no-underline"
   >
     <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">
-      Diski Pick 🔥 Samsung Holiday Offer
+      Diski Pick 🔥 SPACENK januari sale
     </div>
 
     <picture class="tw-block tw-aspect-[728/90] tw-w-full">
         <source
                 media="(max-width: 767px)"
-                srcset="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/banners/Samsung_banner_3.webp"
+                srcset="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/banners/spacenk_banner.webp"
         />
 
         <img
-                src="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/banners/Samsung_banner_1_smallwide.webp"
+                src="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/banners/spacenk_banner.webp"
                 alt="diski-pick-banner"
                 fetchpriority="high"
                 class="tw-w-full tw-h-auto tw-object-contain"
@@ -156,13 +121,13 @@
                 </h3>
 
                 <span class="tw-inline-block tw-bg-yellow-400 tw-text-black tw-text-[10px] tw-font-bold tw-rounded-full tw-px-2 tw-py-[2px] tw-mt-1">
-                Hot deal 🔥
+                Hot code 🔥
               </span>
 
                 <p class="tw-text-sm tw-mt-2">
                   💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
                 </p>
-                <p [class]="getBlackFridaySpottedAtTextClasses(i)">
+                <p class="tw-text-xs tw-text-gray-400 tw-mt-1">
                   Gespot op: {{ formatDate(discount.date) }}
                 </p>
               </div>

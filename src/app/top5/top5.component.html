@@ -32,7 +32,7 @@
 
                         <svg
                                 class="tw-w-5 tw-h-5 tw-ml-2 tw-transition-transform tw-duration-200"
-                                [class.tw-rotate-180]="expandedIndex === $index"
+                                [class.tw-rotate-180]="expandedIndexes.has($index)"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
@@ -48,7 +48,7 @@
                     </button>
 
                     <!-- Content -->
-                    @if (expandedIndex === $index) {
+                    @if (expandedIndexes.has($index)) {
                     <ul class="tw-divide-y">
                         @for (shop of category.shops; track $index) {
                         <li class="tw-flex tw-items-center tw-px-4 tw-py-3">
@@ -80,7 +80,7 @@
 
     <section class="tw-max-w-3xl tw-mx-auto tw-mt-16 tw-text-gray-700">
         <h2 class="tw-text-xl tw-font-semibold tw-mb-3">
-            Hoe bepaalt diski.nl deze top 5 webshops?
+            Hoe bepalen wij deze top 5 webshops?
         </h2>
 
         <p class="tw-mb-3">

@@ -5,6 +5,8 @@ const ROOT = process.cwd();
 const DIST = path.join(ROOT, 'dist', 'light19', 'browser');
 const SEO = path.join(ROOT, 'seo-texts');
 
+const SEO_DIV_REGEX = /<div[^>]*data-seo-placeholder[^>]*>[\s\S]*?<\/div>/i;
+
 async function main() {
   console.log('Starting SEO injector…');
 
@@ -19,7 +21,6 @@ async function main() {
   for (const item of items) {
     const itemPath = path.join(DIST, item);
 
-    // Alleen directories behandelen
     let stat;
     try {
       stat = await fs.stat(itemPath);
@@ -27,15 +28,12 @@ async function main() {
       console.warn(`Cannot stat path for ${item}:`, err.message);
       continue;
     }
-    if (!stat.isDirectory()) {
-      console.log(`Skipping non-directory: ${item}`);
-      continue;
-    }
+
+    if (!stat.isDirectory()) continue;
 
     const htmlPath = path.join(itemPath, 'index.html');
     const seoPath = path.join(SEO, `${item}.json`);
 
-    // Lees HTML
     let html;
     try {
       html = await fs.readFile(htmlPath, 'utf8');
@@ -44,34 +42,34 @@ async function main() {
       continue;
     }
 
-    // Lees SEO text als aanwezig
+    if (!SEO_DIV_REGEX.test(html)) {
+      console.warn(`SEO placeholder NOT found in HTML: ${htmlPath}`);
+      continue;
+    }
+
     let seoText = '';
     try {
       const seoObj = JSON.parse(await fs.readFile(seoPath, 'utf8'));
-      seoText = seoObj.text?.trim() || '';
-    } catch (_) {
-      // Geen JSON aanwezig = gewoon verwijderen
+      seoText = typeof seoObj.text === 'string' ? seoObj.text.trim() : '';
+    } catch {
       seoText = '';
     }
 
-    // Check of placeholder aanwezig is
-    if (!html.includes('webshop-description-placeholder')) {
-      console.warn(`Placeholder NOT found in HTML: ${htmlPath}`);
-    }
+    let newHtml = seoText.length > 0
+      ? html.replace(
+          SEO_DIV_REGEX,
+          `<div class="webshop-description">${seoText}</div>`
+        )
+      : html.replace(SEO_DIV_REGEX, '');
 
-    // Vervang of verwijder placeholder
-    let newHtml;
-    if (seoText.length > 0) {
-      newHtml = html.replace(/webshop-description-placeholder/g, `<div class="webshop-description">${seoText}</div>`);
-    } else {
-      newHtml = html.replace(/webshop-description-placeholder/g, '');
-    }
+    newHtml = newHtml.replace(/\n{3,}/g, '\n\n');
 
-    // Schrijf HTML terug
-    try {
-      await fs.writeFile(htmlPath, newHtml, 'utf8');
-    } catch (err) {
-      console.error(`Error writing HTML for ${item}:`, err.message);
+    if (newHtml !== html) {
+      try {
+        await fs.writeFile(htmlPath, newHtml, 'utf8');
+      } catch (err) {
+        console.error(`Error writing HTML for ${item}:`, err.message);
+      }
     }
   }
 
