@@ -12,7 +12,7 @@
 
     <!-- Categorieën -->
     <div class="tw-space-y-10">
-        @for (category of categories; track $index) {
+        @for (category of categories; track category.title) {
             <section>
                 <!-- Accordion -->
                 <div class="tw-border tw-rounded-xl tw-shadow-sm tw-overflow-hidden">
@@ -50,7 +50,7 @@
                     <!-- Content -->
                     @if (expandedIndexes.has($index)) {
                     <ul class="tw-divide-y">
-                        @for (shop of category.shops; track $index) {
+                        @for (shop of category.shops; track shop.name) {
                         <li class="tw-flex tw-items-center tw-px-4 tw-py-3">
                       <span
                               class="tw-flex tw-items-center tw-justify-center
@@ -62,7 +62,7 @@
                       </span>
 
                             <a
-                                    [href]="shop.url"
+                                    [href]="resolveShopUrl(shop)"
                                     target="_blank"
                                     class="tw-text-indigo-600 hover:tw-underline tw-font-medium"
                             >
