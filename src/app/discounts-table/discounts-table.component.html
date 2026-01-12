@@ -29,18 +29,7 @@
             <strong>tiktok</strong>
           </a>
         </div>
-        <div>
-          &rarr;
-          <a
-                  href="https://temu.to/m/u0p32ew176i"
-                  target="_blank"
-                  class="tw-text-blue-600 hover:tw-text-blue-800 hover:tw-underline"
-                  onclick="gtag('event', 'temu', {'event_category': 'Temu', 'event_label': 'try_temu'});"
-          >
-            <strong>€100 shoptegoed en 30% korting bij Temu</strong>
-          </a>
-
-        </div>
+        <div>&rarr; <a class="tw-text-blue-600 hover:tw-text-blue-800 tw-underline" [routerLink]="['/prikbord']" onclick="gtag('event', 'prikbord', {'event_category': 'Prikbord', 'event_label': 'prikbord_intable_homepage'});"><strong>Deel kortingscodes op het diski prikbord</strong></a></div>
       </div>
     </div>
   </div>
@@ -103,7 +92,18 @@
     <!-- Text Banners -->
     <div class="tw-w-full tw-px-3 tw-py-1.5 tw-bg-gray-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200 tw-rounded-lg tw-mb-2">
       <div>&rarr; <a class="tw-text-blue-600 hover:tw-text-blue-800 tw-underline" [routerLink]="['/giftcards']" onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_intable_homepage'});"><strong>€7.50 giftcards</strong></a> voor veel shops</div>
-      <div>&rarr; Deel kortingscodes op het <a class="tw-text-blue-600 hover:tw-text-blue-800 tw-underline" [routerLink]="['/prikbord']" onclick="gtag('event', 'prikbord', {'event_category': 'Prikbord', 'event_label': 'prikbord_intable_homepage'});"><strong>diski prikbord</strong></a></div>
+      <div>
+        &rarr; €100 shoptegoed en 30% korting
+        <a
+                href="https://temu.to/m/u0p32ew176i"
+                target="_blank"
+                class="tw-text-blue-600 hover:tw-text-blue-800 tw-underline"
+                onclick="gtag('event', 'temu', {'event_category': 'Temu', 'event_label': 'try_temu'});"
+        >
+          <strong> bij Temu</strong>
+        </a>
+
+      </div>
     </div>
 
     <!-- Resultaatkaarten -->
