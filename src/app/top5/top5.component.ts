@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
+import { LogosService } from '../services/logos.service';
 
 interface TopShop {
   name: string;
@@ -22,10 +23,7 @@ interface Category {
 })
 export class Top5Component {
   currentMonth: string;
-
-  /**
-   * Bevat de indexen van opengeklapte categorieën
-   */
+  logos: { [companyName: string]: string } = {};
   expandedIndexes = new Set<number>();
 
   categories: Category[] = [
@@ -62,7 +60,7 @@ export class Top5Component {
     {
       title: 'Cadeaus',
       shops: [
-        { name: 'Bol.com', url: 'https://www.bol.com/nl/nl' },
+        { name: 'Bol.com', url: 'https://www.bol.com/nl/nl', affiliateKey: 'bol.com' },
         { name: 'Amazon', url: 'https://www.amazon.nl', affiliateKey: 'amazon' },
         { name: 'iBood', url: 'https://www.ibood.com' },
         { name: 'Greetz', url: 'https://www.greetz.nl', affiliateKey: 'greetz.nl' },
@@ -311,7 +309,13 @@ export class Top5Component {
     }
   ];
 
-  constructor(private affiliateLinkService: AffiliateLinkService) {
+  ngOnInit() {
+    this.logosService.getAllLogos().subscribe(data => {
+      this.logos = data;
+    });
+  }
+
+  constructor(private affiliateLinkService: AffiliateLinkService, private logosService: LogosService) {
     const today = new Date();
     const monthName = today.toLocaleString('nl-NL', { month: 'long' });
     const year = today.getFullYear();
@@ -339,5 +343,30 @@ export class Top5Component {
 
     const affiliateUrl = this.affiliateLinkService.getAffiliateLink(key);
     return affiliateUrl || shop.url;
+  }
+
+  getLogoUrl(shop: TopShop): string {
+    const key = shop.affiliateKey?.trim();
+    let logoUrl: string | undefined;
+
+    if (key) {
+      logoUrl = this.logos[key];
+    }
+
+    if (logoUrl === undefined) {
+      logoUrl = this.logos['default_top5'];
+    }
+
+    return logoUrl;
+  }
+
+  getLogoImageClass(shop: TopShop) {
+    const logoUrl = this.getLogoUrl(shop);
+
+    if(logoUrl.includes("default_logo.webp") ){
+      return "tw-w-16 tw-h-16 md:tw-w-20 md:tw-h-20 tw-rounded-md tw-object-contain tw-bg-gray-50";
+    } else {
+      return "tw-w-16 tw-h-16 md:tw-w-20 md:tw-h-20 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-300";
+    }
   }
 }

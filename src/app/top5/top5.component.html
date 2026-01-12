@@ -51,24 +51,45 @@
                     @if (expandedIndexes.has($index)) {
                     <ul class="tw-divide-y">
                         @for (shop of category.shops; track shop.name) {
-                        <li class="tw-flex tw-items-center tw-px-4 tw-py-3">
-                      <span
-                              class="tw-flex tw-items-center tw-justify-center
-                               tw-w-7 tw-h-7 tw-mr-3
-                               tw-rounded-full tw-bg-indigo-600
-                               tw-text-white tw-text-sm tw-font-bold"
-                      >
-                        {{ $index + 1 }}
-                      </span>
 
+                        <li>
                             <a
                                     [href]="resolveShopUrl(shop)"
                                     target="_blank"
-                                    class="tw-text-indigo-600 hover:tw-underline tw-font-medium"
+                                    rel="noopener"
+                                    class="tw-flex tw-items-center tw-justify-between
+                                       tw-px-4 tw-py-3
+                                       hover:tw-bg-gray-50 tw-transition
+                                       tw-no-underline
+                                       hover:tw-cursor-pointer"
                             >
-                                {{ shop.name }}
+
+                                <!-- LINKS: ranking + shopnaam -->
+                                <div class="tw-flex tw-items-center">
+                                    <span
+                                            class="tw-flex tw-items-center tw-justify-center
+                                               tw-w-7 tw-h-7 tw-mr-3
+                                               tw-rounded-full tw-bg-indigo-600
+                                               tw-text-white tw-text-sm tw-font-bold"
+                                    >
+                                        {{ $index + 1 }}
+                                    </span>
+
+                                    <span class="tw-text-indigo-600 tw-font-medium">
+                                        {{ shop.name }}
+                                    </span>
+                                </div>
+
+                                <!-- RECHTS: logo -->
+                                <img
+                                        [src]="getLogoUrl(shop)"
+                                        [class]="getLogoImageClass(shop)"
+                                        alt="{{ shop.name }} logo"
+                                />
+
                             </a>
                         </li>
+
                         }
                     </ul>
                     }

@@ -73,7 +73,7 @@
   "rihoas": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/rihoas.webp",
   "sellpy": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/sellpy.webp",
   "smartphonehoesjes.nl": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/smartphonehoesjes.nl.webp",
-  "aliexpress": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/aliexpress.webp",
+  "aliexpress": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/aliexpres.webp",
   "large.nl": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/large.nl.webp",
   "mimamsterdam": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/mimamsterdam.webp",
   "otrium": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/otrium.webp",
@@ -106,5 +106,6 @@
   "samsung": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/samsung.webp",
   "FBTO Zorgverzekering": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/fbto.webp",
   "Independer": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/independer.webp",
-  "zorgkiezer": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/zorgkiezer.webp"
+  "zorgkiezer": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/zorgkiezer.webp",
+  "default_top5": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/default_logo.webp"
 }
