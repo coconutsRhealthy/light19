@@ -66,10 +66,6 @@ export class AffiliateLinkService {
         url: 'https://www.stylink.it/jnNwDTowPY',
         dummyCode: 'PROMO10Q17'
     },
-    'bodyandfit.com': {
-        url: 'https://tidd.ly/4iv95h4',
-        dummyCode: 'LOVELY258E2'
-    },
     'westwing': {
         url: 'https://www.stylink.it/ZqG7gSdn0q',
         dummyCode: 'WEST20UYH'

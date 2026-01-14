@@ -30,11 +30,11 @@ export class Top5Component {
     {
       title: 'Baby & Kind',
       shops: [
-        { name: 'Kinder Wonderland', url: 'https://www.kinderwonderland.nl' },
+        { name: 'Kinder Wonderland', url: 'https://www.kinderwonderland.nl', affiliateKey: 'kinderwonderland' },
         { name: 'Prenatal', url: 'https://www.prenatal.nl', affiliateKey: 'prenatal' },
-        { name: 'Bugaboo', url: 'https://www.bugaboo.com/nl-nl' },
-        { name: 'kidzsupplies', url: 'https://www.kidzsupplies.nl' },
-        { name: 'Pink or Blue', url: 'https://www.pinkorblue.nl' }
+        { name: 'Bugaboo', url: 'https://www.bugaboo.com/nl-nl', affiliateKey: 'bugaboo' },
+        { name: 'kidzsupplies', url: 'https://www.kidzsupplies.nl', affiliateKey: 'kidzsupplies' },
+        { name: 'Pink & Blue', url: 'https://pinkandbluekidswear.nl', affiliateKey: 'pinkandblue' }
       ]
     },
     {
@@ -51,9 +51,9 @@ export class Top5Component {
       title: 'Bespaartips',
       shops: [
         { name: 'Secret Sales', url: 'https://www.secretsales.com/nl', affiliateKey: 'secretsales.nl' },
-        { name: 'Etsy', url: 'https://www.etsy.com/nl', affiliateKey: 'etsy' },
-        { name: 'Eurojackpot', url: 'https://www.eurojackpot.nl' },
-        { name: 'Lucky Day', url: 'https://www.luckyday.nl' },
+        { name: 'Etsy', url: 'https://www.etsy.com/nl', affiliateKey: 'etsy'  },
+        { name: 'Eurojackpot', url: 'https://www.eurojackpot.nl', affiliateKey: 'eurojackpot' },
+        { name: 'Lucky Day', url: 'https://www.luckyday.nl', affiliateKey: 'luckyday' },
         { name: 'CashbackXL', url: 'https://www.cashbackxl.nl', affiliateKey: 'cashbackxl' }
       ]
     },
@@ -62,29 +62,29 @@ export class Top5Component {
       shops: [
         { name: 'Bol.com', url: 'https://www.bol.com/nl/nl', affiliateKey: 'bol.com' },
         { name: 'Amazon', url: 'https://www.amazon.nl', affiliateKey: 'amazon' },
-        { name: 'iBood', url: 'https://www.ibood.com' },
+        { name: 'iBood', url: 'https://www.ibood.com', affiliateKey: 'ibood' },
         { name: 'Greetz', url: 'https://www.greetz.nl', affiliateKey: 'greetz.nl' },
-        { name: 'Bijenkorf', url: 'https://www.debijenkorf.nl' }
+        { name: 'Bijenkorf', url: 'https://www.debijenkorf.nl', affiliateKey: 'bijenkorf' },
       ]
     },
     {
       title: 'Computer & Software',
       shops: [
-        { name: 'Acer', url: 'https://www.acer.com/nl-nl' },
-        { name: 'Asus', url: 'https://www.asus.com/nl' },
-        { name: 'Logitech', url: 'https://www.logitech.com/nl-nl' },
-        { name: 'NordVPN', url: 'https://www.nordvpn.com/nl' },
-        { name: 'Dell', url: 'https://www.dell.com/nl-nl' }
+        { name: 'Acer', url: 'https://www.acer.com/nl-nl', affiliateKey: 'acer' },
+        { name: 'Asus', url: 'https://www.asus.com/nl', affiliateKey: 'asus' },
+        { name: 'Logitech', url: 'https://www.logitech.com/nl-nl', affiliateKey: 'logitech' },
+        { name: 'NordVPN', url: 'https://www.nordvpn.com/nl', affiliateKey: 'nordvpn' },
+        { name: 'Dell', url: 'https://www.dell.com/nl-nl', affiliateKey: 'dell' },
       ]
     },
     {
       title: 'Dagje uit',
       shops: [
-        { name: 'VakantieVeilingen', url: 'https://www.vakantieveilingen.nl' },
-        { name: 'Efteling', url: 'https://www.efteling.com' },
-        { name: 'Landal', url: 'https://www.landal.nl' },
-        { name: 'Walibi', url: 'https://www.walibi.nl' },
-        { name: 'Pathé', url: 'https://www.pathe.nl' }
+        { name: 'VakantieVeilingen', url: 'https://www.vakantieveilingen.nl', affiliateKey: 'vakantieveilingen' },
+        { name: 'Efteling', url: 'https://www.efteling.com', affiliateKey: 'efteling' },
+        { name: 'Landal', url: 'https://www.landal.nl', affiliateKey: 'landal' },
+        { name: 'Walibi', url: 'https://www.walibi.nl', affiliateKey: 'walibi' },
+        { name: 'Pathé', url: 'https://www.pathe.nl', affiliateKey: 'pathe' },
       ]
     },
     {
@@ -101,10 +101,10 @@ export class Top5Component {
       title: 'Dieren',
       shops: [
         { name: 'Zooplus', url: 'https://www.zooplus.nl', affiliateKey: 'zooplus.nl' },
-        { name: 'Just Russel', url: 'https://www.justrussel.com/nl' },
-        { name: 'Bol.com', url: 'https://www.bol.com/nl/nl' },
-        { name: 'Pets Place', url: 'https://www.petsplace.nl' },
-        { name: 'Welkoop', url: 'https://www.welkoop.nl' }
+        { name: 'Just Russel', url: 'https://www.justrussel.com/nl', affiliateKey: 'justrussel.nl' },
+        { name: 'Bol.com', url: 'https://www.bol.com/nl/nl', affiliateKey: 'bol.com' },
+        { name: 'Pets Place', url: 'https://www.petsplace.nl', affiliateKey: 'petsplace' },
+        { name: 'Welkoop', url: 'https://www.welkoop.nl', affiliateKey: 'welkoop' }
       ]
     },
     {
@@ -120,21 +120,21 @@ export class Top5Component {
     {
       title: 'Eten & Drinken',
       shops: [
-        { name: 'PLUS', url: 'https://www.plus.nl' },
-        { name: 'Megafoodstunter', url: 'https://www.megafoodstunter.nl' },
+        { name: 'PLUS', url: 'https://www.plus.nl', affiliateKey: 'plus' },
+        { name: 'Megafoodstunter', url: 'https://www.megafoodstunter.nl', affiliateKey: 'megafoodstunter' },
         { name: 'Picnic', url: 'https://www.picnic.nl', affiliateKey: 'picnic' },
         { name: 'Thuisbezorgd', url: 'https://www.thuisbezorgd.nl', affiliateKey: 'thuisbezorgd' },
-        { name: 'HelloFresh', url: 'https://www.hellofresh.nl' }
+        { name: 'HelloFresh', url: 'https://www.hellofresh.nl', affiliateKey: 'hellofresh.nl' }
       ]
     },
     {
       title: 'Finance',
       shops: [
-        { name: 'Revolut', url: 'https://www.revolut.com/nl-NL' },
-        { name: 'GoDutch', url: 'https://www.godutch.com' },
-        { name: 'Centraal Beheer', url: 'https://www.centraalbeheer.nl' },
-        { name: 'Brand New Day', url: 'https://www.brandnewday.nl' },
-        { name: 'Bunq', url: 'https://www.bunq.com/nl' }
+        { name: 'Revolut', url: 'https://www.revolut.com/nl-NL', affiliateKey: 'revolut' },
+        { name: 'GoDutch', url: 'https://www.godutch.com', affiliateKey: 'godutch' },
+        { name: 'Centraal Beheer', url: 'https://www.centraalbeheer.nl', affiliateKey: 'centraalbeheer' },
+        { name: 'Brand New Day', url: 'https://www.brandnewday.nl', affiliateKey: 'brandnewday' },
+        { name: 'Bunq', url: 'https://www.bunq.com/nl', affiliateKey: 'bunq' }
       ]
     },
     {
@@ -142,9 +142,9 @@ export class Top5Component {
       shops: [
         { name: 'Albelli', url: 'https://www.albelli.nl', affiliateKey: 'albelli' },
         { name: 'PrintAbout', url: 'https://www.printabout.nl', affiliateKey: 'printabout' },
-        { name: 'Fotofabriek', url: 'https://www.fotofabriek.nl' },
+        { name: 'Fotofabriek', url: 'https://www.fotofabriek.nl', affiliateKey: 'fotofabriek' },
         { name: 'Smartphoto', url: 'https://www.smartphoto.nl', affiliateKey: 'smartphoto.nl' },
-        { name: 'MyPoster', url: 'https://www.myposter.nl' }
+        { name: 'MyPoster', url: 'https://www.myposter.nl', affiliateKey: 'myposter' }
       ]
     },
     {
@@ -162,7 +162,7 @@ export class Top5Component {
       shops: [
         { name: 'Independer', url: 'https://www.independer.nl', affiliateKey: 'Independer Zorg' },
         { name: 'Ziggo', url: 'https://www.ziggo.nl', affiliateKey: 'ziggo' },
-        { name: 'KPN', url: 'https://www.kpn.com' },
+        { name: 'KPN', url: 'https://www.kpn.com', affiliateKey: 'kpn' },
         { name: 'Odido', url: 'https://www.odido.nl', affiliateKey: 'odido mobiel' },
         { name: 'United Consumers', url: 'https://www.unitedconsumers.com', affiliateKey: 'unitedconsumers' }
       ]
@@ -172,18 +172,18 @@ export class Top5Component {
       shops: [
         { name: 'Ninja', url: 'https://www.ninjakitchen.nl', affiliateKey: 'ninjakitchen' },
         { name: 'KitchenAid', url: 'https://www.kitchenaid.nl', affiliateKey: 'kitchenaid' },
-        { name: 'DeLonghi', url: 'https://www.delonghi.com/nl-nl' },
+        { name: 'DeLonghi', url: 'https://www.delonghi.com/nl-nl', affiliateKey: 'delonghi' },
         { name: 'Tefal', url: 'https://www.tefal.nl', affiliateKey: 'tefal' },
-        { name: 'Smeg', url: 'https://www.smeg.com/nl' }
+        { name: 'Smeg', url: 'https://www.smeg.com/nl', affiliateKey: 'smeg' }
       ]
     },
     {
       title: 'Mobiliteit',
       shops: [
         { name: 'Tenways', url: 'https://www.tenways.com', affiliateKey: 'tenways' },
-        { name: 'Veloretti', url: 'https://www.veloretti.com' },
-        { name: 'Gazelle', url: 'https://www.gazelle.nl' },
-        { name: 'VanMoof', url: 'https://www.vanmoof.com' },
+        { name: 'Veloretti', url: 'https://www.veloretti.com', affiliateKey: 'veloretti' },
+        { name: 'Gazelle', url: 'https://www.gazelle.nl', affiliateKey: 'gazelle' },
+        { name: 'VanMoof', url: 'https://www.vanmoof.com', affiliateKey: 'vanmoof' },
         { name: 'Grundig', url: 'https://www.grundig-bike.com', affiliateKey: 'grundig' }
       ]
     },
