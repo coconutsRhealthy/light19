@@ -3,6 +3,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { LogosService } from '../services/logos.service';
+import { AnalyticsEventService } from '../services/analytics-event.service';
 
 interface TopShop {
   name: string;
@@ -200,7 +201,7 @@ export class Top5Component {
     {
       title: 'Mode vrouw',
       shops: [
-        { name: 'Na-KD', url: 'https://www.na-kd.com/nl' },
+        { name: 'NA-KD', url: 'https://www.na-kd.com/nl', affiliateKey: 'nakdfashion' },
         { name: 'Hunkemoller', url: 'https://www.hunkemoller.nl', affiliateKey: 'hunkemoller' },
         { name: 'Stradivarius', url: 'https://www.stradivarius.com/nl', affiliateKey: 'stradivarius' },
         { name: 'Boohoo.com', url: 'https://www.boohoo.com', affiliateKey: 'boohoo' },
@@ -210,20 +211,20 @@ export class Top5Component {
     {
       title: 'Reizen',
       shops: [
-        { name: 'Booking.com', url: 'https://www.booking.com' },
+        { name: 'Booking.com', url: 'https://www.booking.com', affiliateKey: 'booking.com' },
         { name: 'Sixt', url: 'https://www.sixt.nl', affiliateKey: 'sixt' },
-        { name: 'Flixbus', url: 'https://www.flixbus.nl' },
-        { name: 'eDreams', url: 'https://www.edreams.nl' },
-        { name: 'ANWB Webwinkel', url: 'https://www.anwb.nl' }
+        { name: 'Flixbus', url: 'https://www.flixbus.nl', affiliateKey: 'flixbus' },
+        { name: 'eDreams', url: 'https://www.edreams.nl', affiliateKey: 'edreams' },
+        { name: 'ANWB Webwinkel', url: 'https://www.anwb.nl', affiliateKey: 'anwbwinkel' },
       ]
     },
     {
       title: 'Sieraden',
       shops: [
         { name: 'Melano Jewelry', url: 'https://www.melanojewelry.com', affiliateKey: 'melanojewelry' },
-        { name: 'Je mappelle', url: 'https://www.jemappelle.nl' },
+        { name: 'Je mappelle', url: 'https://www.jemappelle.nl', affiliateKey: 'jemappelle' },
         { name: 'Daniel Wellington', url: 'https://www.danielwellington.com/nl', affiliateKey: 'danielwellington' },
-        { name: 'My Jewellery', url: 'https://www.my-jewellery.com/nl' },
+        { name: 'My Jewellery', url: 'https://www.my-jewellery.com/nl-nl', affiliateKey: 'myjewellery' },
         { name: 'iPhone Cases', url: 'https://www.iphonecases.nl', affiliateKey: 'iphone-cases.nl' }
       ]
     },
@@ -315,7 +316,7 @@ export class Top5Component {
     });
   }
 
-  constructor(private affiliateLinkService: AffiliateLinkService, private logosService: LogosService) {
+  constructor(private affiliateLinkService: AffiliateLinkService, private logosService: LogosService, private analyticsEventService: AnalyticsEventService) {
     const today = new Date();
     const monthName = today.toLocaleString('nl-NL', { month: 'long' });
     const year = today.getFullYear();
@@ -368,5 +369,12 @@ export class Top5Component {
     } else {
       return "tw-w-16 tw-h-16 md:tw-w-20 md:tw-h-20 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-300";
     }
+  }
+
+  sendEventToGa(shop: TopShop): void {
+    this.analyticsEventService.sendEventToGa(
+      'Top5',
+      'top5_' + shop.name
+    );
   }
 }

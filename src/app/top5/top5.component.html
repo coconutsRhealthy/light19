@@ -55,6 +55,7 @@
                         <li>
                             <a
                                     [href]="resolveShopUrl(shop)"
+                                    (click)="sendEventToGa(shop)"
                                     target="_blank"
                                     rel="noopener"
                                     class="tw-flex tw-items-center tw-justify-between

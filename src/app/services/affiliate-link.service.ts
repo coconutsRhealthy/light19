@@ -23,7 +23,7 @@ export class AffiliateLinkService {
         dummyCode: 'VERO20DRN'
     },
     'ginatricot': {
-        url: 'https://www.stylink.it/ryMdpCQqA3q',
+        url: 'https://www.stylink.it/wnG31IJq3Q4',
         dummyCode: 'VIP20QZJ'
     },
     'hunkemoller': {
@@ -51,7 +51,7 @@ export class AffiliateLinkService {
         dummyCode: 'YESS25JQL'
     },
     'asos': {
-        url: 'https://www.stylink.it/lg3mpUa423',
+        url: 'https://www.stylink.it/RNGo2t6QZeV',
         dummyCode: 'ASOS10NKD'
     },
     'stevemadden': {
@@ -83,7 +83,7 @@ export class AffiliateLinkService {
         dummyCode: 'LOVELY20BTS'
     },
     'nike': {
-        url: 'https://www.stylink.it/vR0jnhYnlR',
+        url: 'https://www.stylink.it/Ojow9izQX90',
         dummyCode: 'JULIA30O0T'
     },
     'prozis': {
@@ -305,10 +305,6 @@ export class AffiliateLinkService {
     'jeanscentre.nl': {
         url: 'https://tidd.ly/3GmmSIe',
         dummyCode: 'WELCOME108U3'
-    },
-    'pearle': {
-        url: 'https://tidd.ly/44oWOpz',
-        dummyCode: 'SHOPPING25IC5'
     },
     'converse': {
         url: 'https://tidd.ly/4jEbhCy',

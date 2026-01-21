@@ -93,11 +93,12 @@
                         KLIK
                     </a>
                 } @else {
+                    @if (discountCode) {
                     <button
-                            (click)="copyToClipboard(discount.discountCode)"
+                            (click)="copyToClipboard(discountCode)"
                             class="tw-group tw-flex tw-items-center tw-gap-2 tw-font-mono tw-text-gray-900 tw-text-base tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-md tw-px-3 tw-py-1.5 hover:tw-bg-gray-100 tw-transition tw-relative tw-w-fit"
                     >
-                        <span>{{ discount.discountCode }}</span>
+                        <span>{{ discountCode }}</span>
                         <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 class="tw-h-4 tw-w-4 tw-text-gray-500 group-hover:tw-text-gray-700 tw-transition"
@@ -124,6 +125,12 @@
                         </div>
                         }
                     </button>
+                    } @else {
+                        <div class="tw-flex tw-items-center tw-gap-2 tw-text-gray-500 tw-text-sm">
+                            <div class="tw-animate-spin tw-border-2 tw-border-t-2 tw-border-gray-400 tw-border-t-gray-900 tw-rounded-full tw-w-4 tw-h-4"></div>
+                            <span>Code aan het ophalen…</span>
+                        </div>
+                    }
                 }
             </div>
 

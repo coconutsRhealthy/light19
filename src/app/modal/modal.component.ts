@@ -11,11 +11,30 @@ declare let gtag: Function;
 })
 export class ModalComponent {
   @Input() isVisible = false;
-  @Input() discount: any = null;
   @Output() closed = new EventEmitter<void>();
   isCopied = false;
 
+  discountCode: string = '';
+
+  private _discount: any = null;
+
+  @Input()
+  set discount(value: any) {
+    this._discount = value;
+    if (value) {
+      this.loadDiscountCode(value);
+    }
+  }
+
+  get discount(): any {
+    return this._discount;
+  }
+
   constructor(private analyticsEventService: AnalyticsEventService) {}
+
+  private async loadDiscountCode(discount: any) {
+    this.discountCode = await this.getDiscountCode(discount);
+  }
 
   getCorrectFormatOfCodeDate(rawCodeDate: string): string {
     var day = rawCodeDate.split("-")[1];
@@ -77,6 +96,7 @@ export class ModalComponent {
 
   closeModal() {
     this.isVisible = false;
+    this.discountCode = '';
     this.closed.emit();
   }
 
@@ -139,4 +159,20 @@ export class ModalComponent {
       return discount?.discountCode?.startsWith('BF_');
     }
 
+  async getDiscountCode(discount: any): Promise<string> {
+    if (!discount.company.toLowerCase().startsWith('zzzzzdummy')) {
+      return discount.discountCode;
+    }
+
+    try {
+      const res = await fetch('https://tight-field-ba6b.eijeeijeeije.workers.dev');
+      if (!res.ok) throw new Error('Fout bij ophalen code');
+
+      const data = await res.json();
+      return data.code;
+    } catch (err) {
+      console.error('Kon de kortingscode niet ophalen:', err);
+      return discount.discountCode;
+    }
+  }
 }
