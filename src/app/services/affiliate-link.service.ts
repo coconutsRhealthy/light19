@@ -23,7 +23,7 @@ export class AffiliateLinkService {
         dummyCode: 'VERO20DRN'
     },
     'ginatricot': {
-        url: 'https://www.stylink.it/wnG31IJq3Q4',
+        url: 'https://www.stylink.it/ryMdpCQqA3q',
         dummyCode: 'VIP20QZJ'
     },
     'hunkemoller': {
@@ -51,7 +51,7 @@ export class AffiliateLinkService {
         dummyCode: 'YESS25JQL'
     },
     'asos': {
-        url: 'https://www.stylink.it/RNGo2t6QZeV',
+        url: 'https://www.stylink.it/lg3mpUa423',
         dummyCode: 'ASOS10NKD'
     },
     'stevemadden': {
@@ -83,7 +83,7 @@ export class AffiliateLinkService {
         dummyCode: 'LOVELY20BTS'
     },
     'nike': {
-        url: 'https://www.stylink.it/Ojow9izQX90',
+        url: 'https://www.stylink.it/vR0jnhYnlR',
         dummyCode: 'JULIA30O0T'
     },
     'prozis': {
@@ -622,10 +622,6 @@ export class AffiliateLinkService {
         url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
         dummyCode: 'AFSPORTPOEDER'
     },
-    '123watches': {
-        url: 'https://partner.123watches.nl/c?c=40171&m=12&a=448474&r=&u=%2F',
-        dummyCode: 'EXTRA10'
-    },
     '24uomo': {
         url: 'https://tc.tradetracker.net/?c=37672&m=12&a=448474&r=&u=%2F',
         dummyCode: '12EXTRA'
@@ -729,6 +725,18 @@ export class AffiliateLinkService {
    'stiksen': {
         url: 'https://www.awin1.com/cread.php?awinmid=83167&awinaffid=1870794',
         dummyCode: 'DISKI10'
+    },
+   'viverelondon': {
+        url: 'https://tidd.ly/45oFpgs',
+        dummyCode: 'VVL10'
+    },
+   'catwalkjunkie': {
+        url: 'https://tidd.ly/4qwWrkN',
+        dummyCode: 'CWJ10'
+    },
+   'rienthelabel': {
+        url: 'https://rienthelabel.com/KORTING-10',
+        dummyCode: 'KORTING-10'
     }
   };
 
