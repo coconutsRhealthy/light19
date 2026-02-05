@@ -114,13 +114,17 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   onSearch() {
-    this.filteredDiscounts = this.discounts.filter((discount) =>
-      discount.company.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
+    const normalizedSearchTerm = this.searchTerm.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    this.filteredDiscounts = this.discounts.filter((discount) => {
+      const normalizedCompany = discount.company.toLowerCase().replace(/[^a-z0-9]/g, '');
+      return normalizedCompany.includes(normalizedSearchTerm);
+    });
+
     this.page = 1;
 
     if (this.searchTerm.length >= 5) {
-      const termToSend = this.searchTerm.trim().slice(0, 5).toLowerCase();
+      const termToSend = normalizedSearchTerm.slice(0, 5);
       if (termToSend !== this.lastSentTerm) {
         this.lastSentTerm = termToSend;
         this.analyticsEventService.sendEventToGa("Search_typing", "search_typing_" + termToSend);

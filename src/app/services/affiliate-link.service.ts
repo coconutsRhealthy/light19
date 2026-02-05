@@ -19,11 +19,11 @@ export class AffiliateLinkService {
         dummyCode: 'SHXDISKI725'
     },
     'veromoda': {
-        url: 'https://www.stylink.it/AdZbXhpwmw',
+        url: 'https://www.stylink.it/6MNk0HeXDDA',
         dummyCode: 'VERO20DRN'
     },
     'ginatricot': {
-        url: 'https://www.stylink.it/ryMdpCQqA3q',
+        url: 'https://www.stylink.it/wnG31IJq3Q4',
         dummyCode: 'VIP20QZJ'
     },
     'hunkemoller': {
@@ -51,11 +51,11 @@ export class AffiliateLinkService {
         dummyCode: 'YESS25JQL'
     },
     'asos': {
-        url: 'https://www.stylink.it/lg3mpUa423',
+        url: 'https://www.stylink.it/RNGo2t6QZeV',
         dummyCode: 'ASOS10NKD'
     },
     'stevemadden': {
-        url: 'https://www.stylink.it/AdZbXh7gYM',
+        url: 'https://www.stylink.it/yGz3NSOyQvD',
         dummyCode: 'SHOPPING30QO9'
     },
     'lookfantastic': {
@@ -67,7 +67,7 @@ export class AffiliateLinkService {
         dummyCode: 'PROMO10Q17'
     },
     'westwing': {
-        url: 'https://www.stylink.it/ZqG7gSdn0q',
+        url: 'https://www.stylink.it/NxJO0I67aak',
         dummyCode: 'WEST20UYH'
     },
     'aliexpress': {
@@ -79,11 +79,11 @@ export class AffiliateLinkService {
         dummyCode: 'SOPHIE15RUS'
     },
     'only': {
-        url: 'https://www.stylink.it/5xZndfMoYe',
+        url: 'https://www.stylink.it/ZDBMzIpz4yY',
         dummyCode: 'LOVELY20BTS'
     },
     'nike': {
-        url: 'https://www.stylink.it/vR0jnhYnlR',
+        url: 'https://www.stylink.it/Ojow9izQX90',
         dummyCode: 'JULIA30O0T'
     },
     'prozis': {
@@ -99,7 +99,7 @@ export class AffiliateLinkService {
         dummyCode: 'apu12458'
     },
     'easytoys': {
-        url: 'https://tidd.ly/4ntIXoT',
+        url: 'https://www.stylink.it/wnG31IJq3q4',
         dummyCode: 'EASY30HOV'
     },
     'iciparisxl': {
@@ -735,8 +735,168 @@ export class AffiliateLinkService {
         dummyCode: 'CWJ10'
     },
    'rienthelabel': {
-        url: 'https://rienthelabel.com/KORTING-10',
-        dummyCode: 'KORTING-10'
+        url: 'https://rienthelabel.com/KORTING-15',
+        dummyCode: 'KORTING-15'
+    },
+   'about you': {
+        url: 'https://www.stylink.it/9ZRYXtG5vyo',
+        dummyCode: 'LUNAN15'
+    },
+    'arket': {
+        url: 'https://www.stylink.it/XQ7qkf5aLl0',
+        dummyCode: 'HELLO15'
+    },
+    'bonprix': {
+        url: 'https://www.stylink.it/5RBXgUwLRVy',
+        dummyCode: 'SEP10'
+    },
+    'bol.com': {
+        url: 'https://www.stylink.it/dv2lRhNp71j',
+        dummyCode: 'MA15R'
+    },
+    'bershka': {
+        url: 'https://www.stylink.it/24M9kt0LXAb',
+        dummyCode: 'SHOP10'
+    },
+    'caiacosmetics': {
+        url: 'https://www.stylink.it/mby1ohzRaZ6',
+        dummyCode: 'VIP3HEA9'
+    },
+    'carhartt': {
+        url: 'https://www.stylink.it/aG9RNSprv4g',
+        dummyCode: 'SHOP10'
+    },
+    'jdsports': {
+        url: 'https://www.stylink.it/nXpBlfb4pVn',
+        dummyCode: 'EXTRA10'
+    },
+    'loungeunderwear': {
+        url: 'https://www.stylink.it/zYq3OUP5p7X',
+        dummyCode: 'SELMA10'
+    },
+    'pullandbear': {
+        url: 'https://www.stylink.it/Aj5k6ivpYle',
+        dummyCode: 'PB10'
+    },
+    'wefashion': {
+        url: 'https://www.stylink.it/1ax9NfqR11p',
+        dummyCode: 'MAYRAXWE'
+    },
+    'weekday': {
+        url: 'https://www.stylink.it/B0ZlzhNdAAe',
+        dummyCode: 'Sorry25'
+    },
+    'vingino': {
+        url: 'https://www.stylink.it/qP4w6T3d55o',
+        dummyCode: 'VINFW10'
+    },
+    'yas': {
+        url: 'https://www.stylink.it/RNGo2t6Q110',
+        dummyCode: 'YSYAS10'
+    },
+    'vakantiepiraten': {
+        url: 'https://www.stylink.it/oPDNeTRbVVo',
+        dummyCode: 'ZON10'
+    },
+    'cos': {
+        url: 'https://www.stylink.it/vYe37UBvyrL',
+        dummyCode: 'EXTRA15'
+    },
+    'desigual': {
+        url: 'https://www.stylink.it/7dOk9iz2B2n',
+        dummyCode: 'DESI10'
+    },
+    'drmartens': {
+        url: 'https://www.stylink.it/B0ZlzhNdkdn',
+        dummyCode: 'DMSMART20'
+    },
+    'isabelbernard': {
+        url: 'https://www.stylink.it/Lz4BRhly9mq',
+        dummyCode: 'LARISSA10'
+    },
+    'kaptenandson': {
+        url: 'https://www.stylink.it/VNx6ltlOrRn',
+        dummyCode: 'Hellvi10'
+    },
+    'loftymanner': {
+        url: 'https://www.stylink.it/G2Pq1hkyZBN',
+        dummyCode: 'LOFTYXJULIA'
+    },
+    'manfield': {
+        url: 'https://www.stylink.it/B0ZlzhNdA75',
+        dummyCode: 'MICHELLE15'
+    },
+    'mango': {
+        url: 'https://www.stylink.it/Ojow9izQprv',
+        dummyCode: 'HOME20'
+    },
+    'newbalance': {
+        url: 'https://www.stylink.it/dv2lRhNpPxP',
+        dummyCode: 'NBSALE25'
+    },
+    'omoda': {
+        url: 'https://www.stylink.it/5RBXgUwLm2n',
+        dummyCode: 'NANXOM10'
+    },
+    'pieces': {
+        url: 'https://www.stylink.it/4M1mRHRLAX4',
+        dummyCode: 'ELLE23'
+    },
+    'praxis': {
+        url: 'https://www.stylink.it/VNx6ltlOryl',
+        dummyCode: 'EXTRA10'
+    },
+    'puma': {
+        url: 'https://www.stylink.it/exdegIQ7qbl',
+        dummyCode: 'HOLIDAYS'
+    },
+    'sacha': {
+        url: 'https://www.stylink.it/x063BhOldge',
+        dummyCode: 'ELLE20'
+    },
+    'smeg': {
+        url: 'https://www.stylink.it/XQ7qkf5a0LY',
+        dummyCode: 'SMEGELLE2025'
+    },
+    'notino': {
+        url: 'https://www.stylink.it/9ZRYXtG5aoj',
+        dummyCode: 'EXTRA10'
+    },
+    'home24': {
+        url: 'https://www.stylink.it/gnZ69IgB7B6',
+        dummyCode: 'HOME10'
+    },
+    'mepal': {
+        url: 'https://www.stylink.it/wnG31IJqVnM',
+        dummyCode: 'EXTRA10'
+    },
+    'nameit': {
+        url: 'https://www.stylink.it/00q9BhBwk3p',
+        dummyCode: 'EXTRA20'
+    },
+    'next': {
+        url: 'https://www.stylink.it/Ojow9izQpro',
+        dummyCode: 'NXT10'
+    },
+    'nordicnest': {
+        url: 'https://www.stylink.it/RNGo2t6Q1l0',
+        dummyCode: 'NESTED10'
+    },
+    'peek&cloppenburg': {
+        url: 'https://www.stylink.it/yGz3NSOyQnD',
+        dummyCode: 'EXTRA10'
+    },
+    'suncamp': {
+        url: 'https://www.stylink.it/Lz4BRhly9Xw',
+        dummyCode: 'ZON10'
+    },
+    'underarmour': {
+        url: 'https://www.stylink.it/VNx6ltlOrrl',
+        dummyCode: 'UA10'
+    },
+    'reiss': {
+        url: 'https://www.stylink.it/x063BhOldge',
+        dummyCode: 'EXTRA10'
     }
   };
 

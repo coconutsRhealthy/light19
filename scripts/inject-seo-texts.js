@@ -55,12 +55,12 @@ async function main() {
       seoText = '';
     }
 
-    let newHtml = seoText.length > 0
-      ? html.replace(
-          SEO_DIV_REGEX,
-          `<div class="webshop-description">${seoText}</div>`
-        )
-      : html.replace(SEO_DIV_REGEX, '');
+    const finalSeoText = seoText.length > 0 ? seoText : '';
+
+    let newHtml = html.replace(
+      SEO_DIV_REGEX,
+      `<div class="webshop-description">${finalSeoText}</div>`
+    );
 
     newHtml = newHtml.replace(/\n{3,}/g, '\n\n');
 

@@ -275,7 +275,7 @@ export class Top5Component {
         { name: 'Lucovitaal', url: 'https://www.lucovitaal.nl', affiliateKey: 'lucovitaal' },
         { name: 'Bulk', url: 'https://www.bulk.com/nl', affiliateKey: 'bulk.com' },
         { name: 'Vitaepro', url: 'https://www.vitaepro.nl', affiliateKey: 'vitaepro.nl' },
-        { name: 'Bodylab', url: 'https://www.bodylab.nl' }
+        { name: 'Bodylab', url: 'https://www.bodylab.nl', affiliateKey: 'bodylab.nl' }
       ]
     },
     {
