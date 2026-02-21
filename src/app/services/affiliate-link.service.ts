@@ -854,10 +854,6 @@ export class AffiliateLinkService {
         url: 'https://www.stylink.it/x063BhOldge',
         dummyCode: 'ELLE20'
     },
-    'smeg': {
-        url: 'https://www.stylink.it/XQ7qkf5a0LY',
-        dummyCode: 'SMEGELLE2025'
-    },
     'notino': {
         url: 'https://www.stylink.it/9ZRYXtG5aoj',
         dummyCode: 'EXTRA10'
@@ -897,6 +893,66 @@ export class AffiliateLinkService {
     'reiss': {
         url: 'https://www.stylink.it/x063BhOldge',
         dummyCode: 'EXTRA10'
+    },
+    'mostwanted': {
+        url: 'https://most-wanted-nl.mtpc.se/5924496',
+        dummyCode: 'MW10'
+    },
+    'hollandandbarrett': {
+        url: 'https://holland-barrett.mtpc.se/5924504',
+        dummyCode: 'SHOP15'
+    },
+    'wehkamp': {
+        url: 'https://wehkamp-nl.mtpc.se/5924516',
+        dummyCode: 'EXTRA10'
+    },
+    'cabaulifestyle': {
+        url: 'https://cabau-lifestyle-nl.mtpc.se/5924518',
+        dummyCode: 'STEVIE'
+    },
+    'xxlnutrition': {
+        url: 'https://xxl-nutrition-nl.mtpc.se/5924520',
+        dummyCode: 'XXLFLEUR15'
+    },
+    'merodacosmetics': {
+        url: 'https://meroda-cosmetics-nl.mtpc.se/5924528',
+        dummyCode: 'EMMA25'
+    },
+    'bijenkorf': {
+        url: 'https://de-bijenkorf-nl.mtpc.se/5924540',
+        dummyCode: 'EXTRA10'
+    },
+    'aimnsportswear': {
+        url: 'https://aimn-nl.mtpc.se/5924548',
+        dummyCode: 'EXTRA25'
+    },
+    'neonail': {
+        url: 'https://neonail-nl.mtpc.se/5924574',
+        dummyCode: 'ESMEEHES10'
+    },
+    'paulaschoice.nl': {
+        url: 'https://paula-s-choice-benelux.mtpc.se/5924577',
+        dummyCode: 'D15-B7KNPFVBMZ'
+    },
+    'smartwatchbanden': {
+        url: 'https://tidd.ly/3ZGkYZc',
+        dummyCode: 'EXTRA10'
+    },
+    'babydrogist': {
+        url: 'https://tidd.ly/4kFQnnX',
+        dummyCode: 'EXTRA15'
+    },
+    'smeg': {
+        url: 'https://tidd.ly/46e9eRj',
+        dummyCode: 'SMEGELLE2025'
+    },
+    'startselect': {
+        url: 'https://tidd.ly/4cuWM3l',
+        dummyCode: 'EXTRA10'
+    },
+    'schaefershop': {
+        url: 'https://tidd.ly/4aGVqjF',
+        dummyCode: 'EXTRA15'
     }
   };
 
