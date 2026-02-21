@@ -64,9 +64,16 @@
   <!-- ✅ GEGROEPEERDE SECTIE MET ACHTERGROND -->
   <div class="tw-bg-white/90 tw-rounded-2xl tw-shadow-sm tw-p-4 sm:tw-p-6 tw-border tw-border-gray-100 tw-backdrop-blur-sm">
 
-    <h2 class="tw-font-semibold tw-text-gray-900 tw-mb-4 tw-text-center">
+    <h2 class="tw-font-semibold tw-text-gray-900 tw-mb-1 tw-text-center">
       Nieuwste kortingscodes 🔥
     </h2>
+
+    <p class="tw-text-xs tw-text-gray-500 tw-text-center tw-mb-4">
+      Laatste update: <span class="tw-font-medium">{{ dateStringLatestShops }}</span> Nieuwe codes voor
+      <span class="tw-font-bold tw-underline tw-text-blue-600 tw-cursor-pointer hover:tw-text-blue-800" (click)="openShopsModal()">
+        {{ newShopsCount }} shops
+      </span>
+    </p>
 
     <!-- Zoekveld -->
     <div class="tw-mb-2 tw-relative">
@@ -233,5 +240,12 @@
         [discount]="selectedDiscount"
         (closed)="closeModal()">
 </app-modal>
+
+<app-modal-shops
+        [isVisible]="isShopsModalVisible"
+        [shops]="latestShops"
+        [dateStringLatestShops]="dateStringLatestShops"
+        (closed)="closeShopsModal()"
+></app-modal-shops>
 
 <app-footer></app-footer>

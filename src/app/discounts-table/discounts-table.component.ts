@@ -10,6 +10,7 @@ import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ModalComponent } from '../modal/modal.component';
+import { ModalShopsComponent } from '../modal-shops/modal-shops.component';
 import { RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { PLATFORM_ID, inject } from '@angular/core';
@@ -33,7 +34,7 @@ interface Discount {
 
 @Component({
   selector: 'app-discounts-table',
-  imports: [FooterComponent, NavbarComponent, FormsModule, ModalComponent, RouterModule],
+  imports: [FooterComponent, NavbarComponent, FormsModule, ModalComponent, ModalShopsComponent, RouterModule],
   templateUrl: './discounts-table.component.html',
   styleUrls: ['./discounts-table.component.css'],
   providers: [
@@ -58,6 +59,11 @@ export class DiscountsTableComponent implements OnInit {
   lastSentTerm: string = '';
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private platformId = inject(PLATFORM_ID);
+
+  dateStringLatestShops: string = '';
+  newShopsCount: number = 0;
+  latestShops: string[] = [];
+  isShopsModalVisible: boolean = false;
 
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
                 private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute) {
@@ -88,6 +94,7 @@ export class DiscountsTableComponent implements OnInit {
         };
       });
       this.filteredDiscounts = this.discounts;
+      this.updateLatestDiscountInfo();
 
       this.route.fragment.subscribe(fragment => {
         if (!fragment) return;
@@ -158,6 +165,14 @@ export class DiscountsTableComponent implements OnInit {
   closeModal() {
     this.isModalVisible = false;
     this.selectedDiscount = null;
+  }
+
+  openShopsModal() {
+    this.isShopsModalVisible = true;
+  }
+
+  closeShopsModal() {
+    this.isShopsModalVisible = false;
   }
 
   formatDate(date: string): string {
@@ -267,6 +282,23 @@ export class DiscountsTableComponent implements OnInit {
       } else {
           return "tw-text-xs tw-text-gray-400 tw-mt-1";
       }
+  }
+
+  updateLatestDiscountInfo(): void {
+    if (this.discounts.length === 0) return;
+    const lastUpdated = this.discounts[0].date;
+    this.dateStringLatestShops = this.formatDate(lastUpdated);
+
+    const shopsOnLatestDate = this.discounts
+      .filter(d => d.date === lastUpdated && !d.discountCode.startsWith('http'))
+      .map(d => {
+        let name = d.company.trim();
+        name = name.replace(/\s*\(.*?\)/g, '');
+        return name;
+      });
+
+    this.latestShops = Array.from(new Set(shopsOnLatestDate)).sort((a, b) => a.localeCompare(b));
+    this.newShopsCount = this.latestShops.length;
   }
 
   get sendCopyCodeToGa() {
