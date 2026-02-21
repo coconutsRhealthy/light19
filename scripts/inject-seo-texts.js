@@ -56,10 +56,58 @@ async function main() {
     }
 
     const finalSeoText = seoText.length > 0 ? seoText : '';
+    const formattedWebshopName =
+      item.charAt(0).toUpperCase() + item.slice(1).toLowerCase();
 
     let newHtml = html.replace(
       SEO_DIV_REGEX,
-      `<div class="webshop-description">${finalSeoText}</div>`
+      `<div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
+
+                 <!-- ALTIJD ZICHTBAAR -->
+                 <h3 class="tw-text-2xl md:tw-text-3xl tw-font-bold tw-text-pink-800 tw-mb-6 tw-text-center">
+                     Over ${formattedWebshopName}
+                 </h3>
+
+                 <h4 class="tw-mt-3 tw-text-sm md:tw-text-base tw-text-center tw-text-gray-600">
+                     ...de uiterst subjectieve, kritische, eerlijke en soms ook grappige Diski review ✍️😉
+                 </h4>
+
+                 <!-- PIJL KNOP -->
+                 <div class="tw-flex tw-justify-center tw-mt-4 tw-mb-2">
+                     <button
+                             (click)="toggleReview()"
+                             class="tw-group tw-flex tw-flex-col tw-items-center tw-text-pink-700 hover:tw-text-pink-900 tw-transition"
+                     >
+                         <svg
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 class="tw-w-6 tw-h-6 tw-transition-transform tw-duration-300"
+                                 [class.tw-rotate-180]="isReviewOpen"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                         >
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                         </svg>
+
+                         <span class="tw-text-xs tw-mt-1 tw-opacity-70">
+                       {{ isReviewOpen ? 'Inklappen' : 'Lees meer' }}
+                   </span>
+                     </button>
+                 </div>
+
+                 <!-- UITKLAPBARE CONTENT -->
+                 <div
+                         class="tw-overflow-hidden tw-transition-all tw-duration-500 tw-ease-in-out"
+                         [class.tw-max-h-0]="!isReviewOpen"
+                         [class.tw-max-h-[9999px]]="isReviewOpen"
+                 >
+                     <div class="tw-space-y-6 tw-text-gray-700 tw-text-[15px] md:tw-text-base tw-leading-relaxed tw-pt-6">
+                        ${finalSeoText}
+                     </div>
+                 </div>
+
+             </div>`
     );
 
     newHtml = newHtml.replace(/\n{3,}/g, '\n\n');
