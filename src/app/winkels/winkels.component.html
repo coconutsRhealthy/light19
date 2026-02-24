@@ -17,7 +17,7 @@
             @for (winkel of group.winkels; track winkel) {
               <li>
                 <a
-                        [routerLink]="['/', winkel.toLowerCase()]"
+                        [attr.href]="'/' + winkel.toLowerCase()"
                         class="tw-block tw-p-3 tw-rounded-lg tw-bg-white hover:tw-bg-pink-50 tw-text-pink-900 hover:tw-text-pink-700 tw-shadow-sm hover:tw-shadow-md tw-transition"
                 >
                   {{ winkel }}

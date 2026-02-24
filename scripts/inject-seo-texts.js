@@ -59,53 +59,63 @@ async function main() {
     const formattedWebshopName =
       item.charAt(0).toUpperCase() + item.slice(1).toLowerCase();
 
-    let newHtml = html.replace(
-      SEO_DIV_REGEX,
-      `<div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
+    let newHtml;
 
-          <!-- ALTIJD ZICHTBAAR -->
-          <h3 class="tw-text-2xl md:tw-text-3xl tw-font-bold tw-text-pink-800 tw-mb-6 tw-text-center">
-              Over ${formattedWebshopName}
-          </h3>
+    if (finalSeoText.length > 0) {
+        newHtml = html.replace(
+          SEO_DIV_REGEX,
+          `<div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
 
-          <h4 class="tw-mt-3 tw-text-sm md:tw-text-base tw-text-center tw-text-gray-600">
-              ...de uiterst subjectieve, kritische, eerlijke en soms ook grappige Diski review ✍️😉
-          </h4>
+              <!-- ALTIJD ZICHTBAAR -->
+              <h3 class="tw-text-2xl md:tw-text-3xl tw-font-bold tw-text-pink-800 tw-mb-6 tw-text-center">
+                  Over ${formattedWebshopName}
+              </h3>
 
-          <details class="tw-group tw-mt-6">
+              <h4 class="tw-mt-3 tw-text-sm md:tw-text-base tw-text-center tw-text-gray-600">
+                  ...de uiterst subjectieve, kritische, eerlijke en soms ook grappige Diski review ✍️😉
+              </h4>
 
-              <summary class="tw-flex tw-flex-col tw-items-center tw-cursor-pointer tw-text-pink-700 hover:tw-text-pink-900 tw-transition tw-list-none">
+              <details class="tw-group tw-mt-6">
 
-                  <!-- PIJL -->
-                  <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="tw-w-6 tw-h-6 tw-transition-transform tw-duration-300 group-open:tw-rotate-180"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                  >
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <summary class="tw-flex tw-flex-col tw-items-center tw-cursor-pointer tw-text-pink-700 hover:tw-text-pink-900 tw-transition tw-list-none">
 
-                  <!-- TEKST -->
-                  <span class="tw-text-xs tw-mt-1 tw-opacity-70">
-                      <span class="group-open:tw-hidden">Lees meer</span>
-                      <span class="tw-hidden group-open:tw-inline">Inklappen</span>
-                  </span>
+                      <!-- PIJL -->
+                      <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="tw-w-6 tw-h-6 tw-transition-transform tw-duration-300 group-open:tw-rotate-180"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-width="2"
+                      >
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
 
-              </summary>
+                      <!-- TEKST -->
+                      <span class="tw-text-xs tw-mt-1 tw-opacity-70">
+                          <span class="group-open:tw-hidden">Lees meer</span>
+                          <span class="tw-hidden group-open:tw-inline">Inklappen</span>
+                      </span>
 
-              <!-- UITKLAPBARE CONTENT -->
+                  </summary>
 
-                <div class="tw-mt-6 tw-text-gray-700 tw-text-[15px] md:tw-text-base tw-leading-relaxed [&>p]:tw-mb-2">
-                    ${finalSeoText}
-                </div>
+                  <!-- UITKLAPBARE CONTENT -->
 
-          </details>
+                    <div class="tw-mt-6 tw-text-gray-700 tw-text-[15px] md:tw-text-base tw-leading-relaxed [&>p]:tw-mb-2">
+                        ${finalSeoText}
+                    </div>
 
-      </div>`
-    );
+              </details>
+
+          </div>`
+        );
+    } else {
+      //empty div
+      newHtml = html.replace(
+        SEO_DIV_REGEX,
+        `<div class="webshop-description">${finalSeoText}</div>`
+      );
+    }
 
     newHtml = newHtml.replace(/\n{3,}/g, '\n\n');
 
