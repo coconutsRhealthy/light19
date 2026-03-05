@@ -35,31 +35,36 @@
   </div>
 
   <!-- Banner -->
-<!--  <a-->
-<!--          rel="sponsored"-->
-<!--          onclick="gtag('event', 'diski_pick', { event_category: 'Diski_Pick', event_label: 'diski_pick_homepage' })"-->
-<!--          href="https://www.awin1.com/cread.php?s=4656796&v=11143&q=338070&r=1870794"-->
-<!--          target="_blank"-->
-<!--          class="tw-block tw-bg-grey tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-mb-6 tw-no-underline"-->
-<!--  >-->
-<!--    <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">-->
-<!--      Diski Pick 🔥 Hunkemoller mix & match-->
-<!--    </div>-->
+  @if(bolHref) {
+    <a
+            rel="sponsored"
+            (click)="sendBolEventToGa()"
+            [href]="bolHref"
+            target="_blank"
+            class="tw-block tw-bg-grey tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-mb-6 tw-no-underline"
+    >
+      <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">
+        Diski x Bol 🔥
+      </div>
 
-<!--    <picture class="tw-block tw-aspect-[728/90] tw-w-full">-->
-<!--        <source-->
-<!--                media="(max-width: 767px)"-->
-<!--                srcset="https://www.awin1.com/cshow.php?s=4656796&v=11143&q=338070&r=1870794"-->
-<!--        />-->
+      <picture class="tw-block tw-aspect-[728/90] tw-w-full">
+        <source
+                media="(max-width: 767px)"
+                [srcset]="bolImgSrc"
+        />
 
-<!--        <img-->
-<!--                src="https://www.awin1.com/cshow.php?s=4656796&v=11143&q=338070&r=1870794"-->
-<!--                alt="diski-pick-banner"-->
-<!--                fetchpriority="high"-->
-<!--                class="tw-w-full tw-h-auto tw-object-contain"-->
-<!--        />-->
-<!--      </picture>-->
-<!--  </a>-->
+        <img
+                [src]="bolImgSrc"
+                alt="diski-pick-banner"
+                fetchpriority="high"
+                class="tw-w-full tw-h-auto tw-object-contain"
+        />
+      </picture>
+    </a>
+
+    <img [src]="bolPixelSrc" width="1" height="1"/>
+  }
+
 
   <!-- ✅ GEGROEPEERDE SECTIE MET ACHTERGROND -->
   <div class="tw-bg-white/90 tw-rounded-2xl tw-shadow-sm tw-p-4 sm:tw-p-6 tw-border tw-border-gray-100 tw-backdrop-blur-sm">

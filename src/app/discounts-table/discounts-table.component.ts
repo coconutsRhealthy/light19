@@ -65,6 +65,11 @@ export class DiscountsTableComponent implements OnInit {
   latestShops: string[] = [];
   isShopsModalVisible: boolean = false;
 
+  bolHref!: string;
+  bolImgSrc!: string;
+  bolPixelSrc!: string;
+  bolType!: string;
+
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
                 private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute) {
     var monthYear = this.meta.getDateString();
@@ -118,6 +123,10 @@ export class DiscountsTableComponent implements OnInit {
     this.logosService.getAllLogos().subscribe(data => {
       this.logos = data;
     });
+
+    if(this.isBrowser) {
+        this.fillBolVariables()
+    }
   }
 
   onSearch() {
@@ -306,5 +315,67 @@ export class DiscountsTableComponent implements OnInit {
       return window.sendCopyCodeToGa;
     }
     return () => {};
+  }
+
+  fillBolVariables() {
+
+    const banners = [
+        {
+            href: "https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fl%2Fbabyspullen%2F11271%2F&f=BAN&name=Baby&subid=",
+            imgSrc: "https://bannersimages.s-bol.com/Category_Baby-affiliate_banner-728x90.png",
+            pixelSrc: "https://partner.bol.com/click/impression?p=1&s=1507667&t=url&f=BAN&name=Baby&subid=",
+            type: "baby",
+        },
+        {
+            href: "https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fl%2Fhuishouden%2F12001%2F&f=BAN&name=Huishouden&subid=",
+            imgSrc: "https://bannersimages.s-bol.com/Category_Housekeeping-affiliate_banner-728x90.png",
+            pixelSrc: "https://partner.bol.com/click/impression?p=1&s=1507667&t=url&f=BAN&name=Huishouden&subid=",
+            type: "huishouden",
+        },
+        {
+            href: "https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fsf%2Fkokenentafelen%2F&f=BAN&name=Koken&subid=",
+            imgSrc: "https://bannersimages.s-bol.com/Category_Koken-affiliate_banner-728x90.png",
+            pixelSrc: "https://partner.bol.com/click/impression?p=1&s=1507667&t=url&f=BAN&name=Koken&subid=",
+            type: "koken",
+        },
+        {
+            href: "https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fl%2Fverzorgingsproducten%2F12442%2F&f=BAN&name=Dagelijkse%20verzorging&subid=",
+            imgSrc: "https://bannersimages.s-bol.com/Category_Personalcare-affiliate_banner-728x90.png",
+            pixelSrc: "https://partner.bol.com/click/impression?p=1&s=1507667&t=url&f=BAN&name=Dagelijkse%20verzorging&subid=",
+            type: "dagelijkseverzorging",
+        },
+        {
+            href: "https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fsf%2Fwooninspiratie%2F&f=BAN&name=Wonen&subid=",
+            imgSrc: "https://bannersimages.s-bol.com/Category_Living-affiliate_banner-728x90.png",
+            pixelSrc: "https://partner.bol.com/click/impression?p=1&s=1507667&t=url&f=BAN&name=Wonen&subid=",
+            type: "wonen",
+        },
+        {
+            href: "https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fsf%2Fnieuwecollectie%2F&f=BAN&name=Mode&subid=",
+            imgSrc: "https://bannersimages.s-bol.com/Category_Mode-affiliate_banner-728x90.png",
+            pixelSrc: "https://partner.bol.com/click/impression?p=1&s=1507667&t=url&f=BAN&name=Mode&subid=",
+            type: "mode",
+        },
+        {
+            href: "https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fcmp%2Fdrogisterijdeals%2F1916%2F&f=BAN&name=Dagelijkse%20inkopen&subid=",
+            imgSrc: "https://bannersimages.s-bol.com/Category_Bulk-affiliate_banner-728x90.png",
+            pixelSrc: "https://partner.bol.com/click/impression?p=1&s=1507667&t=url&f=BAN&name=Dagelijkse%20inkopen&subid=",
+            type: "dagelijkseinkopen",
+        },
+    ];
+
+    const randomBanner = banners[Math.floor(Math.random() * banners.length)];
+
+    this.bolHref = randomBanner.href;
+    this.bolImgSrc = randomBanner.imgSrc;
+    this.bolPixelSrc = randomBanner.pixelSrc;
+    this.bolType = randomBanner.type;
+  }
+
+  sendBolEventToGa(): void {
+    this.analyticsEventService.sendEventToGa(
+      'Bolbanner',
+      'bolbanner_' + this.bolType
+    );
   }
 }
