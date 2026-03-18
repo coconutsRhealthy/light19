@@ -4,16 +4,20 @@ import { DiscountsService } from '../services/discounts.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-winkels',
-  imports: [RouterModule, FooterComponent, NavbarComponent],
+  imports: [RouterModule, FooterComponent, NavbarComponent, FormsModule],
   templateUrl: './winkels.component.html',
   styleUrls: ['./winkels.component.css']
 })
 export class WinkelsComponent implements OnInit {
 
   groupedWinkels: { letter: string, winkels: string[] }[] = [];
+
+  searchTerm: string = '';
+  filteredGroupedWinkels: { letter: string, winkels: string[] }[] = [];
 
   ngOnInit(): void {
     this.discountsService.getDiscounts().subscribe((data) => {
@@ -28,7 +32,29 @@ export class WinkelsComponent implements OnInit {
 
       const winkels = this.removePartsInBracketsAndDoubleEntries(combinedWinkels);
       this.groupedWinkels = this.groupWinkelsByLetter(winkels);
+
+      this.filteredGroupedWinkels = this.groupedWinkels;
+
+      if (this.searchTerm) {
+        this.onSearch();
+      }
     });
+  }
+
+  onSearch() {
+    if (!this.searchTerm) {
+      this.filteredGroupedWinkels = this.groupedWinkels;
+      return;
+    }
+
+    const term = this.searchTerm.toLowerCase();
+
+    this.filteredGroupedWinkels = this.groupedWinkels
+      .map(group => {
+        const filteredWinkels = group.winkels.filter(w => w.toLowerCase().includes(term));
+        return { letter: group.letter, winkels: filteredWinkels };
+      })
+      .filter(group => group.winkels.length > 0);
   }
 
   constructor(private discountsService: DiscountsService, private meta: MetaService) {
