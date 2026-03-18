@@ -3,9 +3,6 @@
   <h1 class="tw-text-2xl tw-font-bold tw-my-6 tw-text-center">
     Nieuwe kortingen bij webshops
   </h1>
-  <p class="tw-text-sm tw-text-gray-500 tw-text-center tw-mt-2 tw-mb-0">
-    Gespot met AI! 🤖✨
-  </p>
 
   <!-- Zoekveld -->
   <div class="tw-mb-2 tw-relative">
@@ -32,32 +29,31 @@
 
     @for (discount of paginatedDiscounts; track discount; let i = $index) {
       <button
-              (click)="sendCopyCodeToGa(discount.company); affiliateModalAction(discount)"
               class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98]
                      tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center
                      tw-border tw-border-gray-100 tw-text-left tw-h-full"
       >
         <div class="tw-flex-1 tw-pr-3">
           <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900 tw-truncate lg:tw-max-w-[180px]">
-            {{ discount.company }}
+            {{ discount.webshop_name }}
           </h3>
 
           <p class="tw-text-sm tw-text-gray-600 tw-mt-1">
-            {{ discount.percentage }}
+            {{ discount.korting_text_nl || discount.korting_text }}
           </p>
           <p class="tw-text-xs tw-text-gray-400 tw-mt-1">
             Gespot op: {{ formatDate(discount.date) }}
           </p>
         </div>
 
-        @if (getLogoUrl(discount.company)) {
-        <div class="tw-flex-shrink-0">
-          <img
-                  [src]="getLogoUrl(discount.company)"
-                  [alt]="discount.company + ' logo'"
-                  class="tw-w-16 tw-h-16 lg:tw-w-14 lg:tw-h-14 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100"
-          />
-        </div>
+        @if (getLogoUrl(discount.webshop_name)) {
+          <div class="tw-flex-shrink-0">
+            <img
+                    [src]="getLogoUrl(discount.webshop_name)"
+                    [alt]="discount.webshop_name + ' logo'"
+                    class="tw-w-16 tw-h-16 lg:tw-w-14 lg:tw-h-14 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100"
+            />
+          </div>
         }
       </button>
     }
