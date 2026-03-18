@@ -10,8 +10,6 @@ import { LogosService } from '../services/logos.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { RouterModule } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 import { PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -26,7 +24,7 @@ interface WebshopKorting {
 
 @Component({
   selector: 'app-wieheeftsale',
-  imports: [FooterComponent, NavbarComponent, FormsModule, RouterModule],
+  imports: [FooterComponent, NavbarComponent, FormsModule],
   templateUrl: './wieheeftsale.component.html',
   styleUrls: ['./wieheeftsale.component.css', './../app.component.css'],
   providers: [
@@ -77,16 +75,11 @@ export class WieheeftsaleComponent implements OnInit {
     private analyticsEventService: AnalyticsEventService,
     private meta: MetaService,
     private datePipe: DatePipe,
-    private logosService: LogosService,
-    private route: ActivatedRoute
+    private logosService: LogosService
   ) {
     const monthYear = this.meta.getDateString();
-    this.meta.updateTitle("Diski | Online shoppen met kortingscodes in " + monthYear);
-    this.meta.updateMetaInfo(
-      "De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl",
-      "diski.nl",
-      "Kortingscode, Korting"
-    );
+    this.meta.updateTitle("Overzicht van actuele sales en aanbiedingen in " + monthYear + " | Diski")
+    this.meta.updateMetaInfo("Bekijk de nieuwste sales en aanbiedingen van populaire webshops. Bespaar eenvoudig online in " + monthYear + " via diski.nl.", "diski.nl", "kortingscode, korting, sale, aanbiedingen");
   }
 
   ngOnInit() {
@@ -94,12 +87,18 @@ export class WieheeftsaleComponent implements OnInit {
 
     this.itemsPerPage = (this.isBrowser && window.innerWidth < 768) ? 18 : 30;
 
-    // 🔥 DATA VIA JSON
     const urlWithNoCache = `${this.jsonUrl}?t=${new Date().getTime()}`;
 
     this.http.get<WebshopKorting[]>(urlWithNoCache).subscribe((data) => {
-      this.discounts = data;
-      this.filteredDiscounts = data;
+      this.discounts = data.map((item) => {
+        const affiliateLink = this.affiliateLinkService.getAffiliateLink(item.webshop_name);
+        return {
+          ...item,
+          url: affiliateLink || item.url  // <-- hier vervangen we de url
+        };
+      });
+
+      this.filteredDiscounts = [...this.discounts];
       this.initialPageLoad = false;
     });
 
