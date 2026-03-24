@@ -751,7 +751,7 @@ export class AffiliateLinkService {
         dummyCode: 'SEP10'
     },
     'bol.com': {
-        url: 'https://www.stylink.it/dv2lRhNp71j',
+        url: 'https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fcmp%2Fdrogisterijdeals%2F1916%2F&f=BAN&name=Dagelijkse%20inkopen&subid=',
         dummyCode: 'MA15R'
     },
     'bershka': {
@@ -785,10 +785,6 @@ export class AffiliateLinkService {
     'weekday': {
         url: 'https://www.stylink.it/B0ZlzhNdAAe',
         dummyCode: 'Sorry25'
-    },
-    'vingino': {
-        url: 'https://www.stylink.it/qP4w6T3d55o',
-        dummyCode: 'VINFW10'
     },
     'yas': {
         url: 'https://www.stylink.it/RNGo2t6Q110',
@@ -953,6 +949,94 @@ export class AffiliateLinkService {
     'schaefershop': {
         url: 'https://tidd.ly/4aGVqjF',
         dummyCode: 'EXTRA15'
+    },
+    'surebird': {
+        url: 'https://tidd.ly/4qRjoP8',
+        dummyCode: 'EXTRA10'
+    },
+    'jhypes': {
+        url: 'https://tidd.ly/3OUVV24',
+        dummyCode: 'kay10'
+    },
+    'clayandglow': {
+        url: 'https://clay-and-glow-nl.mtpc.se/5924576',
+        dummyCode: 'FERENAXGLOW'
+    },
+    'pincsale': {
+        url: 'https://pinc-sale.mtpc.se/5924499',
+        dummyCode: 'EXTRA10'
+    },
+    'nelsonschoenen': {
+        url: 'https://nelson-schoenen.mtpc.se/5924501',
+        dummyCode: 'NS10'
+    },
+    'ofm': {
+        url: 'https://ofm.mtpc.se/5924502',
+        dummyCode: 'SHOP10'
+    },
+    'plein.nl': {
+        url: 'https://plein-nl-nl.mtpc.se/5924509',
+        dummyCode: 'EXTRA15'
+    },
+    'cultbeauty': {
+        url: 'https://cult-beauty-nl.mtpc.se/5924511',
+        dummyCode: 'CB10'
+    },
+    'clubrepublique': {
+        url: 'https://club-republique-nl.mtpc.se/5924527',
+        dummyCode: 'CRP10'
+    },
+    'msmode': {
+        url: 'https://ms-mode-nl.mtpc.se/5924531',
+        dummyCode: 'EXTRA10'
+    },
+    'easywalker': {
+        url: 'https://easywalker.mtpc.se/5924535',
+        dummyCode: 'WALK10'
+    },
+    'shoesme': {
+        url: 'https://shoesme-nl.mtpc.se/5924537',
+        dummyCode: 'ME10'
+    },
+    'lilatelier': {
+        url: 'https://lil-atelier-nl.mtpc.se/5924538',
+        dummyCode: 'ATL10'
+    },
+    'babysonly': {
+        url: 'https://baby-s-only-nl.mtpc.se/5924543',
+        dummyCode: 'EXTRA10'
+    },
+    'amisamour': {
+        url: 'https://amisamour.mtpc.se/5924549',
+        dummyCode: 'AMOUR15'
+    },
+    'anthropologie': {
+        url: 'https://anthropologie-nl.mtpc.se/5924557',
+        dummyCode: 'EXTRA10'
+    },
+    'posterhome': {
+        url: 'https://posterhome.mtpc.se/5924565',
+        dummyCode: 'POSTER10'
+    },
+    'flinders': {
+        url: 'https://flinders-nl.mtpc.se/5924569',
+        dummyCode: 'EXTRA10'
+    },
+    'akuwoodpenal': {
+        url: 'https://aku-woodpannel.mtpc.se/5924571',
+        dummyCode: 'EXTRA15'
+    },
+    'fotofabriek.nl': {
+        url: 'https://www.fotofabriek.nl/content/referral/index.aspx/?tt=30576_12_448474_&r=%2F',
+        dummyCode: 'NOOR33'
+    },
+    'alpinehearingprotection': {
+        url: 'https://tidd.ly/4rKQpOm',
+        dummyCode: 'ROSANNELIENE5'
+    },
+    'vingino': {
+        url: 'https://tidd.ly/47kdoHN',
+        dummyCode: 'MESSI-EXTRA'
     }
   };
 
