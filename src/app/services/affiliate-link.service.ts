@@ -43,7 +43,7 @@ export class AffiliateLinkService {
         dummyCode: 'NINJ15BBG'
     },
     'samsung': {
-        url: 'https://tidd.ly/4aeQOCL',
+        url: 'https://tidd.ly/4taXxUp',
         dummyCode: 'SAMS5HR9'
     },
     'yesstyle': {
@@ -767,7 +767,7 @@ export class AffiliateLinkService {
         dummyCode: 'SHOP10'
     },
     'jdsports': {
-        url: 'https://www.stylink.it/nXpBlfb4pVn',
+        url: 'https://click.linksynergy.com/deeplink?id=vErUkuRoyhQ&mid=43953&murl=https%3A%2F%2Fwww.jdsports.nl%2F',
         dummyCode: 'EXTRA10'
     },
     'loungeunderwear': {
@@ -819,7 +819,7 @@ export class AffiliateLinkService {
         dummyCode: 'LOFTYXJULIA'
     },
     'manfield': {
-        url: 'https://www.stylink.it/B0ZlzhNdA75',
+        url: 'https://lt45.net/c/?si=10842&li=1485384&wi=418827&dl=%2F',
         dummyCode: 'MICHELLE15'
     },
     'mango': {
@@ -843,7 +843,7 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'puma': {
-        url: 'https://www.stylink.it/exdegIQ7qbl',
+        url: 'https://jf79.net/c/?si=17002&li=1733660&wi=418827&ws=&dl=nl%2Fnl%2Fhome',
         dummyCode: 'HOLIDAYS'
     },
     'sacha': {
@@ -851,7 +851,7 @@ export class AffiliateLinkService {
         dummyCode: 'ELLE20'
     },
     'notino': {
-        url: 'https://www.stylink.it/9ZRYXtG5aoj',
+        url: 'https://www.anrdoezrs.net/click-101641002-12948621',
         dummyCode: 'EXTRA10'
     },
     'home24': {
@@ -1037,6 +1037,362 @@ export class AffiliateLinkService {
     'vingino': {
         url: 'https://tidd.ly/47kdoHN',
         dummyCode: 'MESSI-EXTRA'
+    },
+    'zadigvoltaire': {
+        url: 'https://fr135.net/c/?si=15679&li=1679315&wi=418827&dl=eu%2Fen%2F',
+        dummyCode: 'ZADIG10'
+    },
+    'mimshoes': {
+        url: 'https://glp8.net/c/?si=20474&li=1868703&wi=418827&dl=en-eu',
+        dummyCode: 'MIMS10'
+    },
+    'mizuno': {
+        url: 'https://jf79.net/c/?si=16474&li=1707525&wi=418827&dl=%2Feu%2Fnl-nl%2Fhome%2F',
+        dummyCode: 'SHOP15'
+    },
+    'wamdenim': {
+        url: 'https://fr135.net/c/?si=15940&li=1688087&wi=418827&ws=&dl=en',
+        dummyCode: 'SHOP10'
+    },
+    'onlyformen': {
+        url: 'https://glp8.net/c/?si=20246&li=1863164&wi=418827&dl=',
+        dummyCode: 'EXTRA10'
+    },
+    'mijnhummeltje': {
+        url: 'https://jf79.net/c/?si=16616&li=1714020&wi=418827&dl=',
+        dummyCode: 'HUM10'
+    },
+    'nolten': {
+        url: 'https://ds1.nl/c/?si=9375&li=1423071&wi=418827&ws=&dl=',
+        dummyCode: 'EXTRA15'
+    },
+    'superdry': {
+        url: 'https://rkn3.net/c/?si=14965&li=1650412&wi=418827&dl=',
+        dummyCode: 'EXTRA10'
+    },
+    'vanarendonk': {
+        url: 'https://lt45.net/c/?si=11852&li=1523584&wi=418827&dl=%2F',
+        dummyCode: 'SHOP15'
+    },
+    'bartogi': {
+        url: 'https://fr135.net/c/?si=15634&li=1676120&wi=418827&dl=',
+        dummyCode: 'SHOPBARTO'
+    },
+    'plein': {
+        url: 'https://fr135.net/c/?si=3366&li=1161224&wi=418827&dl=',
+        dummyCode: 'SHOP10PLEIN'
+    },
+    'myka': {
+        url: 'https://bdt9.net/c/?si=18346&li=1792658&wi=418827&dl=',
+        dummyCode: 'EXTRA12'
+    },
+    'lureaux': {
+        url: 'https://bdt9.net/c/?si=18357&li=1793240&wi=418827&dl=',
+        dummyCode: 'SHOPLureaux'
+    },
+    'prydligt': {
+        url: 'https://bdt9.net/c/?si=18476&li=1798004&wi=418827&dl=',
+        dummyCode: 'LIGT10'
+    },
+    'eastpak': {
+        url: 'https://glp8.net/c/?si=20076&li=1857675&wi=418827&dl=https%3A%2F%2Feu.eastpak.com%2Fnl-nl',
+        dummyCode: 'EXTRA15'
+    },
+    'ag1': {
+        url: 'https://glp8.net/c/?si=19412&li=1829785&wi=418827&dl=nl-eu',
+        dummyCode: 'SHOP10'
+    },
+    'dierenapotheek': {
+        url: 'https://jf79.net/c/?si=16838&li=1725816&wi=418827&dl=',
+        dummyCode: 'DIER-10'
+    },
+    'internetslagerij': {
+        url: 'https://glp8.net/c/?si=20150&li=1860141&wi=418827&dl=',
+        dummyCode: 'EXTRA10'
+    },
+    'zwilling': {
+        url: 'https://jdt8.net/c/?si=17552&li=1758391&wi=418827&dl=https%3A%2F%2Fwww.zwilling.com%2Fnl%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'glamood': {
+        url: 'https://glp8.net/c/?si=20535&li=1871252&wi=418827&dl=',
+        dummyCode: 'GLAM15'
+    },
+    'petsecur': {
+        url: 'https://fr135.net/c/?si=15431&li=1668064&wi=418827&dl=%2F',
+        dummyCode: 'PETS15'
+    },
+    'ongediertewinkel': {
+        url: 'https://rkn3.net/c/?si=14571&li=1627390&wi=418827&dl=%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'trail': {
+        url: 'https://link.trail.nl/c/?si=18704&li=1803809&wi=418827&ws=&dl=',
+        dummyCode: 'TRAIL15'
+    },
+    'leukstetickets': {
+        url: 'https://lt45.net/c/?si=15805&li=1684191&wi=418827&dl=',
+        dummyCode: '15LEUK'
+    },
+    'maje': {
+        url: 'https://glp8.net/c/?si=19592&li=1839487&wi=418827&dl=https%3A%2F%2Feu.maje.com%2F',
+        dummyCode: '10MAJE'
+    },
+    'hostinger': {
+        url: 'https://jf79.net/c/?si=16780&li=1722914&wi=418827&dl=nl',
+        dummyCode: 'OFF10'
+    },
+    'levis': {
+        url: 'https://glp8.net/c/?si=19949&li=1850890&wi=418827&dl=NL%2Fnl_NL%2F',
+        dummyCode: '501FORYOU'
+    },
+    'littledutch': {
+        url: 'https://aff.little-dutch.com/c/?si=19527&li=1836661&wi=418827&dl=%2F',
+        dummyCode: 'DUTCH10'
+    },
+    'acculaders.nl': {
+        url: 'https://lt45.net/c/?si=12933&li=1570313&wi=418827&ws=&dl=',
+        dummyCode: 'ACCU-10'
+    },
+    'tencate1952': {
+        url: 'https://ds1.nl/c/?si=6773&li=1315339&wi=418827&dl=',
+        dummyCode: '1952OFF'
+    },
+    'parfumania': {
+        url: 'https://jf79.net/c/?si=16384&li=1703817&wi=418827&dl=',
+        dummyCode: 'PARFUM-10'
+    },
+    'decantalo': {
+        url: 'https://bdt9.net/c/?si=18645&li=1802463&wi=418827&ws=&dl=nl%2F',
+        dummyCode: 'SHOP15'
+    },
+    'padeldiscount': {
+        url: 'https://bdt9.net/c/?si=19068&li=1819419&wi=418827&dl=%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'parfumado': {
+        url: 'https://fr135.net/c/?si=15178&li=1658200&wi=418827&dl=',
+        dummyCode: 'MEGAN50'
+    },
+    'vanastenbabysuperstore': {
+        url: 'https://c.vanastenbabysuperstore.nl/c/?si=14844&li=1640919&wi=418827&dl=%2F',
+        dummyCode: 'BABY-10'
+    },
+    'fietsparadijs': {
+        url: 'https://lt45.net/c/?si=12168&li=1536530&wi=418827&dl=',
+        dummyCode: 'SHOPFIETS10'
+    },
+    'skinnydiplondon': {
+        url: 'https://glp8.net/c/?si=20078&li=1857719&wi=418827&dl=%3F_ab%3D0%26_fd%3D0%26_sc%3D1',
+        dummyCode: 'EXTRA10'
+    },
+    'goedkoopstekantoorartikelen': {
+        url: 'https://ds1.nl/c/?si=8191&li=1377583&wi=418827&dl=%2F',
+        dummyCode: 'OFFICE10'
+    },
+    'butlon': {
+        url: 'https://fr135.net/c/?si=15642&li=1676643&wi=418827&ws=&dl=nl%2F',
+        dummyCode: 'BUT15'
+    },
+    'headshop': {
+        url: 'https://jdt8.net/c/?si=17220&li=1743937&wi=418827&dl=',
+        dummyCode: 'SHOPHEAD'
+    },
+    'haarspullen': {
+        url: 'https://jf79.net/c/?si=16563&li=1711168&wi=418827&dl=',
+        dummyCode: '10OFF'
+    },
+    'stellamccartney': {
+        url: 'https://fr135.net/c/?si=15224&li=1659440&wi=418827&dl=nl%2Fen%2F',
+        dummyCode: 'STELLA-10'
+    },
+    'foodello': {
+        url: 'https://partners.foodello.nl/c/?si=17066&li=1737047&wi=418827&dl=%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'kiwi.com': {
+        url: 'https://glp8.net/c/?si=20714&li=1878051&wi=418827&dl=nl%2F',
+        dummyCode: '10EXTRA'
+    },
+    'lego': {
+        url: 'https://bdt9.net/c/?si=18488&li=1798470&wi=418827&dl=en-nl',
+        dummyCode: 'BRICKOFF'
+    },
+    'oakley': {
+        url: 'https://bdt9.net/c/?si=18433&li=1796803&wi=418827&dl=nl-nl',
+        dummyCode: 'THEOAK'
+    },
+    'tuinmeubelwereld': {
+        url: 'https://bdt9.net/c/?si=19167&li=1822967&wi=418827&dl=%2F',
+        dummyCode: 'TUIN10'
+    },
+    'vvvcadeaukaarten': {
+        url: 'https://fr135.net/c/?si=15261&li=1660848&wi=418827&dl=',
+        dummyCode: 'SARAH'
+    },
+    'joybuy': {
+        url: 'https://glp8.net/c/?si=20823&li=1881811&wi=418827&dl=',
+        dummyCode: 'JOY10'
+    },
+    'salontopper': {
+        url: 'https://lt45.net/c/?si=12554&li=1549340&wi=418827&ws=&dl=c%2F%3Fsi%3D20823%26li%3D1881811%26wi%3D418827%26dl%3D',
+        dummyCode: 'TOP10'
+    },
+    'flink': {
+        url: 'https://jf79.net/c/?si=16070&li=1691645&wi=418827&dl=shop%2Fen-NL%2F',
+        dummyCode: 'ANNICKK15'
+    },
+    'theorie.nl': {
+        url: 'https://ds1.nl/c/?si=2320&li=139428&wi=418827&ws=&dl=',
+        dummyCode: 'EXTRA10'
+    },
+    'cookandpan': {
+        url: 'https://glp8.net/c/?si=21326&li=1907615&wi=418827&dl=',
+        dummyCode: '10NOOM'
+    },
+    'lease.auto': {
+        url: 'https://glp8.net/c/?si=21513&li=1912084&wi=418827&dl=%2F',
+        dummyCode: 'LEASY'
+    },
+    'jwverzekeringen': {
+        url: 'https://partners.jwverzekeringen.nl/c/?si=21167&li=1901301&wi=418827&dl=%2F',
+        dummyCode: 'VZK10'
+    },
+    'houtolie': {
+        url: 'https://bdt9.net/c/?si=18953&li=1815317&wi=418827&dl=%2F',
+        dummyCode: 'OIL15'
+    },
+    'giuseppezanotti': {
+        url: 'https://rkn3.net/c/?si=15019&li=1650848&wi=418827&dl=nl',
+        dummyCode: 'EXTRA10'
+    },
+    'eleonorabonucci': {
+        url: 'https://glp8.net/c/?si=20477&li=1868853&wi=418827&dl=',
+        dummyCode: 'NUCCI15'
+    },
+    'robell': {
+        url: 'https://jdt8.net/c/?si=17901&li=1775255&wi=418827&dl=',
+        dummyCode: 'EXTRA10'
+    },
+    'teveeo': {
+        url: 'https://bdt9.net/c/?si=19052&li=1818922&wi=418827&ws=&dl=en-gb',
+        dummyCode: '10SHOP'
+    },
+    'olijfolieconcurrent': {
+        url: 'https://glp8.net/c/?si=20259&li=1864453&wi=418827&dl=',
+        dummyCode: 'SHOPOLIVE'
+    },
+    'suntip.nl': {
+        url: 'https://ds1.nl/c/?si=951&li=57956&wi=418827&dl=%2F',
+        dummyCode: 'ZON10'
+    },
+    'bottger': {
+        url: 'https://glp8.net/c/?si=21072&li=1897053&wi=418827&dl=',
+        dummyCode: 'SHOPBOTT'
+    },
+    'paneli': {
+        url: 'https://glp8.net/c/?si=20715&li=1878212&wi=418827&dl=',
+        dummyCode: 'SHOP10'
+    },
+    'vitaminenoprecept': {
+        url: 'https://ds1.nl/c/?si=15876&li=1685786&wi=418827&dl=',
+        dummyCode: 'EXTRA10'
+    },
+    'endclothing': {
+        url: 'https://endclothing.sjv.io/AgPGKj',
+        dummyCode: 'SHOP10'
+    },
+    'decathlon': {
+        url: 'https://decathlon-nl.x8nb.net/PzOWaz',
+        dummyCode: 'SAAR10'
+    },
+    'lenovo': {
+        url: 'https://lenovo.evyy.net/zzxBjO',
+        dummyCode: 'EXTRA10'
+    },
+    'golflefleur': {
+        url: 'https://golf-le-fleur.sjv.io/n4XBn6',
+        dummyCode: 'SWING10'
+    },
+    'shopify': {
+        url: 'https://shopify.pxf.io/dyOERM',
+        dummyCode: 'EXTRA10'
+    },
+    'roseskinco': {
+        url: 'https://roseskinco.pxf.io/qWzBg5',
+        dummyCode: 'SKIN-10'
+    },
+    'primevideo': {
+        url: 'https://primevideo-eu.pxf.io/xJLRnA',
+        dummyCode: 'PRIMEOFF'
+    },
+    'nordvpn': {
+        url: 'https://nordvpn.sjv.io/PzOWKz',
+        dummyCode: 'NORDOFF'
+    },
+    'maxicosi': {
+        url: 'https://doreljuvenile.pxf.io/AgPGmj',
+        dummyCode: 'ELISE10'
+    },
+    'sandandsky': {
+        url: 'https://sand-and-sky.sjv.io/X4mKdo',
+        dummyCode: 'SANDS'
+    },
+    'capcut': {
+        url: 'https://capcutaffiliateprogram.pxf.io/AgPvMRzz',
+        dummyCode: 'CUTOFF'
+    },
+    'coursera': {
+        url: 'https://imp.i384100.net/GbKMdE',
+        dummyCode: 'EXTRA10'
+    },
+    'vrbohotels': {
+        url: 'https://www.kqzyfj.com/click-101641002-14347453',
+        dummyCode: 'HOTEL10'
+    },
+    'skechers': {
+        url: 'https://www.anrdoezrs.net/click-101641002-17230910',
+        dummyCode: 'SNEAK10'
+    },
+    'mondly': {
+        url: 'https://www.anrdoezrs.net/click-101641002-14103335',
+        dummyCode: '10OFF'
+    },
+    'expedia': {
+        url: 'https://www.jdoqocy.com/click-101641002-15108262',
+        dummyCode: '10OFF'
+    },
+    'euroflorist': {
+        url: 'https://clk.tradedoubler.com/click?p=239131&a=3427761&url=https%3A%2F%2Fwww.euroflorist.nl%2Fen',
+        dummyCode: 'FLOWER15'
+    },
+    'naturalslim': {
+        url: 'https://clk.tradedoubler.com/click?p=344232&a=3427761&url=https%3A%2F%2Fnaturalslim.nl%2F',
+        dummyCode: 'SIM10SIM'
+    },
+    'onebioshop': {
+        url: 'https://clk.tradedoubler.com/click?p=392919&a=3427761&url=https%3A%2F%2Fonebioshop.com%2Fnl',
+        dummyCode: 'SHOP10'
+    },
+    'palladium': {
+        url: 'https://clk.tradedoubler.com/click?p=290642&a=3427761&url=https%3A%2F%2Fpalladiumboots.nl%2F',
+        dummyCode: 'SPARKLE10'
+    },
+    'papique': {
+        url: 'https://clk.tradedoubler.com/click?p=393042&a=3427761&url=https%3A%2F%2Fpapique.com%2Fnl',
+        dummyCode: 'EXTRA10'
+    },
+    'qathu': {
+        url: 'https://clk.tradedoubler.com/click?p=393391&a=3427761&url=https%3A%2F%2Fqathu.com%2Fnl',
+        dummyCode: 'GA10'
+    },
+    'swehealth': {
+        url: 'https://clk.tradedoubler.com/click?p=393268&a=3427761&url=https%3A%2F%2Fwww.swehealth.nl%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'mediamarkt': {
+        url: 'https://clk.tradedoubler.com/click?p=262336&a=3476882&url=https%3A%2F%2Fwww.mediamarkt.nl%2Fnl%2F',
+        dummyCode: '10EXTRA'
     }
   };
 
