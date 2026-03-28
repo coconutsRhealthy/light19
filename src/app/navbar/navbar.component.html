@@ -53,6 +53,13 @@
                     Top 5
                 </a>
                 <a
+                        routerLink="/blogs"
+                        routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
+                        class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
+                        onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blogs'});">
+                    Blogs
+                </a>
+                <a
                     routerLink="/contact"
                     routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
                     class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
@@ -116,6 +123,12 @@
                    class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_top5'});">
                         Top 5
+                </a>
+                <a routerLink="/blogs"
+                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blogs'});">
+                        Blogs
                 </a>
                 <a routerLink="/contact"
                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
