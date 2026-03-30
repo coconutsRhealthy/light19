@@ -21,6 +21,7 @@ export class ModalComponent {
   private _discount: any = null;
 
   mailAddress: string = '';
+  emailPlaceholder: string = 'jouw@email.nl';
   isUnlocked: boolean = false;
   webhookUrl = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
 
@@ -185,7 +186,12 @@ export class ModalComponent {
   }
 
   unlockCode() {
-      if (!this.mailAddress) return;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!this.mailAddress || !emailPattern.test(this.mailAddress)) {
+          this.mailAddress = '';
+          this.emailPlaceholder = 'Een geldig mailadres 😉';
+          return;
+      }
 
       this.isUnlocked = true;
 
