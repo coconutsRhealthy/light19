@@ -139,7 +139,7 @@ export class DiscountsTableComponent implements OnInit {
 
     this.page = 1;
 
-    if (this.searchTerm.length >= 5) {
+    if (this.searchTerm.length >= 5 || normalizedSearchTerm === 'temu') {
       const termToSend = normalizedSearchTerm.slice(0, 5);
       if (termToSend !== this.lastSentTerm) {
         this.lastSentTerm = termToSend;
