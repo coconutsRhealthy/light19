@@ -23,7 +23,7 @@ export class ModalComponent {
   mailAddress: string = '';
   emailPlaceholder: string = 'jouw@email.nl';
   isUnlocked: boolean = false;
-  webhookUrl = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+  webhookUrl = 'https://script.google.com/macros/s/AKfycbzjLm_r_jtVBCe0zW4vWy6fVZjL9hmjn1_RikldtYOX7HzehBtlBpvCuJUZcYZCss3p/exec';
 
   @Input()
   set discount(value: any) {
