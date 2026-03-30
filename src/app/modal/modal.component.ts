@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 declare let gtag: Function;
 
@@ -21,6 +22,7 @@ export class ModalComponent {
 
   mailAddress: string = '';
   isUnlocked: boolean = false;
+  webhookUrl = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
 
   @Input()
   set discount(value: any) {
@@ -34,7 +36,7 @@ export class ModalComponent {
     return this._discount;
   }
 
-  constructor(private analyticsEventService: AnalyticsEventService) {}
+  constructor(private analyticsEventService: AnalyticsEventService, private http: HttpClient) {}
 
   private async loadDiscountCode(discount: any) {
     this.discountCode = await this.getDiscountCode(discount);
@@ -100,6 +102,8 @@ export class ModalComponent {
 
   closeModal() {
     this.isVisible = false;
+    this.mailAddress = '';
+    this.isUnlocked = false;
     this.discountCode = '';
     this.closed.emit();
   }
@@ -181,10 +185,24 @@ export class ModalComponent {
   }
 
   unlockCode() {
-    if (!this.mailAddress) return;
+      if (!this.mailAddress) return;
 
-    this.isUnlocked = true;
+      this.isUnlocked = true;
 
-    // eventueel: hier API call doen om code op te halen
-  }
+      const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+      const body = new HttpParams()
+        .set('email', this.mailAddress)
+        .set('date', new Date().toISOString())
+        .set('company', this.discount?.company ?? '');
+
+      this.http.post(this.webhookUrl, body.toString(), { headers, responseType: 'text' })
+        .subscribe({
+          next: () => {
+
+          },
+          error: (err) => {
+            console.error('Fout bij unlock:', err);
+          }
+        });
+    }
 }

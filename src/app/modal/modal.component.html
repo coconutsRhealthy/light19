@@ -100,6 +100,7 @@
                             class="tw-flex-1 tw-border tw-border-gray-300 tw-rounded-md
                    tw-px-2 tw-py-1 sm:tw-px-3 sm:tw-py-2
                    focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400 tw-transition tw-text-xs sm:tw-text-sm"
+                            [disabled]="isUnlocked"
                     />
 
                     <button
@@ -108,7 +109,7 @@
                    tw-px-2 tw-py-1 sm:tw-px-4 sm:tw-py-2 tw-rounded-md
                    hover:tw-bg-blue-700 tw-transition disabled:tw-opacity-50
                    tw-text-xs sm:tw-text-sm"
-                            [disabled]="!mailAddress"
+                            [disabled]="!mailAddress || isUnlocked"
                     >
                         Toon code
                     </button>
