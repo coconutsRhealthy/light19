@@ -93,11 +93,11 @@ export class CompanyCodesComponent implements OnInit {
             const companyNoBrackets = entry.company.replace(/\s*\(.*?\)\s*/g, '');
             const companyNoBracketsLc = companyNoBrackets.toLowerCase();
 
-            if(companyNoBracketsLc === 'leolive') {
-                if(!entry.discountCode.startsWith(urlString)) {
-                    return false;
-                }
-            }
+//             if(companyNoBracketsLc === 'leolive') {
+//                 if(!entry.discountCode.startsWith(urlString)) {
+//                     return false;
+//                 }
+//             }
 
             return companyNoBracketsLc === companyName.toLowerCase();
           })
