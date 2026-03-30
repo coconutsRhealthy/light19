@@ -1,11 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
+import { FormsModule } from '@angular/forms';
 
 declare let gtag: Function;
 
 @Component({
   selector: 'app-modal',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
@@ -17,6 +18,9 @@ export class ModalComponent {
   discountCode: string = '';
 
   private _discount: any = null;
+
+  mailAddress: string = '';
+  isUnlocked: boolean = false;
 
   @Input()
   set discount(value: any) {
@@ -174,5 +178,13 @@ export class ModalComponent {
       console.error('Kon de kortingscode niet ophalen:', err);
       return discount.discountCode;
     }
+  }
+
+  unlockCode() {
+    if (!this.mailAddress) return;
+
+    this.isUnlocked = true;
+
+    // eventueel: hier API call doen om code op te halen
   }
 }
