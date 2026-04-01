@@ -23,7 +23,10 @@ export class ModalComponent {
   mailAddress: string = '';
   emailPlaceholder: string = 'jouw@email.nl';
   isUnlocked: boolean = false;
-  webhookUrl = 'https://script.google.com/macros/s/AKfycbzjLm_r_jtVBCe0zW4vWy6fVZjL9hmjn1_RikldtYOX7HzehBtlBpvCuJUZcYZCss3p/exec';
+  webhookUrl = 'https://script.google.com/macros/s/AKfycbyIZSloDZn06dsfCbNfdAxTjeNDbZOxxTpACAop2aosG6AlyDcMklb4YGd9psr8pOQY/exec';
+  wantsMarketing: boolean = false;
+  acceptedPrivacy: boolean = false;
+  showPrivacyError: boolean = false;
 
   @Input()
   set discount(value: any) {
@@ -104,6 +107,9 @@ export class ModalComponent {
   closeModal() {
     this.isVisible = false;
     this.mailAddress = '';
+    this.wantsMarketing = false;
+    this.acceptedPrivacy = false;
+    this.showPrivacyError = false;
     this.isUnlocked = false;
     this.discountCode = '';
     this.closed.emit();
@@ -193,13 +199,20 @@ export class ModalComponent {
           return;
       }
 
+      if (!this.acceptedPrivacy) {
+        this.showPrivacyError = true;
+        return;
+      }
+
+      this.showPrivacyError = false;
       this.isUnlocked = true;
 
       const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
       const body = new HttpParams()
         .set('email', this.mailAddress)
         .set('date', new Date().toISOString())
-        .set('company', this.discount?.company ?? '');
+        .set('company', this.discount?.company ?? '')
+        .set('marketing', this.wantsMarketing ? 'YES' : 'NO');
 
       this.http.post(this.webhookUrl, body.toString(), { headers, responseType: 'text' })
         .subscribe({

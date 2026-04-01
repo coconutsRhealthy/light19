@@ -109,10 +109,46 @@
                    tw-px-2 tw-py-1 sm:tw-px-4 sm:tw-py-2 tw-rounded-md
                    hover:tw-bg-blue-700 tw-transition disabled:tw-opacity-50
                    tw-text-xs sm:tw-text-sm"
-                            [disabled]="!mailAddress || isUnlocked"
+                            [disabled]="!mailAddress || isUnlocked || !acceptedPrivacy"
                     >
                         Toon code
                     </button>
+                </div>
+
+                <!-- CHECKBOXES -->
+                <div class="tw-space-y-2">
+
+                    <!-- Marketing opt-in -->
+                    <label class="tw-flex tw-items-start tw-gap-2 tw-text-xs tw-text-gray-600">
+                        <input
+                                type="checkbox"
+                                [(ngModel)]="wantsMarketing"
+                                class="tw-mt-0.5"
+                        />
+                        <span>
+                          Ja, ik wil exclusieve kortingscodes en de beste deals als eerste ontvangen van Diski
+                        </span>
+                    </label>
+
+                    <!-- Privacy (required) -->
+                    <label class="tw-flex tw-items-start tw-gap-2 tw-text-xs tw-text-gray-600">
+                        <input
+                                type="checkbox"
+                                [(ngModel)]="acceptedPrivacy"
+                                class="tw-mt-0.5"
+                        />
+                        <span>
+                          Ik heb de privacy verklaring gelezen en ga hiermee akkoord *
+                        </span>
+                    </label>
+
+                    <!-- Error message -->
+                    @if (showPrivacyError) {
+                        <div class="tw-text-red-500 tw-text-xs">
+                            Je moet akkoord gaan met de privacyverklaring
+                        </div>
+                    }
+
                 </div>
             </div>
 
