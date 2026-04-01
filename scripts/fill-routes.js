@@ -35,8 +35,46 @@ hardcodedRoutes.forEach(route => results.add(route.replace(/^\//, '')));
 // Sort alphabetically
 const sorted = Array.from(results).sort((a, b) => a.localeCompare(b));
 
-// Write to routes.txt with leading slash
-const output = sorted.map((v) => `/${v}`).join('\n');
-fs.writeFileSync('routes.txt', output, 'utf8');
+// =========================
+// 1. routes.txt genereren
+// =========================
+const routesTxt = sorted.map((v) => `/${v}`).join('\n');
+fs.writeFileSync('routes.txt', routesTxt, 'utf8');
 
 console.log('routes.txt generated successfully.');
+
+
+// =========================
+// 2. sitemap.xml genereren
+// =========================
+const BASE_URL = 'https://diski.nl';
+
+const urls = sorted.map((route) => {
+  const pathPart = route === '' ? '' : `/${route}`;
+  return `
+  <url>
+    <loc>${escapeXml(BASE_URL + pathPart)}</loc>
+  </url>`;
+}).join('');
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>`;
+
+// Schrijf naar Angular src map
+fs.writeFileSync(
+  path.join(__dirname, '../src/sitemap.xml'),
+  sitemap,
+  'utf8'
+);
+
+console.log('sitemap.xml generated successfully.');
+
+function escapeXml(str) {
+  return str.replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&apos;');
+}
