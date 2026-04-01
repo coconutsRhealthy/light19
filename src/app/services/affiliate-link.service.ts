@@ -366,10 +366,6 @@ export class AffiliateLinkService {
         url: 'https://tidd.ly/4mlk526',
         dummyCode: 'TUIN15OI1'
     },
-    'jadedlondon': {
-        url: 'https://tidd.ly/44NF2MZ',
-        dummyCode: 'MARIE25L84'
-    },
     'muchachomalo': {
         url: 'https://tidd.ly/3YYwvDa',
         dummyCode: 'LISA25X0P'
@@ -618,10 +614,10 @@ export class AffiliateLinkService {
         url: 'https://deals.flexispot.nl/c?c=36652&m=12&a=448474&r=&u=%2F',
         dummyCode: 'FSBF10'
     },
-    'gymshark': {
-        url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
-        dummyCode: 'AFSPORTPOEDER'
-    },
+//     'gymshark': {
+//         url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
+//         dummyCode: 'AFSPORTPOEDER'
+//     },
     '24uomo': {
         url: 'https://tc.tradetracker.net/?c=37672&m=12&a=448474&r=&u=%2F',
         dummyCode: '12EXTRA'
@@ -1393,6 +1389,26 @@ export class AffiliateLinkService {
     'mediamarkt': {
         url: 'https://clk.tradedoubler.com/click?p=262336&a=3476882&url=https%3A%2F%2Fwww.mediamarkt.nl%2Fnl%2F',
         dummyCode: '10EXTRA'
+    },
+    'oduree.nl': {
+        url: 'https://oduree.nl/discount/WGK10',
+        dummyCode: 'WGK10'
+    },
+    'burga': {
+        url: 'https://burga.sjv.io/zzzOAx',
+        dummyCode: 'AMBERXNL'
+    },
+    'creamyfabrics': {
+        url: 'https://creamyfabrics.com/collections/sale?sca_ref=10914490.LaLLdEQudOoWNPr&utm_source=uppromote&utm_medium=affiliate&utm_campaign=affiliate_bestseller&utm_term=affiliate_bestseller',
+        dummyCode: 'rosan'
+    },
+    'cfab': {
+        url: 'https://creamyfabrics.com/collections/sale?sca_ref=10914490.LaLLdEQudOoWNPr&utm_source=uppromote&utm_medium=affiliate&utm_campaign=affiliate_bestseller&utm_term=affiliate_bestseller',
+        dummyCode: 'ROSAN'
+    },
+    'geurwolkje': {
+        url: 'https://www.geurwolkje.nl/INDY40908',
+        dummyCode: 'INDY40908'
     }
   };
 
