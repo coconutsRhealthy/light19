@@ -9,6 +9,7 @@ import { GiftcardsComponent } from './giftcards/giftcards.component';
 import { AmbassadorComponent } from './ambassador/ambassador.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { Top5Component } from './top5/top5.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
@@ -21,6 +22,7 @@ export const routes: Routes = [
   { path: 'ambassador', component: AmbassadorComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'top5', component: Top5Component },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: ':company', component: CompanyCodesComponent },
   { path: '**', component: NotFoundComponent }
 ];
