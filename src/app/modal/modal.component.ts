@@ -12,7 +12,26 @@ declare let gtag: Function;
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
-  @Input() isVisible = false;
+  private _isVisible = false;
+
+  @Input()
+  set isVisible(value: boolean) {
+    this._isVisible = value;
+
+    if (value) {
+      const savedEmail = localStorage.getItem('discount_email');
+
+      if (savedEmail) {
+        this.mailAddress = savedEmail;
+        this.isUnlocked = true;
+      }
+    }
+  }
+
+  get isVisible(): boolean {
+    return this._isVisible;
+  }
+
   @Output() closed = new EventEmitter<void>();
   isCopied = false;
 
@@ -206,6 +225,8 @@ export class ModalComponent {
 
       this.showPrivacyError = false;
       this.isUnlocked = true;
+
+      localStorage.setItem('discount_email', this.mailAddress);
 
       const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
       const body = new HttpParams()
