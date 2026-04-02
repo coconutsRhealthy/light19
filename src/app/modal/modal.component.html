@@ -88,7 +88,7 @@
                     Ontgrendel de kortingscode
                 </div>
 
-                <div class="tw-text-[10px] sm:tw-text-xs tw-text-gray-500">
+                <div class="tw-text-[11px] sm:tw-text-xs tw-text-gray-500">
                     Vul je e-mailadres in om de code zichtbaar te maken
                 </div>
 
@@ -126,7 +126,7 @@
                                 [(ngModel)]="wantsMarketing"
                                 class="tw-mt-0.5"
                         />
-                        <span>
+                        <span class="tw-text-[9px] sm:tw-text-xs tw-text-gray-500">
                           Ja, ik wil exclusieve kortingscodes en de beste deals als eerste ontvangen van Diski
                         </span>
                     </label>
@@ -138,14 +138,14 @@
                                 [(ngModel)]="acceptedPrivacy"
                                 class="tw-mt-0.5"
                         />
-                        <span>
+                        <span class="tw-text-[9px] sm:tw-text-xs tw-text-gray-500">
                           Ik heb de
                           <a href="/privacy-policy"
                              target="_blank"
                              rel="noopener noreferrer"
                              class="tw-text-blue-600 hover:tw-underline">
                             privacyverklaring
-                          </a> gelezen en ga hiermee akkoord *
+                          </a> gelezen en ga hiermee akkoord*
                         </span>
                     </label>
 
@@ -156,6 +156,10 @@
                         </div>
                     }
 
+                    <!-- Verplicht veld uitleg -->
+                    <div class="tw-text-gray-500 tw-text-[9px] sm:tw-text-xs tw-mt-1">
+                        * Verplicht veld
+                    </div>
                 </div>
             </div>
             }
