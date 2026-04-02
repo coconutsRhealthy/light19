@@ -24,6 +24,9 @@ export class ModalComponent {
       if (savedEmail) {
         this.mailAddress = savedEmail;
         this.isUnlocked = true;
+        this.showEmailBlock = false;
+      } else {
+        this.showEmailBlock = true;
       }
     }
   }
@@ -46,6 +49,7 @@ export class ModalComponent {
   wantsMarketing: boolean = false;
   acceptedPrivacy: boolean = false;
   showPrivacyError: boolean = false;
+  showEmailBlock: boolean = true;
 
   @Input()
   set discount(value: any) {
