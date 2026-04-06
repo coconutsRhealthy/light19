@@ -22,10 +22,10 @@ export class AffiliateLinkService {
         url: 'https://www.stylink.it/6MNk0HeXDDA',
         dummyCode: 'VERO20DRN'
     },
-    'ginatricot': {
-        url: 'https://www.stylink.it/wnG31IJq3Q4',
-        dummyCode: 'VIP20QZJ'
-    },
+//     'ginatricot': {
+//         url: 'https://www.stylink.it/wnG31IJq3Q4',
+//         dummyCode: 'VIP20QZJ'
+//     },
     'hunkemoller': {
         url: 'https://tidd.ly/4j17AXp',
         dummyCode: 'HUNK5CUZ'
@@ -179,7 +179,7 @@ export class AffiliateLinkService {
         dummyCode: 'BEAUTY15Q83'
     },
     'charlottetilbury': {
-        url: 'https://shop.charlottetilbury.com/or/camref:1110lNBf/[p_id:1110l734]/destination:https%3A%2F%2Fwww.charlottetilbury.com%2Fnl',
+        url: 'https://friends.charlottetilbury.com/s/wiegeeftkorting',
         dummyCode: 'CHAR5Q0C'
     },
     'boohoo': {
