@@ -12,29 +12,7 @@ declare let gtag: Function;
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
-  private _isVisible = false;
-
-  @Input()
-  set isVisible(value: boolean) {
-    this._isVisible = value;
-
-    if (value) {
-      const savedEmail = localStorage.getItem('discount_email');
-
-      if (savedEmail) {
-        this.mailAddress = savedEmail;
-        this.isUnlocked = true;
-        this.showEmailBlock = false;
-      } else {
-        this.showEmailBlock = true;
-      }
-    }
-  }
-
-  get isVisible(): boolean {
-    return this._isVisible;
-  }
-
+  @Input() isVisible = false;
   @Output() closed = new EventEmitter<void>();
   isCopied = false;
 
@@ -56,6 +34,16 @@ export class ModalComponent {
     this._discount = value;
     if (value) {
       this.loadDiscountCode(value);
+
+      const savedEmail = localStorage.getItem('discount_email');
+
+      if (savedEmail || this.discount?.company?.toLowerCase() !== 'nakdfashion') {
+        this.mailAddress = savedEmail ?? '';
+        this.isUnlocked = true;
+        this.showEmailBlock = false;
+      } else {
+        this.showEmailBlock = true;
+      }
     }
   }
 
@@ -235,7 +223,7 @@ export class ModalComponent {
       const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
       const body = new HttpParams()
         .set('email', this.mailAddress)
-        .set('date', new Date().toISOString())
+        .set('date', new Date().toLocaleString('sv-SE', { timeZone: 'Europe/Amsterdam', hour12: false }))
         .set('company', this.discount?.company ?? '')
         .set('marketing', this.wantsMarketing ? 'YES' : 'NO');
 
