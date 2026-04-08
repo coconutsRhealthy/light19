@@ -23,7 +23,7 @@ export class ModalComponent {
   mailAddress: string = '';
   emailPlaceholder: string = 'jouw@email.nl';
   isUnlocked: boolean = false;
-  webhookUrl = 'https://script.google.com/macros/s/AKfycbyIZSloDZn06dsfCbNfdAxTjeNDbZOxxTpACAop2aosG6AlyDcMklb4YGd9psr8pOQY/exec';
+  webhookUrl = 'https://emailtest.eijeeijeeije.workers.dev';
   wantsMarketing: boolean = false;
   acceptedPrivacy: boolean = false;
   showPrivacyError: boolean = false;
@@ -220,21 +220,31 @@ export class ModalComponent {
 
       localStorage.setItem('discount_email', this.mailAddress);
 
-      const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-      const body = new HttpParams()
-        .set('email', this.mailAddress)
-        .set('date', new Date().toLocaleString('sv-SE', { timeZone: 'Europe/Amsterdam', hour12: false }))
-        .set('company', this.discount?.company ?? '')
-        .set('marketing', this.wantsMarketing ? 'YES' : 'NO');
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-      this.http.post(this.webhookUrl, body.toString(), { headers, responseType: 'text' })
-        .subscribe({
-          next: () => {
-
-          },
-          error: (err) => {
-            console.error('Fout bij unlock:', err);
+      const body = {
+        data: {
+          type: "profile",
+          attributes: {
+            email: this.mailAddress,
+            first_name: this.mailAddress.split('@')[0],
+            properties: {
+              marketing_consent: this.wantsMarketing ? 'YES' : 'NO',
+              company: this.discount?.company ?? '',
+              unlock_date: new Date().toISOString()
+            }
           }
-        });
-    }
+        }
+      };
+
+    this.http.post(this.webhookUrl, body, { headers, responseType: 'text' })
+      .subscribe({
+        next: () => {
+
+        },
+        error: (err) => {
+          console.error('Fout bij unlock:', err);
+        }
+      });
+  }
 }
