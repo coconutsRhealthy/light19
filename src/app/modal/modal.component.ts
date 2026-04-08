@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 declare let gtag: Function;
 
@@ -23,7 +23,7 @@ export class ModalComponent {
   mailAddress: string = '';
   emailPlaceholder: string = 'jouw@email.nl';
   isUnlocked: boolean = false;
-  webhookUrl = 'https://script.google.com/macros/s/AKfycbyIZSloDZn06dsfCbNfdAxTjeNDbZOxxTpACAop2aosG6AlyDcMklb4YGd9psr8pOQY/exec';
+  webhookUrl = 'https://a.klaviyo.com/api/profiles/';
   wantsMarketing: boolean = false;
   acceptedPrivacy: boolean = false;
   showPrivacyError: boolean = false;
@@ -220,21 +220,34 @@ export class ModalComponent {
 
       localStorage.setItem('discount_email', this.mailAddress);
 
-      const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-      const body = new HttpParams()
-        .set('email', this.mailAddress)
-        .set('date', new Date().toLocaleString('sv-SE', { timeZone: 'Europe/Amsterdam', hour12: false }))
-        .set('company', this.discount?.company ?? '')
-        .set('marketing', this.wantsMarketing ? 'YES' : 'NO');
+    // 👉 Klaviyo headers
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Klaviyo-API-Key secret',
+      'revision': '2023-10-15'
+    });
 
-      this.http.post(this.webhookUrl, body.toString(), { headers, responseType: 'text' })
-        .subscribe({
-          next: () => {
-
-          },
-          error: (err) => {
-            console.error('Fout bij unlock:', err);
+    // 👉 Klaviyo body
+    const body = {
+      data: {
+        type: 'profile',
+        attributes: {
+          email: this.mailAddress,
+          properties: {
+            date: new Date().toISOString(),
+            company: this.discount?.company ?? '',
+            marketing: this.wantsMarketing ? 'YES' : 'NO'
           }
-        });
-    }
+        }
+      }
+    };
+
+    this.http.post(this.webhookUrl, body, { headers })
+      .subscribe({
+        next: () => {},
+        error: (err) => {
+          console.error('Fout bij Klaviyo:', err);
+        }
+      });
+  }
 }
