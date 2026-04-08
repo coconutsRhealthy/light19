@@ -51,7 +51,7 @@ export class AffiliateLinkService {
         dummyCode: 'YESS25JQL'
     },
     'asos': {
-        url: 'https://www.stylink.it/RNGo2t6QZeV',
+        url: 'https://smyi.me/01x0y',
         dummyCode: 'ASOS10NKD'
     },
     'stevemadden': {
@@ -614,10 +614,10 @@ export class AffiliateLinkService {
         url: 'https://deals.flexispot.nl/c?c=36652&m=12&a=448474&r=&u=%2F',
         dummyCode: 'FSBF10'
     },
-//     'gymshark': {
-//         url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
-//         dummyCode: 'AFSPORTPOEDER'
-//     },
+    'gymshark': {
+        url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
+        dummyCode: 'AFSPORTPOEDER'
+    },
     '24uomo': {
         url: 'https://tc.tradetracker.net/?c=37672&m=12&a=448474&r=&u=%2F',
         dummyCode: '12EXTRA'
@@ -955,7 +955,7 @@ export class AffiliateLinkService {
         dummyCode: 'kay10'
     },
     'clayandglow': {
-        url: 'https://clay-and-glow-nl.mtpc.se/5924576',
+        url: 'https://clayandglow.com/WIEGEEFTKORTINGXGLOW',
         dummyCode: 'FERENAXGLOW'
     },
     'pincsale': {
@@ -1409,6 +1409,10 @@ export class AffiliateLinkService {
     'geurwolkje': {
         url: 'https://www.geurwolkje.nl/INDY40908',
         dummyCode: 'INDY40908'
+    },
+    'urbanoutfitters': {
+        url: 'https://smyi.me/008nt',
+        dummyCode: '10SOS'
     }
   };
 
