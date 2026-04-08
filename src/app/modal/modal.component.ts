@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 declare let gtag: Function;
 
@@ -23,7 +23,7 @@ export class ModalComponent {
   mailAddress: string = '';
   emailPlaceholder: string = 'jouw@email.nl';
   isUnlocked: boolean = false;
-  webhookUrl = 'https://a.klaviyo.com/api/profiles/';
+  webhookUrl = 'https://emailtest.eijeeijeeije.workers.dev';
   wantsMarketing: boolean = false;
   acceptedPrivacy: boolean = false;
   showPrivacyError: boolean = false;
@@ -203,50 +203,47 @@ export class ModalComponent {
   }
 
   unlockCode() {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!this.mailAddress || !emailPattern.test(this.mailAddress)) {
-          this.mailAddress = '';
-          this.emailPlaceholder = 'Een geldig mailadres 😉';
-          return;
-      }
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!this.mailAddress || !emailPattern.test(this.mailAddress)) {
+      this.mailAddress = '';
+      this.emailPlaceholder = 'Een geldig mailadres 😉';
+      return;
+    }
 
-      if (!this.acceptedPrivacy) {
-        this.showPrivacyError = true;
-        return;
-      }
+    if (!this.acceptedPrivacy) {
+      this.showPrivacyError = true;
+      return;
+    }
 
-      this.showPrivacyError = false;
-      this.isUnlocked = true;
+    this.showPrivacyError = false;
+    this.isUnlocked = true;
 
-      localStorage.setItem('discount_email', this.mailAddress);
+    localStorage.setItem('discount_email', this.mailAddress);
 
-    // 👉 Klaviyo headers
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Klaviyo-API-Key secret',
-      'revision': '2023-10-15'
-    });
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    // 👉 Klaviyo body
     const body = {
       data: {
-        type: 'profile',
+        type: "profile",
         attributes: {
           email: this.mailAddress,
+          first_name: this.mailAddress.split('@')[0], // optioneel
           properties: {
-            date: new Date().toISOString(),
+            marketing_consent: this.wantsMarketing ? 'YES' : 'NO',
             company: this.discount?.company ?? '',
-            marketing: this.wantsMarketing ? 'YES' : 'NO'
+            unlock_date: new Date().toISOString()
           }
         }
       }
     };
 
-    this.http.post(this.webhookUrl, body, { headers })
+    this.http.post(this.webhookUrl, body, { headers, responseType: 'text' })
       .subscribe({
-        next: () => {},
+        next: () => {
+
+        },
         error: (err) => {
-          console.error('Fout bij Klaviyo:', err);
+          console.error('Fout bij unlock:', err);
         }
       });
   }
