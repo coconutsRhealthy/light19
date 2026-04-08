@@ -33,7 +33,7 @@ export class ModalComponent {
   set discount(value: any) {
     this._discount = value;
     if (value) {
-      this.loadDiscountCode(value);
+      this.discountCode = value.discountCode;
 
       const savedEmail = localStorage.getItem('discount_email');
 
@@ -52,10 +52,6 @@ export class ModalComponent {
   }
 
   constructor(private analyticsEventService: AnalyticsEventService, private http: HttpClient) {}
-
-  private async loadDiscountCode(discount: any) {
-    this.discountCode = await this.getDiscountCode(discount);
-  }
 
   getCorrectFormatOfCodeDate(rawCodeDate: string): string {
     var day = rawCodeDate.split("-")[1];
@@ -184,23 +180,6 @@ export class ModalComponent {
     isBlackFriday(discount: any): boolean {
       return discount?.discountCode?.startsWith('BF_');
     }
-
-  async getDiscountCode(discount: any): Promise<string> {
-    if (!discount.company.toLowerCase().startsWith('zzzzzdummy')) {
-      return discount.discountCode;
-    }
-
-    try {
-      const res = await fetch('https://tight-field-ba6b.eijeeijeeije.workers.dev');
-      if (!res.ok) throw new Error('Fout bij ophalen code');
-
-      const data = await res.json();
-      return data.code;
-    } catch (err) {
-      console.error('Kon de kortingscode niet ophalen:', err);
-      return discount.discountCode;
-    }
-  }
 
   unlockCode() {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
