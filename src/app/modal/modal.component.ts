@@ -24,7 +24,6 @@ export class ModalComponent {
   emailPlaceholder: string = 'jouw@email.nl';
   isUnlocked: boolean = false;
   webhookUrl = 'https://emailtest.eijeeijeeije.workers.dev';
-  wantsMarketing: boolean = false;
   acceptedPrivacy: boolean = false;
   showPrivacyError: boolean = false;
   showEmailBlock: boolean = true;
@@ -114,7 +113,6 @@ export class ModalComponent {
   closeModal() {
     this.isVisible = false;
     this.mailAddress = '';
-    this.wantsMarketing = false;
     this.acceptedPrivacy = false;
     this.showPrivacyError = false;
     this.isUnlocked = false;
@@ -208,7 +206,6 @@ export class ModalComponent {
             email: this.mailAddress,
             first_name: this.mailAddress.split('@')[0],
             properties: {
-              marketing_consent: this.wantsMarketing ? 'YES' : 'NO',
               company: this.discount?.company ?? '',
               unlock_date: new Date().toISOString(),
               path: window.location.pathname
