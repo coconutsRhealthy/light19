@@ -210,7 +210,8 @@ export class ModalComponent {
             properties: {
               marketing_consent: this.wantsMarketing ? 'YES' : 'NO',
               company: this.discount?.company ?? '',
-              unlock_date: new Date().toISOString()
+              unlock_date: new Date().toISOString(),
+              path: window.location.pathname
             }
           }
         }
