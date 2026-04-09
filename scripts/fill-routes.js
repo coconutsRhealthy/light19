@@ -29,7 +29,7 @@ json.forEach((line) => {
 });
 
 // --- Add hardcoded routes ---
-const hardcodedRoutes = ['/giftcards', '/winkels', '/contact', '/top5', '/'];
+const hardcodedRoutes = ['/giftcards', '/winkels', '/contact', '/top5', '/privacy-policy', '/'];
 hardcodedRoutes.forEach(route => results.add(route.replace(/^\//, '')));
 
 // Sort alphabetically
