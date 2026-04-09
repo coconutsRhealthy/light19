@@ -3,7 +3,7 @@ export const strongerSeoContent = `
     <div class="tw-prose tw-prose-lg tw-max-w-4xl tw-mx-auto tw-py-8">
 
         <h2 class="tw-text-2xl tw-font-bold tw-text-gray-900 tw-mb-6">
-            STRONGER eije :) kortingscode: bespaar op stijlvolle sportkleding
+            STRONGER kortingscode: bespaar op stijlvolle sportkleding
         </h2>
 
         <p class="tw-mb-6 tw-text-gray-700 tw-leading-relaxed">
