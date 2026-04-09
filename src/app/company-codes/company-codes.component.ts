@@ -13,6 +13,8 @@ import { NotFoundComponent } from '../not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { companySeoContent } from './company-seo-content/index';
 
 import { ModalComponent } from '../modal/modal.component';
 
@@ -47,6 +49,7 @@ export class CompanyCodesComponent implements OnInit {
   discountCodes: { code: string, discount: string, date: string }[] = [];
   isLoading = true;
   copiedCode: string | null = null;
+  seoContent: SafeHtml | null = null;
 
   affiliateLink: string | undefined;
   isModalVisible = false;
@@ -58,7 +61,8 @@ export class CompanyCodesComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
                 private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
-                private webshopNameService: WebshopNameService, private meta: MetaService) { }
+                private webshopNameService: WebshopNameService, private meta: MetaService,
+                private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -142,6 +146,11 @@ export class CompanyCodesComponent implements OnInit {
           }
         }
       });
+
+      const rawSeoContent = companySeoContent[this.company];
+      this.seoContent = rawSeoContent
+        ? this.sanitizer.bypassSecurityTrustHtml(rawSeoContent)
+        : null;
 
       this.isLoading = false;
     });
