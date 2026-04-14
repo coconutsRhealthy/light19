@@ -771,7 +771,7 @@ export class AffiliateLinkService {
         dummyCode: 'SELMA10'
     },
     'pullandbear': {
-        url: 'https://www.stylink.it/Aj5k6ivpYle',
+        url: 'https://pzz.to/zxRIfI',
         dummyCode: 'PB10'
     },
     'wefashion': {
@@ -827,7 +827,7 @@ export class AffiliateLinkService {
         dummyCode: 'NBSALE25'
     },
     'omoda': {
-        url: 'https://www.stylink.it/5RBXgUwLm2n',
+        url: 'https://pzz.to/xNL72V',
         dummyCode: 'NANXOM10'
     },
     'pieces': {
@@ -1227,7 +1227,7 @@ export class AffiliateLinkService {
         dummyCode: 'SARAH'
     },
     'joybuy': {
-        url: 'https://glp8.net/c/?si=20823&li=1881811&wi=418827&dl=',
+        url: 'https://tidd.ly/4lQPIkp',
         dummyCode: 'JOY10'
     },
     'salontopper': {
@@ -1413,6 +1413,38 @@ export class AffiliateLinkService {
     'urbanoutfitters': {
         url: 'https://smyi.me/008nt',
         dummyCode: '10SOS'
+    },
+    'achateshop.com': {
+        url: 'https://www.achate.com/DISKI',
+        dummyCode: 'DISKI'
+    },
+    'alohas': {
+        url: 'https://smyi.me/00GPy',
+        dummyCode: 'ALOHA10'
+    },
+    '24s': {
+        url: 'https://smyi.me/03lZg',
+        dummyCode: 'SHOP10'
+    },
+    'ibood': {
+        url: 'https://pzz.to/9wsxiv',
+        dummyCode: 'ACTIE10'
+    },
+    'snipes': {
+        url: 'https://tidd.ly/4sWSJSG',
+        dummyCode: 'SHOP10'
+    },
+    'theordinary': {
+        url: 'https://tidd.ly/4diAtP5',
+        dummyCode: '10OFF'
+    },
+    'rosaodor': {
+        url: 'https://tidd.ly/47StXL9',
+        dummyCode: '10OFF'
+    },
+    'ahead-nutrition': {
+        url: 'https://tidd.ly/47W13tM',
+        dummyCode: 'IAMIRIS'
     }
   };
 
