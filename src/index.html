@@ -12,21 +12,16 @@
   <meta name="fo-verify" content="4aeedfba-f202-4791-85f8-0bf598a1b121" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVP906XC65"></script>
+  <!-- Analytics scripts are loaded by CookieConsentService after user consent -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    gtag('config', 'G-DVP906XC65');
   </script>
 
   <script>
     function sendCopyCodeToGa(company) {
-      if(company === undefined) {
-        company = "unknown";
-      }
+      if(company === undefined) { company = "unknown"; }
       company = company.split(" (")[0];
       gtag('event', 'CopyCode', {'event_category': 'CopyCode', 'event_label': company});
     }
@@ -37,24 +32,6 @@
       gtag('event', eventName, {'event_category': eventName, 'event_label': eventLabel});
     }
   </script>
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '790112370507856');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-                 src="https://www.facebook.com/tr?id=790112370507856&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
 </head>
 <body class="tw-bg-pink-50">
   <app-root></app-root>

@@ -1,0 +1,25 @@
+@if (!consent.consentDecided()) {
+  <div class="tw-fixed tw-bottom-0 tw-left-0 tw-right-0 tw-z-50 tw-bg-white tw-border-t tw-border-gray-200 tw-shadow-lg tw-p-4 md:tw-p-5">
+    <div class="tw-max-w-4xl tw-mx-auto tw-flex tw-flex-col sm:tw-flex-row tw-items-start sm:tw-items-center tw-gap-4">
+
+      <p class="tw-text-sm tw-text-gray-700 tw-flex-1">
+        Diski gebruikt cookies voor statistieken en advertenties, zodat we jouw gebruikerservaring en de site kunnen verbeteren.
+        <a href="/privacy-policy" class="tw-underline tw-text-pink-600 hover:tw-text-pink-800">Meer info</a>
+      </p>
+
+      <div class="tw-flex tw-gap-3 tw-shrink-0">
+        <button
+          (click)="decline()"
+          class="tw-text-sm tw-text-gray-500 hover:tw-text-gray-700 tw-underline tw-transition">
+          Weigeren
+        </button>
+        <button
+          (click)="accept()"
+          class="tw-text-sm tw-font-semibold tw-bg-pink-600 hover:tw-bg-pink-700 tw-text-white tw-rounded-lg tw-px-5 tw-py-2 tw-transition">
+          Accepteren
+        </button>
+      </div>
+
+    </div>
+  </div>
+}
