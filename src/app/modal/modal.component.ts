@@ -36,7 +36,19 @@ export class ModalComponent {
 
       const savedEmail = localStorage.getItem('discount_email');
 
-      if (savedEmail || this.discount?.company?.toLowerCase() !== 'nakdfashion') {
+      const allowedBrands = [
+        'nakdfashion',
+        'ginatricot',
+        'gutsgusto',
+        'pinkgellac',
+        'tessv',
+        'gymshark',
+        'shein'
+      ];
+
+      const company = this.discount?.company?.toLowerCase();
+
+      if (savedEmail || !allowedBrands.includes(company)) {
         this.mailAddress = savedEmail ?? '';
         this.isUnlocked = true;
         this.showEmailBlock = false;
