@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { loadSeoContent } from './company-seo-content/index';
 import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -11,10 +12,9 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { RouterModule } from '@angular/router';
-import { PLATFORM_ID, inject } from '@angular/core';
+import { PLATFORM_ID, PendingTasks, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { companySeoContent } from './company-seo-content/index';
 
 import { ModalComponent } from '../modal/modal.component';
 
@@ -58,6 +58,7 @@ export class CompanyCodesComponent implements OnInit {
   monthYear: string = "";
 
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private pendingTasks = inject(PendingTasks);
 
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
                 private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
@@ -147,10 +148,12 @@ export class CompanyCodesComponent implements OnInit {
         }
       });
 
-      const rawSeoContent = companySeoContent[this.company];
-      this.seoContent = rawSeoContent
-        ? this.sanitizer.bypassSecurityTrustHtml(rawSeoContent)
-        : null;
+      const doneTask = this.pendingTasks.add();
+      loadSeoContent(this.company).then(html => {
+        this.seoContent = html
+          ? this.sanitizer.bypassSecurityTrustHtml(html)
+          : null;
+      }).finally(() => doneTask());
 
       this.isLoading = false;
     });

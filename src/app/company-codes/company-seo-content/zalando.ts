@@ -220,3 +220,4 @@ export const zalandoSeoContent = `
     </div>
 </div>
 `;
+export default zalandoSeoContent;

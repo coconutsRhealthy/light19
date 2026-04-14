@@ -82,3 +82,4 @@ export const strongerSeoContent = `
     </div>
 </div>
 `;
+export default strongerSeoContent;

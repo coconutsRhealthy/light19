@@ -1,7 +1,65 @@
-import { strongerSeoContent } from './stronger';
-import { zalandoSeoContent } from './zalando';
-
-export const companySeoContent: Record<string, string> = {
-  stronger: strongerSeoContent,
-  zalando: zalandoSeoContent,
-};
+export async function loadSeoContent(company: string): Promise<string | null> {
+  switch (company) {
+    case '123jaloezie': return import('./123jaloezie').then(m => m.default);
+    case '24uomo': return import('./24uomo').then(m => m.default);
+    case '4shine.nl': return import('./4shine.nl').then(m => m.default);
+    case '50plusmobiel': return import('./50plusmobiel').then(m => m.default);
+    case '7oclock.de': return import('./7oclock.de').then(m => m.default);
+    case '8849tech': return import('./8849tech').then(m => m.default);
+    case 'abib.global': return import('./abib.global').then(m => m.default);
+    case 'about you': return import('./about-you').then(m => m.default);
+    case 'acculaders.nl': return import('./acculaders.nl').then(m => m.default);
+    case 'acer': return import('./acer').then(m => m.default);
+    case 'achateshop.com': return import('./achateshop.com').then(m => m.default);
+    case 'acrylfoto.nl': return import('./acrylfoto.nl').then(m => m.default);
+    case 'action': return import('./action').then(m => m.default);
+    case 'adidas': return import('./adidas').then(m => m.default);
+    case 'adventure.beds': return import('./adventure.beds').then(m => m.default);
+    case 'aelfriceden.com': return import('./aelfriceden.com').then(m => m.default);
+    case 'ag1': return import('./ag1').then(m => m.default);
+    case 'aimnsportswear': return import('./aimnsportswear').then(m => m.default);
+    case 'airalo.com': return import('./airalo.com').then(m => m.default);
+    case 'airup': return import('./airup').then(m => m.default);
+    case 'aj-sports.nl': return import('./aj-sports.nl').then(m => m.default);
+    case 'akuwoodpenal': return import('./akuwoodpenal').then(m => m.default);
+    case 'albelli': return import('./albelli').then(m => m.default);
+    case 'alectobaby': return import('./alectobaby').then(m => m.default);
+    case 'aliexpress': return import('./aliexpress').then(m => m.default);
+    case 'alpinehearingprotection': return import('./alpinehearingprotection').then(m => m.default);
+    case 'amanoknitwear': return import('./amanoknitwear').then(m => m.default);
+    case 'amazon': return import('./amazon').then(m => m.default);
+    case 'amikoandfriends': return import('./amikoandfriends').then(m => m.default);
+    case 'amisamour': return import('./amisamour').then(m => m.default);
+    case 'amsliving.nl': return import('./amsliving.nl').then(m => m.default);
+    case 'animo.optics': return import('./animo.optics').then(m => m.default);
+    case 'anneday.nl': return import('./anneday.nl').then(m => m.default);
+    case 'anthropologie': return import('./anthropologie').then(m => m.default);
+    case 'apercueyewear': return import('./apercueyewear').then(m => m.default);
+    case 'aresgymclothing': return import('./aresgymclothing').then(m => m.default);
+    case 'arket': return import('./arket').then(m => m.default);
+    case 'armband.nl': return import('./armband.nl').then(m => m.default);
+    case 'armedangels': return import('./armedangels').then(m => m.default);
+    case 'aromadiffusing.nl': return import('./aromadiffusing.nl').then(m => m.default);
+    case 'ashleysboutiique': return import('./ashleysboutiique').then(m => m.default);
+    case 'asos': return import('./asos').then(m => m.default);
+    case 'athleticbees.com': return import('./athleticbees.com').then(m => m.default);
+    case 'atmooz.com': return import('./atmooz.com').then(m => m.default);
+    case 'aurgan.nl': return import('./aurgan.nl').then(m => m.default);
+    case 'avaewear': return import('./avaewear').then(m => m.default);
+    case 'awbridal': return import('./awbridal').then(m => m.default);
+    case 'aybl': return import('./aybl').then(m => m.default);
+    case 'babiem': return import('./babiem').then(m => m.default);
+    case 'babydrogist': return import('./babydrogist').then(m => m.default);
+    case 'babysonly': return import('./babysonly').then(m => m.default);
+    case 'badjasparadijs': return import('./badjasparadijs').then(m => m.default);
+    case 'bandanawinkel': return import('./bandanawinkel').then(m => m.default);
+    case 'banden.nl': return import('./banden.nl').then(m => m.default);
+    case 'basalbasics.nl': return import('./basalbasics.nl').then(m => m.default);
+    case 'beachresortpuntwest': return import('./beachresortpuntwest').then(m => m.default);
+    case 'bearswithbenefits': return import('./bearswithbenefits').then(m => m.default);
+    case 'begolden': return import('./begolden').then(m => m.default);
+    case 'stronger': return import('./stronger').then(m => m.default);
+    case 'zalando': return import('./zalando').then(m => m.default);
+    default: return null;
+  }
+}
