@@ -9,6 +9,7 @@ interface ProfileEvent {
   type: string;
   company?: string;
   searchValue?: string;
+  pageValue?: string;
   datetime: string;
 }
 
@@ -38,7 +39,7 @@ export class VisitorProfileService {
   }
 
   trackPageView(path: string): void {
-    this.record({ type: 'page_view', value: path });
+    this.record({ type: 'page_view', pageValue: path });
   }
 
   getProfile(): VisitorProfile {
