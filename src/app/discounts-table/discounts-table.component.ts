@@ -5,6 +5,7 @@ import { LOCALE_ID } from '@angular/core';
 import { DiscountsService } from '../services/discounts.service';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { AnalyticsEventService } from '../services/analytics-event.service';
+import { VisitorProfileService } from '../services/visitor-profile.service';
 import { LogosService } from '../services/logos.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
@@ -71,7 +72,8 @@ export class DiscountsTableComponent implements OnInit {
   bolType!: string;
 
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
-                private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute) {
+                private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute,
+                private visitorProfile: VisitorProfileService) {
     var monthYear = this.meta.getDateString();
     this.meta.updateTitle("Diski | Online shoppen met kortingscodes in " + monthYear);
     this.meta.updateMetaInfo("De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl", "diski.nl", "Kortingscode, Korting");
@@ -232,6 +234,8 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   affiliateModalAction(discount: Discount) {
+    this.visitorProfile.trackEvent('company_click_homepage', discount.company);
+
     const affiliateLink = this.affiliateLinkService.getAffiliateLink(discount.company);
 
     if(affiliateLink !== undefined) {
