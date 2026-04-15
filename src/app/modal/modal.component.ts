@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
+import { VisitorProfileService } from '../services/visitor-profile.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
@@ -62,7 +63,8 @@ export class ModalComponent {
     return this._discount;
   }
 
-  constructor(private analyticsEventService: AnalyticsEventService, private http: HttpClient) {}
+  constructor(private analyticsEventService: AnalyticsEventService, private http: HttpClient,
+              private visitorProfile: VisitorProfileService) {}
 
   getCorrectFormatOfCodeDate(rawCodeDate: string): string {
     var day = rawCodeDate.split("-")[1];
@@ -211,6 +213,8 @@ export class ModalComponent {
 
       const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
+      const profile = this.visitorProfile.getProfile();
+
       const body = {
         data: {
           type: "profile",
@@ -220,7 +224,9 @@ export class ModalComponent {
             properties: {
               company: this.discount?.company ?? '',
               unlock_date: new Date().toISOString(),
-              path: window.location.pathname
+              path: window.location.pathname,
+              visited_companies: profile.events.map(e => e.company),
+              click_events: profile.events
             }
           }
         }
