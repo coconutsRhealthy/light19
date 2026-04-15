@@ -1,7 +1,6 @@
 import { Injectable, PLATFORM_ID, inject, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-const GA_ID = 'G-DVP906XC65';
 const FB_PIXEL_ID = '790112370507856';
 const STORAGE_KEY = 'diski_cookie_consent';
 
@@ -40,17 +39,7 @@ export class CookieConsentService {
   }
 
   private loadAnalyticsScripts(): void {
-    this.loadGa();
     this.loadFbPixel();
-  }
-
-  private loadGa(): void {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    document.head.appendChild(script);
-
-    (window as any).gtag('config', GA_ID);
   }
 
   private loadFbPixel(): void {
