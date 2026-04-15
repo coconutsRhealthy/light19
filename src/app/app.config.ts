@@ -1,5 +1,6 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection, APP_INITIALIZER } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { VisitorProfileService } from './services/visitor-profile.service';
 import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
 import { registerLocaleData } from '@angular/common';
@@ -14,6 +15,8 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(),
-    { provide: LOCALE_ID, useValue: 'nl' }, provideClientHydration(withEventReplay())
+    { provide: LOCALE_ID, useValue: 'nl' },
+    provideClientHydration(withEventReplay()),
+    { provide: APP_INITIALIZER, useFactory: (vp: VisitorProfileService) => () => {}, deps: [VisitorProfileService], multi: true }
   ]
 };

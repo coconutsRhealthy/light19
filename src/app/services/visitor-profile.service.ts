@@ -1,5 +1,7 @@
 import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 const STORAGE_KEY = 'diski_visitor_profile';
 
@@ -17,6 +19,15 @@ interface VisitorProfile {
 @Injectable({ providedIn: 'root' })
 export class VisitorProfileService {
   private platformId = inject(PLATFORM_ID);
+  private router = inject(Router);
+
+  constructor() {
+    this.router.events.pipe(
+      filter(e => e instanceof NavigationEnd)
+    ).subscribe(e => {
+      this.trackPageView((e as NavigationEnd).urlAfterRedirects);
+    });
+  }
 
   trackCompanyClick(type: string, company: string): void {
     this.record({ type, company });
@@ -24,6 +35,10 @@ export class VisitorProfileService {
 
   trackSearch(term: string): void {
     this.record({ type: 'search', searchValue: term });
+  }
+
+  trackPageView(path: string): void {
+    this.record({ type: 'page_view', value: path });
   }
 
   getProfile(): VisitorProfile {

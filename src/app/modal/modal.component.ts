@@ -226,6 +226,8 @@ export class ModalComponent {
               unlock_date: new Date().toISOString(),
               path: window.location.pathname,
               visited_companies: profile.events.filter(e => e.company).map(e => e.company),
+              searched_terms: profile.events.filter(e => e.type === 'search').map(e => e.searchValue),
+              visited_pages: profile.events.filter(e => e.type === 'page_view').map(e => e.value),
               all_profile_events: profile.events
             }
           }
