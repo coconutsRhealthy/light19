@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { PLATFORM_ID, PendingTasks, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { VisitorProfileService } from '../services/visitor-profile.service';
 
 import { ModalComponent } from '../modal/modal.component';
 
@@ -63,7 +64,7 @@ export class CompanyCodesComponent implements OnInit {
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
                 private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
                 private webshopNameService: WebshopNameService, private meta: MetaService,
-                private sanitizer: DomSanitizer) { }
+                private sanitizer: DomSanitizer, private visitorProfile: VisitorProfileService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -244,6 +245,10 @@ export class CompanyCodesComponent implements OnInit {
     } else {
       console.error('gtag is not defined');
     }
+  }
+
+  trackCompanyInteraction(type: string) {
+    this.visitorProfile.trackEvent("company_click_detailpage", this.company);
   }
 
   copyToClipboard(text: string) {

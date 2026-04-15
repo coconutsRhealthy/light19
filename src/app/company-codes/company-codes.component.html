@@ -73,12 +73,12 @@
             <!-- Regular code card -->
             @if (affiliateLink) {
                 <div
-                        (click)="sendAffEventsToGa(); openNewPageWithCodeDetailModal(i)"
+                        (click)="trackCompanyInteraction(); sendAffEventsToGa(); openNewPageWithCodeDetailModal(i)"
                         class="tw-bg-white tw-p-4 tw-rounded-2xl tw-shadow-md tw-cursor-pointer hover:tw-shadow-lg tw-transition tw-duration-200"
                 >
                     <div class="tw-flex tw-justify-between tw-items-center tw-mb-2">
                         <button
-                                (click)="$event.stopPropagation(); sendAffEventsToGa(); openNewPageWithCodeDetailModal(i)"
+                                (click)="$event.stopPropagation(); trackCompanyInteraction(); sendAffEventsToGa(); openNewPageWithCodeDetailModal(i)"
                                 [class]="getCardButtonClasses(code.code)"
                         >
                             {{getCardButtonText(code.code)}}
@@ -105,7 +105,7 @@
                             </button>
                         } @else {
                             <button
-                                    (click)="copyToClipboard(code.code)"
+                                    (click)="trackCompanyInteraction(); copyToClipboard(code.code)"
                                     class="tw-font-semibold tw-text-lg tw-text-pink-800 tw-group tw-flex tw-items-center tw-gap-2 tw-font-mono tw-text-base tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-md tw-px-3 tw-py-1.5 hover:tw-bg-gray-100 tw-transition tw-relative tw-w-fit"
                             >
                                 <span>{{ code.code }}</span>
