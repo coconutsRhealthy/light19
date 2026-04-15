@@ -145,6 +145,7 @@ export class DiscountsTableComponent implements OnInit {
       const termToSend = normalizedSearchTerm.slice(0, 5);
       if (termToSend !== this.lastSentTerm) {
         this.lastSentTerm = termToSend;
+        this.visitorProfile.trackSearch(termToSend);
         this.analyticsEventService.sendEventToGa("Search_typing", "search_typing_" + termToSend);
       }
     }
@@ -234,7 +235,7 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   affiliateModalAction(discount: Discount) {
-    this.visitorProfile.trackEvent('company_click_homepage', discount.company);
+    this.visitorProfile.trackCompanyClick('company_click_homepage', discount.company);
 
     const affiliateLink = this.affiliateLinkService.getAffiliateLink(discount.company);
 

@@ -248,7 +248,7 @@ export class CompanyCodesComponent implements OnInit {
   }
 
   trackCompanyInteraction(type: string) {
-    this.visitorProfile.trackEvent("company_click_detailpage", this.company);
+    this.visitorProfile.trackCompanyClick('company_click_detailpage', this.company);
   }
 
   copyToClipboard(text: string) {

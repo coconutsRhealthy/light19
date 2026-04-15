@@ -225,8 +225,8 @@ export class ModalComponent {
               company: this.discount?.company ?? '',
               unlock_date: new Date().toISOString(),
               path: window.location.pathname,
-              visited_companies: profile.events.map(e => e.company),
-              click_events: profile.events
+              visited_companies: profile.events.filter(e => e.company).map(e => e.company),
+              all_profile_events: profile.events
             }
           }
         }
