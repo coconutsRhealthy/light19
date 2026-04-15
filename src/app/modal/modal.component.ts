@@ -193,6 +193,13 @@ export class ModalComponent {
       return discount?.discountCode?.startsWith('BF_');
     }
 
+  private toCountMap(values: string[]): Record<string, number> {
+    return values.reduce((acc, val) => {
+      acc[val] = (acc[val] ?? 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+  }
+
   unlockCode() {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!this.mailAddress || !emailPattern.test(this.mailAddress)) {
@@ -225,10 +232,9 @@ export class ModalComponent {
               company: this.discount?.company ?? '',
               unlock_date: new Date().toISOString(),
               path: window.location.pathname,
-              visited_companies: profile.events.filter(e => e.company).map(e => e.company),
-              searched_terms: profile.events.filter(e => e.type === 'search').map(e => e.searchValue),
-              visited_pages: profile.events.filter(e => e.type === 'page_view').map(e => e.pageValue),
-              all_profile_events: profile.events
+              visited_companies: this.toCountMap(profile.events.filter(e => e.company).map(e => e.company as string)),
+              searched_terms: this.toCountMap(profile.events.filter(e => e.searchValue).map(e => e.searchValue as string)),
+              visited_pages: this.toCountMap(profile.events.filter(e => e.pageValue).map(e => e.pageValue as string)),
             }
           }
         }
