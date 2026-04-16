@@ -2,7 +2,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 declare let gtag: Function;
 
@@ -24,7 +23,6 @@ export class ModalComponent {
   mailAddress: string = '';
   emailPlaceholder: string = 'jouw@email.nl';
   isUnlocked: boolean = false;
-  webhookUrl = 'https://emailtest.eijeeijeeije.workers.dev';
   acceptedPrivacy: boolean = false;
   showPrivacyError: boolean = false;
   showEmailBlock: boolean = true;
@@ -63,7 +61,7 @@ export class ModalComponent {
     return this._discount;
   }
 
-  constructor(private analyticsEventService: AnalyticsEventService, private http: HttpClient,
+  constructor(private analyticsEventService: AnalyticsEventService,
               private visitorProfile: VisitorProfileService) {}
 
   getCorrectFormatOfCodeDate(rawCodeDate: string): string {
@@ -193,13 +191,6 @@ export class ModalComponent {
       return discount?.discountCode?.startsWith('BF_');
     }
 
-  private toCountMap(values: string[]): Record<string, number> {
-    return values.reduce((acc, val) => {
-      acc[val] = (acc[val] ?? 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
-  }
-
   unlockCode() {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!this.mailAddress || !emailPattern.test(this.mailAddress)) {
@@ -216,38 +207,10 @@ export class ModalComponent {
       this.showPrivacyError = false;
       this.isUnlocked = true;
 
-      localStorage.setItem('discount_email', this.mailAddress);
-
-      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-      const profile = this.visitorProfile.getProfile();
-
-      const body = {
-        data: {
-          type: "profile",
-          attributes: {
-            email: this.mailAddress,
-            first_name: this.mailAddress.split('@')[0],
-            properties: {
-              company: this.discount?.company ?? '',
-              unlock_date: new Date().toISOString(),
-              path: window.location.pathname,
-              visited_companies: this.toCountMap(profile.events.filter(e => e.company).map(e => e.company as string)),
-              searched_terms: this.toCountMap(profile.events.filter(e => e.searchValue).map(e => e.searchValue as string)),
-              visited_pages: this.toCountMap(profile.events.filter(e => e.pageValue).map(e => e.pageValue as string)),
-            }
-          }
-        }
-      };
-
-    this.http.post(this.webhookUrl, body, { headers, responseType: 'text' })
-      .subscribe({
-        next: () => {
-
-        },
-        error: (err) => {
-          console.error('Fout bij unlock:', err);
-        }
-      });
+      this.visitorProfile.subscribeEmail(
+        this.mailAddress,
+        this.discount?.company ?? '',
+        window.location.pathname
+      );
   }
 }
