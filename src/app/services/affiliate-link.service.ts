@@ -1445,6 +1445,10 @@ export class AffiliateLinkService {
     'ahead-nutrition': {
         url: 'https://tidd.ly/47W13tM',
         dummyCode: 'IAMIRIS'
+    },
+    'bellobox.nl': {
+        url: 'https://www.bellobox.nl/indyvandenburg',
+        dummyCode: 'DISKI10'
     }
   };
 
