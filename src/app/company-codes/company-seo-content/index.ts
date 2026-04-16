@@ -1,6 +1,6 @@
 export async function loadSeoContent(company: string): Promise<string | null> {
   switch (company) {
-    case '123jaloezie': return import('./123jaloezie').then(m => m.default);
+    case '123jaloezie.nl': return import('./123jaloezie.nl').then(m => m.default);
     case '24uomo': return import('./24uomo').then(m => m.default);
     case '4shine.nl': return import('./4shine.nl').then(m => m.default);
     case '50plusmobiel': return import('./50plusmobiel').then(m => m.default);
