@@ -196,8 +196,11 @@ export class ModalComponent {
   }
 
   shareCode(): void {
+    this.analyticsEventService.sendEventToGa('ShareCode', 'sharecode_' + (this.discount?.company ?? '').toLowerCase());
+
     const url = this.discount?.affiliateLink ?? window.location.href;
-    const company = (this.discount?.company ?? '').charAt(0).toUpperCase() + (this.discount?.company ?? '').slice(1);
+    const rawCompany = (this.discount?.company ?? '').replace(/\.(nl|com)$/i, '');
+    const company = rawCompany.charAt(0).toUpperCase() + rawCompany.slice(1);
     const percentage = this.getCorrectFormatDiscountPercentage(this.discount?.percentage ?? '');
     const code = this.discount?.discountCode ?? '';
 
@@ -207,7 +210,7 @@ export class ModalComponent {
       text += ` Shop ${company} met korting via: ${url}`;
     }
 
-    text += `\nMeer kortingscodes? Kijk op https://diski.nl`;
+    text += `\nMeer kortingscodes? Kijk op diski.nl`;
 
     navigator.share({
       title: `${company} kortingscode`,
