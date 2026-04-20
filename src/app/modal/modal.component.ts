@@ -191,6 +191,30 @@ export class ModalComponent {
       return discount?.discountCode?.startsWith('BF_');
     }
 
+  get canShare(): boolean {
+    return typeof navigator !== 'undefined' && !!navigator.share;
+  }
+
+  shareCode(): void {
+    const url = this.discount?.affiliateLink ?? window.location.href;
+    const company = (this.discount?.company ?? '').charAt(0).toUpperCase() + (this.discount?.company ?? '').slice(1);
+    const percentage = this.getCorrectFormatDiscountPercentage(this.discount?.percentage ?? '');
+    const code = this.discount?.discountCode ?? '';
+
+    let text = `Gebruik kortingscode ${code} bij ${company} voor ${percentage} korting!`;
+
+    if (this.discount?.affiliateLink) {
+      text += ` Shop ${company} met korting via: ${url}`;
+    }
+
+    text += `\nMeer kortingscodes? Kijk op https://diski.nl`;
+
+    navigator.share({
+      title: `${company} kortingscode`,
+      text,
+    });
+  }
+
   unlockCode() {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!this.mailAddress || !emailPattern.test(this.mailAddress)) {
