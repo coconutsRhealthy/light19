@@ -215,6 +215,8 @@ export class ModalComponent {
     navigator.share({
       title: `${company} kortingscode`,
       text,
+    }).catch((err: DOMException) => {
+      if (err.name !== 'AbortError') console.error(err);
     });
   }
 
