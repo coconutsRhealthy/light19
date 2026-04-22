@@ -4,6 +4,7 @@ import { VisitorProfileService } from '../services/visitor-profile.service';
 import { FormsModule } from '@angular/forms';
 
 declare let gtag: Function;
+declare let fbq: Function;
 
 @Component({
   selector: 'app-modal',
@@ -136,6 +137,12 @@ export class ModalComponent {
     navigator.clipboard.writeText(text).then(
       () => {
         this.showTooltip();
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'CopyCode', {
+            company: this.discount?.company ?? '',
+            code: text,
+          });
+        }
       },
       (err) => {
         console.error('Failed to copy: ', err);

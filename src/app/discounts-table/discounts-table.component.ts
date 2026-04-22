@@ -322,6 +322,12 @@ export class DiscountsTableComponent implements OnInit {
     return () => {};
   }
 
+  sendCompanyClickToFb(company: string): void {
+    if (this.isBrowser && typeof (window as any).fbq === 'function') {
+      (window as any).fbq('trackCustom', 'CompanyClickHomepage', { company });
+    }
+  }
+
   fillBolVariables() {
 
     const banners = [
