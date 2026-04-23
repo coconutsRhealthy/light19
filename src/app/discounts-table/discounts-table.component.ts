@@ -10,10 +10,8 @@ import { LogosService } from '../services/logos.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { ModalComponent } from '../modal/modal.component';
 import { ModalShopsComponent } from '../modal-shops/modal-shops.component';
 import { RouterModule } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 import { PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -35,7 +33,7 @@ interface Discount {
 
 @Component({
   selector: 'app-discounts-table',
-  imports: [FooterComponent, NavbarComponent, FormsModule, ModalComponent, ModalShopsComponent, RouterModule],
+  imports: [FooterComponent, NavbarComponent, FormsModule, ModalShopsComponent, RouterModule],
   templateUrl: './discounts-table.component.html',
   styleUrls: ['./discounts-table.component.css'],
   providers: [
@@ -49,8 +47,6 @@ export class DiscountsTableComponent implements OnInit {
   searchTerm: string = '';
   page: number = 1;
   itemsPerPage: number = 18;
-  isModalVisible = false;
-  selectedDiscount: any = null;
   sortByCompanyAscending = false;
   sortByDateAscending = false;
   logos: { [companyName: string]: string } = {};
@@ -72,7 +68,7 @@ export class DiscountsTableComponent implements OnInit {
   bolType!: string;
 
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
-                private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute,
+                private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService,
                 private visitorProfile: VisitorProfileService) {
     const monthYear = this.meta.getDateString();
     const title = "Diski | Online shoppen met kortingscodes in " + monthYear;
@@ -123,22 +119,6 @@ export class DiscountsTableComponent implements OnInit {
       });
       this.filteredDiscounts = this.discounts;
       this.updateLatestDiscountInfo();
-
-      this.route.fragment.subscribe(fragment => {
-        if (!fragment) return;
-
-        const params = new URLSearchParams(fragment);
-        if (params.has('i')) {
-          const index = Number(params.get('i'));
-
-          if (!isNaN(index) && index >= 0 && index < this.discounts.length) {
-            const item = this.discounts[index];
-
-            item.affiliateLink = this.affiliateLinkService.getAffiliateLink(item.company);
-            this.openModal(item);
-          }
-        }
-      });
 
       this.initialPageLoad = false;
     });
@@ -215,16 +195,6 @@ export class DiscountsTableComponent implements OnInit {
     }
   }
 
-  openModal(discount: any) {
-    this.selectedDiscount = discount;
-    this.isModalVisible = true;
-  }
-
-  closeModal() {
-    this.isModalVisible = false;
-    this.selectedDiscount = null;
-  }
-
   openShopsModal() {
     this.isShopsModalVisible = true;
   }
@@ -278,28 +248,6 @@ export class DiscountsTableComponent implements OnInit {
         ? adjustedDateA.getTime() - adjustedDateB.getTime()
         : adjustedDateB.getTime() - adjustedDateA.getTime();
     });
-  }
-
-  affiliateModalAction(discount: Discount) {
-    this.visitorProfile.trackCompanyClick('company_click_homepage', discount.company);
-
-    const affiliateLink = this.affiliateLinkService.getAffiliateLink(discount.company);
-
-    if(affiliateLink !== undefined) {
-      this.openNewPageWithCodeDetailModal(discount.index, affiliateLink);
-    } else {
-      this.openModal(discount);
-    }
-  }
-
-  openNewPageWithCodeDetailModal(codeTableIndex: number, affiliateLink: string) {
-    if (!this.isBrowser) return;
-
-    const baseUrl = window.location.origin;
-    const url = `${baseUrl}#i=${encodeURIComponent(codeTableIndex)}`;
-
-    window.open(url, '_blank');
-    location.href = affiliateLink;
   }
 
   getCorrectFormatDiscountPercentage(rawDiscountPercentage: string): string {
