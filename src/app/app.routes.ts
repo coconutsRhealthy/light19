@@ -8,6 +8,7 @@ import { PrikbordComponent } from './prikbord/prikbord.component';
 import { GiftcardsComponent } from './giftcards/giftcards.component';
 import { AmbassadorComponent } from './ambassador/ambassador.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { SpaceNkBlogComponent } from './blogs/space-nk/space-nk-blog.component';
 import { Top5Component } from './top5/top5.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -21,6 +22,7 @@ export const routes: Routes = [
   { path: 'giftcards', component: GiftcardsComponent },
   { path: 'ambassador', component: AmbassadorComponent },
   { path: 'blogs', component: BlogsComponent },
+  { path: 'blogs/space-nk', component: SpaceNkBlogComponent },
   { path: 'top5', component: Top5Component },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: ':company', component: CompanyCodesComponent },
