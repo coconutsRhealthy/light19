@@ -126,8 +126,42 @@ export class CompanyCodesComponent implements OnInit {
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);
         this.monthYear = this.meta.getDateString();
-        this.meta.updateTitle("Werkende " + this.webshopName + " kortingscode in " + this.monthYear);
-        this.meta.updateMetaInfo("De nieuwste werkende kortingscode van " + this.webshopName + " in " + this.monthYear + "; Bespaar met deze kortingscode op online shoppen bij " + this.webshopName, "diski.nl", this.webshopName + ", Kortingscode, Korting");
+        const codeCount = this.discountCodes.filter(c => !c.code.startsWith('http')).length;
+        const pageUrl = "https://diski.nl/" + this.company + "/";
+        const title = "Werkende " + this.webshopName + " kortingscode in " + this.monthYear;
+        const description = codeCount + " actieve " + this.webshopName + " kortingscode" + (codeCount !== 1 ? 's' : '') + " in " + this.monthYear + "; Bespaar met deze kortingscodes op online shoppen bij " + this.webshopName;
+        this.meta.updateTitle(title);
+        this.meta.updateMetaInfo(description, "diski.nl", this.webshopName + ", Kortingscode, Korting");
+        this.meta.updateOgTags(title, description, pageUrl);
+        this.meta.setJsonLd('breadcrumb', {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Kortingscodes", "item": "https://diski.nl/" },
+            { "@type": "ListItem", "position": 2, "name": this.webshopName + " kortingscode", "item": pageUrl }
+          ]
+        });
+        const codeItems = this.discountCodes
+          .filter(c => !c.code.startsWith('http'))
+          .slice(0, 10)
+          .map((c, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "item": {
+              "@type": "Offer",
+              "name": this.webshopName + " kortingscode: " + c.code,
+              "description": (c.discount ? c.discount + (isNaN(Number(c.discount)) ? '' : '%') + " korting bij " : "Korting bij ") + this.webshopName,
+              "seller": { "@type": "Organization", "name": this.webshopName }
+            }
+          }));
+        if (codeItems.length > 0) {
+          this.meta.setJsonLd('offers', {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": this.webshopName + " kortingscodes",
+            "itemListElement": codeItems
+          });
+        }
       } else {
         this.meta.updateTitle("404 Deze pagina is niet gevonden op diski.nl");
         this.meta.updateMetaInfo("404 Deze pagina bestaat niet op diski.nl", "diski.nl", "404");

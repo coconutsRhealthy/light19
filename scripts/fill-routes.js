@@ -48,12 +48,22 @@ console.log('routes.txt generated successfully.');
 // 2. sitemap.xml genereren
 // =========================
 const BASE_URL = 'https://diski.nl';
+const today = new Date().toISOString().split('T')[0];
+
+const utilityRoutes = new Set(['giftcards', 'winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'wieheeftsale', 'ambassador', '']);
 
 const urls = sorted.map((route) => {
   const pathPart = route === '' ? '' : `/${route}`;
+  const isHome = route === '';
+  const isUtility = utilityRoutes.has(route);
+  const priority = isHome ? '1.0' : isUtility ? '0.6' : '0.8';
+  const changefreq = isHome ? 'daily' : isUtility ? 'monthly' : 'weekly';
   return `
   <url>
     <loc>${escapeXml(BASE_URL + pathPart)}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
   </url>`;
 }).join('');
 

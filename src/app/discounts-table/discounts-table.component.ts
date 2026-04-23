@@ -74,9 +74,30 @@ export class DiscountsTableComponent implements OnInit {
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
                 private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService, private route: ActivatedRoute,
                 private visitorProfile: VisitorProfileService) {
-    var monthYear = this.meta.getDateString();
-    this.meta.updateTitle("Diski | Online shoppen met kortingscodes in " + monthYear);
-    this.meta.updateMetaInfo("De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl", "diski.nl", "Kortingscode, Korting");
+    const monthYear = this.meta.getDateString();
+    const title = "Diski | Online shoppen met kortingscodes in " + monthYear;
+    const description = "De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl";
+    this.meta.updateTitle(title);
+    this.meta.updateMetaInfo(description, "diski.nl", "Kortingscode, Korting");
+    this.meta.updateOgTags(title, description, "https://diski.nl");
+    this.meta.setJsonLd('organization', {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Diski",
+      "url": "https://diski.nl",
+      "logo": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp",
+      "sameAs": [
+        "https://www.instagram.com/wiegeeftkorting/",
+        "https://www.tiktok.com/@wiegeeftkorting2"
+      ]
+    });
+    this.meta.setJsonLd('website', {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Diski",
+      "url": "https://diski.nl",
+      "description": description
+    });
   }
 
   ngOnInit() {
