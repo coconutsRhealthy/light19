@@ -2,53 +2,6 @@ export const asosSeoContent = `
 <div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
     <div class="tw-prose tw-prose-lg tw-max-w-4xl tw-mx-auto tw-py-8">
 <!-- == KORTINGSOVERZICHT == -->
-<section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Actuele Asos kortingscodes en aanbiedingen</h2>
-<div class="tw-overflow-x-auto">
-<table class="tw-w-full tw-border-collapse tw-text-sm tw-text-left">
-<thead>
-<tr class="tw-bg-gray-100 tw-text-gray-700">
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Korting</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Type aanbieding</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Voorwaarden</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Geldig tot</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">25% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Kortingscode</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Nieuwe klanten, min. €50</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Eindigend</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">20% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Actiecode studenten</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Geldige studentenpas vereist</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Permanent</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">15% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">App voucher</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Alleen via Asos app</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Deze week</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">10% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Nieuwsbrief coupon</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Eerste bestelling nieuw account</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">30 dagen</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">30% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Sale aanbieding</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Geselecteerde items uit sale</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Beperkte tijd</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 
 <!-- == OVER HET MERK == -->
 <section class="tw-mb-10">

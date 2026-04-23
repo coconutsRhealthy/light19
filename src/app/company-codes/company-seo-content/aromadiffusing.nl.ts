@@ -2,53 +2,6 @@ export const aromadiffusingNlSeoContent = `
 <div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
     <div class="tw-prose tw-prose-lg tw-max-w-4xl tw-mx-auto tw-py-8">
 <!-- == KORTINGSOVERZICHT == -->
-<section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Actuele Aromadiffusing.nl kortingscodes en aanbiedingen</h2>
-<div class="tw-overflow-x-auto">
-<table class="tw-w-full tw-border-collapse tw-text-sm tw-text-left">
-<thead>
-<tr class="tw-bg-gray-100 tw-text-gray-700">
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Korting</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Type</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Geldig tot</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Voorwaarden</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">25% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Kortingscode</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">31 december 2024</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Nieuwe klanten, minimaal €75</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">20% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Actiecode</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">15 januari 2025</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Alle diffusers</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">15% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Voucher</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">28 februari 2025</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Essentiële oliën set</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">10% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Coupon</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Altijd geldig</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Nieuwsbrief aanmelding</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">Gratis verzending</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Aanbieding</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Doorlopend</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Vanaf €50 bestellwaarde</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 
 <!-- == OVER HET MERK == -->
 <section class="tw-mb-10">

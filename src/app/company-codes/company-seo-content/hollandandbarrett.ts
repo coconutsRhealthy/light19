@@ -3,53 +3,6 @@ export const hollandandbarrettSeoContent = `
     <div class="tw-prose tw-prose-lg tw-max-w-4xl tw-mx-auto tw-py-8">
 
 <!-- == KORTINGSOVERZICHT == -->
-<section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Werkende Holland & Barrett kortingscodes en aanbiedingen</h2>
-<div class="tw-overflow-x-auto">
-<table class="tw-w-full tw-border-collapse tw-text-sm tw-text-left">
-<thead>
-<tr class="tw-bg-gray-100 tw-text-gray-700">
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Kortingscode</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Korting</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Geldig voor</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Geldig tot</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">WELLNESS25</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">25% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Vitamines & supplementen</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">31 december 2026</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">GRATISVERZENDING</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">Gratis verzending</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Vanaf €30 bestelling</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">31 maart 2027</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">NIEUWSBRIEF15</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">15% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Eerste bestelling</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Onbeperkt</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">STUDENT20</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">20% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Studentenkorting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">1 januari 2027</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">SUPERFOOD30</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">30% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Superfoods collectie</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">28 februari 2027</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 
 <!-- == OVER HET MERK == -->
 <section class="tw-mb-10">

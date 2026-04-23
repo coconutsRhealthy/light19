@@ -2,53 +2,6 @@ export const aimnsportswearSeoContent = `
 <div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
     <div class="tw-prose tw-prose-lg tw-max-w-4xl tw-mx-auto tw-py-8">
 <!-- == KORTINGSOVERZICHT == -->
-<section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Actuele Aimnsportswear kortingscodes en aanbiedingen</h2>
-<div class="tw-overflow-x-auto">
-<table class="tw-w-full tw-border-collapse tw-text-sm tw-text-left">
-<thead>
-<tr class="tw-bg-gray-100 tw-text-gray-700">
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Korting</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Code</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Voorwaarden</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Geldig</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">25% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">SPORT25</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Op nieuwe collectie</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Tot 31 dec</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">20% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">WINTER20</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Vanaf €75</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Tot 15 jan</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">15% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">NIEUW15</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Voor nieuwe klanten</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Permanent</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">10% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">SPORT10</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Op alle artikelen</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Tot 28 feb</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">5% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">SAVE5</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Nieuwsbrief</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Permanent</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 
 <!-- == OVER HET MERK == -->
 <section class="tw-mb-10">

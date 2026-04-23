@@ -2,53 +2,6 @@ export const airupSeoContent = `
 <div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
     <div class="tw-prose tw-prose-lg tw-max-w-4xl tw-mx-auto tw-py-8">
 <!-- == KORTINGSOVERZICHT == -->
-<section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Actuele Airup kortingscodes en aanbiedingen</h2>
-<div class="tw-overflow-x-auto">
-<table class="tw-w-full tw-border-collapse tw-text-sm tw-text-left">
-<thead>
-<tr class="tw-bg-gray-100 tw-text-gray-700">
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Kortingscode</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Korting</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Type aanbieding</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Geldig tot</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">WELCOME25</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">25% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Nieuwe klanten starter sets</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Januari 2025</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">SAVE20</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">20% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Alle smaakpods bundels</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">31 december 2024</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">BUNDLE15</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">15% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">3+ pods bundels</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Februari 2025</td>
-</tr>
-<tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">GRATISVERZENDING</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">Gratis verzending</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Vanaf €25 bestelling</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Permanent</td>
-</tr>
-<tr class="tw-bg-white hover:tw-bg-gray-50">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">NIEUWJAAR10</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">10% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Hele assortiment</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">15 januari 2025</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 
 <!-- == OVER HET MERK == -->
 <section class="tw-mb-10">

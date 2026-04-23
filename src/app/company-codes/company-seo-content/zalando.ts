@@ -7,54 +7,6 @@ export const zalandoSeoContent = `
         </h2>
 
         <section class="tw-mb-10">
-            <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Actuele Zalando kortingscodes en aanbiedingen</h2>
-            <div class="tw-overflow-x-auto">
-                <table class="tw-w-full tw-border-collapse tw-text-sm tw-text-left">
-                    <thead>
-                        <tr class="tw-bg-gray-100 tw-text-gray-700">
-                            <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Korting</th>
-                            <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Beschrijving</th>
-                            <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Type</th>
-                            <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-200">Voorwaarden</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="tw-bg-white hover:tw-bg-gray-50">
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">20% korting</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Welkomstkorting nieuwe klanten</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Kortingscode</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Minimaal €50 bestelling</td>
-                        </tr>
-                        <tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">15% korting</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Studentenkorting met verificatie</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Actiecode</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Geldige studentenstatus vereist</td>
-                        </tr>
-                        <tr class="tw-bg-white hover:tw-bg-gray-50">
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">10% korting</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Nieuwsbrief aanmelding</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Voucher</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Eerste bestelling</td>
-                        </tr>
-                        <tr class="tw-bg-gray-50 hover:tw-bg-gray-100">
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">25% korting</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Sale items extra korting</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Aanbieding</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Op geselecteerde artikelen</td>
-                        </tr>
-                        <tr class="tw-bg-white hover:tw-bg-gray-50">
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200 tw-font-bold tw-text-green-700">30% korting</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Zalando Plus exclusief</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Coupon</td>
-                            <td class="tw-px-4 tw-py-3 tw-border tw-border-gray-200">Zalando Plus lidmaatschap vereist</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="tw-mb-10">
             <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Over Zalando</h2>
             <p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">
                 Zalando is Europa's toonaangevende online fashion platform en bedient meer dan <strong class="tw-font-semibold tw-text-gray-900">49 miljoen actieve klanten</strong> in 25 landen. Het Duitse modebedrijf, opgericht in 2008, biedt een uitgebreid assortiment van meer dan <strong class="tw-font-semibold tw-text-gray-900">5.000 merken</strong> voor dames, heren en kinderen. Van bekende labels zoals Nike, Adidas en Tommy Hilfiger tot exclusieve designermerken en eigen private labels — Zalando heeft voor iedere smaak en elk budget iets te bieden. Met regelmatige sales, seizoensgebonden <strong class="tw-font-semibold tw-text-gray-900">kortingsacties</strong> en exclusieve aanbiedingen voor Plus-leden maakt Zalando mode toegankelijk voor iedereen.
