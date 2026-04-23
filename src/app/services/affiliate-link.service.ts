@@ -51,7 +51,7 @@ export class AffiliateLinkService {
         dummyCode: 'YESS25JQL'
     },
     'asos': {
-        url: 'https://smyi.me/01x0y',
+        url: 'https://www.stylink.it/RNGo2t6QZeV',
         dummyCode: 'ASOS10NKD'
     },
     'stevemadden': {
@@ -1410,21 +1410,9 @@ export class AffiliateLinkService {
         url: 'https://www.geurwolkje.nl/INDY40908',
         dummyCode: 'INDY40908'
     },
-    'urbanoutfitters': {
-        url: 'https://smyi.me/008nt',
-        dummyCode: '10SOS'
-    },
     'achateshop.com': {
         url: 'https://www.achate.com/DISKI',
         dummyCode: 'DISKI'
-    },
-    'alohas': {
-        url: 'https://smyi.me/00GPy',
-        dummyCode: 'ALOHA10'
-    },
-    '24s': {
-        url: 'https://smyi.me/03lZg',
-        dummyCode: 'SHOP10'
     },
     'ibood': {
         url: 'https://pzz.to/9wsxiv',
