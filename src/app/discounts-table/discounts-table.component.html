@@ -34,32 +34,50 @@
     </div>
   </div>
 
-  <!-- Banner -->
+  <!-- Prijsvergelijker Banner -->
   <a
-          rel="sponsored"
-          onclick="gtag('event', 'diski_pick', { event_category: 'Diski_Pick', event_label: 'diski_pick_homepage' })"
-          href="https://tidd.ly/4dFlWeo"
-          target="_blank"
-          class="tw-block tw-bg-grey tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-mb-6 tw-no-underline"
+    href="https://diski.checkprijs.com/"
+    target="_blank"
+    rel="noopener"
+    onclick="gtag('event', 'prijsvergelijker', {'event_category': 'Prijsvergelijker', 'event_label': 'prijsvergelijker_homepage_banner'});"
+    class="tw-flex tw-items-center tw-justify-between tw-gap-3 tw-w-full tw-mb-6 tw-px-5 tw-py-4 tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-no-underline tw-bg-gradient-to-r tw-from-blue-500 tw-to-indigo-600 tw-text-white"
   >
-    <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">
-      Diski Pick 🔥 SpaceNK
+    <div class="tw-flex tw-items-center tw-gap-3">
+      <span class="tw-text-2xl">🔍</span>
+      <div>
+        <span class="tw-inline-block tw-bg-white tw-text-indigo-600 tw-text-[10px] tw-font-bold tw-rounded-full tw-px-2 tw-py-[2px] tw-mb-1">NIEUW</span>
+        <p class="tw-font-semibold tw-text-sm sm:tw-text-base tw-leading-snug">Grote aankoop? Gebruik onze prijsvergelijker!</p>
+      </div>
     </div>
-
-    <picture class="tw-block tw-aspect-[728/90] tw-w-full">
-      <source
-              media="(max-width: 767px)"
-              srcset="https://www.awin1.com/cshow.php?s=4696639&v=67332&q=483054&r=1870794"
-      />
-
-      <img
-              src="https://www.awin1.com/cshow.php?s=4696639&v=67332&q=483054&r=1870794"
-              alt="diski-pick-banner"
-              fetchpriority="high"
-              class="tw-w-full tw-h-auto tw-object-contain"
-      />
-    </picture>
+    <svg xmlns="http://www.w3.org/2000/svg" class="tw-w-5 tw-h-5 tw-flex-shrink-0 tw-opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
   </a>
+
+<!--  Diski Pick Banner (deactivated)-->
+<!--  <a-->
+<!--          rel="sponsored"-->
+<!--          onclick="gtag('event', 'diski_pick', { event_category: 'Diski_Pick', event_label: 'diski_pick_homepage' })"-->
+<!--          href="https://tidd.ly/4dFlWeo"-->
+<!--          target="_blank"-->
+<!--          class="tw-block tw-bg-grey tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-mb-6 tw-no-underline"-->
+<!--  >-->
+<!--    <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">-->
+<!--      Diski Pick 🔥 SpaceNK-->
+<!--    </div>-->
+<!--    <picture class="tw-block tw-aspect-[728/90] tw-w-full">-->
+<!--      <source-->
+<!--              media="(max-width: 767px)"-->
+<!--              srcset="https://www.awin1.com/cshow.php?s=4696639&v=67332&q=483054&r=1870794"-->
+<!--      />-->
+<!--      <img-->
+<!--              src="https://www.awin1.com/cshow.php?s=4696639&v=67332&q=483054&r=1870794"-->
+<!--              alt="diski-pick-banner"-->
+<!--              fetchpriority="high"-->
+<!--              class="tw-w-full tw-h-auto tw-object-contain"-->
+<!--      />-->
+<!--    </picture>-->
+<!--  </a>-->
 
 <!--  @if(bolHref) {-->
 <!--    <a-->
