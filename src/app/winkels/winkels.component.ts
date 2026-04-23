@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { DiscountsService } from '../services/discounts.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
@@ -8,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-winkels',
-  imports: [RouterModule, FooterComponent, NavbarComponent, FormsModule],
+  imports: [FooterComponent, NavbarComponent, FormsModule],
   templateUrl: './winkels.component.html',
   styleUrls: ['./winkels.component.css']
 })

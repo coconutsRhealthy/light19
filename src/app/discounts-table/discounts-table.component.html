@@ -167,7 +167,7 @@
       @if (paginatedDiscounts.length > 0) {
         @for (discount of paginatedDiscounts; track discount) {
           <a
-            [routerLink]="['/' + getCompanySlug(discount.company) + '/']"
+            [attr.href]="'/' + getCompanySlug(discount.company) + '/'">
             (click)="trackBrandClick(discount.company)"
             class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98]
                    tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-flex-col
