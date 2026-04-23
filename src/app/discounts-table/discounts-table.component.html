@@ -147,70 +147,37 @@
     <!-- Resultaatkaarten -->
     <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4">
       @if (paginatedDiscounts.length > 0) {
-        @for (discount of paginatedDiscounts; track discount; let i = $index) {
-          @if (isBlackFriday(discount)) {
-            <button
-                    (click)="affiliateModalAction(discount)"
-                    [class]="getBlackFridayButtonClasses(i)"
-            >
-              <div class="tw-flex-1 tw-pr-3">
-                <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-truncate lg:tw-max-w-[180px]">
-                  {{ discount.company }}
-                </h3>
-
-                <span class="tw-inline-block tw-bg-yellow-400 tw-text-black tw-text-[10px] tw-font-bold tw-rounded-full tw-px-2 tw-py-[2px] tw-mt-1">
-                Hot code 🔥
-              </span>
-
-                <p class="tw-text-sm tw-mt-2">
-                  💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
-                </p>
-                <p class="tw-text-xs tw-text-gray-400 tw-mt-1">
-                  Gespot op: {{ formatDate(discount.date) }}
-                </p>
-              </div>
-
+        @for (discount of paginatedDiscounts; track discount) {
+          <a
+            [routerLink]="['/' + getCompanySlug(discount.company) + '/']"
+            (click)="trackBrandClick(discount.company)"
+            class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98]
+                   tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-flex-col
+                   tw-border tw-border-gray-100 tw-no-underline"
+          >
+            <div class="tw-flex tw-justify-between tw-items-start tw-mb-2">
+              <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900 tw-truncate tw-max-w-[160px]">
+                {{ getDisplayName(discount.company) }}
+              </h3>
               @if (getLogoUrl(discount.company)) {
-                <div class="tw-flex-shrink-0">
-                  <img
-                          [src]="getLogoUrl(discount.company)"
-                          [alt]="discount.company + ' logo'"
-                          class="tw-w-16 tw-h-16 lg:tw-w-14 lg:tw-h-14 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100"
-                  />
-                </div>
-              }
-            </button>
-          } @else {
-            <button
-                    (click)="sendCopyCodeToGa(discount.company); sendCompanyClickToFb(discount.company); affiliateModalAction(discount)"
-                    class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98]
-                   tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-justify-between tw-items-center
-                   tw-border tw-border-gray-100 tw-text-left tw-h-full"
-            >
-              <div class="tw-flex-1 tw-pr-3">
-                <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900 tw-truncate lg:tw-max-w-[180px]">
-                  {{ discount.company }}
-                </h3>
-
-                <p class="tw-text-sm tw-text-gray-600 tw-mt-1">
-                  💸 {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
-                </p>
-                <p class="tw-text-xs tw-text-gray-400 tw-mt-1">
-                  Gespot op: {{ formatDate(discount.date) }}
-                </p>
-              </div>
-
-              @if (getLogoUrl(discount.company)) {
-              <div class="tw-flex-shrink-0">
                 <img
-                        [src]="getLogoUrl(discount.company)"
-                        [alt]="discount.company + ' logo'"
-                        class="tw-w-16 tw-h-16 lg:tw-w-14 lg:tw-h-14 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100"
+                  [src]="getLogoUrl(discount.company)"
+                  [alt]="getDisplayName(discount.company) + ' logo'"
+                  class="tw-w-12 tw-h-12 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100 tw-flex-shrink-0"
+                  loading="lazy"
                 />
-              </div>
               }
-            </button>
-          }
+            </div>
+            <p class="tw-text-sm tw-text-gray-600">
+              💸 Nieuwste code: {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
+            </p>
+            <p class="tw-text-xs tw-text-gray-400 tw-mt-1">
+              Gespot op {{ formatDate(discount.date) }}
+            </p>
+            <p class="tw-mt-3 tw-text-xs tw-font-semibold tw-text-blue-600">
+              Bekijk alle {{ getDisplayName(discount.company) }} codes &rarr;
+            </p>
+          </a>
         }
       } @else if (initialPageLoad) {
         <!-- Skeleton loaders -->

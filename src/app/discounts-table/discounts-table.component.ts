@@ -151,10 +151,20 @@ export class DiscountsTableComponent implements OnInit {
     }
   }
 
+  get uniqueFilteredDiscounts(): Discount[] {
+    const seen = new Set<string>();
+    return this.filteredDiscounts.filter(discount => {
+      const slug = this.getCompanySlug(discount.company);
+      if (seen.has(slug)) return false;
+      seen.add(slug);
+      return true;
+    });
+  }
+
   get paginatedDiscounts(): Discount[] {
     const start = (this.page - 1) * this.itemsPerPage;
     const end = start + this.itemsPerPage;
-    return this.filteredDiscounts.slice(start, end);
+    return this.uniqueFilteredDiscounts.slice(start, end);
   }
 
   nextPage() {
@@ -166,7 +176,22 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   get totalPages(): number {
-    return Math.ceil(this.filteredDiscounts.length / this.itemsPerPage);
+    return Math.ceil(this.uniqueFilteredDiscounts.length / this.itemsPerPage);
+  }
+
+  getCompanySlug(companyName: string): string {
+    return companyName.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
+  }
+
+  getDisplayName(companyName: string): string {
+    return companyName.replace(/\s*\(.*$/, '').trim();
+  }
+
+  trackBrandClick(company: string): void {
+    this.sendCompanyClickToFb(company);
+    if (this.isBrowser && typeof window.sendCopyCodeToGa === 'function') {
+      window.sendCopyCodeToGa(company);
+    }
   }
 
   openModal(discount: any) {
