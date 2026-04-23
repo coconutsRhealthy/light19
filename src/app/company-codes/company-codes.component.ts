@@ -8,6 +8,7 @@ import { DiscountsService } from '../services/discounts.service';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { WebshopNameService } from '../services/webshop-name.service';
 import { MetaService } from '../services/meta.service';
+import { LogosService } from '../services/logos.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
@@ -28,6 +29,12 @@ interface Discount {
   date: string;
   index: number;
   affiliateLink?: string | null;
+}
+
+interface RelatedShop {
+  name: string;
+  slug: string;
+  percentage: string;
 }
 
 @Component({
@@ -51,6 +58,8 @@ export class CompanyCodesComponent implements OnInit {
   isLoading = true;
   copiedCode: string | null = null;
   seoContent: SafeHtml | null = null;
+  relatedShops: RelatedShop[] = [];
+  logos: { [companyName: string]: string } = {};
 
   affiliateLink: string | undefined;
   isModalVisible = false;
@@ -64,9 +73,12 @@ export class CompanyCodesComponent implements OnInit {
   constructor(private route: ActivatedRoute, private datePipe: DatePipe, private elementRef: ElementRef,
                 private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService,
                 private webshopNameService: WebshopNameService, private meta: MetaService,
+                private logosService: LogosService,
                 private sanitizer: DomSanitizer, private visitorProfile: VisitorProfileService) { }
 
   ngOnInit() {
+    this.logosService.getAllLogos().subscribe(data => this.logos = data);
+
     this.route.paramMap.subscribe(params => {
       this.company = params.get('company') as string;
       this.extractDiscountCodes(this.company);
@@ -169,6 +181,7 @@ export class CompanyCodesComponent implements OnInit {
 
       this.affiliateLink = this.affiliateLinkService.getAffiliateLink(companyName)
       this.discountCodes.sort((a, b) => a.code.startsWith(urlString) ? -1 : 1);
+      this.loadRelatedShops(companyName, data);
 
       this.route.fragment.subscribe(fragment => {
         if (!fragment) return;
@@ -342,5 +355,45 @@ export class CompanyCodesComponent implements OnInit {
     } else {
         return "tw-font-semibold tw-text-white tw-bg-sky-500 hover:tw-bg-sky-600 tw-rounded-md tw-px-4 tw-py-2 tw-transition tw-duration-200 tw-shadow-sm hover:tw-shadow-md tw-uppercase";
     }
+  }
+
+  private loadRelatedShops(currentSlug: string, allData: string[]): void {
+    const seen = new Set<string>();
+    const pool: RelatedShop[] = [];
+
+    for (const line of allData) {
+      const parts = line.split(', ');
+      const company = parts[0];
+      const percentage = parts[2] ?? '';
+      if (!company) continue;
+
+      const slug = company.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
+      const name = company.replace(/\s*\(.*$/, '').trim();
+
+      if (slug === currentSlug.toLowerCase()) continue;
+      if (seen.has(slug)) continue;
+      seen.add(slug);
+
+      pool.push({ name, slug, percentage: percentage.trim() });
+      if (pool.length >= 30) break;
+    }
+
+    // Fisher-Yates shuffle, pick 5
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+
+    this.relatedShops = pool.slice(0, 5);
+  }
+
+  formatRelatedPercentage(percentage: string): string {
+    if (!percentage) return '';
+    if (percentage.includes('€') || percentage.includes('vzk') || percentage.includes('gifts')) return percentage;
+    return percentage + '%';
+  }
+
+  getRelatedLogoUrl(shopName: string): string | undefined {
+    return this.logos[shopName];
   }
 }
