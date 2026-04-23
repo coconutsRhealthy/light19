@@ -190,8 +190,21 @@ export class DiscountsTableComponent implements OnInit {
 
   trackBrandClick(company: string): void {
     this.sendCompanyClickToFb(company);
+    this.visitorProfile.trackCompanyClick('company_click_homepage', company);
     if (this.isBrowser && typeof window.sendCopyCodeToGa === 'function') {
       window.sendCopyCodeToGa(company);
+    }
+  }
+
+  onCardClick(discount: Discount, event: MouseEvent) {
+    this.trackBrandClick(discount.company);
+
+    const affiliateLink = this.affiliateLinkService.getAffiliateLink(discount.company);
+    if (affiliateLink !== undefined && this.isBrowser) {
+      event.preventDefault();
+      const brandPageUrl = `${window.location.origin}/${this.getCompanySlug(discount.company)}/`;
+      window.open(brandPageUrl, '_blank');
+      location.href = affiliateLink;
     }
   }
 
