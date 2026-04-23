@@ -58,6 +58,7 @@ export class CompanyCodesComponent implements OnInit {
   isLoading = true;
   copiedCode: string | null = null;
   seoContent: SafeHtml | null = null;
+  seoContentLoading = true;
   relatedShops: RelatedShop[] = [];
   logos: { [companyName: string]: string } = {};
 
@@ -201,7 +202,10 @@ export class CompanyCodesComponent implements OnInit {
         this.seoContent = html
           ? this.sanitizer.bypassSecurityTrustHtml(html)
           : null;
-      }).finally(() => doneTask());
+      }).finally(() => {
+        this.seoContentLoading = false;
+        doneTask();
+      });
 
       this.isLoading = false;
     });

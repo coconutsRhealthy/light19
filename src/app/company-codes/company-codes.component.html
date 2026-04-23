@@ -161,6 +161,26 @@
 
       @if (seoContent) {
         <div [innerHTML]="seoContent"></div>
+      } @else if (seoContentLoading) {
+        <div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto tw-animate-pulse">
+          <div class="tw-h-7 tw-bg-gray-200 tw-rounded tw-w-2/3 tw-mx-auto tw-mb-8"></div>
+          <div class="tw-space-y-3 tw-mb-8">
+            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-full"></div>
+            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-5/6"></div>
+            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-4/6"></div>
+          </div>
+          <div class="tw-h-5 tw-bg-gray-200 tw-rounded tw-w-1/2 tw-mb-4"></div>
+          <div class="tw-space-y-3 tw-mb-8">
+            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-full"></div>
+            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-3/4"></div>
+          </div>
+          <div class="tw-h-5 tw-bg-gray-200 tw-rounded tw-w-1/2 tw-mb-4"></div>
+          <div class="tw-space-y-3">
+            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-full"></div>
+            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-5/6"></div>
+            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-2/3"></div>
+          </div>
+        </div>
       }
   </div>
 
