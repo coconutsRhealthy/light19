@@ -18,7 +18,7 @@ function processFolder(folderPath) {
 
       // Bepaal canonical URL
       let relativePath = path.relative(DIST_FOLDER, folderPath).replace(/\\/g, '/'); // Windows-proof
-      let canonicalUrl = relativePath ? `${BASE_URL}/${relativePath}/` : BASE_URL;
+      let canonicalUrl = relativePath ? `${BASE_URL}/${relativePath}/` : `${BASE_URL}/`;
 
       // Vervang placeholder
       html = html.replace('<!--  canonical placeholder-->', `<link rel="canonical" href="${canonicalUrl}" />`);
