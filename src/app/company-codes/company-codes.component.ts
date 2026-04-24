@@ -330,6 +330,7 @@ export class CompanyCodesComponent implements OnInit {
   openModal(code: any) {
     this.selectedDiscount = {
       company: this.webshopName,
+      companySlug: this.company,
       discountCode: code.code,
       percentage: code.discount,
       date: code.date,

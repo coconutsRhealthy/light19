@@ -46,9 +46,9 @@ export class ModalComponent {
         'shein'
       ];
 
-      const company = this.discount?.company?.toLowerCase();
+      const companySlug = this.discount?.companySlug?.toLowerCase();
 
-      if (savedEmail || !allowedBrands.includes(company)) {
+      if (savedEmail || !allowedBrands.includes(companySlug)) {
         this.mailAddress = savedEmail ?? '';
         this.isUnlocked = true;
         this.showEmailBlock = false;
