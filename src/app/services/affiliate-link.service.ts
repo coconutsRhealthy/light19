@@ -232,7 +232,7 @@ export class AffiliateLinkService {
     },
     'fotocadeau.nl': {
         url: 'https://tidd.ly/3Z1dIXL',
-        dummyCode: 'JULIA207MF'
+        dummyCode: 'DISKI70'
     },
     '123jaloezie.nl': {
         url: 'https://tidd.ly/3SR4dqy',
