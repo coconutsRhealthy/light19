@@ -363,33 +363,58 @@ export class CompanyCodesComponent implements OnInit {
   }
 
   private loadRelatedShops(currentSlug: string, allData: string[]): void {
-    const seen = new Set<string>();
-    const pool: RelatedShop[] = [];
+    const slugs: string[] = [
+      'zalando',
+      'shein',
+      'nakdfashion',
+      'loavies',
+      'hunkemoller',
+      'oduree.nl',
+      'creamyfabrics',
+      'idealofsweden',
+      'desenio',
+      'lookfantastic',
+      'myproteinnl',
+      'temu',
+      'gymshark',
+      'bylashbabe',
+      'hellofresh.nl',
+      'gutsgusto',
+      'pinkgellac',
+      'vitakruid',
+      'spacenk.com',
+      'leolive',
+      'achateshop.com',
+      'bellobox.nl',
+      'geurwolkje',
+      'ginatricot'
+    ];
 
-    for (const line of allData) {
-      const parts = line.split(', ');
-      const company = parts[0];
-      const percentage = parts[2] ?? '';
-      if (!company) continue;
+    const currentSlugLc = currentSlug.toLowerCase();
 
-      const slug = company.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
-      const name = company.replace(/\s*\(.*$/, '').trim();
+    const pool: RelatedShop[] = slugs
+      .filter(slug => slug.toLowerCase() !== currentSlugLc)
+      .map(slug => {
+        const match = allData.find(line => {
+          const rawCompany = line.split(', ')[0] ?? '';
+          return rawCompany.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase() === slug.toLowerCase();
+        });
 
-      if (slug === currentSlug.toLowerCase()) continue;
-      if (seen.has(slug)) continue;
-      seen.add(slug);
+        if (!match) return null;
 
-      pool.push({ name, slug, percentage: percentage.trim() });
-      if (pool.length >= 30) break;
-    }
+        const parts = match.split(', ');
+        const name = parts[0].replace(/\s*\(.*$/, '').trim();
+        const percentage = (parts[2] ?? '').trim() || '10';
+        return { name, slug, percentage };
+      })
+      .filter((shop): shop is RelatedShop => shop !== null);
 
-    // Fisher-Yates shuffle, pick 5
     for (let i = pool.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [pool[i], pool[j]] = [pool[j], pool[i]];
     }
 
-    this.relatedShops = pool.slice(0, 5);
+    this.relatedShops = pool.slice(0, 6);
   }
 
   formatRelatedPercentage(percentage: string): string {
