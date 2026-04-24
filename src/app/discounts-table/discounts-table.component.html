@@ -164,11 +164,12 @@
 
     <!-- Resultaatkaarten -->
     <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4">
-      @if (paginatedDiscounts.length > 0) {
-        @for (discount of paginatedDiscounts; track discount) {
+      @if (uniqueFilteredDiscounts.length > 0) {
+        @for (discount of uniqueFilteredDiscounts; track discount; let i = $index) {
           <a
             [routerLink]="['/' + getCompanySlug(discount.company) + '/']"
             (click)="onCardClick(discount, $event)"
+            [style.display]="(i >= (page - 1) * itemsPerPage && i < page * itemsPerPage) ? null : 'none'"
             class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98]
                    tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-flex-col
                    tw-border tw-border-gray-100 tw-no-underline"
