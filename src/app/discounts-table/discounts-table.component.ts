@@ -11,6 +11,7 @@ import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ModalShopsComponent } from '../modal-shops/modal-shops.component';
+import { BannerComponent } from './banner/banner.component';
 import { RouterModule } from '@angular/router';
 import { PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -33,7 +34,7 @@ interface Discount {
 
 @Component({
   selector: 'app-discounts-table',
-  imports: [FooterComponent, NavbarComponent, FormsModule, ModalShopsComponent, RouterModule],
+  imports: [FooterComponent, NavbarComponent, FormsModule, ModalShopsComponent, RouterModule, BannerComponent],
   templateUrl: './discounts-table.component.html',
   styleUrls: ['./discounts-table.component.css'],
   providers: [
