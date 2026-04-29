@@ -50,7 +50,7 @@ console.log('routes.txt generated successfully.');
 const BASE_URL = 'https://diski.nl';
 const today = new Date().toISOString().split('T')[0];
 
-const utilityRoutes = new Set(['giftcards', 'winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'wieheeftsale', 'ambassador', '']);
+const utilityRoutes = new Set(['giftcards', 'winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'wieheeftsale', '']);
 
 const urls = sorted.map((route) => {
   const pathPart = route === '' ? '/' : `/${route}/`;

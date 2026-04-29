@@ -6,7 +6,6 @@ import { ContactComponent } from './contact/contact.component';
 import { WieheeftsaleComponent } from './wieheeftsale/wieheeftsale.component';
 import { PrikbordComponent } from './prikbord/prikbord.component';
 import { GiftcardsComponent } from './giftcards/giftcards.component';
-import { AmbassadorComponent } from './ambassador/ambassador.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { SpaceNkBlogComponent } from './blogs/space-nk/space-nk-blog.component';
 import { Top5Component } from './top5/top5.component';
@@ -20,7 +19,6 @@ export const routes: Routes = [
   { path: 'wieheeftsale', component: WieheeftsaleComponent },
   { path: 'prikbord', component: PrikbordComponent },
   { path: 'giftcards', component: GiftcardsComponent },
-  { path: 'ambassador', component: AmbassadorComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'blogs/space-nk', component: SpaceNkBlogComponent },
   { path: 'top5', component: Top5Component },
