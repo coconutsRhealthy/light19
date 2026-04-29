@@ -1351,8 +1351,8 @@ export class AffiliateLinkService {
         dummyCode: 'SNEAK10'
     },
     'mondly': {
-        url: 'https://www.anrdoezrs.net/click-101641002-14103335',
-        dummyCode: '10OFF'
+        url: 'https://www.jdoqocy.com/click-101641002-17279282',
+        dummyCode: 'wiegeeftkorting15'
     },
     'expedia': {
         url: 'https://www.jdoqocy.com/click-101641002-15108262',
