@@ -134,7 +134,7 @@ export class AffiliateLinkService {
         url: 'https://tidd.ly/44NnZKP',
         dummyCode: 'LISA51AW'
     },
-    'cecil.nl': {
+    'cecil': {
         url: 'https://tidd.ly/3Sb7l06',
         dummyCode: 'OFF25C7J'
     },
