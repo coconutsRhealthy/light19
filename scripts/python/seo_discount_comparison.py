@@ -13,7 +13,7 @@ from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
 SCRIPT_DIR   = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
 DISCOUNTS_PATH = os.path.join(PROJECT_ROOT, "src", "app", "data", "discounts.json")
 SEO_DIR        = os.path.join(PROJECT_ROOT, "src", "app", "company-codes", "company-seo-content")
 OUT_PATH       = os.path.join(PROJECT_ROOT, "seo-discount-comparison.xlsx")
