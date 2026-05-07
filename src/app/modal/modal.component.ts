@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
+import { DiscountsService } from '../services/discounts.service';
 import { FormsModule } from '@angular/forms';
 
 declare let gtag: Function;
@@ -13,6 +14,17 @@ declare let fbq: Function;
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
+  private static readonly EVERGREEN_BRANDS = new Set<string>([
+    'nakdfashion',
+    'ginatricot',
+    'gutsgusto',
+    'pinkgellac',
+    'tessv',
+    'gymshark',
+    'shein',
+  ]);
+  private static readonly RECENT_DAYS = 5;
+
   @Input() isVisible = false;
   @Output() closed = new EventEmitter<void>();
   isCopied = false;
@@ -35,20 +47,12 @@ export class ModalComponent {
       this.discountCode = value.discountCode;
 
       const savedEmail = localStorage.getItem('discount_email');
-
-      const allowedBrands = [
-        'nakdfashion',
-        'ginatricot',
-        'gutsgusto',
-        'pinkgellac',
-        'tessv',
-        'gymshark',
-        'shein'
-      ];
-
       const companySlug = this.discount?.companySlug?.toLowerCase();
+      const recentSlugs = this.discountsService.getRecentlyAddedSlugs(ModalComponent.RECENT_DAYS);
+      const requiresEmail =
+        ModalComponent.EVERGREEN_BRANDS.has(companySlug) || recentSlugs.has(companySlug);
 
-      if (savedEmail || !allowedBrands.includes(companySlug)) {
+      if (savedEmail || !requiresEmail) {
         this.mailAddress = savedEmail ?? '';
         this.isUnlocked = true;
         this.showEmailBlock = false;
@@ -63,7 +67,8 @@ export class ModalComponent {
   }
 
   constructor(private analyticsEventService: AnalyticsEventService,
-              private visitorProfile: VisitorProfileService) {}
+              private visitorProfile: VisitorProfileService,
+              private discountsService: DiscountsService) {}
 
   getCorrectFormatOfCodeDate(rawCodeDate: string): string {
     var day = rawCodeDate.split("-")[1];
