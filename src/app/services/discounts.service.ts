@@ -14,8 +14,16 @@ export class DiscountsService {
     return of(discountsData);
   }
 
+  private recentSlugsCache: { key: string; slugs: Set<string> } | null = null;
+
   getRecentlyAddedSlugs(days: number): Set<string> {
-    const recentDates = this.lastNDates(days);
+    const today = new Date();
+    const cacheKey = `${days}:${this.formatMonthDay(today)}`;
+    if (this.recentSlugsCache?.key === cacheKey) {
+      return this.recentSlugsCache.slugs;
+    }
+
+    const recentDates = this.lastNDates(today, days);
     const slugs = new Set<string>();
     for (const entry of discountsData) {
       const [company, , , , date] = entry.split(',').map(s => s.trim());
@@ -23,19 +31,24 @@ export class DiscountsService {
         slugs.add(this.toSlug(company));
       }
     }
+    this.recentSlugsCache = { key: cacheKey, slugs };
     return slugs;
   }
 
-  private lastNDates(days: number): Set<string> {
+  private lastNDates(from: Date, days: number): Set<string> {
     const dates = new Set<string>();
-    const d = new Date();
+    const d = new Date(from);
     for (let i = 0; i < days; i++) {
-      const mm = String(d.getMonth() + 1).padStart(2, '0');
-      const dd = String(d.getDate()).padStart(2, '0');
-      dates.add(`${mm}-${dd}`);
+      dates.add(this.formatMonthDay(d));
       d.setDate(d.getDate() - 1);
     }
     return dates;
+  }
+
+  private formatMonthDay(d: Date): string {
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return `${mm}-${dd}`;
   }
 
   private toSlug(companyName: string): string {
