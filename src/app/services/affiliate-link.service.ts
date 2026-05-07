@@ -991,7 +991,7 @@ export class AffiliateLinkService {
         dummyCode: 'WALK10'
     },
     'shoesme': {
-        url: 'https://shoesme-nl.mtpc.se/5924537',
+        url: 'https://glp8.net/c/?si=20528&li=1870190&wi=418827&dl=',
         dummyCode: 'ME10'
     },
     'lilatelier': {
@@ -1437,6 +1437,54 @@ export class AffiliateLinkService {
     'bellobox.nl': {
         url: 'https://www.bellobox.nl/indyvandenburg',
         dummyCode: 'DISKI10'
+    },
+    'thegoodroll': {
+        url: 'https://jf79.net/c/?si=16425&li=1705996&wi=418827&dl=',
+        dummyCode: '10OFF'
+    },
+    'daka': {
+        url: 'https://partner.daka.nl/c/?si=7290&li=1338482&wi=418827&dl=%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'pipoos': {
+        url: 'https://fr135.net/c/?si=15493&li=1670531&wi=418827&dl=',
+        dummyCode: 'OFF10'
+    },
+    'allsaints': {
+        url: 'https://glp8.net/c/?si=20868&li=1886430&wi=418827&dl=eu%3FglCountry%3DNL%26glCurrency%3DEUR%26CountrySwitcher%3Dtrue',
+        dummyCode: 'SHOP10'
+    },
+    'gereedschapcentrum.nl': {
+        url: 'https://lt45.net/c/?si=11632&li=1516360&wi=418827&dl=',
+        dummyCode: 'ACTIE10'
+    },
+    'degoedkoopsteoutlet': {
+        url: 'https://glp8.net/c/?si=19859&li=1846103&wi=418827&dl=',
+        dummyCode: '10OFF'
+    },
+    'donnay': {
+        url: 'https://rkn3.net/c/?si=14372&li=1618099&wi=418827&dl=',
+        dummyCode: 'EXTRA10'
+    },
+    'beltegoed.nl': {
+        url: 'https://glp8.net/c/?si=19549&li=1837751&wi=418827&dl=',
+        dummyCode: '10EXTRA'
+    },
+    'weightworld': {
+        url: 'https://fr135.net/c/?si=15441&li=1668942&wi=418827&dl=',
+        dummyCode: 'CC10EXTRA'
+    },
+    'animigo': {
+        url: 'https://fr135.net/c/?si=15884&li=1685979&wi=418827&dl=',
+        dummyCode: '10OFF'
+    },
+    'sabon': {
+        url: 'https://jf79.net/c/?si=16132&li=1693248&wi=418827&dl=https%3A%2F%2Fnl.sabon.com%2F',
+        dummyCode: 'SHOP10'
+    },
+    'moneybird': {
+        url: 'https://bdt9.net/c/?si=19080&li=1819984&wi=418827&dl=',
+        dummyCode: 'EXTRA10'
     }
   };
 
