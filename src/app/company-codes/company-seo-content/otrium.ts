@@ -1,233 +1,172 @@
 export const otriumSeoContent = `
 <div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
     <div class="tw-prose tw-prose-lg tw-max-w-4xl tw-mx-auto tw-py-8">
-
-<!-- == KORTINGSOVERZICHT == -->
+<!-- == NAVIGATIE == -->
+<nav class="tw-mb-6 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-p-4">
+  <p class="tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">Korting bij Otrium</p>
+  <ul class="tw-space-y-1">
+    <li><a href="#kortingscode-toepassen" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Hoe gebruik je een Otrium kortingscode?</a></li>
+    <li><a href="#kortingspercentages" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Hoeveel korting geeft Otrium?</a></li>
+    <li><a href="#tips-extra-korting" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Tips voor extra korting bij Otrium</a></li>
+    <li><a href="#black-friday" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Otrium Black Friday 2026 deals</a></li>
+    <li><a href="#faq" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Veelgestelde vragen over Otrium</a></li>
+  </ul>
+</nav>
 
 <!-- == OVER HET MERK == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Over Otrium</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium is de toonaangevende <strong class="tw-font-semibold tw-text-gray-900">online outlet voor designer mode</strong>, opgericht in 2016 door Max Klijnstra. Het platform biedt merkkleding van topdesigners met kortingen tot 75% op de originele verkoopprijs. Otrium werkt direct samen met <strong class="tw-font-semibold tw-text-gray-900">meer dan 400 modemerken</strong> wereldwijd, waaronder Scotch & Soda, Tommy Hilfiger, en Calvin Klein. Het bedrijf heeft vestigingen in Amsterdam en Barcelona en verkoopt exclusief <strong class="tw-font-semibold tw-text-gray-900">end-of-season en overstockitems</strong> van luxe modehuizen. Door hun unieke business model helpen ze modemerken om overtollige voorraad op een duurzame manier af te zetten. <strong class="tw-font-semibold tw-text-gray-900">Otrium levert naar meer dan 12 landen</strong> in Europa en heeft inmiddels miljoenen klanten wereldwijd.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium is dé Nederlandse designer outlet platform opgericht in 2016 door Milan Daniels en Max Klijnstra. Het platform werkt samen met meer dan 400 premium modemerken zoals Hugo Boss, Tommy Hilfiger, Calvin Klein, Karl Lagerfeld en Ted Baker om hun voorraden van vorige seizoenen tegen sterk gereduceerde prijzen aan te bieden. Met meer dan 2 miljoen klanten in Europa biedt Otrium kortingen tot 75% op authentieke designermode voor dames, heren en kinderen. Het hoofdkantoor staat in Amsterdam en het platform is actief in 12 Europese landen.</p>
 </section>
 
 <!-- == KORTINGSPERCENTAGES == -->
-<section class="tw-mb-10">
+<section id="kortingspercentages" class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Hoeveel korting geeft Otrium?</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium staat bekend om hun aanzienlijke kortingen op designer mode en luxe merkkleding. Als outletplatform biedt Otrium structureel kortingen van <strong class="tw-font-semibold tw-text-gray-900">30% tot 75%</strong> op de oorspronkelijke verkoopprijzen. Voor nieuwe klanten zijn er regelmatig exclusieve welkomstacties met <strong class="tw-font-semibold tw-text-gray-900">25% extra korting</strong> bovenop de al gereduceerde prijzen. Studenten kunnen profiteren van een permanente <strong class="tw-font-semibold tw-text-gray-900">studentenkorting van 20%</strong> na verificatie van hun studentenstatus. Seizoensgebonden acties en flash sales kunnen oplopen tot <strong class="tw-font-semibold tw-text-gray-900">30% extra korting</strong> op geselecteerde items. Tijdens speciale evenementen zoals Black Friday biedt Otrium vaak <strong class="tw-font-semibold tw-text-gray-900">15% tot 20%</strong> extra korting bovenop de al gereduceerde outlet prijzen. Voor trouwe klanten zijn er exclusieve memberdeals met kortingen van <strong class="tw-font-semibold tw-text-gray-900">10% tot 15%</strong> op nieuwe collecties. Daarnaast biedt Otrium regelmatig <strong class="tw-font-semibold tw-text-gray-900">gratis verzending</strong> acties en <strong class="tw-font-semibold tw-text-gray-900">5% cashback</strong> via bepaalde partners.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium hanteert een uniek kortingsmodel waarbij producten al standaard 30% tot 75% korting hebben ten opzichte van de reguliere winkelprijs. Extra kortingscodes zijn daarom beperkt beschikbaar, meestal alleen voor nieuwe klanten (10% tot 15% korting) of tijdens speciale campagnes. Studenten kunnen via UNiDAYS studentenkorting van 10% krijgen bovenop de al gereduceerde prijzen. De meeste besparingen behaalt je echter door de outlet-structuur zelf, waarbij designermerken hun overstocks tegen fors gereduceerde prijzen verkopen. Gratis verzending is mogelijk vanaf €75 bestelling, anders betaal je €4,95 verzendkosten.</p>
 </section>
 
 <!-- == UNIEKE VOORDELEN == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Voordelen van winkelen bij Otrium</h2>
 <ul class="tw-space-y-2 tw-text-gray-700">
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Authentieke designermerken</strong> tegen outlet prijzen met garantie van echtheid</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Kortingen tot 75%</strong> op originele verkoopprijzen van luxe merkkleding</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Gratis verzending</strong> binnen Europa vanaf €50 bestellingswaarde</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">14 dagen retourrecht</strong> met gratis retournering voor gemakkelijke uitwisseling</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Exclusieve outlet collecties</strong> die niet verkrijgbaar zijn in reguliere winkels</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Dagelijkse nieuwe toevoegingen</strong> van items van topmerken en designers</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Persoonlijke stylingdienst</strong> met advies op maat van stylisten</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Duurzaam winkelen</strong> door circulaire mode en het voorkomen van verspilling</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">VIP toegang</strong> tot private sales en early access tot nieuwe collecties</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Veilige betaling</strong> met diverse opties zoals iDEAL, PayPal en creditcard</span>
-</li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Authentieke designermerken</strong> tegen outlet prijzen met kortingen tot 75% op merken zoals Hugo Boss, Tommy Hilfiger en Calvin Klein</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Gratis verzending</strong> vanaf €75 besteding, anders €4,95 verzendkosten binnen Nederland</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">30 dagen retourgarantie</strong> met gratis retourneren via PostNL pakketpunt</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Snelle levering</strong> binnen 1-3 werkdagen in Nederland en België</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Nieuwsbrief voordelen</strong> met exclusieve kortingscodes en early access tot nieuwe collecties</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Seizoenssales</strong> met extra kortingen tijdens end-of-season clearance tot 80% korting</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Premium klantenservice</strong> met chat support en Nederlandse klantenservice</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Duurzame mode</strong> door het geven van een tweede leven aan designerkleding</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Mobiele app</strong> met push notificaties voor flash sales en exclusieve acties</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Veilige betaling</strong> via iDEAL, creditcard, PayPal en Klarna</span></li>
 </ul>
 </section>
 
 <!-- == BODYTEKST == -->
 <section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Otrium kortingscode: bespaar op designer mode</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Een <strong class="tw-font-semibold tw-text-gray-900">Otrium kortingscode</strong> is jouw toegangspoort tot nog meer voordeel op al gereduceerde designer mode. Deze exclusieve actiecode geeft je extra korting bovenop de outlet prijzen die Otrium al hanteert. Met een <strong class="tw-font-semibold tw-text-gray-900">kortingscode Otrium</strong> kun je gemakkelijk 10% tot 30% extra besparen op topmerken zoals Tommy Hilfiger, Calvin Klein en Scotch & Soda. Het platform werkt regelmatig samen met influencers die een speciale <strong class="tw-font-semibold tw-text-gray-900">influencer kortingscode</strong> aanbieden aan hun volgers. Deze codes zijn vaak beperkt geldig en bieden exclusieve voordelen die niet beschikbaar zijn voor het algemene publiek.</p>
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Otrium kortingscode: bespaar op designer outlet mode</h2>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Een werkende Otrium kortingscode kan je nog meer besparing opleveren bovenop de al sterk gereduceerde outlet prijzen. Hoewel Otrium niet frequent actiecode campagnes voert vanwege hun outlet-concept, zijn er wel regelmatig exclusieve kortingscodes beschikbaar voor nieuwe klanten en nieuwsbrief abonnees. De meeste influencer kortingscodes bieden 10% tot 15% extra korting, terwijl studentenkorting via UNiDAYS verificatie een vaste 10% korting geeft. Tijdens speciale momenten zoals Black Friday, de zomersale of winter clearance kan je zelfs vouchers vinden die 20% tot 25% extra korting geven op de al gereduceerde prijzen.</p>
 
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Voor nieuwe klanten biedt Otrium vaak een welkomstvoordeel via een nieuwsbrief kortingscode. Door je aan te melden voor hun nieuwsbrief ontvang je niet alleen de nieuwste kortingscodes, maar ook <strong class="tw-font-semibold tw-text-gray-900">gratis verzending</strong> op je eerste bestelling. Studenten kunnen profiteren van een permanente <strong class="tw-font-semibold tw-text-gray-900">studentenkorting</strong> na verificatie van hun onderwijsinstelling. Deze student korting is combineerbaar met seizoensacties, waardoor je maximaal voordeel haalt uit je aankoop. Veel <strong class="tw-font-semibold tw-text-gray-900">Otrium korting influencer</strong> codes worden gedeeld tijdens fashion weeks en speciale events, dus houd social media goed in de gaten voor de nieuwste kortingscodes.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Het platform werkt samen met topmerken zoals Hugo Boss, Tommy Hilfiger, Calvin Klein, Karl Lagerfeld, Ted Baker, Gant, Scotch & Soda en vele andere premium labels. Door hun unieke business model kunnen ze authentieke designerstukken aanbieden tegen prijzen die 30% tot 75% lager liggen dan in reguliere winkels. Een Otrium coupon wordt het meest effectief ingezet tijdens hun seizoensgebonden clearance sales, wanneer je maximaal kunt profiteren van gestapelde kortingen op al gereduceerde designer items.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Het unieke assortiment van Otrium</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium onderscheidt zich door hun <strong class="tw-font-semibold tw-text-gray-900">exclusieve partnerships</strong> met meer dan 400 luxe modemerken wereldwijd. Het assortiment bestaat uit end-of-season collecties, overstockitems en limited edition pieces die je nergens anders vindt. Van casual streetwear tot business kleding en avondgarderobe, elke aanbieding op het platform komt rechtstreeks van de merken zelf. Dit garandeert niet alleen de authenticiteit, maar ook de kwaliteit van elk item. Met een werkende kortingscode kun je deze premium items tegen nog aantrekkelijkere prijzen bemachtigen.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Premium designer collecties tegen outlet prijzen</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium's assortiment omvat meer dan 400 internationale modemerken verdeeld over dames-, heren- en kindermode. Populaire categorieën zijn zakelijke kleding van Hugo Boss en Tommy Hilfiger, casualwear van Calvin Klein en Gant, trendy items van Karl Lagerfeld en Ted Baker, en sportieve luxe van Armani Exchange. Het platform specialiseert zich in end-of-season collecties, sample sales en overstock van vorige seizoenen, waardoor je toegang krijgt tot designer pieces die normaal onbetaalbaar zouden zijn.</p>
 
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Het voordeel van Otrium ligt in hun <strong class="tw-font-semibold tw-text-gray-900">dagelijks vernieuwende voorraad</strong>. Nieuwe items worden continu toegevoegd, wat betekent dat er altijd wel een leuke aanbieding te vinden is. Of je nu op zoek bent naar een nieuwe winterjas van een topdesigner of casual weekend kleding, de kans is groot dat je het tegen outlet prijzen kunt vinden. Met de juiste actiecode of voucher kun je deze voordelen nog verder uitbreiden.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Naast kleding biedt Otrium ook designer accessoires zoals tassen van Michael Kors, schoenen van Clarks en UGG, horloges van Armani en sieraden van verschiedene premium merken. De outlet structuur zorgt ervoor dat je designerstukken kunt kopen tegen prijzen die vaak lager zijn dan reguliere high street merken, waardoor luxe mode toegankelijk wordt voor een breder publiek.</p>
 
 <h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Wanneer zijn de beste momenten om te shoppen bij Otrium?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De beste momenten om te winkelen bij Otrium zijn tijdens <strong class="tw-font-semibold tw-text-gray-900">seizoenswisselingen</strong> wanneer nieuwe voorraad wordt toegevoegd aan het platform. Black Friday en Cyber Monday zijn traditioneel de beste dagen voor extra kortingen, maar Otrium organiseert ook regelmatig flash sales en member-only events. Abonneren op hun nieuwsbrief zorgt ervoor dat je als eerste op de hoogte bent van nieuwe <strong class="tw-font-semibold tw-text-gray-900">exclusieve kortingscodes</strong> en aankomende sales. De nieuwste kortingscodes worden vaak 's ochtends vroeg geactiveerd, dus vroeg erbij zijn loont!</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De beste besparingen bij Otrium behaalt je tijdens de end-of-season clearance sales in januari en juli, wanneer extra kortingen worden gegeven bovenop de al gereduceerde outlet prijzen. Black Friday en Cyber Monday bieden meestal de hoogste kortingspercentages met actiecode campagnes tot 25% extra korting. Flash sales worden aangekondigd via de nieuwsbrief en app notificaties, vaak met kortingen tot 80% op geselecteerde items. Voor de nieuwste aanbieding en exclusieve kortingscodes kun je het beste de nieuwsbrief inschrijven en de Otrium app downloaden.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Waarom Otrium kopen via diski.nl?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Diski.nl verzamelt altijd de <strong class="tw-font-semibold tw-text-gray-900">nieuwste en werkende Otrium kortingscodes</strong> op één plek. Onze redactie controleert dagelijks alle codes op geldigheid en actualiteit, zodat je nooit een verlopen coupon tegenkomt. We werken nauw samen met Otrium en andere retailers om ervoor te zorgen dat onze bezoekers altijd toegang hebben tot de beste deals en exclusieve aanbiedingen. Mis geen enkele korting meer en bespaar systematisch op je designer mode aankopen door diski.nl als jouw go-to bron voor kortingscodes te gebruiken!</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Waarom Otrium korting zoeken via diski.nl?</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Via diski.nl vind je altijd de meest actuele en werkende Otrium kortingscodes, gecontroleerd en geverifieerd door ons team. We updaten dagelijks onze database met nieuwe coupon codes, exclusieve influencer kortingscode acties en seizoensgebonden vouchers. Bespaar tijd door niet zelf naar codes te zoeken en profiteer van onze samenwerking met Otrium voor exclusieve deals die je nergens anders vindt. Combineer slimme shopping met onze kortingscodes voor maximale besparing op designer outlet mode.</p>
 </section>
 
 <!-- == HOE GEBRUIK JE EEN KORTINGSCODE == -->
-<section class="tw-mb-10">
+<section id="kortingscode-toepassen" class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Hoe gebruik je een Otrium kortingscode?</h2>
 <ol class="tw-space-y-4 tw-text-gray-700">
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">1</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 1: Kopieer de kortingscode</strong><br><span class="tw-text-gray-600">Klik op de gewenste kortingscode op diski.nl en kopieer deze naar je klembord.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">2</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 2: Ga naar Otrium.com</strong><br><span class="tw-text-gray-600">Open een nieuw tabblad en navigeer naar de officiële Otrium website.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">3</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 3: Vul je winkelwagen</strong><br><span class="tw-text-gray-600">Voeg je gewenste items toe aan het winkelmandje en ga naar de checkout.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">4</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 4: Vind het kortingscode veld</strong><br><span class="tw-text-gray-600">Zoek naar het veld "Kortingscode", "Promocode" of "Voucher code" tijdens het afrekenen.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">5</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 5: Plak en activeer</strong><br><span class="tw-text-gray-600">Plak de gekopieerde code in het veld en klik op "Toepassen" of "Activeren".</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">6</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 6: Controleer je korting</strong><br><span class="tw-text-gray-600">Verifieer dat de korting correct is toegepast voordat je de betaling voltooit.</span></div>
-</li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">1</span><div><strong class="tw-font-semibold tw-text-gray-900">Kopieer je kortingscode</strong><br><span class="tw-text-gray-600">Klik op "Code kopiëren" naast de gewenste Otrium kortingscode in onze tabel hierboven.</span></div></li>
+
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">2</span><div><strong class="tw-font-semibold tw-text-gray-900">Bezoek Otrium.nl</strong><br><span class="tw-text-gray-600">Ga naar de Otrium website en shop je favoriete designer items tegen outlet prijzen.</span></div></li>
+
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">3</span><div><strong class="tw-font-semibold tw-text-gray-900">Voeg items toe aan je winkelmand</strong><br><span class="tw-text-gray-600">Selecteer je maat, kleur en klik op "In winkelmand" om producten toe te voegen.</span></div></li>
+
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">4</span><div><strong class="tw-font-semibold tw-text-gray-900">Ga naar de checkout</strong><br><span class="tw-text-gray-600">Klik op het winkelmandje icoon en vervolgens op "Naar checkout" om door te gaan naar de betaalpagina.</span></div></li>
+
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">5</span><div><strong class="tw-font-semibold tw-text-gray-900">Vul je kortingscode in</strong><br><span class="tw-text-gray-600">Zoek naar het veld "Promotiecode invoeren" en plak je gekopieerde code. Klik op "Toepassen" om de korting te activeren.</span></div></li>
+
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">6</span><div><strong class="tw-font-semibold tw-text-gray-900">Voltooi je bestelling</strong><br><span class="tw-text-gray-600">Controleer of de korting is toegepast in je orderoverzicht en klik op "Bestelling plaatsen" om af te rekenen.</span></div></li>
 </ol>
-<p class="tw-mt-4 tw-text-gray-600 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-px-4 tw-py-3 tw-text-sm">
-<strong class="tw-font-semibold">Tip:</strong> Sommige kortingscodes zijn alleen geldig voor nieuwe klanten of hebben een minimale bestellingswaarde. Controleer altijd de voorwaarden voordat je een code gebruikt.
-</p>
+<p class="tw-mt-4 tw-text-gray-600 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-px-4 tw-py-3 tw-text-sm"><strong class="tw-font-semibold">Tip:</strong> Sommige Otrium kortingscodes hebben een minimale besteding van €50 of €75. Controleer altijd de voorwaarden voordat je de code probeert te gebruiken.</p>
 </section>
 
 <!-- == TIPS VOOR EXTRA KORTING == -->
-<section class="tw-mb-10">
+<section id="tips-extra-korting" class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Tips om extra te besparen bij Otrium</h2>
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 1: Volg influencers op social media</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Veel fashion influencers krijgen exclusieve kortingscodes van Otrium die ze delen met hun volgers. Door je favoriete mode-influencers te volgen op Instagram en TikTok, krijg je als eerste toegang tot deze speciale <strong class="tw-font-semibold tw-text-gray-900">influencer codes</strong> die vaak hoger uitvallen dan reguliere aanbiedingen.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 2: Meld je aan voor de nieuwsbrief</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Nieuwe abonnees van de Otrium nieuwsbrief ontvangen vaak een <strong class="tw-font-semibold tw-text-gray-900">welkomstkorting van 15-25%</strong> op hun eerste bestelling. Daarnaast krijg je exclusieve toegang tot private sales en word je als eerste geïnformeerd over nieuwe kortingscodes en flash sales.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 1: Schrijf je in voor de nieuwsbrief</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Als nieuwe nieuwsbrief abonnee ontvang je vaak een exclusieve kortingscode van 10% tot 15% die je kunt gebruiken op je eerste bestelling. Daarnaast krijg je early access tot flash sales, seizoensgebonden aanbieding campagnes en word je als eerste op de hoogte gebracht van nieuwe merktoevoegingen. De nieuwsbrief bevat ook styling tips en outfit inspiratie van de beschikbare designer pieces.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 3: Combineer outlet prijzen met kortingscodes</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium's grootste voordeel is dat je kortingscodes vaak kunt combineren met hun al gereduceerde outlet prijzen. Dit betekent dat je <strong class="tw-font-semibold tw-text-gray-900">dubbel kunt besparen</strong> - eerst door de outlet korting en vervolgens door de extra kortingscode. Let op items die al 50-70% korting hebben en pas daar een extra code op toe.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 2: Gebruik studentenkorting via UNiDAYS</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Studenten kunnen zich gratis registreren bij UNiDAYS om toegang te krijgen tot 10% studentenkorting bij Otrium. Deze voucher is te combineren met sale items en outlet prijzen, waardoor je maximale besparing behaalt op designer mode. Na verificatie van je studentenstatus via UNiDAYS krijg je een persoonlijke actiecode die je kunt gebruiken bij elke bestelling.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 4: Shop tijdens flash sales en speciale events</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium organiseert regelmatig 24-uur flash sales waarbij geselecteerde items <strong class="tw-font-semibold tw-text-gray-900">extra korting</strong> krijgen. Deze events worden meestal aangekondigd via hun app en nieuwsbrief. Daarnaast zijn er member-only events waar VIP klanten toegang krijgen tot exclusieve kortingen en early access tot nieuwe collecties.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 3: Download de Otrium app voor exclusieve deals</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Via de mobiele Otrium app krijg je push notificaties voor flash sales, last-minute deals en app-exclusieve kortingscodes. De app biedt ook een handige wishlist functie waarmee je een alert krijgt wanneer items in je verlanglijstje in de aanbieding gaan. App-gebruikers krijgen soms toegang tot pre-sale events en hebben vaak eerder toegang tot nieuwe collecties dan website bezoekers.</p>
+
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 4: Profiteer van seizoensgebonden clearance sales</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De grootste besparingen behaalt je tijdens Otrium's end-of-season clearance sales in januari (winterkleding) en juli (zomerkleding). Tijdens deze periodes worden extra kortingen van 20% tot 30% gegeven bovenop de al gereduceerde outlet prijzen, waardoor je kortingen tot 80% kunt behalen op authentieke designerstukken. Combineer deze momenten met een coupon voor maximale besparing.</p>
 </section>
 
 <!-- == 10 FEITEN == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">10 feiten over winkelen bij Otrium</h2>
 <ol class="tw-space-y-2 tw-text-gray-700">
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">1.</span>
-  <span>Otrium heeft partnerships met meer dan <strong class="tw-font-semibold tw-text-gray-900">400 luxe modemerken</strong> wereldwijd</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">2.</span>
-  <span>Het platform biedt structureel <strong class="tw-font-semibold tw-text-gray-900">30% tot 75% korting</strong> op originele verkoopprijzen</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">3.</span>
-  <span>Otrium levert naar <strong class="tw-font-semibold tw-text-gray-900">12 Europese landen</strong> met gratis verzending vanaf €50</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">4.</span>
-  <span>Er worden dagelijks <strong class="tw-font-semibold tw-text-gray-900">duizenden nieuwe items</strong> toegevoegd aan het platform</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">5.</span>
-  <span>Het retourpercentage ligt onder de <strong class="tw-font-semibold tw-text-gray-900">15%</strong> dankzij accurate productbeschrijvingen</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">6.</span>
-  <span>Otrium heeft al meer dan <strong class="tw-font-semibold tw-text-gray-900">50 miljoen euro</strong> aan investeringen ontvangen</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">7.</span>
-  <span>De gemiddelde besparing per klant bedraagt <strong class="tw-font-semibold tw-text-gray-900">€180 per jaar</strong> ten opzichte van reguliere prijzen</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">8.</span>
-  <span>Het platform voorkomt jaarlijks dat <strong class="tw-font-semibold tw-text-gray-900">miljoenen kledingstukken</strong> worden weggegooid</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">9.</span>
-  <span>Otrium heeft kantoren in <strong class="tw-font-semibold tw-text-gray-900">Amsterdam en Barcelona</strong> met meer dan 200 medewerkers</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">10.</span>
-  <span>De mobiele app heeft een rating van <strong class="tw-font-semibold tw-text-gray-900">4.6 sterren</strong> in de App Store</span>
-</li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">1.</span><span>Otrium werd <strong class="tw-font-semibold tw-text-gray-900">opgericht in 2016</strong> in Amsterdam door Milan Daniels en Max Klijnstra</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">2.</span><span>Het platform werkt samen met meer dan <strong class="tw-font-semibold tw-text-gray-900">400 premium modemerken</strong> voor outlet verkoop</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">3.</span><span>Otrium heeft meer dan <strong class="tw-font-semibold tw-text-gray-900">2 miljoen geregistreerde klanten</strong> in Europa</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">4.</span><span>Verzending kost <strong class="tw-font-semibold tw-text-gray-900">€4,95 maar is gratis vanaf €75</strong> besteding</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">5.</span><span>Je hebt <strong class="tw-font-semibold tw-text-gray-900">30 dagen retourrecht</strong> met gratis retourneren via PostNL</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">6.</span><span>Het platform is actief in <strong class="tw-font-semibold tw-text-gray-900">12 Europese landen</strong> inclusief Nederland en België</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">7.</span><span>Kortingen gaan <strong class="tw-font-semibold tw-text-gray-900">van 30% tot 75%</strong> op reguliere designerprijzen</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">8.</span><span>Bestelde items worden geleverd binnen <strong class="tw-font-semibold tw-text-gray-900">1-3 werkdagen</strong> in Nederland</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">9.</span><span>Otrium heeft in 2021 meer dan <strong class="tw-font-semibold tw-text-gray-900">€50 miljoen funding</strong> opgehaald voor internationale expansie</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">10.</span><span>Het platform bespaart jaarlijks meer dan <strong class="tw-font-semibold tw-text-gray-900">1 miljoen kledingstukken</strong> van vernietiging</span></li>
 </ol>
 </section>
 
 <!-- == VERGELIJKBARE WINKELS == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Vergelijkbare winkels als Otrium</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed">Als je fan bent van outlet shopping en designer mode tegen gereduceerde prijzen, dan zijn er enkele vergelijkbare platforms waar je ook kunt winkelen. <strong class="tw-font-semibold tw-text-gray-900">The Outnet</strong> is Net-A-Porter's outlet divisie en biedt luxury fashion tegen vergelijkbare kortingen. <strong class="tw-font-semibold tw-text-gray-900">Yoox</strong> specialiseert zich ook in end-of-season mode van topmerken en heeft een soortgelijk business model als Otrium. Voor Nederlandse consumenten is <strong class="tw-font-semibold tw-text-gray-900">Zalando Lounge</strong> een populair alternatief met private sales en member-only deals. <strong class="tw-font-semibold tw-text-gray-900">Vente-Exclusive</strong> biedt eveneens flash sales op designer merken, terwijl <strong class="tw-font-semibold tw-text-gray-900">BrandAlley</strong> zich richt op exclusieve mode events met beperkte looptijd.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed">Voor designer outlet shopping zijn er verschillende alternatieven voor Otrium. <strong class="tw-font-semibold tw-text-gray-900">The Outnet</strong> is Net-a-Porter's outlet platform met vergelijkbare kortingen op luxemerken, <strong class="tw-font-semibold tw-text-gray-900">Vestiaire Collective</strong> biedt pre-owned designerstukken tegen gereduceerde prijzen, <strong class="tw-font-semibold tw-text-gray-900">Yoox</strong> specialiseert zich in end-of-season designer collecties, <strong class="tw-font-semibold tw-text-gray-900">Vente-Privee</strong> organiseert flash sales voor premium merken, en <strong class="tw-font-semibold tw-text-gray-900">BrandAlley</strong> biedt dagelijkse designer deals. Deze platforms delen het concept van gereduceerde designermode, maar Otrium onderscheidt zich door de focus op end-of-season stock direct van merken zelf.</p>
 </section>
 
 <!-- == NIEUWS == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Nieuws en ontwikkelingen bij Otrium</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium blijft innoveren in de circulaire mode-industrie en heeft recent hun <strong class="tw-font-semibold tw-text-gray-900">AI-powered recommendatie systeem</strong> verder ontwikkeld om klanten nog beter te kunnen bedienen. Het platform heeft nieuwe partnerships aangekondigd met emerging designers en sustainable fashion brands, waardoor het assortiment nog diverser wordt. Deze uitbreiding betekent ook meer mogelijkheden voor kortingscodes en speciale aanbiedingen op nieuwe merkcategorieën.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Otrium heeft recent hun AI-gedreven size recommendation tool gelanceerd om retours te verminderen en de customer experience te verbeteren. Het platform werkt samen met merken om accurate maattabellen en pasinformatie te verstrekken, waardoor klanten beter geïnformeerde aankoopbeslissingen kunnen maken. Daarnaast heeft Otrium hun duurzaamheidsstrategie uitgebreid door partnerships aan te gaan met circulaire mode initiatieven en has been certified as a B-Corp for their social and environmental impact.</p>
 
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De internationale expansie van Otrium zet door met plannen om uit te breiden naar <strong class="tw-font-semibold tw-text-gray-900">nieuwe markten buiten Europa</strong>. Dit betekent dat Nederlandse klanten toegang blijven houden tot de beste deals en exclusieve kortingscodes, terwijl het platform zijn buying power verder vergroot. Recent is ook de samenwerking met verschillende influencer netwerken intensiever geworden, wat resulteert in meer exclusieve <strong class="tw-font-semibold tw-text-gray-900">influencer kortingscodes</strong> voor Nederlandse fashionista's.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">In 2024 kondigde Otrium een belangrijke uitbreiding aan van hun private label programma, waarbij ze exclusieve collecties ontwikkelen in samenwerking met gevestigde designers. Deze items worden uitsluitend via Otrium verkocht tegen outlet-vriendelijke prijzen. Het bedrijf heeft ook geïnvesteerd in verbeterde logistiek en fulfillment centers om leveringstijden verder te verkorten en hun service in Europa te optimaliseren, wat resulteert in een nog betere klantervaring.</p>
 </section>
 
 <!-- == FAQ == -->
-<section class="tw-mb-10">
+<section id="faq" class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-6">Veelgestelde vragen over de Otrium kortingscode</h2>
 <div class="tw-space-y-6">
 <div>
-<h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Kan ik meerdere kortingscodes tegelijk gebruiken bij Otrium?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed">Nee, Otrium staat slechts <strong class="tw-font-semibold tw-text-gray-900">één kortingscode per bestelling</strong> toe. Je kunt echter wel profiteren van combinaties zoals een kortingscode op al gereduceerde outlet prijzen, waardoor je alsnog maximaal bespaart.</p>
+<h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoe vaak geeft Otrium nieuwe kortingscodes uit?</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed">Otrium geeft niet wekelijks kortingscodes uit omdat hun business model al gebaseerd is op outlet prijzen. Nieuwe kortingscodes verschijnen meestal maandelijks voor specifieke doelgroepen zoals nieuwe klanten of studenten, en tijdens belangrijke shopping momenten zoals Black Friday, end-of-season sales of merkspecifieke campagnes. Voor de meest actuele codes kun je het beste de nieuwsbrief inschrijven.</p>
 </div>
+
+<div>
+<h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Kan ik meerdere kortingscodes combineren bij Otrium?</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed">Nee, bij Otrium kun je slechts één kortingscode per bestelling gebruiken. Je kunt niet meerdere promocodes stapelen, maar je kunt wel een kortingscode gebruiken bovenop items die al in de sale staan. Studentenkorting via UNiDAYS kan meestal wel worden gecombineerd met sale prijzen voor maximale besparing.</p>
+</div>
+
 <div>
 <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Waarom werkt mijn Otrium kortingscode niet?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed">Dit kan verschillende oorzaken hebben: de code is <strong class="tw-font-semibold tw-text-gray-900">verlopen, alleen geldig voor nieuwe klanten</strong>, heeft een minimale bestelfwaarde, of is niet toepasbaar op sale items. Controleer altijd de voorwaarden van de specifieke kortingscode.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed">De meest voorkomende redenen zijn: de code is verlopen, je hebt niet aan de minimale besteding voldaan (vaak €50 of €75), de code geldt alleen voor nieuwe klanten, of je probeert de code te gebruiken op items die uitgesloten zijn van kortingsacties. Controleer altijd de voorwaarden en probeer de code opnieuw in te voeren zonder spaties.</p>
 </div>
+
 <div>
-<h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoe krijg ik een studentenkorting bij Otrium?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed">Voor een <strong class="tw-font-semibold tw-text-gray-900">studentenkorting moet je je studentenstatus verifiëren</strong> via SheerID of UNiDAYS. Na verificatie krijg je toegang tot exclusieve student codes met 15-20% korting op je aankopen.</p>
+<h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Heeft Otrium een loyaliteitsprogramma met extra kortingen?</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed">Otrium heeft geen traditioneel loyaliteitsprogramma, maar biedt wel voordelen voor terugkerende klanten via de nieuwsbrief en app. Frequent shoppers krijgen early access tot sales, exclusieve kortingscodes en persoonlijke styling recommendations. De focus ligt meer op outlet prijzen dan op loyalty points systemen.</p>
 </div>
+
 <div>
-<h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Zijn Otrium kortingscodes ook geldig op alle merken?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed">De meeste algemene kortingscodes zijn geldig op het <strong class="tw-font-semibold tw-text-gray-900">gehele assortiment</strong>, maar sommige merken kunnen uitgesloten zijn van bepaalde acties. Luxury merken en nieuwe collecties zijn soms uitgesloten van kortingscode acties.</p>
-</div>
-<div>
-<h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoe vaak brengt Otrium nieuwe kortingscodes uit?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed">Otrium brengt <strong class="tw-font-semibold tw-text-gray-900">wekelijks nieuwe kortingscodes</strong> uit, vooral rond seizoenswisselingen en speciale events. Abonneren op hun nieuwsbrief zorgt ervoor dat je als eerste op de hoogte bent van nieuwe codes en exclusieve aanbiedingen.</p>
+<h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Welke betalingsmethoden accepteert Otrium voor kortingscode orders?</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed">Otrium accepteert iDEAL, alle major creditcards (Visa, Mastercard, American Express), PayPal, Apple Pay, Google Pay en Klarna (betaal in termijnen). Alle betalingsmethoden werken met kortingscodes en de korting wordt automatisch verrekend in het totaalbedrag voordat je de betaling voltooit.</p>
 </div>
 </div>
 </section>
 
 <!-- == BLACK FRIDAY == -->
-<section class="tw-mb-10 tw-bg-gray-900 tw-rounded-xl tw-p-6">
+<section id="black-friday" class="tw-mb-10 tw-bg-gray-900 tw-rounded-xl tw-p-6">
 <h2 class="tw-text-2xl tw-font-bold tw-text-orange-400 tw-mb-2">Otrium Black Friday 2026 — de beste deals en kortingscodes</h2>
 <p class="tw-text-gray-400 tw-text-sm tw-mb-6">Black Friday 2026: vrijdag 27 november · Cyber Monday 2026: maandag 30 november</p>
 
-<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-4">De <strong class="tw-font-semibold tw-text-orange-300">Black Friday Otrium</strong> sale behoort tot de meest spectaculaire fashion events van het jaar, waarbij het platform hun al gereduceerde outlet prijzen nog verder verlaagt. Tijdens <strong class="tw-font-semibold tw-text-orange-300">Otrium Black Friday 2026</strong> op vrijdag 27 november kun je verwachten dat er exclusieve <strong class="tw-font-semibold tw-text-orange-300">Black Friday kortingscode Otrium</strong> acties worden gelanceerd met kortingen tot 40% extra bovenop de outlet prijzen. De <strong class="tw-font-semibold tw-text-orange-300">Black Friday deals Otrium</strong> beginnen traditioneel al tijdens de Black Friday week met pre-sales en early access voor VIP leden.</p>
+<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-4">Black Friday 2026 wordt het hoogtepunt van het jaar voor Otrium shoppers. Verwacht exclusieve kortingscodes tot 25% bovenop de al gereduceerde outlet prijzen, waardoor je kortingen tot 80% kunt behalen op authentieke designer merken. Otrium introduceert traditiegetrouw hun grootste aanbieding van het jaar met flash sales op premium merken zoals Hugo Boss, Tommy Hilfiger en Calvin Klein. Early access voor nieuwsbrief abonnees start meestal op donderdag 26 november, gevolgd door de hoofdevent op Black Friday zelf.</p>
 
-<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-4">Naast de reguliere <strong class="tw-font-semibold tw-text-orange-300">Black Friday korting Otrium</strong> acties, organiseert het platform ook een uitgebreide <strong class="tw-font-semibold tw-text-orange-300">Black Friday sale</strong> tijdens het hele Black Friday weekend. <strong class="tw-font-semibold tw-text-orange-300">Cyber Monday Otrium</strong> op maandag 30 november biedt vaak nog meer digitale exclusieve deals en <strong class="tw-font-semibold tw-text-orange-300">Cyber Monday deals</strong> specifiek gericht op online shoppers. De <strong class="tw-font-semibold tw-text-orange-300">Beste Black Friday deals</strong> zijn meestal te vinden op premium merken die normaal gesproken uitgesloten zijn van kortingscode acties. Via <strong class="tw-font-semibold tw-text-orange-300">Black Friday early access</strong> kunnen nieuwsbrief abonnees al vanaf donderdag profiteren van de beste <strong class="tw-font-semibold tw-text-orange-300">Pre Black Friday deals</strong> voordat deze beschikbaar komen voor het algemene publiek.</p>
+<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-6">Influencer kortingscode campagnes zullen waarschijnlijk 20% extra korting bieden, terwijl nieuwe klanten kunnen rekenen op een exclusieve kortingscode van 25% voor hun eerste bestelling. Gratis verzending wordt tijdelijk verlaagd naar bestellingen vanaf €50 in plaats van de gebruikelijke €75. Cyber Monday 2026 brengt traditioneel de focus op accessoires en schoenen met specifieke vouchers voor deze categorieën. Download de Otrium app voor push notificaties van flash deals die slechts enkele uren beschikbaar zijn.</p>
 
 <h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-3 tw-mt-6">Verwachte Otrium Black Friday kortingen 2026</h3>
 <div class="tw-overflow-x-auto tw-mb-6">
@@ -236,40 +175,40 @@ export const otriumSeoContent = `
 <tr class="tw-bg-gray-800 tw-text-orange-400">
 <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Korting</th>
 <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Categorie</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Type</th>
+<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Type deal</th>
 <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Verwacht</th>
 </tr>
 </thead>
 <tbody>
-<tr class="tw-bg-gray-800 tw-text-gray-100 hover:tw-bg-gray-700">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">40% extra</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Designer jassen & coats</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Black Friday kortingscode</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Vrijdag 27 november</td>
+<tr class="tw-bg-gray-800">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">25% extra</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Designer kleding</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Nieuwe klanten</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Zeer waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-900 tw-text-gray-100 hover:tw-bg-gray-800">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">35% extra</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Luxury handtassen</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Early access deal</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Donderdag 26 november</td>
+<tr class="tw-bg-gray-900">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">20% extra</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Alle items</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Algemene kortingscode</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-800 tw-text-gray-100 hover:tw-bg-gray-700">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">30% extra</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Premium sneakers</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Cyber Monday exclusief</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Maandag 30 november</td>
+<tr class="tw-bg-gray-800">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">30% extra</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Accessoires</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Flash sale</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Mogelijk</td>
 </tr>
-<tr class="tw-bg-gray-900 tw-text-gray-100 hover:tw-bg-gray-800">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">25% extra</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Gehele winter collectie</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Black Friday weekend</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">27-29 november</td>
+<tr class="tw-bg-gray-900">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">Gratis verzending</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Alle bestellingen</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Vanaf €50 ipv €75</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Zeer waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-800 tw-text-gray-100 hover:tw-bg-gray-700">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">Gratis verzending</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Alle bestellingen</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Geen minimum</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Hele Black Friday week</td>
+<tr class="tw-bg-gray-800">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">15% extra</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Premium merken</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Hugo Boss, Tommy Hilfiger</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Waarschijnlijk</td>
 </tr>
 </tbody>
 </table>
@@ -277,49 +216,40 @@ export const otriumSeoContent = `
 
 <h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-3">Tips voor de beste Otrium Black Friday deals</h3>
 <ul class="tw-space-y-2 tw-mb-6">
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Meld je aan voor early access:</strong> VIP leden krijgen 24 uur eerder toegang tot de beste Black Friday kortingscodes</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Download de Otrium app:</strong> App-exclusieve deals en push notificaties voor flash sales tijdens Black Friday</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Maak een wishlist:</strong> Voeg gewenste items toe voordat Black Friday begint om sneller te kunnen afrekenen</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Combineer met outlet korting:</strong> Black Friday codes werken bovenop al gereduceerde outlet prijzen voor maximale besparing</span>
-</li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Early access:</strong> Schrijf je in voor de nieuwsbrief om op donderdag 26 november vroege toegang te krijgen tot Black Friday deals</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">App voordelen:</strong> Download de Otrium app voor exclusieve flash sale notificaties en app-only kortingscodes</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Wishlist strategie:</strong> Voeg gewenste items toe aan je wishlist om alerts te krijgen zodra ze in de Black Friday sale gaan</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Combineer kortingen:</strong> Gebruik studentenkorting of nieuwe klant vouchers bovenop Black Friday deals voor maximale besparing</span></li>
 </ul>
 
 <h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-4">Veelgestelde vragen — Otrium Black Friday</h3>
 <div class="tw-space-y-4">
 <div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wanneer start Otrium Black Friday 2026?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Otrium Black Friday 2026 start officieel op vrijdag 27 november, maar VIP leden en nieuwsbrief abonnees krijgen vaak al vanaf donderdag 26 november toegang tot early access deals. De Black Friday week loopt door tot en met Cyber Monday op 30 november.</p>
+<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wanneer starten de Otrium Black Friday deals precies?</h3>
+<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Early access voor nieuwsbrief abonnees start traditiegetrouw op donderdag 26 november om 19:00. De algemene Black Friday sale begint vrijdag 27 november om 00:00 en loopt door tot en met Cyber Monday 30 november 23:59.</p>
 </div>
+
 <div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Hoeveel korting geeft Otrium op Black Friday?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Tijdens Black Friday biedt Otrium extra kortingen van 15% tot 40% bovenop hun al gereduceerde outlet prijzen. Dit betekent dat je op sommige items tot 85% korting kunt krijgen ten opzichte van de originele retailprijs.</p>
+<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Zijn alle merken bij Otrium meegenomen in Black Friday kortingscodes?</h3>
+<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">De meeste merken doen mee aan Black Friday, maar sommige premium labels zoals Armani of zeer recent toegevoegde merken kunnen uitgesloten zijn van extra kortingsacties. Check altijd de voorwaarden van elke actiecode.</p>
 </div>
+
 <div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Heeft Otrium ook Cyber Monday kortingen?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Ja, Otrium organiseert ook uitgebreide Cyber Monday deals op maandag 30 november 2026. Deze zijn vaak gefocust op digitale exclusieve aanbiedingen en laatste kans deals van Black Friday weekend items.</p>
+<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Kan ik Black Friday items retourneren bij Otrium?</h3>
+<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Ja, het normale 30-dagen retourbeleid blijft van kracht tijdens Black Friday. Je kunt items gratis retourneren via PostNL pakketpunten, ook als je een kortingscode hebt gebruikt.</p>
 </div>
+
 <div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wat zijn de beste Otrium Black Friday deals?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">De beste deals zijn meestal te vinden op designer winterkleding, luxury handtassen en premium schoenen. Items die normaal gesproken uitgesloten zijn van kortingscode acties worden tijdens Black Friday vaak wel opgenomen in de sale.</p>
+<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Heeft Otrium aparte Cyber Monday deals na Black Friday?</h3>
+<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Cyber Monday bij Otrium focust traditioneel op accessoires, schoenen en tassen met specifieke vouchers voor deze categorieën. Vaak krijg je 20-30% extra korting bovenop de al gereduceerde accessoire prijzen.</p>
 </div>
+
 <div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Kan ik een Otrium kortingscode gebruiken tijdens Black Friday?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Ja, Otrium geeft tijdens Black Friday speciale kortingscodes uit die je kunt combineren met hun outlet prijzen. Let wel op dat je maar één kortingscode per bestelling kunt gebruiken, dus kies de code met het hoogste voordeel.</p>
+<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Werken influencer kortingscodes tijdens Otrium Black Friday?</h3>
+<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Sommige influencer codes blijven actief tijdens Black Friday, maar je kunt meestal maar één kortingscode per bestelling gebruiken. Vergelijk altijd welke code het meeste voordeel oplevert voordat je besluit.</p>
 </div>
 </div>
 </section>
-
     </div>
 </div>
 `;

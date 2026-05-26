@@ -1,232 +1,151 @@
 export const companyDouglasSeoContent = `
 <div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
     <div class="tw-prose tw-prose-lg tw-max-w-4xl tw-mx-auto tw-py-8">
-<!-- == KORTINGSOVERZICHT == -->
+<!-- == NAVIGATIE == -->
+<nav class="tw-mb-6 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-p-4">
+  <p class="tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">Korting bij Douglas</p>
+  <ul class="tw-space-y-1">
+    <li><a href="#kortingscode-toepassen" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Hoe gebruik je een Douglas kortingscode?</a></li>
+    <li><a href="#kortingspercentages" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Hoeveel korting geeft Douglas?</a></li>
+    <li><a href="#tips-extra-korting" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Tips voor extra korting bij Douglas</a></li>
+    <li><a href="#black-friday" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Douglas Black Friday 2026 deals</a></li>
+    <li><a href="#faq" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Veelgestelde vragen over Douglas</a></li>
+  </ul>
+</nav>
 
 <!-- == OVER HET MERK == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Over Douglas</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas is <strong class="tw-font-semibold tw-text-gray-900">Europa's leidende parfumerieketen</strong> met meer dan 2.400 winkels in 24 landen. Het Duitse bedrijf werd opgericht in 1821 en heeft zich ontwikkeld tot een premium beautyretailer met een uitgebreid assortiment van parfum, cosmetica, huidverzorging en accessoires. Douglas biedt zowel bekende merken als <strong class="tw-font-semibold tw-text-gray-900">exclusieve producten</strong> die je niet overal kunt vinden. Met hun focus op persoonlijke service en kwaliteit heeft Douglas zich gevestigd als <strong class="tw-font-semibold tw-text-gray-900">dé bestemming voor beauty-liefhebbers</strong>. In Nederland heeft Douglas meerdere filialen en een uitgebreide online winkel waar klanten kunnen profiteren van exclusieve kortingscodes en aanbiedingen. Het merk staat bekend om zijn <strong class="tw-font-semibold tw-text-gray-900">uitstekende klantenservice</strong> en brede productportfolio van zowel luxe als betaalbare beautyproducten.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas is sinds 1821 de grootste parfumerie van Europa en een toonaangevende retailer in premium beauty. Met meer dan 1.850 winkels in 19 landen en een uitgebreid online platform, biedt Douglas een zorgvuldig geselecteerd assortiment van meer dan 130.000 beautyproducten. Van exclusieve parfums van topmerken zoals Chanel, Dior en Tom Ford tot innovatieve huidverzorging van Estée Lauder, La Mer en SK-II. Douglas richt zich op beauty-liefhebbers die kwaliteit en service waarderen, met persoonlijk advies van gecertificeerde beauty consultants en toegang tot de nieuwste trends en limited edition collecties.</p>
 </section>
 
 <!-- == KORTINGSPERCENTAGES == -->
-<section class="tw-mb-10">
+<section id="kortingspercentages" class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Hoeveel korting geeft Douglas?</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas biedt regelmatig aantrekkelijke kortingen via verschillende kortingscodes en aanbiedingen. Nieuwe klanten kunnen vaak profiteren van een <strong class="tw-font-semibold tw-text-gray-900">15% korting</strong> op hun eerste bestelling met een exclusieve kortingscode. Voor studenten is er een permanente <strong class="tw-font-semibold tw-text-gray-900">25% studentenkorting</strong> beschikbaar op het gehele assortiment. Seizoensgebonden acties bieden vaak <strong class="tw-font-semibold tw-text-gray-900">20% korting</strong> op specifieke productcategorieën zoals parfum of make-up. Tijdens speciale verkoopevenementen kun je kortingen tot <strong class="tw-font-semibold tw-text-gray-900">30% korting</strong> verwachten op geselecteerde merken. Kleinere kortingscodes van <strong class="tw-font-semibold tw-text-gray-900">5% tot 10%</strong> zijn regelmatig beschikbaar voor abonnees van de nieuwsbrief. Daarnaast biedt Douglas frequent gratis verzending acties bij een minimale bestelling, wat extra voordeel oplevert. De meeste werkende kortingscodes variëren tussen de <strong class="tw-font-semibold tw-text-gray-900">10% en 25% korting</strong>, afhankelijk van het type aanbieding en de periode waarin je bestelt.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas biedt regelmatig aantrekkelijke kortingen die variëren van 10% tot 30%, afhankelijk van het seizoen en de productcategorie. Als Douglas Beauty Card houder geniet je van exclusieve voordelen zoals 3% cashback op elke aankoop, gratis verjaardagscadeau en early access tot sales. Studenten krijgen een permanente studentenkorting van 25% via UNiDAYS verificatie. Daarnaast organiseert Douglas maandelijks speciale actiecode campagnes, zoals "Koop 2, krijg 1 gratis" bij make-up merken en tot 50% korting tijdens de jaarlijkse Beauty Days. Influencer kortingscodes van beauty gurus bieden vaak 15-20% extra korting bovenop bestaande aanbiedingen. Douglas geeft wel werkende kortingscodes uit, in tegenstelling tot veel andere premium beauty retailers.</p>
 </section>
 
 <!-- == UNIEKE VOORDELEN == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Voordelen van winkelen bij Douglas</h2>
 <ul class="tw-space-y-2 tw-text-gray-700">
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Uitgebreid assortiment</strong> van meer dan 130.000 beautyproducten van premium merken</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Exclusieve producten</strong> die je niet bij andere retailers kunt vinden</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Gratis verzending</strong> bij bestellingen vanaf €20 in Nederland</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Beauty Card loyaliteitsprogramma</strong> met punten en exclusieve voordelen</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Persoonlijk beauty advies</strong> van gecertificeerde consultants in de winkels</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">30 dagen retourrecht</strong> op alle producten, ook geopende cosmetica</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Click & Collect service</strong> voor gratis afhalen in meer dan 100 Nederlandse winkels</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Gratis samples</strong> bij elke online bestelling om nieuwe producten te proberen</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Regelmatige kortingscodes</strong> voor nieuwsbriefabonnees en social media volgers</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Snelle levering</strong> binnen 1-2 werkdagen in Nederland en België</span>
-</li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Douglas Beauty Card</strong> 3% cashback op elke aankoop plus exclusieve member deals en gratis verjaardagscadeau</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Gratis verzending</strong> vanaf €20 naar heel Nederland, express levering binnen 24 uur mogelijk</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Retourgarantie</strong> 14 dagen gratis retourneren, ook geopende parfums en cosmetica</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Studentenkorting</strong> 25% korting voor studenten via UNiDAYS verificatie op alle merken</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Beauty Services</strong> gratis make-up advies, virtual try-on technologie en persoonlijke styling</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Exclusieve samples</strong> gratis miniaturen bij elke bestelling en toegang tot limited edition sets</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Click & Collect</strong> gratis afhalen in 800+ Nederlandse winkels binnen 2 uur na bestelling</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Birthday Club</strong> speciale verjaardagskorting van 20% en gratis cadeau tijdens je verjaardagsmaand</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Authentic garantie</strong> 100% authentieke producten rechtstreeks van merken, geen namaak of verlopen producten</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Live chat support</strong> beauty experts beschikbaar 7 dagen per week voor productadvies en ondersteuning</span></li>
 </ul>
 </section>
 
 <!-- == BODYTEKST == -->
 <section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Douglas kortingscode: bespaar op premium beauty en parfum</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Een <strong class="tw-font-semibold tw-text-gray-900">Douglas kortingscode</strong> is de sleutel tot aanzienlijke besparingen op je favoriete beautyproducten. Of je nu op zoek bent naar een nieuwe parfum, de nieuwste make-up trends of hoogwaardige huidverzorging, met een werkende <strong class="tw-font-semibold tw-text-gray-900">kortingscode</strong> kun je tot wel 30% korting krijgen op je bestelling. Douglas staat bekend om zijn uitgebreide collectie van premium merken zoals Chanel, Dior, YSL, en MAC, maar ook betaalbare alternatieven zijn ruim vertegenwoordigd. Door gebruik te maken van een <strong class="tw-font-semibold tw-text-gray-900">Douglas actiecode</strong> maak je deze luxeproducten toegankelijker voor je budget. Veel klanten weten niet dat er regelmatig nieuwe kortingscodes beschikbaar komen via de nieuwsbrief, social media kanalen en speciale promoties. Een <strong class="tw-font-semibold tw-text-gray-900">nieuwsbrief kortingscode</strong> geeft vaak 15% korting op je eerste bestelling, terwijl bestaande klanten kunnen profiteren van seizoensgebonden aanbiedingen met kortingspercentages variërend van 5% tot 25%.</p>
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Douglas kortingscode: bespaar op premium parfums en cosmetica</h2>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Een Douglas kortingscode is de sleutel tot significante besparingen op jouw favoriete beautyproducten. Als Europas grootste parfumerie chain biedt Douglas toegang tot meer dan 130.000 premium producten van wereldbekende merken zoals Chanel, Dior, Estée Lauder en MAC Cosmetics. Met een werkende actiecode kun je tot 30% korting behalen op parfums, make-up en huidverzorging. Influencer kortingscodes van beauty influencers zoals NikkieTutorials en BeautyGuru geven vaak 15-20% extra korting op reeds afgeprijsde items. De nieuwsbrief kortingscode die je ontvangt na aanmelding, biedt meestal 10% welkomstkorting plus early access tot exclusieve aanbieding periodes zoals de maandelijkse Beauty Days.</p>
 
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De populariteit van Douglas kortingscodes is de afgelopen jaren enorm toegenomen, vooral omdat steeds meer consumers bewust worden van de mogelijkheden om te besparen op beautyproducten. Een <strong class="tw-font-semibold tw-text-gray-900">influencer kortingscode</strong> is een van de meest effectieve manieren om korting te krijgen, aangezien deze vaak hogere kortingspercentages bieden dan standaard promoties. Studenten hebben het extra voordeel van een permanente <strong class="tw-font-semibold tw-text-gray-900">studentenkorting</strong> van 25%, wat Douglas tot een van de meest studentvriendelijke beauty retailers maakt. De combinatie van een voucher met gratis verzending maakt online shoppen bij Douglas nog aantrekkelijker, vooral voor kleinere bestellingen. Het is belangrijk om altijd te controleren of een <strong class="tw-font-semibold tw-text-gray-900">werkende kortingscode</strong> nog geldig is, omdat sommige codes een beperkte looptijd hebben of alleen geldig zijn voor specifieke productcategorieën.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas hanteert een slimme coupon strategie waarbij verschillende voucher types beschikbaar zijn: percentage kortingen voor specifieke merken, gratis verzending codes vanaf €20, en exclusieve kortingscode deals voor Douglas Beauty Card leden. Studentenkorting via UNiDAYS verificatie geeft permanent 25% korting, terwijl de birthday club een speciale verjaardagskorting van 20% biedt. Het loyaliteitsprogramma Douglas Beauty Card zorgt voor 3% cashback op elke aankoop, wat effectief neerkomt op een permanente korting. Combineer je actiecode met sale periodes en cashback acties voor maximale besparingen op premium beauty items.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Uitgebreid assortiment: van parfum tot huidverzorging</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas biedt een indrukwekkend assortiment van meer dan 130.000 beautyproducten verdeeld over verschillende categorieën. Het parfumdepartement is misschien wel het meest bekend, met exclusieve geuren van topmerken zoals Tom Ford, Hermès en Creed. Daarnaast vind je een uitgebreide collectie make-up van zowel luxe merken als betaalbare alternatieven. De huidverzorgingssectie bevat producten voor elke huidtype en leeftijd, van anti-aging serums tot natuurlijke gezichtsmaskers. Met een <strong class="tw-font-semibold tw-text-gray-900">Douglas kortingscode</strong> kun je op al deze categorieën besparen, wat het merk tot een ideale keuze maakt voor beauty-enthousiastelingen die kwaliteit zoeken tegen een betaalbare prijs.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Premium parfums en exclusieve beautymerken bij Douglas</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas staat bekend om zijn uitgebreide selectie van luxury parfums en niche geuren. Populaire damesparfums zoals Chanel Coco Mademoiselle, Dior J'adore en Tom Ford Black Orchid zijn regelmatig verkrijgbaar met kortingscode voordelen. Het herenparfum assortiment bevat bestsellers zoals Bleu de Chanel, Dior Sauvage en Creed Aventus. Naast klassieke geuren biedt Douglas ook exclusieve niche merken zoals Le Labo, Byredo en Maison Margiela die zelden elders kortingen krijgen. Limited edition collecties en exclusive-to-Douglas formuleringen maken het platform uniek voor parfumliefhebbers.</p>
 
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Het haar- en lichaamsverzorgingsassortiment van Douglas is eveneens uitgebreid, met professionele merken die ook in kapperszaken worden gebruikt. Van shampoos en conditioners tot bodylotions en douchegels, elk product wordt zorgvuldig geselecteerd op kwaliteit en effectiviteit. Voor mannen heeft Douglas een speciaal department met mannelijke geuren, baardverzorging en huidverzorging specifiek ontwikkeld voor de mannelijke huid. Door slim gebruik te maken van een <strong class="tw-font-semibold tw-text-gray-900">coupon</strong> of aanbieding kun je je complete beautyroutine samenstellen zonder je budget te overschrijden.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De make-up collectie van Douglas omvat topmerken zoals Charlotte Tilbury, Fenty Beauty, Urban Decay en MAC. Huidverzorging komt van premium merken zoals La Mer, SK-II, Drunk Elephant en The Ordinary. Haar- en lichaamsverzorging van merken zoals Moroccanoil, Rituals en Weleda completeren het assortiment. Douglas introduceert regelmatig nieuwe K-beauty merken zoals Glow Recipe en clean beauty opties zoals Tatcha, waarmee ze trends volgen in de beauty industrie.</p>
 
 <h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Wanneer zijn de beste momenten om te shoppen bij Douglas?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De beste momenten om te shoppen bij Douglas met een <strong class="tw-font-semibold tw-text-gray-900">kortingscode</strong> zijn tijdens seizoensovergangen, Black Friday, en speciale beauty events. Maart en september zijn traditioneel sterke maanden voor kortingsacties, omdat Douglas dan ruimte maakt voor nieuwe collecties. De periode rond Moederdag en Valentijnsdag biedt vaak exclusieve kortingscodes voor cadeau-aankopen. Daarnaast organiseren veel beautymerken hun eigen promotieweken, waarbij Douglas als partner extra kortingen aanbiedt. Door je aan te melden voor de nieuwsbrief blijf je op de hoogte van alle actuele aanbiedingen en ontvang je regelmatig een <strong class="tw-font-semibold tw-text-gray-900">exclusieve kortingscode</strong> die niet openbaar beschikbaar is.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas organiseert maandelijks Beauty Days met tot 50% korting op geselecteerde merken, vaak gecombineerd met extra voucher codes voor loyal customers. Black Friday en Cyber Monday bieden de grootste jaarlijkse kortingen van 20-40%, terwijl de zomer- en wintersoldes aantrekkelijke aanbieding prijzen geven op seasonal collecties. Moederdag en Valentijnsdag zijn traditioneel sterke kortingsperiodes voor parfum gifts sets. De back-to-school periode in september biedt speciale studentenkorting acties bovenop de reguliere 25% UNiDAYS korting.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Waarom Douglas kopen via diski.nl?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Via diski.nl vind je altijd de <strong class="tw-font-semibold tw-text-gray-900">nieuwste kortingscodes</strong> en werkende aanbiedingen voor Douglas. Ons team controleert dagelijks alle beschikbare codes om ervoor te zorgen dat je alleen werkende kortingscodes ziet. We verzamelen niet alleen de standaard promoties, maar ook exclusieve kortingscodes van influencers en speciale partnerships. Door diski.nl te bezoeken voordat je bij Douglas bestelt, bespaar je gegarandeerd geld op je favoriete beautyproducten. Bovendien vind je hier handige tips over wanneer de beste kortingen beschikbaar zijn en hoe je multiple voordelen kunt combineren voor maximale besparing. <strong class="tw-font-semibold tw-text-gray-900">Start vandaag nog met besparen</strong> door een van onze geteste Douglas kortingscodes te gebruiken!</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Waarom Douglas kiezen via diski.nl?</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Via diski.nl vind je altijd de nieuwste werkende Douglas kortingscodes en exclusieve actiecode deals die niet op de hoofdwebsite worden getoond. Onze beauty experts controleren dagelijks alle voucher codes op geldigheid en functionaliteit. Mis nooit meer een aanbieding met onze gepersonaliseerde notifications voor jouw favoriete beauty categorieën. Start vandaag nog met besparen op jouw Douglas beautybestellingen en ontdek waarom diski.nl de nummer 1 keuze is voor slimme beauty shoppers.</p>
 </section>
 
 <!-- == HOE GEBRUIK JE EEN KORTINGSCODE == -->
-<section class="tw-mb-10">
+<section id="kortingscode-toepassen" class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Hoe gebruik je een Douglas kortingscode?</h2>
 <ol class="tw-space-y-4 tw-text-gray-700">
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">1</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 1: Kies een werkende kortingscode</strong><br><span class="tw-text-gray-600">Selecteer een actuele Douglas kortingscode uit onze lijst hierboven en kopieer de code naar je klembord.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">2</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 2: Ga naar Douglas.nl</strong><br><span class="tw-text-gray-600">Open een nieuw tabblad en ga naar de officiële Douglas website om je winkelervaring te beginnen.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">3</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 3: Vul je winkelwagen</strong><br><span class="tw-text-gray-600">Voeg je gewenste beautyproducten toe aan je winkelwagen en controleer of je voldoet aan eventuele minimum bestelbedragen.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">4</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 4: Ga naar de checkout</strong><br><span class="tw-text-gray-600">Klik op je winkelwagen en ga naar de afrekenpagina om het bestelproces te starten.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">5</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 5: Voer je kortingscode in</strong><br><span class="tw-text-gray-600">Zoek naar het veld "Kortingscode" of "Promotiecode" en plak je gekopieerde code. Klik op "Toepassen" om de korting te activeren.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">6</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 6: Controleer en betaal</strong><br><span class="tw-text-gray-600">Verifieer dat de korting correct is toegepast en rond je bestelling af door je betaalgegevens in te vullen.</span></div>
-</li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">1</span><div><strong class="tw-font-semibold tw-text-gray-900">Selecteer je Douglas kortingscode</strong><br><span class="tw-text-gray-600">Kies een werkende actiecode van diski.nl en klik op 'Code kopiëren' om de voucher naar je klembord te kopiëren.</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">2</span><div><strong class="tw-font-semibold tw-text-gray-900">Shop je favoriete beautyproducten</strong><br><span class="tw-text-gray-600">Ga naar douglas.nl en voeg parfums, make-up of huidverzorging toe aan je winkelwagentje. Check of je voldoet aan de minimale bestelbedrag voorwaarden.</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">3</span><div><strong class="tw-font-semibold tw-text-gray-900">Ga naar je winkelmandje</strong><br><span class="tw-text-gray-600">Klik rechtsboven op het winkelwagentje icoon en selecteer 'Winkelwagen bekijken' om naar je shopping bag te gaan.</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">4</span><div><strong class="tw-font-semibold tw-text-gray-900">Vind het kortingscode veld</strong><br><span class="tw-text-gray-600">Zoek naar het veld "Heb je een cadeaubon of kortingscode?" onder je bestelling en klik erop om het invoerveld te openen.</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">5</span><div><strong class="tw-font-semibold tw-text-gray-900">Voer je coupon code in</strong><br><span class="tw-text-gray-600">Plak je gekopieerde Douglas kortingscode in het veld en klik op "Toepassen" om de korting te activeren.</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">6</span><div><strong class="tw-font-semibold tw-text-gray-900">Controleer je korting en bestel</strong><br><span class="tw-text-gray-600">Verifieer dat de korting correct is toegepast in je besteltotaal en klik op "Verder naar kassa" om je Douglas bestelling af te ronden.</span></div></li>
 </ol>
-<p class="tw-mt-4 tw-text-gray-600 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-px-4 tw-py-3 tw-text-sm">
-  <strong class="tw-font-semibold">Tip:</strong> Sommige kortingscodes zijn alleen geldig voor nieuwe klanten of specifieke productcategorieën. Controleer altijd de voorwaarden voordat je een code gebruikt om teleurstellingen te voorkomen.
-</p>
+<p class="tw-mt-4 tw-text-gray-600 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-px-4 tw-py-3 tw-text-sm"><strong class="tw-font-semibold">Tip:</strong> Als Douglas Beauty Card lid krijg je automatisch 3% cashback zonder extra kortingscode. Deze cashback wordt gestort op je account binnen 30 dagen na levering.</p>
 </section>
 
 <!-- == TIPS VOOR EXTRA KORTING == -->
-<section class="tw-mb-10">
+<section id="tips-extra-korting" class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Tips om extra te besparen bij Douglas</h2>
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 1: Combineer je Beauty Card met kortingscodes</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Word lid van het gratis Douglas Beauty Card programma om punten te verzamelen bij elke aankoop. Deze punten kun je later inwisselen voor kortingen, terwijl je tegelijkertijd kunt profiteren van een <strong class="tw-font-semibold tw-text-gray-900">Douglas kortingscode</strong>. Beauty Card leden ontvangen ook exclusieve aanbiedingen en krijgen vroege toegang tot sale periodes. Combineer je lidmaatschap met seizoensgebonden kortingscodes voor maximale besparing op je beautyaankopen.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 2: Timing is alles bij Douglas aankopen</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Plan je aankopen rond speciale events zoals Black Friday, Cyber Monday, en seizoensales. Douglas biedt tijdens deze periodes de hoogste kortingspercentages, vaak tot 30% korting op populaire merken. Volg Douglas op social media om als eerste te weten wanneer flash sales beginnen. Daarnaast zijn begin januari en eind augustus uitstekende momenten voor het kopen van beautyproducten met een <strong class="tw-font-semibold tw-text-gray-900">werkende kortingscode</strong>.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 1: Word Douglas Beauty Card lid voor 3% cashback</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Het gratis Douglas Beauty Card loyaliteitsprogramma geeft 3% cashback op elke aankoop, exclusieve member prijzen en early access tot sales. Beauty Card houders ontvangen ook een gratis verjaardagscadeau ter waarde van €15 en kunnen deelnemen aan exclusive shopping events. Combineer je Beauty Card voordelen met kortingscodes voor dubbele besparingen op jouw Douglas beautybestellingen.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 3: Maak gebruik van gratis samples en gifts</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Bij elke online bestelling bij Douglas ontvang je gratis samples om nieuwe producten uit te proberen. Sommige <strong class="tw-font-semibold tw-text-gray-900">vouchers</strong> bieden extra gifts bij aankoop, wat de waarde van je bestelling verder verhoogt. Kies bewust voor promoties die zowel kortingen als gratis producten bieden. Dit is vooral voordelig bij duurdere aankopen zoals parfum of luxe huidverzorgingssets.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 2: Gebruik UNiDAYS voor 25% studentenkorting</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Studenten krijgen permanent 25% studentenkorting via UNiDAYS verificatie op alle merken bij Douglas. Deze influencer kortingscode-achtige deal werkt als exclusieve kortingscode voor geverifieerde studenten en kan gecombineerd worden met andere aanbiedingen. Registreer je studentenstatus eenmalig en profiteer jarenlang van deze hoogste beschikbare korting op premium beauty producten.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 4: Gebruik Click & Collect voor extra voordelen</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Door je bestelling af te halen in een Douglas winkel bespaar je verzendkosten en kun je soms profiteren van winkel-exclusieve <strong class="tw-font-semibold tw-text-gray-900">aanbiedingen</strong>. Veel winkels bieden extra samples of kleine cadeautjes aan klanten die hun online bestelling ophalen. Bovendien kun je ter plekke advies krijgen van beauty consultants en eventueel aanvullende producten kopen met je resterende kortingscode krediet.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 3: Shop tijdens Beauty Days voor 50% korting</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas organiseert maandelijks Beauty Days met tot 50% korting op geselecteerde topmerken. Deze aanbieding periodes worden vaak gecombineerd met extra voucher codes voor nieuwsbrief abonnees. Volg de Douglas socials voor advance notice van Beauty Days en stel notifications in om geen limited-time kortingscode deals te missen op jouw favoriete makeup en parfum merken.</p>
+
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 4: Meld je aan voor nieuwsbrief kortingscode deals</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Nieuwsbrief abonnees ontvangen een welkomst actiecode van 10% plus exclusieve coupon codes voor seasonal sales en nieuwe product launches. Douglas stuurt wekelijks gepersonaliseerde voucher aanbiedingen gebaseerd op je koopgeschiedenis en voorkeuren. Early bird toegang tot Black Friday deals en birthday club notifications zorgen ervoor dat je altijd de beste werkende kortingscode krijgt.</p>
 </section>
 
 <!-- == 10 FEITEN == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">10 feiten over winkelen bij Douglas</h2>
 <ol class="tw-space-y-2 tw-text-gray-700">
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">1.</span>
-  <span>Douglas heeft meer dan <strong class="tw-font-semibold tw-text-gray-900">130.000 verschillende producten</strong> van over 500 merken in het assortiment</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">2.</span>
-  <span>Het bedrijf werd opgericht in <strong class="tw-font-semibold tw-text-gray-900">1821</strong> en is daarmee een van Europa's oudste parfumerieketens</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">3.</span>
-  <span>Douglas biedt <strong class="tw-font-semibold tw-text-gray-900">gratis verzending</strong> vanaf €20 in Nederland, een van de laagste drempels in de beauty sector</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">4.</span>
-  <span>Studenten krijgen permanent <strong class="tw-font-semibold tw-text-gray-900">25% korting</strong> op het gehele assortiment met een geldig studentenbewijs</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">5.</span>
-  <span>Het Beauty Card loyaliteitsprogramma heeft meer dan <strong class="tw-font-semibold tw-text-gray-900">17 miljoen leden</strong> wereldwijd</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">6.</span>
-  <span>Douglas heeft <strong class="tw-font-semibold tw-text-gray-900">meer dan 100 winkels</strong> in Nederland waar je online bestellingen kunt ophalen</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">7.</span>
-  <span>Het retourrecht van <strong class="tw-font-semibold tw-text-gray-900">30 dagen</strong> geldt ook voor geopende cosmeticaproducten, uniek in de branche</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">8.</span>
-  <span>Gemiddeld worden er <strong class="tw-font-semibold tw-text-gray-900">3 gratis samples</strong> bij elke online bestelling toegevoegd</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">9.</span>
-  <span>Douglas verkoopt <strong class="tw-font-semibold tw-text-gray-900">80 exclusieve merken</strong> die nergens anders in Nederland verkrijgbaar zijn</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">10.</span>
-  <span>De online bestellingen worden <strong class="tw-font-semibold tw-text-gray-900">binnen 24 uur</strong> verzonden vanaf het Nederlandse distributiecentrum</span>
-</li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">1.</span><span>Douglas werd opgericht in <strong class="tw-font-semibold tw-text-gray-900">1821</strong> en is daarmee een van Europa's oudste parfumerieketens</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">2.</span><span>Het assortiment bevat meer dan <strong class="tw-font-semibold tw-text-gray-900">130.000 beautyproducten</strong> van over 500 merken</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">3.</span><span>Douglas heeft <strong class="tw-font-semibold tw-text-gray-900">1.850+ winkels</strong> in 19 landen verspreid over Europa</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">4.</span><span>Gratis verzending vanaf <strong class="tw-font-semibold tw-text-gray-900">€20</strong> naar heel Nederland, express levering mogelijk binnen 24 uur</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">5.</span><span>Beauty Card leden krijgen <strong class="tw-font-semibold tw-text-gray-900">3% cashback</strong> op elke aankoop en exclusieve member deals</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">6.</span><span>Retourgarantie van <strong class="tw-font-semibold tw-text-gray-900">14 dagen</strong>, ook voor geopende parfums en cosmetica</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">7.</span><span>Studenten krijgen <strong class="tw-font-semibold tw-text-gray-900">25% permanente korting</strong> via UNiDAYS verificatie</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">8.</span><span>Douglas biedt <strong class="tw-font-semibold tw-text-gray-900">Click & Collect</strong> service in 800+ Nederlandse winkels binnen 2 uur</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">9.</span><span>De Birthday Club geeft een gratis cadeau ter waarde van <strong class="tw-font-semibold tw-text-gray-900">€15</strong> tijdens je verjaardagsmaand</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">10.</span><span>Douglas introduceert maandelijks <strong class="tw-font-semibold tw-text-gray-900">50+ nieuwe producten</strong> van emerging en established beauty brands</span></li>
 </ol>
 </section>
 
 <!-- == VERGELIJKBARE WINKELS == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Vergelijkbare winkels als Douglas</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed">Als je op zoek bent naar alternatieven voor Douglas, zijn er verschillende beauty retailers die soortgelijke producten en kortingscodes aanbieden. <strong class="tw-font-semibold tw-text-gray-900">Ici Paris XL</strong> is de grootste concurrent in Nederland en België, met een vergelijkbaar assortiment en regelmatige kortingsacties. <strong class="tw-font-semibold tw-text-gray-900">Sephora</strong> biedt een internationale selectie met vele exclusieve merken en heeft een sterk online platform met frequent nieuwe aanbiedingen. Voor budget-bewuste shoppers is <strong class="tw-font-semibold tw-text-gray-900">Kruidvat</strong> een interessant alternatief met betaalbare beautyproducten en regelmatige 1+1 gratis acties. <strong class="tw-font-semibold tw-text-gray-900">Etos</strong> combineert apotheeksproducten met cosmetica en biedt vaak kortingscodes voor online bestellingen. Daarnaast hebben online retailers zoals <strong class="tw-font-semibold tw-text-gray-900">Beautylove</strong> en <strong class="tw-font-semibold tw-text-gray-900">Parfuemerie.nl</strong> zich gespecialiseerd in beauty met scherpe prijzen en frequente kortingsacties die vergelijkbaar zijn met Douglas aanbiedingen.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed">Vergelijkbare premium beauty retailers zijn Sephora, bekend om hun kleurrijke store concept en exclusive brand partnerships, ICI PARIS XL met hun focus op luxury parfums en French pharmacy brands, Etos voor meer betaalbare drugstore merken gecombineerd met enkele premium opties, en online Beauty Bay dat zich specialiseert in trendy make-up en international shipping. Elk platform heeft zijn eigen kortingscode strategie, maar Douglas onderscheidt zich door het uitgebreide fysieke winkelnetwerk, persoonlijk beauty advies en het sterke loyaliteitsprogramma met cashback voordelen.</p>
 </section>
 
 <!-- == NIEUWS == -->
 <section class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Nieuws en ontwikkelingen bij Douglas</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas zet stevig in op digitale innovatie en heeft recent hun <strong class="tw-font-semibold tw-text-gray-900">Virtual Try-On technologie</strong> uitgebreid. Klanten kunnen nu make-up virtueel uitproberen via de website en app voordat ze een aankoop doen. Deze service werkt perfect samen met kortingscodes, omdat je producten kunt testen en vervolgens met korting kunt bestellen. Daarnaast heeft Douglas hun <strong class="tw-font-semibold tw-text-gray-900">same-day delivery service</strong> uitgerold in grote steden, waardoor online bestellingen binnen enkele uren kunnen worden geleverd. Het bedrijf investeert ook zwaar in duurzaamheidsinitiatieven, met een groeiend assortiment van milieuvriendelijke en cruelty-free merken.</p>
-
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Een belangrijke ontwikkeling is de uitbreiding van het <strong class="tw-font-semibold tw-text-gray-900">Douglas Education Center</strong>, waar klanten gratis beauty masterclasses kunnen volgen. Deze workshops combineren productkennis met praktische tips en deelnemers ontvangen vaak exclusieve kortingscodes voor de besproken producten. Douglas heeft ook hun partnership programma uitgebreid met beauty influencers, wat resulteert in meer exclusieve <strong class="tw-font-semibold tw-text-gray-900">influencer kortingscodes</strong> die significante besparingen bieden. De focus op personalisatie wordt verder versterkt door AI-gedreven productaanbevelingen die gebaseerd zijn op je eerdere aankopen en voorkeuren, vaak gecombineerd met gepersonaliseerde kortingsaanbiedingen.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Douglas heeft recent haar digital transformation versneld met de lancering van Virtual Try-On technologie voor make-up en AR filters voor parfum discovery. De Douglas App kreeg een major update met gepersonaliseerde product aanbevelingen op basis van AI, waardoor klanten sneller de juiste producten vinden. Het bedrijf breidde ook zijn Sustainable Beauty sectie uit met meer clean, vegan en refillable beauty opties van merken zoals Fenty Skin, Rare Beauty en The Inkey List.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">In 2024 introduceerde Douglas een vernieuwde Beauty Card met enhanced benefits, inclusief birthday month privileges en tier-based rewards. De samenwerking met beauty influencers werd uitgebreid met exclusive product launches en limited edition collections. Douglas investeert zwaar in omnichannel retail, waarbij online en offline shopping naadloos worden geïntegreerd via services zoals Same Day Delivery en Personal Shopping consultations via video calls.</p>
 </section>
 
 <!-- == FAQ == -->
-<section class="tw-mb-10">
+<section id="faq" class="tw-mb-10">
 <h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-6">Veelgestelde vragen over de Douglas kortingscode</h2>
 <div class="tw-space-y-6">
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoe vind ik de nieuwste Douglas kortingscodes?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">De beste manier om altijd de <strong class="tw-font-semibold tw-text-gray-900">nieuwste kortingscodes</strong> te vinden is door diski.nl te bezoeken, waar we dagelijks alle beschikbare codes controleren en updaten. Daarnaast kun je je inschrijven voor de Douglas nieuwsbrief om exclusieve kortingscodes te ontvangen. Social media kanalen van Douglas delen ook regelmatig <strong class="tw-font-semibold tw-text-gray-900">werkende kortingscodes</strong> en flash aanbiedingen.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Kan ik meerdere Douglas kortingscodes combineren?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">Over het algemeen kun je <strong class="tw-font-semibold tw-text-gray-900">slechts één kortingscode per bestelling</strong> gebruiken bij Douglas. Je kunt echter wel een kortingscode combineren met andere voordelen zoals Beauty Card punten, gratis verzending acties, of speciale cadeaus bij aankoop. Kies altijd de <strong class="tw-font-semibold tw-text-gray-900">actiecode</strong> die je de meeste besparing oplevert.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Waarom werkt mijn Douglas kortingscode niet?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">Er kunnen verschillende redenen zijn waarom een <strong class="tw-font-semibold tw-text-gray-900">kortingscode</strong> niet werkt: de code is verlopen, geldt alleen voor nieuwe klanten, heeft een minimum bestelbedrag, of is alleen geldig voor specifieke producten. Controleer altijd de voorwaarden van de code. Ook kan het zijn dat je al een andere aanbieding gebruikt die niet combineerbaar is met <strong class="tw-font-semibold tw-text-gray-900">kortingscodes</strong>.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Is er een studentenkorting bij Douglas beschikbaar?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">Ja, Douglas biedt een permanente <strong class="tw-font-semibold tw-text-gray-900">studentenkorting van 25%</strong> op het gehele assortiment. Om hiervan gebruik te maken, moet je een geldig studentenbewijs kunnen tonen via een verificatieservice. Deze <strong class="tw-font-semibold tw-text-gray-900">student korting</strong> is een van de hoogste in de beauty sector en geldt zowel online als in de fysieke winkels.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Biedt Douglas gratis verzending aan?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">Douglas biedt <strong class="tw-font-semibold tw-text-gray-900">gratis verzending</strong> aan bij bestellingen vanaf €20 in Nederland. Dit is een van de laagste drempels in de beauty sector. Daarnaast kun je altijd kiezen voor gratis Click & Collect in een van de meer dan 100 Nederlandse Douglas winkels, ongeacht je bestelbedrag. Sommige <strong class="tw-font-semibold tw-text-gray-900">vouchers</strong> bieden ook gratis verzending bij lagere bedragen.</p>
-  </div>
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Kan ik meerdere kortingscodes combineren bij Douglas?</h3><p class="tw-text-gray-700 tw-leading-relaxed">Douglas staat meestal één actiecode per bestelling toe, maar de Beauty Card cashback van 3% wordt automatisch toegepast bovenop je kortingscode. Studentenkorting via UNiDAYS kan wel gecombineerd worden met bepaalde voucher codes en seasonal sales. Check altijd de voorwaarden van je specifieke coupon voor combinatiemogelijkheden.</p></div>
+
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoe krijg ik de Douglas Beauty Card korting?</h3><p class="tw-text-gray-700 tw-leading-relaxed">Meld je gratis aan voor de Douglas Beauty Card via de website of app. Je krijgt direct toegang tot 3% cashback op elke aankoop, exclusieve member prijzen, early access tot sales en een gratis verjaardagscadeau. De cashback wordt binnen 30 dagen na levering gestort op je account en kan gebruikt worden voor toekomstige aankopen.</p></div>
+
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Werken Douglas kortingscodes op alle merken?</h3><p class="tw-text-gray-700 tw-leading-relaxed">De meeste Douglas actiecode deals gelden voor het volledige assortiment, maar sommige premium merken zoals Chanel, Hermès en La Mer zijn vaak uitgesloten van kortingscode acties. Limited edition collections en pre-order items accepteren meestal geen voucher codes. Check altijd de specifieke uitsluitingen in de voorwaarden van je gekozen kortingscode.</p></div>
+
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Kan ik Douglas producten retourneren als ik een kortingscode heb gebruikt?</h3><p class="tw-text-gray-700 tw-leading-relaxed">Ja, Douglas hanteert een 14-dagen retourgarantie ook voor bestellingen met kortingscodes. Je krijgt het daadwerkelijk betaalde bedrag (na korting) teruggestort. Geopende parfums en cosmetica kunnen ook geretourneerd worden als je niet tevreden bent. De originele verzendkosten worden niet vergoed, tenzij het een defect product betreft.</p></div>
+
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Waar vind ik de nieuwste Douglas influencer kortingscodes?</h3><p class="tw-text-gray-700 tw-leading-relaxed">Volg populaire beauty influencers zoals NikkieTutorials, Beautygloss en Mascha Feoktistova op social media voor exclusive Douglas actiecode deals. Meld je aan voor de Douglas nieuwsbrief voor early access tot influencer collaborations en limited-time coupon codes. Diski.nl update dagelijks alle werkende influencer kortingscode deals voor maximale besparingen.</p></div>
 </div>
 </section>
 
 <!-- == BLACK FRIDAY == -->
-<section class="tw-mb-10 tw-bg-gray-900 tw-rounded-xl tw-p-6">
+<section id="black-friday" class="tw-mb-10 tw-bg-gray-900 tw-rounded-xl tw-p-6">
 <h2 class="tw-text-2xl tw-font-bold tw-text-orange-400 tw-mb-2">Douglas Black Friday 2026 — de beste deals en kortingscodes</h2>
 <p class="tw-text-gray-400 tw-text-sm tw-mb-6">Black Friday 2026: vrijdag 27 november · Cyber Monday 2026: maandag 30 november</p>
 
-<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-4">De <strong class="tw-font-semibold tw-text-orange-300">Douglas Black Friday 2026</strong> belooft wederom een van de grootste beauty shopping events van het jaar te worden. Op vrijdag 27 november en tijdens de gehele Black Friday week kun je verwachten dat Douglas hun meest aantrekkelijke kortingen van het jaar aanbiedt. Traditioneel start de <strong class="tw-font-semibold tw-text-orange-300">Black Friday Douglas</strong> actie al eerder met pre-deals voor Beauty Card leden, gevolgd door publieke Black Friday deals Douglas aanbiedingen. De beste <strong class="tw-font-semibold tw-text-orange-300">Douglas Black Friday kortingscodes</strong> bieden vaak 30-40% korting op premium merken zoals Chanel, Dior en YSL. Daarnaast zijn er speciale <strong class="tw-font-semibold tw-text-orange-300">Black Friday kortingen Douglas</strong> beschikbaar voor verschillende productcategorieën, van parfum tot make-up en huidverzorging.</p>
+<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-4">Douglas Black Friday 2026 belooft de grootste beauty kortingen van het jaar met verwachte kortingspercentages tot 50% op premium parfums, make-up en huidverzorging. Beauty Card leden krijgen early access vanaf donderdag 26 november met exclusieve kortingscode deals op topmerken zoals Estée Lauder, Urban Decay en Charlotte Tilbury. Influencer kortingscodes van beauty gurus bieden extra 15-20% bovenop Black Friday prijzen, terwijl de traditionele Douglas aanbieding van "Koop 2, krijg 1 gratis" wordt uitgebreid naar meer productcategorieën.</p>
 
-<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-4">Het <strong class="tw-font-semibold tw-text-orange-300">Douglas Black Friday weekend</strong> wordt afgesloten met <strong class="tw-font-semibold tw-text-orange-300">Cyber Monday Douglas</strong> deals op 30 november, waarbij online shoppers kunnen profiteren van exclusieve digitale kortingen. De combinatie van <strong class="tw-font-semibold tw-text-orange-300">Black Friday kortingscode Douglas</strong> aanbiedingen met gratis cadeaus en samples maakt deze periode ideaal voor het inslaan van beautyproducten voor het hele jaar. Early access deals starten vaak al een week voor de officiële Black Friday datum, waardoor Beauty Card leden als eerste toegang krijgen tot de beste <strong class="tw-font-semibold tw-text-orange-300">Black Friday aanbiedingen</strong>. De <strong class="tw-font-semibold tw-text-orange-300">Black Friday sale</strong> bij Douglas kenmerkt zich door flash deals die slechts enkele uren beschikbaar zijn, naast doorlopende kortingen gedurende de hele <strong class="tw-font-semibold tw-text-orange-300">Black Friday week</strong>.</p>
+<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-6">Cyber Monday 2026 bij Douglas focust op digital exclusive deals met werkende kortingscodes tot 40% op online-only beauty sets en limited edition collections. Verwacht special voucher codes voor free shipping, geen minimum bestelbedrag, en exclusive bundles van parfum miniatures. De Douglas app krijgt mobile-only actiecode deals, terwijl social media followers toegang krijgen tot flash sales met 30-minuten exclusive coupon windows voor maximum kortingsvoordeel.</p>
 
 <h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-3 tw-mt-6">Verwachte Douglas Black Friday kortingen 2026</h3>
 <div class="tw-overflow-x-auto tw-mb-6">
@@ -235,40 +154,40 @@ export const companyDouglasSeoContent = `
 <tr class="tw-bg-gray-800 tw-text-orange-400">
 <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Korting</th>
 <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Categorie</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Type</th>
+<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Type deal</th>
 <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Verwacht</th>
 </tr>
 </thead>
 <tbody>
-<tr class="tw-bg-gray-800 tw-text-gray-100 hover:tw-bg-gray-700">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">Tot 40%</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Parfum premium</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Flash Deal</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">27 november</td>
+<tr class="tw-bg-gray-800">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">50% korting</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Parfum gift sets</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Flash sale</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Zeer waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-900 tw-text-gray-100 hover:tw-bg-gray-800">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">35%</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Make-up sets</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Weekend Deal</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">27-29 november</td>
+<tr class="tw-bg-gray-900">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">40% korting</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Make-up paletten</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Kortingscode</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-800 tw-text-gray-100 hover:tw-bg-gray-700">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">30%</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Huidverzorging</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Cyber Monday</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">30 november</td>
+<tr class="tw-bg-gray-800">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">30% korting</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Skincare sets</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Beauty Card deal</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Zeer waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-900 tw-text-gray-100 hover:tw-bg-gray-800">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">25%</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Haarverzorging</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Week Deal</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">23-29 november</td>
+<tr class="tw-bg-gray-900">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">25% korting</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Alle parfums</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Site-wide coupon</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-800 tw-text-gray-100 hover:tw-bg-gray-700">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">Gratis</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Verzending</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Alle bestellingen</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">23-30 november</td>
+<tr class="tw-bg-gray-800">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">Gratis verzending</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Alle bestellingen</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Geen minimum</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Zeer waarschijnlijk</td>
 </tr>
 </tbody>
 </table>
@@ -276,46 +195,23 @@ export const companyDouglasSeoContent = `
 
 <h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-3">Tips voor de beste Douglas Black Friday deals</h3>
 <ul class="tw-space-y-2 tw-mb-6">
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Early access:</strong> Meld je aan voor de Beauty Card om vroege toegang tot Black Friday deals te krijgen</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Wishlist strategie:</strong> Maak vooraf een wishlist aan om snel te kunnen bestellen tijdens flash sales</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">App voordelen:</strong> Download de Douglas app voor push notificaties over nieuwe deals</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Combinatie deals:</strong> Profiteer van gratis cadeaus en samples tijdens Black Friday voor extra waarde</span>
-</li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Beauty Card voordeel:</strong> Meld je vóór Black Friday aan voor early access en extra 3% cashback op alle aankopen</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">App notifications:</strong> Download de Douglas app voor mobile-exclusive kortingscodes en flash sale alerts</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Wishlist strategie:</strong> Voeg gewenste producten toe aan je wishlist voor automatische price drop notifications</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Combineer deals:</strong> Stack influencer kortingscodes met Black Friday aanbiedingen voor maximale besparingen</span></li>
 </ul>
 
 <h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-4">Veelgestelde vragen — Douglas Black Friday</h3>
 <div class="tw-space-y-4">
-<div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wanneer start Douglas Black Friday 2026?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Douglas Black Friday start officieel op vrijdag 27 november 2026, maar Beauty Card leden krijgen vaak al vanaf maandag 23 november early access tot pre-deals. De volledige Black Friday week loopt door tot en met Cyber Monday op 30 november.</p>
-</div>
-<div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Hoeveel korting geeft Douglas op Black Friday?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Tijdens Black Friday biedt Douglas kortingen tot 40% op premium parfums en cosmetica. Gemiddeld kun je 25-35% korting verwachten op de meeste productcategorieën, met extra voordelen zoals gratis verzending en exclusieve cadeaus bij aankoop.</p>
-</div>
-<div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Heeft Douglas ook Cyber Monday kortingen?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Ja, Douglas heeft speciale Cyber Monday deals op 30 november 2026 die exclusief online beschikbaar zijn. Deze deals focussen vaak op digitale beauty tools, online-exclusive sets en laatste kans aanbiedingen van het Black Friday weekend.</p>
-</div>
-<div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wat zijn de beste Douglas Black Friday deals?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">De beste deals zijn meestal premium parfum sets met 40% korting, limited edition make-up palettes, en exclusieve huidverzorgingsbundels. Ook cadeausets en parfum discovery sets bieden tijdens Black Friday uitstekende waarde voor geld.</p>
-</div>
-<div>
-<h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Kan ik een Douglas kortingscode gebruiken tijdens Black Friday?</h3>
-<p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Tijdens Black Friday zijn de meeste kortingscodes al automatisch toegepast in de sale prijzen. Sommige exclusieve codes kunnen wel gebruikt worden voor extra voordelen zoals gratis verzending of gratis cadeaus, maar reguliere kortingscodes zijn vaak niet combineerbaar met Black Friday prijzen.</p>
-</div>
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wanneer starten de Douglas Black Friday deals precies?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Beauty Card leden krijgen early access vanaf donderdag 26 november 20:00. Algemene Black Friday kortingscodes starten vrijdag 27 november om middernacht en lopen tot Cyber Monday 30 november.</p></div>
+
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Zijn Chanel en Dior uitgesloten van Black Friday kortingscodes?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Traditioneel zijn de meeste luxury merken uitgesloten van Douglas kortingscode acties, maar gift sets en limited editions participeren vaak wel in Black Friday deals met tot 30% korting.</p></div>
+
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Kan ik Black Friday items retourneren bij Douglas?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Ja, de standaard 14-dagen retourgarantie geldt ook voor Black Friday aankopen. Je krijgt het daadwerkelijk betaalde bedrag (na korting) teruggestort, inclusief eventuele kortingscode voordelen.</p></div>
+
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Welke influencer kortingscodes werken tijdens Black Friday?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Beauty influencers zoals NikkieTutorials en Beautygloss krijgen vaak exclusive Black Friday voucher codes met 15-20% extra korting. Volg hun social channels voor limited-time coupon releases.</p></div>
+
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Is er gratis verzending tijdens Douglas Black Friday?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Douglas biedt traditioneel gratis verzending zonder minimum bestelbedrag tijdens Black Friday weekend. Beauty Card leden krijgen ook gratis express levering op bestellingen boven €50.</p></div>
 </div>
 </section>
     </div>

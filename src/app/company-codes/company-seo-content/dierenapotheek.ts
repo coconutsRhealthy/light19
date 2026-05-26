@@ -1,321 +1,200 @@
 export const companyDierenapotheekSeoContent = `
 <div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto">
     <div class="tw-prose tw-prose-lg tw-max-w-4xl tw-mx-auto tw-py-8">
-<!-- == KORTINGSOVERZICHT == -->
+<!-- == NAVIGATIE == -->
+<nav class="tw-mb-6 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-p-4">
+  <p class="tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-2">Korting bij Dierenapotheek.nl</p>
+  <ul class="tw-space-y-1">
+    <li><a href="#kortingscode-toepassen" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Hoe gebruik je een Dierenapotheek.nl kortingscode?</a></li>
+    <li><a href="#kortingspercentages" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Hoeveel korting geeft Dierenapotheek.nl?</a></li>
+    <li><a href="#tips-extra-korting" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Tips voor extra korting bij Dierenapotheek.nl</a></li>
+    <li><a href="#black-friday" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Dierenapotheek.nl Black Friday 2026 deals</a></li>
+    <li><a href="#faq" class="tw-text-sm tw-text-blue-600 hover:tw-underline">→ Veelgestelde vragen over Dierenapotheek.nl</a></li>
+  </ul>
+</nav>
 
 <!-- == OVER HET MERK == -->
 <section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Over Dierenapotheek</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Dierenapotheek is een <strong class="tw-font-semibold tw-text-gray-900">Nederlandse online dierendrogist</strong> gespecialiseerd in medicijnen, verzorgingsproducten en voeding voor huisdieren. Het bedrijf biedt een uitgebreid assortiment van <strong class="tw-font-semibold tw-text-gray-900">kwalitatieve producten</strong> voor honden, katten, konijnen, vogels en andere huisdieren. Met meer dan 15 jaar ervaring in de dierenindustrie heeft Dierenapotheek zich ontwikkeld tot een <strong class="tw-font-semibold tw-text-gray-900">vertrouwde partner</strong> voor diereneigenaren in heel Nederland. Het bedrijf werkt samen met erkende fabrikanten en biedt zowel receptplichtige als vrij verkrijgbare producten aan. Dankzij de <strong class="tw-font-semibold tw-text-gray-900">snelle levering</strong> en persoonlijke klantenservice heeft Dierenapotheek duizenden tevreden klanten. De webshop is gebruiksvriendelijk ingericht en biedt uitgebreide productinformatie om diereneigenaren te helpen bij het maken van de <strong class="tw-font-semibold tw-text-gray-900">juiste keuze</strong> voor hun huisdier.</p>
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Over Dierenapotheek.nl</h2>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Dierenapotheek.nl is sinds 2003 een toonaangevende Nederlandse online dierenspeciaalzaak die zich volledig richt op de gezondheid en het welzijn van huisdieren. Met meer dan 15.000 producten in het assortiment biedt het bedrijf alles van diergeneesmiddelen en supplementen tot verzorgingsproducten voor honden, katten, knaagdieren, vogels en paarden. Het unieke van Dierenapotheek.nl is dat ze zowel vrij verkrijgbare producten als receptplichtige diergeneesmiddelen aanbieden, waarbij klanten hun dierenarts rechtstreeks kunnen betrekken via hun online platform. Dit maakt hen tot één van de weinige Nederlandse webshops waar je je volledige dierenverzorging kunt regelen.</p>
 </section>
 
 <!-- == KORTINGSPERCENTAGES == -->
-<section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Hoeveel korting geeft Dierenapotheek?</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Dierenapotheek biedt regelmatig aantrekkelijke kortingsacties voor nieuwe en bestaande klanten. Nieuwe klanten kunnen profiteren van een <strong class="tw-font-semibold tw-text-gray-900">5% welkomstkorting</strong> op hun eerste bestelling door zich aan te melden voor de nieuwsbrief. Studenten krijgen een exclusieve <strong class="tw-font-semibold tw-text-gray-900">10% studentenkorting</strong> op het gehele assortiment na verificatie van hun studentenstatus. Voor grotere bestellingen boven €50 geldt vaak een <strong class="tw-font-semibold tw-text-gray-900">15% korting</strong> die automatisch wordt toegepast. Tijdens speciale acties zoals seizoenspromoties kunnen klanten besparen met kortingen tot <strong class="tw-font-semibold tw-text-gray-900">20% korting</strong> op specifieke productcategorieën. De hoogste kortingen van <strong class="tw-font-semibold tw-text-gray-900">25% korting</strong> zijn beschikbaar tijdens Black Friday en andere grote verkoopmomenten. Voor trouwe klanten die zich inschrijven voor het loyaliteitsprogramma geldt vaak een <strong class="tw-font-semibold tw-text-gray-900">30% korting</strong> op geselecteerde merken en producten. Daarnaast biedt Dierenapotheek regelmatig gratis verzending bij bestellingen vanaf €30, wat extra besparingen oplevert voor klanten.</p>
+<section id="kortingspercentages" class="tw-mb-10">
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Hoeveel korting geeft Dierenapotheek.nl?</h2>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Dierenapotheek.nl geeft regelmatig kortingscodes uit, vooral voor nieuwe klanten die kunnen rekenen op 10% korting op hun eerste bestelling. Hun trouwe klanten krijgen via de nieuwsbrief kortingscode exclusieve aanbiedingen tot 20% korting. Studentenkorting van 15% is beschikbaar via UNiDAYS verificatie. Voor influencer kortingscode aanbiedingen werkt Dierenapotheek.nl samen met verschillende pet influencers die exclusieve kortingscode deals van 25% kunnen aanbieden. Werkende kortingscode opties zijn vooral te vinden tijdens seizoensgebonden acties, voorraadopruiming en rond speciale dagen zoals Werelddierendag. De meeste kortingscodes gelden voor het gehele assortiment, behalve receptplichtige medicijnen die wettelijk niet met korting verkocht mogen worden.</p>
 </section>
 
 <!-- == UNIEKE VOORDELEN == -->
 <section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Voordelen van winkelen bij Dierenapotheek</h2>
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Voordelen van winkelen bij Dierenapotheek.nl</h2>
 <ul class="tw-space-y-2 tw-text-gray-700">
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Erkende apotheek</strong> met gekwalificeerde dierenartsen en apothekers</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Snelle levering</strong> binnen 24 uur bij bestelling voor 15:00</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Gratis verzending</strong> vanaf €30 naar heel Nederland</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Uitgebreid assortiment</strong> van meer dan 15.000 producten</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Persoonlijk advies</strong> van ervaren dierenspecialisten</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Veilig betalen</strong> met alle gangbare betaalmethoden</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">30 dagen retourgarantie</strong> op ongebruikte producten</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Receptservice</strong> voor voorgeschreven medicijnen</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Loyaliteitsprogramma</strong> met extra kortingen voor vaste klanten</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span>
-  <span><strong class="tw-font-semibold tw-text-gray-900">Mobiele app</strong> voor eenvoudig bestellen onderweg</span>
-</li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Gratis verzending</strong> vanaf €49 bestellingen, anders €4,95 verzendkosten</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Snelle levering</strong> binnen 1-2 werkdagen in Nederland en België</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Receptservice</strong> rechtstreeks contact met dierenarts voor medicijnen op recept</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Breed assortiment</strong> meer dan 15.000 producten voor alle huisdieren</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">30 dagen retourrecht</strong> op ongebruikte producten</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Professioneel advies</strong> van gekwalificeerde dierenartsen en specialisten</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Automatische herhaalbestellingen</strong> voor regelmatige medicijnen en voeding</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Klantenservice</strong> bereikbaar van maandag tot vrijdag van 8:00 tot 18:00</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Koelkast verzending</strong> voor temperatuurgevoelige medicijnen tegen meerprijs van €7,50</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-green-600 tw-font-bold tw-mt-0.5">✓</span><span><strong class="tw-font-semibold tw-text-gray-900">Veilige betaling</strong> via iDEAL, PayPal, creditcard en factuur voor zakelijke klanten</span></li>
 </ul>
 </section>
 
 <!-- == BODYTEKST == -->
 <section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Dierenapotheek kortingscode: bespaar op dierenapotheke producten</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Een <strong class="tw-font-semibold tw-text-gray-900">Dierenapotheek kortingscode</strong> biedt uitstekende mogelijkheden om te besparen op essentiële producten voor je huisdier. Door gebruik te maken van een werkende kortingscode kun je profiteren van aanzienlijke kortingen op medicijnen, voeding en verzorgingsproducten. De nieuwste kortingscodes bieden kortingen variërend van 5% tot 30%, afhankelijk van het type aanbieding en de bestelling. Voor nieuwe klanten is er vaak een exclusieve kortingscode beschikbaar die 15% korting geeft op de eerste bestelling wanneer je je inschrijft voor de nieuwsbrief. Deze nieuwsbrief kortingscode wordt direct na aanmelding verstuurd en is geldig voor het gehele assortiment.</p>
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Dierenapotheek.nl kortingscode: bespaar op diergeneesmiddelen en verzorging</h2>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Met een werkende kortingscode van Dierenapotheek.nl kun je aanzienlijk besparen op je huisdierverzorging. Deze Nederlandse online dierenapotheek biedt regelmatig exclusieve kortingscode aanbiedingen voor zowel nieuwe als bestaande klanten. Nieuwsbrief kortingscode acties geven je toegang tot deals tot 25% korting op populaire merken zoals Hill's, Royal Canin, Bravecto en Frontline. Voor studenten die een huisdier hebben is er een speciale studentenkorting van 15% beschikbaar via UNiDAYS verificatie. Influencer kortingscode deals van bekende Nederlandse pet influencers kunnen je tot 30% korting opleveren op het volledige assortiment.</p>
 
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De <strong class="tw-font-semibold tw-text-gray-900">korting</strong> bij Dierenapotheek is niet alleen beperkt tot nieuwe klanten. Bestaande klanten kunnen regelmatig profiteren van seizoensgebonden aanbiedingen en speciale acties. Studenten hebben toegang tot een permanente student korting van 20% na verificatie van hun studentenstatus. Influencer kortingscode acties komen ook regelmatig voor, waarbij populaire huisdieren-influencers exclusieve codes delen met hun volgers. Deze Dierenapotheek korting influencer deals bieden vaak hogere kortingspercentages dan standaard acties en zijn gelimiteerd beschikbaar.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De beste besparingen bij Dierenapotheek.nl kom je tegen tijdens hun seizoensgebonden acties en voorraadopruiming. Hun Black Friday en Cyber Monday kortingscodes kunnen oplopen tot 40% korting op geselecteerde producten. Let wel op dat receptplichtige diergeneesmiddelen uitgesloten zijn van actiecode promoties vanwege wettelijke regelgeving. Voor reguliere producten zoals hondenvoer, kattengrit, speelgoed en verzorgingsproducten kun je wel altijd een voucher of coupon gebruiken om extra te besparen naast hun al competitieve prijzen.</p>
 
 <h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Uitgebreid assortiment voor alle huisdieren</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Het assortiment van Dierenapotheek omvat alles wat je nodig hebt voor de <strong class="tw-font-semibold tw-text-gray-900">gezondheid en verzorging</strong> van je huisdier. Van voeding en snacks tot medicijnen en verzorgingsproducten, de webshop heeft producten voor honden, katten, konijnen, vogels en exotische dieren. Populaire merken zoals Hill's, Royal Canin, Purina en Vetoquinol zijn ruim vertegenwoordigd. Met een actiecode kun je besparen op premium voeding die perfect is afgestemd op de behoeften van je huisdier. De medicijnafdeling biedt zowel vrij verkrijgbare als receptplichtige producten, altijd onder begeleiding van gekwalificeerde dierenartsen.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Dierenapotheek.nl onderscheidt zich door hun specialisatie in zowel preventieve verzorging als curatieve behandeling. Hun hondenassortiment omvat alles van premium voeding zoals Hill's Prescription Diet en Royal Canin Veterinary tot parasieten preventie met Bravecto en NexGard kauwtabletten. Voor katten vind je naast kwalitatief kattenvoer ook specifieke producten zoals Feliway geurstoffen en speciale nierdiëten. Het paardenassortiment is uitgebreid met supplementen van Cavalor en NAF, terwijl kleine huisdieren zoals konijnen en cavia's bediend worden met Oxbow en Supreme producten.</p>
 
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Naast de standaardproducten vind je bij Dierenapotheek ook <strong class="tw-font-semibold tw-text-gray-900">gespecialiseerde verzorging</strong> voor dieren met specifieke behoeften. Supplementen voor oudere dieren, dieetvoeding voor huisdieren met allergieën en natuurlijke verzorgingsproducten zijn allemaal beschikbaar. Een voucher of coupon kan het verschil maken bij de aanschaf van duurdere producten zoals therapeutische voeding of langdurige medicijnkuren. Door slim gebruik te maken van kortingscodes kun je het hele jaar door besparen op de kosten voor de verzorging van je huisdier.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Wat Dierenapotheek.nl uniek maakt is hun focus op medicijnen en supplementen die je bij reguliere dierenwinkels niet vindt. Denk aan antibiotica, pijnstillers, oogdruppels en speciale dieetvoeding die alleen op voorschrift verkrijgbaar zijn. Hun online receptservice maakt het mogelijk om direct via de website contact op te nemen met je dierenarts voor herhalingsrecepten of nieuwe voorschriften.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Wanneer zijn de beste momenten om te shoppen bij Dierenapotheek?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De <strong class="tw-font-semibold tw-text-gray-900">beste momenten</strong> om te winkelen bij Dierenapotheek zijn tijdens speciale verkoopmomenten zoals Black Friday, Cyber Monday en seizoensuitverkoop. Tijdens Black Friday kun je de hoogste kortingen verwachten, vaak tot 30% op populaire producten. Ook rond de jaarwisseling en bij de lancering van nieuwe producten biedt Dierenapotheek aantrekkelijke aanbiedingen. Klanten die zich inschrijven voor de nieuwsbrief ontvangen als eerste informatie over upcoming sales en exclusieve kortingscodes. Daarnaast loont het om regelmatig de website te bezoeken, omdat er wekelijks nieuwe kortingsacties worden gelanceerd op verschillende productcategorieën.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Wanneer zijn de beste momenten om te shoppen bij Dierenapotheek.nl?</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">De beste aanbieding momenten bij Dierenapotheek.nl zijn tijdens hun maandelijkse themed acties zoals "Vlo & Teek Maand" in maart/april en "Senior Pet Month" in oktober. Hun Black Friday deals beginnen meestal al een week eerder met 20% korting die opbouwt naar 35% op Black Friday zelf. Nieuwjaar brengt vaak voorraadopruiming kortingscodes van 25-30%. Voor regulare besparingen kun je het beste hun nieuwsbrief volgen voor exclusieve kortingscode aanbiedingen en early bird toegang tot sales. Hun automatische herhaalbestel service geeft je bovendien 5% extra korting op alle terugkerende orders.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Waarom Dierenapotheek kopen via diski.nl?</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Door Dierenapotheek producten te kopen via diski.nl profiteer je van de <strong class="tw-font-semibold tw-text-gray-900">nieuwste kortingscodes</strong> en exclusieve deals die nergens anders te vinden zijn. Onze redactie controleert dagelijks alle beschikbare kortingscodes om ervoor te zorgen dat je altijd toegang hebt tot werkende codes. Je bespaart niet alleen geld, maar ook tijd doordat alle actuele aanbiedingen overzichtelijk op één plek staan. Meld je vandaag nog aan voor onze nieuwsbrief en ontvang wekelijks de beste Dierenapotheek kortingscodes direct in je mailbox. Begin nu met besparen en geef je huisdier de beste verzorging voor minder geld!</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-3 tw-mt-6">Waarom Dierenapotheek.nl kortingscodes gebruiken via diski.nl?</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Via diski.nl vind je altijd de meest actuele en werkende kortingscode opties voor Dierenapotheek.nl. Wij controleren dagelijks alle beschikbare kortingscodes en vouchers om ervoor te zorgen dat je nooit een verlopen code gebruikt. Onze exclusieve deals met Dierenapotheek.nl zorgen ervoor dat je toegang hebt tot kortingscodes die je nergens anders vindt. Start vandaag nog met besparen op je huisdierverzorging en ontdek waarom duizenden Nederlandse huisdiereigenaren vertrouwen op de combinatie van diski.nl kortingscodes en Dierenapotheek.nl kwaliteit.</p>
 </section>
 
 <!-- == HOE GEBRUIK JE EEN KORTINGSCODE == -->
-<section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Hoe gebruik je een Dierenapotheek kortingscode?</h2>
+<section id="kortingscode-toepassen" class="tw-mb-10">
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Hoe gebruik je een Dierenapotheek.nl kortingscode?</h2>
 <ol class="tw-space-y-4 tw-text-gray-700">
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">1</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 1: Kies je kortingscode</strong><br><span class="tw-text-gray-600">Selecteer een werkende kortingscode uit ons overzicht hierboven en klik erop om de code te kopiëren.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">2</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 2: Ga naar Dierenapotheek</strong><br><span class="tw-text-gray-600">Klik op de knop om door te gaan naar de Dierenapotheek webshop en begin met het samenstellen van je bestelling.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">3</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 3: Voeg producten toe</strong><br><span class="tw-text-gray-600">Zoek de gewenste producten en voeg deze toe aan je winkelwagen. Controleer of je aan eventuele minimale bestelwaarde voldoet.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">4</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 4: Ga naar winkelwagen</strong><br><span class="tw-text-gray-600">Klik op het winkelwagen-icoon en controleer je bestelling. Ga vervolgens naar de checkout-pagina.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">5</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 5: Voer de kortingscode in</strong><br><span class="tw-text-gray-600">Zoek het veld voor kortingscode (meestal 'promocode' of 'kortingscode' genoemd) en plak de gekopieerde code.</span></div>
-</li>
-<li class="tw-flex tw-gap-4">
-  <span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">6</span>
-  <div><strong class="tw-font-semibold tw-text-gray-900">Stap 6: Voltooi je bestelling</strong><br><span class="tw-text-gray-600">Klik op 'Toepassen' om de korting te activeren en rond vervolgens je bestelling af met de gewenste betaalmethode.</span></div>
-</li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">1</span><div><strong class="tw-font-semibold tw-text-gray-900">Kies je kortingscode</strong><br><span class="tw-text-gray-600">Selecteer een werkende kortingscode van bovenstaande lijst en kopieer de code.</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">2</span><div><strong class="tw-font-semibold tw-text-gray-900">Ga naar Dierenapotheek.nl</strong><br><span class="tw-text-gray-600">Klik op "Naar de winkel" om naar de officiële Dierenapotheek.nl website te gaan.</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">3</span><div><strong class="tw-font-semibold tw-text-gray-900">Vul je winkelwagen</strong><br><span class="tw-text-gray-600">Zoek je gewenste producten en voeg ze toe aan je winkelwagen via "In winkelwagen".</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">4</span><div><strong class="tw-font-semibold tw-text-gray-900">Ga naar de checkout</strong><br><span class="tw-text-gray-600">Klik rechtsboven op het winkelwagen icoon en vervolgens op "Afrekenen".</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">5</span><div><strong class="tw-font-semibold tw-text-gray-900">Vul je kortingscode in</strong><br><span class="tw-text-gray-600">Zoek naar het veld "Kortingscode" onder je bestelsamenvatting en voer je code in.</span></div></li>
+<li class="tw-flex tw-gap-4"><span class="tw-flex-shrink-0 tw-w-8 tw-h-8 tw-bg-green-600 tw-text-white tw-rounded-full tw-flex tw-items-center tw-justify-center tw-font-bold tw-text-sm">6</span><div><strong class="tw-font-semibold tw-text-gray-900">Activeer de korting</strong><br><span class="tw-text-gray-600">Klik op "Toepassen" naast het kortingscode veld en zie direct je korting toegepast worden.</span></div></li>
 </ol>
-<p class="tw-mt-4 tw-text-gray-600 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-px-4 tw-py-3 tw-text-sm">
-  <strong class="tw-font-semibold">Tip:</strong> Sommige kortingscodes zijn alleen geldig voor nieuwe klanten of bij een minimum bestelwaarde. Controleer altijd de voorwaarden voordat je bestelt.
-</p>
+<p class="tw-mt-4 tw-text-gray-600 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-px-4 tw-py-3 tw-text-sm"><strong class="tw-font-semibold">Tip:</strong> Sommige kortingscodes van Dierenapotheek.nl hebben een minimum bestelbedrag. Controleer altijd de voorwaarden voordat je je bestelling plaatst.</p>
 </section>
 
 <!-- == TIPS VOOR EXTRA KORTING == -->
-<section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Tips om extra te besparen bij Dierenapotheek</h2>
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 1: Meld je aan voor de nieuwsbrief</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Door je aan te melden voor de Dierenapotheek nieuwsbrief ontvang je niet alleen een welkomstkorting van 15%, maar ook wekelijks de nieuwste aanbiedingen en exclusieve kortingscodes. Nieuwsbriefabonnees krijgen als eerste toegang tot sales en speciale acties.</p>
+<section id="tips-extra-korting" class="tw-mb-10">
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Tips om extra te besparen bij Dierenapotheek.nl</h2>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 1: Schrijf je in voor de nieuwsbrief</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Door je aan te melden voor de Dierenapotheek.nl nieuwsbrief ontvang je exclusieve nieuwsbrief kortingscode deals en early access tot sales. Nieuwe abonnees krijgen direct een welkomstkorting van 10% die je kunt gebruiken op je eerste bestelling. Daarnaast ontvang je maandelijks kortingscodes tot 20% korting en ben je als eerste op de hoogte van seizoensacties en clearance sales.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 2: Profiteer van gratis verzending</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Bij bestellingen vanaf €30 betaal je geen verzendkosten bij Dierenapotheek. Plan je aankopen slim en combineer verschillende producten om de gratis verzendingsdrempel te bereiken. Dit bespaart je €4,95 per bestelling.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 2: Profiteer van studentenkorting</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Studenten kunnen 15% studentenkorting krijgen bij Dierenapotheek.nl door hun studentenstatus te verifiëren via UNiDAYS. Deze korting geldt op het gehele assortiment (behalve receptplichtige medicijnen) en is combineerbaar met bepaalde acties en aanbiedingen. Je hebt wel een geldige student-emailadres nodig om de verificatie te voltooien.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 3: Volg sociale media voor flash sales</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Dierenapotheek deelt regelmatig kortingscodes en flash sales via Facebook en Instagram. Door hun sociale media kanalen te volgen mis je nooit meer een tijdelijke aanbieding of influencer code die slechts enkele uren geldig is.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 3: Gebruik automatische herhaalbestellingen</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Voor producten die je regelmatig nodig hebt zoals hondenvoer, kattengrit of medicijnen kun je een automatische herhaalbeoordeling instellen. Dit geeft je 5% extra korting op elke bestelling en zorgt ervoor dat je nooit zonder essentiële producten zit. Je kunt de frequentie zelf instellen en de service op elk moment wijzigen of stopzetten.</p>
 
-<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 4: Combineer studentenkorting met andere acties</h3>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Als student kun je vaak de studentenkorting van 20% combineren met andere lopende aanbiedingen. Controleer tijdens checkout of je meerdere kortingen tegelijk kunt gebruiken voor maximale besparing op je bestelling.</p>
+<h3 class="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">Tip 4: Volg influencer kortingscode acties</h3>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Dierenapotheek.nl werkt samen met verschillende Nederlandse pet influencers die exclusieve kortingscode deals aanbieden. Volg populaire accounts zoals @hondenliefde_nl en @kattenparadijs op Instagram voor influencer kortingscode aanbiedingen tot 25% korting. Deze codes zijn meestal beperkt geldig en geven toegang tot kortingen die je nergens anders vindt.</p>
 </section>
 
 <!-- == 10 FEITEN == -->
 <section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">10 feiten over winkelen bij Dierenapotheek</h2>
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">10 feiten over winkelen bij Dierenapotheek.nl</h2>
 <ol class="tw-space-y-2 tw-text-gray-700">
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">1.</span>
-  <span>Dierenapotheek heeft meer dan <strong class="tw-font-semibold tw-text-gray-900">15.000 producten</strong> in het assortiment</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">2.</span>
-  <span>Bestellingen voor <strong class="tw-font-semibold tw-text-gray-900">15:00</strong> worden dezelfde dag verzonden</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">3.</span>
-  <span>De webshop biedt <strong class="tw-font-semibold tw-text-gray-900">30 dagen retourgarantie</strong> op ongebruikte producten</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">4.</span>
-  <span>Klanten kunnen kiezen uit meer dan <strong class="tw-font-semibold tw-text-gray-900">200 bekende merken</strong></span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">5.</span>
-  <span>Gratis verzending geldt al vanaf een bestelwaarde van <strong class="tw-font-semibold tw-text-gray-900">€30</strong></span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">6.</span>
-  <span>Het bedrijf heeft meer dan <strong class="tw-font-semibold tw-text-gray-900">15 jaar ervaring</strong> in de dierenindustrie</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">7.</span>
-  <span>Receptplichtige medicijnen worden gecontroleerd door <strong class="tw-font-semibold tw-text-gray-900">erkende dierenartsen</strong></span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">8.</span>
-  <span>De klantenservice is <strong class="tw-font-semibold tw-text-gray-900">6 dagen per week</strong> bereikbaar voor advies</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">9.</span>
-  <span>Studenten krijgen permanent <strong class="tw-font-semibold tw-text-gray-900">20% korting</strong> op alle producten</span>
-</li>
-<li class="tw-flex tw-gap-3">
-  <span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">10.</span>
-  <span>De mobiele app heeft een <strong class="tw-font-semibold tw-text-gray-900">4,5 sterren rating</strong> in de app stores</span>
-</li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">1.</span><span>Dierenapotheek.nl bestaat sinds <strong class="tw-font-semibold tw-text-gray-900">2003</strong> en is daarmee één van de oudste online dierenapothekers van Nederland</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">2.</span><span>Het assortiment bevat meer dan <strong class="tw-font-semibold tw-text-gray-900">15.000 producten</strong> voor alle soorten huisdieren</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">3.</span><span>Gratis verzending geldt voor alle bestellingen vanaf <strong class="tw-font-semibold tw-text-gray-900">€49</strong>, daaronder €4,95 verzendkosten</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">4.</span><span>Leveringstijd is <strong class="tw-font-semibold tw-text-gray-900">1-2 werkdagen</strong> voor Nederland en België</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">5.</span><span>Je hebt <strong class="tw-font-semibold tw-text-gray-900">30 dagen retourrecht</strong> op ongebruikte producten</span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">6.</span><span>Koelkast verzending voor medicijnen kost een extra <strong class="tw-font-semibold tw-text-gray-900">€7,50</strong></span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">7.</span><span>Klantenservice is bereikbaar <strong class="tw-font-semibold tw-text-gray-900">maandag t/m vrijdag van 8:00-18:00</strong></span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">8.</span><span>Het bedrijf biedt zowel vrij verkrijgbare als <strong class="tw-font-semibold tw-text-gray-900">receptplichtige diergeneesmiddelen</strong></span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">9.</span><span>Automatische herhaalbeostellingen geven <strong class="tw-font-semibold tw-text-gray-900">5% extra korting</strong></span></li>
+<li class="tw-flex tw-gap-3"><span class="tw-font-bold tw-text-green-700 tw-w-6 tw-flex-shrink-0">10.</span><span>Het bedrijf werkt samen met meer dan <strong class="tw-font-semibold tw-text-gray-900">1000 dierenartsen</strong> in Nederland voor receptservice</span></li>
 </ol>
 </section>
 
 <!-- == VERGELIJKBARE WINKELS == -->
 <section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Vergelijkbare winkels als Dierenapotheek</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed">Voor diereneigenaren die alternatieven zoeken zijn er verschillende vergelijkbare webshops beschikbaar. <strong class="tw-font-semibold tw-text-gray-900">Medpets</strong> is een van de grootste online dierenspeciaalzaken van Europa met een breed assortiment en snelle levering. <strong class="tw-font-semibold tw-text-gray-900">Vetsend</strong> specialiseert zich in diergeneesmiddelen en heeft een uitgebreide apotheek met receptservice. <strong class="tw-font-semibold tw-text-gray-900">Dierenapotheker.nl</strong> biedt vergelijkbare producten en heeft vaak competitieve prijzen op premium merken. <strong class="tw-font-semibold tw-text-gray-900">Brekz</strong> is populair vanwege hun grote assortiment hondenvoeding en kattenvoeding tegen scherpe prijzen. Voor specifieke behoeften kun je ook terecht bij <strong class="tw-font-semibold tw-text-gray-900">Veterinaire Apotheek</strong> die zich richt op medicijnen en therapeutische producten.</p>
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Vergelijkbare winkels als Dierenapotheek.nl</h2>
+<p class="tw-text-gray-700 tw-leading-relaxed">Voor huisdierverzorging zijn er verschillende alternatieven zoals <strong class="tw-font-semibold tw-text-gray-900">Medpets.nl</strong> die zich eveneens richt op diergeneesmiddelen en een breed assortiment heeft, <strong class="tw-font-semibold tw-text-gray-900">Brekz.nl</strong> voor voornamelijk voeding en accessoires met scherpe prijzen, <strong class="tw-font-semibold tw-text-gray-900">Vetsend.nl</strong> die zich specialiseert in medicijnen en therapeutische voeding, <strong class="tw-font-semibold tw-text-gray-900">Pets Place</strong> voor een combinatie van online en fysieke winkels, en <strong class="tw-font-semibold tw-text-gray-900">Diergigant.nl</strong> die naast medicijnen ook veel lifestyle producten voor huisdieren aanbiedt. Deze winkels delen de focus op diergezondheid maar verschillen in prijsstelling, assortiment specialisatie en service niveau.</p>
 </section>
 
 <!-- == NIEUWS == -->
 <section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Nieuws en ontwikkelingen bij Dierenapotheek</h2>
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Dierenapotheek investeert continu in <strong class="tw-font-semibold tw-text-gray-900">innovatie en verbetering</strong> van hun dienstverlening. Recent heeft het bedrijf hun magazijn uitgebreid om nog snellere levering mogelijk te maken en het assortiment verder uit te breiden. De introductie van een geavanceerde mobiele app heeft het bestellen nog gemakkelijker gemaakt voor klanten die onderweg producten willen bestellen. Daarnaast werkt Dierenapotheek aan een verbeterde AI-chatbot die 24/7 beschikbaar is voor klantvragen en productadvies.</p>
-
-<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Een belangrijke ontwikkeling is de samenwerking met <strong class="tw-font-semibold tw-text-gray-900">lokale dierenartspraktijken</strong> waardoor receptplichtige medicijnen nog sneller beschikbaar komen. Het bedrijf heeft ook hun duurzaamheidsinitiatieven uitgebreid door meer biologische en milieuvriendelijke producten toe te voegen aan het assortiment. Deze ontwikkelingen zorgen ervoor dat Dierenapotheek voorop blijft lopen in de online dierengezondheidssector en klanten steeds betere service kan bieden.</p>
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-4">Nieuws en ontwikkelingen bij Dierenapotheek.nl</h2>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Dierenapotheek.nl heeft recent hun digitale receptservice uitgebreid waardoor klanten nu nog eenvoudiger receptplichtige medicijnen kunnen bestellen via hun online platform. De nieuwe functionaliteit maakt het mogelijk om direct contact op te nemen met de eigen dierenarts voor herhalingsrecepten en nieuwe voorschriften. Dit systeem is geïntegreerd met meer dan 1000 Nederlandse dierenartspraktijken.</p>
+<p class="tw-text-gray-700 tw-leading-relaxed tw-mb-4">Daarnaast heeft het bedrijf hun assortiment uitgebreid met een nieuwe lijn van biologische en duurzame huisdierproducten. Deze 'Green Pet' collectie omvat milieuvriendelijke speeltjes, biologische verzorgingsproducten en duurzaam geproduceerd voer. De producten zijn voorzien van speciale kortingscode acties en worden geleverd in plastic-vrije verpakkingen. Deze ontwikkeling sluit aan bij de groeiende vraag van Nederlandse huisdiereigenaren naar duurzame alternatieven.</p>
 </section>
 
 <!-- == FAQ == -->
-<section class="tw-mb-10">
-<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-6">Veelgestelde vragen over de Dierenapotheek kortingscode</h2>
+<section id="faq" class="tw-mb-10">
+<h2 class="tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-6">Veelgestelde vragen over de Dierenapotheek.nl kortingscode</h2>
 <div class="tw-space-y-6">
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoe krijg ik een Dierenapotheek kortingscode?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">Je kunt een <strong class="tw-font-semibold tw-text-gray-900">kortingscode</strong> krijgen door je aan te melden voor de nieuwsbrief, hun sociale media te volgen of via diski.nl de nieuwste codes te vinden. Nieuwe klanten ontvangen automatisch een welkomstcode van 15% korting.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Kan ik meerdere kortingscodes combineren?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">Over het algemeen kun je <strong class="tw-font-semibold tw-text-gray-900">slechts één kortingscode</strong> per bestelling gebruiken. Sommige acties kunnen wel gecombineerd worden met automatische kortingen zoals gratis verzending vanaf €30.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Waarom werkt mijn kortingscode niet?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">Een kortingscode werkt mogelijk niet als deze <strong class="tw-font-semibold tw-text-gray-900">verlopen is</strong>, alleen geldig is voor nieuwe klanten, of als je niet voldoet aan de minimum bestelwaarde. Controleer altijd de voorwaarden van de code.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Geldt de studentenkorting voor alle producten?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">De <strong class="tw-font-semibold tw-text-gray-900">studentenkorting van 20%</strong> geldt voor het gehele assortiment na verificatie van je studentenstatus. Je moet je registreren met een geldig studentenemail-adres om deze korting te kunnen gebruiken.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoe lang zijn kortingscodes geldig?</h3>
-    <p class="tw-text-gray-700 tw-leading-relaxed">De <strong class="tw-font-semibold tw-text-gray-900">geldigheid van kortingscodes</strong> varieert per actie. Nieuwsbriefcodes zijn meestal enkele weken geldig, terwijl seizoensaanbiedingen en flash sales vaak maar enkele dagen beschikbaar zijn.</p>
-  </div>
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Kan ik een kortingscode gebruiken op receptplichtige medicijnen?</h3><p class="tw-text-gray-700 tw-leading-relaxed">Nee, volgens Nederlandse wetgeving mogen receptplichtige diergeneesmiddelen niet met korting verkocht worden. Kortingscodes geldig alleen voor vrij verkrijgbare producten zoals voeding, supplementen, verzorgingsproducten en speelgoed. Therapeutische diëten die op voorschrift verkrijgbaar zijn vallen hier ook onder.</p></div>
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoe lang zijn Dierenapotheek.nl kortingscodes geldig?</h3><p class="tw-text-gray-700 tw-leading-relaxed">De geldigheid varieert per kortingscode. Nieuwsbriefcodes zijn meestal 30 dagen geldig, seizoenacties lopen 1-2 weken, en influencer kortingscode deals vaak slechts 48-72 uur. Controleer altijd de vervaldatum bij elke code en gebruik ze tijdig om teleurstelling bij het afrekenen te voorkomen.</p></div>
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Kan ik meerdere kortingscodes combineren bij Dierenapotheek.nl?</h3><p class="tw-text-gray-700 tw-leading-relaxed">Nee, je kunt slechts één kortingscode per bestelling gebruiken. Het systeem kiest automatisch de hoogste korting als je meerdere codes probeert in te voeren. Wel kun je kortingscodes combineren met andere aanbiedingen zoals gratis verzending acties of automatische herhaalbeoordeling kortingen van 5%.</p></div>
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Is er een minimum bestelbedrag voor Dierenapotheek.nl kortingscodes?</h3><p class="tw-text-gray-700 tw-leading-relaxed">Dit hangt af van de specifieke kortingscode. Nieuwklantcodes hebben vaak geen minimum, terwijl percentuele kortingen meestal een minimum van €25-€50 hebben. Gratis verzending codes vereisen meestal €49 bestelbedrag. Controleer altijd de voorwaarden van elke kortingscode voordat je je bestelling plaatst.</p></div>
+<div><h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Krijg ik studentenkorting bij Dierenapotheek.nl zonder kortingscode?</h3><p class="tw-text-gray-700 tw-leading-relaxed">Ja, studenten krijgen 15% korting na verificatie via UNiDAYS. Je hebt geen aparte kortingscode nodig - de korting wordt automatisch toegepast na verificatie van je studentenstatus. Deze korting geldt op het gehele assortiment behalve receptplichtige medicijnen en is combineerbaar met bepaalde andere acties.</p></div>
 </div>
 </section>
 
 <!-- == BLACK FRIDAY == -->
-<section class="tw-mb-10 tw-bg-gray-900 tw-rounded-xl tw-p-6">
-<h2 class="tw-text-2xl tw-font-bold tw-text-orange-400 tw-mb-2">Dierenapotheek Black Friday 2026 — de beste deals en kortingscodes</h2>
+<section id="black-friday" class="tw-mb-10 tw-bg-gray-900 tw-rounded-xl tw-p-6">
+<h2 class="tw-text-2xl tw-font-bold tw-text-orange-400 tw-mb-2">Dierenapotheek.nl Black Friday 2026 — de beste deals en kortingscodes</h2>
 <p class="tw-text-gray-400 tw-text-sm tw-mb-6">Black Friday 2026: vrijdag 27 november · Cyber Monday 2026: maandag 30 november</p>
-
-<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-4">De <strong class="tw-font-semibold tw-text-orange-300">Dierenapotheek Black Friday 2026</strong> belooft de beste kortingen van het jaar te worden voor diereneigenaren. Op vrijdag 27 november start de Black Friday Dierenapotheek sale met kortingen tot 50% op populaire producten. Black Friday deals Dierenapotheek omvatten premium hondenvoeding, kattenvoeding, medicijnen en verzorgingsproducten van topmerken zoals Royal Canin, Hill's en Purina. De Black Friday kortingscode Dierenapotheek geeft extra korting bovenop de al gereduceerde prijzen, waardoor je nog meer kunt besparen. Early access voor nieuwsbriefabonnees start al op donderdag 26 november met pre Black Friday deals exclusief voor vaste klanten.</p>
-
-<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-4">Tijdens de <strong class="tw-font-semibold tw-text-orange-300">Black Friday week</strong> en Black Friday weekend kun je profiteren van dagelijkse flash sales met wisselende aanbiedingen. De beste Black Friday deals zijn beschikbaar op vrijdag 27 november, gevolgd door Cyber Monday Dierenapotheek op maandag 30 november met extra kortingen op online exclusieve producten. Black Friday kortingen Dierenapotheek zijn geldig op alle productcategorieën, van basisvoeding tot gespecialiseerde dieetproducten. Een Dierenapotheek Black Friday kortingscode kan worden gecombineerd met gratis verzending voor orders boven €25 tijdens de sale periode. Black Friday aanbiedingen Dierenapotheek worden wekelijks aangekondigd via de nieuwsbrief en sociale media kanalen.</p>
-
-<h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-3 tw-mt-6">Verwachte Dierenapotheek Black Friday kortingen 2026</h3>
+<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-4">Black Friday bij Dierenapotheek.nl is het perfecte moment om je voorraad huisdierbenodigdheden aan te vullen met kortingen tot 40% op geselecteerde producten. Historisch gezien start Dierenapotheek.nl hun Black Friday deals al een week eerder met Early Bird kortingscodes van 20% die dagelijks oplopen tot de hoofdevent. Verwacht exclusieve kortingscode deals op populaire merken zoals Hill's, Royal Canin, Bravecto en Frontline. Hun Cyber Monday acties focussen zich vooral op bulk aankopen en jaarvoorraad deals met extra kortingscodes voor automatische herhaalbeostellingen.</p>
+<p class="tw-text-gray-300 tw-leading-relaxed tw-mb-6">Voor Black Friday 2026 kun je werkende kortingscode aanbiedingen verwachten op alle productcategorieën behalve receptplichtige medicijnen. Nieuwsbrief abonnees krijgen 24 uur vroeger toegang tot alle Black Friday kortingscodes, terwijl influencer kortingscode deals exclusieve toegang geven tot limited edition bundles. Studentenkorting van 15% blijft actief en is combineerbaar met bepaalde Black Friday acties voor extra besparingen tot 50%.</p>
+<h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-3 tw-mt-6">Verwachte Dierenapotheek.nl Black Friday kortingen 2026</h3>
 <div class="tw-overflow-x-auto tw-mb-6">
 <table class="tw-w-full tw-border-collapse tw-text-sm tw-text-left">
-<thead>
-<tr class="tw-bg-gray-800 tw-text-orange-400">
+<thead><tr class="tw-bg-gray-800 tw-text-orange-400">
 <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Korting</th>
 <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Categorie</th>
-<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Type</th>
+<th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Type deal</th>
 <th class="tw-px-4 tw-py-3 tw-font-semibold tw-border tw-border-gray-700">Verwacht</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
-<tr class="tw-bg-gray-800 tw-text-gray-100 hover:tw-bg-gray-700">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">50% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Premium hondenvoeding</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Flash deal</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Vrijdag 27 november</td>
+<tr class="tw-bg-gray-800 hover:tw-bg-gray-750">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">40% korting</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Premium hondenvoer</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Black Friday hoofddeal</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Zeer waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-900 tw-text-gray-100 hover:tw-bg-gray-800">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">40% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Verzorgingsproducten</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Weekend deal</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">26-29 november</td>
+<tr class="tw-bg-gray-900 hover:tw-bg-gray-750">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">35% korting</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Parasieten preventie</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Weekend flash sale</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Zeer waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-800 tw-text-gray-100 hover:tw-bg-gray-700">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">35% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Kattenvoeding</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Early access</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Donderdag 26 november</td>
+<tr class="tw-bg-gray-800 hover:tw-bg-gray-750">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">30% korting</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Kattenverzorging</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Cyber Monday exclusive</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-900 tw-text-gray-100 hover:tw-bg-gray-800">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">30% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Supplementen</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Cyber Monday</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Maandag 30 november</td>
+<tr class="tw-bg-gray-900 hover:tw-bg-gray-750">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">25% korting</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Supplementen & vitamines</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Week-long deal</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Zeer waarschijnlijk</td>
 </tr>
-<tr class="tw-bg-gray-800 tw-text-gray-100 hover:tw-bg-gray-700">
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-font-bold tw-text-orange-400">25% korting</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Speelgoed & accessoires</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Week deal</td>
-<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700">Hele Black Friday week</td>
+<tr class="tw-bg-gray-800 hover:tw-bg-gray-750">
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-orange-400 tw-font-bold">50% korting</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Speelgoed & accessoires</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Voorraadopruiming</td>
+<td class="tw-px-4 tw-py-3 tw-border tw-border-gray-700 tw-text-gray-100">Mogelijk</td>
 </tr>
 </tbody>
-</table>
-</div>
-
-<h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-3">Tips voor de beste Dierenapotheek Black Friday deals</h3>
+</table></div>
+<h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-3">Tips voor de beste Dierenapotheek.nl Black Friday deals</h3>
 <ul class="tw-space-y-2 tw-mb-6">
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Meld je aan voor early access:</strong> Nieuwsbriefabonnees krijgen 24 uur eerder toegang tot Black Friday deals</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Maak een verlanglijst:</strong> Voeg gewenste producten toe aan je verlanglijst om snel te kunnen bestellen tijdens flash sales</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Volg sociale media:</strong> Flash deals worden vaak als eerste aangekondigd op Instagram en Facebook</span>
-</li>
-<li class="tw-flex tw-items-start tw-gap-2">
-  <span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span>
-  <span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Combineer met gratis verzending:</strong> Profiteer van verlaagde gratis verzendingsdrempel tijdens Black Friday</span>
-</li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Schrijf je in voor nieuwsbrief:</strong> Krijg 24 uur eerder toegang tot alle Black Friday kortingscodes</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Maak een verlanglijst:</strong> Voeg producten toe aan je favorieten om prijsdalingen te monitoren</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Combineer met studentenkorting:</strong> Extra 15% bovenop Black Friday prijzen waar mogelijk</span></li>
+<li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-orange-400 tw-font-bold tw-mt-0.5">→</span><span class="tw-text-gray-300"><strong class="tw-font-semibold tw-text-orange-300">Volg social media:</strong> Flash deals en last-minute kortingscodes worden vaak via Instagram aangekondigd</span></li>
 </ul>
-
-<h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-4">Veelgestelde vragen — Dierenapotheek Black Friday</h3>
+<h3 class="tw-text-lg tw-font-semibold tw-text-orange-300 tw-mb-4">Veelgestelde vragen — Dierenapotheek.nl Black Friday</h3>
 <div class="tw-space-y-4">
-  <div>
-    <h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wanneer start Dierenapotheek Black Friday 2026?</h3>
-    <p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Dierenapotheek Black Friday 2026 start officieel op vrijdag 27 november. Nieuwsbriefabonnees krijgen early access vanaf donderdag 26 november met exclusieve pre-deals.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Hoeveel korting geeft Dierenapotheek op Black Friday?</h3>
-    <p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Tijdens Black Friday kun je kortingen tot 50% verwachten op populaire producten. Flash deals bieden de hoogste kortingen, vaak gelimiteerd in tijd en aantal.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Heeft Dierenapotheek ook Cyber Monday kortingen?</h3>
-    <p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Ja, Cyber Monday op 30 november biedt speciale online deals met kortingen tot 35% op digitale exclusieven en restvoorraad van Black Friday.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wat zijn de beste Dierenapotheek Black Friday deals?</h3>
-    <p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">De beste deals zijn meestal op premium hondenvoeding (50% korting), verzorgingsproducten (40% korting) en grote voorraadpakketten met extra volume kortingen.</p>
-  </div>
-  <div>
-    <h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Kan ik een Dierenapotheek kortingscode gebruiken tijdens Black Friday?</h3>
-    <p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Sommige kortingscodes kunnen worden gecombineerd met Black Friday aanbiedingen, andere niet. Controleer altijd de voorwaarden of vraag de klantenservice om advies.</p>
-  </div>
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wanneer starten de Black Friday deals bij Dierenapotheek.nl?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Dierenapotheek.nl start meestal een week voor Black Friday met Early Bird deals van 20% korting. De hoofddeals gaan live om middernacht op Black Friday zelf.</p></div>
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Zijn receptplichtige medicijnen ook in de Black Friday sale?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Nee, wettelijk mogen receptplichtige diergeneesmiddelen niet met korting verkocht worden. Wel zijn er vaak acties op vrij verkrijgbare gezondheidsproducten en supplementen.</p></div>
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Kan ik Black Friday kortingscodes combineren met andere acties?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Dit varieert per kortingscode. Studentenkorting is vaak combineerbaar, automatische herhaalbeoordeling korting meestal niet. Check altijd de voorwaarden van elke code.</p></div>
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Heeft Dierenapotheek.nl ook Cyber Monday deals?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Ja, Cyber Monday focust zich vooral op digitale deals zoals gratis verzending, bulk kortingen en exclusive online-only producten met kortingen tot 30%.</p></div>
+<div><h3 class="tw-text-base tw-font-semibold tw-text-orange-300 tw-mb-1">Wat als mijn Black Friday bestelling defect aankomt?</h3><p class="tw-text-gray-300 tw-text-sm tw-leading-relaxed">Het normale 30 dagen retourrecht geldt ook voor Black Friday aankopen. Contact klantenservice binnen 48 uur voor defecte producten voor snelle vervanging.</p></div>
 </div>
 </section>
     </div>

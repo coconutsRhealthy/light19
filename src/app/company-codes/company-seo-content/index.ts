@@ -370,13 +370,16 @@ export async function loadSeoContent(company: string): Promise<string | null> {
     case 'icaniwill': return import('./icaniwill').then(m => m.default);
     case 'idealofsweden': return import('./idealofsweden').then(m => m.default);
     case 'joybuy': return import('./joybuy').then(m => m.default);
+    case 'kenwood': return import('./kenwood').then(m => m.default);
     case 'koro.com': return import('./koro.com').then(m => m.default);
     case 'lampgigant': return import('./lampgigant').then(m => m.default);
     case 'leolive': return import('./leolive').then(m => m.default);
     case 'loavies': return import('./loavies').then(m => m.default);
     case 'maniac': return import('./maniac').then(m => m.default);
+    case 'maniacnails': return import('./maniacnails').then(m => m.default);
     case 'mostwanted': return import('./mostwanted').then(m => m.default);
     case 'myjewellery': return import('./myjewellery').then(m => m.default);
+    case 'naduvi.nl': return import('./naduvi.nl').then(m => m.default);
     case 'nakdfashion': return import('./nakdfashion').then(m => m.default);
     case 'nelly': return import('./nelly').then(m => m.default);
     case 'neonail': return import('./neonail').then(m => m.default);
