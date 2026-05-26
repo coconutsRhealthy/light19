@@ -139,7 +139,7 @@ export class CompanyCodesComponent implements OnInit {
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);
         this.monthYear = this.meta.getDateString();
-        const codeCount = this.discountCodes.filter(c => !c.code.startsWith('http')).length;
+        const codeCount = this.discountCodes.filter(c => !c.code.startsWith('http')).length || 1;
         const pageUrl = "https://diski.nl/" + this.company + "/";
         const title = "Werkende " + this.webshopName + " kortingscode in " + this.monthYear;
         const description = codeCount + " actieve " + this.webshopName + " kortingscode" + (codeCount !== 1 ? 's' : '') + " in " + this.monthYear + "; Bespaar met deze kortingscodes op online shoppen bij " + this.webshopName;

@@ -39,7 +39,7 @@ export class AffiliateLinkService {
         dummyCode: 'FOOT25JUV'
     },
     'ninjakitchen': {
-        url: 'https://tidd.ly/4ix2TFn',
+        url: 'https://tidd.ly/4fd62ue',
         dummyCode: 'NINJ15BBG'
     },
     'samsung': {
@@ -195,7 +195,7 @@ export class AffiliateLinkService {
         dummyCode: 'PROMO54VH'
     },
     'sharkclean.nl': {
-        url: 'https://tidd.ly/4dp8Dyx',
+        url: 'https://tidd.ly/4fd62ue',
         dummyCode: 'ANNA15VGZ'
     },
     'prenatal': {
