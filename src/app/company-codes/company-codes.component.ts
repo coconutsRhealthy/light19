@@ -211,6 +211,20 @@ export class CompanyCodesComponent implements OnInit {
     });
   }
 
+  onSeoLinkClick(event: MouseEvent): void {
+    if (!this.isBrowser) return;
+    const anchor = (event.target as HTMLElement | null)?.closest('a');
+    if (!anchor) return;
+    const href = anchor.getAttribute('href');
+    if (!href || !href.startsWith('#') || href.length < 2) return;
+    const id = href.slice(1);
+    const target = document.getElementById(id);
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', `${location.pathname}${location.search}#${id}`);
+  }
+
   formatDate(date: string): string {
     const formattedDate = this.getDateFromDateString(date);
     return this.datePipe.transform(formattedDate, 'd MMM') ?? '';
