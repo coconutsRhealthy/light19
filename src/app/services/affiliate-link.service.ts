@@ -22,10 +22,10 @@ export class AffiliateLinkService {
         url: 'https://www.stylink.it/6MNk0HeXDDA',
         dummyCode: 'VERO20DRN'
     },
-//     'ginatricot': {
-//         url: 'https://www.stylink.it/wnG31IJq3Q4',
-//         dummyCode: 'VIP20QZJ'
-//     },
+    'ginatricot': {
+        url: 'https://www.stylink.it/6MNk0HegZRL',
+        dummyCode: 'VIP20QZJ'
+    },
     'hunkemoller': {
         url: 'https://tidd.ly/4j17AXp',
         dummyCode: 'HUNK5CUZ'
@@ -1485,6 +1485,142 @@ export class AffiliateLinkService {
     'moneybird': {
         url: 'https://bdt9.net/c/?si=19080&li=1819984&wi=418827&dl=',
         dummyCode: 'EXTRA10'
+    },
+    'acer': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.acer.com%2Fnl-nl%2F',
+        dummyCode: 'SHOP10'
+    },
+    'babista.nl': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.babista.nl%2F',
+        dummyCode: 'OFF15'
+    },
+    'bestecanvas': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.bestecanvas.nl%2F',
+        dummyCode: 'WELCOME10'
+    },
+    'bjornborg': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.bjornborg.com%2Fnl%2F',
+        dummyCode: 'ACTIE15'
+    },
+    'buitiqo': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fbuitiqo.nl%2F',
+        dummyCode: '10SHOP'
+    },
+    'canalplus': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.canalplus.nl%2F',
+        dummyCode: '15OFF'
+    },
+    'doreandrose': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.doreandrose.com%2F',
+        dummyCode: 'SHOP15'
+    },
+    'dreame': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.dreametech.com%2F',
+        dummyCode: 'OFF10'
+    },
+    'glowmode': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fshopglowmode.com%2F',
+        dummyCode: 'WELCOME15'
+    },
+    'goboony': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.goboony.be%2F',
+        dummyCode: 'ACTIE10'
+    },
+    'hellofresh.nl': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.hellofresh.nl%2F',
+        dummyCode: '15SHOP'
+    },
+    'jackery': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.jackery.com%2F',
+        dummyCode: '10OFF'
+    },
+    'jetpacglobal': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.jetpacglobal.com%2F',
+        dummyCode: '10WELCOME'
+    },
+    'jjshouse': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.jjshouse.com%2Fnl%2F',
+        dummyCode: '15ACTIE'
+    },
+    'journaway': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.journaway.com%2F',
+        dummyCode: 'SHOP10'
+    },
+    'kymocleaning': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fkymocleaning.com%2F',
+        dummyCode: 'OFF15'
+    },
+    'logitech': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.logitech.com%2Fnl-nl%2F',
+        dummyCode: 'WELCOME10'
+    },
+    'marliesdekkers': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.marliesdekkers.com%2Fnl_nl%2F',
+        dummyCode: 'ACTIE15'
+    },
+    'micas': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.shopmicas.com%2F',
+        dummyCode: '10SHOP'
+    },
+    'morenutrition': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.morenutrition.com%2F',
+        dummyCode: '15OFF'
+    },
+    'mothersearth': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.mothersearth.com%2F',
+        dummyCode: 'SHOP15'
+    },
+    'nextory': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.nextory.nl%2F',
+        dummyCode: 'OFF10'
+    },
+    'oglmove': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Foglmove.com%2F',
+        dummyCode: 'WELCOME15'
+    },
+    'rihoas': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.rihoas.com%2F',
+        dummyCode: 'ACTIE10'
+    },
+    'siroko': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.siroko.com%2Fnl',
+        dummyCode: '15SHOP'
+    },
+    'stylewe': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.stylewe.com%2F',
+        dummyCode: '10OFF'
+    },
+    'tommyteleshopping': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.tommyteleshopping.com%2Fnl%2F',
+        dummyCode: '10WELCOME'
+    },
+    'training-fit.nl': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Ftraining-fit.nl%2F',
+        dummyCode: '15ACTIE'
+    },
+    'trip': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.trip.com%2F',
+        dummyCode: 'SHOP10'
+    },
+    'vbs-hobby.nl': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vbs-hobby.nl%2F',
+        dummyCode: 'OFF15'
+    },
+    'vonroc': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vonroc.nl%2F',
+        dummyCode: 'WELCOME10'
+    },
+    'walkingpad.nl': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.walkingpad.com%2F',
+        dummyCode: 'ACTIE15'
+    },
+    'whitefoxboutique': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.whitefoxboutique.co.uk%2F',
+        dummyCode: '10SHOP'
+    },
+    'yoursurprise': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.yoursurprise.nl%2F',
+        dummyCode: '15OFF'
     }
   };
 
