@@ -1621,6 +1621,38 @@ export class AffiliateLinkService {
     'yoursurprise': {
         url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.yoursurprise.nl%2F',
         dummyCode: '15OFF'
+    },
+    'flixbus': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.flixbus.nl%2F',
+        dummyCode: 'WELCOME15'
+    },
+    'tripadvisor': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.tripadvisor.nl%2F',
+        dummyCode: 'ACTIE10'
+    },
+    'asus': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.asus.com%2Fnl%2F',
+        dummyCode: 'SHOP15'
+    },
+    'huawei': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fconsumer.huawei.com%2Fnl%2F',
+        dummyCode: 'OFF10'
+    },
+    'oneplus': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.oneplus.com%2Fnl',
+        dummyCode: '10SHOP'
+    },
+    'calvinklein': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.calvinklein.nl%2F',
+        dummyCode: '15OFF'
+    },
+    'groupon': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.groupon.nl%2F',
+        dummyCode: 'ACTIE15'
+    },
+    'ticketmaster': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.ticketmaster.nl%2F',
+        dummyCode: 'WELCOME10'
     }
   };
 
