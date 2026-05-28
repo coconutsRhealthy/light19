@@ -1653,6 +1653,218 @@ export class AffiliateLinkService {
     'ticketmaster': {
         url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.ticketmaster.nl%2F',
         dummyCode: 'WELCOME10'
+    },
+    '24s': {
+        url: 'https://smyi.me/03lZg',
+        dummyCode: 'SHOP10'
+    },
+    'ador': {
+        url: 'https://smyi.me/023XJ',
+        dummyCode: '10SHOP'
+    },
+    'aktiesport': {
+        url: 'https://smyi.me/00Cab',
+        dummyCode: 'OFF10'
+    },
+    'albertheijn': {
+        url: 'https://pzz.to/WJk1bf',
+        dummyCode: '10OFF'
+    },
+    'alohas': {
+        url: 'https://smyi.me/00GPy',
+        dummyCode: 'ACTIE10'
+    },
+    'assem': {
+        url: 'https://pzz.to/xciGjX',
+        dummyCode: '10ACTIE'
+    },
+    'beautyplaza': {
+        url: 'https://partner.beautyplaza.com/c?c=40139&m=12&a=448474&r=&u=',
+        dummyCode: 'EXTRA10'
+    },
+    'ben': {
+        url: 'https://tidd.ly/3QR9bWM',
+        dummyCode: '10EXTRA'
+    },
+    'blackroll': {
+        url: 'https://tidd.ly/42kxFdu',
+        dummyCode: 'SHOP15'
+    },
+    'coofandy': {
+        url: 'https://tidd.ly/4dbeszM',
+        dummyCode: '15SHOP'
+    },
+    'dgmoutlet': {
+        url: 'https://tidd.ly/4tEELVv',
+        dummyCode: 'OFF15'
+    },
+    'drukwerknodig': {
+        url: 'https://pzz.to/bbkZHq',
+        dummyCode: '15OFF'
+    },
+    'efteling': {
+        url: 'https://pzz.to/FCn__d',
+        dummyCode: 'ACTIE15'
+    },
+    'freddelabretoniere': {
+        url: 'https://pzz.to/PuNxCd',
+        dummyCode: '15ACTIE'
+    },
+    'freechoice': {
+        url: 'https://clk.tradedoubler.com/click?p=315858&a=3427761&url=https%3A%2F%2Fvitamine.shop%2F',
+        dummyCode: 'EXTRA15'
+    },
+    'frenkiesfashion': {
+        url: 'https://tidd.ly/42SNtUV',
+        dummyCode: '15EXTRA'
+    },
+    'gstar': {
+        url: 'https://pzz.to/3q5WHL',
+        dummyCode: 'SHOP10'
+    },
+    'hondensupplement': {
+        url: 'https://tidd.ly/4f7QBDH',
+        dummyCode: '10SHOP'
+    },
+    'ilovespeelgoed': {
+        url: 'https://pzz.to/lCsvko',
+        dummyCode: 'OFF10'
+    },
+    'kleertjescom': {
+        url: 'https://pzz.to/Fyhhms',
+        dummyCode: '10OFF'
+    },
+    'knivesandtools': {
+        url: 'https://tidd.ly/4ux2OGz',
+        dummyCode: 'ACTIE10'
+    },
+    'loccitane': {
+        url: 'https://pzz.to/Fyhhms',
+        dummyCode: '10ACTIE'
+    },
+    'lyko': {
+        url: 'https://pzz.to/uLWIAL',
+        dummyCode: 'EXTRA10'
+    },
+    'maevenart': {
+        url: 'https://clk.tradedoubler.com/click?p=373837&a=3427761&url=https%3A%2F%2Fwww.maevenart.com%2Fen',
+        dummyCode: '10EXTRA'
+    },
+    'marcinbane': {
+        url: 'https://tidd.ly/4d9FMi2',
+        dummyCode: 'SHOP15'
+    },
+    'matchu': {
+        url: 'https://tidd.ly/4tpGYnB',
+        dummyCode: '15SHOP'
+    },
+    'nsconsumenten': {
+        url: 'https://pzz.to/n3khM8',
+        dummyCode: 'OFF15'
+    },
+    'oneill': {
+        url: 'https://pzz.to/OvikPF',
+        dummyCode: '15OFF'
+    },
+    'ownesim': {
+        url: 'https://tidd.ly/4de2zJy',
+        dummyCode: 'ACTIE15'
+    },
+    'parfumerie': {
+        url: 'https://pzz.to/dLSOh9',
+        dummyCode: '15ACTIE'
+    },
+    'parfumswinkel': {
+        url: 'https://pzz.to/Q3g8vM',
+        dummyCode: 'EXTRA15'
+    },
+    'philipshue': {
+        url: 'https://clk.tradedoubler.com/click?p=354238&a=3476882&url=https%3A%2F%2Fwww.philips-hue.com%2Fnl-nl',
+        dummyCode: '15EXTRA'
+    },
+    'plnktn': {
+        url: 'https://tidd.ly/42gWiI3',
+        dummyCode: 'SHOP10'
+    },
+    'raizzed': {
+        url: 'https://tidd.ly/4uzkgKA',
+        dummyCode: '10SHOP'
+    },
+    'ralphlauren': {
+        url: 'https://pzz.to/pV3lz-',
+        dummyCode: 'OFF10'
+    },
+    'rayban': {
+        url: 'https://pzz.to/4FBNco',
+        dummyCode: '10OFF'
+    },
+    'soliver': {
+        url: 'https://tidd.ly/3Pnu37w',
+        dummyCode: 'ACTIE10'
+    },
+    'sissyboy': {
+        url: 'https://pzz.to/adfhFQ',
+        dummyCode: '10ACTIE'
+    },
+    'sneakin': {
+        url: 'https://tidd.ly/4u4kgTa',
+        dummyCode: 'EXTRA10'
+    },
+    'spartoo': {
+        url: 'https://pzz.to/O0mbmG',
+        dummyCode: '10EXTRA'
+    },
+    'teva': {
+        url: 'https://pzz.to/s77Lz3',
+        dummyCode: 'SHOP15'
+    },
+    'thephonelab': {
+        url: 'https://tidd.ly/4d9xJBw',
+        dummyCode: '15SHOP'
+    },
+    'trendzdameskleding': {
+        url: 'https://tidd.ly/3QXqdT0',
+        dummyCode: 'OFF15'
+    },
+    'urbanoutfitters': {
+        url: 'https://smyi.me/008nt',
+        dummyCode: '15OFF'
+    },
+    'valerion': {
+        url: 'https://tidd.ly/4weKsfd',
+        dummyCode: 'ACTIE15'
+    },
+    'wavzsupplementen': {
+        url: 'https://tidd.ly/4wg0JQU',
+        dummyCode: '15ACTIE'
+    },
+    'xpluswear': {
+        url: 'https://glp8.net/c/?si=20417&li=1866882&wi=418827&dl=%2F',
+        dummyCode: 'EXTRA15'
+    },
+    'yoozyfashion': {
+        url: 'https://tidd.ly/4thiP2b',
+        dummyCode: '15EXTRA'
+    },
+    'youroutdoorstore': {
+        url: 'https://tidd.ly/4nebJKH',
+        dummyCode: 'SHOP10'
+    },
+    'yoursclothing': {
+        url: 'https://pzz.to/2ogTx0',
+        dummyCode: '10SHOP'
+    },
+    'ziengs': {
+        url: 'https://pzz.to/hRA52n',
+        dummyCode: 'OFF10'
+    },
+    'zinzi': {
+        url: 'https://pzz.to/hRA52n',
+        dummyCode: '10OFF'
+    },
+    'zippit': {
+        url: 'https://tidd.ly/4eyF8go',
+        dummyCode: 'ACTIE10'
     }
   };
 
