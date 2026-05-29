@@ -54,7 +54,7 @@ interface RelatedShop {
 export class CompanyCodesComponent implements OnInit {
   company: string = "";
   webshopName: string = "";
-  discountCodes: { code: string, discount: string, date: string }[] = [];
+  discountCodes: { code: string, discount: string, date: string, label?: string }[] = [];
   isLoading = true;
   copiedCode: string | null = null;
   seoContent: SafeHtml | null = null;
@@ -129,10 +129,14 @@ export class CompanyCodesComponent implements OnInit {
             date = entry.date;
           }
 
+          const bracketMatch = entry.company.match(/\(([^)]*)\)/);
+          const label = bracketMatch ? bracketMatch[1].trim() : undefined;
+
           return {
             code: entry.discountCode,
             discount: entry.percentage.toString(),
             date: date,
+            label: label,
           };
         });
 
@@ -349,7 +353,8 @@ export class CompanyCodesComponent implements OnInit {
       percentage: code.discount,
       date: code.date,
       index: code.index ?? -1,
-      affiliateLink: this.affiliateLink
+      affiliateLink: this.affiliateLink,
+      label: code.label
     };
 
     this.isModalVisible = true;

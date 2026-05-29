@@ -223,6 +223,14 @@
               </span>
             </div>
 
+            <!-- Geldig op -->
+            @if (discount.label) {
+            <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
+                <span>Geldig op</span>
+                <span class="tw-font-medium">{{ discount.label }}</span>
+            </div>
+            }
+
             <!-- Date -->
             <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
                 <span>Gespot op</span>
