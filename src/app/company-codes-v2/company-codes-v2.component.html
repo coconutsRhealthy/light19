@@ -1,0 +1,232 @@
+<a class="skip" href="#main">Direct naar de kortingscodes</a>
+
+<app-navbar></app-navbar>
+
+<div class="wrap">
+  <nav class="crumbs" aria-label="Kruimelpad">
+    <ol>
+      <li><a href="/">Kortingscodes</a></li>
+      <li aria-current="page">{{ displayName }} kortingscode</li>
+    </ol>
+  </nav>
+</div>
+
+<main id="main" class="wrap">
+
+  <!-- HERO: H1 with primary keyword + freshness -->
+  <div class="hero">
+    <img class="logo" [src]="logoUrl" width="88" height="88" [alt]="displayName + ' logo'" fetchpriority="high">
+    <div>
+      <h1>{{ displayName }} Kortingscode {{ monthYear | titlecase }}</h1>
+      <p class="lede">
+        @if (content?.heroLede) { {{ content?.heroLede }} }
+        @else { Alle werkende {{ displayName }} kortingscodes en aanbiedingen op één plek, dagelijks gecontroleerd door onze redactie. }
+      </p>
+      <div class="trust">
+        <span class="badge">✓ Getest door de redactie</span>
+        <span><span class="ok">Laatst bijgewerkt:</span>
+          <time [attr.datetime]="lastUpdatedIso">{{ lastUpdatedLabel }}</time></span>
+        <span>{{ regularCodes.length }} actieve kortingscode{{ regularCodes.length === 1 ? '' : 's' }}</span>
+        @if (dealCodes.length) { <span>+ {{ dealCodes.length }} cashback deal</span> }
+      </div>
+    </div>
+  </div>
+
+  <!-- On-page table of contents -->
+  <nav class="toc" aria-label="Inhoudsopgave">
+    <strong>Op deze pagina</strong>
+    <ol>
+      <li><a href="#codes">Actieve kortingscodes</a></li>
+      <li><a href="#gebruiken">Code gebruiken</a></li>
+      @if (content?.codeInfo?.length) { <li><a href="#zo-werkt">Zo werkt een {{ displayName }} code</a></li> }
+      @if (content?.about?.length) { <li><a href="#over">Over {{ displayName }}</a></li> }
+      @if (content?.creators?.length) { <li><a href="#creators">Gestyled door creators</a></li> }
+      @if (content?.tips?.length) { <li><a href="#tips">Bespaartips</a></li> }
+      @if (content?.faq?.length) { <li><a href="#faq">Veelgestelde vragen</a></li> }
+      @if (relatedShops.length) { <li><a href="#gerelateerd">Gerelateerde shops</a></li> }
+      <li><a href="#redactie">Over onze redactie</a></li>
+    </ol>
+  </nav>
+
+  <!-- ====================== OFFERS (data-driven) ====================== -->
+  <section id="codes" aria-labelledby="codes-h">
+    <h2 id="codes-h">Actieve {{ displayName }} kortingscodes &amp; aanbiedingen ({{ monthYear }})</h2>
+
+    <div class="codes">
+      @for (c of visibleRegularCodes; track c.code) {
+        <article class="coupon">
+          <div class="val"><div class="big">{{ c.valueText }}</div><div class="small">Korting</div></div>
+          <div class="body">
+            <h3>{{ c.valueText }} korting bij {{ displayName }}@if (c.label) { · {{ c.label }} }</h3>
+            <p class="meta">
+              <span class="verified">✓ Getest door de redactie</span>
+              &nbsp;·&nbsp; Gecontroleerd op {{ c.dateLabel }}
+            </p>
+          </div>
+          <div class="reveal">
+            <button class="btn" [class.copied]="copiedCode === c.code"
+              (click)="copy(c.code)"
+              [attr.aria-label]="copiedCode === c.code
+                ? 'Kortingscode ' + c.code + ' gekopieerd naar klembord'
+                : 'Toon en kopieer ' + c.valueText + ' kortingscode'">
+              {{ copiedCode === c.code ? c.code + '  ✓ Gekopieerd' : 'Toon code' }}
+            </button>
+          </div>
+        </article>
+      }
+
+      @for (d of dealCodes; track d.code) {
+        <article class="coupon">
+          <div class="val"><div class="big">{{ d.valueText }}</div><div class="small">Cashback</div></div>
+          <div class="body">
+            <h3>{{ d.valueText }} cashback bij {{ displayName }}</h3>
+            <p class="meta">
+              <span class="verified">✓ Getest door de redactie</span>
+              &nbsp;·&nbsp; Gecontroleerd op {{ d.dateLabel }}
+            </p>
+          </div>
+          <div class="reveal">
+            <a class="btn" [href]="d.code" rel="sponsored nofollow" target="_blank">Naar de deal</a>
+          </div>
+        </article>
+      }
+
+      @if (!regularCodes.length && !dealCodes.length) {
+        <p class="meta" style="color:var(--muted)">Er staan op dit moment geen codes voor {{ displayName }}. Onze redactie voegt nieuwe codes toe zodra ze opduiken.</p>
+      }
+    </div>
+
+    @if (regularCodes.length > codeCollapseLimit && !showAllCodes) {
+      <button class="show-all" (click)="showAllCodes = true">
+        Toon alle {{ regularCodes.length }} {{ displayName }} kortingscodes ↓
+      </button>
+    }
+
+    <p class="coupon-note" style="color:var(--muted);font-size:13.5px;margin-top:12px">
+      Onze redactie test elke code handmatig voordat we hem publiceren. Werkt een code niet meer?
+      <a href="/contact">Laat het ons weten</a> &mdash; we halen verlopen codes binnen 24 uur offline.
+    </p>
+  </section>
+
+  <!-- ====================== HOW TO USE (generic) ====================== -->
+  <section id="gebruiken" aria-labelledby="gebruiken-h">
+    <h2 id="gebruiken-h">Zo gebruik je een {{ displayName }} kortingscode</h2>
+    <ol class="howto">
+      <li>Klik hierboven op <strong>"Toon code"</strong> en kopieer de kortingscode naar je klembord.</li>
+      <li>Ga naar de website van {{ displayName }} en leg de artikelen die je wilt in je winkelmandje.</li>
+      <li>Ga naar het winkelmandje en klik op <strong>"Afrekenen"</strong>.</li>
+      <li>Plak de code in het <strong>kortingscodeveld</strong> tijdens het afrekenen en bevestig.</li>
+      <li>De korting wordt direct van je totaalbedrag afgetrokken. Rond je bestelling af en bespaar!</li>
+    </ol>
+  </section>
+
+  <!-- ====================== HOW THE CODE WORKS (grounded) ====================== -->
+  @if (content?.codeInfo?.length) {
+    <section id="zo-werkt" aria-labelledby="zo-werkt-h">
+      <h2 id="zo-werkt-h">Zo werkt een {{ displayName }} kortingscode</h2>
+      @for (p of content!.codeInfo!; track p) { <p>{{ p }}</p> }
+    </section>
+  }
+
+  <!-- ====================== ABOUT ====================== -->
+  @if (content?.about?.length) {
+    <section id="over" aria-labelledby="over-h">
+      <h2 id="over-h">Over {{ displayName }}</h2>
+      @for (p of content!.about; track p) { <p>{{ p }}</p> }
+
+      @if (content?.why?.length) {
+        <h3>Waarom shoppen bij {{ displayName }}?</h3>
+        <ul class="clean">
+          @for (w of content!.why; track w.h) {
+            <li><strong>{{ w.h }}</strong> &mdash; {{ w.p }}</li>
+          }
+        </ul>
+      }
+
+      @if (content?.trending?.length) {
+        <h3>Populair nu bij {{ displayName }}</h3>
+        <ul class="clean">
+          @for (t of content!.trending!; track t) { <li>{{ t }}</li> }
+        </ul>
+      }
+    </section>
+  }
+
+  <!-- ====================== STYLED BY CREATORS (caption-grounded, unique) ====================== -->
+  @if (content?.creators?.length) {
+    <section id="creators" aria-labelledby="creators-h">
+      <h2 id="creators-h">{{ displayName }} gestyled door creators</h2>
+      <p>{{ displayName }} wordt veel gedragen en gedeeld door Nederlandse content creators. Een greep uit
+        de makers die {{ displayName }} stylen en hun persoonlijke kortingscode delen:
+        @for (h of content!.creators!; track h; let last = $last) {<strong>{{ h }}</strong>@if (!last) {, }}.
+      </p>
+    </section>
+  }
+
+  <!-- ====================== SAVINGS TIPS ====================== -->
+  @if (content?.tips?.length) {
+    <section id="tips" aria-labelledby="tips-h">
+      <h2 id="tips-h">Extra bespaartips bij {{ displayName }}</h2>
+      <ul class="clean">
+        @for (t of content!.tips; track t.h) {
+          <li><strong>{{ t.h }}</strong> &mdash; {{ t.p }}</li>
+        }
+      </ul>
+    </section>
+  }
+
+  <!-- ====================== FAQ ====================== -->
+  @if (content?.faq?.length) {
+    <section id="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Veelgestelde vragen over {{ displayName }} kortingscodes</h2>
+      @for (item of content!.faq; track item.q) {
+        <details>
+          <summary>{{ item.q }}</summary>
+          <div class="ans">{{ item.a }}</div>
+        </details>
+      }
+    </section>
+  }
+
+  <!-- ====================== RELATED SHOPS (internal linking) ====================== -->
+  @if (relatedShops.length) {
+    <section id="gerelateerd" aria-labelledby="gerelateerd-h">
+      <h2 id="gerelateerd-h">Vergelijkbare shops als {{ displayName }}</h2>
+      <p class="meta" style="color:var(--muted);font-size:14px;margin-top:-6px">
+        Populair bij dezelfde shoppers — ontdek meer kortingscodes:
+      </p>
+      <div class="related">
+        @for (r of relatedShops; track r.slug) {
+          <a [href]="'/v2/' + r.slug">
+            @if (r.logo) { <img [src]="r.logo" [alt]="r.name + ' logo'" loading="lazy"> }
+            @else { <div class="rel-ph">{{ r.name.charAt(0) }}</div> }
+            <span class="rel-name">{{ r.name }}</span>
+            @if (r.topDiscount) { <span class="rel-pct">{{ r.topDiscount }} korting</span> }
+          </a>
+        }
+      </div>
+    </section>
+  }
+
+  <!-- ====================== E-E-A-T: editorial process ====================== -->
+  <section id="redactie" aria-labelledby="redactie-h">
+    <h2 id="redactie-h">Over onze redactie</h2>
+    <p>De kortingscodes op deze pagina worden samengesteld en gecontroleerd door de deals-redactie
+       van Diski. We verzamelen codes uit onder andere de posts van influencers, testen ze, vermelden
+       altijd wanneer een code voor het laatst is gecontroleerd, en verwijderen verlopen codes binnen
+       24 uur. Lees meer over <a href="/contact">onze werkwijze en controleproces</a>.</p>
+
+    <div class="author">
+      <img src="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp"
+           width="60" height="60" alt="Deals-redactie van Diski" loading="lazy">
+      <div>
+        <strong>Redactie Diski</strong>
+        <div class="role">Deals-redactie &middot; codes handmatig getest &middot;
+          laatst bijgewerkt op {{ lastUpdatedLabel }}</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<app-footer></app-footer>
