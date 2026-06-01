@@ -7,7 +7,7 @@
 @if (discountCodes.length > 0) {
 <div class="tw-flex tw-flex-col tw-min-h-screen tw-bg-pink-50">
   <app-navbar></app-navbar>
-    <!-- Social & Giftcard Banner: schermbreed -->
+    <!-- Social Banner: schermbreed -->
     <div class="tw-w-full tw-bg-yellow-100 tw-text-pink-800 tw-text-[10px] md:tw-text-xs tw-text-center tw-font-small tw-border-b tw-border-gray-200 tw-relative">
 
         <!-- Sluitknop -->
@@ -25,15 +25,6 @@
                onclick="gtag('event', 'tiktok', {'event_category': 'Social', 'event_label': 'tiktok_top'});"
                class="tw-underline tw-font-semibold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">tiktok</a>
             voor code updates
-        </div>
-
-        <!-- Giftcard tekst -->
-        <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8 tw-py-0.5">
-            &rarr;
-            <a [routerLink]="['/giftcards']"
-               onclick="gtag('event', 'giftcard', {'event_category': 'Giftcard', 'event_label': 'giftcard_companypage_topteaser'});"
-               class="tw-underline tw-font-bold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">€7.50 giftcards</a>
-            voor veel shops! (o.a. Zalando, My Jewellery)
         </div>
 
     </div>
