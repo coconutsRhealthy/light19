@@ -53,7 +53,7 @@
     <h2 id="codes-h">Actieve {{ displayName }} kortingscodes &amp; aanbiedingen ({{ monthYear }})</h2>
 
     <div class="codes">
-      @for (c of visibleRegularCodes; track c.code) {
+      @for (c of visibleRegularCodes; track c.code; let i = $index) {
         <article class="coupon">
           <div class="val"><div class="big">{{ c.valueText }}</div><div class="small">Korting</div></div>
           <div class="body">
@@ -64,12 +64,10 @@
             </p>
           </div>
           <div class="reveal">
-            <button class="btn" [class.copied]="copiedCode === c.code"
-              (click)="copy(c.code)"
-              [attr.aria-label]="copiedCode === c.code
-                ? 'Kortingscode ' + c.code + ' gekopieerd naar klembord'
-                : 'Toon en kopieer ' + c.valueText + ' kortingscode'">
-              {{ copiedCode === c.code ? c.code + '  ✓ Gekopieerd' : 'Toon code' }}
+            <button class="btn"
+              (click)="onCodeClick(c, i)"
+              [attr.aria-label]="'Toon ' + c.valueText + ' kortingscode van ' + displayName">
+              Toon code
             </button>
           </div>
         </article>
@@ -230,3 +228,9 @@
 </main>
 
 <app-footer></app-footer>
+
+<app-modal
+  [isVisible]="isModalVisible"
+  [discount]="selectedDiscount"
+  (closed)="closeModal()">
+</app-modal>

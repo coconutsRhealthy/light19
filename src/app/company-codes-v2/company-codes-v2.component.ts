@@ -7,8 +7,13 @@ import { DiscountsService } from '../services/discounts.service';
 import { WebshopNameService } from '../services/webshop-name.service';
 import { LogosService } from '../services/logos.service';
 import { MetaService } from '../services/meta.service';
+import { AffiliateLinkService } from '../services/affiliate-link.service';
+import { VisitorProfileService } from '../services/visitor-profile.service';
+import { ModalComponent } from '../modal/modal.component';
 import { BrandContent } from './brand-content/brand-content.model';
 import { getBrandContent } from './brand-content/index';
+
+declare let gtag: Function;
 
 interface CodeVM {
   code: string;        // the coupon code, or an outbound URL for deals
@@ -18,6 +23,7 @@ interface CodeVM {
   isPercent: boolean;
   label?: string;      // bracket label from the data, e.g. "beauty"
   date: Date;          // when the code was last spotted/checked
+  rawDate: string;     // original "MM-DD" string (the modal expects this format)
   dateLabel: string;   // e.g. "27 mei 2026"
 }
 
@@ -47,7 +53,7 @@ const RELATED_MAX = 8;
 @Component({
   selector: 'app-company-codes-v2',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, FooterComponent],
+  imports: [CommonModule, NavbarComponent, FooterComponent, ModalComponent],
   templateUrl: './company-codes-v2.component.html',
   styleUrls: ['./company-codes-v2.component.css']
 })
@@ -65,7 +71,10 @@ export class CompanyCodesV2Component implements OnInit {
   regularCodes: CodeVM[] = [];
   dealCodes: CodeVM[] = [];
   relatedShops: RelatedShopVM[] = [];
-  copiedCode: string | null = null;
+
+  affiliateLink: string | undefined;
+  isModalVisible = false;
+  selectedDiscount: any = null;
 
   readonly codeCollapseLimit = 15;
   showAllCodes = false;
@@ -82,7 +91,9 @@ export class CompanyCodesV2Component implements OnInit {
     private discounts: DiscountsService,
     private names: WebshopNameService,
     private logos: LogosService,
-    private meta: MetaService
+    private meta: MetaService,
+    private affiliateLinkService: AffiliateLinkService,
+    private visitorProfile: VisitorProfileService
   ) {}
 
   ngOnInit(): void {
@@ -94,6 +105,8 @@ export class CompanyCodesV2Component implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.company = (params.get('company') ?? '').toLowerCase();
       this.showAllCodes = false;
+      this.isModalVisible = false;
+      this.selectedDiscount = null;
       this.content = getBrandContent(this.company);
       this.displayName = this.content?.name
         ?? this.names.getWebshopName(this.company)
@@ -135,6 +148,7 @@ export class CompanyCodesV2Component implements OnInit {
           isPercent,
           label,
           date,
+          rawDate: dateStr,
           dateLabel: this.formatDate(date)
         };
       })
@@ -142,6 +156,7 @@ export class CompanyCodesV2Component implements OnInit {
 
     this.regularCodes = parsed.filter(c => !c.isDeal);
     this.dealCodes = parsed.filter(c => c.isDeal);
+    this.affiliateLink = this.affiliateLinkService.getAffiliateLink(this.company);
 
     this.maxDiscount = this.regularCodes
       .filter(c => c.isPercent)
@@ -155,6 +170,19 @@ export class CompanyCodesV2Component implements OnInit {
 
     this.buildRelatedShops(lines);
     this.applySeo();
+
+    // Deep link: opening /v2/{company}#i={index} (e.g. in the new tab spawned by
+    // the affiliate flow) re-opens the code modal for that code — mirrors v1.
+    const fragment = this.route.snapshot.fragment;
+    if (fragment) {
+      const params = new URLSearchParams(fragment);
+      if (params.has('i')) {
+        const i = Number(params.get('i'));
+        if (!isNaN(i) && i >= 0 && i < this.regularCodes.length) {
+          this.openModal(this.regularCodes[i]);
+        }
+      }
+    }
   }
 
   /**
@@ -335,10 +363,56 @@ export class CompanyCodesV2Component implements OnInit {
     return rawValue.replace('.', ',');
   }
 
-  copy(code: string): void {
-    this.copiedCode = code;
-    if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      navigator.clipboard.writeText(code).catch(() => {});
+  // ---- code click → modal / affiliate flow (mirrors v1 company-codes) --------
+
+  onCodeClick(code: CodeVM, index: number): void {
+    this.trackCompanyInteraction();
+    if (this.affiliateLink) {
+      // Affiliate present: open the code modal in a NEW tab (via deep link) and
+      // send the CURRENT tab to the affiliate link.
+      this.sendAffEventsToGa();
+      this.openNewPageWithCodeDetailModal(index);
+    } else {
+      // No affiliate: just open the modal here.
+      this.openModal(code);
     }
+  }
+
+  private openNewPageWithCodeDetailModal(codeIndex: number): void {
+    if (!this.isBrowser) return;
+    const url = `${window.location.origin}/v2/${this.company}#i=${encodeURIComponent(codeIndex)}`;
+    window.open(url, '_blank');
+    if (this.affiliateLink !== undefined) {
+      location.href = this.affiliateLink;
+    }
+  }
+
+  openModal(code: CodeVM): void {
+    this.selectedDiscount = {
+      company: this.displayName,
+      companySlug: this.company,
+      discountCode: code.code,
+      percentage: code.rawValue,
+      date: code.rawDate,
+      index: -1,
+      affiliateLink: this.affiliateLink,
+      label: code.label
+    };
+    this.isModalVisible = true;
+  }
+
+  closeModal(): void {
+    this.isModalVisible = false;
+    this.selectedDiscount = null;
+  }
+
+  private trackCompanyInteraction(): void {
+    this.visitorProfile.trackCompanyClick('company_click_detailpage', this.company);
+  }
+
+  private sendAffEventsToGa(): void {
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'comp_codes', { 'event_category': 'Comp_codes', 'event_label': 'comp_codes_aff_open' });
+    gtag('event', 'comp_codes', { 'event_category': 'Comp_codes', 'event_label': `comp_codes_aff_open_${this.company}` });
   }
 }
