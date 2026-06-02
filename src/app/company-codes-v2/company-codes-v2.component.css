@@ -133,6 +133,7 @@ footer .cols{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between}
   .hero h1{align-self:center}
   h1{font-size:25px}
   .coupon{flex-wrap:wrap}
+  .coupon .meta{font-size:11.5px}
   .reveal{width:100%}
   .reveal .btn{width:100%;justify-content:center}
   nav.mainnav{display:none}
