@@ -236,6 +236,29 @@
                 <span>Gespot op</span>
                 <span>{{ getCorrectFormatOfCodeDate(discount.date) }}</span>
             </div>
+
+            <!-- Samsung: officiële actievoorwaarden -->
+            @if (samsungPromotion) {
+            <div class="tw-border-t tw-border-gray-200 tw-pt-4 tw-space-y-2">
+                <div class="tw-font-semibold tw-text-gray-800 tw-text-sm">Actievoorwaarden</div>
+                <p class="tw-text-sm tw-text-gray-700 tw-leading-relaxed">{{ samsungPromotion.promoText }}</p>
+                <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
+                    <span>Looptijd</span>
+                    <span class="tw-font-medium">{{ samsungPromotion.period }}</span>
+                </div>
+                <ul class="tw-list-disc tw-pl-5 tw-text-xs tw-text-gray-500 tw-space-y-1">
+                    @for (condition of samsungPromotion.conditions; track condition) {
+                        <li>{{ condition }}</li>
+                    }
+                </ul>
+                <a [href]="samsungPromotion.landingUrl"
+                   target="_blank"
+                   rel="sponsored"
+                   class="tw-inline-block tw-text-sm tw-text-blue-600 hover:tw-underline tw-font-medium">
+                    Bekijk de actiepagina →
+                </a>
+            </div>
+            }
         </div>
         }
 

@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
 import { DiscountsService } from '../services/discounts.service';
+import { getSamsungPromotion, SamsungPromotion } from '../data/samsung-promotions';
 import { FormsModule } from '@angular/forms';
 
 declare let gtag: Function;
@@ -64,6 +65,13 @@ export class ModalComponent {
 
   get discount(): any {
     return this._discount;
+  }
+
+  // Samsung partner requirement: show the official promo details (looptijd,
+  // voorwaarden, landingspagina) for each live, confirmed Samsung promotion.
+  get samsungPromotion(): SamsungPromotion | undefined {
+    if (this._discount?.companySlug?.toLowerCase() !== 'samsung') return undefined;
+    return getSamsungPromotion(this._discount.discountCode);
   }
 
   constructor(private analyticsEventService: AnalyticsEventService,

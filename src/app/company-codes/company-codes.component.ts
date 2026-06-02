@@ -17,6 +17,7 @@ import { PLATFORM_ID, PendingTasks, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { VisitorProfileService } from '../services/visitor-profile.service';
+import { samsungPromotions, SamsungPromotion } from '../data/samsung-promotions';
 
 import { ModalComponent } from '../modal/modal.component';
 
@@ -270,6 +271,15 @@ export class CompanyCodesComponent implements OnInit {
 
   get hasHttpCodes(): boolean {
     return this.discountCodes.some(code => code.code.startsWith('http'));
+  }
+
+  // Samsung partner requirement: surface the official promo voorwaarden for each
+  // live Samsung promotion on the /samsung page (same source as the modal).
+  get samsungPromoList(): { code: string; promo: SamsungPromotion }[] {
+    if (this.company?.toLowerCase() !== 'samsung') return [];
+    return this.discountCodes
+      .map(c => ({ code: c.code, promo: samsungPromotions[c.code] }))
+      .filter((x): x is { code: string; promo: SamsungPromotion } => !!x.promo);
   }
 
   sendGiftcardEventsToGa(wlsckUrl: string) {
