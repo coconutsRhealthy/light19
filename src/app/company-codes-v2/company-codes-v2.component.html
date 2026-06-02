@@ -195,7 +195,7 @@
       </p>
       <div class="related">
         @for (r of relatedShops; track r.slug) {
-          <a [href]="'/v2/' + r.slug">
+          <a [href]="relatedHref(r.slug)">
             @if (r.logo) { <img [src]="r.logo" [alt]="r.name + ' logo'" loading="lazy"> }
             @else { <div class="rel-ph">{{ r.name.charAt(0) }}</div> }
             <span class="rel-name">{{ r.name }}</span>

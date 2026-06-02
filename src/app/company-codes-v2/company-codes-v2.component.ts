@@ -91,6 +91,16 @@ export class CompanyCodesV2Component implements OnInit {
     return this.route.snapshot.data['preview'] === true;
   }
 
+  /**
+   * Href for a related-shop link. Path-aware like the modal deep-link: on the live
+   * route it points at the real `/{slug}/` page (indexable, never the noindexed
+   * preview); in preview it stays in `/v2/{slug}/`. Always keeps the project-wide
+   * trailing slash.
+   */
+  relatedHref(slug: string): string {
+    return this.isPreview ? `/v2/${slug}/` : `/${slug}/`;
+  }
+
   constructor(
     private route: ActivatedRoute,
     private discounts: DiscountsService,
