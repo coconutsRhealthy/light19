@@ -1,0 +1,99 @@
+==========================================================================
+ v2 LIVE ROLLOUT PLAN — serve v2 on the REAL /:company route per shop,
+ fall back to v1 (company-codes) for shops without v2 content.
+ (Idea captured for later — NOT implemented yet.)
+==========================================================================
+
+GOAL
+----
+When a live user visits diski.nl/{shop} (the real route, not /v2/...):
+  - If the shop HAS v2 content (a brand-content object) -> render v2.
+  - Otherwise -> render v1 (the existing company-codes component).
+Roll out per shop, automatically, and reversibly.
+
+
+RECOMMENDED APPROACH: a `canMatch` guard (idiomatic Angular)
+------------------------------------------------------------
+Register two routes with the same path; a guard decides which one matches.
+Angular tries them in order and falls through to v1 when the guard says no.
+
+  // app.routes.ts (order matters)
+  {
+    path: ':company',
+    component: CompanyCodesV2Component,
+    canMatch: [hasV2Content],          // only matches shops with v2 content
+  },
+  {
+    path: ':company',
+    component: CompanyCodesComponent,  // v1 fallback for everyone else
+  },
+
+The guard is a tiny pure function (getBrandContent is synchronous, no DI needed):
+
+  import { CanMatchFn } from '@angular/router';
+  import { getBrandContent } from './company-codes-v2/brand-content/index';
+
+  export const hasV2Content: CanMatchFn = (_route, segments) =>
+    !!getBrandContent(segments[0]?.path?.toLowerCase());
+
+Adding a shop to v2 later = just drop in its brand-content object. The routing
+follows automatically. Removing the content instantly reverts that shop to v1.
+
+(Alternative, slightly less "routing-native": a tiny wrapper component on
+ :company that does  @if (hasV2) { <app-company-codes-v2/> } @else { <app-company-codes/> }
+ Same outcome. Prefer canMatch.)
+
+
+CRITICAL — must fix before going live: the noindex
+--------------------------------------------------
+The v2 component currently force-calls this.meta.setNoIndex() (company-codes-v2
+.component.ts, in applySeo()). That is correct for the /v2/ PREVIEW, but if v2
+serves the REAL /{shop} route it would noindex your actual ranking page -> bad.
+
+Make it conditional via a route `data` flag:
+
+  // preview stays noindexed:
+  { path: 'v2/:company', component: CompanyCodesV2Component, data: { preview: true } },
+  // real route is indexable (no preview flag):
+  { path: ':company', component: CompanyCodesV2Component, canMatch: [hasV2Content] },
+
+  // in the component:
+  if (this.route.snapshot.data['preview']) {
+    this.meta.setNoIndex();
+  }
+
+
+SIBLING FIX: make the modal deep-link path-aware
+------------------------------------------------
+openNewPageWithCodeDetailModal() hardcodes the new-tab URL to:
+    `${origin}/v2/${company}#i=${index}`
+On the real route it should open `${origin}/${company}#i=${index}` instead.
+Derive the base from the current route/path so it works in BOTH places
+(preview under /v2/... and live under /...).
+
+
+WHY THIS IS NICE
+----------------
+- Per-shop + automatic: content presence drives everything (no per-shop route edits).
+- Reversible + low risk: a shop falls back to v1 the moment its content is gone.
+- It's the real go-live path: the :company route is PRERENDERED (routes.txt), so
+  these shops get prerendered, indexable v2 HTML for free — fixing the "raw HTML
+  is the home shell" issue seen on the non-prerendered /v2/ preview.
+
+
+IMPLEMENTATION CHECKLIST (when ready)
+-------------------------------------
+[ ] Add hasV2Content CanMatchFn (new file, e.g. has-v2-content.guard.ts).
+[ ] Add the guarded :company -> v2 route ABOVE the existing :company -> v1 route.
+[ ] Add data:{preview:true} to the v2/:company preview route.
+[ ] Gate setNoIndex() behind route.snapshot.data['preview'] in the component.
+[ ] Make openNewPageWithCodeDetailModal() build the base path dynamically.
+[ ] Verify prerender: build:prod, confirm /{v2-shop}/index.html now contains the
+    v2 page (real content, NO noindex) and /{other-shop} still renders v1.
+[ ] Verify a v2 shop is in sitemap.xml (it already is — generated from discounts.json)
+    and no longer carries noindex.
+[ ] Sanity-check a few v1 shops are untouched.
+
+NOTE: This flips the chosen shops from "noindexed parallel pilot" to "live,
+indexed, replacing v1 for those shops." It is a real production change — but a
+contained, per-shop, reversible one.
