@@ -1,0 +1,59 @@
+import { BrandContent } from './brand-content.model';
+
+/**
+ * Copy grounded in Kosso Nutrition's real influencer captions (py_diski_influencers DB,
+ * ai_canonical = 'kossonutrition.nl'): 19 captions from 4 NL fitness creators, mostly
+ * short TikTok/Instagram posts. The recurring mechanic is a personal creator code
+ * (CODE BAREND, JAZZY, SERA) that geeft extra korting, vaak rond aangekondigde sales.
+ * Captions noemen wisselende kortingen (20%, 25%, 30%, soms 35% "op alles" tijdens sale-momenten)
+ * en producten zoals pre-workout, whey protein, creatine, protein pops en een slaap-supplement.
+ * Discount_pattern is grotendeels null (geen vaste code-waarde) — daarom hedge ik de percentages.
+ * Niche: sportvoeding / supplementen. Claims bewust bescheiden gehouden.
+ */
+export const kossonutritionnlContent: BrandContent = {
+  slug: 'kossonutrition.nl',
+  name: 'Kosso Nutrition',
+  related: ['aybl', 'bjornborg', 'HENK', 'prozis', 'teveo'],
+  heroLede:
+    'Alle werkende Kosso Nutrition kortingscodes en influencer-codes op één plek — meestal goed ' +
+    'voor extra korting op je supplementen, en tijdens sale-momenten oplopend tot zo\'n 20-30% op alles. ' +
+    'Dagelijks gecontroleerd door onze redactie.',
+  about: [
+    'Kosso Nutrition is een sportvoedingsmerk dat zich richt op supplementen voor de sportschool: ' +
+    'pre-workout, whey protein, creatine en functionele snacks zoals protein pops. In de captions van ' +
+    'creators komt ook een slaap-supplement voorbij, dus het assortiment reikt verder dan alleen training.',
+    'Het merk leunt sterk op fitness-creators: in onze data delen 4 Nederlandse creators Kosso Nutrition, ' +
+    'vrijwel altijd met een persoonlijke kortingscode. De posts zijn kort en luchtig (TikTok- en Instagram-stijl) ' +
+    'en koppelen de code regelmatig aan een aangekondigd sale-moment met een vaste startdatum en -tijd.'
+  ],
+  why: [
+    { h: 'Supplementen voor de gym', p: 'Pre-workout, whey protein en creatine zijn de stukken die creators het vaakst noemen.' },
+    { h: 'Persoonlijke influencer-codes', p: 'Codes zoals BAREND, JAZZY of SERA geven meestal extra korting bovenop de actieprijs.' },
+    { h: 'Terugkerende sale-momenten', p: 'Creators kondigen regelmatig een sale aan met datum en tijd, met kortingen rond 20-30% op alles.' },
+    { h: 'Functionele snacks', p: 'Naast poeders komen ook protein pops en een slaap-supplement langs in de posts.' }
+  ],
+  trending: ['Pre-workout', 'Whey protein', 'Creatine', 'Protein pops', 'Slaap-supplement'],
+  codeInfo: [
+    'Kosso Nutrition werkt vooral met persoonlijke influencer-codes. In de captions zien we codes als ' +
+    'BAREND, JAZZY en SERA die volgens de creators "extra korting" geven — soms bovenop een lopende sale. ' +
+    'De exacte korting wisselt: we zien percentages van zo\'n 20% tot 25%, en bij grotere sale-momenten ' +
+    'worden ook 30% (en in losse posts hogere) kortingen "op alles" genoemd. Reken dus niet op één vast percentage.',
+    'Veel acties zijn gekoppeld aan een aangekondigd moment met een vaste startdatum en -tijd en lopen ' +
+    'daarna af. Omdat de codes en kortingen vaak wisselen en tijdelijk zijn, controleren wij dagelijks ' +
+    'welke code op dit moment werkt.'
+  ],
+  creators: ['@barendkuiper', '@jasminerosequinn', '@deleyciella', '@seramatulessy'],
+  tips: [
+    { h: 'Gebruik een influencer-code', p: 'Voer een code als BAREND, JAZZY of SERA in voor extra korting.' },
+    { h: 'Let op het sale-moment', p: 'Veel acties starten op een aangekondigde datum en tijd en lopen daarna af.' },
+    { h: 'Controleer het percentage', p: 'De korting wisselt per actie — meestal rond 20-30%, dus check de actuele deal.' },
+    { h: 'Bestel je vaste supps op tijd', p: 'Pre-workout, whey en creatine zijn de populairste items tijdens sales.' }
+  ],
+  faq: [
+    { q: 'Hoeveel korting krijg ik met een Kosso Nutrition kortingscode?', a: 'Dat wisselt per actie. In de posts van creators zien we meestal rond 20% tot 25% korting, en bij grotere sale-momenten oplopend tot zo\'n 30% op alles. Een vast percentage is er niet, dus controleer de actuele code.' },
+    { q: 'Hoe lang is een Kosso Nutrition kortingscode geldig?', a: 'Veel acties zijn tijdelijk en gekoppeld aan een aangekondigde startdatum en -tijd. Daarna lopen ze af. Wij controleren dagelijks welke code werkt.' },
+    { q: 'Hoe gebruik ik een influencer-code?', a: 'Voer de code (bijvoorbeeld BAREND, JAZZY of SERA) in bij het afrekenen. Volgens de creators geeft de code meestal extra korting, soms bovenop een lopende sale.' },
+    { q: 'Wat verkoopt Kosso Nutrition?', a: 'Sportvoeding en supplementen: pre-workout, whey protein en creatine, plus functionele snacks zoals protein pops en een slaap-supplement.' },
+    { q: 'Kan ik meerdere codes combineren?', a: 'Dat is niet zeker uit de posts af te leiden. Reken op één code per bestelling en controleer de voorwaarden bij het afrekenen.' }
+  ]
+};

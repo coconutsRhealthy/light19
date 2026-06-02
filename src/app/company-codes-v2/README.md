@@ -41,8 +41,17 @@ parallel to the live `:company` v1 pages). Built as a pilot to test a specific b
 ---
 
 ## Current state (as of early June 2026)
-- **5 shops live on `/v2/...`:** nakdfashion, ginatricot, gutsgusto, geurwolkje
-  (caption-grounded) + zalando (self-authored).
+- **30 shops live on `/v2/...`:** the original 5 (nakdfashion, ginatricot, gutsgusto,
+  geurwolkje, zalando) + a 25-shop batch generated 2026-06-02 from the
+  **currently not-indexed** detail pages (see `input/CANDIDATES.md`): loopearplugs,
+  cabaulifestyle, siroko, bodylab.nl, yesstyle, charlottetilbury, smartphoto.nl,
+  photowall_sweden, trendcarpet, yehwang_wholesale, moovvmore.nl, wildrefill,
+  legionathletics, florencenails, lampenlicht.nl, thegelexpert, calliegifts,
+  mothersearth, jhpfashion.nl, merodacosmetics, kossonutrition.nl, vitaminfit.eu,
+  twistshakebaby, fittasticsportswear, glutespop.com — all caption-grounded (≥15 captions).
+- That batch targets not-indexed pages on purpose: nothing to lose in rankings, and each
+  is backed by real caption material. `input/CANDIDATES.md` ranks all 340 not-indexed
+  shops by caption coverage (139 have ≥1 caption; 201 have none).
 - Committed on branch `claude_seo_improvements` (base component + modal/affiliate wiring).
   **Unpushed and not deployed** — production does not have v2 yet.
 - Still a noindexed pilot; the real `:company` route is untouched (all v1).

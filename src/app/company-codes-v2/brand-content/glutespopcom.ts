@@ -1,0 +1,57 @@
+import { BrandContent } from './brand-content.model';
+
+/**
+ * Copy grounded in GlutesPop's real influencer captions (py_diski_influencers DB,
+ * slug 'glutespop.com'): 15 captions from 4 NL fitness-creators, almost all on
+ * TikTok-style short posts. Recurring mechanic = persoonlijke code (LYNN, BENTE,
+ * NATHALIE) voor 10% korting, vaak boven op sale-prijzen tijdens drops/restocks
+ * en Black Friday. discount_pattern top bucket = 10% (3x), bevestigd door de
+ * captions zelf ("10% korting"). TikTok-heavy: claims bewust bescheiden gehouden.
+ */
+export const glutespopcomContent: BrandContent = {
+  slug: 'glutespop.com',
+  name: 'GlutesPop',
+  related: ['aybl', 'fitjeans.com', 'morenutrition', 'siroko'],
+  heroLede:
+    'Alle werkende GlutesPop kortingscodes op één plek — de persoonlijke creator-codes geven ' +
+    'doorgaans 10% korting op je gymfits. Dagelijks gecontroleerd door onze redactie.',
+  about: [
+    'GlutesPop is een sportkledingmerk dat zich richt op vrouwen die serieus trainen: matchende ' +
+    'legging-sets, tops en gymoutfits die in de captions vooral opduiken rond leg day, glutes en ' +
+    'lower-body workouts. Het bekendste item dat creators noemen is de straight leg set, die ' +
+    'terugkomt in onder meer de kleur "Onyx" en in een aparte tall-versie.',
+    'GlutesPop is sterk influencer-gedreven en zichtbaar via korte gym-posts. In onze data delen ' +
+    '4 Nederlandse fitness-creators GlutesPop, vrijwel altijd met hun eigen persoonlijke code en de ' +
+    'belofte van 10% korting. Daarnaast draait het merk om drops, restocks en sale-momenten waar ' +
+    'creators vooraf naar aftellen ("zet je timer", "vanavond om 19:00u online").'
+  ],
+  why: [
+    { h: 'Matchende gym-sets', p: 'De focus ligt op legging-sets en tops, met de straight leg set als terugkerend favoriet in de captions.' },
+    { h: 'Persoonlijke creator-codes', p: 'Codes als LYNN, BENTE en NATHALIE geven volgens de creators doorgaans 10% korting.' },
+    { h: 'Drops en restocks', p: 'Nieuwe items en restocks gaan op een vast tijdstip live; creators tellen er vooraf naartoe.' },
+    { h: 'Korting bovenop sale', p: 'Tijdens sale-acties zoals Black Friday is de code volgens creators soms te combineren met afgeprijsde items.' }
+  ],
+  trending: ['Straight leg set', 'Onyx-kleur', 'Tall-versie legging', 'Matchende top + broek', 'Leg day-outfits'],
+  codeInfo: [
+    'GlutesPop werkt vooral met persoonlijke influencer-codes. In de captions die wij zien geven die ' +
+    'codes meestal 10% korting; de hoogte kan per actie verschillen, dus controleer altijd het bedrag ' +
+    'in je winkelmandje voordat je afrekent.',
+    'Rond grote sale-momenten (zoals Black Friday) noemen creators dat hun code soms nog eens 10% extra ' +
+    'bovenop de sale-prijs geeft, maar dat is niet altijd het geval. Voorwaarden en geldigheid worden ' +
+    'zelden expliciet vermeld, daarom checken wij de codes dagelijks.'
+  ],
+  creators: ['@bentefit', '@lynnreimes', '@lynnsvibe', '@motivatedbynathalie'],
+  tips: [
+    { h: 'Gebruik een creator-code', p: 'Codes als LYNN, BENTE en NATHALIE geven volgens de creators doorgaans 10% korting.' },
+    { h: 'Let op de drops', p: 'Restocks en nieuwe items gaan op een vast tijdstip live; populaire sets zijn snel weg.' },
+    { h: 'Shop tijdens sale', p: 'Tijdens acties zoals Black Friday kan de code soms boven op de sale-prijs werken.' },
+    { h: 'Controleer de korting', p: 'Het kortingspercentage kan per actie verschillen — check het bedrag in je mandje.' }
+  ],
+  faq: [
+    { q: 'Hoeveel korting krijg ik met een GlutesPop kortingscode?', a: 'In de posts die wij zien geven de persoonlijke creator-codes meestal 10% korting. Het exacte percentage kan per actie verschillen.' },
+    { q: 'Hoe lang is een GlutesPop kortingscode geldig?', a: 'Dat wordt zelden expliciet vermeld. Sommige codes worden als blijvend gepresenteerd, andere horen bij een specifieke drop of sale. Controleer de code daarom kort voor je bestelling.' },
+    { q: 'Werkt de code ook tijdens een sale?', a: 'Soms wel: rond Black Friday noemen creators dat hun code nog eens 10% extra boven op de sale-prijs geeft. Dit is echter niet gegarandeerd voor elke actie.' },
+    { q: 'Werkt de code van een creator ook voor mij?', a: 'Ja, de persoonlijke codes zoals LYNN, BENTE of NATHALIE zijn bedoeld om door iedereen gebruikt te worden bij het afrekenen.' },
+    { q: 'Wat verkoopt GlutesPop?', a: 'Sportkleding voor vrouwen: matchende legging-sets, tops en gymoutfits, met de straight leg set als bekend item in onder meer de kleur Onyx en een tall-versie.' }
+  ]
+};

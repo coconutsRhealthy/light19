@@ -1,0 +1,71 @@
+import { BrandContent } from './brand-content.model';
+
+/**
+ * Copy grounded in Wild (Wild Refill / wearewild.com) real influencer captions
+ * (py_diski_influencers DB, ai_canonical = 'wildrefill'): 31 captions from 21 NL/BE
+ * creators. The recurring mechanic is a personal creator code good for 20% korting
+ * op de hele bestelling (discount_pattern: 20% in 19 of de gepatchte captions, met
+ * een enkele 15%). Niche: navulbare, aluminiumvrije deodorant (sticks + roll-ons),
+ * lippenbalsem, body wash en hand wash met verwisselbare cases en geuren. Sterke
+ * thema's in de captions: duurzaamheid/minder plastic, sheabutter & natuurlijke
+ * ingrediënten, leuke print-cases (panter, hartjes, Miffy/nijntje, pastel) en
+ * seizoens-/cadeaucollecties.
+ */
+export const wildrefillContent: BrandContent = {
+  slug: 'wildrefill',
+  name: 'Wild',
+  related: ['mothersearth', 'nakdfashion', 'paulaschoice.nl', 'calliegifts',
+            'charlottetilbury', 'ullapopken.nl', 'achateshop.com', 'pinkgellac',
+            'pixum', 'smartphoto.nl'],
+  heroLede:
+    'Alle werkende Wild kortingscodes en influencer-codes op één plek — goed voor ' +
+    '20% korting op je hele bestelling navulbare deodorant en verzorging. Verzameld uit ' +
+    'de codes die creators delen en dagelijks gecontroleerd door onze redactie.',
+  about: [
+    'Wild (online als Wild Refill, via wearewild.com) draait om navulbare, aluminiumvrije ' +
+    'persoonlijke verzorging. Het bekendst zijn de deodorant-sticks en deo roll-ons: je ' +
+    'koopt één keer een case en vervangt daarna alleen de refill, in plaats van steeds een ' +
+    'nieuwe deo te kopen. Daarnaast zien we in de captions lippenbalsem, body wash en hand ' +
+    'wash voorbijkomen — allemaal navulbaar, met sheabutter en zoveel mogelijk natuurlijke ' +
+    'ingrediënten, en met een breed assortiment aan geuren en print-cases (panterprint, ' +
+    'hartjes, pastel en zelfs een Miffy/nijntje-collectie).',
+    'In onze eigen data delen ruim 20 Nederlandse en Belgische creators Wild, vrijwel altijd ' +
+    'met dezelfde deal: een persoonlijke code voor 20% korting op de hele bestelling. Het draait ' +
+    'in hun posts net zo vaak om duurzaamheid en minder plastic als om de geuren zelf — meerdere ' +
+    'creators noemen dat ze de deo al jaren gebruiken, sommigen omdat een aluminiumvrij, ' +
+    'natuurlijk alternatief beter voor hun huid werkt.'
+  ],
+  why: [
+    { h: 'Navulbaar systeem, minder afval', p: 'Je koopt de case één keer en vervangt daarna alleen de refill — minder verpakkingen, beter voor het milieu. Een terugkerend verkoopargument bij vrijwel elke creator.' },
+    { h: 'Aluminiumvrij en natuurlijk', p: 'Sheabutter en zoveel mogelijk natuurlijke ingrediënten; creators noemen het een fijn, huidvriendelijk alternatief voor gewone spuitdeo.' },
+    { h: 'Veel geuren en print-cases', p: 'Van Fresh Cotton & Sea Salt tot zomerse en fruitige geuren, met wisselende cases zoals panterprint, hartjes, pastel en seizoenscollecties.' },
+    { h: 'Persoonlijke influencer-codes', p: 'Bijna elke gedeelde code geeft 20% korting op je hele order; de korting geldt volgens creators soms zelfs bovenop lopende acties.' }
+  ],
+  trending: ['Navulbare deo sticks', 'Deo roll-ons', 'Print-cases (panter, hartjes, pastel)',
+             'Miffy/nijntje-collectie', 'Lippenbalsem refills', 'Cadeau- en seizoenssets'],
+  codeInfo: [
+    'Wild werkt vooral met persoonlijke influencer-codes (vaak de voornaam of handle van de ' +
+    'creator, soms met "WILD" ervoor). In onze data geeft het overgrote deel van die codes 20% ' +
+    'korting op je hele bestelling; een enkele keer zien we 15%. Je voert de code in bij het ' +
+    'afrekenen, of je shopt via de affiliate-link in de bio van de creator.',
+    'Let op de voorwaarden: een code geldt meestal op je hele order en volgens sommige creators ' +
+    'zelfs bovenop lopende acties, maar dat is niet gegarandeerd en kan per periode of campagne ' +
+    'verschillen. Je gebruikt doorgaans één code per bestelling. Daarom controleren wij de codes ' +
+    'dagelijks zodat je een werkende variant pakt.'
+  ],
+  creators: ['@thepastelsuitcase', '@keeb.motivated', '@marielledouwsma_', '@suusgro',
+             '@contentbyrenske', '@tipsvantiff', '@puurchantal', '@robincatharina'],
+  tips: [
+    { h: 'Pak een influencer-code voor 20%', p: 'De meeste persoonlijke codes werken hetzelfde en geven 20% korting op je hele order — pak gewoon een werkende variant uit de lijst.' },
+    { h: 'Koop de case één keer', p: 'Bestel daarna alleen de refills die je nodig hebt; dat is goedkoper én duurzamer dan steeds een nieuwe deo.' },
+    { h: 'Combineer geuren en cases', p: 'Het assortiment is groot — stel je eigen combinatie samen of kies een seizoens- of cadeaucase.' },
+    { h: 'Check of de korting bovenop acties geldt', p: 'Creators noemen soms dat hun code stapelt op lopende acties; controleer dit in je winkelmandje, want het is niet altijd gegarandeerd.' }
+  ],
+  faq: [
+    { q: 'Hoeveel korting krijg ik met een Wild kortingscode?', a: 'Vrijwel alle gedeelde influencer-codes geven 20% korting op je hele bestelling. Een enkele keer zien we 15%; de exacte korting kan per code en periode verschillen.' },
+    { q: 'Hoe gebruik ik een Wild kortingscode?', a: 'Voer de code in bij het afrekenen op wearewild.com, of shop via de affiliate-link in de bio van de creator. Doorgaans gebruik je één code per bestelling.' },
+    { q: 'Geldt de korting ook bovenop lopende acties?', a: 'Sommige creators geven aan dat hun code bovenop bestaande acties geldt, maar dat is niet gegarandeerd en kan per campagne verschillen. Check het bedrag in je winkelmandje.' },
+    { q: 'Wat verkoopt Wild precies?', a: 'Navulbare, aluminiumvrije persoonlijke verzorging: deodorant-sticks en roll-ons, plus lippenbalsem, body wash en hand wash, met verwisselbare cases en veel geuren.' },
+    { q: 'Waarom is Wild navulbaar?', a: 'Je koopt de case één keer en vervangt daarna alleen de refill. Dat scheelt verpakkingsafval en plastic — voor veel creators de belangrijkste reden om over te stappen.' }
+  ]
+};

@@ -1,0 +1,66 @@
+import { BrandContent } from './brand-content.model';
+
+/**
+ * Copy grounded in Yehwang Wholesale's real influencer captions (py_diski_influencers
+ * DB, ai_canonical = 'yehwang_wholesale'): 33 captions from 22 NL/BE creators, mostly
+ * TikTok-style posts. Yehwang is a B2B fashion- & sieradengroothandel die sinds kort ook
+ * dropshipping aanbiedt; creators noemen vrijwel altijd dezelfde mechaniek: een
+ * persoonlijke code (Maya15, Manon15, HOU15, Lauravan15, …) = 15% korting, "for new
+ * users only" / "first orders only". Claims bewust bescheiden gehouden: het zijn korte
+ * TikTok-captions, dus geen harde merkfeiten verzonnen.
+ */
+export const yehwangwholesaleContent: BrandContent = {
+  slug: 'yehwang_wholesale',
+  name: 'Yehwang Wholesale',
+  related: ['nakdfashion', 'aelfriceden.com', 'edikted', 'fitjeans.com', 'fittwear.nl',
+            'getdrezzed', 'mimamsterdam', 'morecore.nl', 'parfumado', 'silkelegancemanon',
+            'voghion', 'yehwang'],
+  heroLede:
+    'Alle werkende Yehwang Wholesale kortingscodes en influencer-codes op één plek — ' +
+    'goed voor 15% korting, meestal voor nieuwe gebruikers op hun eerste bestelling. ' +
+    'Dagelijks gecontroleerd door onze redactie.',
+  about: [
+    'Yehwang Wholesale is een online groothandel in mode en sieraden. Het assortiment dat ' +
+    'creators laten zien loopt van trendy kleding (jeans, broeken, truien, tops, jurken) tot ' +
+    'sieraden en accessoires zoals oorbellen, armbanden, tassen en phone cords. De prijzen zijn ' +
+    'groothandelsprijzen: het platform richt zich op B2B-klanten en (online) boetiekjes, en biedt ' +
+    'volgens meerdere creators sinds kort ook dropshipping aan — handig voor kleine fashionbusinesses ' +
+    'die zonder voorraad willen verkopen.',
+    'In onze eigen data delen ruim 20 Nederlandse en Vlaamse creators Yehwang-content, vrijwel altijd ' +
+    'met dezelfde deal: een persoonlijke code op je eigen naam (zoals Maya15, Manon15, HOU15 of ' +
+    'Lauravan15) die 15% korting geeft. Meerdere posts vermelden er expliciet bij dat de code alleen ' +
+    'geldt voor nieuwe gebruikers of de eerste bestelling.'
+  ],
+  why: [
+    { h: 'Mode én sieraden in één groothandel', p: 'Kleding zoals jeans, broeken en truien naast oorbellen, armbanden, tassen en phone cords.' },
+    { h: 'Groothandelsprijzen voor (online) boutiques', p: 'Het platform richt zich op B2B-klanten; heb je een eigen kledingzaak of webshop, dan koop je hier in tegen scherpe inkoopprijzen.' },
+    { h: 'Dropshipping mogelijk', p: 'Volgens meerdere creators biedt Yehwang sinds kort ook dropshipping aan — verkopen zonder zelf voorraad aan te houden.' },
+    { h: 'Persoonlijke influencer-codes', p: 'Bijna elke creator deelt een eigen code; die geeft in de captions consequent 15% korting.' }
+  ],
+  trending: ['Jeans en broeken', 'Truien en hoodies voor het najaar', 'Tops en blouses', 'Oorbellen en armbanden', 'Tassen en phone cords', 'Polkadot- en koeienprint'],
+  codeInfo: [
+    'Yehwang Wholesale werkt vooral met persoonlijke influencer-codes. De code bestaat meestal uit de ' +
+    'naam van de creator gevolgd door 15 (bijvoorbeeld Maya15, Manon15 of Lauravan15) en geeft in de ' +
+    'captions die wij zien telkens 15% korting. Je hoeft geen specifieke creator te volgen: de codes ' +
+    'lijken voor iedereen te werken.',
+    'Let goed op de voorwaarden. Veel creators schrijven er nadrukkelijk bij dat de code alleen geldt ' +
+    'voor nieuwe gebruikers ("for new users only") of voor de eerste bestelling ("first orders only"). ' +
+    'Omdat het om een groothandel gaat, kan er een account- of registratiestap aan vastzitten. ' +
+    'Voorwaarden en geldigheid kunnen wisselen, daarom controleren wij de codes dagelijks.'
+  ],
+  creators: ['@manonkleijnx', '@mayajolie_', '@lauravanerp', '@fayhoukema', '@elineelansinkk',
+             '@yaralambregtse', '@lisa.vandoninck', '@pascalle.rietbergen'],
+  tips: [
+    { h: 'Pak een influencer-code voor 15%', p: 'De persoonlijke codes (naam + 15) werken hetzelfde; je hoeft niemand te volgen om er gebruik van te maken.' },
+    { h: 'Vooral voor nieuwe gebruikers', p: 'Veel codes gelden alleen bij je eerste bestelling, dus bewaar de korting voor je eerste order.' },
+    { h: 'Bedoeld voor zakelijke inkoop', p: 'Het zijn groothandelsprijzen; heb je een eigen (online) boutique, dan haal je hier de meeste waarde uit.' },
+    { h: 'Noteer de productnummers', p: 'Creators delen vaak losse artikelnummers (zoals 0605902-721) — handig om precies hetzelfde item terug te vinden.' }
+  ],
+  faq: [
+    { q: 'Hoeveel korting krijg ik met een Yehwang Wholesale kortingscode?', a: 'In de captions die wij zien geven de persoonlijke influencer-codes telkens 15% korting op je bestelling.' },
+    { q: 'Voor wie geldt de kortingscode?', a: 'Meestal voor nieuwe gebruikers of de eerste bestelling — meerdere creators vermelden expliciet "for new users only" of "first orders only".' },
+    { q: 'Werkt de code van een influencer ook voor mij?', a: 'Ja, de persoonlijke codes lijken voor iedereen te werken; je hoeft de creator niet te volgen.' },
+    { q: 'Wat verkoopt Yehwang Wholesale?', a: 'Mode (jeans, broeken, truien, tops, jurken) en sieraden en accessoires zoals oorbellen, armbanden, tassen en phone cords, tegen groothandelsprijzen.' },
+    { q: 'Kan ik bij Yehwang inkopen voor mijn eigen webshop?', a: 'Ja, het is een B2B-groothandel gericht op (online) boetiekjes en biedt volgens creators sinds kort ook dropshipping aan.' }
+  ]
+};
