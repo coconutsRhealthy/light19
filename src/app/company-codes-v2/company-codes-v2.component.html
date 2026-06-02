@@ -20,18 +20,16 @@
     } @else {
       <div class="logo logo-ph" aria-hidden="true">{{ displayName.charAt(0) }}</div>
     }
-    <div class="hero-text">
-      <h1>{{ displayName }} Kortingscode {{ monthYear | titlecase }}</h1>
-      <p class="lede">
-        @if (content?.heroLede) { {{ content?.heroLede }} }
-        @else { Alle werkende {{ displayName }} kortingscodes en aanbiedingen op één plek, dagelijks gecontroleerd door onze redactie. }
-      </p>
-      <div class="trust">
-        <span class="badge">✓ Getest door de redactie</span>
-        <span><span class="ok">Laatst gecontroleerd op</span>&nbsp;<time [attr.datetime]="lastCheckedIso">{{ lastCheckedLabel }}</time></span>
-        <span>{{ regularCodes.length }} actieve kortingscode{{ regularCodes.length === 1 ? '' : 's' }}</span>
-        @if (dealCodes.length) { <span>+ {{ dealCodes.length }} cashback deal</span> }
-      </div>
+    <h1>{{ displayName }} Kortingscode {{ monthYear | titlecase }}</h1>
+    <p class="lede">
+      @if (content?.heroLede) { {{ content?.heroLede }} }
+      @else { Alle werkende {{ displayName }} kortingscodes en aanbiedingen op één plek, dagelijks gecontroleerd door onze redactie. }
+    </p>
+    <div class="trust">
+      <span class="badge">✓ Getest door de redactie</span>
+      <span><span class="ok">Laatst gecontroleerd op</span>&nbsp;<time [attr.datetime]="lastCheckedIso">{{ lastCheckedLabel }}</time></span>
+      <span>{{ regularCodes.length }} actieve kortingscode{{ regularCodes.length === 1 ? '' : 's' }}</span>
+      @if (dealCodes.length) { <span>+ {{ dealCodes.length }} cashback deal</span> }
     </div>
   </div>
 
