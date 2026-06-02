@@ -28,8 +28,7 @@
       </p>
       <div class="trust">
         <span class="badge">✓ Getest door de redactie</span>
-        <span><span class="ok">Laatst gecontroleerd op</span>
-          <time [attr.datetime]="lastCheckedIso">{{ lastCheckedLabel }}</time></span>
+        <span><span class="ok">Laatst gecontroleerd op</span>&nbsp;<time [attr.datetime]="lastCheckedIso">{{ lastCheckedLabel }}</time></span>
         <span>{{ regularCodes.length }} actieve kortingscode{{ regularCodes.length === 1 ? '' : 's' }}</span>
         @if (dealCodes.length) { <span>+ {{ dealCodes.length }} cashback deal</span> }
       </div>
