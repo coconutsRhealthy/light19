@@ -12,6 +12,7 @@ import { VisitorProfileService } from '../services/visitor-profile.service';
 import { ModalComponent } from '../modal/modal.component';
 import { BrandContent } from './brand-content/brand-content.model';
 import { getBrandContent } from './brand-content/index';
+import { BUILD_DATE_ISO } from '../build-info';
 
 declare let gtag: Function;
 
@@ -64,8 +65,11 @@ export class CompanyCodesV2Component implements OnInit {
   content: BrandContent | null = null;
 
   monthYear = '';
-  lastUpdatedLabel = '';
-  lastUpdatedIso = '';
+  // "Laatst gecontroleerd" = the build/regeneration date (a real event: codes are
+  // re-verified from discounts.json on each build), NOT a runtime new Date(). This
+  // keeps the freshness signal honest and avoids an SSR/CSR hydration mismatch.
+  lastCheckedLabel = '';
+  lastCheckedIso = '';
   maxDiscount = 0;
 
   regularCodes: CodeVM[] = [];
@@ -177,11 +181,11 @@ export class CompanyCodesV2Component implements OnInit {
       .filter(c => c.isPercent)
       .reduce((max, c) => Math.max(max, Number(c.rawValue)), 0);
 
-    const newest = parsed.reduce<Date | null>(
-      (acc, c) => (!acc || c.date > acc ? c.date : acc), null
-    ) ?? now;
-    this.lastUpdatedLabel = this.formatDate(newest);
-    this.lastUpdatedIso = this.toIsoDate(newest);
+    // Page-level "laatst gecontroleerd" from the baked build date (date-only).
+    const [by, bm, bd] = (BUILD_DATE_ISO || '').split('-').map(Number);
+    const checked = (by && bm && bd) ? new Date(by, bm - 1, bd) : now;
+    this.lastCheckedIso = BUILD_DATE_ISO || this.toIsoDate(now);
+    this.lastCheckedLabel = this.formatDate(checked);
 
     this.buildRelatedShops(lines);
     this.applySeo();
@@ -312,7 +316,7 @@ export class CompanyCodesV2Component implements OnInit {
       '@id': pageUrl + '#article',
       'headline': `${name} Kortingscode ${this.monthYear}`,
       'description': description,
-      'dateModified': this.lastUpdatedIso,
+      'dateModified': this.lastCheckedIso,
       'inLanguage': 'nl-NL',
       'author': { '@type': 'Organization', 'name': 'Redactie Diski', 'url': 'https://diski.nl/' },
       'publisher': { '@id': 'https://diski.nl/#organization' },

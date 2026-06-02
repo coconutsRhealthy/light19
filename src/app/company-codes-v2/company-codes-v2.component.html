@@ -28,8 +28,8 @@
       </p>
       <div class="trust">
         <span class="badge">✓ Getest door de redactie</span>
-        <span><span class="ok">Laatst bijgewerkt:</span>
-          <time [attr.datetime]="lastUpdatedIso">{{ lastUpdatedLabel }}</time></span>
+        <span><span class="ok">Laatst gecontroleerd op</span>
+          <time [attr.datetime]="lastCheckedIso">{{ lastCheckedLabel }}</time></span>
         <span>{{ regularCodes.length }} actieve kortingscode{{ regularCodes.length === 1 ? '' : 's' }}</span>
         @if (dealCodes.length) { <span>+ {{ dealCodes.length }} cashback deal</span> }
       </div>
@@ -64,7 +64,7 @@
             <h3>{{ c.valueText }} korting bij {{ displayName }}@if (c.label) { · {{ c.label }} }</h3>
             <p class="meta">
               <span class="verified">✓ Getest door de redactie</span>
-              &nbsp;·&nbsp; Gecontroleerd op {{ c.dateLabel }}
+              &nbsp;·&nbsp; Gespot op {{ c.dateLabel }}
             </p>
           </div>
           <div class="reveal">
@@ -84,7 +84,7 @@
             <h3>{{ d.valueText }} cashback bij {{ displayName }}</h3>
             <p class="meta">
               <span class="verified">✓ Getest door de redactie</span>
-              &nbsp;·&nbsp; Gecontroleerd op {{ d.dateLabel }}
+              &nbsp;·&nbsp; Gespot op {{ d.dateLabel }}
             </p>
           </div>
           <div class="reveal">
@@ -214,9 +214,10 @@
   <section id="redactie" aria-labelledby="redactie-h">
     <h2 id="redactie-h">Over onze redactie</h2>
     <p>De kortingscodes op deze pagina worden samengesteld en gecontroleerd door de deals-redactie
-       van Diski. We verzamelen codes uit onder andere de posts van influencers, testen ze, vermelden
-       altijd wanneer een code voor het laatst is gecontroleerd, en verwijderen verlopen codes binnen
-       24 uur. Lees meer over <a href="/contact/">onze werkwijze en controleproces</a>.</p>
+       van Diski. We verzamelen codes uit onder andere de posts van influencers, vermelden bij elke
+       code wanneer we die voor het laatst spotten, controleren de codes daarna opnieuw en verwijderen
+       verlopen codes binnen 24 uur. Lees meer over
+       <a href="/contact/">onze werkwijze en controleproces</a>.</p>
 
     <div class="author">
       <img src="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp"
@@ -224,7 +225,7 @@
       <div>
         <strong>Redactie Diski</strong>
         <div class="role">Deals-redactie &middot; codes handmatig getest &middot;
-          laatst bijgewerkt op {{ lastUpdatedLabel }}</div>
+          laatst gecontroleerd op {{ lastCheckedLabel }}</div>
       </div>
     </div>
   </section>
