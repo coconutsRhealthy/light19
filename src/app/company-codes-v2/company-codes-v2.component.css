@@ -34,9 +34,13 @@ nav.crumbs li::after{content:"›";margin-left:6px;color:#aab}
 nav.crumbs li:last-child::after{content:""}
 
 .hero{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:26px;margin:6px 0 22px;display:flex;gap:22px;align-items:flex-start}
+  padding:26px;margin:6px 0 22px;display:grid;grid-template-columns:auto minmax(0,1fr);
+  gap:22px;align-items:start}
 .hero .logo{width:88px;height:88px;border-radius:16px;border:1px solid var(--line);
   flex:0 0 auto;background:#fff;padding:10px;object-fit:contain}
+/* Let the text column shrink within the flex row so the H1/lede wrap instead of
+   overflowing the card (flex children default to min-width:auto). */
+.hero-text{min-width:0}
 /* Fallback when a shop has no logo — mirrors the related-shops .rel-ph placeholder. */
 .hero .logo-ph{background:#f7d3dc;color:#b34a86;padding:0;object-fit:initial;
   display:flex;align-items:center;justify-content:center;font-weight:800;font-size:40px}
@@ -119,7 +123,9 @@ footer .cols{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between}
   padding-top:16px;line-height:1.5}
 
 @media(max-width:640px){
-  .hero{flex-direction:column;padding:20px}
+  /* Keep the logo and H1 side by side (logo left, text right) on mobile,
+     instead of stacking the H1 below the logo. */
+  .hero{padding:20px;gap:16px}
   .hero .logo{width:64px;height:64px}
   h1{font-size:25px}
   .coupon{flex-wrap:wrap}
