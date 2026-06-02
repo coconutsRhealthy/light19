@@ -33,22 +33,6 @@
     </div>
   </div>
 
-  <!-- On-page table of contents -->
-  <nav class="toc" aria-label="Inhoudsopgave">
-    <strong>Op deze pagina</strong>
-    <ol>
-      <li><a href="#codes">Actieve kortingscodes</a></li>
-      <li><a href="#gebruiken">Code gebruiken</a></li>
-      @if (content?.codeInfo?.length) { <li><a href="#zo-werkt">Zo werkt een {{ displayName }} code</a></li> }
-      @if (content?.about?.length) { <li><a href="#over">Over {{ displayName }}</a></li> }
-      @if (content?.creators?.length) { <li><a href="#creators">Gestyled door creators</a></li> }
-      @if (content?.tips?.length) { <li><a href="#tips">Bespaartips</a></li> }
-      @if (content?.faq?.length) { <li><a href="#faq">Veelgestelde vragen</a></li> }
-      @if (relatedShops.length) { <li><a href="#gerelateerd">Gerelateerde shops</a></li> }
-      <li><a href="#redactie">Over onze redactie</a></li>
-    </ol>
-  </nav>
-
   <!-- ====================== OFFERS (data-driven) ====================== -->
   <section id="codes" aria-labelledby="codes-h">
     <h2 id="codes-h">Actieve {{ displayName }} kortingscodes &amp; aanbiedingen ({{ monthYear }})</h2>
@@ -106,6 +90,22 @@
       <a href="/contact/">Laat het ons weten</a> &mdash; we halen verlopen codes binnen 24 uur offline.
     </p>
   </section>
+
+  <!-- On-page table of contents — collapsed, since the codes are already above -->
+  <details class="toc">
+    <summary>Op deze pagina</summary>
+    <ol>
+      <li><a href="#codes">Actieve kortingscodes</a></li>
+      <li><a href="#gebruiken">Code gebruiken</a></li>
+      @if (content?.codeInfo?.length) { <li><a href="#zo-werkt">Zo werkt een {{ displayName }} code</a></li> }
+      @if (content?.about?.length) { <li><a href="#over">Over {{ displayName }}</a></li> }
+      @if (content?.creators?.length) { <li><a href="#creators">Gestyled door creators</a></li> }
+      @if (content?.tips?.length) { <li><a href="#tips">Bespaartips</a></li> }
+      @if (content?.faq?.length) { <li><a href="#faq">Veelgestelde vragen</a></li> }
+      @if (relatedShops.length) { <li><a href="#gerelateerd">Gerelateerde shops</a></li> }
+      <li><a href="#redactie">Over onze redactie</a></li>
+    </ol>
+  </details>
 
   <!-- ====================== HOW TO USE (generic) ====================== -->
   <section id="gebruiken" aria-labelledby="gebruiken-h">
