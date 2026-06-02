@@ -1,4 +1,4 @@
-<a class="skip" href="#main">Direct naar de kortingscodes</a>
+<a class="skip" href="#main" (click)="scrollToSection($event, 'main')">Direct naar de kortingscodes</a>
 
 <app-navbar></app-navbar>
 
@@ -95,15 +95,15 @@
   <details class="toc">
     <summary>Op deze pagina</summary>
     <ol>
-      <li><a href="#codes">Actieve kortingscodes</a></li>
-      <li><a href="#gebruiken">Code gebruiken</a></li>
-      @if (content?.codeInfo?.length) { <li><a href="#zo-werkt">Zo werkt een {{ displayName }} code</a></li> }
-      @if (content?.about?.length) { <li><a href="#over">Over {{ displayName }}</a></li> }
-      @if (content?.creators?.length) { <li><a href="#creators">Gestyled door creators</a></li> }
-      @if (content?.tips?.length) { <li><a href="#tips">Bespaartips</a></li> }
-      @if (content?.faq?.length) { <li><a href="#faq">Veelgestelde vragen</a></li> }
-      @if (relatedShops.length) { <li><a href="#gerelateerd">Gerelateerde shops</a></li> }
-      <li><a href="#redactie">Over onze redactie</a></li>
+      <li><a href="#codes" (click)="scrollToSection($event, 'codes')">Actieve kortingscodes</a></li>
+      <li><a href="#gebruiken" (click)="scrollToSection($event, 'gebruiken')">Code gebruiken</a></li>
+      @if (content?.codeInfo?.length) { <li><a href="#zo-werkt" (click)="scrollToSection($event, 'zo-werkt')">Zo werkt een {{ displayName }} code</a></li> }
+      @if (content?.about?.length) { <li><a href="#over" (click)="scrollToSection($event, 'over')">Over {{ displayName }}</a></li> }
+      @if (content?.creators?.length) { <li><a href="#creators" (click)="scrollToSection($event, 'creators')">Gestyled door creators</a></li> }
+      @if (content?.tips?.length) { <li><a href="#tips" (click)="scrollToSection($event, 'tips')">Bespaartips</a></li> }
+      @if (content?.faq?.length) { <li><a href="#faq" (click)="scrollToSection($event, 'faq')">Veelgestelde vragen</a></li> }
+      @if (relatedShops.length) { <li><a href="#gerelateerd" (click)="scrollToSection($event, 'gerelateerd')">Gerelateerde shops</a></li> }
+      <li><a href="#redactie" (click)="scrollToSection($event, 'redactie')">Over onze redactie</a></li>
     </ol>
   </details>
 

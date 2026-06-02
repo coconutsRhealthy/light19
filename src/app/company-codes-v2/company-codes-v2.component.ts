@@ -105,6 +105,21 @@ export class CompanyCodesV2Component implements OnInit {
     return this.isPreview ? `/v2/${slug}/` : `/${slug}/`;
   }
 
+  /**
+   * In-page anchor scroll for the TOC / skip link. With `<base href="/">` a bare
+   * `href="#id"` resolves to the homepage (https://diski.nl/#id) instead of the
+   * current page, so we intercept the click, scroll to the section ourselves, and
+   * set the hash on the CURRENT url (history API ignores <base>).
+   */
+  scrollToSection(event: Event, id: string): void {
+    if (!this.isBrowser) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    event.preventDefault();
+    el.scrollIntoView({ behavior: 'smooth' });
+    history.replaceState(null, '', `${location.pathname}${location.search}#${id}`);
+  }
+
   constructor(
     private route: ActivatedRoute,
     private discounts: DiscountsService,
