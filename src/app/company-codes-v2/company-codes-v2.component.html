@@ -15,7 +15,11 @@
 
   <!-- HERO: H1 with primary keyword + freshness -->
   <div class="hero">
-    <img class="logo" [src]="logoUrl" width="88" height="88" [alt]="displayName + ' logo'" fetchpriority="high">
+    @if (logoUrl) {
+      <img class="logo" [src]="logoUrl" width="88" height="88" [alt]="displayName + ' logo'" fetchpriority="high">
+    } @else {
+      <div class="logo logo-ph" aria-hidden="true">{{ displayName.charAt(0) }}</div>
+    }
     <div>
       <h1>{{ displayName }} Kortingscode {{ monthYear | titlecase }}</h1>
       <p class="lede">

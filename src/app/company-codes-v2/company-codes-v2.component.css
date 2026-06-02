@@ -37,6 +37,9 @@ nav.crumbs li:last-child::after{content:""}
   padding:26px;margin:6px 0 22px;display:flex;gap:22px;align-items:flex-start}
 .hero .logo{width:88px;height:88px;border-radius:16px;border:1px solid var(--line);
   flex:0 0 auto;background:#fff;padding:10px;object-fit:contain}
+/* Fallback when a shop has no logo — mirrors the related-shops .rel-ph placeholder. */
+.hero .logo-ph{background:#f7d3dc;color:#b34a86;padding:0;object-fit:initial;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:40px}
 h1{font-size:30px;line-height:1.2;margin:0 0 8px}
 .lede{color:var(--muted);margin:0 0 14px;font-size:16px}
 .trust{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13.5px;color:var(--muted);align-items:center}
