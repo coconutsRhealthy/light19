@@ -218,6 +218,9 @@ export class DiscountsTableComponent implements OnInit {
 
   formatDate(date: string): string {
     const formattedDate = this.getDateFromDateString(date);
+    if (isNaN(formattedDate.getTime())) {
+      return '';
+    }
     return this.datePipe.transform(formattedDate, 'd MMM') ?? '';
   }
 
