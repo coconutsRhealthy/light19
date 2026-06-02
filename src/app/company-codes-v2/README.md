@@ -54,13 +54,30 @@ parallel to the live `:company` v1 pages). Built as a pilot to test a specific b
   shops by caption coverage (139 have ≥1 caption; 201 have none).
 - Committed on branch `claude_seo_improvements` (base component + modal/affiliate wiring).
   **Unpushed and not deployed** — production does not have v2 yet.
-- Still a noindexed pilot; the real `:company` route is untouched (all v1).
+- The 25 are now **served on the real `:company` route and indexable** (see below); the
+  original 5 are deliberately kept on v1 and remain noindexed `/v2/` previews only.
+
+## Live rollout — IMPLEMENTED (2026-06-02) for the 25, NOT the original 5
+The `canMatch` approach from `../live-rollout-plan.txt` is now wired up, with one
+deliberate change: an explicit **allowlist** instead of "any shop with v2 content".
+- `brand-content/live-v2-slugs.ts` — the allowlist of the 25 go-live slugs (single source
+  of truth). The original 5 pilot shops are intentionally NOT on it, so they stay on v1.
+- `has-v2-content.guard.ts` — `CanMatchFn`: matches the real `:company` route only when the
+  slug is allowlisted AND has v2 content; otherwise falls through to the v1 component.
+- `app.routes.ts` — guarded `:company → v2` route sits above the `:company → v1` route; the
+  `v2/:company` preview route carries `data: { preview: true }`.
+- **noindex handling** — `applySeo()` only calls `meta.setNoIndex()` on the preview route
+  (`data.preview`); on the live route it calls `meta.setIndex()` (clears any stale noindex).
+  `setNoIndex()` now uses `updateTag` (no stacked tags). Verified by prerender: all 25
+  `/{slug}/index.html` render v2 with NO noindex; original 5 + all other shops render v1.
+- The modal deep-link (`openNewPageWithCodeDetailModal`) is now path-aware (`/v2/{slug}` in
+  preview, `/{slug}` live). Self-canonical is added at build by `scripts/set-canonicals.js`,
+  and the 25 are already in `sitemap.xml`/`routes.txt` (generated from `discounts.json`).
+- **To go live for real:** run `npm run build:prod` and deploy (nothing here is deployed yet).
+  Add a shop later → add its slug to `live-v2-slugs.ts`; revert a shop → remove it.
 
 ## Where it's going (not built yet)
-- **Serve v2 on the real route per shop, fall back to v1** — see `../live-rollout-plan.txt`
-  (a `canMatch` guard; the critical part is making the forced `noindex` conditional so real
-  pages stay indexable).
-- **A generation engine** to scale the content past 5 shops — see
+- **A generation engine** to scale the content past these shops — see
   `brand-content/CONTENT-GENERATION.md` for the exact recipe (queries + grounding rules),
   and `../../../scripts/python/extract_brand_captions.py` which already pulls the per-shop
   caption-grounding bundle (Instagram+TikTok) as JSON, ready to feed into generation.

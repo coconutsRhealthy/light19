@@ -86,6 +86,11 @@ export class CompanyCodesV2Component implements OnInit {
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private allLogos: { [name: string]: string } = {};
 
+  /** True on the /v2/ preview route (route data.preview); false on the live /:company route. */
+  private get isPreview(): boolean {
+    return this.route.snapshot.data['preview'] === true;
+  }
+
   constructor(
     private route: ActivatedRoute,
     private discounts: DiscountsService,
@@ -247,8 +252,14 @@ export class CompanyCodesV2Component implements OnInit {
     this.meta.updateMetaInfo(description, 'diski.nl', `${name}, Kortingscode, Korting`);
     this.meta.updateOgTags(title, description, pageUrl);
 
-    // Preview only: keep this route out of the index while we pilot.
-    this.meta.setNoIndex();
+    // Noindex ONLY on the /v2/ preview route (data.preview). On the real
+    // /:company route (allowlisted go-live shops) the page must be indexable,
+    // so we actively clear any stale noindex left by a prior preview navigation.
+    if (this.isPreview) {
+      this.meta.setNoIndex();
+    } else {
+      this.meta.setIndex();
+    }
 
     this.meta.setJsonLd('v2-organization', {
       '@context': 'https://schema.org',
@@ -380,7 +391,10 @@ export class CompanyCodesV2Component implements OnInit {
 
   private openNewPageWithCodeDetailModal(codeIndex: number): void {
     if (!this.isBrowser) return;
-    const url = `${window.location.origin}/v2/${this.company}#i=${encodeURIComponent(codeIndex)}`;
+    // Deep-link to the page we're actually on: /v2/{company} in preview,
+    // /{company} on the live route. Mirrors v1's new-tab behaviour.
+    const base = this.isPreview ? `/v2/${this.company}` : `/${this.company}`;
+    const url = `${window.location.origin}${base}#i=${encodeURIComponent(codeIndex)}`;
     window.open(url, '_blank');
     if (this.affiliateLink !== undefined) {
       location.href = this.affiliateLink;

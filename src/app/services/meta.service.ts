@@ -50,7 +50,16 @@ export class MetaService {
     }
 
     setNoIndex() {
-        this.meta.addTag({ name: 'robots', content: 'noindex' });
+        // updateTag (not addTag) so repeated client-side navigations can't stack
+        // multiple <meta name="robots"> tags.
+        this.meta.updateTag({ name: 'robots', content: 'noindex' });
+    }
+
+    // Explicitly mark the page indexable: drop any stale robots noindex that a
+    // previous (preview) page may have left behind during client-side navigation.
+    // No robots meta = indexable by default, so we simply remove the tag.
+    setIndex() {
+        this.meta.removeTag('name="robots"');
     }
 
     getDateString() {

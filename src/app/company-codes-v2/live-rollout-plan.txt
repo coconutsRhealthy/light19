@@ -1,7 +1,22 @@
 ==========================================================================
  v2 LIVE ROLLOUT PLAN — serve v2 on the REAL /:company route per shop,
  fall back to v1 (company-codes) for shops without v2 content.
- (Idea captured for later — NOT implemented yet.)
+
+ *** IMPLEMENTED 2026-06-02 *** for the 25 not-indexed-shop pages, with ONE
+ change from the plan below: instead of "any shop with v2 content", go-live is
+ gated by an explicit ALLOWLIST (brand-content/live-v2-slugs.ts) so the original
+ 5 pilot shops (nakdfashion, ginatricot, gutsgusto, geurwolkje, zalando) stay on
+ v1 and a half-finished content file can't auto-publish. Files touched:
+   - brand-content/live-v2-slugs.ts   (allowlist + isLiveV2Slug)
+   - has-v2-content.guard.ts          (CanMatchFn = isLiveV2Slug && getBrandContent)
+   - app.routes.ts                    (guarded :company->v2 above :company->v1;
+                                        v2/:company carries data:{preview:true})
+   - company-codes-v2.component.ts    (noindex only when data.preview; else setIndex();
+                                        modal deep-link is path-aware)
+   - services/meta.service.ts         (setNoIndex via updateTag; new setIndex())
+ Verified by a production prerender: all 25 /{slug}/index.html render v2 with NO
+ noindex; original 5 + every other shop still render v1. Not deployed yet —
+ run `npm run build:prod` and deploy to ship. The notes below are the original plan.
 ==========================================================================
 
 GOAL
