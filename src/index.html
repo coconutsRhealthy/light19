@@ -14,12 +14,20 @@
   <meta property="og:image" content="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp">
   <meta name="twitter:card" content="summary">
 
+  <script src="https://analytics.ahrefs.com/analytics.js" data-key="jRfLunpMsGQCYaJ40KQABA" async></script>
+
   <meta name="tradetracker-site-verification" content="725a2cb17a0221aad41e1fa39a4e1a0d4cd27a92" />
   <meta name="verify-admitad" content="1759314d52" />
   <meta name="fo-verify" content="4aeedfba-f202-4791-85f8-0bf598a1b121" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Google tag (gtag.js) -->
+  <link rel="dns-prefetch" href="https://www.awin1.com">
+  <link rel="dns-prefetch" href="https://a1.awin1.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <link rel="dns-prefetch" href="https://connect.facebook.net">
+  <link rel="dns-prefetch" href="https://s.skimresources.com">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVP906XC65"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -50,23 +58,58 @@
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
         if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
+        n.queue=[]}(window, document,'script');
         fbq('init', '790112370507856');
         fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3761954510194394"
-            crossorigin="anonymous"></script>
+    <script>
+      (function () {
+        var loaded = false;
+        function loadThirdParty() {
+          if (loaded) return;
+          loaded = true;
+
+          // Meta Pixel library
+          var fb = document.createElement('script');
+          fb.async = true;
+          fb.src = 'https://connect.facebook.net/en_US/fbevents.js';
+          document.head.appendChild(fb);
+
+          // Google AdSense
+          var ad = document.createElement('script');
+          ad.async = true;
+          ad.crossOrigin = 'anonymous';
+          ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3761954510194394';
+          document.head.appendChild(ad);
+
+          // Skimlinks
+          var sk = document.createElement('script');
+          sk.src = 'https://s.skimresources.com/js/302650X1790655.skimlinks.js';
+          document.body.appendChild(sk);
+        }
+
+        var events = ['scroll', 'mousemove', 'touchstart', 'pointerdown', 'keydown'];
+        function onFirstInteraction() {
+          events.forEach(function (e) { window.removeEventListener(e, onFirstInteraction, { passive: true }); });
+          loadThirdParty();
+        }
+        events.forEach(function (e) { window.addEventListener(e, onFirstInteraction, { passive: true }); });
+
+        // Fallback for sessions that never interact (e.g. lab tests, bots): load on idle.
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadThirdParty, { timeout: 5000 });
+        } else {
+          setTimeout(loadThirdParty, 5000);
+        }
+      })();
+    </script>
 </head>
 <body class="tw-bg-pink-50">
   <noscript><img height="1" width="1" style="display:none"
                  src="https://www.facebook.com/tr?id=790112370507856&ev=PageView&noscript=1"
   /></noscript>
   <app-root></app-root>
-  <script type="text/javascript" src="https://s.skimresources.com/js/302650X1790655.skimlinks.js"></script>
 </body>
 </html>
