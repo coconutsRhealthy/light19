@@ -119,19 +119,36 @@ newest collection"), the trending products, which creators push it, the real ter
 
 ---
 
-## 5. Write + register
+## 5. Write a data file (no registry, no .ts)
 
-- Save as `src/app/company-codes-v2/brand-content/{slug}.ts`, exporting
-  `export const {slugCamel}Content: BrandContent = { ... }`.
-- Add it to `index.ts` (`import` + a `REGISTRY` entry keyed by `.slug`).
-- The `/v2/{slug}` route renders it automatically (noindexed preview).
+Brand content is plain **JSON data**, NOT TypeScript, and it is NEVER bundled —
+neither into the browser nor the server bundle. It is read from disk at
+prerender time and inlined into each page's HTML via TransferState. Adding a shop
+is literally "drop a file":
+
+- Save as `src/app/company-codes-v2/brand-content/data/{slug}.json`, where
+  `{slug}` is the REAL slug (dots and all, e.g. `bodylab.nl.json`,
+  `glutespop.com.json`) — it must match `discounts.json` / `ai_canonical`.
+- The file is a raw `BrandContent` object (same fields as `brand-content.model.ts`).
+- That's it — no `index.ts`, no imports, no registry edits. The server loader
+  (`brand-content.server.ts`) reads `data/{slug}.json` by name at build.
+- To PREVIEW it (noindexed `/v2/{slug}`): `scripts/fill-routes.js` auto-adds a
+  `/v2/{slug}` prerender route for every data file NOT on the go-live allowlist.
+- To take it LIVE on the real `/{slug}` route: add the slug to
+  `brand-content/live-v2-slugs.ts` (it must also be in `discounts.json`/routes.txt
+  so it prerenders).
 
 Verify (Node v22 via nvm; shell default node is too old):
 ```
 export PATH="$HOME/.nvm/versions/node/v22.14.0/bin:$PATH"
-npx ng serve --port 4321
-curl -s http://localhost:4321/v2/{slug} | grep -c "korting bij"   # sanity check
+npm run build:prod
+# content is inlined in the prerendered HTML, and absent from every JS bundle:
+grep -c "korting bij" dist/light19/browser/{slug}/index.html          # > 0
+grep -rl "<a distinctive phrase from the copy>" dist/light19/browser/*.js   # nothing
 ```
+
+(One-off migration of the original `.ts` content objects to JSON was done with
+`scripts/migrate-brand-content-to-json.js`.)
 
 ---
 
@@ -142,5 +159,7 @@ caption-poor). See also `../live-rollout-plan.txt` for serving v2 on the real ro
 ## Scaling note
 At 1,000+ shops this should become an automated engine (a script in the Python stack that
 runs these queries, calls the model to emit the BrandContent object, and writes the file),
-run in reviewed batches — NOT 1,000 blind generations. Registry/import should move to lazy
-`import()` per slug so each shop's copy is its own chunk.
+run in reviewed batches — NOT 1,000 blind generations. The engine just writes
+`data/{slug}.json` files; bundle size is already O(1) per page regardless of shop count
+(content is read from disk at prerender and inlined per page via TransferState, never
+bundled or served as a CDN asset — see the data-flow note in `../README.md`).

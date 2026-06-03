@@ -11,7 +11,7 @@ import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
 import { ModalComponent } from '../modal/modal.component';
 import { BrandContent } from './brand-content/brand-content.model';
-import { getBrandContent } from './brand-content/index';
+import { BrandContentService } from './brand-content/brand-content.service';
 import { BUILD_DATE_ISO } from '../build-info';
 
 declare let gtag: Function;
@@ -127,7 +127,8 @@ export class CompanyCodesV2Component implements OnInit {
     private logos: LogosService,
     private meta: MetaService,
     private affiliateLinkService: AffiliateLinkService,
-    private visitorProfile: VisitorProfileService
+    private visitorProfile: VisitorProfileService,
+    private brandContent: BrandContentService
   ) {}
 
   ngOnInit(): void {
@@ -141,7 +142,7 @@ export class CompanyCodesV2Component implements OnInit {
       this.showAllCodes = false;
       this.isModalVisible = false;
       this.selectedDiscount = null;
-      this.content = getBrandContent(this.company);
+      this.content = this.brandContent.get(this.company);
       this.displayName = this.content?.name
         ?? this.names.getWebshopName(this.company)
         ?? this.company.charAt(0).toUpperCase() + this.company.slice(1);

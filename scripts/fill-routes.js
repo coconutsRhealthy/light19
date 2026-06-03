@@ -36,12 +36,42 @@ hardcodedRoutes.forEach(route => results.add(route.replace(/^\//, '')));
 const sorted = Array.from(results).sort((a, b) => a.localeCompare(b));
 
 // =========================
+// v2 preview routes (/v2/{slug})
+// =========================
+// Prerender a noindexed /v2/{slug} preview for every shop that has a v2 brand-
+// content data file but is NOT on the go-live allowlist (i.e. the preview-only
+// shops). Live shops are already prerendered at /{slug} from discounts.json, so
+// they don't need a duplicate /v2/ render. Prerendering the previews means they
+// also get their content inlined via TransferState (no client-side data needed).
+//
+// These are added to routes.txt ONLY — never to sitemap.xml (they are noindex).
+const contentDir = path.join(__dirname, '../src/app/company-codes-v2/brand-content/data');
+const liveSlugsFile = path.join(__dirname, '../src/app/company-codes-v2/brand-content/live-v2-slugs.ts');
+
+const contentSlugs = fs.existsSync(contentDir)
+  ? fs.readdirSync(contentDir).filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, '').toLowerCase())
+  : [];
+
+// Parse the allowlisted (live) slugs straight out of live-v2-slugs.ts.
+const liveSlugs = new Set();
+if (fs.existsSync(liveSlugsFile)) {
+  const txt = fs.readFileSync(liveSlugsFile, 'utf8');
+  const setBody = txt.slice(txt.indexOf('new Set('), txt.indexOf('])') + 1);
+  for (const m of setBody.matchAll(/'([^']+)'/g)) liveSlugs.add(m[1].toLowerCase());
+}
+
+const previewRoutes = contentSlugs
+  .filter(slug => !liveSlugs.has(slug))
+  .map(slug => `/v2/${slug}`)
+  .sort((a, b) => a.localeCompare(b));
+
+// =========================
 // 1. routes.txt genereren
 // =========================
-const routesTxt = sorted.map((v) => `/${v}`).join('\n');
+const routesTxt = [...sorted.map((v) => `/${v}`), ...previewRoutes].join('\n');
 fs.writeFileSync('routes.txt', routesTxt, 'utf8');
 
-console.log('routes.txt generated successfully.');
+console.log(`routes.txt generated successfully (${previewRoutes.length} v2 preview route(s) appended).`);
 
 
 // =========================
