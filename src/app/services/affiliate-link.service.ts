@@ -1399,12 +1399,12 @@ export class AffiliateLinkService {
         dummyCode: 'AMBERXNL'
     },
     'creamyfabrics': {
-        url: 'https://creamyfabrics.com/collections/sale?sca_ref=10914490.LaLLdEQudOoWNPr&utm_source=uppromote&utm_medium=affiliate&utm_campaign=affiliate_bestseller&utm_term=affiliate_bestseller',
-        dummyCode: 'rosan'
+        url: 'https://creamyfabrics.com/nl/discount/WIEGEEFTKORTING?redirect=/nl/collections/sale&preview_theme_id=191697584475&one_s=andyyrobe&affid=andyyrobe&pb=0',
+        dummyCode: 'wiegeeftkorting'
     },
     'cfab': {
-        url: 'https://creamyfabrics.com/collections/sale?sca_ref=10914490.LaLLdEQudOoWNPr&utm_source=uppromote&utm_medium=affiliate&utm_campaign=affiliate_bestseller&utm_term=affiliate_bestseller',
-        dummyCode: 'ROSAN'
+        url: 'https://creamyfabrics.com/nl/discount/WIEGEEFTKORTING?redirect=/nl/collections/sale&preview_theme_id=191697584475&one_s=andyyrobe&affid=andyyrobe&pb=0',
+        dummyCode: 'wiegeeftkorting'
     },
     'geurwolkje': {
         url: 'https://www.geurwolkje.nl/INDY40908',
@@ -2069,7 +2069,35 @@ export class AffiliateLinkService {
     'zavvi': {
         url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.8664.4611686018427605518&trid=1498147.209275&foc=16&fot=9999&fos=6',
         dummyCode: '10EXTRA'
-    }
+    },
+    'esn': {
+        url: 'https://nl.esn.com/discount/sportpoeder?redirect=/collections/bestseller',
+        dummyCode: 'SPORTPOEDER'
+    },
+    'aybl': {
+        url: 'https://nl.aybl.com/discount/sportpoeder',
+        dummyCode: 'sportpoeder'
+    },
+    'atmooz.com': {
+        url: 'https://atmooz.com/DISKI10',
+        dummyCode: 'DISKI10'
+    },
+    'topstore': {
+        url: 'https://www.topstore.nl/',
+        dummyCode: 'SHOP10'
+    },
+    'miinto': {
+        url: 'https://miinto.nl',
+        dummyCode: 'MIIACTIE10'
+    },
+    'timberland': {
+        url: 'https://www.timberland.com',
+        dummyCode: 'EXTRA10'
+    },
+    'farfetch': {
+        url: 'https://farfetch.com',
+        dummyCode: '10OFF'
+    },
   };
 
   constructor() { }

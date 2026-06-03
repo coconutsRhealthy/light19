@@ -452,6 +452,9 @@ export class CompanyCodesV2Component implements OnInit {
 
   private trackCompanyInteraction(): void {
     this.visitorProfile.trackCompanyClick('company_click_detailpage', this.company);
+
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'company_click_detailpage', { 'event_category': 'Company_click', 'event_label': `company_click_detailpage_${this.company}` });
   }
 
   private sendAffEventsToGa(): void {

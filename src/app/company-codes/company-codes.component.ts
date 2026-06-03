@@ -328,6 +328,15 @@ export class CompanyCodesComponent implements OnInit {
 
   trackCompanyInteraction() {
     this.visitorProfile.trackCompanyClick('company_click_detailpage', this.company);
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'company_click_detailpage', {
+        'event_category': 'Company_click',
+        'event_label': `company_click_detailpage_${this.company}`
+      });
+    } else {
+      console.error('gtag is not defined');
+    }
   }
 
   copyToClipboard(text: string) {
