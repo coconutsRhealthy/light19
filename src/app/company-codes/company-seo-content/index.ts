@@ -489,7 +489,7 @@ export async function loadSeoContent(company: string): Promise<string | null> {
     case 'tapoutclub': return import('./tapoutclub').then(m => m.default);
     case 'tastypresent': return import('./tastypresent').then(m => m.default);
     case 'teamathlevel': return import('./teamathlevel').then(m => m.default);
-    case 'techweise': return import('./techweise').then(m => m.default);
+//     case 'techweise': return import('./techweise').then(m => m.default);
     case 'tefal': return import('./tefal').then(m => m.default);
     case 'temu': return import('./temu').then(m => m.default);
     case 'tencate1952': return import('./tencate1952').then(m => m.default);

@@ -143,7 +143,7 @@ export class AffiliateLinkService {
         dummyCode: 'PROMO150OX'
     },
     'greetz.nl': {
-        url: 'https://tidd.ly/42NSCOV',
+        url: 'https://click.linksynergy.com/deeplink?id=vErUkuRoyhQ&mid=53875&murl=https%3A%2F%2Fwww.greetz.nl%2Fnl%2F',
         dummyCode: 'GREE20GGN'
     },
     'albelli': {
@@ -1418,10 +1418,10 @@ export class AffiliateLinkService {
         url: 'https://pzz.to/9wsxiv',
         dummyCode: 'ACTIE10'
     },
-    'snipes': {
-        url: 'https://tidd.ly/4sWSJSG',
-        dummyCode: 'SHOP10'
-    },
+//     'snipes': {
+//         url: 'https://tidd.ly/4sWSJSG',
+//         dummyCode: 'SHOP10'
+//     },
     'theordinary': {
         url: 'https://tidd.ly/4diAtP5',
         dummyCode: '10OFF'
@@ -1526,10 +1526,10 @@ export class AffiliateLinkService {
         url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.goboony.be%2F',
         dummyCode: 'ACTIE10'
     },
-    'hellofresh.nl': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.hellofresh.nl%2F',
-        dummyCode: '15SHOP'
-    },
+//     'hellofresh.nl': {
+//         url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.hellofresh.nl%2F',
+//         dummyCode: '15SHOP'
+//     },
     'jackery': {
         url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.jackery.com%2F',
         dummyCode: '10OFF'
@@ -1865,6 +1865,210 @@ export class AffiliateLinkService {
     'zippit': {
         url: 'https://tidd.ly/4eyF8go',
         dummyCode: 'ACTIE10'
+    },
+    'conrad': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.conrad.nl%2F',
+        dummyCode: 'SHOP10'
+    },
+    'galaxus': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.galaxus.nl%2F',
+        dummyCode: '10OFF'
+    },
+    'samsonite': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.samsonite.nl%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'lebara': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.lebara.nl%2F',
+        dummyCode: 'ACTIE10'
+    },
+    'simyo': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.simyo.nl%2F',
+        dummyCode: 'WELCOME10'
+    },
+    'youfone': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.youfone.nl%2F',
+        dummyCode: 'OFF15'
+    },
+    'vattenfall': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vattenfall.nl%2F',
+        dummyCode: '15OFF'
+    },
+    'q-park': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.q-park.nl%2F',
+        dummyCode: '10SHOP'
+    },
+    'nh-hotels': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.nh-hotels.nl%2F',
+        dummyCode: 'ACTIE15'
+    },
+    'leonardohotels': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.leonardo-hotels.nl%2F',
+        dummyCode: '10EXTRA'
+    },
+    'budgetair': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.budgetair.nl%2F',
+        dummyCode: 'SHOP15'
+    },
+    'vliegwinkel': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vliegwinkel.nl%2F',
+        dummyCode: 'WELCOME15'
+    },
+    'kaspersky': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.kaspersky.nl%2F',
+        dummyCode: 'OFF10'
+    },
+    'oralb': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.oralb.nl%2F',
+        dummyCode: '15SHOP'
+    },
+    'aeg': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.aeg.nl%2F',
+        dummyCode: '10ACTIE'
+    },
+    'vivara': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vivara.nl%2F',
+        dummyCode: 'SHOP10'
+    },
+    'inglot': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.inglot.nl%2F',
+        dummyCode: '10OFF'
+    },
+    'flaconi': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.flaconi.nl%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'peterhahn': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.peterhahn.nl%2F',
+        dummyCode: 'ACTIE10'
+    },
+    'tomtailor': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.tom-tailor.nl%2F',
+        dummyCode: 'WELCOME10'
+    },
+    'vrijbuiter': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vrijbuiter.nl%2F',
+        dummyCode: 'OFF15'
+    },
+    'naturecan': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.naturecan.nl%2F',
+        dummyCode: '15OFF'
+    },
+    'proshop': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.proshop.nl%2F',
+        dummyCode: '10SHOP'
+    },
+    'dolfinarium': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.dolfinarium.nl%2F',
+        dummyCode: 'ACTIE15'
+    },
+    'duinrell': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.duinrell.nl%2F',
+        dummyCode: '10EXTRA'
+    },
+    'paagman': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.paagman.nl%2F',
+        dummyCode: 'SHOP15'
+    },
+    'visiondirect': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.visiondirect.nl%2F',
+        dummyCode: 'WELCOME15'
+    },
+    'lentiamo': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.lentiamo.nl%2F',
+        dummyCode: 'OFF10'
+    },
+    'mondaine': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.mondaine.nl%2F',
+        dummyCode: '15SHOP'
+    },
+    'vertbaudet': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vertbaudet.nl%2F',
+        dummyCode: '10ACTIE'
+    },
+    'vikingdirect': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vikingdirect.nl%2F',
+        dummyCode: 'SHOP10'
+    },
+    'sembo': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.sembo.nl%2F',
+        dummyCode: '10OFF'
+    },
+    'travelcircus': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.travelcircus.nl%2F',
+        dummyCode: 'EXTRA10'
+    },
+    'posters': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.posters.nl%2F',
+        dummyCode: 'ACTIE10'
+    },
+    'inktweb': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.inktweb.nl%2F',
+        dummyCode: 'WELCOME10'
+    },
+    'refurbished': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.refurbished.nl%2F',
+        dummyCode: 'OFF15'
+    },
+    'heydude': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.heydude.nl%2F',
+        dummyCode: '15OFF'
+    },
+    'kswiss': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.kswiss.nl%2F',
+        dummyCode: '10SHOP'
+    },
+    'panamajack': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.panamajack.nl%2F',
+        dummyCode: 'ACTIE15'
+    },
+    'powerpeers': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.powerpeers.nl%2F',
+        dummyCode: '10EXTRA'
+    },
+    'yogashop': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.yogashop.nl%2F',
+        dummyCode: 'SHOP15'
+    },
+    'valmano': {
+        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.valmano.nl%2F',
+        dummyCode: 'WELCOME15'
+    },
+    'armani': {
+        url: 'https://track.flexlinkspro.com/g.ashx?foid=156085.110106133.1011111835&trid=1498147.245206&foc=16&fot=9999&fos=6',
+        dummyCode: '10OFF'
+    },
+    'cleanprofs': {
+        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.29101.3109732&trid=1498147.246231&foc=16&fot=9999&fos=6',
+        dummyCode: 'EXTRA10'
+    },
+    'hostnet': {
+        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.21189.4611686018427605232&trid=1498147.245395&foc=16&fot=9999&fos=6',
+        dummyCode: 'ACTIE10'
+    },
+    'lusini': {
+        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.22612.4611686018427605688&trid=1498147.245644&foc=16&fot=9999&fos=6',
+        dummyCode: 'WELCOME10'
+    },
+    'onthatass': {
+        url: 'https://track.flexlinkspro.com/g.ashx?foid=156364.353259.25914658&trid=1498147.239294&foc=16&fot=9999&fos=6',
+        dummyCode: 'OFF15'
+    },
+    'rebuy': {
+        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.12860.4611686018427605238&trid=1498147.245575&foc=16&fot=9999&fos=6',
+        dummyCode: '15OFF'
+    },
+    'sanitaironline': {
+        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.86283.4611686018427605717&trid=1498147.246297&foc=16&fot=9999&fos=6',
+        dummyCode: '10SHOP'
+    },
+    'stanley': {
+        url: 'https://track.flexlinkspro.com/g.ashx?foid=156099.18601.818601&trid=1498147.225570&foc=16&fot=9999&fos=6',
+        dummyCode: 'ACTIE15'
+    },
+    'zavvi': {
+        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.8664.4611686018427605518&trid=1498147.209275&foc=16&fot=9999&fos=6',
+        dummyCode: '10EXTRA'
     }
   };
 
