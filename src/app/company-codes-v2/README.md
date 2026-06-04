@@ -76,15 +76,18 @@ deliberate change: an explicit **allowlist** instead of "any shop with v2 conten
 - **To go live for real:** run `npm run build:prod` and deploy (nothing here is deployed yet).
   Add a shop later → add its slug to `live-v2-slugs.ts`; revert a shop → remove it.
 
-## Where it's going (not built yet)
-- **A generation engine** to scale the content past these shops — see
-  `brand-content/CONTENT-GENERATION.md` for the exact recipe (queries + grounding rules),
-  and `../../../scripts/python/extract_brand_captions.py` which already pulls the per-shop
-  caption-grounding bundle (Instagram+TikTok) as JSON, ready to feed into generation.
-  At scale: move the registry to lazy `import()` and run generation in reviewed batches.
+## Where the content comes from (separate project)
+The DB → caption-matching → synthesis → QA pipeline that PRODUCES this content lives
+in a **separate project**, not in this frontend:
+**`~/Documents/Projects/claude_code/claude_diski_content_engine`** (Python + MariaDB + LLM).
+That project's only output is the validated `BrandContent` JSON files it writes to
+`brand-content/data/{slug}.json` here. The recipe/guardrails (`docs/CONTENT-GENERATION.md`),
+the output contract (`schema/brand_content.schema.json`), and the input-data analysis
+all live there. This repo just **consumes** the JSON at build and controls publication
+(the `live-v2-slugs.ts` allowlist).
 
 ## Map of this folder
 - `company-codes-v2.component.*` — the page (data-driven for any shop).
-- `brand-content/` — per-shop copy objects + `CONTENT-GENERATION.md` (how they're made).
-- `live-rollout-plan.txt` — how to take v2 live on the real route later.
-- (repo) `scripts/python/extract_brand_captions.py` — caption extractor that feeds generation.
+- `brand-content/data/*.json` — per-shop copy (produced by the content-engine project).
+- `brand-content/*.ts` — the loader plumbing (model, token, server loader, service, allowlist).
+- `live-rollout-plan.txt` — how v2 is served on the real route.

@@ -16,7 +16,7 @@ to lose), and backed by real source material (so the copy isn't templated filler
 - Captions available across the set: **1,021 Instagram + 363 TikTok**.
 
 ## How to read the tiers
-Per `CONTENT-GENERATION.md`: **≈15+ captions → caption-grounded** is the recommended mode;
+Per the content-engine project's `docs/CONTENT-GENERATION.md`: **≈15+ captions → caption-grounded** is the recommended mode;
 sparser shops drift toward self-authored. Note the **IG vs TikTok split** matters — the
 existing 4 grounded shops were mostly Instagram-driven (longer, richer captions). A shop
 that is mostly TikTok (e.g. `cabaulifestyle`, `fittasticsportswear`) has thinner per-caption
