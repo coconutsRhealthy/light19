@@ -44,6 +44,17 @@ export const LIVE_V2_SLUGS: ReadonlySet<string> = new Set([
   'twistshakebaby',
   'fittasticsportswear',
   'glutespop.com',
+  // Added 2026-06-05: second batch promoted from preview to live (each has a
+  // brand-content data file and a discounts.json route entry).
+  'fotocadeau.nl',
+  'geurwolkje',
+  'gymshark',
+  'hunkemoller',
+  'idealofsweden',
+  'lookfantastic',
+  'myproteinnl',
+  'temu',
+  'vitakruid',
 ]);
 
 export function isLiveV2Slug(slug: string | undefined | null): boolean {
