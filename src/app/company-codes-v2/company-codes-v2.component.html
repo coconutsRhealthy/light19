@@ -106,6 +106,26 @@
     </ol>
   </details>
 
+  <!-- Loading skeleton for the grounded sections (Zo werkt / Over / creators / tips / FAQ).
+       Shown only during an in-app navigation while the brand-content JSON is
+       fetched, so that content fills in place instead of popping in. -->
+  @if (contentLoading) {
+    <div class="content-skeleton" aria-hidden="true">
+      <div class="sk-bar sk-h2"></div>
+      <div class="sk-bar"></div>
+      <div class="sk-bar sk-w90"></div>
+      <div class="sk-bar sk-w75"></div>
+      <div class="sk-gap"></div>
+      <div class="sk-bar sk-h2"></div>
+      <div class="sk-bar sk-w90"></div>
+      <div class="sk-bar sk-w60"></div>
+      <div class="sk-gap"></div>
+      <div class="sk-bar sk-h2"></div>
+      <div class="sk-bar"></div>
+      <div class="sk-bar sk-w75"></div>
+    </div>
+  }
+
   <!-- ====================== HOW THE CODE WORKS (grounded) ====================== -->
   @if (content?.codeInfo?.length) {
     <section id="zo-werkt" aria-labelledby="zo-werkt-h">

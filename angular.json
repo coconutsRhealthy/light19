@@ -61,6 +61,11 @@
                 "glob": "robots.txt",
                 "input": "src",
                 "output": "/"
+              },
+              {
+                "glob": "*.json",
+                "input": "src/app/company-codes-v2/brand-content/data",
+                "output": "/brand-content"
               }
             ],
             "styles": [

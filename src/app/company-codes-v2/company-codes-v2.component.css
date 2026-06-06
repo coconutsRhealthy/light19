@@ -81,6 +81,19 @@ h3{font-size:18px;margin:22px 0 8px}
 ul.clean{padding-left:1.2em;list-style:disc}
 ul.clean li{margin:6px 0}
 
+/* Grounded-content loading skeleton (shown only during in-app navigation while
+   the brand-content JSON is fetched). Matches the card look of the real sections. */
+.content-skeleton{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;margin:30px 0}
+.content-skeleton .sk-bar{height:14px;border-radius:7px;background:var(--line);margin:0 0 12px;
+  animation:sk-pulse 1.2s ease-in-out infinite}
+.content-skeleton .sk-bar.sk-h2{height:22px;width:55%;margin:0 0 18px}
+.content-skeleton .sk-bar.sk-w90{width:90%}
+.content-skeleton .sk-bar.sk-w75{width:75%}
+.content-skeleton .sk-bar.sk-w60{width:60%}
+.content-skeleton .sk-gap{height:16px}
+@keyframes sk-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@media (prefers-reduced-motion:reduce){.content-skeleton .sk-bar{animation:none}}
 
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;
   padding:0 16px;margin:10px 0}
