@@ -81,12 +81,6 @@ h3{font-size:18px;margin:22px 0 8px}
 ul.clean{padding-left:1.2em;list-style:disc}
 ul.clean li{margin:6px 0}
 
-.howto{counter-reset:step;list-style:none;padding:0;margin:0;display:grid;gap:12px}
-.howto li{background:var(--card);border:1px solid var(--line);border-radius:12px;
-  padding:14px 16px 14px 56px;position:relative}
-.howto li::before{counter-increment:step;content:counter(step);position:absolute;
-  left:14px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--orange);
-  color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
 
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;
   padding:0 16px;margin:10px 0}
