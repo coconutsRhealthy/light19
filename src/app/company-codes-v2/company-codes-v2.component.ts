@@ -11,7 +11,6 @@ import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
 import { ModalComponent } from '../modal/modal.component';
 import { BrandContent } from './brand-content/brand-content.model';
-import { BrandContentService } from './brand-content/brand-content.service';
 import { BUILD_DATE_ISO } from '../build-info';
 
 declare let gtag: Function;
@@ -83,21 +82,12 @@ export class CompanyCodesV2Component implements OnInit {
   readonly codeCollapseLimit = 15;
   showAllCodes = false;
 
-  // True only while the grounded brand-content JSON is being fetched on an in-app
-  // navigation (TransferState miss). Drives the loading skeleton so the grounded
-  // sections don't "pop in" after the page has already painted. Always false on
-  // direct/prerendered loads and on the server (content is present synchronously).
-  contentLoading = false;
-
   get visibleRegularCodes(): CodeVM[] {
     return this.showAllCodes ? this.regularCodes : this.regularCodes.slice(0, this.codeCollapseLimit);
   }
 
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private allLogos: { [name: string]: string } = {};
-  // Last discount lines seen, so the content fetch can re-run the content-derived
-  // parts (related-shop ranking + FAQ schema) once grounded content arrives.
-  private lastLines: string[] = [];
 
   /** True on the /v2/ preview route (route data.preview); false on the live /:company route. */
   private get isPreview(): boolean {
@@ -136,8 +126,7 @@ export class CompanyCodesV2Component implements OnInit {
     private logos: LogosService,
     private meta: MetaService,
     private affiliateLinkService: AffiliateLinkService,
-    private visitorProfile: VisitorProfileService,
-    private brandContent: BrandContentService
+    private visitorProfile: VisitorProfileService
   ) {}
 
   ngOnInit(): void {
@@ -146,42 +135,22 @@ export class CompanyCodesV2Component implements OnInit {
       this.logoUrl = all[this.company] ?? this.logoUrl;
     });
 
-    this.route.paramMap.subscribe(params => {
-      this.company = (params.get('company') ?? '').toLowerCase();
+    // Grounded content is resolved by brandContentResolver BEFORE this component
+    // activates, so it's always present here — no in-component loading, no skeleton,
+    // no flicker. route.data emits synchronously on subscribe (so a direct load has
+    // content before the first change detection — no hydration mismatch) and re-emits
+    // when navigating between v2 shops (the component instance is reused).
+    this.route.data.subscribe(data => {
+      this.company = (this.route.snapshot.paramMap.get('company') ?? '').toLowerCase();
       this.showAllCodes = false;
       this.isModalVisible = false;
       this.selectedDiscount = null;
 
-      // Sync fast path: TransferState (direct/prerendered load + hydration) or
-      // SSR file read. Set synchronously so a direct load has content before the
-      // first change detection — no hydration mismatch.
-      this.content = this.brandContent.get(this.company);
-      this.contentLoading = false;
+      this.content = (data['brandContent'] as BrandContent | null) ?? null;
       this.applyDisplayName();
       this.logoUrl = this.allLogos[this.company] ?? this.logoUrl;
 
-      if (this.content || !this.isBrowser) {
-        // Content already available (direct/prerendered load, or SSR) → render all.
-        this.discounts.getDiscounts().subscribe(lines => this.build(lines));
-      } else {
-        // Browser + TransferState miss → page entered via in-app routing (e.g. a
-        // [routerLink] from /winkels). Codes come from synchronous in-bundle data,
-        // so render them immediately; show a skeleton for the grounded sections and
-        // fetch the content in parallel, then re-run the content-derived parts
-        // (related-shop ranking + FAQ schema) once it arrives. No SSR/hydration is
-        // involved here, so resolving a tick later is safe.
-        this.contentLoading = true;
-        this.discounts.getDiscounts().subscribe(lines => { this.lastLines = lines; this.build(lines); });
-        this.brandContent.load(this.company).then(content => {
-          this.content = content;
-          this.contentLoading = false;
-          this.applyDisplayName();
-          if (this.lastLines.length) {
-            this.buildRelatedShops(this.lastLines);
-            this.applySeo();
-          }
-        });
-      }
+      this.discounts.getDiscounts().subscribe(lines => this.build(lines));
     });
   }
 

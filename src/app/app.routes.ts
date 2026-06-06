@@ -12,6 +12,7 @@ import { Top5Component } from './top5/top5.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { hasV2Content } from './has-v2-content.guard';
+import { brandContentResolver } from './company-codes-v2/brand-content/brand-content.resolver';
 
 export const routes: Routes = [
   { path: '', component: DiscountsTableComponent },
@@ -24,10 +25,10 @@ export const routes: Routes = [
   { path: 'top5', component: Top5Component },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   // Noindexed preview of ANY shop with v2 content (data.preview drives the noindex).
-  { path: 'v2/:company', component: CompanyCodesV2Component, data: { preview: true } },
+  { path: 'v2/:company', component: CompanyCodesV2Component, data: { preview: true }, resolve: { brandContent: brandContentResolver } },
   // Real route: serve v2 (indexable) only for allowlisted go-live shops; the guard
   // falls through to the v1 route below for every other shop.
-  { path: ':company', component: CompanyCodesV2Component, canMatch: [hasV2Content] },
+  { path: ':company', component: CompanyCodesV2Component, canMatch: [hasV2Content], resolve: { brandContent: brandContentResolver } },
   { path: ':company', component: CompanyCodesComponent },
   { path: '**', component: NotFoundComponent }
 ];
