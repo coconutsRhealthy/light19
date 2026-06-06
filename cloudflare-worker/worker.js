@@ -1,5 +1,5 @@
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const corsHeaders = {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "POST, PATCH, OPTIONS",
@@ -24,6 +24,8 @@ export default {
         return new Response(JSON.stringify({ error: "No email provided" }), { status: 400, headers: corsHeaders });
       }
 
+      const firstName = body?.data?.attributes?.first_name;
+
       // Step 1: look up existing profile by email
       const searchRes = await fetch(
         `https://a.klaviyo.com/api/profiles/?filter=equals(email,"${email}")`,
@@ -41,6 +43,7 @@ export default {
         const profileId = existingProfile.id;
         const existingProps = existingProfile?.attributes?.properties ?? {};
         const incomingProps = body?.data?.attributes?.properties ?? {};
+        const finalProps = mergeProperties(existingProps, incomingProps);
 
         const patchBody = {
           data: {
@@ -48,7 +51,7 @@ export default {
             id: profileId,
             attributes: {
               ...body.data.attributes,
-              properties: mergeProperties(existingProps, incomingProps)
+              properties: finalProps
             }
           }
         };
@@ -59,6 +62,11 @@ export default {
           body: JSON.stringify(patchBody)
         });
         const text = await patchRes.text();
+
+        // Mirror the exact same (merged) data to Brevo — runs after the
+        // response, never blocks or breaks the Klaviyo path.
+        ctx.waitUntil(sendToBrevo(env, email, firstName, finalProps));
+
         return new Response(text, { status: patchRes.status, headers: corsHeaders });
 
       } else {
@@ -69,6 +77,12 @@ export default {
           body: JSON.stringify(body)
         });
         const text = await klaviyoRes.text();
+
+        // Mirror the exact same data to Brevo — runs after the response,
+        // never blocks or breaks the Klaviyo path.
+        const incomingProps = body?.data?.attributes?.properties ?? {};
+        ctx.waitUntil(sendToBrevo(env, email, firstName, incomingProps));
+
         return new Response(text, { status: klaviyoRes.status, headers: corsHeaders });
       }
 
@@ -77,6 +91,61 @@ export default {
     }
   }
 };
+
+// ---- Brevo mirror ----------------------------------------------------------
+
+async function sendToBrevo(env, email, firstName, props) {
+  try {
+    if (!env.BREVO_API_KEY) return; // safe no-op until the secret is configured
+
+    const payload = {
+      email,
+      updateEnabled: true, // upsert: create if new, update if the contact already exists
+      attributes: buildBrevoAttributes(firstName, props)
+    };
+
+    if (env.BREVO_LIST_ID) {
+      payload.listIds = [Number(env.BREVO_LIST_ID)];
+    }
+
+    const res = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: {
+        "api-key": env.BREVO_API_KEY,
+        "Content-Type": "application/json",
+        "accept": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) {
+      console.error(`Brevo sync failed (${res.status}): ${await res.text()}`);
+    }
+  } catch (err) {
+    // A Brevo failure must never affect the Klaviyo response
+    console.error("Brevo sync error:", err?.message ?? err);
+  }
+}
+
+function buildBrevoAttributes(firstName, props) {
+  const p = props ?? {};
+  const attrs = {};
+
+  if (firstName) attrs.FIRSTNAME = firstName;
+  if (p.company != null) attrs.COMPANY = p.company;
+  if (p.path != null) attrs.PATH = p.path;
+  if (p.site_visits != null) attrs.SITE_VISITS = p.site_visits;
+  if (p.unlock_date) attrs.UNLOCK_DATE = String(p.unlock_date).slice(0, 10); // Brevo dates: YYYY-MM-DD
+
+  // Brevo can't store nested objects → keep the count-maps as JSON text
+  if (p.visited_companies != null) attrs.VISITED_COMPANIES = JSON.stringify(p.visited_companies);
+  if (p.searched_terms != null)   attrs.SEARCHED_TERMS   = JSON.stringify(p.searched_terms);
+  if (p.visited_pages != null)    attrs.VISITED_PAGES    = JSON.stringify(p.visited_pages);
+
+  return attrs;
+}
+
+// ---- Klaviyo merge helpers --------------------------------------------------
 
 function mergeProperties(existing, incoming) {
   const merged = { ...existing };

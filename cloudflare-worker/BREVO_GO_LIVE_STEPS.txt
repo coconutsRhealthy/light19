@@ -1,0 +1,94 @@
+BREVO GO-LIVE CHECKLIST
+=======================
+
+Goal: mirror the exact same visitor-profile data we send to Klaviyo into Brevo,
+from inside the Cloudflare Worker (worker.js). The Angular app does NOT change.
+
+The worker code (sendToBrevo) is written to be a SAFE NO-OP until BREVO_API_KEY
+is set, so it can be deployed before these steps are finished.
+
+
+-----------------------------------------------------------------------
+1. CREATE A BREVO API KEY
+-----------------------------------------------------------------------
+- Brevo dashboard -> top-right account menu -> "SMTP & API" -> "API Keys".
+- Create a new API key (v3). Give it a recognisable name, e.g. "cf-worker-contacts".
+- Copy the key now (it is only shown once).
+- Prefer a key scoped to Contacts only, if your plan allows scoping.
+
+
+-----------------------------------------------------------------------
+2. ADD THE SECRET + (OPTIONAL) LIST ID TO THE WORKER
+-----------------------------------------------------------------------
+Required secret:
+    BREVO_API_KEY   = <the key from step 1>
+
+Optional plain variable (only if you want every contact dropped into a list):
+    BREVO_LIST_ID   = <numeric Brevo list id>     (leave unset = just upsert, no list)
+
+Via Wrangler CLI:
+    wrangler secret put BREVO_API_KEY
+    # for the optional list id, add it as a plain var in wrangler.toml or the dashboard
+
+Via Cloudflare dashboard:
+    Workers & Pages -> (this worker) -> Settings -> Variables and Secrets
+    - Add BREVO_API_KEY as an *encrypted* secret.
+    - (optional) Add BREVO_LIST_ID as a plain text variable.
+
+
+-----------------------------------------------------------------------
+3. CREATE THE CONTACT ATTRIBUTES IN BREVO
+-----------------------------------------------------------------------
+Brevo rejects/ignores unknown attributes, so create these first:
+    Contacts -> Settings (gear) -> Contact attributes -> Add a new attribute
+
+    ATTRIBUTE            TYPE
+    -----------------    --------
+    COMPANY              Text
+    PATH                 Text
+    UNLOCK_DATE          Date
+    SITE_VISITS          Number
+    VISITED_COMPANIES    Text      (stores a JSON string, e.g. {"Nike":2})
+    SEARCHED_TERMS       Text      (stores a JSON string)
+    VISITED_PAGES        Text      (stores a JSON string)
+
+Notes:
+- FIRSTNAME already exists in Brevo by default, no need to create it.
+- The three "VISITED_*"/"SEARCHED_*" attributes hold JSON text because Brevo
+  cannot store nested objects the way Klaviyo can. All the data is preserved;
+  it just lives as a string you'd JSON.parse() if you ever segment on it.
+- UNLOCK_DATE is sent as YYYY-MM-DD (the worker trims the ISO timestamp).
+
+
+-----------------------------------------------------------------------
+4. DEPLOY THE UPDATED WORKER
+-----------------------------------------------------------------------
+    wrangler deploy        (or push via the dashboard editor)
+
+Behaviour:
+- New email unlock  (POST)  -> Klaviyo create + Brevo upsert (creates contact).
+- Returning visitor (PATCH) -> Klaviyo merge/update + Brevo upsert (updates contact).
+- updateEnabled:true means the same Brevo call handles both create and update.
+- The Brevo call runs via ctx.waitUntil(), so it never blocks or breaks the
+  Klaviyo response. If Brevo fails, Klaviyo still succeeds (error is logged).
+
+
+-----------------------------------------------------------------------
+5. VERIFY
+-----------------------------------------------------------------------
+- Unlock a code on the site with a fresh test email.
+- Brevo -> Contacts: confirm the contact appears with COMPANY, PATH,
+  UNLOCK_DATE, SITE_VISITS and the three JSON-string attributes populated.
+- Revisit the site in a new session with the same email, browse a few pages,
+  then confirm SITE_VISITS incremented and the count-map JSON grew in Brevo
+  (and that it matches the Klaviyo profile).
+- Check worker logs (wrangler tail) for any "Brevo sync failed/error" lines.
+
+
+-----------------------------------------------------------------------
+OPEN DECISIONS (confirm before/while going live)
+-----------------------------------------------------------------------
+[ ] Do we add contacts to a specific Brevo list? -> set BREVO_LIST_ID, else skip.
+[ ] Any double opt-in / consent requirement on the Brevo side to respect?
+[ ] Watch JSON text length for very heavy visitors (could hit Brevo's text-field
+    limit and truncate that one attribute; full data still lives in Klaviyo).
