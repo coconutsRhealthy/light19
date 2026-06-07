@@ -1,15 +1,17 @@
-// READ-ONLY segmentation analysis. Pulls all Klaviyo profiles, de-inflates
-// site_visits, buckets contacts into engagement tiers, and for each tier
-// reports: size, visits/week, tenure, and the most common brands / searches /
-// pages (ranked by how many MEMBERS have them — immune to count-map inflation).
+// READ-ONLY segmentation analysis, sourced from BREVO (the curated dataset:
+// SITE_VISITS is the de-inflated estimate for dormant contacts and the true
+// value for returners/new; FIRST_SEEN is the real first-seen date).
 //
-// Writes NOTHING. Only GETs from Klaviyo.
+// Buckets contacts into engagement tiers and for each tier reports: size,
+// visits/week, tenure, and the most common brands / searches / pages (ranked
+// by how many MEMBERS have them — immune to count-map inflation).
+//
+// Writes NOTHING. Only GETs from Brevo.
 //
 // Requires Node 18+. Usage:
-//   KLAVIYO_API_KEY=pk_xxx node scripts/segment-analysis.mjs
+//   BREVO_API_KEY=xkeysib-xxx node scripts/segment-analysis.mjs
 
-const KLAVIYO_API_KEY = process.env.KLAVIYO_API_KEY;
-const REVISION = process.env.KLAVIYO_REVISION || '2023-10-15';
+const BREVO_API_KEY = process.env.BREVO_API_KEY;
 
 // Owner / tester accounts to exclude from the analysis.
 const EXCLUDE = new Set([
@@ -19,36 +21,43 @@ const EXCLUDE = new Set([
   'info@diski.nl',
 ]);
 
-if (!KLAVIYO_API_KEY) { console.error('Missing KLAVIYO_API_KEY env var.'); process.exit(1); }
+if (!BREVO_API_KEY) { console.error('Missing BREVO_API_KEY env var.'); process.exit(1); }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const NOW = Date.now();
 const DAY = 86400000;
 
-const estimateVisits = (sv) => Math.max(1, Math.round(Math.sqrt(2 * sv)));
-
-async function fetchAllKlaviyoProfiles() {
-  const profiles = [];
-  let url = 'https://a.klaviyo.com/api/profiles/?page%5Bsize%5D=100';
-  while (url) {
-    const res = await fetch(url, {
-      headers: { Authorization: `Klaviyo-API-Key ${KLAVIYO_API_KEY}`, revision: REVISION, accept: 'application/json' },
-    });
+async function fetchAllBrevoContacts() {
+  const all = [];
+  const limit = 1000;
+  let offset = 0;
+  for (;;) {
+    const url = `https://api.brevo.com/v3/contacts?limit=${limit}&offset=${offset}&sort=desc`;
+    const res = await fetch(url, { headers: { 'api-key': BREVO_API_KEY, accept: 'application/json' } });
     if (res.status === 429) { await sleep((Number(res.headers.get('retry-after')) || 3) * 1000); continue; }
-    if (!res.ok) throw new Error(`Klaviyo GET failed (${res.status}): ${await res.text()}`);
+    if (!res.ok) throw new Error(`Brevo GET contacts failed (${res.status}): ${await res.text()}`);
     const data = await res.json();
-    for (const p of data.data ?? []) profiles.push(p);
-    process.stdout.write(`\r  fetched ${profiles.length} profiles...`);
-    url = data.links?.next ?? null;
+    const batch = data.contacts ?? [];
+    if (batch.length === 0) break;
+    for (const c of batch) all.push(c);
+    process.stdout.write(`\r  fetched ${all.length} contacts...`);
+    offset += limit;
   }
   process.stdout.write('\n');
-  return profiles;
+  return all;
 }
 
-function tierOf(t) {
-  if (t <= 1) return 'One-and-done';
-  if (t <= 3) return 'Casual';
-  if (t <= 9) return 'Regular';
+// Brevo stores the count-maps as JSON text — parse back to objects.
+function parseMap(v) {
+  if (!v) return null;
+  if (typeof v === 'object') return v;
+  try { return JSON.parse(v); } catch { return null; }
+}
+
+function tierOf(sv) {
+  if (sv <= 1) return 'One-and-done';
+  if (sv <= 3) return 'Casual';
+  if (sv <= 9) return 'Regular';
   return 'Power';
 }
 
@@ -59,7 +68,6 @@ const median = (arr) => {
   return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2;
 };
 
-// Tally distinct members per key in a count-map; optional key transform.
 function addPresence(tally, map, transform) {
   if (!map || typeof map !== 'object') return;
   const seen = new Set();
@@ -79,48 +87,40 @@ function topN(tally, groupSize, n) {
 }
 
 async function main() {
-  console.log('Fetching all Klaviyo profiles (read-only)...');
-  const profiles = await fetchAllKlaviyoProfiles();
+  console.log('Fetching all Brevo contacts (read-only)...');
+  const contacts = await fetchAllBrevoContacts();
 
-  const groups = {
-    'One-and-done': [],
-    Casual: [],
-    Regular: [],
-    Power: [],
-  };
+  const groups = { 'One-and-done': [], Casual: [], Regular: [], Power: [] };
   let excluded = 0;
 
-  for (const p of profiles) {
-    const email = (p.attributes?.email || '').toLowerCase();
+  for (const c of contacts) {
+    const email = (c.email || '').toLowerCase();
     if (!email || EXCLUDE.has(email)) { excluded++; continue; }
 
-    const props = p.attributes?.properties ?? {};
-    const sv = typeof props.site_visits === 'number' && props.site_visits > 0 ? props.site_visits : 1;
-    const t = estimateVisits(sv);
-
-    const created = props.unlock_date || p.attributes?.created;
+    const a = c.attributes ?? {};
+    const sv = typeof a.SITE_VISITS === 'number' && a.SITE_VISITS > 0 ? a.SITE_VISITS : 1;
+    const created = a.FIRST_SEEN || a.UNLOCK_DATE;
     const days = created ? Math.max((NOW - Date.parse(created)) / DAY, 0) : null;
 
-    groups[tierOf(t)].push({
+    groups[tierOf(sv)].push({
       email,
-      t,
+      sv,
       days,
-      visitedCompanies: props.visited_companies,
-      searchedTerms: props.searched_terms,
-      visitedPages: props.visited_pages,
+      visitedCompanies: parseMap(a.VISITED_COMPANIES),
+      searchedTerms: parseMap(a.SEARCHED_TERMS),
+      visitedPages: parseMap(a.VISITED_PAGES),
     });
   }
 
-  const total = Object.values(groups).reduce((a, g) => a + g.length, 0);
+  const total = Object.values(groups).reduce((acc, g) => acc + g.length, 0);
   console.log(`\nAnalyzed ${total} contacts (excluded ${excluded} owner/empty).\n`);
 
   for (const [name, members] of Object.entries(groups)) {
     if (!members.length) continue;
     const size = members.length;
 
-    // visits/week — only over members with >= 14 days tenure (avoids recent-signup noise)
     const mature = members.filter((m) => m.days != null && m.days >= 14);
-    const perWeek = mature.map((m) => m.t / (m.days / 7));
+    const perWeek = mature.map((m) => m.sv / (m.days / 7));
     const tenureWeeks = members.filter((m) => m.days != null).map((m) => m.days / 7);
 
     const brands = new Map();
@@ -129,12 +129,12 @@ async function main() {
     for (const m of members) {
       addPresence(brands, m.visitedCompanies);
       addPresence(searches, m.searchedTerms);
-      addPresence(pages, m.visitedPages, (k) => k.split('#')[0]); // strip #i=.. fragments
+      addPresence(pages, m.visitedPages, (k) => k.split('#')[0]);
     }
 
     console.log(`===== ${name.toUpperCase()} =====`);
     console.log(`  Size:               ${size} (${((size / total) * 100).toFixed(1)}% of base)`);
-    console.log(`  Est. visits (median/mean): ${median(members.map((m) => m.t))} / ${(members.reduce((a, m) => a + m.t, 0) / size).toFixed(1)}`);
+    console.log(`  SITE_VISITS (median/mean): ${median(members.map((m) => m.sv))} / ${(members.reduce((acc, m) => acc + m.sv, 0) / size).toFixed(1)}`);
     console.log(`  Visits/week (median, n=${mature.length} mature): ${perWeek.length ? median(perWeek).toFixed(2) : 'n/a'}`);
     console.log(`  Tenure weeks (median): ${tenureWeeks.length ? median(tenureWeeks).toFixed(1) : 'n/a'}`);
     console.log(`  Top brands (visited):  ${topN(brands, size, 8).join(', ') || '—'}`);
