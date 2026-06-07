@@ -147,6 +147,14 @@ function buildBrevoAttributes(firstName, props) {
 
 // ---- Klaviyo merge helpers --------------------------------------------------
 
+// The client (visitor-profile.service.ts) stores the visitor's FULL cumulative
+// history in localStorage and sends that complete total on every request. So
+// numeric counters and count-maps must be OVERWRITTEN with the incoming value,
+// NOT added — adding re-applied the running total on every return visit and
+// compounded site_visits / visited_* into wildly inflated numbers.
+//
+// First-seen context fields (unlock_date, path, company) are only sent on the
+// initial unlock, so we still set-if-absent to make sure they're never clobbered.
 function mergeProperties(existing, incoming) {
   const merged = { ...existing };
 
@@ -154,17 +162,14 @@ function mergeProperties(existing, incoming) {
     const existingVal = existing[key];
     const incomingVal = incoming[key];
 
-    if (typeof incomingVal === 'number' && typeof existingVal === 'number') {
-      // Add numbers together
-      merged[key] = existingVal + incomingVal;
-    } else if (isCountMap(incomingVal) && isCountMap(existingVal)) {
-      // Merge count maps
-      merged[key] = mergeCountMaps(existingVal, incomingVal);
+    if (typeof incomingVal === 'number' || isCountMap(incomingVal)) {
+      // Client already holds the full cumulative truth → take it as-is.
+      merged[key] = incomingVal;
     } else if (existingVal === undefined || existingVal === null) {
-      // Only set if not already present (e.g. unlock_date, path, company)
+      // Preserve first-seen context (unlock_date, path, company).
       merged[key] = incomingVal;
     }
-    // If existing value is present and not a number/countmap → keep existing, ignore incoming
+    // else: existing scalar already set → keep it.
   }
 
   return merged;
@@ -175,12 +180,4 @@ function isCountMap(val) {
     typeof val === 'object' &&
     !Array.isArray(val) &&
     Object.values(val).every(v => typeof v === 'number');
-}
-
-function mergeCountMaps(existing, incoming) {
-  const merged = { ...existing };
-  for (const [key, count] of Object.entries(incoming)) {
-    merged[key] = (merged[key] ?? 0) + count;
-  }
-  return merged;
 }
