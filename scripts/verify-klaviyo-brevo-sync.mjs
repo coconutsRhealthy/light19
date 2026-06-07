@@ -66,11 +66,11 @@ function toYMD(value) {
   return s;
 }
 
-// ---- fetch first N Klaviyo profiles ---------------------------------------
-async function fetchKlaviyoSample(n) {
+// ---- fetch ALL Klaviyo profiles (so we can sample across full history) -----
+async function fetchAllKlaviyoProfiles() {
   const profiles = [];
-  let url = `https://a.klaviyo.com/api/profiles/?page%5Bsize%5D=${Math.min(n, 100)}`;
-  while (url && profiles.length < n) {
+  let url = 'https://a.klaviyo.com/api/profiles/?page%5Bsize%5D=100';
+  while (url) {
     const res = await fetch(url, {
       headers: { Authorization: `Klaviyo-API-Key ${KLAVIYO_API_KEY}`, revision: REVISION, accept: 'application/json' },
     });
@@ -78,9 +78,22 @@ async function fetchKlaviyoSample(n) {
     if (!res.ok) throw new Error(`Klaviyo GET failed (${res.status}): ${await res.text()}`);
     const data = await res.json();
     for (const p of data.data ?? []) profiles.push(p);
+    process.stdout.write(`\r  fetched ${profiles.length} profiles...`);
     url = data.links?.next ?? null;
   }
-  return profiles.slice(0, n);
+  process.stdout.write('\n');
+  return profiles;
+}
+
+// ---- random sample of n items (Fisher-Yates partial shuffle) ---------------
+function randomSample(arr, n) {
+  const a = arr.slice();
+  const count = Math.min(n, a.length);
+  for (let i = 0; i < count; i++) {
+    const j = i + Math.floor(Math.random() * (a.length - i));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a.slice(0, count);
 }
 
 // ---- fetch one Brevo contact by email -------------------------------------
@@ -110,8 +123,10 @@ async function runPool(items, worker, concurrency) {
 
 // ---- main ------------------------------------------------------------------
 async function main() {
-  console.log(`Sampling ${SAMPLE} Klaviyo profiles and comparing against Brevo...\n`);
-  const profiles = await fetchKlaviyoSample(SAMPLE);
+  console.log(`Fetching all Klaviyo profiles, then comparing a random ${SAMPLE} against Brevo...\n`);
+  const all = await fetchAllKlaviyoProfiles();
+  const profiles = randomSample(all, SAMPLE);
+  console.log(`Sampled ${profiles.length} of ${all.length} profiles at random.\n`);
 
   const results = await runPool(profiles, async (p) => {
     const email = p.attributes?.email;
