@@ -98,7 +98,7 @@
       <li><a href="#codes" (click)="scrollToSection($event, 'codes')">Actieve kortingscodes</a></li>
       @if (content?.codeInfo?.length) { <li><a href="#zo-werkt" (click)="scrollToSection($event, 'zo-werkt')">Zo werkt een {{ displayName }} code</a></li> }
       @if (content?.about?.length) { <li><a href="#over" (click)="scrollToSection($event, 'over')">Over {{ displayName }}</a></li> }
-      @if (content?.creators?.length) { <li><a href="#creators" (click)="scrollToSection($event, 'creators')">Gestyled door creators</a></li> }
+      @if (content?.creators?.length) { <li><a href="#creators" (click)="scrollToSection($event, 'creators')">Bij creators</a></li> }
       @if (content?.tips?.length) { <li><a href="#tips" (click)="scrollToSection($event, 'tips')">Bespaartips</a></li> }
       @if (content?.faq?.length) { <li><a href="#faq" (click)="scrollToSection($event, 'faq')">Veelgestelde vragen</a></li> }
       @if (relatedShops.length) { <li><a href="#gerelateerd" (click)="scrollToSection($event, 'gerelateerd')">Gerelateerde shops</a></li> }
@@ -141,9 +141,9 @@
   <!-- ====================== STYLED BY CREATORS (caption-grounded, unique) ====================== -->
   @if (content?.creators?.length) {
     <section id="creators" aria-labelledby="creators-h">
-      <h2 id="creators-h">{{ displayName }} gestyled door creators</h2>
-      <p>{{ displayName }} wordt veel gedragen en gedeeld door Nederlandse content creators. Een greep uit
-        de makers die {{ displayName }} stylen en hun persoonlijke kortingscode delen:
+      <h2 id="creators-h">{{ displayName }} bij content creators</h2>
+      <p>{{ displayName }} wordt veel gedeeld door Nederlandse content creators. Een greep uit
+        de makers die {{ displayName }} laten zien en hun persoonlijke kortingscode delen:
         @for (h of content!.creators!; track h; let last = $last) {<strong>{{ h }}</strong>@if (!last) {, }}.
       </p>
     </section>

@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection, APP_INITIALIZER } from '@angular/core';
-import { provideRouter, UrlSerializer } from '@angular/router';
+import { provideRouter, UrlSerializer, withInMemoryScrolling } from '@angular/router';
 import { VisitorProfileService } from './services/visitor-profile.service';
 import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
@@ -14,7 +14,10 @@ registerLocaleData(localeNl, 'nl');
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
+    // Scroll to top on each new navigation (and restore position on back/forward).
+    // Without this Angular leaves the scroll where it was, so navigating from a
+    // scrolled homepage into a v2 page opened it mid-page.
+    provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' })),
     provideHttpClient(),
     { provide: LOCALE_ID, useValue: 'nl' },
     { provide: UrlSerializer, useClass: TrailingSlashUrlSerializer },
