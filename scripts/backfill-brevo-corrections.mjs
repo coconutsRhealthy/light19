@@ -1,18 +1,24 @@
-// One-time backfill: copy each Klaviyo profile's `created` timestamp (the true
-// "first entered the system" date) into the Brevo FIRST_SEEN attribute.
+// One-time Brevo backfill — two corrections in a single pass per contact:
 //
-// Needed because Brevo's own createdAt for migrated contacts is the import date
-// (2026-06-07), not the original Klaviyo creation date.
+//  1. FIRST_SEEN  <- Klaviyo profile.created (the true "first entered the
+//     system" date). Brevo's own createdAt is the import date and unreliable.
 //
-// Create the Brevo attribute first: Contacts → Settings → Contact attributes →
-//   FIRST_SEEN  (type: Date)
+//  2. SITE_VISITS <- de-inflated ESTIMATE = round(sqrt(2 * site_visits)), min 1.
+//     The worker's old additive merge compounded site_visits into wildly
+//     inflated numbers; this is a best-effort guess of the real count.
+//     Brevo ONLY — Klaviyo keeps its raw values, so the two will differ for
+//     users who never return (returners self-heal to the true count via the
+//     worker on their next visit).
+//
+// Create the Brevo attribute first: FIRST_SEEN (type Date). SITE_VISITS
+// (Number) already exists.
 //
 // Requires Node 18+. Run with Node 22.
 //
 // Usage:
-//   KLAVIYO_API_KEY=pk_xxx BREVO_API_KEY=xkeysib-xxx node scripts/backfill-first-seen.mjs --dry-run
-//   KLAVIYO_API_KEY=pk_xxx BREVO_API_KEY=xkeysib-xxx node scripts/backfill-first-seen.mjs --limit=20
-//   KLAVIYO_API_KEY=pk_xxx BREVO_API_KEY=xkeysib-xxx node scripts/backfill-first-seen.mjs
+//   KLAVIYO_API_KEY=pk_xxx BREVO_API_KEY=xkeysib-xxx node scripts/backfill-brevo-corrections.mjs --dry-run
+//   KLAVIYO_API_KEY=pk_xxx BREVO_API_KEY=xkeysib-xxx node scripts/backfill-brevo-corrections.mjs --limit=20
+//   KLAVIYO_API_KEY=pk_xxx BREVO_API_KEY=xkeysib-xxx node scripts/backfill-brevo-corrections.mjs
 
 import { writeFileSync } from 'node:fs';
 
@@ -31,6 +37,12 @@ if (!KLAVIYO_API_KEY || !BREVO_API_KEY) {
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// De-inflate the compounded site_visits. The old worker added the client's full
+// cumulative total on every send, so S ≈ T(T+1)/2  =>  T ≈ sqrt(2S).
+function estimateVisits(siteVisits) {
+  return Math.max(1, Math.round(Math.sqrt(2 * siteVisits)));
+}
 
 async function fetchAllKlaviyoProfiles() {
   const profiles = [];
@@ -51,8 +63,8 @@ async function fetchAllKlaviyoProfiles() {
   return LIMIT ? profiles.slice(0, LIMIT) : profiles;
 }
 
-async function setFirstSeen(email, firstSeen) {
-  const payload = { email, updateEnabled: true, attributes: { FIRST_SEEN: firstSeen } };
+async function upsertAttributes(email, attributes) {
+  const payload = { email, updateEnabled: true, attributes };
   for (let attempt = 0; attempt < 5; attempt++) {
     const res = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
@@ -75,31 +87,43 @@ async function runPool(items, worker, concurrency) {
 }
 
 async function main() {
-  console.log(`Backfilling Brevo FIRST_SEEN from Klaviyo created${DRY_RUN ? ' (DRY RUN)' : ''}${LIMIT ? `, limit ${LIMIT}` : ''}`);
+  console.log(`Brevo corrections backfill (FIRST_SEEN + estimated SITE_VISITS)${DRY_RUN ? ' (DRY RUN)' : ''}${LIMIT ? `, limit ${LIMIT}` : ''}`);
   const profiles = await fetchAllKlaviyoProfiles();
 
   const targets = [];
   let skipped = 0;
   for (const p of profiles) {
     const email = p.attributes?.email;
+    if (!email) { skipped++; continue; }
+
+    const attrs = {};
     const created = p.attributes?.created;
-    if (!email || !created) { skipped++; continue; }
-    targets.push({ email, firstSeen: String(created).slice(0, 10) }); // Brevo date: YYYY-MM-DD
+    if (created) attrs.FIRST_SEEN = String(created).slice(0, 10); // Brevo date: YYYY-MM-DD
+
+    const sv = p.attributes?.properties?.site_visits;
+    if (typeof sv === 'number' && sv > 0) attrs.SITE_VISITS = estimateVisits(sv);
+
+    if (Object.keys(attrs).length === 0) { skipped++; continue; }
+    targets.push({ email, attrs, rawSv: sv });
   }
-  console.log(`Profiles with email + created: ${targets.length}  |  skipped: ${skipped}`);
+  console.log(`Contacts to update: ${targets.length}  |  skipped (no email/nothing to set): ${skipped}`);
 
   if (DRY_RUN) {
-    console.log('\n--- DRY RUN: first 5 FIRST_SEEN values that would be written ---');
-    for (const t of targets.slice(0, 5)) console.log(`  ${t.email} -> ${t.firstSeen}`);
+    console.log('\n--- DRY RUN: first 8 updates that would be written ---');
+    for (const t of targets.slice(0, 8)) {
+      const svNote = t.attrs.SITE_VISITS != null ? `SITE_VISITS ${t.rawSv} -> ${t.attrs.SITE_VISITS}` : 'SITE_VISITS (unchanged)';
+      const fsNote = t.attrs.FIRST_SEEN ? `FIRST_SEEN ${t.attrs.FIRST_SEEN}` : 'FIRST_SEEN (none)';
+      console.log(`  ${t.email}: ${fsNote}, ${svNote}`);
+    }
     console.log('\nNothing written. Re-run without --dry-run to apply.');
     return;
   }
 
-  console.log(`\nWriting FIRST_SEEN for ${targets.length} contacts (concurrency ${CONCURRENCY})...`);
+  console.log(`\nWriting to ${targets.length} contacts (concurrency ${CONCURRENCY})...`);
   let done = 0, ok = 0;
   const failures = [];
   await runPool(targets, async (t) => {
-    const r = await setFirstSeen(t.email, t.firstSeen);
+    const r = await upsertAttributes(t.email, t.attrs);
     done++;
     if (r.ok) ok++; else failures.push({ email: t.email, status: r.status, detail: r.detail });
     if (done % 100 === 0 || done === targets.length) {
@@ -110,7 +134,7 @@ async function main() {
 
   console.log(`\nDone. Succeeded: ${ok}  |  Failed: ${failures.length}`);
   if (failures.length) {
-    const outPath = new URL('./first-seen-backfill-failures.json', import.meta.url).pathname;
+    const outPath = new URL('./brevo-backfill-failures.json', import.meta.url).pathname;
     writeFileSync(outPath, JSON.stringify(failures, null, 2));
     console.log(`Wrote failures to ${outPath}. Safe to re-run (idempotent).`);
   }
