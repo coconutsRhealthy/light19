@@ -43,3 +43,5 @@ Thumbs.db
 
 # Klaviyo→Brevo migration output
 scripts/brevo-migration-failures.json
+
+scripts/first-seen-backfill-failures.json

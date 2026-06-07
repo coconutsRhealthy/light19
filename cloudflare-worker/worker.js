@@ -64,8 +64,9 @@ export default {
         const text = await patchRes.text();
 
         // Mirror the exact same (merged) data to Brevo — runs after the
-        // response, never blocks or breaks the Klaviyo path.
-        ctx.waitUntil(sendToBrevo(env, email, firstName, finalProps));
+        // response, never blocks or breaks the Klaviyo path. existingProfile.created
+        // is Klaviyo's true first-seen date (Brevo's own createdAt isn't reliable).
+        ctx.waitUntil(sendToBrevo(env, email, firstName, finalProps, existingProfile?.attributes?.created));
 
         return new Response(text, { status: patchRes.status, headers: corsHeaders });
 
@@ -79,9 +80,12 @@ export default {
         const text = await klaviyoRes.text();
 
         // Mirror the exact same data to Brevo — runs after the response,
-        // never blocks or breaks the Klaviyo path.
+        // never blocks or breaks the Klaviyo path. Pull Klaviyo's created
+        // timestamp from the create response so Brevo gets the true first-seen.
         const incomingProps = body?.data?.attributes?.properties ?? {};
-        ctx.waitUntil(sendToBrevo(env, email, firstName, incomingProps));
+        let createdAt;
+        try { createdAt = JSON.parse(text)?.data?.attributes?.created; } catch {}
+        ctx.waitUntil(sendToBrevo(env, email, firstName, incomingProps, createdAt));
 
         return new Response(text, { status: klaviyoRes.status, headers: corsHeaders });
       }
@@ -94,14 +98,14 @@ export default {
 
 // ---- Brevo mirror ----------------------------------------------------------
 
-async function sendToBrevo(env, email, firstName, props) {
+async function sendToBrevo(env, email, firstName, props, firstSeen) {
   try {
     if (!env.BREVO_API_KEY) return; // safe no-op until the secret is configured
 
     const payload = {
       email,
       updateEnabled: true, // upsert: create if new, update if the contact already exists
-      attributes: buildBrevoAttributes(firstName, props)
+      attributes: buildBrevoAttributes(firstName, props, firstSeen)
     };
 
     if (env.BREVO_LIST_ID) {
@@ -127,7 +131,7 @@ async function sendToBrevo(env, email, firstName, props) {
   }
 }
 
-function buildBrevoAttributes(firstName, props) {
+function buildBrevoAttributes(firstName, props, firstSeen) {
   const p = props ?? {};
   const attrs = {};
 
@@ -136,6 +140,7 @@ function buildBrevoAttributes(firstName, props) {
   if (p.path != null) attrs.PATH = p.path;
   if (p.site_visits != null) attrs.SITE_VISITS = p.site_visits;
   if (p.unlock_date) attrs.UNLOCK_DATE = String(p.unlock_date).slice(0, 10); // Brevo dates: YYYY-MM-DD
+  if (firstSeen) attrs.FIRST_SEEN = String(firstSeen).slice(0, 10); // Klaviyo's true "first entered" date
 
   // Brevo can't store nested objects → keep the count-maps as JSON text
   if (p.visited_companies != null) attrs.VISITED_COMPANIES = JSON.stringify(p.visited_companies);
