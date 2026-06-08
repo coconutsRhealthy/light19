@@ -126,6 +126,16 @@ export const LIVE_V2_SLUGS: ReadonlySet<string> = new Set([
   'yvesrocher',
   'zappie',
   'zelesta.nl',
+  // Added 2026-06-08: the 7 that initially lacked a discounts.json route, now
+  // wired up (data files renamed to match their discounts.json slugs). rowenta
+  // resolves via the bracket-stripped "rowenta (X-Force Flex)" entry.
+  'aelfriceden',
+  'haarshop',
+  'loislee',
+  'lovelysbyheleen',
+  'rowenta',
+  'smashedlemon',
+  'to-be-dressed.nl',
 ]);
 
 export function isLiveV2Slug(slug: string | undefined | null): boolean {
