@@ -1,7 +1,7 @@
 todo:
 - build script dat seo texten vult DONE
 - /winkels met ssg DONE
-- /wieheeftsale met ssg DONE
+- /blackfriday met ssg DONE
 - /prikbord met ssg DONE
 - /giftcards met ssg DONE
 - bugfix interne navigatie toont CSR DONE

@@ -20,16 +20,16 @@ interface WebshopKorting {
 }
 
 @Component({
-  selector: 'app-wieheeftsale',
+  selector: 'app-blackfriday',
   imports: [FooterComponent, NavbarComponent, FormsModule],
-  templateUrl: './wieheeftsale.component.html',
-  styleUrls: ['./wieheeftsale.component.css', './../app.component.css'],
+  templateUrl: './blackfriday.component.html',
+  styleUrls: ['./blackfriday.component.css', './../app.component.css'],
   providers: [
     DatePipe,
     { provide: LOCALE_ID, useValue: 'nl' },
   ]
 })
-export class WieheeftsaleComponent implements OnInit {
+export class BlackfridayComponent implements OnInit {
 
   private jsonUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/spotted_promotions.json';
 
