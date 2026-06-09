@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MetaService } from '../services/meta.service';
 import { AnalyticsEventService } from '../services/analytics-event.service';
@@ -8,7 +8,7 @@ import { PrikbordModalComponent } from '../prikbord-modal/prikbord-modal.compone
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { DatePipe } from '@angular/common';
+import { DatePipe, isPlatformBrowser } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 
 
@@ -40,13 +40,18 @@ export class PrikbordComponent implements OnInit {
   webhookUrl = 'https://script.google.com/macros/s/AKfycbzEMMokt67Oz0PwOHEKHwxyZLpw0rwfVyzCXnerdNSwrxf4pKX6pz9_-KX48APoe_AX/exec';
   modalVisible = false;
 
-  constructor(private meta: MetaService, private http: HttpClient, private analyticsEventService: AnalyticsEventService, private datePipe: DatePipe) {
+  constructor(private meta: MetaService, private http: HttpClient, private analyticsEventService: AnalyticsEventService, private datePipe: DatePipe, @Inject(PLATFORM_ID) private platformId: Object) {
     var monthYear = this.meta.getDateString();
     this.meta.updateTitle("Deel kortingscodes en bespaar samen meer – Prikbord | Diski")
     this.meta.updateMetaInfo("Gespot? Deel je kortingscode op het prikbord van Diski en help anderen besparen. Ontdek zelf ook nieuwe codes die net gedeeld zijn!", "diski.nl", "kortingscode, korting, kortingscode toevoegen, kortingscode delen, kortingscode zoeken, diski prikbord");
   }
 
   ngOnInit() {
+    // Only fetch in the browser so the prerendered file stays a clean skeleton
+    // instead of a frozen build-time snapshot; the client loads fresh every visit.
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
     this.readDataFromSheet();
   }
 
