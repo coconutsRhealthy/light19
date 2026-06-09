@@ -8,6 +8,8 @@ import { LogosService } from '../services/logos.service';
 import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { forkJoin, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 interface WebshopKorting {
   webshop_name: string;
@@ -23,6 +25,11 @@ interface CategoryGroup {
   items: WebshopKorting[];
 }
 
+interface ShopRegistry {
+  _meta?: { taxonomy?: string[]; count?: number; note?: string };
+  shops: { [webshopName: string]: { url?: string; category?: string; resolved_on?: string } };
+}
+
 @Component({
   selector: 'app-blackfriday',
   imports: [FooterComponent, NavbarComponent, FormsModule],
@@ -35,14 +42,10 @@ interface CategoryGroup {
 })
 export class BlackfridayComponent implements OnInit {
 
-  // DEV: when true, load the local dummy feed (public/spotted_promotions.dev.json)
-  // which includes a shop_category per entry. Flip to false to use the live R2 feed.
-  private useLocalData = true;
-  private prodJsonUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/spotted_promotions.json';
-  private devJsonUrl = '/spotted_promotions.dev.json';
-  private get jsonUrl(): string {
-    return this.useLocalData ? this.devJsonUrl : this.prodJsonUrl;
-  }
+  // Live deals feed, and the shop registry that provides each shop's category.
+  // Both live on R2 so they update without an app redeploy.
+  private promotionsUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/spotted_promotions.json';
+  private registryUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/webshops_info/shop_registry.external.json';
 
   private readonly fallbackCategory = 'other';
 
@@ -61,6 +64,8 @@ export class BlackfridayComponent implements OnInit {
     'kitchen-cookware': 'Keuken & Koken',
     'food-drinks': 'Eten & Drinken',
     'marketplace': 'Marketplace',
+    'pets': 'Dieren',
+    'travel-leisure': 'Reizen & vrije tijd',
     'other': 'Overig',
     'nieuwste': 'Nieuwste',
   };
@@ -129,13 +134,22 @@ export class BlackfridayComponent implements OnInit {
       return;
     }
 
-    const urlWithNoCache = `${this.jsonUrl}?t=${new Date().getTime()}`;
+    const t = new Date().getTime();
+    const promotions$ = this.http.get<WebshopKorting[]>(`${this.promotionsUrl}?t=${t}`);
+    // The registry is best-effort: if it fails, deals still render (all in "Overig").
+    const registry$ = this.http.get<ShopRegistry>(`${this.registryUrl}?t=${t}`).pipe(
+      catchError(() => of(null))
+    );
 
-    this.http.get<WebshopKorting[]>(urlWithNoCache).subscribe((data) => {
-      this.allDiscounts = data.map((item) => ({
+    forkJoin({ promotions: promotions$, registry: registry$ }).subscribe(({ promotions, registry }) => {
+      const shops = registry?.shops ?? {};
+
+      this.allDiscounts = promotions.map((item) => ({
         ...item,
         url: this.affiliateLinkService.getAffiliateLink(item.webshop_name) || item.url,
-        shop_category: item.shop_category || this.fallbackCategory,
+        // Category comes from the registry; fall back to the feed's own value (if any),
+        // then to "other" when the shop can't be resolved.
+        shop_category: shops[item.webshop_name]?.category || item.shop_category || this.fallbackCategory,
       }));
 
       this.buildGroups();
