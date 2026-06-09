@@ -197,7 +197,7 @@
     "confidence": "high",
     "date": "2026-06-05 11:45:24",
     "label": null,
-    "shop_category": "other"
+    "shop_category": "marketplace"
   },
   {
     "webshop_name": "about-you",
@@ -217,7 +217,7 @@
     "confidence": "high",
     "date": "2026-06-03 21:31:23",
     "label": null,
-    "shop_category": "other"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "loavies",
@@ -437,7 +437,7 @@
     "confidence": "high",
     "date": "2026-05-31 13:15:27",
     "label": null,
-    "shop_category": "other"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "veromoda",
@@ -547,7 +547,7 @@
     "confidence": "high",
     "date": "2026-05-29 12:45:19",
     "label": null,
-    "shop_category": "other"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "hunkemoller",
@@ -737,7 +737,7 @@
     "confidence": "high",
     "date": "2026-05-25 12:25:55",
     "label": null,
-    "shop_category": "other"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "cabaulifestyle",
@@ -1299,7 +1299,7 @@
     "confidence": "high",
     "date": "2026-05-12 18:21:22",
     "label": "good",
-    "shop_category": "other"
+    "shop_category": "marketplace"
   },
   {
     "webshop_name": "douglas",
@@ -1702,7 +1702,7 @@
     "korting_text_nl": "Kortingscodes voor €30, €23 en €15 korting bij bestellingen vanaf respectievelijk €239, €169 en €109",
     "confidence": "high",
     "date": "2026-05-02 09:57:41",
-    "shop_category": "other"
+    "shop_category": "marketplace"
   },
   {
     "webshop_name": "otrium",
@@ -1873,7 +1873,7 @@
     "korting_text_nl": "7 dagen epische tech deals met tot 30% korting",
     "confidence": "high",
     "date": "2026-04-27 09:09:08",
-    "shop_category": "other"
+    "shop_category": "marketplace"
   },
   {
     "webshop_name": "bylashbabe",
@@ -1963,7 +1963,7 @@
     "korting_text_nl": "20% korting op een groot assortiment met kortingscode DUTCHDEAL20",
     "confidence": "high",
     "date": "2026-04-23 07:01:23",
-    "shop_category": "other"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "veromoda",
@@ -2035,7 +2035,7 @@
     "korting_text_nl": "Doordraaikorting - scoor je favorieten voor een doordraaiprijs",
     "confidence": "high",
     "date": "2026-04-21 03:13:22",
-    "shop_category": "other"
+    "shop_category": "marketplace"
   },
   {
     "webshop_name": "etos",
@@ -2158,7 +2158,7 @@
     "korting_text": "€60 korting Orders van €499+ Code:SRNL60, €45 korting Orders van €369+ Code:SRNL45, €30 korting Orders…",
     "korting_text_nl": "Voorjaarsvernieuwing kortingen met minimum bestelwaarde en codes",
     "date": "2026-04-14 07:24:33",
-    "shop_category": "other"
+    "shop_category": "marketplace"
   },
   {
     "webshop_name": "otrium",
@@ -2294,7 +2294,7 @@
     "korting_text": "KIDS FASHION DEALS Tot 30% korting",
     "korting_text_nl": "Tot 30% korting op kids fashion deals",
     "date": "2026-04-08 07:32:32",
-    "shop_category": "other"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "sophiamae",
@@ -2486,7 +2486,7 @@
     "korting_text": "Tot wel 50% + 20% EXTRA korting met kortingscode LENTE-20.",
     "korting_text_nl": "Tot wel 50% + 20% EXTRA korting met kortingscode LENTE-20.",
     "date": "2026-03-29 11:40:12",
-    "shop_category": "other"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "boozyshop",
@@ -2582,7 +2582,7 @@
     "korting_text": "Tot -50%* in de lentesale De nieuwste looks van dit seizoen, nu met korting",
     "korting_text_nl": "Tot -50%* in de lentesale",
     "date": "2026-03-21 09:18:42",
-    "shop_category": "other"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "pinkgellac",

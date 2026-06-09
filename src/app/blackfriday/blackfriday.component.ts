@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LOCALE_ID } from '@angular/core';
@@ -46,21 +46,22 @@ export class BlackfridayComponent implements OnInit {
 
   private readonly fallbackCategory = 'other';
 
-  // Maps the feed's category slugs to a Dutch display label + emoji for the
-  // chips, section headers and card tags. Unknown slugs fall back gracefully.
-  private categoryMeta: { [slug: string]: { label: string; icon: string } } = {
-    'fashion': { label: 'Mode', icon: '👗' },
-    'beauty': { label: 'Beauty', icon: '💄' },
-    'home-interior': { label: 'Wonen & Interieur', icon: '🛋️' },
-    'jewelry': { label: 'Sieraden', icon: '💍' },
-    'supplements-nutrition': { label: 'Supplementen & Voeding', icon: '💊' },
-    'electronics': { label: 'Elektronica', icon: '📱' },
-    'sports-fitness': { label: 'Sport & Fitness', icon: '🏃' },
-    'baby-kids': { label: 'Baby & Kids', icon: '🧸' },
-    'gifts-personalised': { label: 'Cadeaus & Personalisatie', icon: '🎁' },
-    'kitchen-cookware': { label: 'Keuken & Koken', icon: '🍳' },
-    'food-drinks': { label: 'Eten & Drinken', icon: '🍷' },
-    'other': { label: 'Overig', icon: '🛍️' },
+  // Maps the feed's category slugs to a display label for the chips, section
+  // headers and card tags. Unknown slugs fall back gracefully.
+  private categoryLabels: { [slug: string]: string } = {
+    'fashion': 'Fashion',
+    'beauty': 'Beauty',
+    'home-interior': 'Wonen & Interieur',
+    'jewelry': 'Sieraden',
+    'supplements-nutrition': 'Supplementen & Voeding',
+    'electronics': 'Elektronica',
+    'sports-fitness': 'Sport & Fitness',
+    'baby-kids': 'Baby & Kids',
+    'gifts-personalised': 'Cadeaus & Personalisatie',
+    'kitchen-cookware': 'Keuken & Koken',
+    'food-drinks': 'Eten & Drinken',
+    'marketplace': 'Marketplace',
+    'other': 'Overig',
   };
 
   year = new Date().getFullYear();
@@ -74,6 +75,19 @@ export class BlackfridayComponent implements OnInit {
   // so a visitor can quickly scroll through every category. Expandable per category.
   previewCount = 4;
   expandedCategories = new Set<string>();
+
+  // The category bar is a single scrollable row; these drive the edge fades that
+  // signal there's more to swipe to.
+  catCanLeft = false;
+  catCanRight = false;
+  private catScrollEl?: HTMLElement;
+
+  @ViewChild('catScroll') set catScroll(ref: ElementRef<HTMLElement> | undefined) {
+    this.catScrollEl = ref?.nativeElement;
+    if (this.catScrollEl) {
+      setTimeout(() => this.updateCatFades());
+    }
+  }
 
   searchTerm = '';
   searchResults: WebshopKorting[] = [];
@@ -184,18 +198,21 @@ export class BlackfridayComponent implements OnInit {
     }
   }
 
+  @HostListener('window:resize')
+  updateCatFades() {
+    const el = this.catScrollEl;
+    if (!el) return;
+    this.catCanLeft = el.scrollLeft > 4;
+    this.catCanRight = el.scrollLeft + el.clientWidth < el.scrollWidth - 4;
+  }
+
   categoryLabel(slug: string | undefined): string {
-    if (!slug) return this.categoryMeta[this.fallbackCategory].label;
-    const meta = this.categoryMeta[slug];
-    if (meta) return meta.label;
+    if (!slug) return this.categoryLabels[this.fallbackCategory];
+    const label = this.categoryLabels[slug];
+    if (label) return label;
     // Graceful fallback for an unmapped slug: "home-interior" -> "Home interior".
     const pretty = slug.replace(/[-_]+/g, ' ');
     return pretty.charAt(0).toUpperCase() + pretty.slice(1);
-  }
-
-  categoryIcon(slug: string | undefined): string {
-    if (!slug) slug = this.fallbackCategory;
-    return this.categoryMeta[slug]?.icon || '🛍️';
   }
 
   formatDate(date: string): string {
