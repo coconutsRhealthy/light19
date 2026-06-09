@@ -62,6 +62,7 @@ export class BlackfridayComponent implements OnInit {
     'food-drinks': 'Eten & Drinken',
     'marketplace': 'Marketplace',
     'other': 'Overig',
+    'nieuwste': 'Nieuwste',
   };
 
   year = new Date().getFullYear();
@@ -69,10 +70,16 @@ export class BlackfridayComponent implements OnInit {
   allDiscounts: WebshopKorting[] = [];
   groups: CategoryGroup[] = [];
   categories: { name: string; count: number }[] = [];
-  activeCategory = 'all';
+  // All sections shown stacked: Nieuwste first, then the categories.
+  sections: CategoryGroup[] = [];
+  activeCategory = 'nieuwste';
 
-  // In the "Alle" overview each category is collapsed to its newest few deals
-  // so a visitor can quickly scroll through every category. Expandable per category.
+  // "Nieuwste" is a synthetic category pinned at the top: the deals from the most
+  // recent few days present in the dataset (not relative to today).
+  private readonly nieuwsteWindowDays = 3;
+  nieuwsteDeals: WebshopKorting[] = [];
+
+  // Each section is collapsed to its newest few deals, expandable per section.
   previewCount = 4;
   expandedCategories = new Set<string>();
 
@@ -132,6 +139,8 @@ export class BlackfridayComponent implements OnInit {
       }));
 
       this.buildGroups();
+      this.buildNieuwste();
+      this.buildSections();
       this.totalDeals = this.allDiscounts.length;
       this.initialPageLoad = false;
     });
@@ -160,14 +169,56 @@ export class BlackfridayComponent implements OnInit {
     this.categories = this.groups.map(g => ({ name: g.name, count: g.items.length }));
   }
 
+  /** "Nieuwste": deals from the most recent few calendar days present in the dataset. */
+  private buildNieuwste() {
+    if (!this.allDiscounts.length) {
+      this.nieuwsteDeals = [];
+      return;
+    }
+    const dayOf = (d: WebshopKorting) => (d.date || '').slice(0, 10); // YYYY-MM-DD
+    const maxDay = this.allDiscounts.reduce((m, d) => {
+      const day = dayOf(d);
+      return day > m ? day : m;
+    }, '');
+
+    const cutoff = new Date(`${maxDay}T00:00:00`);
+    cutoff.setDate(cutoff.getDate() - (this.nieuwsteWindowDays - 1));
+    const cutoffDay = this.toIsoDay(cutoff);
+
+    this.nieuwsteDeals = this.allDiscounts
+      .filter(d => dayOf(d) >= cutoffDay)
+      .sort((a, b) => b.date.localeCompare(a.date));
+  }
+
+  private toIsoDay(d: Date): string {
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
+  /** Stacked sections: Nieuwste pinned on top (when it has deals), then the categories. */
+  private buildSections() {
+    this.sections = [
+      ...(this.nieuwsteDeals.length ? [{ name: 'nieuwste', items: this.nieuwsteDeals }] : []),
+      ...this.groups,
+    ];
+  }
+
   get isSearching(): boolean {
     return this.searchTerm.trim().length > 0;
   }
 
-  /** Category view: all sections, or just the active one. */
-  get visibleGroups(): CategoryGroup[] {
-    if (this.activeCategory === 'all') return this.groups;
-    return this.groups.filter(g => g.name === this.activeCategory);
+  isExpanded(name: string): boolean {
+    return this.expandedCategories.has(name);
+  }
+
+  toggleCategory(name: string) {
+    if (this.expandedCategories.has(name)) {
+      this.expandedCategories.delete(name);
+    } else {
+      this.expandedCategories.add(name);
+    }
   }
 
   onSearch() {
@@ -190,20 +241,10 @@ export class BlackfridayComponent implements OnInit {
   selectCategory(name: string) {
     this.activeCategory = name;
     this.clearSearch();
-  }
-
-  /** A category is fully shown when drilled into directly, otherwise only when expanded. */
-  isExpanded(name: string): boolean {
-    if (this.activeCategory !== 'all') return true;
-    return this.expandedCategories.has(name);
-  }
-
-  toggleCategory(name: string) {
-    if (this.expandedCategories.has(name)) {
-      this.expandedCategories.delete(name);
-    } else {
-      this.expandedCategories.add(name);
-    }
+    // Defer so sections are rendered (e.g. after clearing a search) before scrolling.
+    setTimeout(() => {
+      document.getElementById('sec-' + name)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   }
 
   @HostListener('window:resize')
@@ -212,6 +253,12 @@ export class BlackfridayComponent implements OnInit {
     if (!el) return;
     this.catCanLeft = el.scrollLeft > 4;
     this.catCanRight = el.scrollLeft + el.clientWidth < el.scrollWidth - 4;
+  }
+
+  /** Section heading: a friendlier title for Nieuwste, the plain label otherwise. */
+  sectionTitle(name: string): string {
+    if (name === 'nieuwste') return 'Nieuwste deals';
+    return this.categoryLabel(name);
   }
 
   categoryLabel(slug: string | undefined): string {
