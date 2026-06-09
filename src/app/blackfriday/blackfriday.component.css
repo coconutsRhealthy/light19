@@ -449,6 +449,37 @@
   100% { opacity: .5; }
 }
 
+/* ---- Expand / collapse per category ---- */
+.bf-more {
+  margin-top: 14px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--bf-line);
+  color: var(--bf-text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color .18s, background .18s, color .18s;
+}
+
+.bf-more:hover {
+  border-color: rgba(255, 105, 0, .5);
+  background: var(--bf-orange-soft);
+  color: var(--bf-orange);
+}
+
+.bf-more__chev {
+  font-size: 13px;
+  line-height: 1;
+}
+
 /* ===================== MISC ===================== */
 .bf-empty {
   color: var(--bf-muted);

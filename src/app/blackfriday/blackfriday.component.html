@@ -126,26 +126,38 @@
           </div>
 
           <div class="bf-grid">
-            @for (d of g.items; track d.webshop_name + d.date) {
-              <a class="bf-card" [href]="d.url" target="_blank" rel="noopener noreferrer sponsored">
-                <div class="bf-card__top">
-                  @if (getLogoUrl(d.webshop_name)) {
-                    <img class="bf-card__logo" [src]="getLogoUrl(d.webshop_name)"
-                         [alt]="d.webshop_name + ' logo'" loading="lazy" />
-                  } @else {
-                    <div class="bf-card__logo bf-card__logo--ph">{{ d.webshop_name.charAt(0).toUpperCase() }}</div>
-                  }
-                  <span class="bf-card__tag">{{ d.shop_category }}</span>
-                </div>
-                <h3 class="bf-card__name">{{ d.webshop_name }}</h3>
-                <p class="bf-card__deal">{{ d.korting_text_nl || d.korting_text }}</p>
-                <div class="bf-card__foot">
-                  <span class="bf-card__date">Gespot op {{ formatDate(d.date) }}</span>
-                  <span class="bf-card__cta">Bekijk deal →</span>
-                </div>
-              </a>
+            @for (d of g.items; track d.webshop_name + d.date; let idx = $index) {
+              @if (isExpanded(g.name) || idx < previewCount) {
+                <a class="bf-card" [href]="d.url" target="_blank" rel="noopener noreferrer sponsored">
+                  <div class="bf-card__top">
+                    @if (getLogoUrl(d.webshop_name)) {
+                      <img class="bf-card__logo" [src]="getLogoUrl(d.webshop_name)"
+                           [alt]="d.webshop_name + ' logo'" loading="lazy" />
+                    } @else {
+                      <div class="bf-card__logo bf-card__logo--ph">{{ d.webshop_name.charAt(0).toUpperCase() }}</div>
+                    }
+                    <span class="bf-card__tag">{{ d.shop_category }}</span>
+                  </div>
+                  <h3 class="bf-card__name">{{ d.webshop_name }}</h3>
+                  <p class="bf-card__deal">{{ d.korting_text_nl || d.korting_text }}</p>
+                  <div class="bf-card__foot">
+                    <span class="bf-card__date">Gespot op {{ formatDate(d.date) }}</span>
+                    <span class="bf-card__cta">Bekijk deal →</span>
+                  </div>
+                </a>
+              }
             }
           </div>
+
+          @if (activeCategory === 'all' && g.items.length > previewCount) {
+            <button type="button" class="bf-more" (click)="toggleCategory(g.name)">
+              @if (isExpanded(g.name)) {
+                Toon minder <span class="bf-more__chev">↑</span>
+              } @else {
+                Toon alle {{ g.items.length }} {{ g.name }}-deals <span class="bf-more__chev">↓</span>
+              }
+            </button>
+          }
         </section>
       }
     }

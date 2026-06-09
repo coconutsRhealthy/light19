@@ -68,6 +68,11 @@ export class BlackfridayComponent implements OnInit {
   categories: { name: string; count: number }[] = [];
   activeCategory = 'all';
 
+  // In the "Alle" overview each category is collapsed to its newest few deals
+  // so a visitor can quickly scroll through every category. Expandable per category.
+  previewCount = 4;
+  expandedCategories = new Set<string>();
+
   searchTerm = '';
   searchResults: WebshopKorting[] = [];
 
@@ -161,6 +166,20 @@ export class BlackfridayComponent implements OnInit {
   selectCategory(name: string) {
     this.activeCategory = name;
     this.clearSearch();
+  }
+
+  /** A category is fully shown when drilled into directly, otherwise only when expanded. */
+  isExpanded(name: string): boolean {
+    if (this.activeCategory !== 'all') return true;
+    return this.expandedCategories.has(name);
+  }
+
+  toggleCategory(name: string) {
+    if (this.expandedCategories.has(name)) {
+      this.expandedCategories.delete(name);
+    } else {
+      this.expandedCategories.add(name);
+    }
   }
 
   categoryIcon(name: string): string {
