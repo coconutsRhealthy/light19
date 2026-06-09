@@ -53,7 +53,7 @@
         </button>
         @for (c of categories; track c.name) {
           <button class="bf-chip" [class.is-active]="activeCategory === c.name" (click)="selectCategory(c.name)">
-            <span class="bf-chip__icon">{{ categoryIcon(c.name) }}</span>{{ c.name }}
+            <span class="bf-chip__icon">{{ categoryIcon(c.name) }}</span>{{ categoryLabel(c.name) }}
             <span class="bf-chip__count">{{ c.count }}</span>
           </button>
         }
@@ -96,7 +96,7 @@
                   } @else {
                     <div class="bf-card__logo bf-card__logo--ph">{{ d.webshop_name.charAt(0).toUpperCase() }}</div>
                   }
-                  <span class="bf-card__tag">{{ d.shop_category }}</span>
+                  <span class="bf-card__tag">{{ categoryLabel(d.shop_category) }}</span>
                 </div>
                 <h3 class="bf-card__name">{{ d.webshop_name }}</h3>
                 <p class="bf-card__deal">{{ d.korting_text_nl || d.korting_text }}</p>
@@ -121,7 +121,7 @@
       @for (g of visibleGroups; track g.name) {
         <section class="bf-section">
           <div class="bf-section__head">
-            <h2><span class="bf-section__icon">{{ categoryIcon(g.name) }}</span>{{ g.name }}</h2>
+            <h2><span class="bf-section__icon">{{ categoryIcon(g.name) }}</span>{{ categoryLabel(g.name) }}</h2>
             <span class="bf-count">{{ g.items.length }}</span>
           </div>
 
@@ -136,7 +136,7 @@
                     } @else {
                       <div class="bf-card__logo bf-card__logo--ph">{{ d.webshop_name.charAt(0).toUpperCase() }}</div>
                     }
-                    <span class="bf-card__tag">{{ d.shop_category }}</span>
+                    <span class="bf-card__tag">{{ categoryLabel(d.shop_category) }}</span>
                   </div>
                   <h3 class="bf-card__name">{{ d.webshop_name }}</h3>
                   <p class="bf-card__deal">{{ d.korting_text_nl || d.korting_text }}</p>
@@ -154,7 +154,7 @@
               @if (isExpanded(g.name)) {
                 Toon minder <span class="bf-more__chev">↑</span>
               } @else {
-                Toon alle {{ g.items.length }} {{ g.name }}-deals <span class="bf-more__chev">↓</span>
+                Toon alle {{ g.items.length }} {{ categoryLabel(g.name) }}-deals <span class="bf-more__chev">↓</span>
               }
             </button>
           }

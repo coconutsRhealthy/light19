@@ -1,13 +1,13 @@
 [
   {
-    "webshop_name": "haarshop.nl",
+    "webshop_name": "haarshop",
     "url": "https://www.haarshop.nl/",
     "korting_text": "SHOP EN MAAK KANS OP EEN NACHTJE WEG Bij elke bestelling vanaf €75 maak je…",
     "korting_text_nl": "Kans op gratis overnachting bij Fletcher Hotel bij bestelling vanaf €75",
     "confidence": "high",
     "date": "2026-06-08 22:30:15",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "aimnsportswear",
@@ -17,7 +17,7 @@
     "confidence": "high",
     "date": "2026-06-08 22:29:58",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "lucardi",
@@ -27,7 +27,7 @@
     "confidence": "high",
     "date": "2026-06-08 19:27:43",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "loungeunderwear",
@@ -37,7 +37,7 @@
     "confidence": "high",
     "date": "2026-06-08 14:54:39",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "westwing",
@@ -47,7 +47,7 @@
     "confidence": "high",
     "date": "2026-06-08 13:52:39",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "otrium",
@@ -57,7 +57,7 @@
     "confidence": "high",
     "date": "2026-06-08 13:52:26",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lyko",
@@ -67,7 +67,7 @@
     "confidence": "high",
     "date": "2026-06-08 13:52:15",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "etos",
@@ -77,7 +77,7 @@
     "confidence": "high",
     "date": "2026-06-08 13:52:06",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "lookfantastic",
@@ -87,7 +87,7 @@
     "confidence": "high",
     "date": "2026-06-08 12:51:08",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "idealofsweden",
@@ -97,7 +97,7 @@
     "confidence": "high",
     "date": "2026-06-08 12:50:32",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "shein",
@@ -107,7 +107,7 @@
     "confidence": "high",
     "date": "2026-06-08 11:26:53",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "asos",
@@ -117,7 +117,7 @@
     "confidence": "high",
     "date": "2026-06-07 20:05:39",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "pinkgellac",
@@ -127,7 +127,7 @@
     "confidence": "high",
     "date": "2026-06-07 15:03:46",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "about-you",
@@ -137,7 +137,7 @@
     "confidence": "high",
     "date": "2026-06-07 15:03:37",
     "label": null,
-    "shop_category": "Eten & Drinken"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lookfantastic",
@@ -147,7 +147,7 @@
     "confidence": "high",
     "date": "2026-06-07 12:02:35",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "paulaschoice.nl",
@@ -157,7 +157,7 @@
     "confidence": "high",
     "date": "2026-06-06 14:04:54",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "creamyfabrics",
@@ -167,7 +167,7 @@
     "confidence": "high",
     "date": "2026-06-06 14:04:42",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "shein",
@@ -177,7 +177,7 @@
     "confidence": "high",
     "date": "2026-06-06 12:03:24",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "otrium",
@@ -187,7 +187,7 @@
     "confidence": "high",
     "date": "2026-06-05 12:45:57",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "aliexpress",
@@ -197,7 +197,7 @@
     "confidence": "high",
     "date": "2026-06-05 11:45:24",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "other"
   },
   {
     "webshop_name": "about-you",
@@ -207,7 +207,7 @@
     "confidence": "high",
     "date": "2026-06-04 15:27:36",
     "label": null,
-    "shop_category": "Eten & Drinken"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "bijenkorf",
@@ -217,7 +217,7 @@
     "confidence": "high",
     "date": "2026-06-03 21:31:23",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "other"
   },
   {
     "webshop_name": "loavies",
@@ -227,7 +227,7 @@
     "confidence": "high",
     "date": "2026-06-03 16:30:11",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "pinkgellac",
@@ -237,7 +237,7 @@
     "confidence": "high",
     "date": "2026-06-03 13:29:13",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "charlottetilbury",
@@ -247,7 +247,7 @@
     "confidence": "high",
     "date": "2026-06-03 12:28:47",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "shein",
@@ -257,7 +257,7 @@
     "confidence": "high",
     "date": "2026-06-03 11:28:13",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "urbanoutfitters",
@@ -267,7 +267,7 @@
     "confidence": "high",
     "date": "2026-06-03 00:25:33",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "8849tech",
@@ -277,7 +277,7 @@
     "confidence": "high",
     "date": "2026-06-03 00:25:20",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "uniqlo",
@@ -287,7 +287,7 @@
     "confidence": "high",
     "date": "2026-06-02 23:24:48",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "oliviakate",
@@ -297,7 +297,7 @@
     "confidence": "high",
     "date": "2026-06-02 23:24:27",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "cider",
@@ -307,7 +307,7 @@
     "confidence": "high",
     "date": "2026-06-02 20:22:51",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "pinkgellac",
@@ -317,7 +317,7 @@
     "confidence": "high",
     "date": "2026-06-02 17:12:32",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "lookfantastic",
@@ -327,7 +327,7 @@
     "confidence": "high",
     "date": "2026-06-02 11:46:18",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "bodyandfit.com",
@@ -337,7 +337,7 @@
     "confidence": "high",
     "date": "2026-06-02 11:46:06",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "snuggs",
@@ -347,7 +347,7 @@
     "confidence": "high",
     "date": "2026-06-01 20:53:44",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "sellpy",
@@ -357,7 +357,7 @@
     "confidence": "high",
     "date": "2026-06-01 20:53:29",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "douglas",
@@ -367,7 +367,7 @@
     "confidence": "high",
     "date": "2026-06-01 20:53:14",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "charlottetilbury",
@@ -377,7 +377,7 @@
     "confidence": "high",
     "date": "2026-06-01 12:07:42",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "paulaschoice.nl",
@@ -387,7 +387,7 @@
     "confidence": "high",
     "date": "2026-06-01 11:07:14",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "otrium",
@@ -397,7 +397,7 @@
     "confidence": "high",
     "date": "2026-06-01 11:07:08",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lucardi",
@@ -407,7 +407,7 @@
     "confidence": "high",
     "date": "2026-06-01 02:31:05",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "omoda",
@@ -417,7 +417,7 @@
     "confidence": "high",
     "date": "2026-05-31 16:33:13",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "cider",
@@ -427,7 +427,7 @@
     "confidence": "high",
     "date": "2026-05-31 16:33:03",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "zalando",
@@ -437,7 +437,7 @@
     "confidence": "high",
     "date": "2026-05-31 13:15:27",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "other"
   },
   {
     "webshop_name": "veromoda",
@@ -447,7 +447,7 @@
     "confidence": "high",
     "date": "2026-05-31 13:15:15",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "only",
@@ -457,7 +457,7 @@
     "confidence": "high",
     "date": "2026-05-31 13:15:03",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lyko",
@@ -467,7 +467,7 @@
     "confidence": "high",
     "date": "2026-05-31 13:14:47",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "coolblue",
@@ -477,7 +477,7 @@
     "confidence": "high",
     "date": "2026-05-31 13:14:30",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "otrium",
@@ -487,7 +487,7 @@
     "confidence": "high",
     "date": "2026-05-31 10:59:51",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "nakdfashion",
@@ -497,7 +497,7 @@
     "confidence": "high",
     "date": "2026-05-31 09:59:08",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lookfantastic",
@@ -507,7 +507,7 @@
     "confidence": "high",
     "date": "2026-05-31 09:58:58",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "burga",
@@ -517,7 +517,7 @@
     "confidence": "high",
     "date": "2026-05-31 09:58:49",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "douglas",
@@ -527,7 +527,7 @@
     "confidence": "high",
     "date": "2026-05-29 19:26:30",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "myjewellery",
@@ -537,7 +537,7 @@
     "confidence": "high",
     "date": "2026-05-29 17:25:12",
     "label": "good",
-    "shop_category": "Elektronica"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "zalando",
@@ -547,7 +547,7 @@
     "confidence": "high",
     "date": "2026-05-29 12:45:19",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "other"
   },
   {
     "webshop_name": "hunkemoller",
@@ -557,7 +557,7 @@
     "confidence": "high",
     "date": "2026-05-28 20:12:08",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "otrium",
@@ -567,7 +567,7 @@
     "confidence": "high",
     "date": "2026-05-28 01:26:14",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "jdsports",
@@ -577,7 +577,7 @@
     "confidence": "high",
     "date": "2026-05-28 01:26:05",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "adventure.beds",
@@ -587,7 +587,7 @@
     "confidence": "high",
     "date": "2026-05-27 23:14:34",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "baby-kids"
   },
   {
     "webshop_name": "cabaulifestyle",
@@ -597,7 +597,7 @@
     "confidence": "high",
     "date": "2026-05-27 22:14:02",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "snuggs",
@@ -607,7 +607,7 @@
     "confidence": "high",
     "date": "2026-05-27 21:13:26",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "shein",
@@ -617,7 +617,7 @@
     "confidence": "high",
     "date": "2026-05-27 21:13:16",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "sellpy",
@@ -627,7 +627,7 @@
     "confidence": "high",
     "date": "2026-05-27 21:05:44",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "zelesta.nl",
@@ -637,7 +637,7 @@
     "confidence": "high",
     "date": "2026-05-27 08:12:19",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "otrium",
@@ -647,7 +647,7 @@
     "confidence": "high",
     "date": "2026-05-27 01:50:06",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "jdsports",
@@ -657,7 +657,7 @@
     "confidence": "high",
     "date": "2026-05-27 01:49:55",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "shein",
@@ -667,7 +667,7 @@
     "confidence": "high",
     "date": "2026-05-26 21:32:12",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "pinkgellac",
@@ -677,7 +677,7 @@
     "confidence": "high",
     "date": "2026-05-26 21:32:03",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "cabaulifestyle",
@@ -687,7 +687,7 @@
     "confidence": "high",
     "date": "2026-05-26 21:31:53",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "douglas",
@@ -697,7 +697,7 @@
     "confidence": "high",
     "date": "2026-05-26 19:30:00",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "desenio",
@@ -707,7 +707,7 @@
     "confidence": "high",
     "date": "2026-05-26 02:24:37",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "albelli",
@@ -717,7 +717,7 @@
     "confidence": "high",
     "date": "2026-05-26 00:23:47",
     "label": "good",
-    "shop_category": "Gezondheid"
+    "shop_category": "gifts-personalised"
   },
   {
     "webshop_name": "aimnsportswear",
@@ -727,7 +727,7 @@
     "confidence": "high",
     "date": "2026-05-25 18:56:28",
     "label": "good",
-    "shop_category": "Mode"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "zalando",
@@ -737,7 +737,7 @@
     "confidence": "high",
     "date": "2026-05-25 12:25:55",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "other"
   },
   {
     "webshop_name": "cabaulifestyle",
@@ -747,7 +747,7 @@
     "confidence": "high",
     "date": "2026-05-23 22:14:06",
     "label": "good",
-    "shop_category": "Reizen"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "pinkgellac",
@@ -757,7 +757,7 @@
     "confidence": "high",
     "date": "2026-05-23 01:54:13",
     "label": "good",
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "otrium",
@@ -767,7 +767,7 @@
     "confidence": "high",
     "date": "2026-05-23 01:54:03",
     "label": "good",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "coolblue",
@@ -777,7 +777,7 @@
     "confidence": "high",
     "date": "2026-05-22 01:27:01",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "jdsports",
@@ -787,7 +787,7 @@
     "confidence": "high",
     "date": "2026-05-21 23:22:15",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "shein",
@@ -797,7 +797,7 @@
     "confidence": "high",
     "date": "2026-05-21 20:21:45",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "cider",
@@ -807,7 +807,7 @@
     "confidence": "high",
     "date": "2026-05-21 08:19:34",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "alpinehearingprotection",
@@ -817,7 +817,7 @@
     "confidence": "high",
     "date": "2026-05-21 03:18:46",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "other"
   },
   {
     "webshop_name": "weekday",
@@ -827,7 +827,7 @@
     "confidence": "high",
     "date": "2026-05-21 02:18:15",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "gisou",
@@ -837,7 +837,7 @@
     "confidence": "high",
     "date": "2026-05-21 02:17:58",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "bodyandfit.com",
@@ -847,7 +847,7 @@
     "confidence": "high",
     "date": "2026-05-20 23:57:08",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "paulaschoice.nl",
@@ -857,7 +857,7 @@
     "confidence": "high",
     "date": "2026-05-20 22:56:21",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "shein",
@@ -867,7 +867,7 @@
     "confidence": "high",
     "date": "2026-05-20 21:55:47",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lookfantastic",
@@ -877,7 +877,7 @@
     "confidence": "high",
     "date": "2026-05-20 21:55:36",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "desenio",
@@ -887,7 +887,7 @@
     "confidence": "high",
     "date": "2026-05-20 02:19:00",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "coolblue",
@@ -897,7 +897,7 @@
     "confidence": "high",
     "date": "2026-05-20 02:18:52",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "upfront",
@@ -907,7 +907,7 @@
     "confidence": "high",
     "date": "2026-05-19 22:55:45",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "lookfantastic",
@@ -917,7 +917,7 @@
     "confidence": "high",
     "date": "2026-05-19 19:52:55",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "emmasleepnl",
@@ -927,7 +927,7 @@
     "confidence": "high",
     "date": "2026-05-19 16:26:12",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "myjewellery",
@@ -937,7 +937,7 @@
     "confidence": "high",
     "date": "2026-05-19 11:49:15",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "lucardi",
@@ -947,7 +947,7 @@
     "confidence": "high",
     "date": "2026-05-19 01:22:25",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "myproteinnl",
@@ -957,7 +957,7 @@
     "confidence": "high",
     "date": "2026-05-18 23:03:47",
     "label": "good",
-    "shop_category": "Sport"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "meetmethere",
@@ -967,7 +967,7 @@
     "confidence": "high",
     "date": "2026-05-18 23:03:39",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "sophiamae",
@@ -977,7 +977,7 @@
     "confidence": "high",
     "date": "2026-05-18 17:15:14",
     "label": "good",
-    "shop_category": "Sport"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "hollandandbarrett",
@@ -987,7 +987,7 @@
     "confidence": "high",
     "date": "2026-05-18 15:11:06",
     "label": "good",
-    "shop_category": "Gezondheid"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "nakdfashion",
@@ -997,7 +997,7 @@
     "confidence": "high",
     "date": "2026-05-18 12:03:57",
     "label": "good",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "loavies",
@@ -1007,7 +1007,7 @@
     "confidence": "high",
     "date": "2026-05-18 12:03:44",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "only",
@@ -1017,7 +1017,7 @@
     "confidence": "high",
     "date": "2026-05-17 23:01:53",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "westwing",
@@ -1027,7 +1027,7 @@
     "confidence": "high",
     "date": "2026-05-17 22:00:59",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "stronger",
@@ -1039,7 +1039,7 @@
     "label": {
       "bad": "first-order"
     },
-    "shop_category": "Mode"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "shein",
@@ -1049,7 +1049,7 @@
     "confidence": "high",
     "date": "2026-05-17 19:00:07",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "amisamour",
@@ -1059,7 +1059,7 @@
     "confidence": "high",
     "date": "2026-05-17 18:59:52",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "shein",
@@ -1069,7 +1069,7 @@
     "confidence": "high",
     "date": "2026-05-16 18:31:12",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "about-you",
@@ -1079,7 +1079,7 @@
     "confidence": "high",
     "date": "2026-05-16 11:51:26",
     "label": null,
-    "shop_category": "Eten & Drinken"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "kaptenandson",
@@ -1089,7 +1089,7 @@
     "confidence": "high",
     "date": "2026-05-16 07:40:49",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "snuggs",
@@ -1099,7 +1099,7 @@
     "confidence": "high",
     "date": "2026-05-15 18:05:30",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "shein",
@@ -1109,7 +1109,7 @@
     "confidence": "high",
     "date": "2026-05-15 18:05:19",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "urbanoutfitters",
@@ -1119,7 +1119,7 @@
     "confidence": "high",
     "date": "2026-05-15 12:04:15",
     "label": null,
-    "shop_category": "Elektronica"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "about-you",
@@ -1129,7 +1129,7 @@
     "confidence": "high",
     "date": "2026-05-15 11:03:55",
     "label": null,
-    "shop_category": "Eten & Drinken"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lucardi",
@@ -1139,7 +1139,7 @@
     "confidence": "high",
     "date": "2026-05-15 02:02:28",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "colourfulrebel",
@@ -1149,7 +1149,7 @@
     "confidence": "high",
     "date": "2026-05-14 23:58:50",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lookfantastic",
@@ -1159,7 +1159,7 @@
     "confidence": "high",
     "date": "2026-05-14 21:37:17",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "adventure.beds",
@@ -1169,7 +1169,7 @@
     "confidence": "high",
     "date": "2026-05-14 18:03:28",
     "label": null,
-    "shop_category": "Reizen"
+    "shop_category": "baby-kids"
   },
   {
     "webshop_name": "123jaloezie.nl",
@@ -1179,7 +1179,7 @@
     "confidence": "high",
     "date": "2026-05-14 18:03:08",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "veromoda",
@@ -1189,7 +1189,7 @@
     "confidence": "high",
     "date": "2026-05-14 06:31:22",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "hollandandbarrett",
@@ -1199,7 +1199,7 @@
     "confidence": "high",
     "date": "2026-05-14 06:31:10",
     "label": null,
-    "shop_category": "Gezondheid"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "bodyandfit.com",
@@ -1209,7 +1209,7 @@
     "confidence": "high",
     "date": "2026-05-13 22:12:26",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "paulaschoice.nl",
@@ -1219,7 +1219,7 @@
     "confidence": "high",
     "date": "2026-05-13 21:12:06",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "lookfantastic",
@@ -1229,7 +1229,7 @@
     "confidence": "high",
     "date": "2026-05-13 19:03:00",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "shein",
@@ -1239,7 +1239,7 @@
     "confidence": "high",
     "date": "2026-05-13 18:02:28",
     "label": null,
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lucardi",
@@ -1249,7 +1249,7 @@
     "confidence": "high",
     "date": "2026-05-13 18:02:17",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "uniqlo",
@@ -1259,7 +1259,7 @@
     "confidence": "high",
     "date": "2026-05-13 17:01:51",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "loavies",
@@ -1269,7 +1269,7 @@
     "confidence": "high",
     "date": "2026-05-13 16:01:25",
     "label": null,
-    "shop_category": "Beauty"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "westwing",
@@ -1279,7 +1279,7 @@
     "confidence": "high",
     "date": "2026-05-12 20:30:01",
     "label": "good",
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "lookfantastic",
@@ -1289,7 +1289,7 @@
     "confidence": "high",
     "date": "2026-05-12 18:21:33",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "aliexpress",
@@ -1299,7 +1299,7 @@
     "confidence": "high",
     "date": "2026-05-12 18:21:22",
     "label": "good",
-    "shop_category": "Reizen"
+    "shop_category": "other"
   },
   {
     "webshop_name": "douglas",
@@ -1309,7 +1309,7 @@
     "confidence": "high",
     "date": "2026-05-12 17:20:59",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "esuals",
@@ -1319,7 +1319,7 @@
     "confidence": "high",
     "date": "2026-05-12 15:18:29",
     "label": "good",
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "3bearsporridge",
@@ -1331,7 +1331,7 @@
     "label": {
       "bad": "newsletter"
     },
-    "shop_category": "Sport"
+    "shop_category": "food-drinks"
   },
   {
     "webshop_name": "koreanskincare",
@@ -1341,7 +1341,7 @@
     "confidence": "high",
     "date": "2026-05-12 13:03:47",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "hollandandbarrett",
@@ -1351,7 +1351,7 @@
     "confidence": "high",
     "date": "2026-05-12 06:02:43",
     "label": "good",
-    "shop_category": "Gezondheid"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "charlottetilbury",
@@ -1361,7 +1361,7 @@
     "confidence": "high",
     "date": "2026-05-11 19:54:43",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "smartphonehoesjes.nl",
@@ -1371,7 +1371,7 @@
     "confidence": "high",
     "date": "2026-05-11 18:54:22",
     "label": "good",
-    "shop_category": "Elektronica"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "alpinehearingprotection",
@@ -1381,7 +1381,7 @@
     "confidence": "high",
     "date": "2026-05-11 09:52:05",
     "label": "good",
-    "shop_category": "Gezondheid"
+    "shop_category": "other"
   },
   {
     "webshop_name": "xenos",
@@ -1391,7 +1391,7 @@
     "confidence": "high",
     "date": "2026-05-11 08:51:46",
     "label": "good",
-    "shop_category": "Elektronica"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "oliviakate",
@@ -1401,7 +1401,7 @@
     "confidence": "high",
     "date": "2026-05-11 08:51:29",
     "label": "good",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "sizzthebrand",
@@ -1411,7 +1411,7 @@
     "confidence": "high",
     "date": "2026-05-10 23:08:13",
     "label": "good",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "pinkgellac",
@@ -1421,7 +1421,7 @@
     "confidence": "high",
     "date": "2026-05-10 17:11:03",
     "label": "good",
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "sophiamae",
@@ -1431,7 +1431,7 @@
     "confidence": "high",
     "date": "2026-05-10 03:14:44",
     "label": "good",
-    "shop_category": "Sport"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "stronger",
@@ -1441,7 +1441,7 @@
     "confidence": "high",
     "date": "2026-05-09 23:58:10",
     "label": null,
-    "shop_category": "Mode"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "shein",
@@ -1451,7 +1451,7 @@
     "confidence": "high",
     "date": "2026-05-09 23:57:58",
     "label": "good",
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "weekday",
@@ -1461,7 +1461,7 @@
     "confidence": "high",
     "date": "2026-05-09 09:52:15",
     "label": "good",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "koreanskincare",
@@ -1471,7 +1471,7 @@
     "confidence": "high",
     "date": "2026-05-09 09:51:43",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "hollandandbarrett",
@@ -1481,7 +1481,7 @@
     "confidence": "high",
     "date": "2026-05-09 07:41:22",
     "label": "good",
-    "shop_category": "Gezondheid"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "urbanoutfitters",
@@ -1491,7 +1491,7 @@
     "confidence": "high",
     "date": "2026-05-08 11:36:15",
     "label": "good",
-    "shop_category": "Elektronica"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "sellpy",
@@ -1501,7 +1501,7 @@
     "confidence": "high",
     "date": "2026-05-08 11:36:03",
     "label": null,
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "douglas",
@@ -1511,7 +1511,7 @@
     "confidence": "high",
     "date": "2026-05-08 11:35:54",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "weekday",
@@ -1521,7 +1521,7 @@
     "confidence": "high",
     "date": "2026-05-08 09:34:26",
     "label": "good",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "nakdfashion",
@@ -1531,7 +1531,7 @@
     "confidence": "high",
     "date": "2026-05-08 09:34:17",
     "label": "good",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "leolive",
@@ -1541,17 +1541,17 @@
     "confidence": "high",
     "date": "2026-05-08 06:33:34",
     "label": "good",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
-    "webshop_name": "haarshop.nl",
+    "webshop_name": "haarshop",
     "url": "https://www.haarshop.nl/",
     "korting_text": "MAY DEAL: Pak €130 korting op de Silk'n 8-in-1! Nu van €279 voor €149. Shop…",
     "korting_text_nl": "€130 korting op Silk'n 8-in-1, nu €149 in plaats van €279",
     "confidence": "high",
     "date": "2026-05-08 06:33:22",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "adventure.beds",
@@ -1561,7 +1561,7 @@
     "confidence": "high",
     "date": "2026-05-07 14:14:00",
     "label": "good",
-    "shop_category": "Reizen"
+    "shop_category": "baby-kids"
   },
   {
     "webshop_name": "idealofsweden",
@@ -1571,7 +1571,7 @@
     "confidence": "high",
     "date": "2026-05-07 13:13:28",
     "label": "good",
-    "shop_category": "Elektronica"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "sophiamae",
@@ -1581,7 +1581,7 @@
     "confidence": "high",
     "date": "2026-05-07 12:12:57",
     "label": "good",
-    "shop_category": "Sport"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "lookfantastic",
@@ -1591,7 +1591,7 @@
     "confidence": "high",
     "date": "2026-05-07 12:12:38",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "burga",
@@ -1601,7 +1601,7 @@
     "confidence": "high",
     "date": "2026-05-06 12:22:22",
     "label": "good",
-    "shop_category": "Wonen"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "loavies",
@@ -1611,7 +1611,7 @@
     "confidence": "high",
     "date": "2026-05-06 11:21:58",
     "label": "good",
-    "shop_category": "Beauty"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "50plusmobiel",
@@ -1621,7 +1621,7 @@
     "confidence": "high",
     "date": "2026-05-06 08:37:00",
     "label": null,
-    "shop_category": "Telecom"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "adventure.beds",
@@ -1630,7 +1630,7 @@
     "korting_text_nl": "10% korting op een klimbed met kortingscode ALICIA10",
     "confidence": "high",
     "date": "2026-05-05 14:14:24",
-    "shop_category": "Reizen"
+    "shop_category": "baby-kids"
   },
   {
     "webshop_name": "desenio",
@@ -1639,7 +1639,7 @@
     "korting_text_nl": "40% korting op posters voor VIP lente toegang",
     "confidence": "high",
     "date": "2026-05-05 12:13:45",
-    "shop_category": "Beauty"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "charlottetilbury",
@@ -1648,7 +1648,7 @@
     "korting_text_nl": "Koop 2 producten en krijg een gratis mini Exagger-Eyes mascara",
     "confidence": "high",
     "date": "2026-05-05 12:13:36",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "snuggs",
@@ -1657,7 +1657,7 @@
     "korting_text_nl": "10% korting op je eerste menstruatieondergoed",
     "confidence": "high",
     "date": "2026-05-05 10:12:57",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "sellpy",
@@ -1666,7 +1666,7 @@
     "korting_text_nl": "10% korting op eerste bestelling met code sellpy10",
     "confidence": "high",
     "date": "2026-05-05 10:12:49",
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "douglas",
@@ -1675,7 +1675,7 @@
     "korting_text_nl": "20% korting op alles vanaf €25 plus tot 3 cadeaus bij je bestelling",
     "confidence": "high",
     "date": "2026-05-04 09:31:35",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "otrium",
@@ -1684,16 +1684,16 @@
     "korting_text_nl": "10% extra korting op iconische merken voor beperkte tijd",
     "confidence": "high",
     "date": "2026-05-04 10:32:17",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
-    "webshop_name": "haarshop.nl",
+    "webshop_name": "haarshop",
     "url": "https://www.haarshop.nl/",
     "korting_text": "Ontvang nu 50% korting op een High Tea voor 2 personen bij Fletcher Hotels bij…",
     "korting_text_nl": "50% korting op High Tea voor 2 personen bij Fletcher Hotels bij aankoop cadeau of giftset",
     "confidence": "high",
     "date": "2026-05-03 11:28:29",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "aliexpress",
@@ -1702,7 +1702,7 @@
     "korting_text_nl": "Kortingscodes voor €30, €23 en €15 korting bij bestellingen vanaf respectievelijk €239, €169 en €109",
     "confidence": "high",
     "date": "2026-05-02 09:57:41",
-    "shop_category": "Reizen"
+    "shop_category": "other"
   },
   {
     "webshop_name": "otrium",
@@ -1711,7 +1711,7 @@
     "korting_text_nl": "15% extra korting op geselecteerde zomerse items, alleen dit weekend",
     "confidence": "high",
     "date": "2026-05-02 10:58:10",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "jdsports",
@@ -1720,7 +1720,7 @@
     "korting_text_nl": "Tot 20% korting tijdens de feestdagen",
     "confidence": "high",
     "date": "2026-05-01 09:49:44",
-    "shop_category": "Sport"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "shoeby",
@@ -1729,7 +1729,7 @@
     "korting_text_nl": "20% korting op alle herenkleding",
     "confidence": "high",
     "date": "2026-05-01 12:54:52",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "8849tech",
@@ -1738,7 +1738,7 @@
     "korting_text_nl": "20 USD korting bij afrekenen tijdens May Day Sale van 29 april tot 8 mei",
     "confidence": "high",
     "date": "2026-05-01 12:54:16",
-    "shop_category": "Elektronica"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "cottonclub",
@@ -1747,7 +1747,7 @@
     "korting_text_nl": "Gratis festival sjaal bij aankoop vanaf €39,95 aan festival items",
     "confidence": "high",
     "date": "2026-05-01 12:54:38",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "desenio",
@@ -1756,7 +1756,7 @@
     "korting_text_nl": "Meidagen deals met tot 40% korting",
     "confidence": "high",
     "date": "2026-05-01 10:50:07",
-    "shop_category": "Beauty"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "emmasleepnl",
@@ -1765,7 +1765,7 @@
     "korting_text_nl": "Tot 50% korting tijdens Emma Comfort Weken",
     "confidence": "high",
     "date": "2026-05-01 11:53:28",
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "lookfantastic",
@@ -1774,16 +1774,16 @@
     "korting_text_nl": "Spring Sale met tot 40% korting en gratis Kérastase cadeau bij aankoop vanaf €70",
     "confidence": "high",
     "date": "2026-04-30 08:38:59",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
-    "webshop_name": "haarshop.nl",
+    "webshop_name": "haarshop",
     "url": "https://www.haarshop.nl/",
     "korting_text": "Bij besteding vanaf €50 kan je nu samen extra voordelig overnachten bij Fletcher Hotels, van…",
     "korting_text_nl": "Voordelig overnachten bij Fletcher Hotels vanaf €50 besteding, van €89 voor €35",
     "confidence": "high",
     "date": "2026-04-30 10:52:07",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "myproteinnl",
@@ -1792,7 +1792,7 @@
     "korting_text_nl": "15% korting op alles plus extra 5% korting met code MEER",
     "confidence": "high",
     "date": "2026-04-30 10:52:24",
-    "shop_category": "Sport"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "lucardi",
@@ -1801,7 +1801,7 @@
     "korting_text_nl": "Vanaf 20% korting op alles voor Moederdag",
     "confidence": "high",
     "date": "2026-04-30 11:52:59",
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "asos",
@@ -1810,7 +1810,7 @@
     "korting_text_nl": "Kortingen op de hele website tijdens de Zomerboost",
     "confidence": "high",
     "date": "2026-04-29 09:34:46",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "dilling",
@@ -1819,7 +1819,7 @@
     "korting_text_nl": "20% korting op alle artikelen voor dames, kinderen en baby's",
     "confidence": "high",
     "date": "2026-04-29 10:35:46",
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "douglas",
@@ -1828,7 +1828,7 @@
     "korting_text_nl": "20% korting op bijna alle geuren en geursets bij aankoop vanaf €25",
     "confidence": "high",
     "date": "2026-04-28 09:25:01",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "acer",
@@ -1837,7 +1837,7 @@
     "korting_text_nl": "Tot €400 korting tijdens de voorjaarsopruiming",
     "confidence": "high",
     "date": "2026-04-28 12:28:04",
-    "shop_category": "Mode"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "agtronica",
@@ -1846,7 +1846,7 @@
     "korting_text_nl": "Moederdag sale met tot 50% korting",
     "confidence": "high",
     "date": "2026-04-28 21:32:50",
-    "shop_category": "Reizen"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "douglas",
@@ -1855,7 +1855,7 @@
     "korting_text_nl": "20% korting op alles bij aankoop vanaf €25, alleen vandaag",
     "confidence": "high",
     "date": "2026-04-27 09:09:16",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "pinkgellac",
@@ -1864,7 +1864,7 @@
     "korting_text_nl": "Koop 2, krijg 1 gratis op geselecteerde producten",
     "confidence": "high",
     "date": "2026-04-27 08:08:49",
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "amazon",
@@ -1873,7 +1873,7 @@
     "korting_text_nl": "7 dagen epische tech deals met tot 30% korting",
     "confidence": "high",
     "date": "2026-04-27 09:09:08",
-    "shop_category": "Sport"
+    "shop_category": "other"
   },
   {
     "webshop_name": "bylashbabe",
@@ -1882,7 +1882,7 @@
     "korting_text_nl": "1+1 gratis op alles deze Koningsdag, alleen dit weekend",
     "confidence": "high",
     "date": "2026-04-26 10:03:08",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "desenio",
@@ -1891,7 +1891,7 @@
     "korting_text_nl": "40% korting op posters tijdslimiet vandaag",
     "confidence": "high",
     "date": "2026-04-26 10:03:16",
-    "shop_category": "Beauty"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "parfumdreams.nl",
@@ -1900,7 +1900,7 @@
     "korting_text_nl": "25% korting op je beautyroutine met code KING voor Koningsdag",
     "confidence": "high",
     "date": "2026-04-25 10:57:33",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "gymshark",
@@ -1909,7 +1909,7 @@
     "korting_text_nl": "30% korting op alles met code EXTRA30",
     "confidence": "high",
     "date": "2026-04-25 07:55:50",
-    "shop_category": "Mode"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "only",
@@ -1918,7 +1918,7 @@
     "korting_text_nl": "20% korting op geselecteerde merken voor Club ONLY leden",
     "confidence": "high",
     "date": "2026-04-24 08:52:02",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "shein",
@@ -1927,7 +1927,7 @@
     "korting_text_nl": "Grote besparing op meer dan 800.000 top sellers (shein moederdag)",
     "confidence": "medium",
     "date": "2026-04-24 07:51:35",
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "westwing",
@@ -1936,7 +1936,7 @@
     "korting_text_nl": "25% korting op de nieuwe Interior Design Service",
     "confidence": "high",
     "date": "2026-04-24 08:52:09",
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "hunkemoller",
@@ -1945,7 +1945,7 @@
     "korting_text_nl": "20% korting op geselecteerde items bij aankoop van minimaal 2 items tijdens Member Days",
     "confidence": "high",
     "date": "2026-04-23 06:55:33",
-    "shop_category": "Reizen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "weekday",
@@ -1954,7 +1954,7 @@
     "korting_text_nl": "20% korting op alles voor studenten, geldig van 23 april tot 3 mei",
     "confidence": "high",
     "date": "2026-04-23 10:13:42",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "zalando",
@@ -1963,7 +1963,7 @@
     "korting_text_nl": "20% korting op een groot assortiment met kortingscode DUTCHDEAL20",
     "confidence": "high",
     "date": "2026-04-23 07:01:23",
-    "shop_category": "Beauty"
+    "shop_category": "other"
   },
   {
     "webshop_name": "veromoda",
@@ -1972,7 +1972,7 @@
     "korting_text_nl": "20% korting bij aankoop van 2 items, alleen vandaag geldig",
     "confidence": "high",
     "date": "2026-04-23 09:13:10",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lookfantastic",
@@ -1981,7 +1981,7 @@
     "korting_text_nl": "25% korting op bijna alles met code KONING25 voor King's Day",
     "confidence": "high",
     "date": "2026-04-23 07:01:02",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "ninjakitchen",
@@ -1990,7 +1990,7 @@
     "korting_text_nl": "15% korting op web-exclusives met kortingscode WE15",
     "confidence": "high",
     "date": "2026-04-23 09:12:44",
-    "shop_category": "Elektronica"
+    "shop_category": "kitchen-cookware"
   },
   {
     "webshop_name": "parfumdreams.nl",
@@ -1999,7 +1999,7 @@
     "korting_text_nl": "25% korting met code APP25 plus 5% extra korting op sale, alleen in de app",
     "confidence": "high",
     "date": "2026-04-23 09:12:55",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "only",
@@ -2008,7 +2008,7 @@
     "korting_text_nl": "20% korting op de nieuwe shop",
     "confidence": "high",
     "date": "2026-04-21 18:44:59",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "emmasleepnl",
@@ -2017,7 +2017,7 @@
     "korting_text_nl": "10% extra korting op Boxspring met code BS10",
     "confidence": "high",
     "date": "2026-04-21 11:43:02",
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "loopearplugs",
@@ -2026,7 +2026,7 @@
     "korting_text_nl": "Tot 40% korting in de Archive Sale, exclusief voor nieuwsbriefabonnees",
     "confidence": "high",
     "date": "2026-04-21 18:44:47",
-    "shop_category": "Gezondheid"
+    "shop_category": "other"
   },
   {
     "webshop_name": "hema",
@@ -2035,7 +2035,7 @@
     "korting_text_nl": "Doordraaikorting - scoor je favorieten voor een doordraaiprijs",
     "confidence": "high",
     "date": "2026-04-21 03:13:22",
-    "shop_category": "Gezondheid"
+    "shop_category": "other"
   },
   {
     "webshop_name": "etos",
@@ -2043,7 +2043,7 @@
     "korting_text": "MEGA MOOI! deals 1+1 GRATIS 25% KORTING 50% KORTING Tot wel 70% korting!",
     "korting_text_nl": "Mega Mooi! Deals met tot wel 70% korting inclusief 1+1 gratis en 50% korting aanbiedingen",
     "date": "2026-04-21 11:25:40",
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "merodacosmetics",
@@ -2052,7 +2052,7 @@
     "korting_text_nl": "Moederdag sale met tot 40% korting",
     "confidence": "high",
     "date": "2026-04-21 03:13:45",
-    "shop_category": "Mode"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "parfumdreams.nl",
@@ -2061,7 +2061,7 @@
     "korting_text_nl": "22% korting met code BEAUTIES",
     "confidence": "high",
     "date": "2026-04-21 03:14:11",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "akuwoodpenal",
@@ -2070,7 +2070,7 @@
     "korting_text_nl": "Nieuwe promotie met kortingscode LENTE25",
     "confidence": "high",
     "date": "2026-04-21 03:12:40",
-    "shop_category": "Eten & Drinken"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "otrium",
@@ -2078,7 +2078,7 @@
     "korting_text": "Spring Deals: tot -80%",
     "korting_text_nl": "Spring Deals: tot -80%",
     "date": "2026-04-20 17:31:07",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lucardi",
@@ -2086,7 +2086,7 @@
     "korting_text": "Moederdagdeals tot -40% Jouw moeder, jouw Queen",
     "korting_text_nl": "Moederdagdeals tot 40% korting",
     "date": "2026-04-20 18:47:14",
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "westwing",
@@ -2094,7 +2094,7 @@
     "korting_text": "The Westwing Collection Days: tot -50% op interieur highlights",
     "korting_text_nl": "Tot 50% korting op interieur highlights tijdens Westwing Collection Days",
     "date": "2026-04-17 17:40:49",
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "emmasleepnl",
@@ -2102,7 +2102,7 @@
     "korting_text": "-10% met EXTRA10 & -20% met EXTRA20 03d 12u 49m 37s",
     "korting_text_nl": "-10% extra vanaf €700 met EXTRA10 & -20% extra vanaf €1300 met EXTRA20",
     "date": "2026-04-17 11:33:29",
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "kaptenandson",
@@ -2110,7 +2110,7 @@
     "korting_text": "Sunglasses 2 voor 1: Koop één, krijg één gratis",
     "korting_text_nl": "Sunglasses 2 voor 1: Koop één, krijg één gratis",
     "date": "2026-04-16 11:55:34",
-    "shop_category": "Wonen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "gymshark",
@@ -2118,7 +2118,7 @@
     "korting_text": "COMING SOON: TOT 50% KORTING* Bespaar vanaf 16 april 10:00 uur tot 50% op fits…",
     "korting_text_nl": "Coming soon: tot 50% korting op geselecteerde workout fits",
     "date": "2026-04-16 10:38:35",
-    "shop_category": "Mode"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "jdsports",
@@ -2126,7 +2126,7 @@
     "korting_text": "TOT WEL 60% KORTING + EXTRA 10% KORTING GEBRUIK CODE: EXTRA10",
     "korting_text_nl": "Tot wel 60% korting + extra 10% korting met code EXTRA10",
     "date": "2026-04-15 09:46:23",
-    "shop_category": "Sport"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "ginatricot",
@@ -2134,7 +2134,7 @@
     "korting_text": "final sale alle sale 70%",
     "korting_text_nl": "Alle sale 70%",
     "date": "2026-04-15 09:46:08",
-    "shop_category": "Beauty"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "ninjakitchen",
@@ -2142,7 +2142,7 @@
     "korting_text": "Bespaar tot 12% met de code: SWA12. Shop nu",
     "korting_text_nl": "Bespaar tot 12% met de code SWA12",
     "date": "2026-04-14 17:39:20",
-    "shop_category": "Elektronica"
+    "shop_category": "kitchen-cookware"
   },
   {
     "webshop_name": "idealofsweden",
@@ -2150,7 +2150,7 @@
     "korting_text": "MIX & STYLE: 3 FOR 2 ON EVERYTHING",
     "korting_text_nl": "3 voor 2 op alles",
     "date": "2026-04-15 09:46:16",
-    "shop_category": "Elektronica"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "aliexpress",
@@ -2158,7 +2158,7 @@
     "korting_text": "€60 korting Orders van €499+ Code:SRNL60, €45 korting Orders van €369+ Code:SRNL45, €30 korting Orders…",
     "korting_text_nl": "Voorjaarsvernieuwing kortingen met minimum bestelwaarde en codes",
     "date": "2026-04-14 07:24:33",
-    "shop_category": "Reizen"
+    "shop_category": "other"
   },
   {
     "webshop_name": "otrium",
@@ -2166,7 +2166,7 @@
     "korting_text": "Mid Season Clearance 25% extra korting Op geselecteerde items. Alleen deze week!",
     "korting_text_nl": "Mid Season Clearance met 25% extra korting op geselecteerde items alleen deze week",
     "date": "2026-04-13 17:18:32",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lucardi",
@@ -2174,7 +2174,7 @@
     "korting_text": "Golden Days tot 40% korting",
     "korting_text_nl": "Tot 40% korting tijdens Golden Days",
     "date": "2026-04-13 14:06:56",
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "lyko",
@@ -2182,7 +2182,7 @@
     "korting_text": "Spring Sale! 15-50% korting op HEEL veel!",
     "korting_text_nl": "Spring Sale! 15-50% korting op HEEL veel",
     "date": "2026-04-13 13:05:47",
-    "shop_category": "Wonen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "shoeby",
@@ -2190,7 +2190,7 @@
     "korting_text": "20% korting op de hele kids collectie",
     "korting_text_nl": "20% korting op de hele kids collectie",
     "date": "2026-04-12 16:52:09",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "mostwanted",
@@ -2198,7 +2198,7 @@
     "korting_text": "20% OFF EVERYTHING",
     "korting_text_nl": "20% korting op alles",
     "date": "2026-04-11 09:36:59",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "meetmethere",
@@ -2206,7 +2206,7 @@
     "korting_text": "20% OFF EVERYTHING",
     "korting_text_nl": "20% korting op alles tijdens Smart Shopping Weekend",
     "date": "2026-04-11 12:01:35",
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "boozyshop",
@@ -2214,7 +2214,7 @@
     "korting_text": "up to 67% off",
     "korting_text_nl": "Tot 67% korting shopping weekend",
     "date": "2026-04-11 11:00:40",
-    "shop_category": "Wonen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "lucardi",
@@ -2222,7 +2222,7 @@
     "korting_text": "Alleen vandaag 20% korting op alles*",
     "korting_text_nl": "20% korting op alles alleen vandaag",
     "date": "2026-04-11 12:02:48",
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "pinkgellac",
@@ -2230,7 +2230,7 @@
     "korting_text": "ELLE20 = 20% korting op alles",
     "korting_text_nl": "20% korting op alles met code ELLE20",
     "date": "2026-04-10 12:17:45",
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "myjewellery",
@@ -2238,7 +2238,7 @@
     "korting_text": "ELLE smart shopping days: shop nu met 20% korting",
     "korting_text_nl": "20% korting tijdens ELLE smart shopping days",
     "date": "2026-04-10 08:52:57",
-    "shop_category": "Elektronica"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "nakdfashion",
@@ -2246,7 +2246,7 @@
     "korting_text": "30% OFF BLAZERS | SHOP NOW",
     "korting_text_nl": "30% korting op blazers",
     "date": "2026-04-09 11:49:47",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "myjewellery",
@@ -2254,7 +2254,7 @@
     "korting_text": "Inschrijven pre-access ELLE shopping days",
     "korting_text_nl": "Inschrijven pre-access ELLE shopping days",
     "date": "2026-04-09 09:46:51",
-    "shop_category": "Elektronica"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "paulaschoice.nl",
@@ -2262,15 +2262,15 @@
     "korting_text": "15% KORTING OP EXFOLIANTEN",
     "korting_text_nl": "15% korting op exfolianten",
     "date": "2026-04-09 14:53:09",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
-    "webshop_name": "haarshop.nl",
+    "webshop_name": "haarshop",
     "url": "https://www.haarshop.nl/",
     "korting_text": "Score cadeautje bij Wella, Kérastase Chronologiste, Sebastian, Nioxin, OPI & Davines (op=op)",
     "korting_text_nl": "Cadeautje bij producten van bepaalde merken",
     "date": "2026-04-09 10:47:45",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "myproteinnl",
@@ -2278,7 +2278,7 @@
     "korting_text": "KONINGSDAG TOT 60% KORTING OP BIJNA ALLES EXTRA 5% KORTING MET CODE: ORANJE",
     "korting_text_nl": "Tot 60% korting op bijna alles met extra 10% korting met code MPDISKI",
     "date": "2026-04-08 10:40:34",
-    "shop_category": "Sport"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "douglas",
@@ -2286,7 +2286,7 @@
     "korting_text": "Douglas App Days 20% op alles Alleen in de app CODE: APPONLY",
     "korting_text_nl": "20% korting op alles in de app met code APPONLY",
     "date": "2026-04-08 07:32:24",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "bijenkorf",
@@ -2294,7 +2294,7 @@
     "korting_text": "KIDS FASHION DEALS Tot 30% korting",
     "korting_text_nl": "Tot 30% korting op kids fashion deals",
     "date": "2026-04-08 07:32:32",
-    "shop_category": "Gezondheid"
+    "shop_category": "other"
   },
   {
     "webshop_name": "sophiamae",
@@ -2302,7 +2302,7 @@
     "korting_text": "WITH PURCHASES FROM €60 GIFT: 3 PERFUME SAMPLES",
     "korting_text_nl": "Cadeau: 3 parfum samples bij aankopen vanaf €60",
     "date": "2026-04-07 15:27:00",
-    "shop_category": "Sport"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "otrium",
@@ -2310,7 +2310,7 @@
     "korting_text": "Laatste week Tot 85% korting",
     "korting_text_nl": "Laatste week Mid Season Sale tot 85% korting",
     "date": "2026-04-07 13:24:44",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "veromoda",
@@ -2318,7 +2318,7 @@
     "korting_text": "Tot 40% korting op GIRL!",
     "korting_text_nl": "Tot 40% korting op GIRL!",
     "date": "2026-04-07 13:25:07",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lucardi",
@@ -2326,7 +2326,7 @@
     "korting_text": "Daily favorites tot -60%",
     "korting_text_nl": "Dagelijkse favorieten tot 60% korting",
     "date": "2026-04-07 12:12:13",
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "westwing",
@@ -2334,7 +2334,7 @@
     "korting_text": "Shop er 4 met 15% korting Bij aankoop van 4 dezelfde Westwing Collection stoelen",
     "korting_text_nl": "15% korting bij aankoop van 4 dezelfde Westwing Collection stoelen",
     "date": "2026-04-06 13:29:21",
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "xenos",
@@ -2342,7 +2342,7 @@
     "korting_text": "20% KORTING OP ÉÉN ARTIKEL NAAR KEUZE",
     "korting_text_nl": "20% korting op één artikel naar keuze voor leden",
     "date": "2026-04-06 14:30:26",
-    "shop_category": "Elektronica"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "bylashbabe",
@@ -2350,7 +2350,7 @@
     "korting_text": "KOOP 2, ONTVANG 2 GRATIS\nGEEN CODE NODIG\nNU LIVE — ALLEEN 48 UUR",
     "korting_text_nl": "Koop 2, ontvang 2 gratis - geen code nodig, alleen 48 uur",
     "date": "2026-04-04 09:46:17",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "otrium",
@@ -2358,7 +2358,7 @@
     "korting_text": "15% extra korting Paasdeals op geselecteerde items. Tot en met maandag.",
     "korting_text_nl": "15% extra korting op geselecteerde items tot en met maandag",
     "date": "2026-04-03 12:33:12",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "cider",
@@ -2366,7 +2366,7 @@
     "korting_text": "Happy Easter! Up to 70% Off",
     "korting_text_nl": "Happy Easter! Up to 70% Off",
     "date": "2026-04-03 10:17:19",
-    "shop_category": "Sport"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "charlottetilbury",
@@ -2374,7 +2374,7 @@
     "korting_text": "UP TO A MAGICAL 20% OFF GLOBALLY-LOVED BEAUTY KITS!",
     "korting_text_nl": "Tot 20% korting op globally-loved beauty kits",
     "date": "2026-04-03 09:16:28",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "koreanskincare",
@@ -2382,7 +2382,7 @@
     "korting_text": "SPRING SALE: 15% OFF SELECTED BRANDS",
     "korting_text_nl": "Voorjaarsuitverkoop: 15% korting op geselecteerde merken",
     "date": "2026-04-03 11:31:40",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "ginatricot",
@@ -2390,7 +2390,7 @@
     "korting_text": "Sale tot 70%",
     "korting_text_nl": "Sale verhoogd tot 70%",
     "date": "2026-04-03 07:43:29",
-    "shop_category": "Beauty"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "omoda",
@@ -2398,7 +2398,7 @@
     "korting_text": "SELECTED ITEMS NOW REDUCED Spring Deals",
     "korting_text_nl": "Spring Deals: selected items now reduced",
     "date": "2026-04-02 12:35:50",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "nakdfashion",
@@ -2406,7 +2406,7 @@
     "korting_text": "The Spring Celebration: 25% OFF EVERYTHING",
     "korting_text_nl": "The Spring Celebration: 25% off everything",
     "date": "2026-04-02 10:33:12",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "pinkgellac",
@@ -2414,7 +2414,7 @@
     "korting_text": "GRATIS 444 Sparkling Blue bij bestellingen vanaf €39+",
     "korting_text_nl": "Gratis 444 Sparkling Blue bij bestellingen vanaf €39+",
     "date": "2026-04-02 11:33:48",
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "pinkgellac",
@@ -2422,7 +2422,7 @@
     "korting_text": "Nieuwe kleuren in de Spring Sale – shop nu!",
     "korting_text_nl": "Nieuwe kleuren in de Spring Sale",
     "date": "2026-04-01 11:57:00",
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "nakdfashion",
@@ -2430,7 +2430,7 @@
     "korting_text": "30% OFF WARDROBE ESSENTIALS | SHOP NOW",
     "korting_text_nl": "30% korting op garderobe essentials",
     "date": "2026-03-31 10:49:41",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lucardi",
@@ -2438,7 +2438,7 @@
     "korting_text": "Eggsclusive Paasdeal tot -60%.",
     "korting_text_nl": "Eggsclusive Paasdeal tot -60%.",
     "date": "2026-03-30 10:49:33",
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "snuggs",
@@ -2446,7 +2446,7 @@
     "korting_text": "April sale: 40% korting op alles.",
     "korting_text_nl": "April sale: 40% korting op alles.",
     "date": "2026-03-30 10:49:47",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "veromoda",
@@ -2454,7 +2454,7 @@
     "korting_text": "Member price: 20% korting voor leden.",
     "korting_text_nl": "Member price: 20% korting voor leden.",
     "date": "2026-03-30 11:50:28",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "hollandandbarrett",
@@ -2462,7 +2462,7 @@
     "korting_text": "Megaweek 3 halen = 1 betalen op meer dan 2.000 producten.",
     "korting_text_nl": "Megaweek 3 halen = 1 betalen op meer dan 2.000 producten.",
     "date": "2026-03-30 09:48:53",
-    "shop_category": "Gezondheid"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "otrium",
@@ -2470,7 +2470,7 @@
     "korting_text": "Tot -80% op iconische items tijdens de mid season sale.",
     "korting_text_nl": "Tot -80% op iconische items tijdens de mid season sale.",
     "date": "2026-03-30 11:50:12",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "oliviakate",
@@ -2478,7 +2478,7 @@
     "korting_text": "16% korting op alles, alleen vandaag (code: CELEBRATE16) + gratis cap & canvas tas bij besteding vanaf €100.",
     "korting_text_nl": "16% korting op alles, alleen vandaag (code: CELEBRATE16) + gratis cap & canvas tas bij besteding vanaf €100.",
     "date": "2026-03-30 12:50:58",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "zalando",
@@ -2486,7 +2486,7 @@
     "korting_text": "Tot wel 50% + 20% EXTRA korting met kortingscode LENTE-20.",
     "korting_text_nl": "Tot wel 50% + 20% EXTRA korting met kortingscode LENTE-20.",
     "date": "2026-03-29 11:40:12",
-    "shop_category": "Beauty"
+    "shop_category": "other"
   },
   {
     "webshop_name": "boozyshop",
@@ -2494,7 +2494,7 @@
     "korting_text": "Nieuw: \"Up to -80% OFF\" grootste sale ooit.",
     "korting_text_nl": "Nieuw: \"Up to -80% OFF\" grootste sale ooit.",
     "date": "2026-03-29 09:39:25",
-    "shop_category": "Wonen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "only",
@@ -2502,7 +2502,7 @@
     "korting_text": "20% korting op jeans voor Club ONLY Member Days.",
     "korting_text_nl": "20% korting op jeans voor Club ONLY Member Days.",
     "date": "2026-03-29 11:40:19",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "jdsports",
@@ -2510,7 +2510,7 @@
     "korting_text": "Lente deals met tot wel 50% korting.",
     "korting_text_nl": "Lente deals met tot wel 50% korting.",
     "date": "2026-03-27 06:50:14",
-    "shop_category": "Sport"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "asos",
@@ -2518,7 +2518,7 @@
     "korting_text": "20% korting op duizenden stijlen met code BIGDEAL.",
     "korting_text_nl": "20% korting op duizenden stijlen met code BIGDEAL.",
     "date": "2026-03-27 05:49:26",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "veromoda",
@@ -2526,7 +2526,7 @@
     "korting_text": "20% korting op broeken bij een app-aanbieding.",
     "korting_text_nl": "20% korting op broeken bij een app-aanbieding.",
     "date": "2026-03-26 10:43:38",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "aybl",
@@ -2534,7 +2534,7 @@
     "korting_text": "Tot 60% Off Sitewide Pak jouw deel van de Sale",
     "korting_text_nl": "Tot 60% Off Sitewide",
     "date": "2026-03-24 04:32:46",
-    "shop_category": "Eten & Drinken"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "hollandandbarrett",
@@ -2542,7 +2542,7 @@
     "korting_text": "ALLEEN DEZE WEEK",
     "korting_text_nl": "Deze week aanmelden voor mijn H&B Voordeelkaart",
     "date": "2026-03-24 06:34:36",
-    "shop_category": "Gezondheid"
+    "shop_category": "supplements-nutrition"
   },
   {
     "webshop_name": "xoxowildhearts",
@@ -2550,7 +2550,7 @@
     "korting_text": "MIX&MATCH 2+1 GRATIS CODE: LENTE",
     "korting_text_nl": "Mix & match 2+1 gratis met code LENTE",
     "date": "2026-03-22 09:38:50",
-    "shop_category": "Sport"
+    "shop_category": "electronics"
   },
   {
     "webshop_name": "nakdfashion",
@@ -2558,7 +2558,7 @@
     "korting_text": "25% OFF EVERYTHING | SHOP NOW",
     "korting_text_nl": "25% korting op alles",
     "date": "2026-03-22 08:37:50",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "only",
@@ -2566,7 +2566,7 @@
     "korting_text": "SWEAT 25% OFF 2. PIECE",
     "korting_text_nl": "25% korting op tweede sweatstuk voor kids leden",
     "date": "2026-03-22 08:38:03",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "hunkemoller",
@@ -2574,7 +2574,7 @@
     "korting_text": "EARLY ACCESS VOOR MEMBERS 3e bh gratis",
     "korting_text_nl": "3e bh gratis voor leden",
     "date": "2026-03-22 05:24:54",
-    "shop_category": "Reizen"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "zalando",
@@ -2582,7 +2582,7 @@
     "korting_text": "Tot -50%* in de lentesale De nieuwste looks van dit seizoen, nu met korting",
     "korting_text_nl": "Tot -50%* in de lentesale",
     "date": "2026-03-21 09:18:42",
-    "shop_category": "Beauty"
+    "shop_category": "other"
   },
   {
     "webshop_name": "pinkgellac",
@@ -2590,7 +2590,7 @@
     "korting_text": "GRATIS Emily in Paris set bij een Luxury Starterset",
     "korting_text_nl": "GRATIS Emily in Paris set bij een Luxury Starterset",
     "date": "2026-03-21 09:18:18",
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "otrium",
@@ -2598,7 +2598,7 @@
     "korting_text": "15% extra korting Vier de lente met een nieuwe look - shop geselecteerde items",
     "korting_text_nl": "15% extra korting op geselecteerde items",
     "date": "2026-03-20 08:18:36",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "leolive",
@@ -2606,7 +2606,7 @@
     "korting_text": "Up to 50% off ARCHIVE SALE",
     "korting_text_nl": "Tot 50% korting op archiefverkoop",
     "date": "2026-03-20 06:10:43",
-    "shop_category": "Gezondheid"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "charlottetilbury",
@@ -2614,7 +2614,7 @@
     "korting_text": "A MAGICAL 20% OFF EVERYTHING!* + A FREE FULL-SIZE SPOTLIGHT BEAUTY LIGHT WAND WHEN YOU…",
     "korting_text_nl": "20% korting op alles plus een gratis Spotlight Beauty Light Wand bij besteding van €110",
     "date": "2026-03-19 04:46:10",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "emmasleepnl",
@@ -2622,7 +2622,7 @@
     "korting_text": "-10% extra met EMMA10 & -20% met EMMA20",
     "korting_text_nl": "Extra korting met codes EMMA10 en EMMA20",
     "date": "2026-03-19 04:46:19",
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "nakdfashion",
@@ -2630,7 +2630,7 @@
     "korting_text": "25% OFF DRESSES | SHOP NOW",
     "korting_text_nl": "25% korting op jurken",
     "date": "2026-03-19 07:48:47",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "westwing",
@@ -2638,7 +2638,7 @@
     "korting_text": "Ferm Living klassiekers in de SALE",
     "korting_text_nl": "Ferm Living klassiekers in de SALE",
     "date": "2026-03-18 08:17:28",
-    "shop_category": "Wonen"
+    "shop_category": "home-interior"
   },
   {
     "webshop_name": "pinkgellac",
@@ -2646,7 +2646,7 @@
     "korting_text": "De Spring Sale is hier! Shop nu met tot 40% korting",
     "korting_text_nl": "De Spring Sale is hier! Shop nu met tot 40% korting",
     "date": "2026-03-17 08:10:17",
-    "shop_category": "Reizen"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "asos",
@@ -2654,7 +2654,7 @@
     "korting_text": "SALE NU LIVE",
     "korting_text_nl": "Sale nu live",
     "date": "2026-03-17 04:46:24",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "lucardi",
@@ -2662,7 +2662,7 @@
     "korting_text": "Sparkle days tot -60%",
     "korting_text_nl": "Sparkle dagen korting tot 60%",
     "date": "2026-03-16 06:19:08",
-    "shop_category": "Beauty"
+    "shop_category": "jewelry"
   },
   {
     "webshop_name": "nakdfashion",
@@ -2670,7 +2670,7 @@
     "korting_text": "30% OFF JEANS | SHOP NOW",
     "korting_text_nl": "30% korting op jeans",
     "date": "2026-03-16 07:20:13",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "stronger",
@@ -2678,7 +2678,7 @@
     "korting_text": "30% korting op geselecteerde stijlen",
     "korting_text_nl": "30% korting op geselecteerde stijlen",
     "date": "2026-03-16 07:20:27",
-    "shop_category": "Mode"
+    "shop_category": "sports-fitness"
   },
   {
     "webshop_name": "douglas",
@@ -2686,7 +2686,7 @@
     "korting_text": "20% OP ALLES BIJ AANKOOP VANAF € 25,-",
     "korting_text_nl": "20% op alles bij aankoop vanaf € 25,-",
     "date": "2026-03-15 02:58:58",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "shoeby",
@@ -2694,7 +2694,7 @@
     "korting_text": "final SALE weekend alle dames & heren SALE onder 20.- alle kids SALE onder 10.-",
     "korting_text_nl": "Final sale weekend met artikelen onder vaste prijzen",
     "date": "2026-03-14 05:43:02",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "shoeby",
@@ -2702,7 +2702,7 @@
     "korting_text": "2e heren jeans halve prijs",
     "korting_text_nl": "2e heren jeans halve prijs",
     "date": "2026-03-13 06:30:50",
-    "shop_category": "Mode"
+    "shop_category": "fashion"
   },
   {
     "webshop_name": "albelli",
@@ -2710,15 +2710,15 @@
     "korting_text": "25% korting op bestellingen vanaf € 50 | Code: MOMENTEN25 | t/m 23/03/2026, 22.59 uur",
     "korting_text_nl": "25% korting op bestellingen vanaf €50 met code MOMENTEN25 t/m 23/03/2026, 22.59 uur",
     "date": "2026-03-13 02:26:45",
-    "shop_category": "Gezondheid"
+    "shop_category": "gifts-personalised"
   },
   {
-    "webshop_name": "haarshop.nl",
+    "webshop_name": "haarshop",
     "url": "https://www.haarshop.nl/",
     "korting_text": "SHOP 4 PRODUCTEN EN KRIJG 25% KORTING! op het goedkoopste product, de korting is automatisch…",
     "korting_text_nl": "25% korting op het goedkoopste product bij aankoop van 4 producten",
     "date": "2026-03-12 03:08:43",
-    "shop_category": "Beauty"
+    "shop_category": "beauty"
   },
   {
     "webshop_name": "ginatricot",
@@ -2726,6 +2726,6 @@
     "korting_text": "pre-access - online only sale tot 50% korting",
     "korting_text_nl": "sale tot 50% korting",
     "date": "2026-03-12 03:08:41",
-    "shop_category": "Beauty"
+    "shop_category": "fashion"
   }
 ]

@@ -44,21 +44,23 @@ export class BlackfridayComponent implements OnInit {
     return this.useLocalData ? this.devJsonUrl : this.prodJsonUrl;
   }
 
-  private readonly fallbackCategory = 'Overig';
+  private readonly fallbackCategory = 'other';
 
-  // A little flair: an emoji per category for the chips and section headers.
-  private categoryIcons: { [key: string]: string } = {
-    'Mode': '👗',
-    'Beauty': '💄',
-    'Elektronica': '📱',
-    'Wonen': '🛋️',
-    'Sport': '🏃',
-    'Reizen': '✈️',
-    'Eten & Drinken': '🍷',
-    'Kids & Baby': '🧸',
-    'Telecom': '📶',
-    'Gezondheid': '🌿',
-    'Overig': '🛍️',
+  // Maps the feed's category slugs to a Dutch display label + emoji for the
+  // chips, section headers and card tags. Unknown slugs fall back gracefully.
+  private categoryMeta: { [slug: string]: { label: string; icon: string } } = {
+    'fashion': { label: 'Mode', icon: '👗' },
+    'beauty': { label: 'Beauty', icon: '💄' },
+    'home-interior': { label: 'Wonen & Interieur', icon: '🛋️' },
+    'jewelry': { label: 'Sieraden', icon: '💍' },
+    'supplements-nutrition': { label: 'Supplementen & Voeding', icon: '💊' },
+    'electronics': { label: 'Elektronica', icon: '📱' },
+    'sports-fitness': { label: 'Sport & Fitness', icon: '🏃' },
+    'baby-kids': { label: 'Baby & Kids', icon: '🧸' },
+    'gifts-personalised': { label: 'Cadeaus & Personalisatie', icon: '🎁' },
+    'kitchen-cookware': { label: 'Keuken & Koken', icon: '🍳' },
+    'food-drinks': { label: 'Eten & Drinken', icon: '🍷' },
+    'other': { label: 'Overig', icon: '🛍️' },
   };
 
   year = new Date().getFullYear();
@@ -182,8 +184,18 @@ export class BlackfridayComponent implements OnInit {
     }
   }
 
-  categoryIcon(name: string): string {
-    return this.categoryIcons[name] || '🛍️';
+  categoryLabel(slug: string | undefined): string {
+    if (!slug) return this.categoryMeta[this.fallbackCategory].label;
+    const meta = this.categoryMeta[slug];
+    if (meta) return meta.label;
+    // Graceful fallback for an unmapped slug: "home-interior" -> "Home interior".
+    const pretty = slug.replace(/[-_]+/g, ' ');
+    return pretty.charAt(0).toUpperCase() + pretty.slice(1);
+  }
+
+  categoryIcon(slug: string | undefined): string {
+    if (!slug) slug = this.fallbackCategory;
+    return this.categoryMeta[slug]?.icon || '🛍️';
   }
 
   formatDate(date: string): string {
