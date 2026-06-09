@@ -2098,6 +2098,14 @@ export class AffiliateLinkService {
         url: 'https://farfetch.com',
         dummyCode: '10OFF'
     },
+    'prettylittlething': {
+        url: 'https://tidd.ly/4e6Fr00',
+        dummyCode: 'UK12ALL'
+    },
+    'myjewellery': {
+        url: 'https://www.my-jewellery.com/',
+        dummyCode: 'HOUSTON20'
+    },
   };
 
   constructor() { }
