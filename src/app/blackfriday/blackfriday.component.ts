@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { Component, OnInit, ViewChild, ElementRef, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { DatePipe, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LOCALE_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -101,7 +101,8 @@ export class BlackfridayComponent implements OnInit {
     private affiliateLinkService: AffiliateLinkService,
     private meta: MetaService,
     private datePipe: DatePipe,
-    private logosService: LogosService
+    private logosService: LogosService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.meta.updateTitle(`Black Friday ${this.year} — alle deals per categorie | Diski`);
     this.meta.updateMetaInfo(
@@ -113,6 +114,13 @@ export class BlackfridayComponent implements OnInit {
 
   ngOnInit() {
     this.initialPageLoad = true;
+
+    // Only load data in the browser. During prerender (build time) this leaves
+    // the static HTML as a clean loading skeleton instead of a frozen build-time
+    // snapshot, while the client still fetches fresh data on every page load.
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
 
     const urlWithNoCache = `${this.jsonUrl}?t=${new Date().getTime()}`;
 
