@@ -18,6 +18,10 @@ interface WebshopKorting {
   korting_text_nl: string;
   date: string;
   shop_category?: string;
+  // Written only when an operator taps 👎 in the Telegram review bot ("bad/noise"
+  // deal). The key is absent when not flagged — never written as false — so a
+  // missing value means "not flagged" (for older entries: "unreviewed").
+  thumbs_down?: boolean;
 }
 
 interface CategoryGroup {
@@ -144,7 +148,11 @@ export class BlackfridayComponent implements OnInit {
     forkJoin({ promotions: promotions$, registry: registry$ }).subscribe(({ promotions, registry }) => {
       const shops = registry?.shops ?? {};
 
-      this.allDiscounts = promotions.map((item) => ({
+      this.allDiscounts = promotions
+        // Drop deals an operator flagged 👎 as bad/noise in the review bot.
+        // Only true is ever written; absent means not-flagged, so keep those.
+        .filter((item) => item.thumbs_down !== true)
+        .map((item) => ({
         ...item,
         url: this.affiliateLinkService.getAffiliateLink(item.webshop_name) || item.url,
         // Category comes from the registry; fall back to the feed's own value (if any),
