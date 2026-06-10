@@ -71,7 +71,7 @@ export class BlackfridayComponent implements OnInit {
     'pets': 'Dieren',
     'travel-leisure': 'Reizen & vrije tijd',
     'other': 'Overig',
-    'nieuwste': 'Nieuwste',
+    'alle': 'Alle',
   };
 
   year = new Date().getFullYear();
@@ -79,14 +79,12 @@ export class BlackfridayComponent implements OnInit {
   allDiscounts: WebshopKorting[] = [];
   groups: CategoryGroup[] = [];
   categories: { name: string; count: number }[] = [];
-  // All sections shown stacked: Nieuwste first, then the categories.
+  // All sections shown stacked: Alle first, then the categories.
   sections: CategoryGroup[] = [];
-  activeCategory = 'nieuwste';
+  activeCategory = 'alle';
 
-  // "Nieuwste" is a synthetic category pinned at the top: the deals from the most
-  // recent few days present in the dataset (not relative to today).
-  private readonly nieuwsteWindowDays = 3;
-  nieuwsteDeals: WebshopKorting[] = [];
+  // "Alle" is a synthetic category pinned at the top: every deal, newest first.
+  alleDeals: WebshopKorting[] = [];
 
   // Each section is collapsed to its newest few deals, expandable per section.
   previewCount = 4;
@@ -161,7 +159,7 @@ export class BlackfridayComponent implements OnInit {
       }));
 
       this.buildGroups();
-      this.buildNieuwste();
+      this.buildAlle();
       this.buildSections();
       this.totalDeals = this.allDiscounts.length;
       this.initialPageLoad = false;
@@ -191,38 +189,15 @@ export class BlackfridayComponent implements OnInit {
     this.categories = this.groups.map(g => ({ name: g.name, count: g.items.length }));
   }
 
-  /** "Nieuwste": deals from the most recent few calendar days present in the dataset. */
-  private buildNieuwste() {
-    if (!this.allDiscounts.length) {
-      this.nieuwsteDeals = [];
-      return;
-    }
-    const dayOf = (d: WebshopKorting) => (d.date || '').slice(0, 10); // YYYY-MM-DD
-    const maxDay = this.allDiscounts.reduce((m, d) => {
-      const day = dayOf(d);
-      return day > m ? day : m;
-    }, '');
-
-    const cutoff = new Date(`${maxDay}T00:00:00`);
-    cutoff.setDate(cutoff.getDate() - (this.nieuwsteWindowDays - 1));
-    const cutoffDay = this.toIsoDay(cutoff);
-
-    this.nieuwsteDeals = this.allDiscounts
-      .filter(d => dayOf(d) >= cutoffDay)
-      .sort((a, b) => b.date.localeCompare(a.date));
+  /** "Alle": every deal, newest first. */
+  private buildAlle() {
+    this.alleDeals = [...this.allDiscounts].sort((a, b) => b.date.localeCompare(a.date));
   }
 
-  private toIsoDay(d: Date): string {
-    const y = d.getFullYear();
-    const m = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
-    return `${y}-${m}-${day}`;
-  }
-
-  /** Stacked sections: Nieuwste pinned on top (when it has deals), then the categories. */
+  /** Stacked sections: Alle pinned on top (when it has deals), then the categories. */
   private buildSections() {
     this.sections = [
-      ...(this.nieuwsteDeals.length ? [{ name: 'nieuwste', items: this.nieuwsteDeals }] : []),
+      ...(this.alleDeals.length ? [{ name: 'alle', items: this.alleDeals }] : []),
       ...this.groups,
     ];
   }
@@ -277,9 +252,9 @@ export class BlackfridayComponent implements OnInit {
     this.catCanRight = el.scrollLeft + el.clientWidth < el.scrollWidth - 4;
   }
 
-  /** Section heading: a friendlier title for Nieuwste, the plain label otherwise. */
+  /** Section heading: a friendlier title for Alle, the plain label otherwise. */
   sectionTitle(name: string): string {
-    if (name === 'nieuwste') return 'Nieuwste deals';
+    if (name === 'alle') return 'Alle deals';
     return this.categoryLabel(name);
   }
 

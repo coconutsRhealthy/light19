@@ -49,8 +49,8 @@
     <nav class="bf-cats" aria-label="Categorieën">
       <div class="bf-cats__wrap" [class.can-left]="catCanLeft" [class.can-right]="catCanRight">
         <div class="bf-cats__scroll" #catScroll (scroll)="updateCatFades()">
-          <button class="bf-chip" [class.is-active]="activeCategory === 'nieuwste'" (click)="selectCategory('nieuwste')">
-            Nieuwste <span class="bf-chip__count">{{ nieuwsteDeals.length }}</span>
+          <button class="bf-chip" [class.is-active]="activeCategory === 'alle'" (click)="selectCategory('alle')">
+            Alle <span class="bf-chip__count">{{ alleDeals.length }}</span>
           </button>
           @for (c of categories; track c.name) {
             <button class="bf-chip" [class.is-active]="activeCategory === c.name" (click)="selectCategory(c.name)">
@@ -118,7 +118,7 @@
       </section>
     }
 
-    <!-- Default: all sections stacked (Nieuwste on top), each collapsed to a few -->
+    <!-- Default: all sections stacked (Alle on top), each collapsed to a few -->
     @else {
       @for (s of sections; track s.name) {
         <section class="bf-section" [id]="'sec-' + s.name">
@@ -155,6 +155,8 @@
             <button type="button" class="bf-more" (click)="toggleCategory(s.name)">
               @if (isExpanded(s.name)) {
                 Toon minder <span class="bf-more__chev">↑</span>
+              } @else if (s.name === 'alle') {
+                Toon alle {{ s.items.length }} deals <span class="bf-more__chev">↓</span>
               } @else {
                 Toon alle {{ s.items.length }} {{ categoryLabel(s.name) }}-deals <span class="bf-more__chev">↓</span>
               }
