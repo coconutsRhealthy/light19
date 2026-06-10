@@ -10,6 +10,7 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { SpaceNkBlogComponent } from './blogs/space-nk/space-nk-blog.component';
 import { LookfantasticBlogComponent } from './blogs/lookfantastic/lookfantastic-blog.component';
 import { Top5Component } from './top5/top5.component';
+import { ShareCodeComponent } from './share-code/share-code.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { hasV2Content } from './has-v2-content.guard';
@@ -25,6 +26,7 @@ export const routes: Routes = [
   { path: 'blogs/space-nk', component: SpaceNkBlogComponent },
   { path: 'blogs/lookfantastic', component: LookfantasticBlogComponent },
   { path: 'top5', component: Top5Component },
+  { path: 'code-delen', component: ShareCodeComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   // Noindexed preview of ANY shop with v2 content (data.preview drives the noindex).
   { path: 'v2/:company', component: CompanyCodesV2Component, data: { preview: true }, resolve: { brandContent: brandContentResolver } },

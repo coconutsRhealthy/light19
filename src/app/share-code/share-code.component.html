@@ -1,0 +1,105 @@
+<app-navbar></app-navbar>
+
+<!-- HERO -->
+<div class="tw-bg-gradient-to-br tw-from-rose-50 tw-via-pink-50 tw-to-fuchsia-50 tw-border-b tw-border-pink-100">
+  <div class="tw-max-w-3xl tw-mx-auto tw-px-4 tw-py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="tw-text-sm tw-text-gray-400 tw-mb-6 tw-flex tw-items-center tw-gap-1">
+      <a routerLink="/" class="hover:tw-text-pink-500 tw-transition-colors">Diski</a>
+      <span>/</span>
+      <span class="tw-text-gray-600">Jouw code delen</span>
+    </nav>
+
+    <!-- Chip -->
+    <span class="tw-inline-block tw-bg-pink-100 tw-text-pink-700 tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wider tw-px-3 tw-py-1 tw-rounded-full tw-mb-4">
+      Voor creators &amp; ambassadeurs
+    </span>
+
+    <h1 class="tw-text-3xl md:tw-text-4xl tw-font-extrabold tw-text-gray-900 tw-leading-tight tw-mb-4">
+      Deel jouw kortingscode op Diski
+    </h1>
+
+    <p class="tw-text-lg tw-text-gray-600">
+      Heb jij een eigen kortingscode en wil je hem zichtbaar maken voor duizenden shoppers? Dat kan! Plaats jouw code gratis op Diski en bereik precies de mensen die op zoek zijn naar een goede deal.
+    </p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="tw-max-w-3xl tw-mx-auto tw-px-4 tw-py-10 tw-text-gray-800 tw-leading-relaxed">
+
+  <!-- STEPS -->
+  <h2 class="tw-text-2xl tw-font-bold tw-mb-2">Zo werkt het</h2>
+  <p class="tw-text-gray-500 tw-mb-8">In drie simpele stappen staat jouw code online.</p>
+
+  <ol class="tw-space-y-4 tw-mb-12">
+    <li class="tw-flex tw-gap-4 tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-5 tw-shadow-sm">
+      <span class="tw-flex-shrink-0 tw-w-9 tw-h-9 tw-rounded-full tw-bg-pink-500 tw-text-white tw-font-bold tw-flex tw-items-center tw-justify-center">1</span>
+      <div>
+        <h3 class="tw-font-bold tw-text-gray-900 tw-mb-1">Kies een afbeelding</h3>
+        <p class="tw-text-gray-600 tw-text-sm">Pak een van de onderstaande Diski-afbeeldingen — ze zijn gemaakt om mooi in je Instagram-story te passen.</p>
+      </div>
+    </li>
+    <li class="tw-flex tw-gap-4 tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-5 tw-shadow-sm">
+      <span class="tw-flex-shrink-0 tw-w-9 tw-h-9 tw-rounded-full tw-bg-pink-500 tw-text-white tw-font-bold tw-flex tw-items-center tw-justify-center">2</span>
+      <div>
+        <h3 class="tw-font-bold tw-text-gray-900 tw-mb-1">Deel hem in je story</h3>
+        <p class="tw-text-gray-600 tw-text-sm">Post de afbeelding in je Instagram-story en voeg een link toe naar <strong class="tw-font-semibold tw-text-gray-900">diski.nl</strong>, zodat je volgers meteen kunnen doorklikken.</p>
+      </div>
+    </li>
+    <li class="tw-flex tw-gap-4 tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-5 tw-shadow-sm">
+      <span class="tw-flex-shrink-0 tw-w-9 tw-h-9 tw-rounded-full tw-bg-pink-500 tw-text-white tw-font-bold tw-flex tw-items-center tw-justify-center">3</span>
+      <div>
+        <h3 class="tw-font-bold tw-text-gray-900 tw-mb-1">Mail ons jouw code</h3>
+        <p class="tw-text-gray-600 tw-text-sm">Stuur een mailtje met je code (en een screenshot van je story) naar <a href="mailto:info@diski.nl" class="tw-text-pink-600 tw-font-medium hover:tw-underline">info&#64;diski.nl</a>. Wij zetten jouw code dan zo snel mogelijk online.</p>
+      </div>
+    </li>
+  </ol>
+
+  <!-- STORY IMAGES -->
+  <h2 class="tw-text-2xl tw-font-bold tw-mb-2">Kies jouw favoriete afbeelding</h2>
+  <p class="tw-text-gray-500 tw-mb-6">Tik op een afbeelding om hem op volledig formaat te openen en op te slaan.</p>
+
+  <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 md:tw-grid-cols-5 tw-gap-4 tw-mb-12">
+    @for (img of storyImages; track img.src; let i = $index) {
+      <a
+        [href]="img.src"
+        target="_blank"
+        rel="noopener"
+        class="tw-group tw-block tw-relative tw-aspect-[9/16] tw-rounded-2xl tw-overflow-hidden tw-border tw-border-gray-100 tw-shadow-sm hover:tw-shadow-md tw-transition-shadow"
+      >
+        <img
+          [src]="img.src"
+          [alt]="img.alt"
+          loading="lazy"
+          class="tw-w-full tw-h-full tw-object-cover tw-transition-transform tw-duration-300 group-hover:tw-scale-105"
+        >
+        <span class="tw-absolute tw-top-2 tw-left-2 tw-bg-white/90 tw-text-gray-700 tw-text-xs tw-font-semibold tw-px-2 tw-py-0.5 tw-rounded-full">
+          #{{ i + 1 }}
+        </span>
+      </a>
+    }
+  </div>
+
+  <!-- EMAIL CTA -->
+  <div class="tw-bg-gradient-to-br tw-from-pink-500 tw-to-rose-500 tw-rounded-2xl tw-p-8 tw-text-white tw-text-center">
+    <p class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-widest tw-mb-2 tw-opacity-80">Klaar om te delen?</p>
+    <h2 class="tw-text-2xl tw-font-extrabold tw-mb-2">Stuur ons jouw code</h2>
+    <p class="tw-opacity-90 tw-mb-6">Heb je je story geplaatst? Mail je code naar ons en we zetten hem zo snel mogelijk online voor duizenden shoppers.</p>
+    <a
+      href="mailto:info@diski.nl?subject=Mijn%20kortingscode%20delen%20op%20Diski"
+      class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-white tw-text-pink-600 tw-font-bold tw-px-6 tw-py-3 tw-rounded-xl hover:tw-bg-pink-50 tw-transition-colors tw-no-underline"
+    >
+      Mail naar info&#64;diski.nl
+      <svg class="tw-w-4 tw-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+    </a>
+  </div>
+
+  <p class="tw-text-xs tw-text-gray-400 tw-text-center tw-mt-6">
+    Diski deelt kortingscodes die voordeel opleveren voor shoppers. We beoordelen elke inzending, dus niet elke code wordt automatisch geplaatst.
+  </p>
+
+</div>
+
+<app-footer></app-footer>
