@@ -7,9 +7,9 @@
  *   - This is a real, indexable production change, so going live must be a
  *     deliberate, auditable per-shop decision — a half-finished content file
  *     should never auto-publish and get indexed.
- *   - It deliberately EXCLUDES the original 5 pilot shops (nakdfashion,
- *     ginatricot, gutsgusto, geurwolkje, zalando): those keep their existing
- *     live v1 pages untouched. They remain reachable only as /v2/ previews.
+ *   - The "exclude the original 5 pilots" policy is RETIRED: nakdfashion,
+ *     ginatricot, gutsgusto, geurwolkje are added here like any shop once their
+ *     v2 content is ready. (zalando is the exception — still on v1 for now.)
  *
  * This batch is the 25 generated 2026-06-02 from currently NOT-INDEXED detail
  * pages (see input/CANDIDATES.md) — safe to index because they rank nowhere today.
@@ -136,6 +136,55 @@ export const LIVE_V2_SLUGS: ReadonlySet<string> = new Set([
   'rowenta',
   'smashedlemon',
   'to-be-dressed.nl',
+  // Added 2026-06-10: fourth batch (first 50 not-yet-covered from discounts.json;
+  // 3 skipped at gate). Includes pilots nakdfashion/ginatricot/gutsgusto (no longer excluded).
+  'nakdfashion',
+  'pinkgellac',
+  'creamyfabrics',
+  'bylashbabe',
+  'ginatricot',
+  'gutsgusto',
+  'hellofresh.nl',
+  'desenio',
+  'asos',
+  'fuelyourbody',
+  'bodyandfit.com',
+  'shein',
+  'mimamsterdam',
+  'hugesupplements',
+  'sellpy',
+  'everyfoods',
+  'colorescience',
+  'oxknit',
+  'dikkedame.com',
+  'sunday.nl',
+  'upfront',
+  'holafly',
+  'mydearbeer_nl',
+  'famousstore',
+  'emmasleepnl',
+  '7oclock.de',
+  'strengthen.store',
+  'morenutrition',
+  'kwakzalversports',
+  'petree',
+  'moisecare',
+  'oduree.nl',
+  'stichtingsuperchill',
+  'welovetheplanet',
+  'obelink',
+  'vakantieparkdetweebruggen',
+  'ezwlz.com',
+  'luxuryfragrances.nl',
+  'anewsta',
+  'flamengolife',
+  'loomathelabel.com',
+  'begolden',
+  'parfumado',
+  'dfyne',
+  'teveo',
+  'dr_blend',
+  'icaniwill',
 ]);
 
 export function isLiveV2Slug(slug: string | undefined | null): boolean {
