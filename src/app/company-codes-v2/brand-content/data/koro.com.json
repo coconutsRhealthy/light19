@@ -1,0 +1,89 @@
+{
+  "slug": "koro.com",
+  "name": "KoRo",
+  "heroLede": "KoRo is de Nederlands-Belgische webshop voor boodschappen in grootverpakking: noten, gedroogd fruit, notenpasta's, snacks, granola en proteïneproducten in grote zakken tegen een scherpe kiloprijs. In de praktijk duikt het merk vooral op in de keuken- en snackvideo's van Nederlandse creators, die er hun recepten en meal-prep mee maken.",
+  "about": [
+    "KoRo verkoopt alledaagse producten in grootverpakking: van pindakaas en notenpasta tot gedroogd fruit, vriesdroog, chocolade-omhulde bessen, kokoschips, granola, havermout, pasta en proteïnepoeders. Het idee is simpel: grotere verpakkingen, een gunstigere prijs per kilo en minder los verpakkingsmateriaal.",
+    "Het assortiment leunt sterk op gezondere snacks en bakingrediënten, met regelmatig EU-biologische en Fairtrade-gecertificeerde producten. Op de site presenteert KoRo zich als Nederlands-Belgische winkel (levering in NL en BE) met de nadruk op snelle levering.",
+    "Wat KoRo in Nederland en België vooral bekend maakt, is de stroom aan content van foodcreators. Diëtisten, bakkers en 'snackers' laten zien hoe je met KoRo-producten ontbijttaarten, proteïnerepen, energieballetjes en loaded water maakt, vaak met een eigen kortingscode erbij."
+  ],
+  "why": [
+    {
+      "h": "Grootverpakking, lage kiloprijs",
+      "p": "De kern van KoRo: dezelfde producten die je los duur betaalt, in grote zakken tegen een voordeligere prijs per kilo. Handig als je iets veel gebruikt, zoals havermout, noten of proteïnepoeder."
+    },
+    {
+      "h": "Breed snack- en bakassortiment",
+      "p": "Van notenpasta's en gedroogd fruit tot chocolade-bessen, kokoschips, granola en proteïnerepen. Veel van wat creators in hun recepten gebruiken, komt terug in het KoRo-assortiment."
+    },
+    {
+      "h": "Vaak bio en Fairtrade",
+      "p": "Een flink deel van de producten draagt een EU-biologisch of Fairtrade-label, wat aansluit bij de gezondere keuken-insteek waarvoor het merk vaak wordt ingezet."
+    },
+    {
+      "h": "Levering in NL en België",
+      "p": "KoRo bezorgt in Nederland en België en benadrukt op de site snelle levering, zodat je grootverpakking meestal vlot in huis hebt."
+    }
+  ],
+  "trending": [
+    "Proteïnerepen en proteïnepoeder voor wie sportief bezig is",
+    "Notenpasta's en pindakaas als basis voor snelle snacks",
+    "Chocolade-omhulde bessen en kokoschips als gezondere snoeptrek",
+    "Havermout en granola voor meal-prep ontbijt zoals ontbijttaarten en bites",
+    "Gedroogd fruit en noten voor loaded water en tussendoortjes"
+  ],
+  "codeInfo": [
+    "Een KoRo-kortingscode geeft doorgaans 5% korting op je hele bestelling. Je vult de code in tijdens het afrekenen in het daarvoor bestemde veld; het bedrag wordt dan van je totaal afgetrokken.",
+    "De codes circuleren vooral via Nederlandse en Belgische foodcreators, die elk hun eigen persoonlijke code hebben (vaak hun naam plus '5', zoals KIM_5 of BIANCA_5). Vrijwel alle codes draaien om dezelfde korting op alles in het assortiment."
+  ],
+  "creators": [
+    "@deveganmoeder",
+    "@alisonkookt",
+    "@boukjekeizer",
+    "@kusbianca",
+    "@bonusvegan",
+    "@jaimyskitchen.nl"
+  ],
+  "tips": [
+    {
+      "h": "Reken in kiloprijs, niet in pakprijs",
+      "p": "Omdat KoRo in grootverpakking levert, lijkt een zak in eerste instantie duur. Vergelijk de prijs per kilo met je supermarkt om te zien of het voor jouw verbruik echt voordeliger is."
+    },
+    {
+      "h": "Gebruik een creator-code voor 5%",
+      "p": "De meeste KoRo-codes geven 5% op alles. Pak er een van een creator die je toch al volgt en vul die bij het afrekenen in; op een grotere voorraadbestelling tikt dat aan."
+    },
+    {
+      "h": "Combineer met recepten van creators",
+      "p": "Veel creators delen complete recepten (proteïnerepen, energieballetjes, ontbijttaarten) met KoRo-ingrediënten. Zo bestel je gericht wat je echt opmaakt in plaats van losse impulsaankopen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wat verkoopt KoRo?",
+      "a": "KoRo verkoopt boodschappen in grootverpakking: noten, gedroogd fruit, notenpasta's, snacks zoals chocolade-bessen en kokoschips, granola, havermout, pasta en proteïneproducten, vaak met een bio- of Fairtrade-label."
+    },
+    {
+      "q": "Hoeveel korting geeft een KoRo-kortingscode?",
+      "a": "De codes die via creators worden gedeeld geven doorgaans 5% korting op je hele bestelling. Je vult de code in tijdens het afrekenen."
+    },
+    {
+      "q": "Levert KoRo in België?",
+      "a": "Ja, KoRo presenteert zich als Nederlands-Belgische webshop en bezorgt in zowel Nederland als België, met nadruk op snelle levering."
+    },
+    {
+      "q": "Is KoRo voordeliger dan de supermarkt?",
+      "a": "Dat hangt af van je verbruik. Doordat KoRo in grote verpakkingen levert, is de prijs per kilo vaak gunstiger, maar je koopt wel meer tegelijk. Vergelijk de kiloprijs om zeker te weten of het voor jou loont."
+    }
+  ],
+  "related": [
+    "emmasleepnl",
+    "upfront",
+    "ahead-nutrition",
+    "drksonline",
+    "geurwolkje",
+    "goodevas.com",
+    "hellofresh.nl",
+    "achateshop.com"
+  ]
+}

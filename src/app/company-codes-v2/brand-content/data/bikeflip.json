@@ -1,0 +1,68 @@
+{
+  "slug": "bikeflip",
+  "name": "BikeFlip",
+  "heroLede": "BikeFlip is een Nederlandse dienst waarmee je een kinderfiets niet koopt maar abonneert: voor een vast bedrag per maand huur je een fiets die met je kind meegroeit. Is de fiets te klein geworden, dan wissel je gratis naar een grotere maat.",
+  "about": [
+    "BikeFlip biedt een maandabonnement op kinderfietsen. In plaats van steeds een nieuwe fiets te kopen die je kind binnen een jaar weer ontgroeit, betaal je een vast bedrag per maand en wissel je gratis naar een grotere maat zodra dat nodig is.",
+    "Het aanbod loopt van loopfietsjes tot 28-inch modellen, met meer dan 400 kinderfietsen in het assortiment, waaronder merken als Puky, Gazelle, Batavus en Loekie. Onderhoud en reparaties zijn bij het abonnement inbegrepen, en BikeFlip levert en stelt de fiets gratis bij je thuis af.",
+    "Achter de dienst zit een duurzaamheidsgedachte: fietsen worden hergebruikt in plaats van na een paar jaar weggedaan, volgens een circulair model. BikeFlip heeft fysieke vestigingen in Utrecht, Amsterdam en Rotterdam, met in Utrecht een volledige servicewinkel inclusief proefritten."
+  ],
+  "why": [
+    {
+      "h": "Een fiets die meegroeit",
+      "p": "Kinderen groeien snel uit hun fiets. Met een BikeFlip-abonnement wissel je gratis naar een grotere maat zodra de fiets te klein is, zonder telkens een nieuwe te hoeven kopen."
+    },
+    {
+      "h": "Onderhoud en reparatie inbegrepen",
+      "p": "Reparaties en onderhoud zitten bij het abonnement in, zonder extra servicekosten. BikeFlip lost het op, ook bij je thuis."
+    },
+    {
+      "h": "Gratis thuisbezorgd en afgesteld",
+      "p": "De fiets wordt gratis bij je thuis geleverd en op maat afgesteld, zodat je kind er meteen op kan."
+    },
+    {
+      "h": "Duurzaam en circulair",
+      "p": "Fietsen worden hergebruikt in plaats van weggegooid. Wie het abonnement opzegt, geeft de fiets terug zodat een volgend gezin er weer mee verder kan."
+    }
+  ],
+  "codeInfo": [
+    "Een BikeFlip-actiecode draait meestal niet om een procentuele korting op een product, maar om voordeel op het abonnement, zoals een gratis maand. Je geeft de code op bij het afsluiten van je abonnement, waarna het voordeel wordt verrekend.",
+    "Omdat het om een doorlopend abonnement gaat, is een gratis maand vooral aan het begin een prettige drempelverlager. Let bij het afsluiten op de looptijd: opzeggen kan doorgaans maandelijks na de eerste periode."
+  ],
+  "creators": [
+    "@deveganmoeder"
+  ],
+  "tips": [
+    {
+      "h": "Start met een actiecode voor een gratis maand",
+      "p": "Een BikeFlip-code geeft vaak een gratis maand op je abonnement. Handig om met weinig risico te proberen of de dienst bij jullie past voordat je langer doorgaat."
+    },
+    {
+      "h": "Kies de maat ruim genoeg, je wisselt toch gratis",
+      "p": "Omdat doorwisselen naar een grotere maat gratis is, hoef je niet te overdrijven met 'alvast groot kopen'. Kies de maat die nu past en flip later kosteloos."
+    },
+    {
+      "h": "Reken het abonnement af tegen kopen plus doorverkopen",
+      "p": "Vanaf zo'n €3 per maand voor de kleinste modellen oplopend tot €8-€19 voor grotere fietsen. Vergelijk dat met de aanschaf én latere verkoop van een fiets die je kind snel ontgroeit."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Hoe werkt BikeFlip?",
+      "a": "Je huurt een kinderfiets voor een vast bedrag per maand. Wordt de fiets te klein, dan wissel je gratis naar een grotere maat. Onderhoud, reparaties en gratis thuislevering zitten bij het abonnement in."
+    },
+    {
+      "q": "Wat kost een BikeFlip-abonnement?",
+      "a": "De tarieven beginnen vanaf ongeveer €3 per maand voor de kleinste fietsen en lopen op tot zo'n €8-€19 per maand, afhankelijk van de maat en het model."
+    },
+    {
+      "q": "Kan ik mijn BikeFlip-abonnement opzeggen?",
+      "a": "Het abonnement is doorgaans maandelijks opzegbaar na de eerste periode. Je geeft de fiets dan terug, zodat die opnieuw kan worden ingezet."
+    },
+    {
+      "q": "Wat levert een BikeFlip-actiecode op?",
+      "a": "Een actiecode geeft meestal voordeel op het abonnement, bijvoorbeeld een gratis maand. Je vult de code in bij het afsluiten van je abonnement."
+    }
+  ],
+  "related": []
+}
