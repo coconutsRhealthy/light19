@@ -29,7 +29,7 @@ json.forEach((line) => {
 });
 
 // --- Add hardcoded routes ---
-const hardcodedRoutes = ['/winkels', '/contact', '/top5', '/privacy-policy', '/blackfriday', '/prikbord', '/blogs', '/'];
+const hardcodedRoutes = ['/winkels', '/contact', '/top5', '/privacy-policy', '/blackfriday', '/prikbord', '/blogs', '/code-delen', '/'];
 hardcodedRoutes.forEach(route => results.add(route.replace(/^\//, '')));
 
 // Sort alphabetically
@@ -80,7 +80,7 @@ console.log(`routes.txt generated successfully (${previewRoutes.length} v2 previ
 const BASE_URL = 'https://diski.nl';
 const today = new Date().toISOString().split('T')[0];
 
-const utilityRoutes = new Set(['winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'blackfriday', '']);
+const utilityRoutes = new Set(['winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'blackfriday', 'code-delen', '']);
 
 const urls = sorted.map((route) => {
   const pathPart = route === '' ? '/' : `/${route}/`;
