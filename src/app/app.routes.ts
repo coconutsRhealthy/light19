@@ -8,6 +8,7 @@ import { BlackfridayComponent } from './blackfriday/blackfriday.component';
 import { PrikbordComponent } from './prikbord/prikbord.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { SpaceNkBlogComponent } from './blogs/space-nk/space-nk-blog.component';
+import { LookfantasticBlogComponent } from './blogs/lookfantastic/lookfantastic-blog.component';
 import { Top5Component } from './top5/top5.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: 'prikbord', component: PrikbordComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'blogs/space-nk', component: SpaceNkBlogComponent },
+  { path: 'blogs/lookfantastic', component: LookfantasticBlogComponent },
   { path: 'top5', component: Top5Component },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   // Noindexed preview of ANY shop with v2 content (data.preview drives the noindex).
