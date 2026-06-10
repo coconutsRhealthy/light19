@@ -8,12 +8,12 @@
     <nav class="tw-text-sm tw-text-gray-400 tw-mb-6 tw-flex tw-items-center tw-gap-1">
       <a routerLink="/" class="hover:tw-text-pink-500 tw-transition-colors">Diski</a>
       <span>/</span>
-      <span class="tw-text-gray-600">Jouw code delen</span>
+      <span class="tw-text-gray-600">Samenwerken</span>
     </nav>
 
     <!-- Chip -->
     <span class="tw-inline-block tw-bg-pink-100 tw-text-pink-700 tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wider tw-px-3 tw-py-1 tw-rounded-full tw-mb-4">
-      Voor creators &amp; ambassadeurs
+      Voor creators &amp; partners
     </span>
 
     <h1 class="tw-text-3xl md:tw-text-4xl tw-font-extrabold tw-text-gray-900 tw-leading-tight tw-mb-4">
@@ -21,7 +21,7 @@
     </h1>
 
     <p class="tw-text-lg tw-text-gray-600">
-      Heb jij een eigen kortingscode en wil je hem zichtbaar maken voor duizenden shoppers? Dat kan! Plaats jouw code gratis op Diski en bereik precies de mensen die op zoek zijn naar een goede deal.
+      Heb jij een eigen kortingscode? Wij delen die graag met onze shoppers — en we staan open voor een langere samenwerking. Dat kan een win-winsituatie zijn: jij krijgt meer bereik en meer mensen die jouw code gebruiken, wij bieden onze bezoekers nóg betere deals.
     </p>
   </div>
 </div>
@@ -29,66 +29,54 @@
 <!-- MAIN CONTENT -->
 <div class="tw-max-w-3xl tw-mx-auto tw-px-4 tw-py-10 tw-text-gray-800 tw-leading-relaxed">
 
-  <!-- STEPS -->
-  <h2 class="tw-text-2xl tw-font-bold tw-mb-2">Zo werkt het</h2>
-  <p class="tw-text-gray-500 tw-mb-8">In drie simpele stappen staat jouw code online.</p>
+  <!-- INTRO -->
+  <p class="tw-mb-8">
+    Diski wordt elke dag bezocht door mensen die actief op zoek zijn naar kortingscodes — precies het publiek dat jij wilt bereiken. We werken graag op een manier die voor ons allebei goed voelt, en zijn flexibel in hoe we dat invullen. Hieronder een paar opties; heb je zelf een idee, dan horen we dat graag.
+  </p>
 
-  <ol class="tw-space-y-4 tw-mb-12">
-    <li class="tw-flex tw-gap-4 tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-5 tw-shadow-sm">
-      <span class="tw-flex-shrink-0 tw-w-9 tw-h-9 tw-rounded-full tw-bg-pink-500 tw-text-white tw-font-bold tw-flex tw-items-center tw-justify-center">1</span>
-      <div>
-        <h3 class="tw-font-bold tw-text-gray-900 tw-mb-1">Kies een afbeelding</h3>
-        <p class="tw-text-gray-600 tw-text-sm">Pak een van de onderstaande Diski-afbeeldingen — ze zijn gemaakt om mooi in je Instagram-story te passen.</p>
-      </div>
-    </li>
-    <li class="tw-flex tw-gap-4 tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-5 tw-shadow-sm">
-      <span class="tw-flex-shrink-0 tw-w-9 tw-h-9 tw-rounded-full tw-bg-pink-500 tw-text-white tw-font-bold tw-flex tw-items-center tw-justify-center">2</span>
-      <div>
-        <h3 class="tw-font-bold tw-text-gray-900 tw-mb-1">Deel hem in je story</h3>
-        <p class="tw-text-gray-600 tw-text-sm">Post de afbeelding in je Instagram-story en voeg een link toe naar <strong class="tw-font-semibold tw-text-gray-900">diski.nl</strong>, zodat je volgers meteen kunnen doorklikken.</p>
-      </div>
-    </li>
-    <li class="tw-flex tw-gap-4 tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-5 tw-shadow-sm">
-      <span class="tw-flex-shrink-0 tw-w-9 tw-h-9 tw-rounded-full tw-bg-pink-500 tw-text-white tw-font-bold tw-flex tw-items-center tw-justify-center">3</span>
-      <div>
-        <h3 class="tw-font-bold tw-text-gray-900 tw-mb-1">Mail ons jouw code</h3>
-        <p class="tw-text-gray-600 tw-text-sm">Stuur een mailtje met je code (en een screenshot van je story) naar <a href="mailto:info@diski.nl" class="tw-text-pink-600 tw-font-medium hover:tw-underline">info&#64;diski.nl</a>. Wij zetten jouw code dan zo snel mogelijk online.</p>
-      </div>
-    </li>
-  </ol>
+  <!-- OPTIONS -->
+  <h2 class="tw-text-2xl tw-font-bold tw-mb-2">Manieren waarop we kunnen samenwerken</h2>
+  <p class="tw-text-gray-500 tw-mb-6">Van simpel en vrijblijvend tot een echte partnership.</p>
 
-  <!-- STORY IMAGES -->
-  <h2 class="tw-text-2xl tw-font-bold tw-mb-2">Kies jouw favoriete afbeelding</h2>
-  <p class="tw-text-gray-500 tw-mb-6">Tik op een afbeelding om hem op volledig formaat te openen en op te slaan.</p>
+  <div class="tw-grid sm:tw-grid-cols-2 tw-gap-5 tw-mb-12">
 
-  <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 md:tw-grid-cols-5 tw-gap-4 tw-mb-12">
-    @for (img of storyImages; track img.src; let i = $index) {
-      <a
-        [href]="img.src"
-        target="_blank"
-        rel="noopener"
-        class="tw-group tw-block tw-relative tw-aspect-[9/16] tw-rounded-2xl tw-overflow-hidden tw-border tw-border-gray-100 tw-shadow-sm hover:tw-shadow-md tw-transition-shadow"
-      >
-        <img
-          [src]="img.src"
-          [alt]="img.alt"
-          loading="lazy"
-          class="tw-w-full tw-h-full tw-object-cover tw-transition-transform tw-duration-300 group-hover:tw-scale-105"
-        >
-        <span class="tw-absolute tw-top-2 tw-left-2 tw-bg-white/90 tw-text-gray-700 tw-text-xs tw-font-semibold tw-px-2 tw-py-0.5 tw-rounded-full">
-          #{{ i + 1 }}
-        </span>
-      </a>
-    }
+    <!-- Option 1 -->
+    <div class="tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-6 tw-shadow-sm">
+      <span class="tw-text-3xl">🏷️</span>
+      <h3 class="tw-font-bold tw-text-gray-900 tw-mt-3 tw-mb-1">We zetten jouw code online</h3>
+      <p class="tw-text-gray-600 tw-text-sm">De simpelste vorm: stuur ons je code en wij plaatsen hem op Diski, zodat duizenden shoppers hem kunnen vinden en gebruiken.</p>
+    </div>
+
+    <!-- Option 2 -->
+    <div class="tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-6 tw-shadow-sm">
+      <span class="tw-text-3xl">🤝</span>
+      <h3 class="tw-font-bold tw-text-gray-900 tw-mt-3 tw-mb-1">Een langere samenwerking</h3>
+      <p class="tw-text-gray-600 tw-text-sm">Zit er meer in? We gaan graag een structurele samenwerking aan, bijvoorbeeld met een eerlijke verdeling van de opbrengsten die jouw code oplevert.</p>
+    </div>
+
+    <!-- Option 3 -->
+    <div class="tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-6 tw-shadow-sm">
+      <span class="tw-text-3xl">📲</span>
+      <h3 class="tw-font-bold tw-text-gray-900 tw-mt-3 tw-mb-1">Cross-promotie</h3>
+      <p class="tw-text-gray-600 tw-text-sm">Jij deelt Diski af en toe in je stories, wij geven jouw code en kanaal extra zichtbaarheid. Zo helpen we elkaar groeien.</p>
+    </div>
+
+    <!-- Option 4 -->
+    <div class="tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-p-6 tw-shadow-sm">
+      <span class="tw-text-3xl">💡</span>
+      <h3 class="tw-font-bold tw-text-gray-900 tw-mt-3 tw-mb-1">Jouw eigen idee</h3>
+      <p class="tw-text-gray-600 tw-text-sm">Heb je een ander voorstel in gedachten? Laat het ons weten — we denken graag mee en staan open voor creatieve afspraken.</p>
+    </div>
+
   </div>
 
   <!-- EMAIL CTA -->
   <div class="tw-bg-gradient-to-br tw-from-pink-500 tw-to-rose-500 tw-rounded-2xl tw-p-8 tw-text-white tw-text-center">
-    <p class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-widest tw-mb-2 tw-opacity-80">Klaar om te delen?</p>
-    <h2 class="tw-text-2xl tw-font-extrabold tw-mb-2">Stuur ons jouw code</h2>
-    <p class="tw-opacity-90 tw-mb-6">Heb je je story geplaatst? Mail je code naar ons en we zetten hem zo snel mogelijk online voor duizenden shoppers.</p>
+    <p class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-widest tw-mb-2 tw-opacity-80">Win-win? Laten we praten</p>
+    <h2 class="tw-text-2xl tw-font-extrabold tw-mb-2">Neem contact met ons op</h2>
+    <p class="tw-opacity-90 tw-mb-6">Mail ons je code of je idee voor een samenwerking. We reageren snel en denken graag met je mee over wat voor ons allebei werkt.</p>
     <a
-      href="mailto:info@diski.nl?subject=Mijn%20kortingscode%20delen%20op%20Diski"
+      href="mailto:info@diski.nl?subject=Samenwerken%20met%20Diski"
       class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-white tw-text-pink-600 tw-font-bold tw-px-6 tw-py-3 tw-rounded-xl hover:tw-bg-pink-50 tw-transition-colors tw-no-underline"
     >
       Mail naar info&#64;diski.nl
