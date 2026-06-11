@@ -49,7 +49,7 @@ export class BlackfridayComponent implements OnInit {
   // Live deals feed, and the shop registry that provides each shop's category.
   // Both live on R2 so they update without an app redeploy.
   private promotionsUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/spotted_promotions.json';
-  private registryUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/webshops_info/shop_registry.external.json';
+  private registryUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/webshops_info/shop_registry.json';
 
   private readonly fallbackCategory = 'other';
 
