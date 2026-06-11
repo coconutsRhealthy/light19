@@ -239,8 +239,9 @@ export const LIVE_V2_SLUGS: ReadonlySet<string> = new Set([
 
   // Batch generated 2026-06-11 (caption-grounded + website/reviews tiers, next-50
   // from discounts.json; 4 skipped at gate: puritybase, inokastudio, wellnessrave,
-  // dragonpharma_latino). NB: 'cfab' is the same brand as the already-live
-  // 'creamyfabrics' (duplicate route) — promoted at the operator's call.
+  // dragonpharma_latino). 'cfab' was generated but NOT promoted: it is the same
+  // brand as the already-live 'creamyfabrics', so it stays a duplicate and is
+  // intentionally left off this allowlist.
   'esn',
   'aybl',
   'youngla',
@@ -249,7 +250,6 @@ export const LIVE_V2_SLUGS: ReadonlySet<string> = new Set([
   'douglas',
   'bubbleroom',
   'cabaia',
-  'cfab',
   'joybuy',
   'leolive',
   'vvvcadeaukaarten',
