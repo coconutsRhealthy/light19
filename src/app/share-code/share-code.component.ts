@@ -14,9 +14,9 @@ export class ShareCodeComponent {
   constructor(private meta: MetaService) {
     this.meta.updateTitle('Samenwerken met Diski | Deel jouw kortingscode');
     this.meta.updateMetaInfo(
-      'We delen graag jouw kortingscode met duizenden shoppers en staan open voor een langere samenwerking. Van een simpele plaatsing tot een revenue-share of cross-promotie — mail info@diski.nl en we denken graag mee.',
+      'Heb je een eigen kortingscode? Deel hem met de shoppers van Diski. Stuur ons een mailtje, dan kijken we samen wat er mogelijk is — van een plaatsing tot een langere samenwerking.',
       'diski.nl',
-      'samenwerken met Diski, kortingscode delen, partnership, revenue share, influencer korting, code insturen'
+      'samenwerken met Diski, kortingscode delen, partnership, influencer korting, code insturen'
     );
   }
 }
