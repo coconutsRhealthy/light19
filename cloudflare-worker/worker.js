@@ -1,5 +1,5 @@
 export default {
-  async fetch(request, env, ctx) {
+  async fetch(request, env) {
     const corsHeaders = {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "POST, PATCH, OPTIONS",
@@ -10,11 +10,9 @@ export default {
       return new Response(null, { headers: corsHeaders });
     }
 
-    const klaviyoHeaders = {
-      "Content-Type": "application/json",
-      "Authorization": `Klaviyo-API-Key ${env.KLAVIYO_API_KEY}`,
-      "revision": "2023-10-15"
-    };
+    if (!env.BREVO_API_KEY) {
+      return new Response(JSON.stringify({ error: "BREVO_API_KEY not configured" }), { status: 500, headers: corsHeaders });
+    }
 
     try {
       const body = await request.json();
@@ -25,70 +23,50 @@ export default {
       }
 
       const firstName = body?.data?.attributes?.first_name;
+      const incomingProps = body?.data?.attributes?.properties ?? {};
 
-      // Step 1: look up existing profile by email
-      const searchRes = await fetch(
-        `https://a.klaviyo.com/api/profiles/?filter=equals(email,"${email}")`,
-        { method: "GET", headers: klaviyoHeaders }
-      );
-      const searchData = await searchRes.json();
-      const existingProfile = searchData?.data?.[0];
-
-      if (request.method === "PATCH" && !existingProfile) {
-        return new Response(JSON.stringify({ error: "Profile not found" }), { status: 404, headers: corsHeaders });
+      // Look the contact up first, purely to get FIRST_SEEN right:
+      //  - present → preserve the stored FIRST_SEEN (true first interaction)
+      //  - absent  → brand-new contact, so today IS its first-seen
+      //  - unknown → a transient Brevo error; omit FIRST_SEEN rather than risk
+      //              clobbering an existing value (Brevo keeps what it has).
+      const look = await lookupBrevoContact(env, email);
+      let firstSeen;
+      if (look.status === "present") {
+        firstSeen = look.contact?.attributes?.FIRST_SEEN;
+      } else if (look.status === "absent") {
+        firstSeen = new Date().toISOString().slice(0, 10);
       }
 
-      if (existingProfile) {
-        // Profile exists: merge and PATCH
-        const profileId = existingProfile.id;
-        const existingProps = existingProfile?.attributes?.properties ?? {};
-        const incomingProps = body?.data?.attributes?.properties ?? {};
-        const finalProps = mergeProperties(existingProps, incomingProps);
+      // updateEnabled makes this a single upsert for both POST (new unlock) and
+      // PATCH (returning visitor). If a contact ever went missing, a PATCH now
+      // recreates it from the client's cumulative totals instead of failing.
+      const payload = {
+        email,
+        updateEnabled: true,
+        attributes: buildBrevoAttributes(firstName, incomingProps, firstSeen)
+      };
 
-        const patchBody = {
-          data: {
-            type: "profile",
-            id: profileId,
-            attributes: {
-              ...body.data.attributes,
-              properties: finalProps
-            }
-          }
-        };
-
-        const patchRes = await fetch(`https://a.klaviyo.com/api/profiles/${profileId}/`, {
-          method: "PATCH",
-          headers: klaviyoHeaders,
-          body: JSON.stringify(patchBody)
-        });
-        const text = await patchRes.text();
-
-        // Mirror the exact same (merged) data to Brevo — runs after the
-        // response, never blocks or breaks the Klaviyo path. existingProfile.created
-        // is Klaviyo's true first-seen date (Brevo's own createdAt isn't reliable).
-        ctx.waitUntil(sendToBrevo(env, email, firstName, finalProps, existingProfile?.attributes?.created));
-
-        return new Response(text, { status: patchRes.status, headers: corsHeaders });
-
-      } else {
-        // Profile doesn't exist (POST only): create new
-        const klaviyoRes = await fetch("https://a.klaviyo.com/api/profiles/", {
-          method: "POST",
-          headers: klaviyoHeaders,
-          body: JSON.stringify(body)
-        });
-        const text = await klaviyoRes.text();
-
-        // Mirror the exact same data to Brevo — runs after the response,
-        // never blocks or breaks the Klaviyo path. Pull Klaviyo's created
-        // timestamp from the create response so Brevo gets the true first-seen.
-        const incomingProps = body?.data?.attributes?.properties ?? {};
-        let createdAt;
-        try { createdAt = JSON.parse(text)?.data?.attributes?.created; } catch {}
-        ctx.waitUntil(sendToBrevo(env, email, firstName, incomingProps, createdAt));
-
-        return new Response(text, { status: klaviyoRes.status, headers: corsHeaders });
+      if (env.BREVO_LIST_ID) {
+        payload.listIds = [Number(env.BREVO_LIST_ID)];
       }
+
+      const res = await fetch("https://api.brevo.com/v3/contacts", {
+        method: "POST",
+        headers: {
+          "api-key": env.BREVO_API_KEY,
+          "Content-Type": "application/json",
+          "accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const text = await res.text();
+      if (!res.ok) {
+        console.error(`Brevo upsert failed (${res.status}): ${text}`);
+      }
+      // Brevo returns 201 + {id} on create, 204 (empty) on update.
+      return new Response(text, { status: res.status, headers: corsHeaders });
 
     } catch (err) {
       return new Response(JSON.stringify({ error: err.message }), { status: 500, headers: corsHeaders });
@@ -96,38 +74,21 @@ export default {
   }
 };
 
-// ---- Brevo mirror ----------------------------------------------------------
+// ---- Brevo helpers ---------------------------------------------------------
 
-async function sendToBrevo(env, email, firstName, props, firstSeen) {
+// Returns { status: "present"|"absent"|"unknown", contact }. A lookup error is
+// "unknown" (not "absent") so we never treat a transient failure as a new contact.
+async function lookupBrevoContact(env, email) {
   try {
-    if (!env.BREVO_API_KEY) return; // safe no-op until the secret is configured
-
-    const payload = {
-      email,
-      updateEnabled: true, // upsert: create if new, update if the contact already exists
-      attributes: buildBrevoAttributes(firstName, props, firstSeen)
-    };
-
-    if (env.BREVO_LIST_ID) {
-      payload.listIds = [Number(env.BREVO_LIST_ID)];
-    }
-
-    const res = await fetch("https://api.brevo.com/v3/contacts", {
-      method: "POST",
-      headers: {
-        "api-key": env.BREVO_API_KEY,
-        "Content-Type": "application/json",
-        "accept": "application/json"
-      },
-      body: JSON.stringify(payload)
+    const res = await fetch("https://api.brevo.com/v3/contacts/" + encodeURIComponent(email), {
+      method: "GET",
+      headers: { "api-key": env.BREVO_API_KEY, "accept": "application/json" }
     });
-
-    if (!res.ok) {
-      console.error(`Brevo sync failed (${res.status}): ${await res.text()}`);
-    }
-  } catch (err) {
-    // A Brevo failure must never affect the Klaviyo response
-    console.error("Brevo sync error:", err?.message ?? err);
+    if (res.status === 404) return { status: "absent", contact: null };
+    if (res.ok) return { status: "present", contact: await res.json() };
+    return { status: "unknown", contact: null };
+  } catch {
+    return { status: "unknown", contact: null };
   }
 }
 
@@ -140,7 +101,7 @@ function buildBrevoAttributes(firstName, props, firstSeen) {
   if (p.path != null) attrs.PATH = p.path;
   if (p.site_visits != null) attrs.SITE_VISITS = p.site_visits;
   if (p.unlock_date) attrs.UNLOCK_DATE = String(p.unlock_date).slice(0, 10); // Brevo dates: YYYY-MM-DD
-  if (firstSeen) attrs.FIRST_SEEN = String(firstSeen).slice(0, 10); // Klaviyo's true "first entered" date
+  if (firstSeen) attrs.FIRST_SEEN = String(firstSeen).slice(0, 10);
 
   // Brevo can't store nested objects → keep the count-maps as JSON text
   if (p.visited_companies != null) attrs.VISITED_COMPANIES = JSON.stringify(p.visited_companies);
@@ -148,41 +109,4 @@ function buildBrevoAttributes(firstName, props, firstSeen) {
   if (p.visited_pages != null)    attrs.VISITED_PAGES    = JSON.stringify(p.visited_pages);
 
   return attrs;
-}
-
-// ---- Klaviyo merge helpers --------------------------------------------------
-
-// The client (visitor-profile.service.ts) stores the visitor's FULL cumulative
-// history in localStorage and sends that complete total on every request. So
-// numeric counters and count-maps must be OVERWRITTEN with the incoming value,
-// NOT added — adding re-applied the running total on every return visit and
-// compounded site_visits / visited_* into wildly inflated numbers.
-//
-// First-seen context fields (unlock_date, path, company) are only sent on the
-// initial unlock, so we still set-if-absent to make sure they're never clobbered.
-function mergeProperties(existing, incoming) {
-  const merged = { ...existing };
-
-  for (const key of Object.keys(incoming)) {
-    const existingVal = existing[key];
-    const incomingVal = incoming[key];
-
-    if (typeof incomingVal === 'number' || isCountMap(incomingVal)) {
-      // Client already holds the full cumulative truth → take it as-is.
-      merged[key] = incomingVal;
-    } else if (existingVal === undefined || existingVal === null) {
-      // Preserve first-seen context (unlock_date, path, company).
-      merged[key] = incomingVal;
-    }
-    // else: existing scalar already set → keep it.
-  }
-
-  return merged;
-}
-
-function isCountMap(val) {
-  return val !== null &&
-    typeof val === 'object' &&
-    !Array.isArray(val) &&
-    Object.values(val).every(v => typeof v === 'number');
 }

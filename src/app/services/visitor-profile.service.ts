@@ -77,7 +77,7 @@ export class VisitorProfileService {
     const email = localStorage.getItem(EMAIL_KEY);
     if (!email) return;
 
-    this.sendPatchToKlaviyo(email, profile);
+    this.sendProfileUpdate(email, profile);
   }
 
   subscribeEmail(email: string, company: string, path: string): void {
@@ -109,7 +109,7 @@ export class VisitorProfileService {
     });
   }
 
-  private sendPatchToKlaviyo(email: string, profile: VisitorProfile): void {
+  private sendProfileUpdate(email: string, profile: VisitorProfile): void {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     const body = {
