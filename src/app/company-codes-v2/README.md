@@ -52,10 +52,19 @@ parallel to the live `:company` v1 pages). Built as a pilot to test a specific b
 - That batch targets not-indexed pages on purpose: nothing to lose in rankings, and each
   is backed by real caption material. `input/CANDIDATES.md` ranks all 340 not-indexed
   shops by caption coverage (139 have ≥1 caption; 201 have none).
-- Committed on branch `claude_seo_improvements` (base component + modal/affiliate wiring).
-  **Unpushed and not deployed** — production does not have v2 yet.
+- Lives on branch `claude_seo_improvements` (base component + modal/affiliate wiring).
+  **Deployed and live in production** (verified 2026-06-12). NOTE: in this project,
+  deployment is **independent of git push** — deploys are run locally from the Mac
+  (`npm run build:prod` + deploy), often with uncommitted local changes. So the branch
+  being unpushed / ahead of `origin/main` tells you nothing about what production serves.
+  To know what's actually live, fetch the live URL.
 - The 25 are now **served on the real `:company` route and indexable** (see below); the
   original 5 are deliberately kept on v1 and remain noindexed `/v2/` previews only.
+
+> **Update 2026-06-12:** the lists in this section are now historical. The allowlist has
+> grown to **251 slugs (242 live on the real `:company` route)** across batches through
+> June 11, all **deployed live in production**. Of the original 5 pilots, only `zalando`
+> remains on v1. `brand-content/live-v2-slugs.ts` is the source of truth for what's live.
 
 ## Live rollout — IMPLEMENTED (2026-06-02) for the 25, NOT the original 5
 The `canMatch` approach from `../live-rollout-plan.txt` is now wired up, with one
@@ -73,7 +82,8 @@ deliberate change: an explicit **allowlist** instead of "any shop with v2 conten
 - The modal deep-link (`openNewPageWithCodeDetailModal`) is now path-aware (`/v2/{slug}` in
   preview, `/{slug}` live). Self-canonical is added at build by `scripts/set-canonicals.js`,
   and the 25 are already in `sitemap.xml`/`routes.txt` (generated from `discounts.json`).
-- **To go live for real:** run `npm run build:prod` and deploy (nothing here is deployed yet).
+- **To ship changes:** run `npm run build:prod` and deploy locally from the Mac (no remote
+  push required — deploys can include uncommitted local changes).
   Add a shop later → add its slug to `live-v2-slugs.ts`; revert a shop → remove it.
 
 ## Where the content comes from (separate project)

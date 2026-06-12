@@ -15,8 +15,14 @@
                                         modal deep-link is path-aware)
    - services/meta.service.ts         (setNoIndex via updateTag; new setIndex())
  Verified by a production prerender: all 25 /{slug}/index.html render v2 with NO
- noindex; original 5 + every other shop still render v1. Not deployed yet —
- run `npm run build:prod` and deploy to ship. The notes below are the original plan.
+ noindex; original 5 + every other shop still render v1.
+
+ *** UPDATE 2026-06-12: DEPLOYED AND LIVE in production (verified by fetching live
+ URLs). The allowlist has since grown to 251 slugs (242 live on the real route).
+ To ship changes: run `npm run build:prod` and deploy locally from the Mac — NO
+ remote push required, and deploys can include uncommitted local changes. Deploy
+ state is independent of git push; to know what production serves, fetch the live
+ URL. The notes below are the original plan. ***
 ==========================================================================
 
 GOAL
