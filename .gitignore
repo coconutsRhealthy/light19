@@ -5,6 +5,11 @@
 .env.local
 scripts/.env.local
 
+# GSC analysis tooling — local-only, never commit (also keeps keys out as a backstop)
+scripts/gsc/
+*service-account*.json
+*-sa.json
+
 # Compiled output
 /dist
 /tmp
