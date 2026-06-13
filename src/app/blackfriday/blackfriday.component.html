@@ -8,8 +8,8 @@
       <span class="bf-eyebrow">Diski × Black Friday {{ year }}</span>
       <h1 class="bf-title">Black <span>Friday</span></h1>
       <p class="bf-lede">
-        De scherpste sales en aanbiedingen van het jaar — overzichtelijk gebundeld
-        per categorie. Of zoek meteen je favoriete webshop.
+        De scherpste sales en aanbiedingen van het jaar. Filter op categorie
+        of zoek meteen je favoriete webshop.
       </p>
 
       <div class="bf-search">
@@ -90,7 +90,7 @@
         @if (searchResults.length) {
           <div class="bf-grid">
             @for (d of searchResults; track d.webshop_name + d.date) {
-              <a class="bf-card" [href]="d.url" target="_blank" rel="noopener noreferrer sponsored">
+              <a class="bf-card" [class.bf-card--today]="isSpottedToday(d.date)" [href]="d.url" target="_blank" rel="noopener noreferrer sponsored">
                 <div class="bf-card__top">
                   @if (getLogoUrl(d.webshop_name)) {
                     <img class="bf-card__logo" [src]="getLogoUrl(d.webshop_name)"
@@ -103,7 +103,7 @@
                 <h3 class="bf-card__name">{{ d.webshop_name }}</h3>
                 <p class="bf-card__deal">{{ d.korting_text_nl || d.korting_text }}</p>
                 <div class="bf-card__foot">
-                  <span class="bf-card__date">Gespot op {{ formatDate(d.date) }}</span>
+                  <span class="bf-card__date">{{ isSpottedToday(d.date) ? 'Vandaag gespot' : 'Gespot op ' + formatDate(d.date) }}</span>
                   <span class="bf-card__cta">Bekijk deal →</span>
                 </div>
               </a>
@@ -118,19 +118,14 @@
       </section>
     }
 
-    <!-- Default: all sections stacked (Alle on top), each collapsed to a few -->
+    <!-- Default: one list for the active category, paged with "toon meer" -->
     @else {
-      @for (s of sections; track s.name) {
-        <section class="bf-section" [id]="'sec-' + s.name">
-          <div class="bf-section__head">
-            <h2>{{ sectionTitle(s.name) }}</h2>
-            <span class="bf-count">{{ s.items.length }}</span>
-          </div>
-
+      <section class="bf-section">
+        @if (filteredDeals.length) {
           <div class="bf-grid">
-            @for (d of s.items; track d.webshop_name + d.date; let idx = $index) {
-              @if (isExpanded(s.name) || idx < previewCount) {
-                <a class="bf-card" [href]="d.url" target="_blank" rel="noopener noreferrer sponsored">
+            @for (d of filteredDeals; track d.webshop_name + d.date; let idx = $index) {
+              @if (idx < visibleCount) {
+                <a class="bf-card" [class.bf-card--today]="isSpottedToday(d.date)" [href]="d.url" target="_blank" rel="noopener noreferrer sponsored">
                   <div class="bf-card__top">
                     @if (getLogoUrl(d.webshop_name)) {
                       <img class="bf-card__logo" [src]="getLogoUrl(d.webshop_name)"
@@ -143,7 +138,7 @@
                   <h3 class="bf-card__name">{{ d.webshop_name }}</h3>
                   <p class="bf-card__deal">{{ d.korting_text_nl || d.korting_text }}</p>
                   <div class="bf-card__foot">
-                    <span class="bf-card__date">Gespot op {{ formatDate(d.date) }}</span>
+                    <span class="bf-card__date">{{ isSpottedToday(d.date) ? 'Vandaag gespot' : 'Gespot op ' + formatDate(d.date) }}</span>
                     <span class="bf-card__cta">Bekijk deal →</span>
                   </div>
                 </a>
@@ -151,19 +146,19 @@
             }
           </div>
 
-          @if (s.items.length > previewCount) {
-            <button type="button" class="bf-more" (click)="toggleCategory(s.name)">
-              @if (isExpanded(s.name)) {
-                Toon minder <span class="bf-more__chev">↑</span>
-              } @else if (s.name === 'alle') {
-                Toon alle {{ s.items.length }} deals <span class="bf-more__chev">↓</span>
+          @if (filteredDeals.length > visibleCount) {
+            <button type="button" class="bf-more" (click)="showMore()">
+              @if (filteredDeals.length - visibleCount > loadStep) {
+                Toon de volgende {{ loadStep }} <span class="bf-more__chev">↓</span>
               } @else {
-                Toon alle {{ s.items.length }} {{ categoryLabel(s.name) }}-deals <span class="bf-more__chev">↓</span>
+                Toon de laatste {{ filteredDeals.length - visibleCount }} <span class="bf-more__chev">↓</span>
               }
             </button>
           }
-        </section>
-      }
+        } @else {
+          <p class="bf-empty">Geen deals in deze categorie.</p>
+        }
+      </section>
     }
   </div>
 </main>

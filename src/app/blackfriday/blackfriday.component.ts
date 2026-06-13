@@ -79,16 +79,16 @@ export class BlackfridayComponent implements OnInit {
   allDiscounts: WebshopKorting[] = [];
   groups: CategoryGroup[] = [];
   categories: { name: string; count: number }[] = [];
-  // All sections shown stacked: Alle first, then the categories.
-  sections: CategoryGroup[] = [];
   activeCategory = 'alle';
 
-  // "Alle" is a synthetic category pinned at the top: every deal, newest first.
+  // "Alle" is a synthetic category: every deal, newest first.
   alleDeals: WebshopKorting[] = [];
 
-  // Each section is collapsed to its newest few deals, expandable per section.
-  previewCount = 4;
-  expandedCategories = new Set<string>();
+  // Single filtered list: the active category's deals, revealed a page at a time.
+  filteredDeals: WebshopKorting[] = [];
+  private readonly initialVisible = 16;
+  readonly loadStep = 50;   // "show more" reveals deals 50 at a time
+  visibleCount = this.initialVisible;
 
   // The category bar is a single scrollable row; these drive the edge fades that
   // signal there's more to swipe to.
@@ -160,7 +160,7 @@ export class BlackfridayComponent implements OnInit {
 
       this.buildGroups();
       this.buildAlle();
-      this.buildSections();
+      this.applyFilter();
       this.totalDeals = this.allDiscounts.length;
       this.initialPageLoad = false;
     });
@@ -194,28 +194,21 @@ export class BlackfridayComponent implements OnInit {
     this.alleDeals = [...this.allDiscounts].sort((a, b) => b.date.localeCompare(a.date));
   }
 
-  /** Stacked sections: Alle pinned on top (when it has deals), then the categories. */
-  private buildSections() {
-    this.sections = [
-      ...(this.alleDeals.length ? [{ name: 'alle', items: this.alleDeals }] : []),
-      ...this.groups,
-    ];
+  /** Set the active category's deals (Alle = everything) and reset to the first page. */
+  private applyFilter() {
+    this.filteredDeals = this.activeCategory === 'alle'
+      ? this.alleDeals
+      : (this.groups.find(g => g.name === this.activeCategory)?.items ?? []);
+    this.visibleCount = this.initialVisible;
+  }
+
+  /** Reveal the next page of deals in the current list. */
+  showMore() {
+    this.visibleCount += this.loadStep;
   }
 
   get isSearching(): boolean {
     return this.searchTerm.trim().length > 0;
-  }
-
-  isExpanded(name: string): boolean {
-    return this.expandedCategories.has(name);
-  }
-
-  toggleCategory(name: string) {
-    if (this.expandedCategories.has(name)) {
-      this.expandedCategories.delete(name);
-    } else {
-      this.expandedCategories.add(name);
-    }
   }
 
   onSearch() {
@@ -238,10 +231,7 @@ export class BlackfridayComponent implements OnInit {
   selectCategory(name: string) {
     this.activeCategory = name;
     this.clearSearch();
-    // Defer so sections are rendered (e.g. after clearing a search) before scrolling.
-    setTimeout(() => {
-      document.getElementById('sec-' + name)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+    this.applyFilter();
   }
 
   @HostListener('window:resize')
@@ -250,12 +240,6 @@ export class BlackfridayComponent implements OnInit {
     if (!el) return;
     this.catCanLeft = el.scrollLeft > 4;
     this.catCanRight = el.scrollLeft + el.clientWidth < el.scrollWidth - 4;
-  }
-
-  /** Section heading: a friendlier title for Alle, the plain label otherwise. */
-  sectionTitle(name: string): string {
-    if (name === 'alle') return 'Alle deals';
-    return this.categoryLabel(name);
   }
 
   categoryLabel(slug: string | undefined): string {
@@ -269,6 +253,16 @@ export class BlackfridayComponent implements OnInit {
 
   formatDate(date: string): string {
     return this.datePipe.transform(new Date(date), 'd MMM') ?? '';
+  }
+
+  /** True when the deal was spotted today (local time) — used to highlight fresh deals. */
+  private _todayKey?: string;
+  isSpottedToday(date: string): boolean {
+    if (!this._todayKey) {
+      const n = new Date();
+      this._todayKey = `${n.getFullYear()}-${String(n.getMonth() + 1).padStart(2, '0')}-${String(n.getDate()).padStart(2, '0')}`;
+    }
+    return !!date && date.slice(0, 10) === this._todayKey;
   }
 
   getLogoUrl(companyName: string): string | undefined {

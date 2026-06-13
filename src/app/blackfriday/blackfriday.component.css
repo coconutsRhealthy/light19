@@ -286,7 +286,7 @@
 }
 
 .bf-section {
-  margin-top: 42px;
+  margin-top: 20px;
   scroll-margin-top: 76px;
 }
 
@@ -362,6 +362,19 @@
 
 .bf-card:active {
   transform: translateY(-1px) scale(.995);
+}
+
+/* "Spotted today" highlight: orange ring, soft glow, persistent tint, orange date. */
+.bf-card--today {
+  border-color: rgba(255, 105, 0, .65);
+  box-shadow: 0 8px 24px -12px rgba(255, 105, 0, .45);
+}
+.bf-card--today::before {
+  opacity: 1;
+}
+.bf-card--today .bf-card__date {
+  color: var(--bf-orange);
+  font-weight: 700;
 }
 
 .bf-card__top {
