@@ -1,0 +1,87 @@
+{
+  "slug": "nextory",
+  "name": "Nextory",
+  "heroLede": "Nextory is een streamingdienst voor luisterboeken en e-books: één abonnement, onbeperkt of per uurpakket lezen en luisteren via de app. Met een Nextory-code via een creator pak je vaak een fors verlengde gratis proefperiode in plaats van het standaardaanbod, zodat je de app eerst rustig kunt uitproberen.",
+  "about": [
+    "Nextory is een Zweedse streamingdienst voor digitale boeken en draait sinds de Nederlandse lancering ook hier mee. Je betaalt een vast bedrag per maand en krijgt daarvoor toegang tot een grote catalogus aan luisterboeken en e-books, in zowel het Nederlands als het Engels. Alles draait via de Nextory-app op je telefoon of tablet, met de optie om titels offline te downloaden zodat je ook zonder verbinding verder kunt.",
+    "De bibliotheek is groot: Nextory adverteert met meer dan een miljoen titels, waarvan een flink deel ook in het Nederlands. Je vindt er onder meer thrillers, fictie, kinderboeken en persoonlijke ontwikkeling. In plaats van losse boeken kopen, luister en lees je zoveel als je abonnement toelaat. De creators die Nextory in onze database promoten, zoals lians_home en booksbeersandbeyond, gebruiken de dienst vooral voor luisterboeken en podcasts onderweg of tijdens het werk.",
+    "Kenmerkend is de opzet rond profielen: vrijwel alle abonnementen ondersteunen meerdere profielen binnen één account, met aparte, afgeschermde kinderprofielen. Daardoor is Nextory niet alleen een soloabonnement maar ook geschikt voor een heel huishouden."
+  ],
+  "why": [
+    {
+      "h": "Onbeperkt of per uurpakket",
+      "p": "Nextory werkt met meerdere abonnementsvormen, van een instappakket met een beperkt aantal luisteruren per maand tot een onbeperkt pakket. Zo kies je meestal een tarief dat past bij hoeveel je daadwerkelijk leest en luistert, in plaats van per boek af te rekenen."
+    },
+    {
+      "h": "Nederlandse én Engelse titels",
+      "p": "De catalogus bevat zowel Nederlandstalige als Engelstalige boeken. Dat zie je terug bij de creators: lians_home post in het Nederlands over luisterboeken, terwijl booksbeersandbeyond juist Engelstalige titels op de app volgt."
+    },
+    {
+      "h": "Eén app, ook offline",
+      "p": "Lezen en luisteren gebeurt via de Nextory-app op je telefoon of tablet. Titels zijn te downloaden voor offline gebruik, handig voor onderweg, in het vliegtuig of op plekken zonder bereik."
+    },
+    {
+      "h": "Profielen voor het hele gezin",
+      "p": "Eén account ondersteunt meerdere profielen, met aparte kinderprofielen. Daardoor kunnen meerdere huisgenoten hun eigen boeken en voortgang bijhouden binnen hetzelfde abonnement."
+    }
+  ],
+  "trending": [
+    "Luisterboeken voor onderweg en tijdens het thuiswerken",
+    "Thrillers en fictie in het Nederlands en Engels",
+    "Podcasts en luisterboeken met de sleeptimer voor het slapengaan",
+    "E-books om naast de luisterboeken door te lezen"
+  ],
+  "codeInfo": [
+    "Een Nextory-code werkt anders dan een gewone procentkorting: in plaats van geld van de prijs af, geeft een creatorcode meestal een verlengde gratis proefperiode. Waar de standaardproef korter is, geven codes zoals lianshome70 in onze data bijvoorbeeld een ruime periode gratis luisteren en lezen, zodat je de app uitgebreid kunt testen voordat je betaalt.",
+    "Je vult de code in bij het aanmaken van je account, of opent de app via de link in de bio of story van de creator. Daarna kies je je abonnementsvorm; pas na de proefperiode gaat het maandbedrag lopen. Let op de geldigheidsdatum die bij een actie hoort, want zomer- en seizoensacties zijn vaak tijdelijk."
+  ],
+  "creators": [
+    "@lians_home",
+    "@booksbeersandbeyond"
+  ],
+  "tips": [
+    {
+      "h": "Gebruik de proefperiode bewust",
+      "p": "De waarde van Nextory zit in de gratis proefperiode die een creatorcode oplevert. Noteer wanneer de proef afloopt, zodat je op tijd kunt beslissen of je doorgaat of opzegt. In reviews komt terug dat sommige mensen na opzeggen toch nog kosten zagen, dus check je opzegging zorgvuldig."
+    },
+    {
+      "h": "Kies het juiste uurpakket",
+      "p": "Luister je veel, dan loont een ruimer of onbeperkt pakket; lees je af en toe, dan is een instappakket met minder uren meestal voordeliger. Begin tijdens de proefperiode met inschatten hoeveel uur je per maand echt gebruikt."
+    },
+    {
+      "h": "Download voor offline",
+      "p": "Download je boeken vooraf via wifi als je onderweg gaat luisteren. Zo verbruik je geen mobiele data en kun je ook zonder bereik verder, bijvoorbeeld in de trein of op reis."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Hoe werkt een Nextory-kortingscode?",
+      "a": "Een Nextory-code geeft meestal geen procentkorting maar een verlengde gratis proefperiode. Je vult de code in bij het aanmaken van je account of opent de app via de link van de creator; pas na de proef gaat het maandbedrag lopen."
+    },
+    {
+      "q": "Wat kost een Nextory-abonnement?",
+      "a": "Nextory werkt met meerdere abonnementsvormen, van een instappakket met een beperkt aantal luisteruren per maand tot een onbeperkt pakket. Het exacte maandbedrag hangt af van het gekozen pakket; kijk voor de actuele prijzen op nextory.com."
+    },
+    {
+      "q": "Zijn er Nederlandstalige boeken op Nextory?",
+      "a": "Ja. De catalogus bevat naast Engelstalige titels ook een ruim aanbod aan Nederlandstalige luisterboeken en e-books, verdeeld over genres als thrillers, fictie, kinderboeken en persoonlijke ontwikkeling."
+    },
+    {
+      "q": "Kan ik Nextory met mijn gezin delen?",
+      "a": "Vrijwel alle abonnementen ondersteunen meerdere profielen binnen één account, inclusief aparte kinderprofielen. Daardoor kunnen meerdere huisgenoten hun eigen boeken en voortgang bijhouden."
+    },
+    {
+      "q": "Kan ik luisterboeken offline gebruiken?",
+      "a": "Ja, je kunt titels in de Nextory-app downloaden voor offline gebruik. Handig voor onderweg of op plekken zonder internetverbinding."
+    }
+  ],
+  "related": [
+    "hellofresh.nl",
+    "desenio",
+    "idealofsweden",
+    "mydearbeer_nl",
+    "posterstore",
+    "ubereats",
+    "wildrefill"
+  ]
+}
