@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, PLATFORM_ID, ElementRef, ViewChildren, QueryList, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, PLATFORM_ID, ElementRef, ViewChildren, QueryList, afterNextRender, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -106,9 +106,9 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
   ngAfterViewInit(): void {
     if (!this.isBrowser) return;
-    this.setupVideos();
-    // The component instance is reused across v2 shops; re-wire when the rendered
-    // <video> set changes (e.g. navigating to a shop with a different clip count).
+    // Initial wiring is done by afterNextRender (post-hydration; see constructor).
+    // Here we only re-wire when the rendered <video> set changes — e.g. client-side
+    // navigation between v2 shops (component reused, no hydration involved).
     this.videoRefs.changes.subscribe(() => this.setupVideos());
   }
 
@@ -188,7 +188,14 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     private meta: MetaService,
     private affiliateLinkService: AffiliateLinkService,
     private visitorProfile: VisitorProfileService
-  ) {}
+  ) {
+    // Wire up the video(s) AFTER hydration. ngAfterViewInit runs too early: on a
+    // server-rendered page Angular hydration replaces the <video> DOM nodes shortly
+    // after, leaving any observer attached in ngAfterViewInit watching detached
+    // elements (so the live clips never muted/played). afterNextRender fires after
+    // the post-hydration render, so setupVideos sees the real, connected elements.
+    afterNextRender(() => this.setupVideos());
+  }
 
   ngOnInit(): void {
     this.logos.getAllLogos().subscribe(all => {
