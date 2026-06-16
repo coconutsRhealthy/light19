@@ -93,5 +93,16 @@
     "posterstore",
     "bjornborg",
     "bodyandfit.com"
-  ]
+  ],
+  "video": {
+    "src": "https://media.diski.nl/idealofsweden/ootd.mp4",
+    "poster": "https://media.diski.nl/idealofsweden/ootd.jpg",
+    "w": 540,
+    "h": 960,
+    "duration": 12,
+    "title": "Outfit of the day met Ideal of Sweden",
+    "description": "Indy laat zien hoe een Ideal of Sweden telefoonhoesje past bij de outfit van de dag.",
+    "uploadDate": "2026-06-16",
+    "caption": "Zo combineert Indy een Ideal of Sweden hoesje met de outfit van de dag. Tap voor geluid."
+  }
 }

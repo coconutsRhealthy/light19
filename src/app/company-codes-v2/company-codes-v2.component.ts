@@ -1,4 +1,4 @@
-import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, PLATFORM_ID, ElementRef, ViewChild, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -57,7 +57,7 @@ const RELATED_MAX = 8;
   templateUrl: './company-codes-v2.component.html',
   styleUrls: ['./company-codes-v2.component.css']
 })
-export class CompanyCodesV2Component implements OnInit {
+export class CompanyCodesV2Component implements OnInit, OnDestroy {
   company = '';
   displayName = '';
   logoUrl = '';
@@ -88,6 +88,43 @@ export class CompanyCodesV2Component implements OnInit {
 
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private allLogos: { [name: string]: string } = {};
+
+  // ---- brand video: muted autoplay loop on scroll-into-view, tap for sound ----
+  videoMuted = true;
+  private videoEl?: HTMLVideoElement;
+  private videoObserver?: IntersectionObserver;
+
+  /**
+   * ViewChild setter — fires whenever the (conditionally rendered) <video> appears,
+   * including when the reused component re-renders for a different shop. Browser-only:
+   * preload="none" means nothing downloads until the IntersectionObserver calls play().
+   */
+  @ViewChild('brandVideo') set brandVideoRef(ref: ElementRef<HTMLVideoElement> | undefined) {
+    if (!this.isBrowser || !ref) return;
+    const el = ref.nativeElement;
+    if (this.videoEl === el) return;
+    this.videoEl = el;
+    el.muted = true;
+    this.videoMuted = true;
+    this.videoObserver?.disconnect();
+    this.videoObserver = new IntersectionObserver(entries => {
+      for (const e of entries) {
+        if (e.isIntersecting) { el.play().catch(() => {}); }
+        else { el.pause(); }
+      }
+    }, { threshold: 0.5 });
+    this.videoObserver.observe(el);
+  }
+
+  /** Tap the video (or the badge) to toggle sound. The tap is the user gesture
+   *  browsers require before a video may play audio. */
+  toggleVideoSound(): void {
+    const el = this.videoEl;
+    if (!el) return;
+    el.muted = !el.muted;
+    this.videoMuted = el.muted;
+    if (!el.muted && el.paused) el.play().catch(() => {});
+  }
 
   /** True on the /v2/ preview route (route data.preview); false on the live /:company route. */
   private get isPreview(): boolean {
@@ -152,6 +189,10 @@ export class CompanyCodesV2Component implements OnInit {
 
       this.discounts.getDiscounts().subscribe(lines => this.build(lines));
     });
+  }
+
+  ngOnDestroy(): void {
+    this.videoObserver?.disconnect();
   }
 
   private applyDisplayName(): void {
@@ -377,6 +418,22 @@ export class CompanyCodesV2Component implements OnInit {
         'seller': { '@type': 'Organization', 'name': name }
       }
     }));
+
+    const video = this.content?.video;
+    if (video) {
+      this.meta.setJsonLd('v2-video', {
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        'name': video.title ?? `${name} in beeld`,
+        'description': video.description ?? `Video van ${name}.`,
+        'thumbnailUrl': video.poster,
+        'contentUrl': video.src,
+        'uploadDate': video.uploadDate ?? this.lastCheckedIso,
+        'inLanguage': 'nl-NL',
+        'publisher': { '@id': 'https://diski.nl/#organization' },
+        ...(video.duration ? { 'duration': `PT${Math.round(video.duration)}S` } : {})
+      });
+    }
 
     if (offerItems.length) {
       this.meta.setJsonLd('v2-offers', {

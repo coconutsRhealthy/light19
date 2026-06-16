@@ -14,6 +14,18 @@ export interface TitledText {
   p: string;
 }
 
+export interface BrandVideo {
+  src: string;          // mp4 URL (hosted on R2/CDN, never bundled)
+  poster: string;       // still-frame image URL — also the VideoObject thumbnailUrl
+  w: number;            // intrinsic width  (for aspect-ratio box, no layout shift)
+  h: number;            // intrinsic height
+  duration?: number;    // seconds (for VideoObject duration)
+  title?: string;       // VideoObject name + visible caption
+  description?: string; // VideoObject description
+  uploadDate?: string;  // ISO date (VideoObject uploadDate; required for rich results)
+  caption?: string;     // short visible line under the video
+}
+
 export interface BrandContent {
   slug: string;          // matches discounts.json + ai_canonical, e.g. "nakdfashion"
   name: string;          // display name, e.g. "NA-KD"
@@ -26,4 +38,5 @@ export interface BrandContent {
   tips: TitledText[];    // savings tips
   faq: FaqItem[];        // matches the visible FAQ + FAQPage JSON-LD
   related?: string[];    // related shop slugs (shared-influencer co-occurrence, ranked)
+  video?: BrandVideo;    // optional caption-grounded clip (muted autoplay, tap for sound)
 }
