@@ -37,7 +37,7 @@
   <section id="codes" aria-labelledby="codes-h">
     <h2 id="codes-h">Actieve {{ displayName }} kortingscodes &amp; aanbiedingen ({{ monthYear }})</h2>
 
-    <div class="codes-layout" [class.has-aside]="!!content?.video">
+    <div class="codes-layout" [class.has-aside]="videoList.length > 0">
     <div class="codes-main">
     <div class="codes">
       @for (c of visibleRegularCodes; track c.code; let i = $index) {
