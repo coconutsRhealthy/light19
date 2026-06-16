@@ -93,6 +93,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy {
   videoMuted = true;
   private videoEl?: HTMLVideoElement;
   private videoObserver?: IntersectionObserver;
+  private videoInView = false;
 
   /**
    * ViewChild setter — fires whenever the (conditionally rendered) <video> appears,
@@ -109,11 +110,26 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy {
     this.videoObserver?.disconnect();
     this.videoObserver = new IntersectionObserver(entries => {
       for (const e of entries) {
-        if (e.isIntersecting) { el.play().catch(() => {}); }
+        this.videoInView = e.isIntersecting;
+        if (e.isIntersecting) { this.schedulePlay(el); }
         else { el.pause(); }
       }
     }, { threshold: 0.5 });
     this.videoObserver.observe(el);
+  }
+
+  /**
+   * Defer the autoplay fetch until the browser is idle. On desktop the video is in
+   * the viewport at load, so playing immediately would pull ~1.2MB while the page is
+   * still loading its critical content. requestIdleCallback yields that bandwidth to
+   * the above-the-fold render first, then starts the video a beat later (timeout
+   * fallback so it always starts). Re-checks visibility so a quick scroll-past doesn't
+   * play offscreen. No visual change on a normal connection.
+   */
+  private schedulePlay(el: HTMLVideoElement): void {
+    const start = () => { if (this.videoInView) el.play().catch(() => {}); };
+    const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => void }).requestIdleCallback;
+    if (ric) { ric(start, { timeout: 2000 }); } else { setTimeout(start, 1200); }
   }
 
   /** Tap the video (or the badge) to toggle sound. The tap is the user gesture
