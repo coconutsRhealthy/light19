@@ -145,10 +145,13 @@ footer .cols{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between}
 .codes-aside{position:sticky;top:16px}
 @media(max-width:760px){
   .codes-layout.has-aside{grid-template-columns:1fr}
-  .codes-aside{position:static;margin-top:20px}
+  .codes-aside{position:static;margin-top:10px}
   .codes-aside .video-box{margin:0 auto}
+  /* On mobile the caption leads the video so it's clear what you're scrolling
+     into; on desktop (right rail) it stays below. */
+  .codes-aside .video-cap{order:-1;margin:0 auto 10px;text-align:center}
 }
-.video-figure{margin:0}
+.video-figure{margin:0;display:flex;flex-direction:column}
 .video-box{position:relative;max-width:300px;margin:0;border-radius:var(--radius);
   overflow:hidden;background:#000;border:1px solid var(--line);cursor:pointer}
 .video-box video{display:block;width:100%;height:100%;object-fit:cover}
