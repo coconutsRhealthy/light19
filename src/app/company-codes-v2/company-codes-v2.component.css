@@ -143,6 +143,10 @@ footer .cols{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between}
 .codes-layout.has-aside{display:grid;grid-template-columns:minmax(0,1fr) 300px;
   gap:26px;align-items:start}
 .codes-aside{position:sticky;top:16px}
+/* Two+ stacked portrait clips are taller than the viewport, so sticky would feel
+   stuck; let the rail scroll normally and space the clips apart. */
+.codes-aside.multi{position:static}
+.video-figure + .video-figure{margin-top:18px}
 @media(max-width:760px){
   .codes-layout.has-aside{grid-template-columns:1fr}
   .codes-aside{position:static;margin-top:10px}

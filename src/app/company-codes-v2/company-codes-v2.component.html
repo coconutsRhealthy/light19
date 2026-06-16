@@ -93,29 +93,32 @@
     </p>
     </div><!-- /.codes-main -->
 
-    @if (content?.video) {
-      <aside id="video" class="codes-aside" [attr.aria-label]="displayName + ' in beeld'">
-        <figure class="video-figure">
-          <div class="video-box" [style.aspect-ratio]="content!.video!.w + ' / ' + content!.video!.h"
-               (click)="toggleVideoSound()">
-            <video #brandVideo
-              [poster]="content!.video!.poster"
-              [attr.width]="content!.video!.w"
-              [attr.height]="content!.video!.h"
-              loop playsinline muted preload="none"
-              [attr.aria-label]="content!.video!.title || (displayName + ' video')">
-              <source [src]="content!.video!.src" type="video/mp4">
-            </video>
-            <button type="button" class="sound-toggle"
-              (click)="toggleVideoSound(); $event.stopPropagation()"
-              [attr.aria-label]="videoMuted ? 'Geluid aanzetten' : 'Geluid uitzetten'">
-              {{ videoMuted ? '🔇 Geluid aan' : '🔊 Geluid uit' }}
-            </button>
-          </div>
-          @if (content?.video?.caption) {
-            <figcaption class="video-cap">{{ content!.video!.caption }}</figcaption>
-          }
-        </figure>
+    @if (videoList.length) {
+      <aside id="video" class="codes-aside" [class.multi]="videoList.length > 1"
+             [attr.aria-label]="displayName + ' in beeld'">
+        @for (v of videoList; track v.src; let i = $index) {
+          <figure class="video-figure">
+            <div class="video-box" [style.aspect-ratio]="v.w + ' / ' + v.h"
+                 (click)="toggleVideoSound(i)">
+              <video #brandVideo
+                [poster]="v.poster"
+                [attr.width]="v.w"
+                [attr.height]="v.h"
+                loop playsinline muted preload="none"
+                [attr.aria-label]="v.title || (displayName + ' video')">
+                <source [src]="v.src" type="video/mp4">
+              </video>
+              <button type="button" class="sound-toggle"
+                (click)="toggleVideoSound(i); $event.stopPropagation()"
+                [attr.aria-label]="isMuted(i) ? 'Geluid aanzetten' : 'Geluid uitzetten'">
+                {{ isMuted(i) ? '🔇 Geluid aan' : '🔊 Geluid uit' }}
+              </button>
+            </div>
+            @if (v.caption) {
+              <figcaption class="video-cap">{{ v.caption }}</figcaption>
+            }
+          </figure>
+        }
       </aside>
     }
     </div><!-- /.codes-layout -->
@@ -129,7 +132,7 @@
       @if (content?.codeInfo?.length) { <li><a href="#zo-werkt" (click)="scrollToSection($event, 'zo-werkt')">Zo werkt een {{ displayName }} code</a></li> }
       @if (content?.about?.length) { <li><a href="#over" (click)="scrollToSection($event, 'over')">Over {{ displayName }}</a></li> }
       @if (content?.creators?.length) { <li><a href="#creators" (click)="scrollToSection($event, 'creators')">Bij creators</a></li> }
-      @if (content?.video) { <li><a href="#video" (click)="scrollToSection($event, 'video')">In beeld</a></li> }
+      @if (videoList.length) { <li><a href="#video" (click)="scrollToSection($event, 'video')">In beeld</a></li> }
       @if (content?.tips?.length) { <li><a href="#tips" (click)="scrollToSection($event, 'tips')">Bespaartips</a></li> }
       @if (content?.faq?.length) { <li><a href="#faq" (click)="scrollToSection($event, 'faq')">Veelgestelde vragen</a></li> }
       @if (relatedShops.length) { <li><a href="#gerelateerd" (click)="scrollToSection($event, 'gerelateerd')">Gerelateerde shops</a></li> }

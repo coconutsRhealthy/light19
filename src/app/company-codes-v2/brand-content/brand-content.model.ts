@@ -38,5 +38,6 @@ export interface BrandContent {
   tips: TitledText[];    // savings tips
   faq: FaqItem[];        // matches the visible FAQ + FAQPage JSON-LD
   related?: string[];    // related shop slugs (shared-influencer co-occurrence, ranked)
-  video?: BrandVideo;    // optional caption-grounded clip (muted autoplay, tap for sound)
+  video?: BrandVideo;    // single clip (legacy shorthand; normalised into `videos`)
+  videos?: BrandVideo[]; // one or more caption-grounded clips (muted autoplay, tap for sound)
 }

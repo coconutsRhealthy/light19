@@ -93,5 +93,17 @@
     "samakocleaning",
     "everdrop",
     "calliegifts"
-  ]
+  ],
+
+    "video": {
+      "src": "https://media.diski.nl/geurwolkje/ootd.mp4",
+      "poster": "https://media.diski.nl/geurwolkje/ootd.jpg",
+      "w": 540,
+      "h": 960,
+      "duration": 20,
+      "title": "Indy over Geurwolkje",
+      "description": "Indy deelt haar favoriete geuren van Geurwolkje.",
+      "uploadDate": "2026-06-16",
+      "caption": "Indy deelt haar favoriete geuren van Geurwolkje. Tap voor geluid."
+    }
 }

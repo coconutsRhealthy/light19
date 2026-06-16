@@ -83,5 +83,30 @@
     "achateshop",
     "ahead-nutrition",
     "amicicosmetics"
-  ]
+  ],
+
+    "videos": [
+      {
+        "src": "https://media.diski.nl/oduree.nl/ootd-1.mp4",
+        "poster": "https://media.diski.nl/oduree.nl/ootd-1.jpg",
+        "w": 540,
+        "h": 960,
+        "duration": 21,
+        "title": "Indy over Oduree",
+        "description": "Indy laat de autoparfums van Oduree zien.",
+        "uploadDate": "2026-06-16",
+        "caption": "Indy over de autoparfums van Oduree. Tap voor geluid."
+      },
+      {
+        "src": "https://media.diski.nl/oduree.nl/ootd-2.mp4",
+        "poster": "https://media.diski.nl/oduree.nl/ootd-2.jpg",
+        "w": 540,
+        "h": 960,
+        "duration": 19,
+        "title": "Indy over Oduree (deel 2)",
+        "description": "Indy laat nog een autoparfum van Oduree zien.",
+        "uploadDate": "2026-06-16",
+        "caption": "Indy over Oduree, deel twee. Tap voor geluid."
+      }
+    ]
 }

@@ -84,5 +84,17 @@
     "gutsgusto",
     "hellofresh.nl",
     "icaniwill"
-  ]
+  ],
+
+    "video": {
+      "src": "https://media.diski.nl/pinkgellac/ootd.mp4",
+      "poster": "https://media.diski.nl/pinkgellac/ootd.jpg",
+      "w": 540,
+      "h": 960,
+      "duration": 30,
+      "title": "Indy's lente-nagels met Pink Gellac",
+      "description": "Indy doet haar lente-nagels met Pink Gellac.",
+      "uploadDate": "2026-06-16",
+      "caption": "Indy doet haar lente-nagels met Pink Gellac. Tap voor geluid."
+    }
 }

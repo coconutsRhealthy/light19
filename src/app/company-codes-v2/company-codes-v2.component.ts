@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, PLATFORM_ID, ElementRef, ViewChild, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, PLATFORM_ID, ElementRef, ViewChildren, QueryList, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -10,7 +10,7 @@ import { MetaService } from '../services/meta.service';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
 import { ModalComponent } from '../modal/modal.component';
-import { BrandContent } from './brand-content/brand-content.model';
+import { BrandContent, BrandVideo } from './brand-content/brand-content.model';
 import { BUILD_DATE_ISO } from '../build-info';
 
 declare let gtag: Function;
@@ -57,7 +57,7 @@ const RELATED_MAX = 8;
   templateUrl: './company-codes-v2.component.html',
   styleUrls: ['./company-codes-v2.component.css']
 })
-export class CompanyCodesV2Component implements OnInit, OnDestroy {
+export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit {
   company = '';
   displayName = '';
   logoUrl = '';
@@ -89,56 +89,64 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy {
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private allLogos: { [name: string]: string } = {};
 
-  // ---- brand video: muted autoplay loop on scroll-into-view, tap for sound ----
-  videoMuted = true;
-  private videoEl?: HTMLVideoElement;
+  // ---- brand video(s): muted autoplay loop on scroll-into-view, tap for sound ----
+  // A shop can carry one or more clips; `video` (singular) is the legacy shorthand.
+  mutedFlags: boolean[] = [];           // per-clip sound state (index-aligned with videoList)
   private videoObserver?: IntersectionObserver;
-  private videoInView = false;
+  private inView = new WeakMap<Element, boolean>();
+  @ViewChildren('brandVideo') private videoRefs!: QueryList<ElementRef<HTMLVideoElement>>;
 
-  /**
-   * ViewChild setter — fires whenever the (conditionally rendered) <video> appears,
-   * including when the reused component re-renders for a different shop. Browser-only:
-   * preload="none" means nothing downloads until the IntersectionObserver calls play().
-   */
-  @ViewChild('brandVideo') set brandVideoRef(ref: ElementRef<HTMLVideoElement> | undefined) {
-    if (!this.isBrowser || !ref) return;
-    const el = ref.nativeElement;
-    if (this.videoEl === el) return;
-    this.videoEl = el;
-    el.muted = true;
-    this.videoMuted = true;
+  /** Normalised list: explicit `videos`, else the single `video`, else empty. */
+  get videoList(): BrandVideo[] {
+    return this.content?.videos ?? (this.content?.video ? [this.content.video] : []);
+  }
+
+  /** Clips start muted; the badge label reads from this. */
+  isMuted(i: number): boolean { return this.mutedFlags[i] !== false; }
+
+  ngAfterViewInit(): void {
+    if (!this.isBrowser) return;
+    this.setupVideos();
+    // The component instance is reused across v2 shops; re-wire when the rendered
+    // <video> set changes (e.g. navigating to a shop with a different clip count).
+    this.videoRefs.changes.subscribe(() => this.setupVideos());
+  }
+
+  private setupVideos(): void {
     this.videoObserver?.disconnect();
+    const els = this.videoRefs.map(r => r.nativeElement);
+    if (!els.length) return;
     this.videoObserver = new IntersectionObserver(entries => {
       for (const e of entries) {
-        this.videoInView = e.isIntersecting;
-        if (e.isIntersecting) { this.schedulePlay(el); }
-        else { el.pause(); }
+        this.inView.set(e.target, e.isIntersecting);
+        const el = e.target as HTMLVideoElement;
+        if (e.isIntersecting) { this.schedulePlay(el); } else { el.pause(); }
       }
     }, { threshold: 0.5 });
-    this.videoObserver.observe(el);
+    for (const el of els) { el.muted = true; this.videoObserver.observe(el); }
   }
 
   /**
-   * Defer the autoplay fetch until the browser is idle. On desktop the video is in
-   * the viewport at load, so playing immediately would pull ~1.2MB while the page is
+   * Defer the autoplay fetch until the browser is idle. On desktop a clip can be in
+   * the viewport at load, so playing immediately would pull ~1MB while the page is
    * still loading its critical content. requestIdleCallback yields that bandwidth to
-   * the above-the-fold render first, then starts the video a beat later (timeout
+   * the above-the-fold render first, then starts the clip a beat later (timeout
    * fallback so it always starts). Re-checks visibility so a quick scroll-past doesn't
    * play offscreen. No visual change on a normal connection.
    */
   private schedulePlay(el: HTMLVideoElement): void {
-    const start = () => { if (this.videoInView) el.play().catch(() => {}); };
+    const start = () => { if (this.inView.get(el)) el.play().catch(() => {}); };
     const ric = (window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => void }).requestIdleCallback;
     if (ric) { ric(start, { timeout: 2000 }); } else { setTimeout(start, 1200); }
   }
 
-  /** Tap the video (or the badge) to toggle sound. The tap is the user gesture
-   *  browsers require before a video may play audio. */
-  toggleVideoSound(): void {
-    const el = this.videoEl;
+  /** Tap a clip (or its badge) to toggle that clip's sound. The tap is the user
+   *  gesture browsers require before a video may play audio. */
+  toggleVideoSound(i: number): void {
+    const el = this.videoRefs?.get(i)?.nativeElement;
     if (!el) return;
     el.muted = !el.muted;
-    this.videoMuted = el.muted;
+    this.mutedFlags[i] = el.muted;
     if (!el.muted && el.paused) el.play().catch(() => {});
   }
 
@@ -198,6 +206,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy {
       this.showAllCodes = false;
       this.isModalVisible = false;
       this.selectedDiscount = null;
+      this.mutedFlags = [];
 
       this.content = (data['brandContent'] as BrandContent | null) ?? null;
       this.applyDisplayName();
@@ -435,20 +444,22 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy {
       }
     }));
 
-    const video = this.content?.video;
-    if (video) {
-      this.meta.setJsonLd('v2-video', {
+    const vids = this.videoList;
+    if (vids.length) {
+      // One VideoObject per clip, emitted as a single top-level JSON-LD array (valid,
+      // and keeps one script id so a later navigation overwrites rather than stacks).
+      this.meta.setJsonLd('v2-video', vids.map(v => ({
         '@context': 'https://schema.org',
         '@type': 'VideoObject',
-        'name': video.title ?? `${name} in beeld`,
-        'description': video.description ?? `Video van ${name}.`,
-        'thumbnailUrl': video.poster,
-        'contentUrl': video.src,
-        'uploadDate': video.uploadDate ?? this.lastCheckedIso,
+        'name': v.title ?? `${name} in beeld`,
+        'description': v.description ?? `Video van ${name}.`,
+        'thumbnailUrl': v.poster,
+        'contentUrl': v.src,
+        'uploadDate': v.uploadDate ?? this.lastCheckedIso,
         'inLanguage': 'nl-NL',
         'publisher': { '@id': 'https://diski.nl/#organization' },
-        ...(video.duration ? { 'duration': `PT${Math.round(video.duration)}S` } : {})
-      });
+        ...(v.duration ? { 'duration': `PT${Math.round(v.duration)}S` } : {})
+      })));
     }
 
     if (offerItems.length) {

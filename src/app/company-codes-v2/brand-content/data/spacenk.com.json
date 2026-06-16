@@ -92,5 +92,17 @@
     "desenio",
     "ginatricot",
     "hollandandbarrett"
-  ]
+  ],
+
+    "video": {
+      "src": "https://media.diski.nl/spacenk.com/ootd.mp4",
+      "poster": "https://media.diski.nl/spacenk.com/ootd.jpg",
+      "w": 540,
+      "h": 960,
+      "duration": 17,
+      "title": "Indy's Space NK favorieten",
+      "description": "Indy laat haar favoriete producten van Space NK zien.",
+      "uploadDate": "2026-06-16",
+      "caption": "Indy neemt je mee langs haar Space NK favorieten. Tap voor geluid."
+    }
 }

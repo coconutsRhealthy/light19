@@ -82,5 +82,17 @@
     "burga",
     "edited.nl",
     "emmasleepnl"
-  ]
+  ],
+
+    "video": {
+      "src": "https://media.diski.nl/gutsgusto/ootd.mp4",
+      "poster": "https://media.diski.nl/gutsgusto/ootd.jpg",
+      "w": 540,
+      "h": 960,
+      "duration": 32,
+      "title": "Indy shopt de Guts & Gusto sale",
+      "description": "Indy laat de Guts & Gusto sale zien.",
+      "uploadDate": "2026-06-16",
+      "caption": "Indy duikt in de Guts & Gusto sale. Tap voor geluid."
+    }
 }
