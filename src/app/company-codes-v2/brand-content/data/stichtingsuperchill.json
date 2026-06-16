@@ -5,8 +5,8 @@
   "about": [
     "Super Chill is een initiatief van Stichting Super Chill, gericht op het mentale welzijn van kinderen. Naast een gratis app met speelse beweeg- en kalmeringsoefeningen biedt de stichting fysieke producten aan die ouders en kinderen samen kunnen gebruiken.",
     "In de webshop staan onder meer het doe-dagboek 'Op Avontuur in je Koppie' (€18,95) en de Kletskaartjes (€9,95). Er is ook een bundel met het doe-dagboek én de kletskaartjes voor €28,90. Het doe-dagboek bevat eenvoudige opdrachten verdeeld over zo'n 100 dagen, met één pagina per dag, waarmee kinderen leren omgaan met emoties en prikkels.",
-    "De Kletskaartjes zijn ontwikkeld samen met psychologen en pedagogen en bevatten vragen en opdrachten om samen met je kind het gesprek te openen, ook over lastigere onderwerpen. Ze zijn bedoeld voor onderweg, aan tafel of op de bank.",
-    "Omdat Super Chill een stichting is met een maatschappelijk doel rond kindermentale gezondheid, draait de webshop niet om mode of gadgets maar om hulpmiddelen die ontspanning en gesprek stimuleren. De producten worden door ouders en in de media positief ontvangen, al richten we ons hier op de feitelijke beschrijving in plaats van op cijfermatige beoordelingen."
+    "Volgens creator @marlyvd, die de set liet zien, ontdekken kinderen met het doe-dagboek en de Kletskaartjes spelenderwijs hun gevoelens, gedachten, dromen en talenten; leuke opdrachten en verrassende vragen helpen hen om zichzelf beter te leren kennen. De Kletskaartjes zijn ontwikkeld samen met psychologen en pedagogen en zijn bedoeld om samen met je kind het gesprek te openen, ook over lastigere onderwerpen, of dat nu onderweg, aan tafel of op de bank is.",
+    "Omdat Super Chill een stichting is met een maatschappelijk doel rond kindermentale gezondheid, draait de webshop niet om mode of gadgets maar om hulpmiddelen die ontspanning en gesprek stimuleren. De app won in 2025 de Pedagogische Media Award. De producten worden door ouders en in de media positief ontvangen, al richten we ons hier op de feitelijke beschrijving in plaats van op cijfermatige beoordelingen."
   ],
   "why": [
     {
@@ -19,22 +19,31 @@
     },
     {
       "h": "Maatschappelijk doel",
-      "p": "Achter de producten zit een stichting die zich al jaren inzet voor het mentale welzijn van kinderen, met onder meer een gratis app vol kalmeringsoefeningen."
+      "p": "Achter de producten zit een stichting die zich al jaren inzet voor het mentale welzijn van kinderen, met onder meer een gratis, bekroonde app vol kalmeringsoefeningen."
     },
     {
       "h": "Samen schermloos tijd doorbrengen",
       "p": "De producten nodigen uit om het scherm even weg te leggen en echt naar elkaar te luisteren, iets wat ouders volgens reacties als waardevol ervaren."
     }
   ],
+  "trending": [
+    "Het doe-dagboek 'Op Avontuur in je Koppie' om spelenderwijs gevoelens, gedachten, dromen en talenten te verkennen",
+    "De Kletskaartjes met opdrachten en verrassende vragen om samen het gesprek te openen",
+    "De bundel met het doe-dagboek én de Kletskaartjes",
+    "De gratis Super Chill app met beweeg- en kalmeringsoefeningen"
+  ],
   "codeInfo": [
-    "Een Super Chill kortingscode, zoals MARLYBUNDEL, geeft korting (in dit geval 10%) op je bestelling in de webshop. De code verwijst naar de bundel met het doe-dagboek en de Kletskaartjes.",
+    "Een Super Chill kortingscode, zoals MARLYBUNDEL, geeft korting (in dit geval 10%) op je bestelling in de webshop. De code wordt gedeeld via creator @marlyvd en verwijst naar de bundel met het doe-dagboek en de Kletskaartjes.",
     "Je voert de code in tijdens het afrekenen. Houd er rekening mee dat het om een stichting met een beperkt productaanbod gaat, dus de korting is vooral interessant op de bundel of de losse producten.",
     "Controleer altijd of de code nog geldig is en op welke producten hij van toepassing is voordat je bestelt."
+  ],
+  "creators": [
+    "@marlyvd"
   ],
   "tips": [
     {
       "h": "Kies voor de bundel",
-      "p": "De bundel met het doe-dagboek én de Kletskaartjes (€28,90) is voordeliger dan beide producten los. In combinatie met een kortingscode bespaar je het meest."
+      "p": "De bundel met het doe-dagboek én de Kletskaartjes (€28,90) is voordeliger dan beide producten los. In combinatie met een kortingscode als MARLYBUNDEL bespaar je het meest."
     },
     {
       "h": "Combineer met de gratis app",
@@ -52,7 +61,7 @@
     },
     {
       "q": "Hoeveel korting geeft een Super Chill kortingscode?",
-      "a": "De kortingscode MARLYBUNDEL geeft 10% korting in de webshop, gekoppeld aan de bundel met het doe-dagboek en de Kletskaartjes."
+      "a": "De kortingscode MARLYBUNDEL geeft 10% korting in de webshop, gedeeld via creator @marlyvd en gekoppeld aan de bundel met het doe-dagboek en de Kletskaartjes."
     },
     {
       "q": "Voor wie zijn de producten bedoeld?",
@@ -62,5 +71,9 @@
       "q": "Wat kost de bundel?",
       "a": "De bundel met het doe-dagboek (€18,95) en de Kletskaartjes (€9,95) kost samen €28,90, voordeliger dan beide producten los."
     }
+  ],
+  "related": [
+    "onceuponapp",
+    "wastoren.nl"
   ]
 }

@@ -1,34 +1,40 @@
 {
   "slug": "zappie",
   "name": "Zappie",
-  "heroLede": "Zappie (Zappiebox) is een Nederlandse maandelijkse ontdekbox waarmee kinderen van ongeveer 5 tot 9 jaar zelf aan de slag gaan met wetenschap en techniek. Elke maand bouwen ze een nieuw project, van een tekenrobot tot een hydraulische arm. Met een geldige Zappie kortingscode shop je een box of abonnement voordeliger.",
+  "heroLede": "Zappie (Zappiebox) is een Nederlandse maandelijkse ontdekbox waarmee kinderen van ongeveer 5 tot 9 jaar zelf aan de slag gaan met wetenschap en techniek. Elke maand bouwen ze een nieuw project, van een pingpongschieter tot een hydraulische arm, helemaal zelf en met alle materialen erbij. Met een geldige Zappie kortingscode shop je een box of abonnement voordeliger.",
   "about": [
-    "Zappie, online bekend als Zappiebox, maakt maandelijkse Science & Technology-boxen voor kinderen. In elke box zit een compleet bouwproject met stap-voor-stap-instructies, en volgens Zappie zit “alles wat je nodig hebt” er al in — tot en met de batterijen. Voor sommige extra uitdagingen heb je hooguit nog wat huis-tuin-en-keukenspullen nodig, zoals een potlood of schaar.",
-    "De projecten zijn bedoeld om kinderen al doende te leren denken: logisch nadenken, problemen oplossen en hun fijne motoriek oefenen door iets echt te bouwen in plaats van uit een boekje te leren. Voorbeelden van projecten die op de site langskomen zijn onder meer een tekenmachine, een robot, een vliegtuiglanceerder, een hydraulische arm, een periscoop en een caleidoscoop.",
-    "De boxen worden in Nederland in eigen huis ontworpen door mensen met een achtergrond in onderwijs en techniek, en getest met kinderen in de doelgroep. Zappie geeft aan ontwerpen “uitgebreid te testen met kinderen van 5 tot 9 jaar” en ze daarna te blijven verfijnen, met gemiddeld zo'n 200 uur ontwikkeling per project."
+    "Zappie, online bekend als Zappiebox, maakt maandelijkse Science & Technology-boxen voor kinderen. In elke box zit een compleet bouwproject met stap-voor-stap-instructies, en volgens Zappie zit “alles wat je nodig hebt” er al in — tot en met de batterijen. Creator suusgro liet bijvoorbeeld een pingpongschieter zien die haar kind zelf in elkaar zette, en omschreef het idee precies zoals Zappie het bedoelt: kinderen bouwen elke maand iets gaafs, helemaal zelf, geleverd met alle materialen en duidelijke instructies.",
+    "De projecten zijn bedoeld om kinderen al doende te laten leren: logisch nadenken, problemen oplossen en hun fijne motoriek oefenen door iets te bouwen dat echt werkt, in plaats van uit een boekje te leren. Voorbeelden van projecten die op de site langskomen zijn onder meer een robot, een mars rover, een vliegtuigschieter, een hydraulische arm, een periscoop, een spirograaf, een kaleidoscoop en een sjoelspel.",
+    "Zappie is opgericht door Joep en Jimmy, die elkaar leerden kennen aan de TU Delft en zagen dat er in Nederland een tekort is aan mensen die zelf iets kunnen bouwen. De boxen worden in eigen huis ontworpen en getest met kinderen in de doelgroep van 5 tot 9 jaar; Zappie geeft aan elk project intensief te ontwikkelen en daarna te blijven verfijnen, met gemiddeld zo'n 200 uur per ontwerp."
   ],
   "why": [
     {
-      "h": "Leren door te doen",
-      "p": "In plaats van kant-en-klaar speelgoed bouwt je kind elke maand zelf iets dat werkt. Ouders noemen in reviews juist dit als pluspunt: kinderen maken samen iets in plaats van iets afs te krijgen, en pikken zo techniek- en wetenschapsprincipes op."
+      "h": "Leren door zelf te bouwen",
+      "p": "In plaats van kant-en-klaar speelgoed zet je kind elke maand zelf iets in elkaar dat werkt. Dat is ook wat suusgro online benadrukte: het kind bouwt en ontdekt spelenderwijs van alles over wetenschap en techniek, in plaats van iets afs te krijgen."
     },
     {
       "h": "Compleet en kant-en-klaar in huis",
-      "p": "Elke box bevat het volledige bouwmateriaal, een duidelijke stap-voor-stap-uitleg en zelfs de benodigde batterijen. Je hoeft dus vooraf niets bij te kopen om te kunnen starten."
+      "p": "Elke box bevat het volledige bouwmateriaal, een duidelijke stap-voor-stap-uitleg en zelfs de benodigde batterijen. Je hoeft dus vooraf vrijwel niets bij te kopen om te kunnen starten."
     },
     {
       "h": "In Nederland ontworpen en getest",
-      "p": "De projecten worden in eigen huis bedacht door onderwijs- en techniekexperts en getest met kinderen van 5 tot 9 jaar, zodat het niveau aansluit bij de doelgroep."
+      "p": "De projecten worden in eigen huis bedacht door oprichters met een achtergrond aan de TU Delft en getest met kinderen van 5 tot 9 jaar, zodat het niveau aansluit bij de doelgroep."
     },
     {
       "h": "Flexibel abonnement",
-      "p": "Je kiest hoe vaak je een box ontvangt en kunt volgens Zappie tussentijds pauzeren of opzeggen. Liever eerst proberen? Losse boxen zijn ook los te koop."
+      "p": "Je kiest zelf hoe vaak je een box ontvangt en kunt volgens Zappie tussentijds pauzeren of opzeggen. Liever eerst proberen? Losse boxen en een proefbox zijn er ook."
     }
   ],
+  "trending": [
+    "Pingpongschieter — het project dat creator suusgro liet zien",
+    "Robot en mars rover voor de techniekliefhebbers",
+    "Hydraulische arm en periscoop voor wie wil snappen hoe iets werkt",
+    "Spirograaf, kaleidoscoop en draaikunst voor de creatieve bouwers"
+  ],
   "codeInfo": [
-    "Een Zappie kortingscode vul je in tijdens het afrekenen in het daarvoor bestemde kortingsveld; de korting wordt dan automatisch van je totaal afgehaald. Controleer voor je betaalt of het lagere bedrag echt is doorgevoerd.",
-    "Via diski.nl is op dit moment de code SUUS10 in omloop, gedeeld door creator suusgro, die bij gebruik €10 korting geeft. Codes en bedragen kunnen veranderen, dus check altijd de actuele voorwaarden in je winkelmandje.",
-    "Let op het verschil tussen een losse box en een abonnement: een code kan per situatie anders uitpakken, en abonnementsprijzen zijn vaak al lager per maand dan een losse box."
+    "Een Zappie kortingscode vul je in tijdens het afrekenen in het daarvoor bestemde kortingsveld; de korting wordt dan van je totaal afgehaald. Controleer voor je betaalt of het lagere bedrag echt is doorgevoerd.",
+    "Via diski.nl is op dit moment de code SUUS10 in omloop, gedeeld door creator suusgro — dezelfde creator die de pingpongschieter van Zappie liet zien. De code geeft bij gebruik €10 korting. Codes en bedragen kunnen veranderen, dus check altijd de actuele voorwaarden in je winkelmandje.",
+    "Let op het verschil tussen een losse box en een abonnement: een code kan per situatie anders uitpakken, en abonnementsprijzen vallen per maand vaak al lager uit dan een losse box."
   ],
   "creators": [
     "@suusgro"
@@ -36,25 +42,25 @@
   "tips": [
     {
       "h": "Vergelijk los versus abonnement",
-      "p": "Een losse box kost rond de €27,95, terwijl de abonnementsvarianten per maand goedkoper uitvallen (bijvoorbeeld een jaarabonnement of vooruitbetaald jaar). Reken even uit wat voor jouw situatie het voordeligst is voordat je een code toepast."
+      "p": "Een losse box kost rond de €27,95, terwijl de abonnementsvarianten per maand goedkoper uitvallen. Reken even uit wat voor jouw situatie het voordeligst is voordat je een code toepast."
     },
     {
       "h": "Gebruik een code bij je eerste bestelling",
-      "p": "Wil je Zappie eerst uitproberen, combineer dan een geldige kortingscode zoals SUUS10 met een losse box of een kort abonnement, zodat de instap zo laag mogelijk is."
+      "p": "Wil je Zappie eerst uitproberen, combineer dan een geldige kortingscode zoals SUUS10 (€10 korting, via suusgro) met een losse box of de proefbox, zodat de instap zo laag mogelijk is."
     },
     {
       "h": "Houd rekening met automatische verlenging",
-      "p": "Abonnementen verlengen volgens Zappie automatisch, maar je kunt binnen de looptijd opzeggen. Zet een herinnering als je maar een paar maanden wilt afnemen."
+      "p": "Abonnementen verlengen volgens Zappie automatisch, maar je kunt binnen de looptijd pauzeren of opzeggen. Zet een herinnering als je maar een paar maanden wilt afnemen."
     },
     {
       "h": "Verzending is gratis",
-      "p": "Bij Zappie is de verzending gratis en is een box doorgaans binnen 2 dagen in huis, dus daar hoef je geen extra kosten voor te rekenen bovenop je kortingscode."
+      "p": "Bij Zappie is de bezorging gratis en is een box doorgaans binnen 2 dagen in huis, dus daar hoef je geen extra kosten voor te rekenen bovenop je kortingscode."
     }
   ],
   "faq": [
     {
       "q": "Wat is Zappie precies?",
-      "a": "Zappie (Zappiebox) is een Nederlandse maandelijkse ontdekbox waarmee kinderen van ongeveer 5 tot 9 jaar zelf wetenschap- en techniekprojecten bouwen, zoals een robot of een hydraulische arm. Elke box bevat het materiaal, de uitleg en zelfs de batterijen."
+      "a": "Zappie (Zappiebox) is een Nederlandse maandelijkse ontdekbox waarmee kinderen van ongeveer 5 tot 9 jaar zelf wetenschap- en techniekprojecten bouwen, zoals een robot, een hydraulische arm of de pingpongschieter die creator suusgro liet zien. Elke box bevat het materiaal, de uitleg en zelfs de batterijen."
     },
     {
       "q": "Hoe gebruik ik een Zappie kortingscode?",
@@ -70,11 +76,24 @@
     },
     {
       "q": "Hoe snel wordt mijn box geleverd?",
-      "a": "Verzending is gratis en een box is volgens Zappie doorgaans binnen 2 dagen in huis. Bij een abonnement ontvang je vervolgens elke maand een nieuwe box."
+      "a": "De bezorging is gratis en een box is volgens Zappie doorgaans binnen 2 dagen in huis. Bij een abonnement ontvang je vervolgens elke maand een nieuwe box."
     },
     {
       "q": "Kan ik mijn Zappie-abonnement opzeggen?",
-      "a": "Ja. Abonnementen verlengen automatisch, maar je kunt binnen de looptijd opzeggen. Ontbrekende of beschadigde onderdelen worden op verzoek vervangen."
+      "a": "Ja. Abonnementen verlengen automatisch, maar je kunt binnen de looptijd pauzeren of opzeggen. Ontbrekende of beschadigde onderdelen worden volgens Zappie op verzoek vervangen."
     }
+  ],
+  "related": [
+    "zappiebox",
+    "ziettabox",
+    "bookbeat",
+    "drksonline",
+    "everdrop",
+    "fotocadeau.nl",
+    "pixum",
+    "topdoek.nl",
+    "ullapopken.nl",
+    "vitakruid",
+    "wildrefill"
   ]
 }

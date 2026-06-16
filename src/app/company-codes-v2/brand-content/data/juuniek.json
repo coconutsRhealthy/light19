@@ -1,16 +1,21 @@
 {
   "slug": "juuniek",
   "name": "Juuniek",
-  "heroLede": "Juuniek maakt van jouw favoriete foto een handgetekend lijnportret, vervolgens uitgesneden in duurzaam hout. Een Belgisch merk van Anneleen Claesen dat dierbare momenten — een geboorte, een bruiloft of een herinnering aan iemand die je mist — vertaalt naar een tijdloos object voor aan de muur of op de kast.",
+  "heroLede": "Juuniek maakt van jouw favoriete foto een handgetekend lijnportret, vervolgens uitgesneden in duurzaam hout. Een Belgisch merk van Anneleen Claesen dat dierbare momenten — een gezinsfoto, een geboorte of een herinnering aan iemand die je mist — vertaalt naar een tijdloos object voor aan de muur of op de kast.",
   "about": [
     "Juuniek is een Belgisch label dat ontstond toen oprichtster Anneleen Claesen haar zoon Juul zag opgroeien en die momenten tastbaar wilde bewaren. De naam is een samentrekking van Juul en 'uniek', en dat tweede deel is meteen het uitgangspunt: elk stuk wordt op basis van jouw eigen foto('s) ontworpen, dus geen twee portretten zijn hetzelfde.",
-    "Het aanbod draait om twee vormen: wandmodellen — grotere blikvangers met een eenvoudig ophangsysteem — en kastmodellen die compacter zijn en op een plank of kast staan. Daarnaast zijn er cadeaubonnen, handig wanneer je iemand het ontwerp zelf wil laten kiezen. Heb je niet één perfecte groepsfoto? Volgens de site kunnen meerdere foto's worden samengebracht tot één harmonieus portret.",
-    "De stukken worden in België met de hand afgewerkt en uitgesneden uit hout dat als duurzaam wordt omschreven (eucalyptus, recyclebaar en composteerbaar). Een sociaal element hoort er ook bij: reststukken hout krijgen een tweede leven als handgemaakte cadeautjes, gemaakt door leerlingen uit het buitengewoon onderwijs (BuSO), die volgens Juuniek bij je bestelling worden meegestuurd. In februari 2026 werd het merk door Unizo Limburg uitgeroepen tot Starter van het Jaar."
+    "Het aanbod draait om twee vormen: wandmodellen — grotere blikvangers met een eenvoudig ophangsysteem (zonder boren) — en kastmodellen die compacter zijn en op een plank of kast staan. Daarnaast zijn er cadeaubonnen, handig wanneer je iemand het ontwerp zelf wil laten kiezen. Heb je niet één perfecte groepsfoto? Volgens de site kunnen meerdere foto's worden samengebracht tot één harmonieus portret.",
+    "Creator @huisjevolchaos ontving een lijnportret van haar gezin en benoemde hoeveel er mogelijk is — denk aan een portret van een dierbare die er niet meer is, of van je huisdier. Dat sluit aan bij de eigen collecties van het merk rond herinnering en gemis, en het is precies waar Juuniek zich van een doorsnee fotoafdruk onderscheidt: een tastbaar, persoonlijk object in plaats van een standaard print.",
+    "De stukken worden in België met de hand afgewerkt en uitgesneden uit hout dat als duurzaam wordt omschreven (eucalyptus, recyclebaar en composteerbaar). Een sociaal element hoort er ook bij: reststukken hout krijgen een tweede leven als handgemaakte cadeautjes, gemaakt door leerlingen uit het buitengewoon onderwijs (BuSO). In februari 2026 werd het merk door Unizo Limburg uitgeroepen tot Starter van het Jaar."
   ],
   "why": [
     {
       "h": "Volledig op maat van jouw foto",
       "p": "Geen kant-en-klaar ontwerp maar een lijntekening die op jouw eigen foto wordt gebaseerd. Lukt het niet met één foto, dan kunnen meerdere beelden worden gecombineerd tot één geheel."
+    },
+    {
+      "h": "Ook gezin, huisdier of een dierbare die je mist",
+      "p": "Volgens een creator die het zelf liet maken kan er veel: een gezinsportret, je huisdier, of een herdenkingsportret van iemand die er niet meer is — zo heb je toch nog iets van jullie samen. Het merk heeft hier eigen collecties voor."
     },
     {
       "h": "Eerst goedkeuren, dan pas produceren",
@@ -19,14 +24,16 @@
     {
       "h": "Handgemaakt in België met duurzaam hout",
       "p": "De portretten worden lokaal uitgesneden en met de hand afgewerkt. Het gebruikte hout wordt omschreven als recyclebaar en composteerbaar, en reststukken worden hergebruikt."
-    },
-    {
-      "h": "Een persoonlijk cadeau-idee",
-      "p": "Door het maatwerk leent een Juuniek-portret zich goed als cadeau voor een geboorte, huwelijk of als blijvende herinnering. Wie liever laat kiezen, kan voor een cadeaubon gaan."
     }
   ],
+  "trending": [
+    "Gezinsportret op basis van een eigen foto",
+    "Herdenkingsportret van een dierbare die er niet meer is",
+    "Lijnportret van een huisdier",
+    "Wandmodel als blikvanger of compacter kastmodel"
+  ],
   "codeInfo": [
-    "Met de actiecode HUISJE10 krijg je bij Juuniek 10% korting op je bestelling. De code is gekoppeld aan creator @huisjevolchaos.",
+    "Met de actiecode HUISJE10 krijg je bij Juuniek 10% korting op je bestelling. De code is gekoppeld aan creator @huisjevolchaos, die er zelf een gezinsportret mee liet maken.",
     "Je voert de code in tijdens het afrekenen in het daarvoor bestemde veld. Controleer altijd of de korting in het besteloverzicht is verrekend voordat je de bestelling bevestigt.",
     "Omdat een Juuniek-portret op maat wordt gemaakt, is het slim om de korting toe te passen op het moment dat je je definitieve ontwerp en model hebt gekozen. Voorwaarden en geldigheid kunnen wijzigen, dus check de actuele situatie op de webshop."
   ],
@@ -44,7 +51,7 @@
     },
     {
       "h": "Lever een goede foto aan",
-      "p": "Omdat het ontwerp uit jouw foto wordt getekend, helpt een scherpe, goed belichte foto. Heb je geen ideale groepsfoto, vraag dan of meerdere beelden gecombineerd kunnen worden."
+      "p": "Omdat het ontwerp uit jouw foto wordt getekend, helpt een scherpe, goed belichte foto. Heb je geen ideale groepsfoto, vraag dan of meerdere beelden gecombineerd kunnen worden — bijvoorbeeld om iemand toe te voegen die op geen enkele foto samen staat."
     },
     {
       "h": "Twijfel je? Denk aan een cadeaubon",
@@ -61,6 +68,10 @@
       "a": "Je deelt je foto('s), waarna een digitale preview wordt gemaakt. Na jouw goedkeuring wordt het ontwerp in België uit hout gesneden en met de hand afgewerkt."
     },
     {
+      "q": "Kan ik een huisdier of een overleden dierbare laten vereeuwigen?",
+      "a": "Volgens een creator die het liet maken kan dat: naast gezins- en koppelportretten is er ook ruimte voor een portret van je huisdier of een herdenkingsportret van iemand die er niet meer is. Het merk heeft hier eigen collecties voor."
+    },
+    {
       "q": "Kan ik meerdere foto's combineren?",
       "a": "Volgens de webshop kan dat: als er geen perfecte groepsfoto bestaat, kunnen meerdere beelden worden samengebracht tot één harmonieus portret."
     },
@@ -72,5 +83,19 @@
       "q": "Waar wordt Juuniek gemaakt?",
       "a": "De portretten worden in België met de hand afgewerkt en uitgesneden uit hout dat als duurzaam (recyclebaar en composteerbaar) wordt omschreven."
     }
+  ],
+  "related": [
+    "cadeauvanjou",
+    "machtigprachtig",
+    "houtenplenkske",
+    "pol3dstudio",
+    "twinky.nl",
+    "blokkadoo",
+    "geurwolkje",
+    "synnamoncandy",
+    "thebrowniebox.nl",
+    "samenstijlvol",
+    "drksonline",
+    "everdrop"
   ]
 }

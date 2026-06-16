@@ -1,11 +1,11 @@
 {
   "slug": "pol3dstudio",
   "name": "Pol 3D Studio",
-  "heroLede": "Pol 3D Studio is een Nederlandse familiezaak die zelf 3D-geprinte woonaccessoires en decoratie maakt: van waxinelichthoudertjes en plantenpotjes tot beeldjes, tekstbordjes en handige hebbedingetjes voor huis en kantoor. De artikelen worden naar eigen zeggen 'met liefde gemaakt' en zijn er in een ruime keuze kleuren. Met de kortingscode CHAOS10 krijg je 10% korting op je bestelling.",
+  "heroLede": "Pol 3D Studio is een Nederlandse familiezaak die zelf 3D-geprinte woonaccessoires en decoratie maakt: van waxinelichthoudertjes en plantenpotjes tot beeldjes, tekstbordjes en handige hebbedingetjes voor huis en kantoor. Content creator @huisjevolchaos liet bijvoorbeeld een volledig 3D-geprinte Martinitoren zien die ze in huis zette. Met de kortingscode CHAOS10 krijg je 10% korting op je bestelling.",
   "about": [
-    "Pol 3D Studio is een webshop uit Nederland die draait om zelfgemaakte 3D-prints. Het assortiment is gevuld met betaalbare woonaccessoires en decoratie: denk aan waxinelichthouders, plantenpotjes, beeldjes en figuurtjes, tekstbordjes en praktische dingen zoals telefoonhouders, koptelefoonstandaards, keukenrolhouders en tandenborstelhouders. Levering is gericht op Nederland en België.",
-    "De prijzen liggen laag: de meeste artikelen vallen tussen ongeveer €3 en €25. Voorbeelden die op de site staan zijn een tulp-waxinelichthouder rond €4,95 en een 'Martini-toren' van zo'n €24,95, terwijl kleine figuurtjes en tekstbordjes al vanaf een paar euro beginnen. Er is ook een 'Koopjeshoek' met misprints tegen een lagere prijs.",
-    "De shop presenteert zich nadrukkelijk als familiebedrijf met een warme touch en legt de nadruk op stijlvolle prints die zelf worden geproduceerd. Naast het vaste assortiment is er een 'Maatwerk'-pagina voor wie iets op maat wil laten ontwerpen of printen — bijvoorbeeld in een kleur die niet standaard in de webshop staat. Controleer voor de zekerheid altijd de actuele productpagina's, want assortiment, kleuren en prijzen kunnen wijzigen."
+    "Pol 3D Studio is een webshop uit Nederland die draait om zelfgemaakte 3D-prints. Het assortiment is gevuld met betaalbare woonaccessoires en decoratie, verdeeld over categorieën als woonaccessoires, decoratieve beelden & tekst en 'huis, gemak & kantoor': denk aan waxinelichthouders, plantenpotjes, beeldjes en figuurtjes, tekstbordjes en praktische items. Levering is gericht op Nederland en België.",
+    "Eén van de stukken die de shop maakt is een 3D-geprinte versie van de Martinitoren — de Groningse 'd Olle Grieze. Toen @huisjevolchaos die thuis kreeg, omschreef ze hem als een echt pronkstukje in huis; volgens de webshop kost zo'n Martini-toren rond de €24,95. Andere voorbeelden op de site zijn een tulp-waxinelichthouder rond €4,95, een Japandi-bloempot van zo'n €17,95 en een vogelvoederhuisje rond €22,95, terwijl kleine figuurtjes en tekstbordjes al vanaf een paar euro beginnen.",
+    "De shop presenteert zich nadrukkelijk als familiebedrijf met een warme touch — hun eigen slogan luidt 'Stijlvolle prints met een warme familie-touch!' — en legt de nadruk op prints die zelf worden geproduceerd. Naast het vaste assortiment is er een 'Maatwerk'-pagina voor wie iets op maat wil laten ontwerpen of printen, bijvoorbeeld in een kleur die niet standaard online staat. Controleer voor de zekerheid altijd de actuele productpagina's, want assortiment, kleuren en prijzen kunnen wijzigen."
   ],
   "why": [
     {
@@ -13,21 +13,31 @@
       "p": "Pol 3D Studio maakt de producten naar eigen zeggen zelf via 3D-printen. Dat verklaart de lage prijzen en de mogelijkheid om buiten het standaardassortiment iets op maat te laten maken."
     },
     {
-      "h": "Betaalbare woonaccessoires",
-      "p": "Het overgrote deel van het assortiment kost tussen de paar euro en circa €25. Handig als je je interieur of bureau wilt opvrolijken zonder veel uit te geven, of op zoek bent naar een klein, persoonlijk cadeautje."
+      "h": "Lokale en eigenzinnige ontwerpen",
+      "p": "Naast algemene woonaccessoires maakt de shop ook herkenbare, lokale stukken zoals een 3D-geprinte Martinitoren. Dat soort eigen ontwerpen maakt een artikel net wat persoonlijker dan standaarddecoratie uit de winkel — @huisjevolchaos zette die toren als blikvanger in huis."
     },
     {
-      "h": "Ruime kleurkeuze en maatwerk",
-      "p": "Veel artikelen zijn in meerdere kleuren te bestellen — op de site worden onder meer beige, wit, zwart, grijs en rosé-goud genoemd. Staat je kleur er niet tussen? Dan kun je contact opnemen voor maatwerk."
+      "h": "Betaalbare woonaccessoires",
+      "p": "Een groot deel van het assortiment kost tussen de paar euro en circa €25. Handig als je je interieur of bureau wilt opvrolijken zonder veel uit te geven, of op zoek bent naar een klein, persoonlijk cadeautje."
+    },
+    {
+      "h": "Ruime keuze en maatwerk",
+      "p": "Veel artikelen zijn naar eigen zeggen in meerdere kleuren te bestellen. Staat je kleur of je idee er niet standaard tussen? Dan kun je via de Maatwerk-pagina contact opnemen om iets op maat te laten ontwerpen of printen."
     },
     {
       "h": "Snelle verzending en gratis vanaf €100",
       "p": "Volgens de site wordt er binnen 1-3 werkdagen verzonden en is de verzending gratis bij bestellingen vanaf €100. Lever- en verzendvoorwaarden kunnen veranderen, dus check ze even in je winkelmandje."
     }
   ],
+  "trending": [
+    "3D-geprinte Martinitoren ('d Olle Grieze) als blikvanger in huis",
+    "Waxinelichthouders, waaronder een tulpmodel",
+    "Plantenpotjes in Japandi-stijl",
+    "Tekstbordjes en kleine figuurtjes als cadeautje"
+  ],
   "codeInfo": [
-    "Met de kortingscode CHAOS10 krijg je 10% korting op je bestelling bij Pol 3D Studio. Je vult de code in tijdens het afrekenen, in het veld voor de kortings- of couponcode, en bevestigt deze voordat je betaalt.",
-    "Controleer in het besteloverzicht of de 10% korting daadwerkelijk is verrekend voordat je de betaling afrondt. Werkt een code niet, dan is hij mogelijk verlopen of geldt hij niet voor bepaalde acties of de Koopjeshoek; de voorwaarden bij de code zijn altijd leidend."
+    "Met de kortingscode CHAOS10 krijg je 10% korting op je bestelling bij Pol 3D Studio. Deze code werd gedeeld door content creator @huisjevolchaos, die zelf een 3D-geprinte Martinitoren van de shop in huis haalde. Je vult de code in tijdens het afrekenen, in het veld voor de kortings- of couponcode, en bevestigt deze voordat je betaalt.",
+    "Controleer in het besteloverzicht of de 10% korting daadwerkelijk is verrekend voordat je de betaling afrondt. Werkt een code niet, dan is hij mogelijk verlopen of geldt hij niet voor bepaalde acties; de voorwaarden bij de code zijn altijd leidend."
   ],
   "creators": [
     "@huisjevolchaos"
@@ -38,22 +48,22 @@
       "p": "Omdat verzending volgens de site gratis is vanaf €100, kan het lonen om kleine artikelen te bundelen. Reken even voor of je met de korting van CHAOS10 en de gratis-verzendgrens samen het voordeligst uitkomt."
     },
     {
-      "h": "Kijk eerst in de Koopjeshoek",
-      "p": "In de Koopjeshoek staan misprints tegen een lagere prijs. Voor decoratie waar een klein schoonheidsfoutje niet uitmaakt, scheelt dat extra geld — let wel op of een kortingscode hier wel of niet op van toepassing is."
-    },
-    {
       "h": "Vraag maatwerk aan voor een specifieke kleur of wens",
       "p": "Wil je een product in een kleur die niet standaard online staat, of iets persoonlijks? Via de Maatwerk-pagina of contact kun je je wens voorleggen. Houd er rekening mee dat maatwerk doorgaans meer tijd kost dan een standaardartikel."
+    },
+    {
+      "h": "Gebruik een lokaal ontwerp als cadeau",
+      "p": "Een herkenbaar stuk zoals de 3D-geprinte Martinitoren valt op als persoonlijk cadeau voor iemand met een band met Groningen. Bekijk de actuele productpagina voor de huidige uitvoering en prijs voordat je met CHAOS10 afrekent."
     }
   ],
   "faq": [
     {
       "q": "Wat verkoopt Pol 3D Studio?",
-      "a": "Pol 3D Studio verkoopt zelfgemaakte 3D-geprinte woonaccessoires en decoratie, zoals waxinelichthouders, plantenpotjes, beeldjes, tekstbordjes en praktische items als telefoonhouders, keukenrolhouders en koptelefoonstandaards. Daarnaast bieden ze maatwerk aan."
+      "a": "Pol 3D Studio verkoopt zelfgemaakte 3D-geprinte woonaccessoires en decoratie, zoals waxinelichthouders, plantenpotjes, beeldjes, tekstbordjes en praktische items voor huis en kantoor. Ook lokale ontwerpen zoals een 3D-geprinte Martinitoren en maatwerk behoren tot het aanbod."
     },
     {
       "q": "Hoe gebruik ik de kortingscode CHAOS10?",
-      "a": "Vul CHAOS10 in tijdens het afrekenen in het veld voor de kortingscode en bevestig de code. Je krijgt dan 10% korting. Controleer in het overzicht of de korting is verrekend voordat je betaalt."
+      "a": "Vul CHAOS10 in tijdens het afrekenen in het veld voor de kortingscode en bevestig de code. Je krijgt dan 10% korting op je bestelling. Controleer in het overzicht of de korting is verrekend voordat je betaalt."
     },
     {
       "q": "Wat zijn de verzendkosten en levertijd?",
@@ -61,11 +71,25 @@
     },
     {
       "q": "Kan ik een product op maat laten maken?",
-      "a": "Ja. Pol 3D Studio heeft een Maatwerk-pagina voor bestellingen op maat. Staat een kleur niet standaard in de webshop, dan kun je contact opnemen om je wens te bespreken."
+      "a": "Ja. Pol 3D Studio heeft een Maatwerk-pagina voor bestellingen op maat. Staat een kleur of ontwerp niet standaard in de webshop, dan kun je contact opnemen om je wens te bespreken."
     },
     {
       "q": "Levert Pol 3D Studio ook in België?",
       "a": "De webshop richt zich op Nederland en België. Controleer bij het afrekenen of jouw land en de bijbehorende verzendvoorwaarden beschikbaar zijn."
     }
+  ],
+  "related": [
+    "afibanaturals",
+    "ahead-nutrition",
+    "blokkadoo",
+    "cadeauvanjou",
+    "drksonline",
+    "everdrop",
+    "geurwolkje",
+    "goodevas.com",
+    "houtenplenkske",
+    "juuniek",
+    "machtigprachtig",
+    "samenstijlvol"
   ]
 }

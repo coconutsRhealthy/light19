@@ -1,33 +1,39 @@
 {
   "slug": "bikeflip",
   "name": "BikeFlip",
-  "heroLede": "BikeFlip is een Nederlandse dienst waarmee je een kinderfiets niet koopt maar abonneert: voor een vast bedrag per maand huur je een fiets die met je kind meegroeit. Is de fiets te klein geworden, dan wissel je gratis naar een grotere maat.",
+  "heroLede": "BikeFlip is een Nederlandse dienst waarmee je een kinderfiets niet koopt maar abonneert: voor een vast bedrag per maand rijdt je kind op een fiets die meegroeit. Wordt de fiets te klein, dan flip je gratis naar een grotere maat. \"Dit koop ik nooit meer nieuw\", zoals een van de moeders die de dienst aanraadt het samenvat.",
   "about": [
-    "BikeFlip biedt een maandabonnement op kinderfietsen. In plaats van steeds een nieuwe fiets te kopen die je kind binnen een jaar weer ontgroeit, betaal je een vast bedrag per maand en wissel je gratis naar een grotere maat zodra dat nodig is.",
-    "Het aanbod loopt van loopfietsjes tot 28-inch modellen, met meer dan 400 kinderfietsen in het assortiment, waaronder merken als Puky, Gazelle, Batavus en Loekie. Onderhoud en reparaties zijn bij het abonnement inbegrepen, en BikeFlip levert en stelt de fiets gratis bij je thuis af.",
-    "Achter de dienst zit een duurzaamheidsgedachte: fietsen worden hergebruikt in plaats van na een paar jaar weggedaan, volgens een circulair model. BikeFlip heeft fysieke vestigingen in Utrecht, Amsterdam en Rotterdam, met in Utrecht een volledige servicewinkel inclusief proefritten."
+    "BikeFlip biedt een maandabonnement op kinderfietsen. In plaats van steeds een nieuwe fiets te kopen die je kind binnen een jaar weer ontgroeit, betaal je een vast bedrag per maand en wissel je gratis naar een grotere maat zodra dat nodig is. Het idee dat veel ouders aanspreekt: nieuwe kinderfietsen kopen is eigenlijk zonde, want ze worden zo snel te klein.",
+    "Het aanbod telt meer dan 400 kinderfietsen, van loopfietsjes tot 28-inch modellen, met naast het eigen merk onder meer Puky, Gazelle, Batavus, Loekie en Super Super. Onderhoud en reparaties zitten bij het abonnement in, en BikeFlip levert de fiets gratis bij je thuis af, rijklaar afgesteld. Repareren kan thuis (binnen het servicegebied) of in de winkel.",
+    "Achter de dienst zit een duurzaamheidsgedachte: fietsen worden hergebruikt in plaats van na een paar jaar weggedaan, volgens een circulair model (\"ride, flip, repeat\"). BikeFlip ontstond in 2019 nadat oprichter Casparis Beyer een roze kinderfietsje van de schroothoop redde, en groeide uit tot een bedrijf met fysieke vestigingen in Utrecht, Amsterdam en Rotterdam, waar je terecht kunt voor een proefrit of advies.",
+    "Naast de abonnementen runt BikeFlip een sociale werkplaats die fietsen opknapt voor maatschappelijke projecten: fietsen gaan via gemeenten naar mensen die ze goed kunnen gebruiken, en de werkplaats biedt werk- en leerplekken aan mensen met afstand tot de arbeidsmarkt. Het is precies dat sociale stukje dat creators die de dienst delen vaak noemen als reden om er enthousiast over te zijn."
   ],
   "why": [
     {
       "h": "Een fiets die meegroeit",
-      "p": "Kinderen groeien snel uit hun fiets. Met een BikeFlip-abonnement wissel je gratis naar een grotere maat zodra de fiets te klein is, zonder telkens een nieuwe te hoeven kopen."
+      "p": "Kinderen groeien snel uit hun fiets. Met een BikeFlip-abonnement wissel je gratis naar een grotere maat zodra de fiets te klein wordt, zonder telkens een nieuwe te hoeven kopen. Flippen kan zelfs al in de eerste maanden als de fiets niet bevalt."
     },
     {
       "h": "Onderhoud en reparatie inbegrepen",
-      "p": "Reparaties en onderhoud zitten bij het abonnement in, zonder extra servicekosten. BikeFlip lost het op, ook bij je thuis."
+      "p": "Reparaties en onderhoud zitten bij het abonnement in, zonder extra servicekosten. Binnen het servicegebied komt BikeFlip het thuis oplossen; anders kan het in de winkel."
     },
     {
       "h": "Gratis thuisbezorgd en afgesteld",
-      "p": "De fiets wordt gratis bij je thuis geleverd en op maat afgesteld, zodat je kind er meteen op kan."
+      "p": "De fiets wordt gratis bij je thuis geleverd en rijklaar afgesteld, zodat je kind er meteen op kan."
     },
     {
-      "h": "Duurzaam en circulair",
-      "p": "Fietsen worden hergebruikt in plaats van weggegooid. Wie het abonnement opzegt, geeft de fiets terug zodat een volgend gezin er weer mee verder kan."
+      "h": "Duurzaam, circulair en sociaal",
+      "p": "Fietsen worden hergebruikt in plaats van weggegooid. Een deel wordt in de eigen werkplaats opgeknapt voor sociale projecten, en wie opzegt geeft de fiets terug zodat een volgend gezin er weer mee verder kan."
     }
   ],
+  "trending": [
+    "Loopfietsjes en kleine maten vanaf €3 per maand voor de jongste kinderen",
+    "Doorgroeien van 16- naar 20-inch zonder een nieuwe fiets te kopen",
+    "De circulaire, 'nooit meer nieuw kopen'-gedachte die ouders onderling delen"
+  ],
   "codeInfo": [
-    "Een BikeFlip-actiecode draait meestal niet om een procentuele korting op een product, maar om voordeel op het abonnement, zoals een gratis maand. Je geeft de code op bij het afsluiten van je abonnement, waarna het voordeel wordt verrekend.",
-    "Omdat het om een doorlopend abonnement gaat, is een gratis maand vooral aan het begin een prettige drempelverlager. Let bij het afsluiten op de looptijd: opzeggen kan doorgaans maandelijks na de eerste periode."
+    "Een BikeFlip-actiecode draait meestal niet om een procentuele korting op een product, maar om voordeel op het abonnement. De code die via creator @deveganmoeder rondgaat (VEGANMOEDER26) levert bijvoorbeeld een gratis maand op. Je geeft de code op bij het afsluiten van je abonnement, waarna het voordeel wordt verrekend.",
+    "Omdat het om een doorlopend abonnement gaat met een minimumperiode van drie maanden, is een gratis maand vooral aan het begin een prettige drempelverlager. Na die eerste periode is het abonnement maandelijks opzegbaar."
   ],
   "creators": [
     "@deveganmoeder"
@@ -35,34 +41,43 @@
   "tips": [
     {
       "h": "Start met een actiecode voor een gratis maand",
-      "p": "Een BikeFlip-code geeft vaak een gratis maand op je abonnement. Handig om met weinig risico te proberen of de dienst bij jullie past voordat je langer doorgaat."
+      "p": "Een code als VEGANMOEDER26 (via @deveganmoeder) geeft een gratis maand op je abonnement. Handig om met weinig risico te proberen of de dienst bij jullie past."
     },
     {
-      "h": "Kies de maat ruim genoeg, je wisselt toch gratis",
-      "p": "Omdat doorwisselen naar een grotere maat gratis is, hoef je niet te overdrijven met 'alvast groot kopen'. Kies de maat die nu past en flip later kosteloos."
+      "h": "Kies de maat die nu past, je flipt toch gratis",
+      "p": "Omdat doorwisselen naar een grotere maat gratis is, hoef je niet 'alvast groot' te kopen. Kies de fiets die nu past en flip later kosteloos zodra je kind eruit groeit."
     },
     {
       "h": "Reken het abonnement af tegen kopen plus doorverkopen",
-      "p": "Vanaf zo'n €3 per maand voor de kleinste modellen oplopend tot €8-€19 voor grotere fietsen. Vergelijk dat met de aanschaf én latere verkoop van een fiets die je kind snel ontgroeit."
+      "p": "Tarieven lopen van zo'n €3 per maand voor de kleinste fietsjes via ongeveer €8,50 voor 16-20 inch tot rond €12,50 voor de grootste maten. Vergelijk dat met de aanschaf én latere verkoop van een fiets die je kind snel ontgroeit."
     }
   ],
   "faq": [
     {
       "q": "Hoe werkt BikeFlip?",
-      "a": "Je huurt een kinderfiets voor een vast bedrag per maand. Wordt de fiets te klein, dan wissel je gratis naar een grotere maat. Onderhoud, reparaties en gratis thuislevering zitten bij het abonnement in."
+      "a": "Je huurt een kinderfiets voor een vast bedrag per maand. Wordt de fiets te klein, dan flip je gratis naar een grotere maat. Onderhoud, reparaties en gratis thuislevering zitten bij het abonnement in."
     },
     {
       "q": "Wat kost een BikeFlip-abonnement?",
-      "a": "De tarieven beginnen vanaf ongeveer €3 per maand voor de kleinste fietsen en lopen op tot zo'n €8-€19 per maand, afhankelijk van de maat en het model."
+      "a": "De tarieven beginnen rond €3 per maand voor de kleinste fietsen (loopfiets/12 inch), liggen rond €8,50 voor 16-20 inch en rond €12,50 voor de grootste maten (22-28 inch), afhankelijk van model en maat."
     },
     {
       "q": "Kan ik mijn BikeFlip-abonnement opzeggen?",
-      "a": "Het abonnement is doorgaans maandelijks opzegbaar na de eerste periode. Je geeft de fiets dan terug, zodat die opnieuw kan worden ingezet."
+      "a": "Er geldt een minimumperiode van drie maanden; daarna is het abonnement maandelijks opzegbaar. Je geeft de fiets dan terug, zodat die opnieuw kan worden ingezet."
     },
     {
       "q": "Wat levert een BikeFlip-actiecode op?",
-      "a": "Een actiecode geeft meestal voordeel op het abonnement, bijvoorbeeld een gratis maand. Je vult de code in bij het afsluiten van je abonnement."
+      "a": "Een actiecode geeft meestal voordeel op het abonnement, bijvoorbeeld een gratis maand. De code VEGANMOEDER26 (via creator @deveganmoeder) is daar een voorbeeld van; je vult de code in bij het afsluiten van je abonnement."
+    },
+    {
+      "q": "Zijn de fietsen van BikeFlip tweedehands?",
+      "a": "Ja, BikeFlip werkt circulair: fietsen worden hergebruikt en in de eigen werkplaats opgeknapt. Daardoor kan een fiets gebruikssporen hebben, maar onderhoud en reparatie zitten bij het abonnement in."
     }
   ],
-  "related": []
+  "related": [
+    "emmasleepnl",
+    "everyfoods",
+    "greenpan",
+    "koro.com"
+  ]
 }

@@ -10,7 +10,7 @@
   "why": [
     {
       "h": "Hoge pigmentatie",
-      "p": "NK Gellak werkt met sterk gepigmenteerde formules, waardoor volgens de webshop vaak een enkele kleurlaag al voldoende dekt. Klanten op Trustpilot noemen vaak dat ze minder lagen nodig hebben dan bij eerdere gellak."
+      "p": "NK Gellak werkt met sterk gepigmenteerde formules, waardoor volgens de webshop vaak een enkele kleurlaag al voldoende dekt. In reviews noemen klanten geregeld dat ze minder lagen nodig hebben dan bij eerdere gellak."
     },
     {
       "h": "Salonkwaliteit voor thuis",
@@ -25,9 +25,15 @@
       "p": "Bestel je voor 18:00 uur, dan wordt je bestelling de volgende werkdag verzonden. In reviews wordt de snelle levering en nette verpakking regelmatig genoemd."
     }
   ],
+  "trending": [
+    "Flower Kiss (kleur 163): een nude-roze tint die creator @lisanne.lakt tot een van haar favorieten rekent",
+    "Naturel-tinten zoals 232 Naturel voor een natuurlijke, dagelijkse look",
+    "Builder gel (BIAB) om de eigen nagel te verstevigen of op te bouwen",
+    "Starterspakketten voor wie net begint met gellak thuis"
+  ],
   "codeInfo": [
     "Met de kortingscode LAKT10 krijg je 10% korting bij NK Gellak. Vul de code tijdens het afrekenen in het kortingsveld in; het bedrag wordt dan automatisch van je totaal afgetrokken.",
-    "De code is terug te voeren op creator @lisanne.lakt, die NK Gellak deelt met haar volgers. Controleer voor het afrekenen altijd of de korting daadwerkelijk is verrekend in je winkelmandje."
+    "De code is terug te voeren op creator @lisanne.lakt, die op haar account NK Gellak-kleuren laat zien (zoals 163 Flower Kiss en 232 Naturel) en haar volgers LAKT10 meegeeft. Controleer voor het afrekenen altijd of de korting daadwerkelijk is verrekend in je winkelmandje."
   ],
   "creators": [
     "@lisanne.lakt"
@@ -53,7 +59,7 @@
   "faq": [
     {
       "q": "Welke kortingscode werkt bij NK Gellak?",
-      "a": "Met de code LAKT10 krijg je 10% korting bij NK Gellak. Je vult de code in tijdens het afrekenen, waarna de korting van je totaalbedrag wordt afgetrokken."
+      "a": "Met de code LAKT10 krijg je 10% korting bij NK Gellak. Je vult de code in tijdens het afrekenen, waarna de korting van je totaalbedrag wordt afgetrokken. De code wordt onder meer gedeeld door creator @lisanne.lakt."
     },
     {
       "q": "Wat verkoopt NK Gellak?",
@@ -71,5 +77,9 @@
       "q": "Heb ik bij NK Gellak veel lagen nodig?",
       "a": "NK Gellak werkt met sterk gepigmenteerde formules, waardoor volgens de webshop vaak een enkele kleurlaag voldoende dekt. Dit hangt mede af van de kleur en je werkwijze."
     }
+  ],
+  "related": [
+    "lakkiegellak",
+    "moodsgellac"
   ]
 }

@@ -1,29 +1,34 @@
 {
   "slug": "swimessentials",
   "name": "Swim Essentials",
-  "heroLede": "Swim Essentials maakt zomerse musthaves voor het hele gezin: van zwembanden, puddle jumpers en babyfloats tot opblaasbare zwembaden, UV-zwemkleding en strandspullen. Het Nederlandse merk uit Den Bosch combineert speelplezier met zwemveiligheid en vrolijke prints. Op deze pagina lees je waar Swim Essentials voor staat en hoe je met een kortingscode voordeliger besteld.",
+  "heroLede": "Swim Essentials maakt zomerse musthaves voor het hele gezin: van puddle jumpers, zwembandjes en babyfloats tot opblaasbare zwembaden, UV-zwemkleding en strandspullen. Het Nederlandse merk ontwerpt in een eigen atelier in 's-Hertogenbosch en legt de nadruk op zwemveiligheid, vrolijke prints en kwaliteit. Op deze pagina lees je waar Swim Essentials voor staat en hoe je met een kortingscode voordeliger bestelt.",
   "about": [
-    "Swim Essentials is in 2017 opgericht en heeft een eigen ontwerpatelier in 's-Hertogenbosch (Den Bosch). Het merk wil zwemspullen 'hip en toegankelijk maken voor iedereen' en richt zich vooral op kinderen en gezinnen. Bekend werd het merk onder andere door de iconische opblaasbare zwaan; sindsdien is het assortiment flink uitgebreid.",
-    "Het aanbod is opgebouwd rond vijf hoofdcategorieën: zwemveiligheid (puddle jumpers, zwembandjes, babyfloats en zwemvesten), opblaasartikelen (zwembanden, luchtbedden, waterhangmatten, opblaasbootjes en strandballen), zwemkleding (badpakjes, bikini's, zwemshirts, UV-leggings en zwemluiers), zwembaden (van opblaasbare baby- en speelzwembaden tot frame pools met pomp en filter) en accessoires zoals duikbrillen, strandlakens en waterschoentjes. Daarnaast is er zonnebrand met SPF50+.",
-    "De collecties draaien om vrolijke, seizoensgebonden prints met namen als Mermazing, Cozy Hearts, Coastal Charm, Lobster Bay, Catch of the Day, Flower Market en safari-dieren. Volgens het merk is sinds 2025 de complete zwemkledingcollectie gemaakt van gerecycled materiaal, wordt productieafval beperkt en houdt Swim Essentials een deel van de productie bewust in eigen beheer voor eerlijke werkomstandigheden en minder transport."
+    "Swim Essentials ontwerpt zwemspullen in een eigen atelier in 's-Hertogenbosch (Den Bosch) en richt zich vooral op kinderen en gezinnen. Het merk wil zwemmen leuk én veilig maken, en combineert speelplezier met herkenbare, seizoensgebonden prints. Een deel van de zwemkleding wordt lokaal in eigen naaiatelier gemaakt.",
+    "Het aanbod is opgebouwd rond een paar hoofdcategorieën: zwemveiligheid (puddle jumpers, zwembandjes, babyfloats en zwemvesten), opblaasartikelen (zwembanden, luchtbedden, waterhangmatten, opblaasbootjes, surfplanken en glijbanen), zwemkleding (badpakjes, bikini's, zwemshirts en UV-leggings), zwembaden (van opblaasbare speelzwembaden tot frame pools) en accessoires zoals duikbrillen, strandlakens, waterschoentjes en pop-up tentjes. Daarnaast is er zonbescherming voor onderweg.",
+    "Duurzaamheid speelt een groeiende rol: het merk gebruikt naar eigen zeggen gerecyclede materialen en milieuvriendelijke productietechnieken, met als doel om in 2030 volledig circulair te zijn. Een deel van de productie houdt Swim Essentials bewust in eigen beheer in 's-Hertogenbosch, onder meer om mensen met een afstand tot de arbeidsmarkt een werkplek te bieden. Controleer per product de actuele omschrijving in de webshop voor de exacte materiaalgegevens."
   ],
   "why": [
     {
       "h": "Alles voor waterplezier op één plek",
-      "p": "Of je nu een puddle jumper voor je peuter, een opblaasbaar speelzwembad of een frame pool met pomp zoekt: bij Swim Essentials vind je zwemveiligheid, opblaasartikelen, zwemkleding, zwembaden en strandaccessoires in één webshop, met maten van baby (0/12 maanden) tot volwassen."
+      "p": "Of je nu een puddle jumper voor je peuter, een opblaasbaar speelzwembad of een frame pool zoekt: bij Swim Essentials vind je zwemveiligheid, opblaasartikelen, zwemkleding, zwembaden en strandaccessoires in één webshop, met maten van baby tot volwassen."
+    },
+    {
+      "h": "Gericht op zwemveiligheid voor kleintjes",
+      "p": "Het assortiment legt veel nadruk op veilig zwemmen voor jonge kinderen: puddle jumpers, zwembandjes, babyfloats en zwemvesten. Influencer @maria.bootsma promoot het merk juist vanuit die hoek, met posts rond zwemmen, bescherming en peuters."
     },
     {
       "h": "Eigen ontwerp en herkenbare prints",
-      "p": "Het merk ontwerpt in een eigen atelier in Den Bosch en kiest voor opvallende prints en thema's per seizoen. Dat geeft de zwemkleding en inflatables een herkenbare, vrolijke uitstraling die je in reguliere winkels minder snel tegenkomt."
+      "p": "Het merk ontwerpt in een eigen atelier in 's-Hertogenbosch en kiest voor opvallende prints en thema's per seizoen. Dat geeft de zwemkleding en inflatables een herkenbare, vrolijke uitstraling die je in reguliere winkels minder snel tegenkomt."
     },
     {
-      "h": "Focus op zwemveiligheid én fashion",
-      "p": "Swim Essentials benadrukt de combinatie van plezier, zwemveiligheid en fashion. Naast leuke prints zijn er praktische items als zwemvesten, puddle jumpers, UV-werende kleding en SPF50+ zonnebrand voor onbezorgd buitenspelen."
-    },
-    {
-      "h": "Gerecycled materiaal in de zwemkleding",
-      "p": "Volgens het merk bestaat de zwemkledingcollectie sinds 2025 volledig uit gerecycled materiaal. Wie bewuster wil shoppen vindt hierin een pluspunt; controleer per product de actuele omschrijving in de webshop voor de details."
+      "h": "Aandacht voor duurzaamheid en lokaal werk",
+      "p": "Swim Essentials gebruikt naar eigen zeggen gerecyclede materialen en wil in 2030 volledig circulair zijn. Een deel wordt lokaal in Den Bosch gemaakt, mede om mensen met een afstand tot de arbeidsmarkt aan het werk te helpen. Bekijk de productomschrijving voor de details per artikel."
     }
+  ],
+  "trending": [
+    "Puddle jumpers en babyfloats voor de allerkleinsten",
+    "UV-zwemkleding en zwemshirts voor extra bescherming in de zon",
+    "Opblaasbare speelzwembaden en frame pools voor in de tuin"
   ],
   "tips": [
     {
@@ -31,8 +36,8 @@
       "p": "Vul je kortingscode in het couponveld in tijdens het afrekenen en controleer of het kortingsbedrag wordt verrekend voordat je betaalt. Werkt een code niet, check dan op tik- of spatiefouten en op eventuele voorwaarden."
     },
     {
-      "h": "Profiteer van gratis verzending",
-      "p": "Swim Essentials adverteert met gratis verzending en levering binnen 1 tot 2 werkdagen. Dat scheelt verzendkosten bovenop je korting; check de actuele voorwaarden in de winkelwagen, want acties kunnen wisselen."
+      "h": "Let op acties met gratis verzending",
+      "p": "Swim Essentials adverteert geregeld met (tijdelijk) gratis verzending en levering binnen 1 tot 2 werkdagen. Dat scheelt verzendkosten bovenop je korting, maar het is een wisselende actie: check de actuele voorwaarden in de winkelwagen voor je afrekent."
     },
     {
       "h": "Bestel slim aan het begin van het seizoen",
@@ -45,7 +50,7 @@
   ],
   "codeInfo": [
     "Een Swim Essentials kortingscode is een reeks letters en cijfers die je tijdens het afrekenen invult in het couponveld. Na het toepassen wordt de korting direct van je totaalbedrag afgetrokken. Controleer altijd of het bedrag is aangepast voordat je de bestelling bevestigt.",
-    "Een actueel voorbeeld is de code MariaBootsma10, die 10% korting geeft. Deze code is gekoppeld aan influencer @maria.bootsma. Codes en percentages kunnen wijzigen of verlopen, dus kijk altijd of de voorwaarden nog gelden op het moment van bestellen."
+    "Een actueel voorbeeld is de code MariaBootsma10, die 10% korting geeft. Deze code deelt influencer @maria.bootsma in haar posts over het merk ('Met de code MariaBootsma10 mag ik jullie 10% korting geven'). Persoonlijke creator-codes en percentages kunnen wijzigen of verlopen, dus kijk altijd of de voorwaarden nog gelden op het moment van bestellen."
   ],
   "creators": [
     "@maria.bootsma"
@@ -53,27 +58,37 @@
   "faq": [
     {
       "q": "Is er een Swim Essentials kortingscode beschikbaar?",
-      "a": "Ja, er is een code bekend: MariaBootsma10 geeft 10% korting. Deze is gekoppeld aan @maria.bootsma. Vul de code in tijdens het afrekenen en controleer of de korting wordt verrekend. Codes kunnen wijzigen of verlopen."
+      "a": "Ja, er is een code bekend: MariaBootsma10 geeft 10% korting. Deze wordt gedeeld door @maria.bootsma. Vul de code in tijdens het afrekenen en controleer of de korting wordt verrekend. Codes kunnen wijzigen of verlopen."
     },
     {
       "q": "Wat verkoopt Swim Essentials?",
-      "a": "Swim Essentials biedt zomerse producten voor het gezin: zwemveiligheid (puddle jumpers, zwembandjes, babyfloats, zwemvesten), opblaasartikelen, zwemkleding met UV-bescherming, opblaasbare en frame zwembaden, strandaccessoires en SPF50+ zonnebrand."
+      "a": "Swim Essentials biedt zomerse producten voor het gezin: zwemveiligheid (puddle jumpers, zwembandjes, babyfloats, zwemvesten), opblaasartikelen, zwemkleding met UV-bescherming, opblaasbare en frame zwembaden, strandaccessoires en zonbescherming."
     },
     {
       "q": "Waar komt Swim Essentials vandaan?",
-      "a": "Swim Essentials is in 2017 opgericht en ontwerpt in een eigen atelier in 's-Hertogenbosch (Den Bosch). Het merk richt zich op kinderen en gezinnen en wil zwemspullen hip en toegankelijk maken."
+      "a": "Swim Essentials ontwerpt in een eigen atelier in 's-Hertogenbosch (Den Bosch) en maakt een deel van de zwemkleding lokaal. Het merk richt zich op kinderen en gezinnen en wil zwemmen leuk en veilig maken."
     },
     {
       "q": "Hoe snel wordt mijn bestelling geleverd?",
-      "a": "Het merk vermeldt verzending binnen 1 tot 2 werkdagen en adverteert met gratis verzending. Controleer de actuele verzend- en levervoorwaarden in de winkelwagen, want acties kunnen per periode verschillen."
+      "a": "Het merk vermeldt verzending binnen 1 tot 2 werkdagen. Geregeld is er een (tijdelijke) actie met gratis verzending; controleer de actuele verzend- en levervoorwaarden in de winkelwagen, want acties kunnen per periode verschillen."
     },
     {
       "q": "Is de zwemkleding van duurzaam materiaal gemaakt?",
-      "a": "Volgens Swim Essentials bestaat de volledige zwemkledingcollectie sinds 2025 uit gerecycled materiaal en beperkt het merk productieafval. Bekijk de productomschrijving in de webshop voor de exacte materiaalgegevens per artikel."
+      "a": "Volgens Swim Essentials worden gerecyclede materialen gebruikt en is het doel om in 2030 volledig circulair te zijn. Bekijk de productomschrijving in de webshop voor de exacte materiaalgegevens per artikel."
     },
     {
       "q": "Kan ik achteraf betalen?",
       "a": "Ja, in de webshop is achteraf betalen met Klarna mogelijk. Zo kun je grotere aankopen zoals een frame pool gespreid betalen; let wel op de voorwaarden van Klarna."
     }
+  ],
+  "related": [
+    "cabaulifestyle",
+    "desieradenconcurrent",
+    "emmasleepnl",
+    "farmcamps",
+    "joybuy",
+    "maycosmetics.nl",
+    "nakdfashion",
+    "vitaminfit.eu"
   ]
 }

@@ -1,65 +1,79 @@
 {
   "slug": "citybeach",
   "name": "City Beach",
-  "heroLede": "City Beach is een Australische lifestyle-retailer voor surf-, skate- en streetfashion sinds 1985. Je vindt er zwemkleding, sneakers en streetwear voor dames, heren en kids van bekende merken — met een kortingscode shop je het assortiment voordeliger.",
+  "heroLede": "City Beach is een Australische lifestyle-retailer voor swim-, surf-, skate- en streetfashion sinds 1985. Je vindt er zwemkleding, sneakers, boardsports en streetwear voor dames, heren en kids van merken als Billabong, Vans en Nike. Creators delen op TikTok hun outfits met een persoonlijke kortingscode — daarmee shop je het assortiment voordeliger.",
   "about": [
-    "City Beach is een Australische lifestyle-winkel die sinds 1985 trending swimwear, surf-, skate- en streetfashion verkoopt voor dames, heren en kids. Het merk groeide uit tot een van de bekendere Australische lifestyle-retailers en is online actief met aparte sites voor verschillende regio's, waaronder internationale verzending.",
-    "Het assortiment loopt van kleding en zwemkleding tot schoenen en accessoires. City Beach voert een breed merkenpakket, waaronder Nike, adidas, Billabong, Rip Curl, Roxy, Vans, Converse, Havaianas en New Era, aangevuld met eigen huismerken zoals Topanga Swim en Kaiami Swim.",
-    "City Beach positioneert zich rond een betaalbare, boardsport-geïnspireerde stijl. De site werkt met scherp geprijsde rubrieken (zoals dames- en herenartikelen onder een vast bedrag) en seizoens- en outletssecties."
+    "City Beach is een Australische lifestyle-winkel die sinds 1985 swimwear, surf-, skate- en streetfashion verkoopt voor dames, heren en kids. Wat begon als één strandwinkel groeide uit tot een van de bekendere Australische lifestyle-retailers met tientallen filialen en een webshop die ook internationaal verzendt.",
+    "Het assortiment loopt van kleding en zwemkleding tot schoenen, accessoires en boardsports zoals skateboards en surfspullen. City Beach voert een breed merkenpakket — onder meer Nike, adidas, Billabong, Rip Curl, Roxy, Vans, Converse, Havaianas, Crocs en New Era — aangevuld met eigen huismerken als Mooloola, Topanga Swim, Kaiami Swim en Ava & Ever.",
+    "De stijl is betaalbaar en boardsport-geïnspireerd: zonnige strand- en streetlooks die je in de TikTok-content van creators terugziet als complete OOTD's. De site werkt daarnaast met scherp geprijsde rubrieken (zoals items onder een vast bedrag) en een aparte sale- en outletsectie."
   ],
   "why": [
     {
-      "h": "Surf-, skate- en streetfashion sinds 1985",
+      "h": "Swim-, surf-, skate- en streetfashion sinds 1985",
       "p": "City Beach is een gevestigde Australische lifestyle-retailer met decennia ervaring in boardsport-geïnspireerde mode voor het hele gezin."
     },
     {
-      "h": "Sterk merkenpakket",
-      "p": "Naast eigen swimwear-labels voert City Beach grote namen als Nike, adidas, Billabong, Rip Curl, Roxy, Vans en Converse, zodat je veel merken op één plek vindt."
+      "h": "Sterk merkenpakket op één plek",
+      "p": "Naast eigen swimwear-labels als Topanga Swim en Kaiami Swim voert City Beach grote namen als Nike, adidas, Billabong, Rip Curl, Roxy, Vans en Converse, zodat je veel merken in één bestelling combineert."
     },
     {
       "h": "Betaalbare rubrieken en outlet",
-      "p": "Met budgetrubrieken, seizoenssales en een outletsectie zijn er regelmatig scherp geprijsde items te vinden voor dames, heren en kids."
+      "p": "Met budgetrubrieken (zoals items onder een vast bedrag), seizoenssales en een outletsectie zijn er vrijwel altijd scherp geprijsde stukken te vinden voor dames, heren en kids."
+    },
+    {
+      "h": "Gespreid betalen mogelijk",
+      "p": "City Beach biedt naast de gangbare betaalmethoden ook diensten als Afterpay, Klarna en Sezzle aan, zodat je je bestelling gespreid kunt betalen."
     }
   ],
   "trending": [
-    "Australische swimwear voor dames en heren",
-    "Sneakers van Nike, adidas, Vans en Converse",
-    "Surf- en skate-streetwear voor het hele gezin",
+    "Australische swimwear en bikini's voor dames en heren",
+    "Sneakers en slippers van Nike, adidas, Vans, Converse en Havaianas",
+    "Surf- en skate-streetwear als complete OOTD's",
+    "Boardsports: skateboards, scooters en surfspullen",
     "Outlet- en sale-rubrieken met scherpe prijzen"
   ],
   "codeInfo": [
-    "Met een City Beach kortingscode krijg je korting op je bestelling — de code die we tegenkomen geeft 20%. Je voert de code in tijdens het afrekenen, waarna het kortingsbedrag van je totaal wordt afgehaald.",
-    "De code loopt via een samenwerkende creator. Of een code op een bepaald moment geldig is en op welke producten hij van toepassing is, kan per campagne verschillen, dus controleer dit bij het afrekenen."
+    "Met een City Beach kortingscode krijg je korting op je bestelling. De code die we via een samenwerkende creator tegenkomen is TRENDSET en geeft 20% korting. Je voert de code in tijdens het afrekenen, waarna het kortingsbedrag van je totaal wordt afgehaald.",
+    "Zulke codes lopen via creator-samenwerkingen op TikTok, waar makers hun City Beach-outfit laten zien en hun persoonlijke code delen. Of een code op een bepaald moment geldig is en op welke producten hij van toepassing is, kan per campagne verschillen, dus controleer dit bij het afrekenen.",
+    "Daarnaast geeft City Beach bij inschrijving voor de nieuwsbrief vaak korting op je eerste bestelling — handig om te combineren met de seizoenssales."
   ],
   "creators": [
     "@madisonmae15_tiktok"
   ],
   "tips": [
     {
-      "h": "Check de outlet- en sale-rubrieken",
-      "p": "City Beach heeft vaste budgetrubrieken en een outletsectie. Combineer een afgeprijsd item met een kortingscode voor extra voordeel."
+      "h": "Combineer de code met outlet en sale",
+      "p": "City Beach heeft vaste budgetrubrieken en een outletsectie. Combineer een afgeprijsd item met een kortingscode als TRENDSET voor extra voordeel — controleer wel of de code ook op sale-artikelen geldt."
     },
     {
-      "h": "Houd verzendkosten in de gaten",
-      "p": "Omdat City Beach een Australische retailer is, kunnen verzendkosten en levertijd naar Europa verschillen. Bekijk de verzendvoorwaarden voordat je afrekent."
+      "h": "Schrijf je in voor de nieuwsbrief",
+      "p": "Bij inschrijving voor de nieuwsbrief krijg je doorgaans korting op je eerste bestelling. Kijk welke aanbieding op dat moment het meeste oplevert."
+    },
+    {
+      "h": "Houd verzending en levertijd in de gaten",
+      "p": "City Beach is een Australische retailer die internationaal verzendt; verzendkosten en levertijd naar Europa kunnen daardoor afwijken. Bekijk de verzendvoorwaarden voordat je afrekent."
     },
     {
       "h": "Reken in één bestelling af",
-      "p": "Wil je voor meerdere gezinsleden shoppen, dan reken je alles in één bestelling af zodat een eventuele kortingscode over het hele bedrag geldt."
+      "p": "Wil je voor meerdere gezinsleden shoppen, reken dan alles in één bestelling af zodat een kortingscode over het hele bedrag geldt."
     }
   ],
   "faq": [
     {
       "q": "Wat verkoopt City Beach?",
-      "a": "City Beach is een Australische lifestyle-retailer voor surf-, skate- en streetfashion: kleding, zwemkleding, schoenen en accessoires voor dames, heren en kids, van merken als Nike, adidas, Billabong, Rip Curl en Vans."
+      "a": "City Beach is een Australische lifestyle-retailer voor swim-, surf-, skate- en streetfashion: kleding, zwemkleding, schoenen, accessoires en boardsports voor dames, heren en kids, van merken als Nike, adidas, Billabong, Rip Curl, Vans en Converse."
     },
     {
       "q": "Sinds wanneer bestaat City Beach?",
-      "a": "City Beach is opgericht in 1985 en is uitgegroeid tot een van de bekendere Australische lifestyle-retailers, met een webshop die ook internationaal verzendt."
+      "a": "City Beach is opgericht in 1985 en uitgegroeid tot een van de bekendere Australische lifestyle-retailers, met tientallen filialen en een webshop die ook internationaal verzendt."
     },
     {
       "q": "Hoeveel korting geeft een City Beach kortingscode?",
-      "a": "De creator-code die we tegenkomen geeft 20% korting. Het exacte percentage, de geldigheid en de producten waarop een code geldt, kunnen per campagne verschillen."
+      "a": "De creator-code die we tegenkomen is TRENDSET en geeft 20% korting. Het exacte percentage, de geldigheid en de producten waarop een code geldt, kunnen per campagne verschillen, dus controleer dit bij het afrekenen."
+    },
+    {
+      "q": "Waar vind ik een City Beach kortingscode?",
+      "a": "Codes komen vooral uit creator-samenwerkingen op TikTok, waar makers hun City Beach-outfit laten zien en hun persoonlijke code delen. Daarnaast geeft de nieuwsbrief vaak korting op je eerste bestelling."
     },
     {
       "q": "Verzendt City Beach naar Europa?",

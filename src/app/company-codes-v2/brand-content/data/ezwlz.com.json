@@ -1,66 +1,81 @@
 {
   "slug": "ezwlz.com",
   "name": "EZWLZ",
-  "heroLede": "EZWLZ is een Nederlands merk in stadse elektrische fietsen. Met de modellen Forenz L en Forenz H, een Yamaha-middenmotor in de achterwielnaaf en een Panasonic-accu mikt het merk op betaalbaar en praktisch forenzen, inclusief bezorging en montage aan huis.",
+  "heroLede": "EZWLZ is een Nederlands merk in stadse elektrische fietsen dat rechtstreeks aan de consument verkoopt. Met de modellen Forenz L (lage instap) en Forenz H (hoge instap), een Yamaha-motor en een Panasonic-accu mikt het merk op betaalbaar forenzen. Je kunt eerst gratis een proefrit plannen, en met de juiste kortingscode haal je nog wat van de prijs af.",
   "about": [
-    "EZWLZ is een direct-to-consumer merk uit Naarden dat zich richt op urban e-bikes. Het verkoopt twee modellen: de Forenz L met een lage instap en de Forenz H met een hoge instap, allebei bedoeld voor dagelijks fietsen in de stad.",
-    "Beide modellen draaien om een 250W Yamaha-motor in de achterwielnaaf en een Panasonic-accu. Het merk benadrukt een solide frame met een strakke, minimalistische afwerking en stelt zadel en stuur instelbaar af voor comfort.",
-    "Doordat EZWLZ rechtstreeks aan de consument verkoopt, wil het scherpere prijzen bieden dan via de tussenhandel. De fietsen starten rond 1.049 euro met een zomeractie (normaal 1.199 euro), en er zijn accessoires en cadeaukaarten."
+    "EZWLZ is een direct-to-consumer merk uit Naarden dat zich richt op urban e-bikes. Het verkoopt twee modellen: de Forenz L met een lage instap en de Forenz H met een hoge instap, allebei bedoeld voor dagelijks fietsen door de stad. Er is dus een variant die vaak als dames- en een die als herenmodel wordt aangeduid.",
+    "Beide fietsen draaien om een 250W Yamaha-motor (40Nm) in de achterwielnaaf en een Panasonic lithium-ion-accu (36V), goed voor een actieradius tot ongeveer 100 km en een trapondersteuning tot 25 km/u. Het frame is van aluminium en de fiets weegt rond de 22 kg.",
+    "Omdat de productie volgens het merk in eigen hand blijft en er geen tussenhandel tussen zit, wil EZWLZ scherpere prijzen bieden. De fietsen starten in een zomeractie rond 1.049 euro (regulier rond 1.199 euro), inclusief thuisbezorging en montage door een monteur."
   ],
   "why": [
     {
       "h": "Direct-to-consumer prijs",
-      "p": "EZWLZ verkoopt zonder tussenhandel, met als doel meer fiets voor je geld. De instapprijs ligt rond 1.049 euro in de actie, wat voor een e-bike met merkmotor en -accu relatief toegankelijk is."
+      "p": "EZWLZ verkoopt zonder tussenhandel en houdt de productie naar eigen zeggen in eigen hand, met als doel meer fiets voor je geld. De instapprijs ligt in de actie rond 1.049 euro, wat voor een e-bike met een merkmotor en -accu relatief toegankelijk is."
     },
     {
       "h": "Yamaha-motor en Panasonic-accu",
-      "p": "Beide modellen gebruiken een 250W Yamaha-motor in de achterwielnaaf en een Panasonic-accu. Reviews noemen soepele ondersteuning bij optrekken en op hellingen."
+      "p": "Beide modellen gebruiken een 250W Yamaha-motor in de achterwielnaaf en een Panasonic-accu (tot ongeveer 100 km bereik). De Forenz L scoorde een 7,6 in de onafhankelijke ADR-fietsentest, en de ondersteuning bij optrekken wordt vaak als soepel omschreven."
+    },
+    {
+      "h": "Eerst gratis een proefrit",
+      "p": "Je hoeft niet blind te kopen: via de site plan je een gratis proefrit, zodat je het verschil tussen de lage en hoge instap zelf voelt voordat je beslist."
     },
     {
       "h": "Bezorging en montage aan huis",
-      "p": "De fiets wordt thuisbezorgd en door een monteur gemonteerd, zodat je niet zelf hoeft te klussen. Daarbij geldt 5 jaar garantie op het frame en 2 jaar op de elektronica."
+      "p": "De fiets wordt thuisbezorgd en door een monteur gemonteerd, zodat je niet zelf hoeft te klussen. Ook onderhoud en reparatie regelt het merk grotendeels aan huis. Daarbij geldt 5 jaar garantie op het frame en 2 jaar op de elektronica."
     }
   ],
-  "codeInfo": [
-    "Een EZWLZ-kortingscode vul je in bij het afrekenen om korting op je bestelling te krijgen. De korting komt bovenop de eventueel al lopende actieprijs.",
-    "Codes geven hier doorgaans een vast percentage, bijvoorbeeld 5% met code EMMA. Bij een aankoop in de prijsklasse van een e-bike scheelt zelfs een klein percentage al een merkbaar bedrag; check de actuele voorwaarden voor je bestelt."
-  ],
   "trending": [
-    "Forenz L met lage instap",
-    "Forenz H met hoge instap",
-    "Yamaha-motor met Panasonic-accu",
+    "Forenz L met lage instap (damesmodel)",
+    "Forenz H met hoge instap (herenmodel)",
+    "Gratis proefrit aanvragen",
     "Zomeractie op de instapprijs"
+  ],
+  "codeInfo": [
+    "Een EZWLZ-kortingscode vul je in bij het afrekenen om korting op je bestelling te krijgen. De korting komt meestal bovenop de eventueel al lopende actieprijs.",
+    "Influencer Emma (@emmaseuros) deelt bijvoorbeeld code EMMA voor 5% extra korting bovenop de toch al lage prijs. Bij een aankoop in de prijsklasse van een e-bike scheelt zelfs een paar procent al een merkbaar bedrag; check wel altijd de actuele voorwaarden voordat je bestelt."
+  ],
+  "creators": [
+    "@emmaseuros"
   ],
   "tips": [
     {
-      "h": "Combineer code en actieprijs",
-      "p": "De fietsen kennen al een zomeractie (vanaf rond 1.049 euro in plaats van 1.199 euro). Een kortingscode als EMMA komt daar nog bovenop, dus check of je beide kunt combineren."
+      "h": "Plan eerst een gratis proefrit",
+      "p": "EZWLZ laat je vooraf gratis proefrijden. Doe dat eerst, zodat je zeker weet dat de instap en het zitcomfort bij je passen voordat je een code gebruikt en bestelt."
     },
     {
-      "h": "Kies de juiste instap",
-      "p": "Het verschil tussen Forenz L en H zit vooral in de instaphoogte. Bepaal vooraf welke instap voor jou prettiger zit, zodat je niet hoeft te ruilen."
+      "h": "Combineer code en actieprijs",
+      "p": "De fietsen kennen vaak een zomeractie (rond 1.049 euro in plaats van 1.199 euro). Een kortingscode als EMMA (5%, gedeeld door @emmaseuros) komt daar volgens haar bovenop, dus controleer of je beide kunt combineren."
     },
     {
       "h": "Reken garantie en service mee",
-      "p": "Bij een e-bike telt meer dan de prijs. EZWLZ levert thuisbezorging met montage en geeft 5 jaar framegarantie en 2 jaar op de elektronica; weeg dat mee in je vergelijking."
+      "p": "Bij een e-bike telt meer dan de aanschafprijs. EZWLZ levert thuisbezorging met montage en geeft 5 jaar framegarantie en 2 jaar op de elektronica; weeg die service mee in je vergelijking."
     }
   ],
   "faq": [
     {
       "q": "Wat verkoopt EZWLZ?",
-      "a": "EZWLZ verkoopt stadse elektrische fietsen, met twee modellen: de Forenz L (lage instap) en de Forenz H (hoge instap), allebei met een 250W Yamaha-motor en Panasonic-accu. Daarnaast zijn er accessoires en cadeaukaarten."
+      "a": "EZWLZ verkoopt stadse elektrische fietsen, met twee modellen: de Forenz L (lage instap, vaak als damesmodel) en de Forenz H (hoge instap, vaak als herenmodel), allebei met een 250W Yamaha-motor en een Panasonic-accu."
+    },
+    {
+      "q": "Kan ik een EZWLZ e-bike eerst proberen?",
+      "a": "Ja. Via de site van EZWLZ kun je een gratis proefrit plannen, zodat je de fiets en de instap zelf kunt uitproberen voordat je beslist."
     },
     {
       "q": "Wat kost een EZWLZ e-bike?",
-      "a": "De fietsen starten rond 1.049 euro tijdens een zomeractie; de reguliere prijs ligt rond 1.199 euro. Controleer de actuele prijs en actie op de site."
+      "a": "De fietsen starten rond 1.049 euro tijdens een zomeractie; de reguliere prijs ligt rond 1.199 euro, inclusief thuisbezorging en montage. Controleer de actuele prijs en actie op de site."
     },
     {
       "q": "Hoe gebruik ik een EZWLZ kortingscode?",
-      "a": "Vul de code bij het afrekenen in. Codes geven doorgaans een vast percentage, bijvoorbeeld 5% met code EMMA, bovenop de eventuele actieprijs. Check altijd de actuele voorwaarden."
-    },
-    {
-      "q": "Hoe werken bezorging en garantie?",
-      "a": "EZWLZ bezorgt aan huis en laat de fiets door een monteur monteren. Er geldt 5 jaar garantie op het frame en 2 jaar op de elektronica. Geleverd wordt onder meer in Nederland, Belgie en Luxemburg."
+      "a": "Vul de code bij het afrekenen in. Zo geeft code EMMA, gedeeld door @emmaseuros, doorgaans 5% extra korting bovenop de eventuele actieprijs. Check altijd de actuele voorwaarden."
     }
+  ],
+  "related": [
+    "walkingpad.nl",
+    "ninjakitchen",
+    "tefal",
+    "koro.com",
+    "hellofresh.nl",
+    "douglas"
   ]
 }
