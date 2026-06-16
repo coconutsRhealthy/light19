@@ -1,0 +1,199 @@
+================================================================================
+BRAND PAGE PERSISTENCE — ARCHITECTURE DISCUSSION & PLAN
+================================================================================
+Date: 2026-06-16
+Status: DISCUSSION / DESIGN — not yet implemented. Resume later.
+Author: lennartmac + Claude
+
+--------------------------------------------------------------------------------
+THE PROBLEM (the reason for this whole discussion)
+--------------------------------------------------------------------------------
+Brand pages (diski.nl/{slug}/) go OFFLINE automatically when a brand leaves
+discounts.json.
+
+Why it happens:
+  - Routine update workflow = add new codes at the top of discounts.json,
+    PRUNE the stale entries off the bottom.
+  - Build-time script scripts/fill-routes.js derives the prerender list
+    (routes.txt) and sitemap.xml PURELY from current discounts.json membership.
+  - So pruning a code has an invisible side effect: it deletes a live page.
+    Next prod build -> URL no longer prerendered -> 404 -> Google drops it ->
+    SEO ranking lost.
+
+Why it's bad:
+  - Some of these brand pages have GOOD, aged SEO rankings. Those are durable
+    assets. Pruning a short-lived discount code should NEVER destroy them.
+
+ROOT CAUSE (agreed):
+  discounts.json conflates two things with totally different lifecycles:
+    1. "Does this brand have a CURRENT code right now?"  -> VOLATILE (churns)
+    2. "Should diski.nl/{slug}/ exist & be indexed?"     -> STICKY (forever)
+  Today (1) is load-bearing for (2). That coupling is the bug.
+
+--------------------------------------------------------------------------------
+THE TARGET ARCHITECTURE (agreed direction)
+--------------------------------------------------------------------------------
+INVERT THE DEPENDENCY.
+
+Today:  discounts.json is the spine; existence + content + monetization hang
+        off current code membership.
+
+Target: PAGE EXISTENCE becomes its own permanent, append-only source of truth.
+        Codes become a VOLATILE OVERLAY on top.
+
+Core invariant we want:
+  "Once a page is published, it stays online forever. Pruning a code only ever
+   changes WHICH CODE IS SHOWN — never whether the page exists or is indexed."
+
+Layers:
+  EXISTENCE LAYER (permanent, append-only):
+    - The set of slugs that should be live forever.
+    - Drives routes.txt + sitemap.xml (instead of discounts.json driving them).
+    - Removing a code from discounts.json does NOT touch this layer.
+
+  CODE LAYER (volatile overlay, resolved per page):
+    - discounts.json  -> current verified code, if present
+                         (STAYS the live-curation surface; keep updating it
+                          exactly as today, pruning included)
+    - fallback        -> most-recent-known code when discounts.json has none
+    - Page shows:  currentCode ?? (curated backup) ?? lastKnownCode
+    - Show fallback codes HONESTLY (lean on existing "Laatst gecontroleerd" /
+      build-info.ts date pattern) so an old code doesn't read as freshly verified.
+
+--------------------------------------------------------------------------------
+KEY DESIGN DECISIONS REACHED
+--------------------------------------------------------------------------------
+1. Pages live FOREVER once published. The persistent registry is append-only.
+   No "take it down" as a side effect of code rotation. (User confirmed.)
+
+2. Fallback-code source: do NOT use the external code repo. Keep it in-repo.
+   (User decided against the external-repo dependency.)
+
+3. The backbone for "what stays online" = slugs that have brand content
+   (v1 OR v2). User plans to roll out v1 or v2 content for ALL slugs over time.
+   Anything with content = online forever.
+
+--------------------------------------------------------------------------------
+WHAT WE LEARNED ABOUT THE CURRENT SYSTEM (so we don't re-discover it)
+--------------------------------------------------------------------------------
+discounts.json
+  - src/app/data/discounts.json
+  - ~3,242 entries, ~1,150 unique slugs
+  - Format: array of POSITIONAL CSV strings (NOT keyed JSON):
+      "company, code, value, influencer, MM-DD"
+  - No schema / no validation. Fragile (stray commas, "douglas (app)"
+    parentheses, date typos all silently affect routing/sitemap output).
+
+Build pipeline (package.json build:prod):
+  1. node scripts/fill-routes.js   -> generates routes.txt + sitemap.xml
+  2. node scripts/stamp-build.js   -> stamps build date into src/app/build-info.ts
+  3. npx ng build --configuration prod   (prerender via routes.txt)
+  4. node scripts/set-canonicals.js
+  - angular.json: prerender { discoverRoutes:false, routesFile:"routes.txt" }
+  - routes.txt AND sitemap.xml are DERIVED ARTIFACTS but committed to git
+    (they drift / create diff noise — flagged for later cleanup).
+
+Two SEPARATE brand-content systems (this is important):
+  v1 = src/app/company-codes/company-seo-content/
+     - 578 brands, one .ts file each, exports a raw HTML string
+     - Registry: company-seo-content/index.ts  (578-case switch, loadSeoContent())
+     - NO structured fields — just markup. Nowhere to put a structured code field.
+  v2 = src/app/company-codes-v2/brand-content/
+     - 351 brands, one .json file each in /data/
+     - Typed schema: brand-content.model.ts  (BrandContent interface)
+       fields: slug, name, heroLede, about[], why[], trending?, codeInfo?,
+               creators?, tips[], faq[], related?
+     - Go-live allowlist: live-v2-slugs.ts (LIVE_V2_SLUGS Set, 351 live)
+     - Served via brand-content.service.ts / .server.ts (TransferState, no
+       hydration mismatch). has-v2-content.guard.ts picks v2 vs v1.
+
+THREE slug registries today that must agree by slug-string convention, with
+nothing enforcing it (broader cleanup, noted for later):
+  - discounts.json            (existence + current codes)
+  - v1 index.ts / v2 data/    (which template / content richness)
+  - affiliate-link.service.ts (~600 entries: slug -> {url, dummyCode};
+                               dummyCode is ALREADY a per-slug fallback-ish code,
+                               covers BOTH v1 and v2 slugs)
+
+--------------------------------------------------------------------------------
+LEADING PROPOSAL FOR THE FALLBACK CODE (to decide next session)
+--------------------------------------------------------------------------------
+User's original idea:
+  - Add a `backupCodes` field to the v2 content JSON. Eliminates external repo.
+  - PROBLEM: only covers the 351 v2 brands. The 578 v1 brands are HTML strings
+    with no field slot — and they're the OLDER pages most likely to hold SEO
+    equity. So this solves only the smaller half.
+
+Claude's counter-proposal (lower effort, full coverage):
+  - Auto-generate an APPEND-ONLY  last-known-codes.json , upserted every build
+    by fill-routes.js: for each slug currently in discounts.json, record
+    { slug, code, value, date }. NEVER delete.
+  - Because builds run regularly, a code is captured on earlier builds WHILE it's
+    still live; by the time you prune it from discounts.json, it's already saved.
+    => Your existing prune-the-bottom habit preserves the data automatically,
+       zero manual work, no external repo, covers ALL 1,150 slugs (v1 + v2).
+  - BONUS: this same file doubles as the PERMANENT EXISTENCE REGISTRY
+    (slug ∈ last-known-codes.json = "ever published" = stays routed forever).
+
+These COMPOSE (recommended):
+  - auto-snapshot = universal zero-effort safety net
+  - optional curated `backupCodes` in v2 JSON = editorial override when you want
+    a nicer evergreen code than "the last one we happened to have"
+  - resolution order:  currentCode ?? curatedBackup ?? lastKnownCode
+
+Trade-off summary:
+  - auto-snapshot: zero maintenance, full coverage, but "last code" not curated
+  - backupCodes:   curated/nice, but manual, per-file, v2-only
+
+--------------------------------------------------------------------------------
+OPEN ENDS (decide / do next session)
+--------------------------------------------------------------------------------
+[ ] BLOCKING QUESTION: Is v1 (company-seo-content HTML) a LEGACY format being
+    migrated to v2, or a PERMANENT parallel format?
+      - Migrating to v2  -> backupCodes-in-v2-JSON can be enough (v1 just needs
+                            to survive the transition).
+      - v1 stays forever -> fallback code MUST live in a content-agnostic place
+                            (the auto-snapshot, or reuse affiliate dummyCode).
+    This decides the whole shape of the fallback. ANSWER THIS FIRST.
+
+[ ] Choose fallback mechanism: auto-snapshot only / backupCodes only / both
+    (Claude recommends BOTH — auto net + optional curated override).
+
+[ ] Define the EXISTENCE REGISTRY precisely. Candidate:
+      online(slug) = (slug has v1 content)
+                  OR (slug has v2 content)
+                  OR (slug ∈ last-known-codes.json)   [if we adopt auto-snapshot]
+    Note: codes-only slugs with NO content and NO past snapshot would correctly
+    be ephemeral. Confirm that's desired (content/equity = protected; pure
+    nothing = allowed to drop).
+
+[ ] TRANSITION SAFETY: until every slug has content, fill-routes.js must emit
+    the UNION of (existence registry) ∪ (current discounts.json slugs) so nothing
+    currently live drops mid-backfill. Drop the discounts.json half once coverage
+    is complete.
+
+[ ] When a page shows a fallback (non-current) code, define the exact UI/honesty
+    framing (date label, "laatst bekende code" wording, alternatives/related).
+
+[ ] Rework scripts/fill-routes.js: derive routes.txt + sitemap.xml from the
+    existence registry instead of raw discounts.json; add the append-only
+    snapshot upsert step (if adopted).
+
+[ ] Backfill plan: roll out v1 or v2 content to the remaining slugs that have
+    neither (a few hundred discounts.json slugs currently have no content page).
+
+--------------------------------------------------------------------------------
+BROADER CLEANUPS NOTED BUT EXPLICITLY DEFERRED (not part of this effort)
+--------------------------------------------------------------------------------
+- discounts.json positional-CSV-in-JSON format -> move to a real keyed schema
+  with validation (the fragile core).
+- Committed derived artifacts (routes.txt, sitemap.xml) -> stop committing /
+  reduce diff noise.
+- Three slug registries with no reconciliation -> add a consistency check so a
+  slug can't exist in one and be silently missing from another (e.g. content but
+  no affiliate link = dead monetization).
+
+================================================================================
+NEXT SESSION: start by answering the v1 legacy-vs-permanent question, then lock
+the fallback mechanism, then implement fill-routes.js changes.
+================================================================================
