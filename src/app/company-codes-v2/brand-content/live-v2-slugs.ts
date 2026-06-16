@@ -393,6 +393,8 @@ export const LIVE_V2_SLUGS: ReadonlySet<string> = new Set([
   'kessberlin',
   'laluunbaby',
   'lameremodesty',
+  // single add 2026-06-16
+  'olivida.nl',
 ]);
 
 export function isLiveV2Slug(slug: string | undefined | null): boolean {
