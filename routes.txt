@@ -28,6 +28,7 @@
 /aimnsportswear
 /airalo.com
 /airup
+/akisoundstudio
 /aktiesport
 /akuwoodpenal
 /albelli
@@ -65,7 +66,6 @@
 /athleticbees.com
 /atmooz.com
 /atoleajewelry
-/aurgan.nl
 /authenticbeautyconcept
 /autovibe.nl
 /avaewear
@@ -85,10 +85,10 @@
 /bartogi
 /basalbasics.nl
 /bbdebiestraatseweide
-/beachresortpuntwest
 /beautybyhandsofgold
 /beautyplaza
 /begolden
+/bellaandduke
 /bellabarnett
 /bellobox.nl
 /bellure.fashion
@@ -216,6 +216,7 @@
 /curlsbyiris.nl
 /curlysecret
 /currentbody.com
+/cusbclo
 /cyell.com
 /daka
 /danielwellington
@@ -225,7 +226,6 @@
 /decantalo
 /decarba_store
 /decathlon
-/decodedgear
 /dedic8apparel
 /deflierefluiter
 /degoedkoopsteoutlet
@@ -324,6 +324,7 @@
 /faume
 /FBTO Zorg
 /featherwomen
+/feedmefashion.nl
 /fejo_studio
 /femininestore
 /fest
@@ -367,6 +368,7 @@
 /fritsy
 /fuelyourbody
 /funkyfatfoods
+/fusecommunity
 /galaxus
 /garmundo.nl
 /gastonluga
@@ -382,7 +384,6 @@
 /glazen.nl
 /glowdip.nl
 /glowmode
-/glutespop.com
 /goated
 /goboony
 /goedkoopstekantoorartikelen
@@ -419,7 +420,6 @@
 /halara
 /hanakoko.com
 /handjevolliefde
-/happatape
 /happy-size.nl
 /headshop
 /heijnenplanten
@@ -482,6 +482,7 @@
 /jackery
 /jackym
 /jackysue.official
+/jardinvue
 /jbl
 /jdsports
 /jeanscentre.nl
@@ -524,6 +525,7 @@
 /kiwi.com
 /kleertjescom
 /klense.nl
+/klint
 /knivesandtools
 /koffievoordeel
 /koreanskincare
@@ -544,8 +546,10 @@
 /lampenlicht.nl
 /langsdom
 /large.nl
+/lasers_en_laagjes
 /laukisieraden
 /lavaverf
+/laveos_com
 /lavertu
 /lease.auto
 /lebara
@@ -566,6 +570,7 @@
 /lilatelier
 /lilysilk
 /linda.trui
+/linguaplanta
 /linniesfashion
 /lionheart.fest
 /little_monkeez.nl
@@ -583,7 +588,6 @@
 /lookfantastic
 /loomathelabel.com
 /loopearplugs
-/loragal
 /lounge by zalando
 /loungeunderwear
 /lovd_store
@@ -596,6 +600,7 @@
 /lunlux.nl
 /lureaux
 /lusini
+/luuloo.nl
 /luvmehair
 /luxuryfragrances.nl
 /lycamobile
@@ -605,9 +610,9 @@
 /madlady
 /madurodam
 /maevenart
+/magictourclub
 /maicazz.nl
 /maisemirae
-/maisonfav
 /maje
 /makemefamousshop
 /malelions
@@ -810,7 +815,6 @@
 /photowall_sweden
 /picnic
 /pieces
-/piladora
 /pincsale
 /pinkgellac
 /pinnedbyk
@@ -930,7 +934,6 @@
 /shopatlot
 /shopify
 /shopnoxare
-/silabrows
 /silkelegancemanon
 /silksilky_official
 /simmilondon
@@ -970,8 +973,6 @@
 /stardoorsnl
 /startselect
 /staycuracao
-/stayokayhostels
-/steamone
 /stekkies
 /stellamccartney
 /stevemadden
@@ -1195,6 +1196,7 @@
 /zappie
 /zappiebox
 /zarzour
+/zaschahair
 /zavvi
 /zazanederland
 /zee.belgium
