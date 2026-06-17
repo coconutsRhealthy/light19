@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Cream base so the browser overscroll/rubber-band area matches the new look */
+html, body {
+  background-color: #FFF6D9;
+}
+
 @keyframes fadeDown {
   0% {
     opacity: 0;
