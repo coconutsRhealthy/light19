@@ -1,89 +1,85 @@
-<nav class="tw-bg-[rgb(247,178,189)] tw-text-gray-800 tw-shadow-md">
+<nav class="tw-sticky tw-top-0 tw-z-30 tw-bg-cream/90 tw-backdrop-blur-md tw-border-b tw-border-ink/10 tw-text-ink tw-font-body">
     <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">
-        <div class="tw-flex tw-justify-between tw-h-16">
-            <!-- Logo + naam -->
-            <div class="tw-flex tw-items-center tw-space-x-3">
-                <a href="" class="tw-w-10 tw-h-10 tw-rounded-full tw-overflow-hidden">
-                    <img
-                            src="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp"
-                            alt="Logo"
-                            width="40"
-                            height="40"
-                            class="tw-w-full tw-h-full tw-object-cover"
-                    />
-                </a>
-                <a href="" class="tw-text-xl tw-font-bold tw-text-gray-900">Diski</a>
-            </div>
+        <div class="tw-flex tw-justify-between tw-items-center tw-h-16">
+            <!-- Brand mark + wordmark -->
+            <a routerLink="/" class="tw-flex tw-items-center tw-gap-2.5 tw-no-underline"
+               onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_logo'})">
+                <span class="tw-relative tw-w-10 tw-h-10 tw-rounded-[11px] tw-bg-sky tw-flex tw-items-center tw-justify-center tw-shrink-0">
+                    <span class="tw-font-title tw-font-bold tw-text-ink tw-text-[26px] tw-leading-none tw--mt-0.5 tw-tracking-tight">d</span>
+                    <span class="tw-absolute tw-bottom-1.5 tw-right-1.5 tw-w-[5px] tw-h-[5px] tw-rounded-full tw-bg-ink"></span>
+                </span>
+                <span class="tw-font-title tw-font-bold tw-text-ink tw-text-2xl tw-leading-none tw-tracking-tight">diski<span class="tw-text-dot">.</span></span>
+            </a>
 
             <!-- Desktop menu -->
-            <div class="tw-hidden md:tw-flex tw-items-center tw-space-x-8">
-                <a
-                    routerLink="/"
-                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
-                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'})">
-                        Kortingscodes
+            <div class="tw-hidden lg:tw-flex tw-items-center tw-gap-7">
+                <a routerLink="/"
+                   routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'})">
+                    Kortingscodes
                 </a>
-                <a
-                    routerLink="/winkels"
-                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
-                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
-                        Shops
+                <a routerLink="/winkels"
+                   routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
+                    Shops
                 </a>
-                <a
-                    routerLink="/prikbord"
-                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
-                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
-                        Prikbord
+                <a routerLink="/prikbord"
+                   routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
+                    Prikbord
                 </a>
-                <a
-                    routerLink="/blackfriday"
-                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
-                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blackfriday'});">
-                        Black Friday
+                <a routerLink="/blackfriday"
+                   routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blackfriday'});">
+                    Black Friday
                 </a>
-                <a
-                        routerLink="/top5"
-                        routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                        class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
-                        onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_top5'});">
+                <a routerLink="/top5"
+                   routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_top5'});">
                     Top 5
                 </a>
-                <a
-                        routerLink="/blogs"
-                        routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                        class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
-                        onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blogs'});">
+                <a routerLink="/blogs"
+                   routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blogs'});">
                     Blogs
                 </a>
-                <a
-                    routerLink="/contact"
-                    routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                    class="tw-text-gray-800 hover:tw-text-gray-900 tw-transition"
-                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
-                        Contact
+                <a routerLink="/contact"
+                   routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
+                    Contact
                 </a>
 
+                <span class="tw-w-px tw-h-5 tw-bg-ink/15"></span>
+
+                <a routerLink="/prikbord"
+                   class="tw-bg-ink tw-text-cream tw-rounded-full tw-px-5 tw-py-2.5 tw-font-semibold tw-text-sm tw-no-underline tw-whitespace-nowrap"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_plaats_code'});">
+                    Plaats code
+                </a>
             </div>
 
             <!-- Mobile menu knop -->
-            <div class="md:tw-hidden tw-flex tw-items-center">
-                <button (click)="toggleMenu()" class="tw-text-gray-800 focus:tw-outline-none">
+            <div class="lg:tw-hidden tw-flex tw-items-center">
+                <button (click)="toggleMenu()" aria-label="Menu" class="tw-text-ink focus:tw-outline-none">
                     @if (!menuOpen) {
                         <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-6 tw-w-6" fill="none"
                              viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                        } @else {
-                            <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-6 tw-w-6" fill="none"
-                                 viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M6 18L18 6M6 6l12 12" />
-                            </svg>
+                    } @else {
+                        <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-6 tw-w-6" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     }
                 </button>
             </div>
@@ -92,49 +88,54 @@
 
     <!-- Mobile menu -->
     @if (menuOpen) {
-        <div class="md:tw-hidden tw-bg-[rgb(252,212,220)] tw-shadow-inner tw-animate-[fadeDown_0.3s_ease-out]">
-            <div class="tw-px-4 tw-pt-2 tw-pb-3 tw-space-y-1">
-                <a routerLink="/"
-                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+        <div class="lg:tw-hidden tw-bg-panel tw-border-t tw-border-ink/10 tw-animate-[fadeDown_0.3s_ease-out]">
+            <div class="tw-px-4 tw-pt-3 tw-pb-4 tw-space-y-1 tw-font-body">
+                <a routerLink="/" (click)="toggleMenu()"
+                   routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_home'})">
-                        Kortingscodes
+                    Kortingscodes
                 </a>
-                <a routerLink="/winkels"
-                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                <a routerLink="/winkels" (click)="toggleMenu()"
+                   routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_shops'});">
-                        Shops
+                    Shops
                 </a>
-                <a routerLink="/prikbord"
-                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                <a routerLink="/prikbord" (click)="toggleMenu()"
+                   routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_prikbord'});">
-                        Prikbord
+                    Prikbord
                 </a>
-                <a routerLink="/blackfriday"
-                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                <a routerLink="/blackfriday" (click)="toggleMenu()"
+                   routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blackfriday'});">
-                        Black Friday
+                    Black Friday
                 </a>
-                <a routerLink="/top5"
-                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                <a routerLink="/top5" (click)="toggleMenu()"
+                   routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_top5'});">
-                        Top 5
+                    Top 5
                 </a>
-                <a routerLink="/blogs"
-                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                <a routerLink="/blogs" (click)="toggleMenu()"
+                   routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blogs'});">
-                        Blogs
+                    Blogs
                 </a>
-                <a routerLink="/contact"
-                   routerLinkActive="tw-font-bold tw-underline" [routerLinkActiveOptions]="{ exact: true }"
-                   class="tw-block tw-text-gray-800 hover:tw-text-gray-900 tw-rounded-md tw-px-3 tw-py-2"
+                <a routerLink="/contact" (click)="toggleMenu()"
+                   routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-block tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_contact'});">
-                        Contact
+                    Contact
+                </a>
+                <a routerLink="/prikbord" (click)="toggleMenu()"
+                   class="tw-block tw-bg-ink tw-text-cream tw-text-center tw-rounded-full tw-px-4 tw-py-3 tw-mt-2 tw-font-semibold tw-no-underline"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_plaats_code'});">
+                    Plaats code
                 </a>
             </div>
         </div>
