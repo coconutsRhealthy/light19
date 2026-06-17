@@ -3,6 +3,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Self-hosted brand fonts (latin subset, trimmed weights) — same-origin,
+   no render-blocking Google Fonts CSS, no extra cross-origin connections. */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/fraunces-latin-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/montserrat-latin-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/montserrat-latin-600.woff2') format('woff2');
+}
+
 /* Cream base so the browser overscroll/rubber-band area matches the new look */
 html, body {
   background-color: #FFF6D9;

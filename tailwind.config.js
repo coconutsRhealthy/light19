@@ -19,7 +19,9 @@ module.exports = {
       fontFamily: {
         title: ['Fraunces', 'Georgia', 'serif'],
         body:  ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        label: ['Arimo', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        // labels are uppercase + letter-spaced micro-text: a system sans is
+        // visually indistinguishable here, so we skip a whole web font.
+        label: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'],
       },
       letterSpacing: {
         label: '0.16em',
