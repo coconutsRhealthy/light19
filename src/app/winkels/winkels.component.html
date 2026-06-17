@@ -1,55 +1,83 @@
-<div class="tw-min-h-screen tw-bg-pink-50 tw-text-gray-800">
-  <app-navbar></app-navbar>
+<app-navbar></app-navbar>
 
-  <main class="tw-max-w-4xl tw-mx-auto tw-px-4 tw-py-12">
-    <h1 class="tw-text-3xl sm:tw-text-4xl tw-font-bold tw-mb-10 tw-text-center">
-      Alle winkels met actieve kortingscodes
+<main class="tw-font-body tw-text-ink">
+
+  <!-- Header -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pt-10 sm:tw-pt-14 tw-pb-2">
+    <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">
+      @if (!loading) { {{ allShops.length }} shops · allemaal handmatig getest }
+    </div>
+    <h1 class="tw-font-title tw-font-bold tw-text-4xl sm:tw-text-5xl lg:tw-text-6xl tw-tracking-tight tw-mt-2">
+      Alle shops<span class="tw-text-dot">.</span>
     </h1>
 
-    <!-- Zoekveld -->
-    <div class="tw-mb-6 tw-relative">
-      <input
-              type="text"
-              class="tw-w-full tw-px-4 tw-pr-8 tw-py-2 tw-border tw-rounded tw-shadow-sm focus:tw-outline-none focus:tw-ring"
-              placeholder="Zoek op webshop..."
-              [(ngModel)]="searchTerm"
-              (input)="onSearch()"
-      />
-      @if(searchTerm) {
-      <button
-              type="button"
-              (click)="searchTerm = ''; onSearch()"
-              aria-label="Clear"
-              class="tw-absolute tw-right-2 tw-top-1/2 tw-transform tw--translate-y-1/2 tw-text-gray-500 hover:tw-text-gray-600 tw-transition tw-rounded-full tw-w-6 tw-h-6 tw-flex tw-items-center tw-justify-center tw-bg-gray-100 hover:tw-bg-gray-200"
-      >
-        &times;
-      </button>
-      }
+    <div class="tw-mt-6 tw-max-w-xl">
+      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-p-2 tw-pl-5 sm:tw-pl-6 tw-flex tw-items-center tw-gap-2 tw-shadow-[0_16px_40px_rgba(67,48,46,0.07)]">
+        <input
+          type="text"
+          class="tw-flex-1 tw-min-w-0 tw-bg-transparent tw-outline-none tw-font-body tw-text-sm sm:tw-text-base tw-text-ink placeholder:tw-text-ink/50"
+          placeholder="Zoek een shop — bijv. NA-KD, Temu, Gymshark…"
+          [(ngModel)]="searchTerm"
+        />
+        @if (searchTerm) {
+          <button type="button" (click)="searchTerm = ''" aria-label="Wis zoekopdracht"
+            class="tw-shrink-0 tw-w-8 tw-h-8 tw-rounded-full tw-bg-ink/5 hover:tw-bg-ink/10 tw-text-ink/60 tw-flex tw-items-center tw-justify-center tw-transition">&times;</button>
+        }
+      </div>
     </div>
+  </section>
 
-    <ul class="tw-space-y-8">
-      @for(group of filteredGroupedWinkels; track group.letter) {
-        <li>
-          <h2 class="tw-text-xl tw-font-semibold tw-text-pink-700 tw-border-b tw-border-pink-200 tw-pb-1 tw-mb-4">
-            {{ group.letter }}
-          </h2>
+  <!-- Alphabet filter -->
+  @if (!loading) {
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-py-6">
+      <div class="tw-flex tw-flex-wrap tw-gap-2">
+        @for (l of letters; track l) {
+          <button
+            (click)="selectLetter(l)"
+            class="tw-rounded-full tw-font-body tw-text-sm tw-py-2 tw-px-3 tw-min-w-[38px] tw-text-center tw-transition"
+            [class]="selectedLetter === l
+              ? 'tw-bg-ink tw-text-cream tw-font-semibold'
+              : 'tw-bg-panel tw-border tw-border-ink/10 tw-text-ink/70 hover:tw-text-ink'">
+            {{ l }}
+          </button>
+        }
+      </div>
+    </section>
+  }
 
-          <ul class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-3">
-            @for (winkel of group.winkels; track winkel) {
-              <li>
-                <a
-                        [routerLink]="['/' + winkel.toLowerCase() + '/']"
-                        class="tw-block tw-p-3 tw-rounded-lg tw-bg-white hover:tw-bg-pink-50 tw-text-pink-900 hover:tw-text-pink-700 tw-shadow-sm hover:tw-shadow-md tw-transition"
-                >
-                  {{ winkel }}
-                </a>
-              </li>
-            }
-          </ul>
-        </li>
-      }
-    </ul>
-  </main>
+  <!-- Shop grid -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-16">
+    @if (loading) {
+      <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
+        @for (s of [1,2,3,4,5,6,7,8]; track s) {
+          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-min-h-[120px] tw-flex tw-flex-col tw-gap-2">
+            <div class="tw-h-5 tw-bg-ink/10 tw-rounded tw-w-2/3 tw-animate-pulse"></div>
+            <div class="tw-h-3 tw-bg-ink/10 tw-rounded tw-w-1/3 tw-mt-auto tw-animate-pulse"></div>
+          </div>
+        }
+      </div>
+    } @else if (filteredShops.length) {
+      <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
+        @for (shop of filteredShops; track shop) {
+          <a [routerLink]="['/' + shop.toLowerCase() + '/']"
+             class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-flex tw-flex-col tw-gap-1.5 tw-min-h-[120px] tw-no-underline tw-text-ink active:tw-scale-[0.98] tw-transition tw-duration-200 hover:tw-shadow-md">
+            <div class="tw-flex tw-justify-between tw-items-start tw-gap-2">
+              <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-leading-tight tw-break-words tw-min-w-0">{{ shop }}</span>
+              @if (offers[shop]) {
+                <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-text-link tw-shrink-0">{{ formatOffer(offers[shop]) }}</span>
+              }
+            </div>
+            <span class="tw-mt-auto tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/55">Bekijk codes →</span>
+          </a>
+        }
+      </div>
+    } @else {
+      <div class="tw-text-center tw-text-ink/55 tw-py-16 tw-font-body tw-text-lg">
+        Geen shops gevonden@if (searchTerm) { voor “{{ searchTerm }}”}.
+      </div>
+    }
+  </section>
 
-  <app-footer></app-footer>
-</div>
+</main>
+
+<app-footer></app-footer>
