@@ -50,6 +50,17 @@ export const samsungPromotions: Record<string, SamsungPromotion> = {
     ],
     landingUrl: 'https://www.samsung.com/nl/watches/galaxy-watch-ultra-2025/buy/',
   },
+  'MONITOR26': {
+    code: 'MONITOR26',
+    promoText: 'Tijdelijk €100 voordeel met vouchercode op de Samsung ViewFinity S8 of Odyssey G8 monitor',
+    period: '15.06.2026 t/m 05.07.2026',
+    conditions: [
+      'De vouchercode MONITOR26 is eenmalig te gebruiken.',
+      'Actievoorwaarden van toepassing.',
+      'Zolang de voorraad strekt.',
+    ],
+    landingUrl: 'https://www.awin1.com/cread.php?s=4794175&v=8330&q=606453&r=1870794',
+  },
 };
 
 export function getSamsungPromotion(code: string): SamsungPromotion | undefined {
