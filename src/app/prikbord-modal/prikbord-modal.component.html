@@ -1,35 +1,43 @@
 @if (isVisible) {
     <!-- Backdrop -->
-    <div class="tw-fixed tw-inset-0 tw-bg-black tw-bg-opacity-50 tw-backdrop-blur-sm tw-animate-fadeIn" (click)="closeModal()"></div>
+    <div class="tw-fixed tw-inset-0 tw-bg-ink/40 tw-backdrop-blur-sm tw-animate-fadeIn tw-z-40" (click)="closeModal()"></div>
 
     <!-- Modal -->
-    <div class="tw-fixed tw-inset-0 tw-flex tw-items-center tw-justify-center tw-p-4">
-        <div class="tw-bg-white tw-rounded-xl tw-shadow-xl tw-w-full tw-max-w-md tw-overflow-hidden tw-animate-slideUp">
+    <div class="tw-fixed tw-inset-0 tw-z-50 tw-flex tw-items-center tw-justify-center tw-p-4">
+        <div class="tw-bg-panel tw-rounded-3xl tw-shadow-2xl tw-w-full tw-max-w-md tw-overflow-hidden tw-animate-slideUp tw-border tw-border-ink/10 tw-font-body tw-text-ink">
 
             @if (!submitted) {
-                <div class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-border-b tw-border-gray-200">
-                    <h2 class="tw-text-lg tw-font-semibold">Nieuwe code toevoegen</h2>
-                    <button type="button" (click)="closeModal()" class="tw-text-gray-500 hover:tw-text-gray-700 tw-text-2xl tw-font-bold">&times;</button>
+                <div class="tw-flex tw-justify-between tw-items-center tw-p-5 tw-border-b tw-border-ink/10">
+                    <h2 class="tw-font-title tw-font-bold tw-text-2xl tw-tracking-tight">Deel een code<span class="tw-text-dot">.</span></h2>
+                    <button type="button" (click)="closeModal()" aria-label="Sluiten"
+                        class="tw-w-9 tw-h-9 tw-rounded-full tw-bg-ink/5 hover:tw-bg-ink/10 tw-text-ink/60 tw-flex tw-items-center tw-justify-center tw-text-xl tw-transition">&times;</button>
                 </div>
             }
 
-            <div class="tw-p-4">
+            <div class="tw-p-5">
                 @if (!submitted) {
-                    <input [(ngModel)]="newRow.webshop" class="tw-w-full tw-border tw-border-gray-300 tw-rounded tw-px-3 tw-py-2 tw-mb-2 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" placeholder="Webshop" name="webshop" />
-                    <input [(ngModel)]="newRow.code" class="tw-w-full tw-border tw-border-gray-300 tw-rounded tw-px-3 tw-py-2 tw-mb-2 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" placeholder="Kortingscode" name="code" />
-                    <input [(ngModel)]="newRow.percentage" class="tw-w-full tw-border tw-border-gray-300 tw-rounded tw-px-3 tw-py-2 tw-mb-2 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" placeholder="Hoeveel korting? (bijv '10%' of '€5')" name="percentage" />
-                    <input [(ngModel)]="newRow.name" class="tw-w-full tw-border tw-border-gray-300 tw-rounded tw-px-3 tw-py-2 tw-mb-2 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400" placeholder="Jouw naam (niet verplicht)" name="name" />
+                    <input [(ngModel)]="newRow.webshop" name="webshop" placeholder="Webshop"
+                        class="tw-w-full tw-bg-cream tw-border tw-border-ink/15 tw-rounded-xl tw-px-4 tw-py-3 tw-mb-3 tw-text-ink placeholder:tw-text-ink/45 focus:tw-outline-none focus:tw-border-sky focus:tw-ring-2 focus:tw-ring-sky/40" />
+                    <input [(ngModel)]="newRow.code" name="code" placeholder="Kortingscode"
+                        class="tw-w-full tw-bg-cream tw-border tw-border-ink/15 tw-rounded-xl tw-px-4 tw-py-3 tw-mb-3 tw-text-ink placeholder:tw-text-ink/45 focus:tw-outline-none focus:tw-border-sky focus:tw-ring-2 focus:tw-ring-sky/40" />
+                    <input [(ngModel)]="newRow.percentage" name="percentage" placeholder="Hoeveel korting? (bijv. '10%' of '€5')"
+                        class="tw-w-full tw-bg-cream tw-border tw-border-ink/15 tw-rounded-xl tw-px-4 tw-py-3 tw-mb-3 tw-text-ink placeholder:tw-text-ink/45 focus:tw-outline-none focus:tw-border-sky focus:tw-ring-2 focus:tw-ring-sky/40" />
+                    <input [(ngModel)]="newRow.name" name="name" placeholder="Jouw naam (niet verplicht)"
+                        class="tw-w-full tw-bg-cream tw-border tw-border-ink/15 tw-rounded-xl tw-px-4 tw-py-3 tw-text-ink placeholder:tw-text-ink/45 focus:tw-outline-none focus:tw-border-sky focus:tw-ring-2 focus:tw-ring-sky/40" />
                 } @else {
-                    <p class="tw-bg-green-100 tw-text-green-800 tw-p-3 tw-rounded tw-mt-3">Dank je, de code is toegevoegd!</p>
+                    <p class="tw-bg-sky/40 tw-text-ink tw-font-body tw-p-4 tw-rounded-xl tw-text-center">Dank je, de code is toegevoegd! 🎉</p>
                 }
             </div>
 
-            <div class="tw-flex tw-justify-end tw-gap-2 tw-p-4 tw-border-t tw-border-gray-200">
+            <div class="tw-flex tw-justify-end tw-gap-2 tw-p-5 tw-pt-0">
                 @if (!submitted) {
-                    <button type="button" class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-gray-700 tw-px-4 tw-py-2 tw-rounded" (click)="closeModal()">Annuleren</button>
-                    <button type="button" class="tw-bg-green-500 hover:tw-bg-green-600 tw-text-white tw-px-4 tw-py-2 tw-rounded" (click)="submit()">Toevoegen</button>
+                    <button type="button" (click)="closeModal()"
+                        class="tw-bg-panel tw-border tw-border-ink/15 tw-text-ink tw-font-semibold tw-px-5 tw-py-2.5 tw-rounded-full hover:tw-bg-ink/5 tw-transition">Annuleren</button>
+                    <button type="button" (click)="submit()"
+                        class="tw-bg-ink tw-text-cream tw-font-semibold tw-px-5 tw-py-2.5 tw-rounded-full hover:tw-opacity-90 tw-transition">Toevoegen</button>
                 } @else {
-                    <button type="button" class="tw-bg-blue-500 hover:tw-bg-blue-600 tw-text-white tw-px-4 tw-py-2 tw-rounded" (click)="closeModal()">Sluiten</button>
+                    <button type="button" (click)="closeModal()"
+                        class="tw-bg-ink tw-text-cream tw-font-semibold tw-px-5 tw-py-2.5 tw-rounded-full hover:tw-opacity-90 tw-transition">Sluiten</button>
                 }
             </div>
 

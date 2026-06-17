@@ -1,150 +1,121 @@
 <app-navbar></app-navbar>
-<div class="tw-container tw-mx-auto tw-px-4">
-    <div class="tw-flex tw-flex-col tw-min-h-screen">
 
-        <h1 class="tw-text-2xl tw-font-bold tw-my-6 tw-text-center">
-            Diski prikbord: deel kortingscodes met elkaar
+<main class="tw-font-body tw-text-ink">
+
+  <!-- Header -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pt-10 sm:tw-pt-14 tw-pb-2">
+    <div class="tw-flex tw-flex-col sm:tw-flex-row sm:tw-justify-between sm:tw-items-end tw-gap-5">
+      <div>
+        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">Door shoppers · voor shoppers</div>
+        <h1 class="tw-font-title tw-font-bold tw-text-4xl sm:tw-text-5xl lg:tw-text-6xl tw-tracking-tight tw-mt-2">
+          Prikbord<span class="tw-text-dot">.</span>
         </h1>
-
-        <div class="tw-text-center">
-            <button
-                    class="tw-bg-green-500 tw-hover:bg-green-600 tw-text-white tw-font-semibold tw-py-2 tw-px-4 tw-rounded-lg tw-mb-6"
-                    (click)="showModal(); sendEventToGa('Prikbord', 'voeg_code_toe')"
-            >
-                Voeg kortingscode toe
-            </button>
-        </div>
-
-        <!-- Social Banners -->
-        <div class="tw-mb-3 tw-w-full tw-max-w-7xl tw-mx-auto">
-            <div class="tw-flex tw-flex-col tw-items-center">
-                <!-- Kleine Info Banner -->
-                <div class="tw-w-full tw-px-3 tw-py-1.5 tw-bg-green-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200 tw-rounded-lg tw-mb-1">
-                    <div>
-                        €100
-                        <a
-                                href="https://temu.to/m/u0p32ew176i"
-                                target="_blank"
-                                class="tw-text-blue-600 hover:tw-text-blue-800 hover:tw-underline"
-                                onclick="gtag('event', 'temu', {'event_category': 'Temu', 'event_label': 'temu_prikbord_banner'});"
-                        >
-                            <strong>shoptegoed</strong>
-                        </a>
-                        en 30% korting bij Temu
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Zoekbalk -->
-        <div class="tw-mb-6 tw-w-full tw-max-w-7xl tw-mx-auto">
-            <div class="tw-relative">
-                <input
-                        type="text"
-                        class="tw-w-full tw-border tw-border-gray-300 tw-rounded-lg tw-py-2 tw-pl-3 tw-pr-10 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-500 focus:tw-border-blue-500"
-                        placeholder="Zoek op webshop..."
-                        [(ngModel)]="searchTerm"
-                        (input)="onSearch()"
-                />
-                @if (searchTerm) {
-                <button
-                        type="button"
-                        class="tw-absolute tw-right-2 tw-top-1/2 tw-transform tw--translate-y-1/2 tw-text-gray-500 tw-hover:text-gray-700"
-                        (click)="searchTerm = ''; onSearch()"
-                        aria-label="Clear"
-                >
-                    &times;
-                </button>
-                }
-            </div>
-        </div>
-
-        <!-- Prikbord items -->
-        <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-6">
-            <!-- Skeletons -->
-            @if (!paginatedPrikbordEntries.length) {
-                @for (i of [1,2,3,4,5,6,7,8,9]; track i) {
-                    <div>
-                        <div class="tw-bg-white tw-border tw-border-gray-200 tw-rounded-lg tw-shadow-sm tw-flex tw-flex-col tw-h-full tw-animate-pulse">
-                            <div class="tw-p-4 tw-flex-1">
-                                <div class="tw-h-5 tw-bg-gray-200 tw-rounded tw-w-2/3"></div>
-                                <div class="tw-mt-4 tw-space-y-2">
-                                    <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-3/4"></div>
-                                    <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-1/2"></div>
-                                </div>
-                            </div>
-                            <div class="tw-bg-gray-100 tw-border-t tw-border-gray-200 tw-px-4 tw-py-2 tw-flex tw-items-center tw-justify-end tw-rounded-b-lg">
-                                <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-2/3"></div>
-                            </div>
-                        </div>
-                    </div>
-                }
-            }
-
-            @for (item of paginatedPrikbordEntries; track item) {
-            <div>
-                <div class="tw-bg-white tw-border tw-border-gray-300 tw-rounded-lg tw-shadow-sm tw-flex tw-flex-col tw-h-full hover:tw-shadow-md transition-shadow duration-200">
-                    <div class="tw-p-4 tw-flex-1">
-                        <h5 class="tw-font-semibold tw-text-lg">{{ item.webshop }}</h5>
-                        <p class="tw-mt-2">
-                            <strong>Code: </strong>
-                            @if (item.code.startsWith('http')) {
-                            <a
-                                    [href]="item.code"
-                                    target="_blank"
-                                    class="tw-text-blue-600 tw-underline hover:tw-text-blue-800"
-                                    onclick="gtag('event', 'prikbord_linkje', {'event_category': 'PrikbordLinkje', 'event_label': 'prikbord_linkje'});"
-                            >
-                                linkje
-                            </a>
-                            } @else {
-                            {{ item.code }}
-                            }
-                            <br />
-                            <strong>Korting: </strong>{{ item.percentage }}
-                        </p>
-                    </div>
-                    <div
-                            class="tw-bg-gray-100 tw-border-t tw-border-gray-300 tw-px-4 tw-py-2 tw-text-gray-700 tw-text-sm tw-flex tw-items-center tw-justify-end tw-rounded-b-lg"
-                            [class.valuable-contributor]="item.isValuable"
-                    >
-                        Toegevoegd door&nbsp;<strong>{{ item.added_by }}</strong>
-                        @if (item.isValuable) {
-                        <img
-                                src="/blue_checkmark.png"
-                                class="tw-ml-1 tw-rounded-full"
-                                style="width: 16px; height: 16px;"
-                        />
-                        }
-                        &nbsp;op {{ formatDate(item.date) }}
-                    </div>
-                </div>
-            </div>
-            }
-        </div>
-
-        <!-- Pagination -->
-        <div class="tw-flex tw-justify-center tw-items-center tw-mt-6 tw-space-x-4">
-            <button
-                    class="tw-bg-blue-500 tw-hover:bg-blue-600 tw-text-white tw-font-semibold tw-py-1 tw-px-3 tw-rounded-lg disabled:tw-bg-gray-300 disabled:tw-cursor-not-allowed"
-                    (click)="prevPage()"
-                    [disabled]="page === 1"
-            >
-                Vorige
-            </button>
-            <span>Pagina {{ page }} van {{ totalPages }}</span>
-            <button
-                    class="tw-bg-blue-500 tw-hover:bg-blue-600 tw-text-white tw-font-semibold tw-py-1 tw-px-3 tw-rounded-lg disabled:tw-bg-gray-300 disabled:tw-cursor-not-allowed"
-                    (click)="nextPage()"
-                    [disabled]="page === totalPages"
-            >
-                Volgende
-            </button>
-        </div>
-
-        <app-footer class="tw-mt-8 tw-rounded-lg"></app-footer>
+        <p class="tw-font-body tw-text-base sm:tw-text-lg tw-text-ink/70 tw-mt-3 tw-max-w-xl tw-leading-relaxed">
+          Een code gevonden die werkt? Plak hem hier. Help anderen besparen en ontdek codes die net gedeeld zijn.
+        </p>
+      </div>
+      <button
+        (click)="showModal(); sendEventToGa('Prikbord', 'voeg_code_toe')"
+        class="tw-shrink-0 tw-bg-sky tw-text-ink tw-rounded-full tw-px-6 tw-py-3.5 tw-font-body tw-font-semibold tw-text-sm sm:tw-text-base tw-whitespace-nowrap hover:tw-brightness-95 tw-transition">
+        + Deel een code
+      </button>
     </div>
-</div>
+  </section>
+
+  <!-- Temu banner -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-mt-6">
+    <a href="https://temu.to/m/u0p32ew176i" target="_blank" rel="noopener"
+       onclick="gtag('event', 'temu', {'event_category': 'Temu', 'event_label': 'temu_prikbord_banner'});"
+       class="tw-flex tw-items-center tw-justify-center tw-gap-1.5 tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-px-4 tw-py-2.5 tw-text-sm tw-text-ink/75 tw-no-underline hover:tw-text-ink tw-transition">
+      <span>€100 <strong class="tw-text-ink">shoptegoed</strong> en 30% korting bij Temu</span>
+      <span class="tw-text-link">→</span>
+    </a>
+  </section>
+
+  <!-- Search -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-mt-6">
+    <div class="tw-max-w-xl">
+      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-p-2 tw-pl-5 sm:tw-pl-6 tw-flex tw-items-center tw-gap-2 tw-shadow-[0_16px_40px_rgba(67,48,46,0.07)]">
+        <input
+          type="text"
+          class="tw-flex-1 tw-min-w-0 tw-bg-transparent tw-outline-none tw-font-body tw-text-sm sm:tw-text-base tw-text-ink placeholder:tw-text-ink/50"
+          placeholder="Zoek op webshop…"
+          [(ngModel)]="searchTerm"
+          (input)="onSearch()"
+        />
+        @if (searchTerm) {
+          <button type="button" (click)="searchTerm = ''; onSearch()" aria-label="Wis zoekopdracht"
+            class="tw-shrink-0 tw-w-8 tw-h-8 tw-rounded-full tw-bg-ink/5 hover:tw-bg-ink/10 tw-text-ink/60 tw-flex tw-items-center tw-justify-center tw-transition">&times;</button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pt-8 tw-pb-6">
+    <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4 sm:tw-gap-5">
+
+      @if (!paginatedPrikbordEntries.length) {
+        @for (i of [1,2,3,4,5,6,7,8,9]; track i) {
+          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-5 tw-min-h-[150px] tw-flex tw-flex-col tw-gap-3">
+            <div class="tw-h-5 tw-bg-ink/10 tw-rounded tw-w-1/2 tw-animate-pulse"></div>
+            <div class="tw-h-8 tw-bg-ink/10 tw-rounded tw-w-2/3 tw-animate-pulse"></div>
+            <div class="tw-h-3 tw-bg-ink/10 tw-rounded tw-w-3/4 tw-mt-auto tw-animate-pulse"></div>
+          </div>
+        }
+      }
+
+      @for (item of paginatedPrikbordEntries; track item) {
+        <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-5 tw-flex tw-flex-col tw-h-full tw-min-h-[150px] hover:tw-shadow-md tw-transition">
+          <h3 class="tw-font-title tw-font-bold tw-text-xl tw-tracking-tight tw-leading-tight tw-break-words">{{ item.webshop }}</h3>
+          @if (item.percentage) {
+            <div class="tw-font-body tw-font-semibold tw-text-sm tw-text-link tw-mt-1 tw-break-words">{{ item.percentage }}</div>
+          }
+
+          <div class="tw-mt-3">
+            @if (item.code.startsWith('http')) {
+              <a [href]="item.code" target="_blank" rel="noopener"
+                 onclick="gtag('event', 'prikbord_linkje', {'event_category': 'PrikbordLinkje', 'event_label': 'prikbord_linkje'});"
+                 class="tw-inline-flex tw-items-center tw-gap-1 tw-font-body tw-font-semibold tw-text-sm tw-text-link tw-no-underline hover:tw-underline">
+                Bekijk linkje →
+              </a>
+            } @else {
+              <span class="tw-inline-block tw-max-w-full tw-break-all tw-bg-cream tw-border tw-border-dashed tw-border-ink/25 tw-rounded-lg tw-px-3 tw-py-2 tw-font-label tw-uppercase tw-tracking-[0.05em] tw-text-sm tw-text-ink">{{ item.code }}</span>
+            }
+          </div>
+
+          <div class="tw-mt-auto tw-pt-4 tw-flex tw-items-center tw-flex-wrap tw-gap-x-1.5 tw-gap-y-1 tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/55">
+            <span>door</span>
+            <strong class="tw-text-ink/75">{{ item.added_by }}</strong>
+            @if (item.isValuable) {
+              <img src="/blue_checkmark.png" alt="geverifieerd" class="tw-w-3.5 tw-h-3.5 tw-rounded-full" width="14" height="14" />
+            }
+            <span class="tw-opacity-50">·</span>
+            <span>{{ formatDate(item.date) }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Pagination -->
+  @if (totalPages > 1) {
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-16">
+      <div class="tw-flex tw-items-center tw-justify-center tw-gap-3 sm:tw-gap-4">
+        <button
+          class="tw-bg-panel tw-border tw-border-ink/10 tw-text-ink tw-font-body tw-font-semibold tw-text-sm tw-px-5 tw-py-2.5 tw-rounded-full disabled:tw-opacity-40 tw-transition"
+          (click)="prevPage()" [disabled]="page === 1">‹ Vorige</button>
+        <span class="tw-font-body tw-text-sm tw-text-ink/70">Pagina {{ page }} van {{ totalPages }}</span>
+        <button
+          class="tw-bg-panel tw-border tw-border-ink/10 tw-text-ink tw-font-body tw-font-semibold tw-text-sm tw-px-5 tw-py-2.5 tw-rounded-full disabled:tw-opacity-40 tw-transition"
+          (click)="nextPage()" [disabled]="page === totalPages">Volgende ›</button>
+      </div>
+    </section>
+  }
+
+</main>
+
+<app-footer></app-footer>
 
 <app-prikbord-modal
         [isVisible]="modalVisible"
