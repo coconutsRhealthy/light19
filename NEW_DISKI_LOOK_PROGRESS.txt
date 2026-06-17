@@ -1,0 +1,86 @@
+================================================================
+ new_diski_look — redesign progress & handoff notes
+================================================================
+Branch:  new_diski_look  (cut from claude_seo_improvements)
+Goal:    roll the colleague's "soft modern" redesign across the
+         whole Angular site. Mobile-first. PERFORMANCE IS A HARD
+         REQUIREMENT (minimal fonts/subsets, same-origin assets,
+         text/CSS over images, lazy-load, no needless render-block).
+
+COMMIT CONVENTION
+-----------------
+Every commit on this branch is prefixed:  newlook:
+
+DONE (committed)
+----------------
+[x] Design tokens in tailwind.config.js
+[x] Self-hosted, trimmed fonts (see PERF below)
+[x] Homepage          src/app/discounts-table/*
+[x] Shared navbar      src/app/navbar/*
+[x] Shared footer      src/app/footer/*  (added RouterModule)
+[x] Cream <body> bg fix (was leftover tw-bg-pink-50 in index.html)
+[x] Shops   /winkels   src/app/winkels/*
+[x] Prikbord /prikbord src/app/prikbord/* + src/app/prikbord-modal/*
+
+REMAINING (still old style; mockups ready in mockups/)
+------------------------------------------------------
+[ ] Black Friday  /blackfriday  src/app/blackfriday/*  -> mockups/BlackFriday.html
+[ ] Top 5         /top5         src/app/top5/*         -> mockups/Top5.html
+[ ] Blogs         /blogs        src/app/blogs/*        -> mockups/Blogs.html
+[ ] Contact       /contact      src/app/contact/*      -> mockups/Contact.html
+[ ] Individual brand pages (large; ~1200 routes) - not started
+
+DESIGN TOKENS (tailwind.config.js) — reuse these, do NOT add fonts
+-----------------------------------------------------------------
+colors:  cream #FFF6D9 | panel #FFFCEF | ink #43302E | sky #C1DBE8
+         butter #FFE7A1 | link #5B8AA6 | dot #9DBFD0
+fonts:   font-title = Fraunces (bold/700 only)
+         font-body  = Montserrat (400 + 600)
+         font-label = system sans stack (uppercase, tracking-label) — Arimo dropped
+
+PERF / FONTS
+------------
+- Self-hosted woff2 in public/fonts/ (latin subset): Fraunces 700,
+  Montserrat 400, Montserrat 600. Preloaded in src/index.html. swap.
+- NO Google Fonts link. Measured font payload 122.5KB -> 55.3KB.
+- <body class="tw-bg-cream">. html/body cream also set in src/styles.css
+  (so browser overscroll area is cream).
+
+MOCKUPS (mockups/ at repo root — untracked, NOT built)
+------------------------------------------------------
+Self-contained "bundler" HTML. The real React/Babel component is a
+gzipped asset in a <script type="__bundler/manifest"> referenced by a
+<script type="text/babel" src="UUID">. Each file has TWO babel scripts:
+  1) shared chrome (tokens / Nav / Footer)   2) the page itself (LAST one)
+To read a page's design, extract the LAST text/babel asset:
+  - decode the JSON-escaped string on the __bundler/template line
+  - regex the text/babel src UUIDs, take the last
+  - base64-decode + gunzip that manifest entry -> JSX
+(A python helper for this was used at /tmp/extract_page.py — recreate if gone.)
+
+PER-PAGE APPROACH
+-----------------
+- Wire to real data/services where it maps; placeholder copy for
+  sections with no backing data (mark them in the code).
+- Keep all existing logic (data fetch, search, pagination, modals,
+  gtag/analytics calls, routerLinks). Restyle markup only.
+- Text/CSS over images for perf.
+- Verify with headless Chrome at 390px AND desktop. Catch horizontal
+  overflow by checking document.documentElement.scrollWidth === viewport.
+  (Watch for messy feed data: e.g. Prikbord rows put long text in the
+  percentage field + a URL in code — use stacked layout + break-words.)
+- One `newlook:` commit per page.
+
+BUILD / RUN  (IMPORTANT)
+------------------------
+- Node 22 REQUIRED:  nvm use 22
+  (default shell node is v12 — Angular CLI rejects it)
+- Dev:   npx ng serve         (was on http://localhost:4271)
+- Prod:  npm run build:prod    (runs fill-routes -> stamp -> ng build
+         prod -> set-canonicals; regenerates routes.txt itself)
+- Known harmless warning: company-codes-v2.component.css over 4KB budget.
+
+GIT STATE NOTE
+--------------
+mockups/ and src/sitemap.xml are intentionally untracked.
+================================================================
