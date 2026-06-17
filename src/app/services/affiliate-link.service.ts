@@ -23,7 +23,7 @@ export class AffiliateLinkService {
         dummyCode: 'VERO20DRN'
     },
     'ginatricot': {
-        url: 'https://www.stylink.it/6MNk0HegZRL',
+        url: 'https://clk.tradedoubler.com/click?p=397652&a=3486306&url=https%3A%2F%2Fwww.ginatricot.com%2Fnl',
         dummyCode: 'VIP20QZJ'
     },
     'hunkemoller': {
@@ -63,7 +63,7 @@ export class AffiliateLinkService {
         dummyCode: 'LFDISKI'
     },
     'h&m': {
-        url: 'https://www.stylink.it/jnNwDTowPY',
+        url: 'https://pzz.to/sga4OL',
         dummyCode: 'PROMO10Q17'
     },
     'westwing': {
@@ -614,10 +614,10 @@ export class AffiliateLinkService {
         url: 'https://deals.flexispot.nl/c?c=36652&m=12&a=448474&r=&u=%2F',
         dummyCode: 'FSN55'
     },
-    'gymshark': {
-        url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
-        dummyCode: 'AFSPORTPOEDER'
-    },
+//     'gymshark': {
+//         url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
+//         dummyCode: 'AFSPORTPOEDER'
+//     },
     '24uomo': {
         url: 'https://tc.tradetracker.net/?c=37672&m=12&a=448474&r=&u=%2F',
         dummyCode: '12EXTRA'
@@ -1227,7 +1227,7 @@ export class AffiliateLinkService {
         dummyCode: 'SARAH'
     },
     'joybuy': {
-        url: 'https://tidd.ly/4lQPIkp',
+        url: 'https://tidd.ly/3SFPDFu',
         dummyCode: 'JOY10'
     },
     'salontopper': {
@@ -1402,10 +1402,6 @@ export class AffiliateLinkService {
         url: 'https://creamyfabrics.com/nl/discount/WIEGEEFTKORTING?redirect=/nl/collections/sale&preview_theme_id=191697584475&one_s=andyyrobe&affid=andyyrobe&pb=0',
         dummyCode: 'wiegeeftkorting'
     },
-    'cfab': {
-        url: 'https://creamyfabrics.com/nl/discount/WIEGEEFTKORTING?redirect=/nl/collections/sale&preview_theme_id=191697584475&one_s=andyyrobe&affid=andyyrobe&pb=0',
-        dummyCode: 'wiegeeftkorting'
-    },
     'geurwolkje': {
         url: 'https://www.geurwolkje.nl/INDY40908',
         dummyCode: 'INDY40908'
@@ -1499,8 +1495,8 @@ export class AffiliateLinkService {
         dummyCode: 'WELCOME10'
     },
     'bjornborg': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.bjornborg.com%2Fnl%2F',
-        dummyCode: 'ACTIE15'
+        url: 'https://adtr.co/y9q0cv',
+        dummyCode: 'LYDIA20'
     },
     'buitiqo': {
         url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fbuitiqo.nl%2F',
@@ -1619,7 +1615,7 @@ export class AffiliateLinkService {
         dummyCode: '10SHOP'
     },
     'yoursurprise': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.yoursurprise.nl%2F',
+        url: 'https://www.yoursurprise.nl/tradetracker?tt=546_12_448474_&r=%2F',
         dummyCode: '15OFF'
     },
     'flixbus': {
@@ -1743,7 +1739,7 @@ export class AffiliateLinkService {
         dummyCode: '10ACTIE'
     },
     'lyko': {
-        url: 'https://pzz.to/uLWIAL',
+        url: 'https://adtr.co/wzq262',
         dummyCode: 'EXTRA10'
     },
     'maevenart': {
@@ -2082,22 +2078,6 @@ export class AffiliateLinkService {
         url: 'https://atmooz.com/DISKI10',
         dummyCode: 'DISKI10'
     },
-    'topstore': {
-        url: 'https://www.topstore.nl/',
-        dummyCode: 'SHOP10'
-    },
-    'miinto': {
-        url: 'https://miinto.nl',
-        dummyCode: 'MIIACTIE10'
-    },
-    'timberland': {
-        url: 'https://www.timberland.com',
-        dummyCode: 'EXTRA10'
-    },
-    'farfetch': {
-        url: 'https://farfetch.com',
-        dummyCode: '10OFF'
-    },
     'prettylittlething': {
         url: 'https://tidd.ly/4e6Fr00',
         dummyCode: 'UK12ALL'
@@ -2105,6 +2085,26 @@ export class AffiliateLinkService {
     'myjewellery': {
         url: 'https://www.my-jewellery.com/',
         dummyCode: 'HOUSTON20'
+    },
+    'elvou': {
+        url: 'https://elvou.com/ELISA',
+        dummyCode: 'ELISA'
+    },
+    'dutchies.com': {
+        url: 'http://dutchies.com/',
+        dummyCode: 'BO15'
+    },
+    'fashiontiger.nl': {
+        url: 'https://fashiontiger.nl/',
+        dummyCode: 'HITIGER10'
+    },
+    'bloomon': {
+        url: 'https://bloomwild.prf.hn/click/camref:1011l5Fj67/destination:https%3A%2F%2Fwww.bloomon.nl%2F',
+        dummyCode: 'bloom37'
+    },
+    'bellaandduke': {
+        url: 'https://tidd.ly/4xLF83M',
+        dummyCode: 'BD10'
     },
   };
 
