@@ -67,6 +67,44 @@ export class DiscountsTableComponent implements OnInit {
   bolPixelSrc!: string;
   bolType!: string;
 
+  // --- new-look homepage: placeholder content for sections without data yet ---
+  // The carousel of "highest discount codes of today" is not modelled in the
+  // feed yet, so this is editorial sample content until it's wired to real data.
+  topDeals = [
+    { brand: 'Oral-B',     label: 'Kortingscode', title: '50% korting',  desc: 'Scoor een Oral-B kortingscode voor 50% korting als je nu bestelt.', exp: '23-12-2026' },
+    { brand: 'Tenways',    label: 'Korting',      title: '€200 korting', desc: 'Met deze deal scoor je €200 korting bij Tenways.',                  exp: '31-08-2026' },
+    { brand: 'Fotocadeau', label: 'Kortingscode', title: '61% korting',  desc: 'Met deze code ontvang je 61% korting op alles bij Fotocadeau.',     exp: '01-02-2027' },
+    { brand: 'NA-KD',      label: 'Kortingscode', title: '25% korting',  desc: '25% korting op de hele zomercollectie bij NA-KD.',                 exp: '30-06-2026' },
+    { brand: 'Gymshark',   label: 'Kortingscode', title: '20% korting',  desc: '20% korting op je hele bestelling bij Gymshark.',                  exp: '15-07-2026' },
+  ];
+
+  socialCards = [
+    { tag: 'Instagram + TikTok', title: 'Volg @wiegeeftkorting', desc: 'Dagelijkse codes, sale-alerts en de beste vondsten op je tijdlijn.', cta: 'Volgen', href: 'https://www.instagram.com/wiegeeftkorting/' },
+    { tag: 'Prikbord',           title: 'Deel een code die werkt', desc: 'Zelf een goede code gespot? Zet hem op het prikbord en help de rest.', cta: 'Naar prikbord →', href: '/prikbord' },
+  ];
+
+  trustSteps = [
+    { n: '01', title: 'Echte mensen testen elke dag', desc: 'Geen bots. We plakken elke code bij de checkout voordat hij live gaat.' },
+    { n: '02', title: 'Met datum en tijdstempel',     desc: 'Elke kaart laat zien wanneer we de code voor het laatst werkend zagen.' },
+    { n: '03', title: 'Werkt hij niet, dan weg',       desc: 'Door jou gemeld, binnen een uur verwijderd. Geen zombie-codes.' },
+  ];
+
+  /** First unique companies that have a logo — used for the "populaire shops" row. */
+  get popularLogoBrands(): { name: string; slug: string; logo: string }[] {
+    const seen = new Set<string>();
+    const out: { name: string; slug: string; logo: string }[] = [];
+    for (const d of this.discounts) {
+      const slug = this.getCompanySlug(d.company);
+      if (seen.has(slug)) continue;
+      const logo = this.getLogoUrl(d.company);
+      if (!logo) continue;
+      seen.add(slug);
+      out.push({ name: this.getDisplayName(d.company), slug, logo });
+      if (out.length >= 12) break;
+    }
+    return out;
+  }
+
   constructor(private discountsService: DiscountsService, private affiliateLinkService: AffiliateLinkService, private analyticsEventService: AnalyticsEventService,
                 private meta: MetaService, private datePipe: DatePipe, private logosService: LogosService,
                 private visitorProfile: VisitorProfileService) {

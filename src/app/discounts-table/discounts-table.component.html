@@ -1,245 +1,296 @@
 <app-navbar></app-navbar>
 
-<main class="tw-flex-1 tw-max-w-5xl tw-mx-auto tw-px-4 tw-pt-4 tw-pb-8">
-  <h1 class="tw-text-3xl sm:tw-text-4xl tw-font-bold tw-mb-6 tw-text-center">
-    Online shoppen met kortingscodes
-  </h1>
+<div class="tw-bg-cream tw-text-ink tw-font-body tw-overflow-x-hidden">
 
-  <!-- Text Banners -->
-  <div class="tw-mb-3 tw-w-full tw-max-w-7xl tw-mx-auto">
-    <div class="tw-flex tw-flex-col tw-items-center">
-      <!-- Kleine Info Banner -->
-      <div class="tw-w-full tw-px-3 tw-py-1.5 tw-bg-yellow-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200 tw-rounded-lg tw-mb-1">
-        <div>
-          &rarr; Volg &#64;wiegeeftkorting op
-          <a
-                  href="https://www.instagram.com/wiegeeftkorting/"
-                  target="_blank"
-                  class="tw-text-blue-600 hover:tw-text-blue-800 hover:tw-underline"
-                  onclick="gtag('event', 'insta', {'event_category': 'Social', 'event_label': 'insta_top'});"
-          >
-            <strong>insta</strong>
-          </a> en
-          <a
-                  href="https://www.tiktok.com/&#64;wiegeeftkorting2"
-                  target="_blank"
-                  class="tw-text-blue-600 hover:tw-text-blue-800 hover:tw-underline"
-                  onclick="gtag('event', 'tiktok', {'event_category': 'Social', 'event_label': 'tiktok_top'});"
-          >
-            <strong>tiktok</strong>
-          </a>
-        </div>
-        <div>&rarr; <a class="tw-text-blue-600 hover:tw-text-blue-800 tw-underline" [routerLink]="['/prikbord']" onclick="gtag('event', 'prikbord', {'event_category': 'Prikbord', 'event_label': 'prikbord_intable_homepage'});"><strong>Deel kortingscodes op het diski prikbord</strong></a></div>
-      </div>
-    </div>
-  </div>
-
-<!--  Diski Pick Banner -->
-  <a
-          rel="sponsored"
-          onclick="gtag('event', 'diski_pick', { event_category: 'Diski_Pick', event_label: 'diski_pick_homepage' })"
-          href="https://tidd.ly/3SFPDFu"
-          target="_blank"
-          class="tw-block tw-bg-grey tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-mb-6 tw-no-underline"
-  >
-    <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">
-      Diski Pick 🔥 Joybuy Summer Black Friday
-    </div>
-    <picture class="tw-block tw-aspect-[728/90] tw-w-full">
-      <source
-              media="(max-width: 767px)"
-              srcset="https://cdn.jsdelivr.net/gh/wgknl/diski-assets@main/banners/joybuy_banner.webp"
-      />
-      <img
-              src="https://cdn.jsdelivr.net/gh/wgknl/diski-assets@main/banners/joybuy_banner.webp"
-              alt="diski-pick-banner"
-              class="tw-w-full tw-h-auto tw-object-contain"
-      />
-    </picture>
-  </a>
-
-<!--  @if(bolHref) {-->
-<!--    <a-->
-<!--            rel="sponsored"-->
-<!--            (click)="sendBolEventToGa()"-->
-<!--            [href]="bolHref"-->
-<!--            target="_blank"-->
-<!--            class="tw-block tw-bg-grey tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg tw-transition tw-duration-200 tw-overflow-hidden tw-mb-6 tw-no-underline"-->
-<!--    >-->
-<!--      <div class="tw-bg-gradient-to-r tw-from-amber-400 tw-to-orange-400 tw-text-white tw-text-center tw-font-medium tw-text-[11px] lg:tw-text-xs tw-py-[2px]">-->
-<!--        Diski x Bol 🔥-->
-<!--      </div>-->
-
-<!--      <picture class="tw-block tw-aspect-[728/90] tw-w-full">-->
-<!--        <source-->
-<!--                media="(max-width: 767px)"-->
-<!--                [srcset]="bolImgSrc"-->
-<!--        />-->
-
-<!--        <img-->
-<!--                [src]="bolImgSrc"-->
-<!--                alt="diski-pick-banner"-->
-<!--                fetchpriority="high"-->
-<!--                class="tw-w-full tw-h-auto tw-object-contain"-->
-<!--        />-->
-<!--      </picture>-->
-<!--    </a>-->
-
-<!--    <img [src]="bolPixelSrc" width="1" height="1"/>-->
-<!--  }-->
-
-
-  <!-- ✅ GEGROEPEERDE SECTIE MET ACHTERGROND -->
-  <div class="tw-bg-white/90 tw-rounded-2xl tw-shadow-sm tw-p-4 sm:tw-p-6 tw-border tw-border-gray-100 tw-backdrop-blur-sm">
-
-    <h2 class="tw-font-semibold tw-text-gray-900 tw-mb-1 tw-text-center">
-      Nieuwste kortingscodes 🔥
-    </h2>
-
-    <p class="tw-text-xs tw-text-gray-500 tw-text-center tw-mb-4">
-      Laatste update: <span class="tw-font-medium">{{ dateStringLatestShops }}</span> Nieuwe codes voor
-      <span class="tw-font-bold tw-underline tw-text-blue-600 tw-cursor-pointer hover:tw-text-blue-800" (click)="openShopsModal()">
-        {{ newShopsCount }} shops
-      </span>
+  <!-- ============================ HERO ============================ -->
+  <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-pt-12 sm:tw-pt-16 lg:tw-pt-20 tw-pb-6 sm:tw-pb-10 tw-flex tw-flex-col tw-items-center tw-text-center">
+    <h1 class="tw-max-w-full tw-font-title tw-font-bold tw-text-ink tw-tracking-tight tw-leading-[0.98] tw-text-[2rem] sm:tw-text-6xl lg:tw-text-7xl">
+      Codes die écht werken<span class="tw-text-dot">.</span>
+    </h1>
+    <p class="tw-font-body tw-text-ink/70 tw-mt-5 sm:tw-mt-6 tw-text-base sm:tw-text-lg lg:tw-text-xl tw-leading-relaxed tw-max-w-xl">
+      Elke kortingscode op diski wordt door een echt persoon getest voordat hij online komt. Werkt hij niet, dan zetten we hem er niet op.
     </p>
 
-    <!-- Zoekveld -->
-    <div class="tw-mb-2 tw-relative">
-      <input
-              type="text"
-              class="tw-w-full tw-px-4 tw-pr-8 tw-py-2 tw-border tw-rounded tw-shadow-sm focus:tw-outline-none focus:tw-ring"
-              placeholder="Zoek op webshop..."
-              [(ngModel)]="searchTerm"
-              (input)="onSearch()"
-      />
-      @if(searchTerm) {
-        <button
-                type="button"
-                (click)="searchTerm = ''; onSearch()"
-                aria-label="Clear"
-                class="tw-absolute tw-right-2 tw-top-1/2 tw-transform tw--translate-y-1/2 tw-text-gray-500 hover:tw-text-gray-600 tw-transition tw-rounded-full tw-w-6 tw-h-6 tw-flex tw-items-center tw-justify-center tw-bg-gray-100 hover:tw-bg-gray-200"
-        >
-          &times;
-        </button>
-      }
+    <!-- search (drives the grid below) -->
+    <div class="tw-w-full tw-max-w-xl tw-mt-7 sm:tw-mt-8">
+      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-p-2 tw-pl-5 sm:tw-pl-6 tw-flex tw-items-center tw-gap-2 tw-shadow-[0_16px_40px_rgba(67,48,46,0.07)]">
+        <input
+          type="text"
+          class="tw-flex-1 tw-min-w-0 tw-bg-transparent tw-outline-none tw-font-body tw-text-sm sm:tw-text-base tw-text-ink placeholder:tw-text-ink/50"
+          placeholder="Zoek een shop — NA-KD, Temu, Gymshark…"
+          [(ngModel)]="searchTerm"
+          (input)="onSearch()"
+        />
+        @if (searchTerm) {
+          <button
+            type="button"
+            (click)="searchTerm = ''; onSearch()"
+            aria-label="Wis zoekopdracht"
+            class="tw-shrink-0 tw-w-8 tw-h-8 tw-rounded-full tw-bg-ink/5 hover:tw-bg-ink/10 tw-text-ink/60 tw-flex tw-items-center tw-justify-center tw-transition"
+          >&times;</button>
+        }
+        <a
+          href="#nieuwste-codes"
+          class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-5 sm:tw-px-6 tw-py-3 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-whitespace-nowrap"
+        >Zoeken</a>
+      </div>
     </div>
 
-    <!-- Text Banners -->
-    <!-- "Deel jouw code" banner (links to /code-delen/) -->
-    <a
-            [routerLink]="['/code-delen/']"
-            onclick="gtag('event', 'code_delen_banner', {'event_category': 'Code_delen_banner', 'event_label': 'code_delen_banner'})"
-            class="tw-block tw-w-full tw-px-3 tw-py-1.5 tw-bg-pink-50 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-pink-200 tw-rounded-lg tw-mb-2 tw-no-underline hover:tw-bg-pink-100 tw-transition-colors"
-    >
+    <div class="tw-flex tw-flex-wrap tw-justify-center tw-gap-x-3 tw-gap-y-1 tw-mt-5 tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] sm:tw-text-[11px] tw-text-ink/60">
+      <span>Vandaag getest ✓</span><span class="tw-opacity-40">·</span>
+      <span>Geen account</span><span class="tw-opacity-40">·</span>
+      <span>Geen pop-ups</span>
+    </div>
+  </section>
+
+  <!-- ====================== TOP DEALS CAROUSEL ====================== -->
+  <!-- Placeholder editorial content — not yet wired to the live feed. -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-py-8 sm:tw-py-12">
+    <div class="tw-flex tw-justify-between tw-items-end tw-gap-4 tw-mb-5 sm:tw-mb-6">
       <div>
-        &rarr; Jouw code delen op deze pagina? <strong class="tw-underline">Klik hier!</strong>
+        <h2 class="tw-font-title tw-font-bold tw-tracking-tight tw-text-2xl sm:tw-text-3xl lg:tw-text-4xl tw-leading-tight">
+          De hoogste kortingscodes van vandaag
+        </h2>
+        <p class="tw-font-body tw-text-ink/65 tw-mt-2 tw-text-sm sm:tw-text-base">Met deze kortingen bespaar je nu het meest</p>
       </div>
-    </a>
+      <div class="tw-hidden sm:tw-flex tw-gap-2.5 tw-shrink-0">
+        <button (click)="rail.scrollBy({ left: -400, behavior: 'smooth' })" aria-label="Vorige" class="tw-w-11 tw-h-11 tw-rounded-full tw-border tw-border-ink/10 tw-bg-panel tw-text-ink tw-flex tw-items-center tw-justify-center tw-text-2xl tw-leading-none tw-pb-1">‹</button>
+        <button (click)="rail.scrollBy({ left: 400, behavior: 'smooth' })" aria-label="Volgende" class="tw-w-11 tw-h-11 tw-rounded-full tw-border tw-border-ink/10 tw-bg-panel tw-text-ink tw-flex tw-items-center tw-justify-center tw-text-2xl tw-leading-none tw-pb-1">›</button>
+      </div>
+    </div>
 
-    <div class="tw-w-full tw-px-3 tw-py-1.5 tw-bg-gray-100 tw-text-pink-800 tw-text-xs tw-text-center tw-font-small tw-border tw-border-gray-200 tw-rounded-lg tw-mb-2">
+    <div #rail class="deal-rail tw-flex tw-gap-4 sm:tw-gap-5 tw-overflow-x-auto tw-snap-x tw-snap-mandatory tw--mx-4 tw-px-4 sm:tw-mx-0 sm:tw-px-0 tw-pb-2">
+      @for (d of topDeals; track d.brand) {
+        <div class="tw-snap-start tw-shrink-0 tw-w-[280px] sm:tw-w-[340px]">
+          <div class="tw-h-40 sm:tw-h-52 tw-rounded-2xl tw-bg-gradient-to-br tw-from-sky tw-to-butter"></div>
+          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw--mt-12 tw-mx-4 tw-relative tw-shadow-[0_18px_44px_rgba(67,48,46,0.10)] tw-grid tw-grid-cols-[88px_1fr] tw-overflow-hidden">
+            <div class="tw-flex tw-items-center tw-justify-center tw-bg-white tw-border-r tw-border-ink/10 tw-p-3">
+              <span class="tw-font-title tw-font-bold tw-text-center tw-leading-tight tw-text-sm tw-tracking-tight">{{ d.brand }}</span>
+            </div>
+            <div class="tw-p-4">
+              <div class="tw-flex tw-justify-between tw-items-baseline tw-gap-2">
+                <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-link">{{ d.label }}</span>
+                <span class="tw-font-body tw-text-[11px] tw-text-ink/60">{{ d.brand }}</span>
+              </div>
+              <div class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-mt-1">{{ d.title }}</div>
+              <div class="tw-font-body tw-text-xs sm:tw-text-[13px] tw-text-ink/65 tw-mt-1.5 tw-leading-snug">{{ d.desc }}</div>
+              <div class="tw-font-body tw-text-[11px] tw-text-ink/50 tw-mt-2">Verloopdatum: {{ d.exp }}</div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ====================== POPULAIRE SHOPS (real logos) ====================== -->
+  @if (popularLogoBrands.length) {
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-10 sm:tw-pb-14">
+      <p class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] sm:tw-text-[11px] tw-text-ink/55 tw-text-center tw-mb-4 sm:tw-mb-5">Populaire shops op diski</p>
+      <div class="tw-grid tw-grid-cols-3 sm:tw-grid-cols-4 md:tw-grid-cols-6 tw-gap-3">
+        @for (b of popularLogoBrands; track b.slug) {
+          <a [routerLink]="['/' + b.slug + '/']" class="tw-bg-white tw-border tw-border-ink/10 tw-rounded-2xl tw-h-20 sm:tw-h-24 tw-flex tw-items-center tw-justify-center tw-p-3 tw-shadow-[0_8px_24px_rgba(67,48,46,0.05)] tw-no-underline hover:tw-shadow-md tw-transition">
+            <img [src]="b.logo" [alt]="b.name + ' logo'" class="tw-max-h-12 tw-max-w-full tw-object-contain" loading="lazy" />
+          </a>
+        }
+      </div>
+    </section>
+  }
+
+  <!-- ====================== SOCIAL / PRIKBORD ====================== -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-10 sm:tw-pb-14">
+    <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 sm:tw-gap-5">
+      @for (c of socialCards; track c.title) {
+        <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-p-6 sm:tw-p-7 tw-flex tw-flex-col sm:tw-flex-row sm:tw-items-center tw-gap-5">
+          <div class="tw-flex-1">
+            <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/55">{{ c.tag }}</div>
+            <div class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-mt-1.5">{{ c.title }}</div>
+            <div class="tw-font-body tw-text-sm tw-text-ink/65 tw-mt-2 tw-leading-relaxed">{{ c.desc }}</div>
+          </div>
+          @if (c.href.startsWith('http')) {
+            <a [href]="c.href" target="_blank" rel="noopener" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-6 tw-py-3.5 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
+          } @else {
+            <a [routerLink]="[c.href]" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-6 tw-py-3.5 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
+          }
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ====================== DISKI PICK (static) ====================== -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-10 sm:tw-pb-14">
+    <div class="tw-bg-ink tw-text-cream tw-rounded-3xl tw-p-7 sm:tw-p-10 lg:tw-p-12 tw-grid tw-grid-cols-1 lg:tw-grid-cols-[1fr_auto] tw-gap-7 lg:tw-gap-10 lg:tw-items-center">
       <div>
-        &rarr; €100 shoptegoed en 30% korting
-        <a
-                href="https://temu.to/m/u0p32ew176i"
-                target="_blank"
-                class="tw-text-blue-600 hover:tw-text-blue-800 tw-underline"
-                onclick="gtag('event', 'temu', {'event_category': 'Temu', 'event_label': 'try_temu'});"
-        >
-          <strong> bij Temu</strong>
-        </a>
+        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-cream/65">Diski Pick · deze week</div>
+        <div class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl lg:tw-text-4xl tw-leading-tight tw-tracking-tight tw-mt-2">
+          NA-KD — 25% op de hele zomercollectie<span class="tw-text-sky">.</span>
+        </div>
+        <p class="tw-font-body tw-text-sm sm:tw-text-base tw-text-cream/80 tw-mt-3 tw-max-w-xl tw-leading-relaxed">
+          Onze redactie-keuze van de week. Getest op de checkout, geldig t/m zondag.
+        </p>
+      </div>
+      <div class="tw-flex tw-flex-col tw-gap-2.5 lg:tw-min-w-[240px]">
+        <div class="tw-bg-cream tw-text-ink tw-rounded-xl tw-py-4 tw-px-5 tw-font-label tw-tracking-[0.08em] tw-text-lg sm:tw-text-xl tw-text-center">DISKI25</div>
+        <a [routerLink]="['/na-kd/']" class="tw-bg-sky tw-text-ink tw-rounded-full tw-py-3.5 tw-px-6 tw-font-body tw-font-semibold tw-text-sm sm:tw-text-base tw-no-underline tw-text-center">Kopieer &amp; shop →</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- ====================== NIEUWSTE CODES (real data) ====================== -->
+  <section id="nieuwste-codes" class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pt-2 tw-pb-14 sm:tw-pb-20 tw-scroll-mt-20">
+    <div class="tw-flex tw-flex-col sm:tw-flex-row sm:tw-justify-between sm:tw-items-end tw-gap-4 tw-mb-6 sm:tw-mb-8">
+      <div>
+        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">
+          @if (dateStringLatestShops) { Laatste update: {{ dateStringLatestShops }} · {{ newShopsCount }} nieuwe shops }
+        </div>
+        <h2 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl lg:tw-text-5xl tw-tracking-tight tw-mt-1.5">
+          Nieuwste kortingscodes<span class="tw-text-dot">.</span>
+        </h2>
       </div>
     </div>
 
     <!-- Resultaatkaarten -->
-    <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 lg:tw-gap-4">
+    <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4 sm:tw-gap-5">
       @if (uniqueFilteredDiscounts.length > 0) {
         @for (discount of uniqueFilteredDiscounts; track discount; let i = $index) {
           <a
             [routerLink]="['/' + getCompanySlug(discount.company) + '/']"
             (click)="onCardClick(discount, $event)"
             [style.display]="(i >= (page - 1) * itemsPerPage && i < page * itemsPerPage) ? null : 'none'"
-            class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow-md hover:tw-shadow-lg active:tw-scale-[0.98]
-                   tw-transition-all tw-duration-200 tw-p-3 lg:tw-p-4 tw-flex tw-flex-col
-                   tw-border tw-border-gray-100 tw-no-underline"
+            class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-p-5 sm:tw-p-6 tw-flex tw-flex-col tw-gap-4 tw-min-h-[200px] tw-no-underline active:tw-scale-[0.98] tw-transition-all tw-duration-200"
           >
-            <div class="tw-flex tw-justify-between tw-items-start tw-mb-2">
-              <h3 class="tw-text-base lg:tw-text-lg tw-font-semibold tw-text-gray-900 tw-truncate tw-max-w-[160px]">
-                {{ getDisplayName(discount.company) }}
-              </h3>
+            <div class="tw-flex tw-justify-between tw-items-start tw-gap-3">
+              <div class="tw-min-w-0">
+                <h3 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-truncate">
+                  {{ getDisplayName(discount.company) }}
+                </h3>
+                <p class="tw-font-body tw-text-xs tw-text-ink/55 tw-mt-1">Gespot op {{ formatDate(discount.date) }} ✓</p>
+              </div>
+              <div class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-shrink-0 tw-leading-none">
+                {{ getCorrectFormatDiscountPercentage(discount.percentage) }}
+              </div>
+            </div>
+            <div class="tw-mt-auto tw-flex tw-items-center tw-gap-3">
               @if (getLogoUrl(discount.company)) {
                 <img
                   [src]="getLogoUrl(discount.company)"
                   [alt]="getDisplayName(discount.company) + ' logo'"
-                  class="tw-w-12 tw-h-12 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-100 tw-flex-shrink-0"
+                  class="tw-w-11 tw-h-11 tw-rounded-xl tw-object-contain tw-bg-white tw-border tw-border-ink/10 tw-p-1 tw-shrink-0"
                   loading="lazy"
                 />
               }
+              <span class="tw-flex-1 tw-bg-sky tw-text-ink tw-rounded-full tw-py-2.5 tw-px-4 tw-text-center tw-font-body tw-font-semibold tw-text-sm group-hover:tw-brightness-95 tw-transition">
+                Bekijk codes →
+              </span>
             </div>
-            <p class="tw-text-sm tw-text-gray-600">
-              💸 Nieuwste code: {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting
-            </p>
-            <p class="tw-text-xs tw-text-gray-400 tw-mt-1">
-              Gespot op {{ formatDate(discount.date) }}
-            </p>
-            <p class="tw-mt-3 tw-text-xs tw-font-semibold tw-text-blue-600">
-              Bekijk alle {{ getDisplayName(discount.company) }} codes &rarr;
-            </p>
           </a>
         }
       } @else if (initialPageLoad) {
         <!-- Skeleton loaders -->
         @for (s of [1,2,3,4,5,6,7,8,9]; track s) {
-          <div class="tw-w-full tw-bg-white tw-rounded-2xl tw-shadow tw-p-4 tw-border tw-border-gray-100 tw-h-[100px] tw-flex tw-justify-between tw-items-center">
-            <div class="tw-flex-1 tw-pr-3">
-              <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-3/4 tw-mb-2 tw-animate-pulse"></div>
-              <div class="tw-h-3 tw-bg-gray-200 tw-rounded tw-w-1/2 tw-mb-2 tw-animate-pulse"></div>
-              <div class="tw-h-2 tw-bg-gray-200 tw-rounded tw-w-1/3 tw-animate-pulse"></div>
+          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-p-5 sm:tw-p-6 tw-min-h-[200px] tw-flex tw-flex-col tw-gap-4">
+            <div class="tw-flex tw-justify-between tw-gap-3">
+              <div class="tw-flex-1">
+                <div class="tw-h-5 tw-bg-ink/10 tw-rounded tw-w-2/3 tw-mb-2 tw-animate-pulse"></div>
+                <div class="tw-h-3 tw-bg-ink/10 tw-rounded tw-w-1/3 tw-animate-pulse"></div>
+              </div>
+              <div class="tw-h-7 tw-w-14 tw-bg-ink/10 tw-rounded tw-animate-pulse"></div>
             </div>
-            <div class="tw-w-16 tw-h-16 tw-rounded-md tw-bg-gray-200 tw-animate-pulse"></div>
+            <div class="tw-mt-auto tw-flex tw-items-center tw-gap-3">
+              <div class="tw-w-11 tw-h-11 tw-rounded-xl tw-bg-ink/10 tw-animate-pulse"></div>
+              <div class="tw-flex-1 tw-h-10 tw-rounded-full tw-bg-ink/10 tw-animate-pulse"></div>
+            </div>
           </div>
         }
       } @else {
-        <div class="tw-col-span-full tw-mt-6 tw-mb-6 tw-text-center tw-text-gray-500 tw-text-lg">
+        <div class="tw-col-span-full tw-py-10 tw-text-center tw-font-body tw-text-ink/55 tw-text-lg">
           Geen resultaten gevonden
         </div>
       }
     </div>
 
     <!-- Paginatie -->
-    <div class="tw-flex tw-items-center tw-justify-center tw-mt-8 tw-gap-4">
-      <button
-              class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-sm tw-px-4 tw-py-2 tw-rounded disabled:tw-opacity-50"
-              (click)="prevPage()"
-              [disabled]="page === 1">
-        Vorige
-      </button>
-      <span class="tw-text-sm">Pagina {{ page }} van {{ totalPages }}</span>
-      <button
-              class="tw-bg-gray-300 hover:tw-bg-gray-400 tw-text-sm tw-px-4 tw-py-2 tw-rounded disabled:tw-opacity-50"
-              (click)="nextPage()"
-              [disabled]="page === totalPages">
-        Volgende
-      </button>
-    </div>
-  </div>
-  <!-- EINDE VAN DE GEGROEPEERDE SECTIE -->
+    @if (totalPages > 1) {
+      <div class="tw-flex tw-items-center tw-justify-center tw-mt-10 tw-gap-3 sm:tw-gap-4">
+        <button
+          class="tw-bg-panel tw-border tw-border-ink/10 tw-text-ink tw-font-body tw-font-semibold tw-text-sm tw-px-5 tw-py-2.5 tw-rounded-full disabled:tw-opacity-40 tw-transition"
+          (click)="prevPage()"
+          [disabled]="page === 1">
+          ‹ Vorige
+        </button>
+        <span class="tw-font-body tw-text-sm tw-text-ink/70">Pagina {{ page }} van {{ totalPages }}</span>
+        <button
+          class="tw-bg-panel tw-border tw-border-ink/10 tw-text-ink tw-font-body tw-font-semibold tw-text-sm tw-px-5 tw-py-2.5 tw-rounded-full disabled:tw-opacity-40 tw-transition"
+          (click)="nextPage()"
+          [disabled]="page === totalPages">
+          Volgende ›
+        </button>
+      </div>
+    }
 
-  <div class="tw-mt-8 tw-flex tw-justify-center">
-    <div class="tw-w-full sm:tw-w-10/12 lg:tw-w-10/12">
-      <p class="tw-text-gray-800 tw-text-sm sm:tw-text-base tw-leading-relaxed">
-        Webshops zoals <a href="https://nl.shein.com/" class="tw-text-blue-600 hover:tw-underline">Shein</a>,
-        <a href="https://www.loavies.com/nl/" class="tw-text-blue-600 hover:tw-underline">Loavies</a> en
-        <a href="https://www.na-kd.com/nl" class="tw-text-blue-600 hover:tw-underline">Nakd</a> verspreiden regelmatig een kortingscode via social media. Door deze in te vullen
-        in hun webshop krijg je korting op je bestelling. Meestal is een kortingscode enkele dagen geldig. De kortingscodes
-        worden gedeeld door influencers en content creators. Op deze pagina hou ik een overzicht bij van alle kortingscodes
-        die ik voorbij zie komen op Instagram. Gebruik het zoekveld bovenaan de pagina om eenvoudig te zoeken naar bijvoorbeeld
-        een Nakd kortingscode of een Loavies kortingscode. Neem ook eens een kijkje op mijn instagram account:
-        <a href="https://www.instagram.com/wiegeeftkorting/" class="tw-text-blue-600 hover:tw-underline">&#64;wiegeeftkorting</a>
-      </p>
+    <div class="tw-flex tw-justify-center tw-mt-9">
+      <button (click)="openShopsModal()" class="tw-bg-panel tw-border tw-border-ink/10 tw-text-ink tw-px-7 tw-py-3.5 tw-rounded-full tw-font-body tw-font-semibold tw-text-sm sm:tw-text-base hover:tw-shadow-md tw-transition">
+        Bekijk alle shops →
+      </button>
     </div>
-  </div>
-</main>
+  </section>
+
+  <!-- ====================== TRUST ====================== -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-py-12 sm:tw-py-16 lg:tw-py-20 tw-border-t tw-border-ink/10">
+    <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-[1fr_2fr] tw-gap-8 lg:tw-gap-16 lg:tw-items-start">
+      <div>
+        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">Hoe we testen</div>
+        <h2 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl lg:tw-text-5xl tw-leading-[0.98] tw-tracking-tight tw-mt-2">
+          Het saaie werk dat niemand anders doet<span class="tw-text-dot">.</span>
+        </h2>
+      </div>
+      <div class="tw-flex tw-flex-col tw-gap-3.5">
+        @for (s of trustSteps; track s.n) {
+          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-5 sm:tw-p-7 tw-grid tw-grid-cols-[36px_1fr] sm:tw-grid-cols-[54px_1fr] tw-gap-4 sm:tw-gap-5 tw-items-center">
+            <div class="tw-font-label tw-text-lg sm:tw-text-xl tw-text-ink/40">{{ s.n }}</div>
+            <div>
+              <div class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight">{{ s.title }}</div>
+              <div class="tw-font-body tw-text-sm tw-text-ink/65 tw-mt-1 tw-leading-relaxed">{{ s.desc }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== NEWSLETTER (static) ====================== -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-14 sm:tw-pb-20">
+    <div class="tw-bg-sky tw-rounded-3xl tw-p-7 sm:tw-p-10 lg:tw-p-12 tw-grid tw-grid-cols-1 lg:tw-grid-cols-[1fr_auto] tw-gap-6 lg:tw-gap-10 lg:tw-items-center">
+      <div>
+        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/60">Nieuwsbrief</div>
+        <div class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl lg:tw-text-4xl tw-leading-tight tw-tracking-tight tw-mt-1.5">
+          De beste codes, één keer per week.
+        </div>
+        <p class="tw-font-body tw-text-sm sm:tw-text-base tw-text-ink/75 tw-mt-2.5 tw-max-w-xl tw-leading-relaxed">
+          Geen spam — alleen geteste codes en sale-alerts. Uitschrijven kan altijd.
+        </p>
+      </div>
+      <form (submit)="$event.preventDefault()" class="tw-flex tw-gap-2 tw-bg-cream tw-rounded-full tw-p-2 tw-pl-5 sm:tw-pl-6 tw-items-center lg:tw-min-w-[420px]">
+        <input type="email" placeholder="jouw@email.nl" class="tw-flex-1 tw-min-w-0 tw-bg-transparent tw-outline-none tw-font-body tw-text-sm sm:tw-text-base tw-text-ink placeholder:tw-text-ink/50" />
+        <button type="submit" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-5 sm:tw-px-6 tw-py-3 tw-font-body tw-font-semibold tw-text-sm tw-whitespace-nowrap">Inschrijven</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ====================== SEO copy ====================== -->
+  <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-pb-16">
+    <p class="tw-font-body tw-text-ink/70 tw-text-sm sm:tw-text-base tw-leading-relaxed">
+      Webshops zoals <a href="https://nl.shein.com/" class="tw-text-link hover:tw-underline">Shein</a>,
+      <a href="https://www.loavies.com/nl/" class="tw-text-link hover:tw-underline">Loavies</a> en
+      <a href="https://www.na-kd.com/nl" class="tw-text-link hover:tw-underline">Nakd</a> verspreiden regelmatig een kortingscode via social media. Door deze in te vullen
+      in hun webshop krijg je korting op je bestelling. Meestal is een kortingscode enkele dagen geldig. De kortingscodes
+      worden gedeeld door influencers en content creators. Op deze pagina hou ik een overzicht bij van alle kortingscodes
+      die ik voorbij zie komen op Instagram. Gebruik het zoekveld bovenaan de pagina om eenvoudig te zoeken naar bijvoorbeeld
+      een Nakd kortingscode of een Loavies kortingscode. Neem ook eens een kijkje op mijn instagram account:
+      <a href="https://www.instagram.com/wiegeeftkorting/" class="tw-text-link hover:tw-underline">&#64;wiegeeftkorting</a>
+    </p>
+  </section>
+
+</div>
 
 <app-modal-shops
         [isVisible]="isShopsModalVisible"

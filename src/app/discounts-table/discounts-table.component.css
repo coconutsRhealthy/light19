@@ -1,0 +1,13 @@
+/* hide the horizontal scrollbar on the deals rail */
+.deal-rail {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.deal-rail::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background: #C1DBE8;
+  color: #43302E;
+}
