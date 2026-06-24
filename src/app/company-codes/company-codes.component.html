@@ -137,7 +137,7 @@
         <section class="tw-mt-2 tw-mb-6 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-8 tw-max-w-4xl tw-mx-auto">
           <h2 class="tw-text-xl md:tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-5">Actievoorwaarden per promotie</h2>
           <div class="tw-space-y-5">
-            @for (item of samsungPromoList; track item.code) {
+            @for (item of samsungPromoList; track item.label) {
               <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-p-4">
                 <h3 class="tw-text-base tw-font-semibold tw-text-gray-900 tw-mb-2">{{ item.promo.promoText }}</h3>
                 <dl class="tw-text-sm tw-text-gray-700 tw-space-y-1">
