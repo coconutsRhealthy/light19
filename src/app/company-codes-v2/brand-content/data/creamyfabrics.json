@@ -83,5 +83,16 @@
     "ahead-nutrition",
     "bjornborg",
     "nakdfashion"
-  ]
+  ],
+  "video": {
+    "src": "https://media.diski.nl/creamyfabrics/ootd.mp4",
+    "poster": "https://media.diski.nl/creamyfabrics/ootd.jpg",
+    "w": 540,
+    "h": 960,
+    "duration": 9,
+    "title": "Indy showt de shapewear van creamy fabrics",
+    "description": "Indy laat de shapewear van creamy fabrics (cfab) zien.",
+    "uploadDate": "2026-06-24",
+    "caption": "Indy showt de shapewear van creamy fabrics. Tap voor geluid."
+  }
 }
