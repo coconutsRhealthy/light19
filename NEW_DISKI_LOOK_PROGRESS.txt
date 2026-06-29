@@ -45,9 +45,21 @@ DONE (committed)
       in styleUrls but never existed) with the :host h1,h2 left-align override
     - SEO explainer kept, restyled into a panel card
 
+[x] Blogs (listing) /blogs src/app/blogs/blogs.component.*
+    - light hero "Blogs.", featured 2-col card + 3-col grid, per mockup
+    - moved the 3 hardcoded posts into a typed posts[] array (slug/category/
+      title/excerpt/date/emoji/tint); featured = posts[0], rest = grid
+    - replaced old-branding gradient blocks (violet/pink/rose/emerald) with
+      brand-palette tints (sky/butter/dot) + the existing emoji
+    - kept routerLinks to /blogs/<slug> and the "meer komt eraan" teaser
+    - dropped mockup "leestijd" (no backing data); date kept
+    - NO :host override needed here: blogs uses styles:`` (not styleUrls with
+      app.component.css), so the h1-centering trap doesn't apply
+    - SCOPE: only the /blogs listing. Individual posts (uniqlo, lookfantastic,
+      space-nk) are separate components, still old style, no mockups provided.
+
 REMAINING (still old style; mockups ready in mockups/)
 ------------------------------------------------------
-[ ] Blogs         /blogs        src/app/blogs/*        -> mockups/Blogs.html
 [ ] Contact       /contact      src/app/contact/*      -> mockups/Contact.html
 [ ] Individual brand pages (large; ~1200 routes) - not started
 

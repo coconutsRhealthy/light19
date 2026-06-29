@@ -1,121 +1,74 @@
 <app-navbar></app-navbar>
 
-<!-- HERO -->
-<div class="tw-bg-gradient-to-br tw-from-violet-50 tw-via-pink-50 tw-to-rose-50 tw-border-b tw-border-pink-100">
-  <div class="tw-max-w-4xl tw-mx-auto tw-px-4 tw-py-12 tw-text-center">
-    <h1 class="tw-text-3xl md:tw-text-4xl tw-font-extrabold tw-text-gray-900 tw-mb-3">
-      Diski Blog
+<main class="tw-font-body tw-text-ink tw-pb-16">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="tw-max-w-6xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-pt-10 sm:tw-pt-14 tw-pb-2">
+    <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">
+      Verhalen · tips · bespaargidsen
+    </div>
+    <h1 class="tw-font-title tw-font-bold tw-text-4xl sm:tw-text-5xl lg:tw-text-6xl tw-tracking-tight tw-mt-2">
+      Blogs<span class="tw-text-dot">.</span>
     </h1>
-    <p class="tw-text-lg tw-text-gray-500 tw-max-w-xl tw-mx-auto">
+    <p class="tw-font-body tw-text-base sm:tw-text-lg tw-text-ink/65 tw-mt-3 tw-max-w-xl tw-leading-relaxed">
       Handige gidsen, tips en nieuws over kortingscodes, beauty en de beste deals online.
     </p>
-  </div>
-</div>
+  </section>
 
-<!-- BLOG GRID -->
-<div class="tw-max-w-4xl tw-mx-auto tw-px-4 tw-py-12">
-
-  <div class="tw-grid sm:tw-grid-cols-2 tw-gap-6">
-
-    <!-- Uniqlo card -->
-    <a
-      routerLink="/blogs/uniqlo"
-      class="tw-group tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-shadow-sm hover:tw-shadow-md tw-overflow-hidden tw-transition-shadow tw-no-underline"
-    >
-      <!-- Card image / color block -->
-      <div class="tw-h-40 tw-bg-gradient-to-br tw-from-emerald-100 tw-via-green-100 tw-to-teal-100 tw-flex tw-items-center tw-justify-center">
-        <span class="tw-text-5xl">👕</span>
-      </div>
-
-      <div class="tw-p-6">
-        <div class="tw-flex tw-items-center tw-justify-between tw-gap-2">
-          <span class="tw-text-xs tw-font-semibold tw-text-emerald-700 tw-bg-emerald-50 tw-px-2 tw-py-0.5 tw-rounded-full">
-            Fashion &amp; Style
-          </span>
-          <span class="tw-text-xs tw-text-gray-400">Juni 2025</span>
+  <!-- ===================== FEATURED ===================== -->
+  <section class="tw-max-w-6xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-7 sm:tw-mt-9">
+    <a [routerLink]="'/blogs/' + featured.slug" class="tw-group tw-block tw-no-underline tw-text-ink">
+      <article class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-overflow-hidden tw-grid tw-grid-cols-1 md:tw-grid-cols-2 hover:tw-shadow-md active:tw-scale-[0.99] tw-transition tw-duration-200">
+        <div class="tw-flex tw-items-center tw-justify-center tw-min-h-[200px] md:tw-min-h-[340px]" [class]="featured.tint">
+          <span class="tw-text-6xl sm:tw-text-7xl">{{ featured.emoji }}</span>
         </div>
-        <h2 class="tw-text-lg tw-font-bold tw-text-gray-900 tw-mt-3 tw-mb-2 group-hover:tw-text-emerald-600 tw-transition-colors">
-          Uniqlo AIRism — 5 summer pieces that keep you cool
-        </h2>
-        <p class="tw-text-gray-500 tw-text-sm tw-mb-4">
-          The five best AIRism pieces to build your summer wardrobe around — plus how the quick-dry fabric actually works, and an FAQ.
-        </p>
-        <span class="tw-inline-flex tw-items-center tw-gap-1 tw-text-emerald-600 tw-font-semibold tw-text-sm group-hover:tw-gap-2 tw-transition-all">
-          Lees meer
-          <svg class="tw-w-4 tw-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </span>
-      </div>
-    </a>
-
-    <!-- Lookfantastic card -->
-    <a
-      routerLink="/blogs/lookfantastic"
-      class="tw-group tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-shadow-sm hover:tw-shadow-md tw-overflow-hidden tw-transition-shadow tw-no-underline"
-    >
-      <!-- Card image / color block -->
-      <div class="tw-h-40 tw-bg-gradient-to-br tw-from-rose-100 tw-via-pink-100 tw-to-fuchsia-100 tw-flex tw-items-center tw-justify-center">
-        <span class="tw-text-5xl">✨</span>
-      </div>
-
-      <div class="tw-p-6">
-        <div class="tw-flex tw-items-center tw-justify-between tw-gap-2">
-          <span class="tw-text-xs tw-font-semibold tw-text-pink-600 tw-bg-pink-50 tw-px-2 tw-py-0.5 tw-rounded-full">
-            Beauty &amp; Skincare
-          </span>
-          <span class="tw-text-xs tw-text-gray-400">Juni 2026</span>
+        <div class="tw-p-7 sm:tw-p-10 tw-flex tw-flex-col tw-justify-center">
+          <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-link">
+            Uitgelicht · {{ featured.category }}
+          </div>
+          <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl lg:tw-text-4xl tw-tracking-tight tw-leading-tight tw-mt-3">
+            {{ featured.title }}
+          </h2>
+          <p class="tw-font-body tw-text-ink/70 tw-mt-4 tw-leading-relaxed">{{ featured.excerpt }}</p>
+          <div class="tw-flex tw-items-center tw-gap-3 tw-mt-6">
+            <span class="tw-font-body tw-text-sm tw-font-semibold tw-text-link group-hover:tw-translate-x-0.5 tw-transition">Lees meer →</span>
+            <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/50">{{ featured.date }}</span>
+          </div>
         </div>
-        <h2 class="tw-text-lg tw-font-bold tw-text-gray-900 tw-mt-3 tw-mb-2 group-hover:tw-text-pink-600 tw-transition-colors">
-          Lookfantastic kortingscode — bespaar tot 25% op beauty
-        </h2>
-        <p class="tw-text-gray-500 tw-text-sm tw-mb-4">
-          Zo bespaar je het meeste bij Lookfantastic: van kortingscode en studentenkorting tot de populaire Beauty Box en FAQ.
-        </p>
-        <span class="tw-inline-flex tw-items-center tw-gap-1 tw-text-pink-500 tw-font-semibold tw-text-sm group-hover:tw-gap-2 tw-transition-all">
-          Lees meer
-          <svg class="tw-w-4 tw-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </span>
-      </div>
+      </article>
     </a>
+  </section>
 
-    <!-- Space NK card -->
-    <a
-      routerLink="/blogs/space-nk"
-      class="tw-group tw-bg-white tw-border tw-border-gray-100 tw-rounded-2xl tw-shadow-sm hover:tw-shadow-md tw-overflow-hidden tw-transition-shadow tw-no-underline"
-    >
-      <!-- Card image / color block -->
-      <div class="tw-h-40 tw-bg-gradient-to-br tw-from-rose-100 tw-via-pink-100 tw-to-fuchsia-100 tw-flex tw-items-center tw-justify-center">
-        <span class="tw-text-5xl">💄</span>
+  <!-- ===================== GRID ===================== -->
+  <section class="tw-max-w-6xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-5 sm:tw-mt-6">
+    <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4 sm:tw-gap-5">
+      @for (post of rest; track post.slug) {
+        <a [routerLink]="'/blogs/' + post.slug" class="tw-group tw-block tw-no-underline tw-text-ink">
+          <article class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col tw-h-full hover:tw-shadow-md active:tw-scale-[0.99] tw-transition tw-duration-200">
+            <div class="tw-h-40 tw-flex tw-items-center tw-justify-center" [class]="post.tint">
+              <span class="tw-text-5xl">{{ post.emoji }}</span>
+            </div>
+            <div class="tw-p-6 tw-flex tw-flex-col tw-gap-2 tw-flex-1">
+              <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10.5px] tw-text-link">{{ post.category }}</div>
+              <h3 class="tw-font-title tw-font-bold tw-text-xl tw-tracking-tight tw-leading-snug tw-break-words">{{ post.title }}</h3>
+              <div class="tw-flex tw-items-center tw-gap-3 tw-mt-auto tw-pt-2">
+                <span class="tw-font-body tw-text-sm tw-font-semibold tw-text-link group-hover:tw-translate-x-0.5 tw-transition">Lees meer →</span>
+                <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/50">{{ post.date }}</span>
+              </div>
+            </div>
+          </article>
+        </a>
+      }
+
+      <!-- Teaser for future blogs -->
+      <div class="tw-border tw-border-dashed tw-border-ink/20 tw-rounded-2xl tw-flex tw-flex-col tw-items-center tw-justify-center tw-p-8 tw-text-center tw-min-h-[260px]">
+        <span class="tw-text-4xl tw-mb-3">✍️</span>
+        <p class="tw-font-title tw-font-bold tw-text-lg tw-text-ink">Meer blogs komen eraan</p>
+        <p class="tw-font-body tw-text-sm tw-text-ink/55 tw-mt-1">We werken aan meer gidsen over kortingscodes en deals.</p>
       </div>
-
-      <div class="tw-p-6">
-        <div class="tw-flex tw-items-center tw-justify-between tw-gap-2">
-          <span class="tw-text-xs tw-font-semibold tw-text-pink-600 tw-bg-pink-50 tw-px-2 tw-py-0.5 tw-rounded-full">
-            Beauty &amp; Skincare
-          </span>
-          <span class="tw-text-xs tw-text-gray-400">April 2026</span>
-        </div>
-        <h2 class="tw-text-lg tw-font-bold tw-text-gray-900 tw-mt-3 tw-mb-2 group-hover:tw-text-pink-600 tw-transition-colors">
-          Space NK kortingscode — bespaar op luxe beauty
-        </h2>
-        <p class="tw-text-gray-500 tw-text-sm tw-mb-4">
-          De beste manieren om te besparen bij Space NK. Inclusief welkomstcode, productaanbevelingen en stap-voor-stap uitleg.
-        </p>
-        <span class="tw-inline-flex tw-items-center tw-gap-1 tw-text-pink-500 tw-font-semibold tw-text-sm group-hover:tw-gap-2 tw-transition-all">
-          Lees meer
-          <svg class="tw-w-4 tw-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </span>
-      </div>
-    </a>
-
-    <!-- Placeholder card — teaser for future blogs -->
-    <div class="tw-bg-gray-50 tw-border tw-border-dashed tw-border-gray-200 tw-rounded-2xl tw-flex tw-flex-col tw-items-center tw-justify-center tw-p-8 tw-text-center tw-text-gray-400">
-      <span class="tw-text-4xl tw-mb-3">✍️</span>
-      <p class="tw-font-medium tw-text-gray-500">Meer blogs komen eraan</p>
-      <p class="tw-text-sm tw-mt-1">We werken aan meer gidsen over kortingscodes en deals.</p>
     </div>
+  </section>
 
-  </div>
-
-</div>
+</main>
 
 <app-footer></app-footer>
