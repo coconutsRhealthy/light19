@@ -59,6 +59,8 @@ export class ModalComponent {
         this.showEmailBlock = false;
       } else {
         this.showEmailBlock = true;
+        // Denominator for the email-gate funnel: the gate was actually shown.
+        this.trackGateEvent('code_gate_shown', companySlug);
       }
     }
   }
@@ -261,5 +263,20 @@ export class ModalComponent {
         this.discount?.company ?? '',
         window.location.pathname
       );
+
+      // Numerator for the email-gate funnel: the user actually submitted their
+      // email to reveal the code. unlock / gate_shown = fill-in rate.
+      this.trackGateEvent('code_unlock_email', this.discount?.companySlug?.toLowerCase());
+  }
+
+  /**
+   * Fire an email-gate funnel event to GA, both an overall label (for the total)
+   * and a per-company label (to compare brands) — mirroring the other GA helpers.
+   */
+  private trackGateEvent(action: string, companySlug?: string): void {
+    this.analyticsEventService.sendEventToGa(action, action);
+    if (companySlug) {
+      this.analyticsEventService.sendEventToGa(action, `${action}_${companySlug}`);
+    }
   }
 }
