@@ -155,7 +155,7 @@ export class AffiliateLinkService {
         dummyCode: 'OTRI3009T'
     },
     'zelesta.nl': {
-        url: 'https://tidd.ly/4dyxrUU',
+        url: 'https://zelesta-cpc-nl.mtpc.se/6289058',
         dummyCode: 'BEAUTY25VEL'
     },
     'smartphoto.nl': {
@@ -2109,6 +2109,10 @@ export class AffiliateLinkService {
     'isabelmarant': {
         url: 'https://bdt9.net/c/?si=18138&li=1785243&wi=418827&dl=en-nl%3Fsrsltid%3DAfmBOopOFxxEisxItbMOWek0rLj1D0ebFo686MdhiSmpfe7VCAxZ6cpJ',
         dummyCode: 'SHOP15'
+    },
+    'cider': {
+        url: 'https://fxo.co/JDoH',
+        dummyCode: 'NOAXX15'
     },
   };
 
