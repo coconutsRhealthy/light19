@@ -58,9 +58,24 @@ DONE (committed)
     - SCOPE: only the /blogs listing. Individual posts (uniqlo, lookfantastic,
       space-nk) are separate components, still old style, no mockups provided.
 
-REMAINING (still old style; mockups ready in mockups/)
+[x] Contact /contact src/app/contact/contact.component.*
+    - light hero "Contact.", 2-col: message form + sidebar, per mockup
+    - form is functional WITHOUT a backend: submit() composes a mailto:
+      (built in JS, client-side) so no literal email in prerendered HTML
+    - sidebar: sky "Een code delen?" -> routerLink /prikbord, + details card
+      (e-mail, Instagram @wiegeeftkorting, TikTok @wiegeeftkorting2, reactietijd)
+    - real data used (info@diski.nl, real socials), not mockup placeholders
+    - CF EMAIL/HYDRATION GOTCHA: the old `&#64;` entity trick does NOT survive
+      Angular SSR (serializes back to a literal `@`). Fix: contactEmail is ''
+      during SSR + first client paint and filled via afterNextRender() — verified
+      0 literal "@diski.nl" in prerendered dist/.../contact/index.html, URL stays
+      /contact. Apply this pattern to any future visible email on a prerendered page.
+
+ALL MAIN NAV PAGES ARE NOW DONE.
+
+REMAINING
 ------------------------------------------------------
-[ ] Contact       /contact      src/app/contact/*      -> mockups/Contact.html
+[ ] Individual blog posts (uniqlo, lookfantastic, space-nk) - old style, no mockups
 [ ] Individual brand pages (large; ~1200 routes) - not started
 
 DESIGN TOKENS (tailwind.config.js) — reuse these, do NOT add fonts
