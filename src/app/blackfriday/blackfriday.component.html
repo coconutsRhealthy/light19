@@ -1,79 +1,112 @@
 <app-navbar></app-navbar>
 
-<main class="bf">
+<main class="tw-font-body tw-text-ink tw-pb-16">
 
-  <!-- ===================== HERO ===================== -->
-  <header class="bf-hero">
-    <div class="bf-hero__inner">
-      <span class="bf-eyebrow">Diski × Black Friday {{ year }}</span>
-      <h1 class="bf-title">Black <span>Friday</span></h1>
-      <p class="bf-lede">
-        De scherpste sales en aanbiedingen van het jaar. Filter op categorie
-        of zoek meteen je favoriete webshop.
+  <!-- ===================== HERO (BF signature: dark ink panel) ===================== -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pt-6 sm:tw-pt-10">
+    <div class="tw-relative tw-overflow-hidden tw-rounded-3xl tw-bg-ink tw-text-cream tw-px-6 sm:tw-px-10 lg:tw-px-12 tw-py-9 sm:tw-py-12">
+      <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-cream/70">
+        Black Friday {{ year }}
+      </div>
+      <h1 class="tw-text-left tw-font-title tw-font-bold tw-text-4xl sm:tw-text-5xl lg:tw-text-6xl tw-tracking-tight tw-leading-[0.98] tw-mt-2">
+        Black Friday bij diski<span class="tw-text-sky">.</span>
+      </h1>
+      <p class="tw-font-body tw-text-base sm:tw-text-lg tw-text-cream/80 tw-mt-3 tw-max-w-xl tw-leading-relaxed">
+        De scherpste sales en aanbiedingen van het jaar — handmatig gespot.
+        Filter op categorie of zoek meteen je favoriete webshop.
       </p>
 
-      <div class="bf-search">
-        <svg class="bf-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input
-          type="text"
-          placeholder="Zoek op webshop…"
-          aria-label="Zoek op webshop"
-          [(ngModel)]="searchTerm"
-          (input)="onSearch()"
-        />
-        @if (searchTerm) {
-          <button type="button" class="bf-search__clear" (click)="clearSearch()" aria-label="Zoekopdracht wissen">
-            &times;
-          </button>
-        }
-      </div>
-
-      @if (!initialPageLoad) {
-        <div class="bf-stats">
-          <span><strong>{{ totalDeals }}</strong> deals</span>
-          <span class="bf-stats__dot"></span>
-          <span><strong>{{ categories.length }}</strong> categorieën</span>
-          <span class="bf-stats__dot"></span>
-          <span class="bf-stats__live"><span class="bf-stats__livedot"></span> live gespot</span>
-        </div>
-      }
-    </div>
-  </header>
-
-  <!-- ===================== CATEGORY BAR ===================== -->
-  @if (!isSearching && !initialPageLoad) {
-    <nav class="bf-cats" aria-label="Categorieën">
-      <div class="bf-cats__wrap" [class.can-left]="catCanLeft" [class.can-right]="catCanRight">
-        <div class="bf-cats__scroll" #catScroll (scroll)="updateCatFades()">
-          <button class="bf-chip" [class.is-active]="activeCategory === 'alle'" (click)="selectCategory('alle')">
-            Alle <span class="bf-chip__count">{{ alleDeals.length }}</span>
-          </button>
-          @for (c of categories; track c.name) {
-            <button class="bf-chip" [class.is-active]="activeCategory === c.name" (click)="selectCategory(c.name)">
-              {{ categoryLabel(c.name) }}
-              <span class="bf-chip__count">{{ c.count }}</span>
-            </button>
+      <!-- Search -->
+      <div class="tw-mt-6 tw-max-w-xl">
+        <div class="tw-bg-cream tw-rounded-full tw-p-2 tw-pl-5 tw-flex tw-items-center tw-gap-2 tw-shadow-[0_16px_40px_rgba(0,0,0,0.18)]">
+          <svg class="tw-w-5 tw-h-5 tw-text-ink/50 tw-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="text"
+            class="tw-flex-1 tw-min-w-0 tw-bg-transparent tw-outline-none tw-font-body tw-text-sm sm:tw-text-base tw-text-ink placeholder:tw-text-ink/50"
+            placeholder="Zoek op webshop…"
+            aria-label="Zoek op webshop"
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+          />
+          @if (searchTerm) {
+            <button type="button" (click)="clearSearch()" aria-label="Zoekopdracht wissen"
+              class="tw-shrink-0 tw-w-8 tw-h-8 tw-rounded-full tw-bg-ink/5 hover:tw-bg-ink/10 tw-text-ink/60 tw-flex tw-items-center tw-justify-center tw-transition">&times;</button>
           }
         </div>
       </div>
-    </nav>
+
+      <!-- Stats -->
+      @if (!initialPageLoad) {
+        <div class="tw-mt-5 tw-flex tw-flex-wrap tw-items-center tw-gap-x-3 tw-gap-y-2 tw-font-body tw-text-sm tw-text-cream/75">
+          <span><strong class="tw-font-semibold tw-text-cream">{{ totalDeals }}</strong> deals</span>
+          <span class="tw-w-1 tw-h-1 tw-rounded-full tw-bg-cream/40"></span>
+          <span><strong class="tw-font-semibold tw-text-cream">{{ categories.length }}</strong> categorieën</span>
+          <span class="tw-w-1 tw-h-1 tw-rounded-full tw-bg-cream/40"></span>
+          <span class="tw-inline-flex tw-items-center tw-gap-1.5">
+            <span class="tw-w-1.5 tw-h-1.5 tw-rounded-full tw-bg-[#6FCF97] tw-animate-pulse"></span> live gespot
+          </span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ===================== CATEGORY BAR ===================== -->
+  @if (!isSearching && !initialPageLoad) {
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-mt-6 sm:tw-mt-8" aria-label="Categorieën">
+      <div class="tw-relative">
+        <div #catScroll (scroll)="updateCatFades()"
+             class="tw-flex tw-gap-2 tw-overflow-x-auto no-scrollbar tw-py-1">
+          <button (click)="selectCategory('alle')"
+            class="tw-shrink-0 tw-rounded-full tw-font-body tw-text-sm tw-py-2 tw-pl-4 tw-pr-2.5 tw-inline-flex tw-items-center tw-gap-2 tw-transition"
+            [class]="activeCategory === 'alle'
+              ? 'tw-bg-ink tw-text-cream tw-font-semibold'
+              : 'tw-bg-panel tw-border tw-border-ink/10 tw-text-ink/70 hover:tw-text-ink'">
+            Alle
+            <span class="tw-rounded-full tw-text-[11px] tw-px-1.5 tw-py-0.5 tw-leading-none"
+              [class]="activeCategory === 'alle' ? 'tw-bg-cream/20' : 'tw-bg-ink/5'">{{ alleDeals.length }}</span>
+          </button>
+          @for (c of categories; track c.name) {
+            <button (click)="selectCategory(c.name)"
+              class="tw-shrink-0 tw-rounded-full tw-font-body tw-text-sm tw-py-2 tw-pl-4 tw-pr-2.5 tw-inline-flex tw-items-center tw-gap-2 tw-transition"
+              [class]="activeCategory === c.name
+                ? 'tw-bg-ink tw-text-cream tw-font-semibold'
+                : 'tw-bg-panel tw-border tw-border-ink/10 tw-text-ink/70 hover:tw-text-ink'">
+              {{ categoryLabel(c.name) }}
+              <span class="tw-rounded-full tw-text-[11px] tw-px-1.5 tw-py-0.5 tw-leading-none"
+                [class]="activeCategory === c.name ? 'tw-bg-cream/20' : 'tw-bg-ink/5'">{{ c.count }}</span>
+            </button>
+          }
+        </div>
+        <!-- edge fades hint there's more to swipe -->
+        @if (catCanLeft) {
+          <div class="cat-fade cat-fade--left" aria-hidden="true"></div>
+        }
+        @if (catCanRight) {
+          <div class="cat-fade cat-fade--right" aria-hidden="true"></div>
+        }
+      </div>
+    </section>
   }
 
   <!-- ===================== BODY ===================== -->
-  <div class="bf-body">
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-mt-6 sm:tw-mt-8">
 
     <!-- Loading skeletons -->
     @if (initialPageLoad) {
-      <div class="bf-grid">
-        @for (i of [1,2,3,4,5,6,7,8]; track i) {
-          <div class="bf-card bf-card--skel">
-            <div class="bf-skel__logo"></div>
-            <div class="bf-skel__line"></div>
-            <div class="bf-skel__line bf-skel__line--short"></div>
+      <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 sm:tw-gap-4">
+        @for (i of [1,2,3,4,5,6,7,8,9]; track i) {
+          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-5 tw-min-h-[170px] tw-flex tw-flex-col tw-gap-3">
+            <div class="tw-flex tw-justify-between tw-items-start">
+              <div class="tw-w-11 tw-h-11 tw-rounded-xl tw-bg-ink/10 tw-animate-pulse"></div>
+              <div class="tw-w-16 tw-h-5 tw-rounded-full tw-bg-ink/10 tw-animate-pulse"></div>
+            </div>
+            <div class="tw-h-6 tw-w-2/3 tw-bg-ink/10 tw-rounded tw-animate-pulse"></div>
+            <div class="tw-h-4 tw-w-full tw-bg-ink/10 tw-rounded tw-animate-pulse"></div>
+            <div class="tw-h-4 tw-w-1/3 tw-bg-ink/10 tw-rounded tw-animate-pulse tw-mt-auto"></div>
           </div>
         }
       </div>
@@ -81,86 +114,85 @@
 
     <!-- Search results (brand search overrides the category view) -->
     @else if (isSearching) {
-      <section class="bf-section">
-        <div class="bf-section__head">
-          <h2>Resultaten voor “{{ searchTerm }}”</h2>
-          <span class="bf-count">{{ searchResults.length }}</span>
-        </div>
+      <div class="tw-flex tw-items-baseline tw-gap-3 tw-mb-5">
+        <h2 class="tw-text-left tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-min-w-0 tw-break-words">
+          Resultaten voor “{{ searchTerm }}”
+        </h2>
+        <span class="tw-font-body tw-text-sm tw-text-ink/50 tw-shrink-0">{{ searchResults.length }}</span>
+      </div>
 
-        @if (searchResults.length) {
-          <div class="bf-grid">
-            @for (d of searchResults; track d.webshop_name + d.date) {
-              <a class="bf-card" [class.bf-card--today]="isSpottedToday(d.date)" [href]="d.url" target="_blank" rel="noopener noreferrer sponsored">
-                <div class="bf-card__top">
-                  @if (getLogoUrl(d.webshop_name)) {
-                    <img class="bf-card__logo" [src]="getLogoUrl(d.webshop_name)"
-                         [alt]="d.webshop_name + ' logo'" loading="lazy" />
-                  } @else {
-                    <div class="bf-card__logo bf-card__logo--ph">{{ d.webshop_name.charAt(0).toUpperCase() }}</div>
-                  }
-                  <span class="bf-card__tag">{{ categoryLabel(d.shop_category) }}</span>
-                </div>
-                <h3 class="bf-card__name">{{ d.webshop_name }}</h3>
-                <p class="bf-card__deal">{{ d.korting_text_nl || d.korting_text }}</p>
-                <div class="bf-card__foot">
-                  <span class="bf-card__date">{{ isSpottedToday(d.date) ? 'Vandaag gespot' : 'Gespot op ' + formatDate(d.date) }}</span>
-                  <span class="bf-card__cta">Bekijk deal →</span>
-                </div>
-              </a>
-            }
-          </div>
-        } @else {
-          <p class="bf-empty">
-            Geen webshops gevonden voor “{{ searchTerm }}”.
-            <button type="button" class="bf-link" (click)="clearSearch()">Blader per categorie</button>.
-          </p>
-        }
-      </section>
+      @if (searchResults.length) {
+        <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 sm:tw-gap-4">
+          @for (d of searchResults; track d.webshop_name + d.date) {
+            <ng-container [ngTemplateOutlet]="dealCard" [ngTemplateOutletContext]="{ d: d }"></ng-container>
+          }
+        </div>
+      } @else {
+        <p class="tw-text-center tw-text-ink/60 tw-py-16 tw-font-body tw-text-lg">
+          Geen webshops gevonden voor “{{ searchTerm }}”.
+          <button type="button" class="tw-text-link tw-font-semibold tw-underline tw-underline-offset-2" (click)="clearSearch()">Blader per categorie</button>.
+        </p>
+      }
     }
 
     <!-- Default: one list for the active category, paged with "toon meer" -->
     @else {
-      <section class="bf-section">
-        @if (filteredDeals.length) {
-          <div class="bf-grid">
-            @for (d of filteredDeals; track d.webshop_name + d.date; let idx = $index) {
-              @if (idx < visibleCount) {
-                <a class="bf-card" [class.bf-card--today]="isSpottedToday(d.date)" [href]="d.url" target="_blank" rel="noopener noreferrer sponsored">
-                  <div class="bf-card__top">
-                    @if (getLogoUrl(d.webshop_name)) {
-                      <img class="bf-card__logo" [src]="getLogoUrl(d.webshop_name)"
-                           [alt]="d.webshop_name + ' logo'" loading="lazy" />
-                    } @else {
-                      <div class="bf-card__logo bf-card__logo--ph">{{ d.webshop_name.charAt(0).toUpperCase() }}</div>
-                    }
-                    <span class="bf-card__tag">{{ categoryLabel(d.shop_category) }}</span>
-                  </div>
-                  <h3 class="bf-card__name">{{ d.webshop_name }}</h3>
-                  <p class="bf-card__deal">{{ d.korting_text_nl || d.korting_text }}</p>
-                  <div class="bf-card__foot">
-                    <span class="bf-card__date">{{ isSpottedToday(d.date) ? 'Vandaag gespot' : 'Gespot op ' + formatDate(d.date) }}</span>
-                    <span class="bf-card__cta">Bekijk deal →</span>
-                  </div>
-                </a>
-              }
+      @if (filteredDeals.length) {
+        <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-3 sm:tw-gap-4">
+          @for (d of filteredDeals; track d.webshop_name + d.date; let idx = $index) {
+            @if (idx < visibleCount) {
+              <ng-container [ngTemplateOutlet]="dealCard" [ngTemplateOutletContext]="{ d: d }"></ng-container>
             }
-          </div>
+          }
+        </div>
 
-          @if (filteredDeals.length > visibleCount) {
-            <button type="button" class="bf-more" (click)="showMore()">
+        @if (filteredDeals.length > visibleCount) {
+          <div class="tw-flex tw-justify-center tw-mt-8 sm:tw-mt-10">
+            <button type="button" (click)="showMore()"
+              class="tw-font-body tw-font-semibold tw-text-sm tw-bg-ink tw-text-cream tw-rounded-full tw-px-7 tw-py-3.5 hover:tw-opacity-90 active:tw-scale-[0.98] tw-transition">
               @if (filteredDeals.length - visibleCount > loadStep) {
-                Toon de volgende {{ loadStep }} <span class="bf-more__chev">↓</span>
+                Toon de volgende {{ loadStep }} ↓
               } @else {
-                Toon de laatste {{ filteredDeals.length - visibleCount }} <span class="bf-more__chev">↓</span>
+                Toon de laatste {{ filteredDeals.length - visibleCount }} ↓
               }
             </button>
-          }
-        } @else {
-          <p class="bf-empty">Geen deals in deze categorie.</p>
+          </div>
         }
-      </section>
+      } @else {
+        <p class="tw-text-center tw-text-ink/60 tw-py-16 tw-font-body tw-text-lg">Geen deals in deze categorie.</p>
+      }
     }
-  </div>
+  </section>
 </main>
+
+<!-- ===================== SHARED DEAL CARD ===================== -->
+<ng-template #dealCard let-d="d">
+  <a [href]="d.url" target="_blank" rel="noopener noreferrer sponsored"
+     class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-5 tw-flex tw-flex-col tw-gap-2.5 tw-min-h-[170px] tw-no-underline tw-text-ink active:tw-scale-[0.99] tw-transition tw-duration-200 hover:tw-shadow-md"
+     [class.tw-ring-2]="isSpottedToday(d.date)"
+     [class.tw-ring-sky]="isSpottedToday(d.date)">
+    <div class="tw-flex tw-items-start tw-justify-between tw-gap-3">
+      @if (getLogoUrl(d.webshop_name)) {
+        <img class="tw-w-11 tw-h-11 tw-rounded-xl tw-object-contain tw-bg-cream tw-p-1 tw-border tw-border-ink/10 tw-shrink-0"
+             [src]="getLogoUrl(d.webshop_name)" [alt]="d.webshop_name + ' logo'" loading="lazy" width="44" height="44" />
+      } @else {
+        <div class="tw-w-11 tw-h-11 tw-rounded-xl tw-bg-sky tw-text-ink tw-font-title tw-font-bold tw-text-lg tw-flex tw-items-center tw-justify-center tw-shrink-0">
+          {{ d.webshop_name.charAt(0).toUpperCase() }}
+        </div>
+      }
+      <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/55 tw-bg-cream tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1 tw-shrink-0">
+        {{ categoryLabel(d.shop_category) }}
+      </span>
+    </div>
+    <h3 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-leading-tight tw-break-words">{{ d.webshop_name }}</h3>
+    <p class="tw-font-body tw-text-sm tw-text-ink/70 tw-leading-relaxed tw-break-words">{{ d.korting_text_nl || d.korting_text }}</p>
+    <div class="tw-mt-auto tw-flex tw-items-center tw-justify-between tw-gap-2 tw-pt-1">
+      <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/50">
+        {{ isSpottedToday(d.date) ? 'Vandaag gespot' : 'Gespot ' + formatDate(d.date) }}
+      </span>
+      <span class="tw-font-body tw-text-sm tw-font-semibold tw-text-link tw-shrink-0 group-hover:tw-translate-x-0.5 tw-transition">Bekijk deal →</span>
+    </div>
+  </a>
+</ng-template>
 
 <app-footer></app-footer>

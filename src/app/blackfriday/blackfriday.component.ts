@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener, Inject, PLATFORM_ID } from '@angular/core';
-import { DatePipe, isPlatformBrowser } from '@angular/common';
+import { DatePipe, isPlatformBrowser, NgTemplateOutlet } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LOCALE_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -36,7 +36,7 @@ interface ShopRegistry {
 
 @Component({
   selector: 'app-blackfriday',
-  imports: [FooterComponent, NavbarComponent, FormsModule],
+  imports: [FooterComponent, NavbarComponent, FormsModule, NgTemplateOutlet],
   templateUrl: './blackfriday.component.html',
   styleUrls: ['./blackfriday.component.css', './../app.component.css'],
   providers: [

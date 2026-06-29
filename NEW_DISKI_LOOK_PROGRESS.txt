@@ -21,10 +21,19 @@ DONE (committed)
 [x] Cream <body> bg fix (was leftover tw-bg-pink-50 in index.html)
 [x] Shops   /winkels   src/app/winkels/*
 [x] Prikbord /prikbord src/app/prikbord/* + src/app/prikbord-modal/*
+[x] Black Friday /blackfriday src/app/blackfriday/*
+    - dark ink hero (BF signature), left-aligned, sky "." accent
+    - kept all logic: live R2 feed, category chips (scroll + edge fades),
+      brand search, "toon meer" paging, skeletons, "vandaag gespot" ring
+    - card markup shared via <ng-template #dealCard> (NgTemplateOutlet)
+    - replaced 10KB bf-* CSS with Tailwind; component.css now ~1KB
+      (cleared its over-4KB budget warning)
+    - NOTE: app.component.css `h1{text-align:center}` is component-scoped, so
+      it outranks .tw-text-left; left-align is forced via :host h1,h2 in
+      blackfriday.component.css. Same trap applies to the remaining pages.
 
 REMAINING (still old style; mockups ready in mockups/)
 ------------------------------------------------------
-[ ] Black Friday  /blackfriday  src/app/blackfriday/*  -> mockups/BlackFriday.html
 [ ] Top 5         /top5         src/app/top5/*         -> mockups/Top5.html
 [ ] Blogs         /blogs        src/app/blogs/*        -> mockups/Blogs.html
 [ ] Contact       /contact      src/app/contact/*      -> mockups/Contact.html
@@ -46,17 +55,34 @@ PERF / FONTS
 - <body class="tw-bg-cream">. html/body cream also set in src/styles.css
   (so browser overscroll area is cream).
 
-MOCKUPS (mockups/ at repo root — untracked, NOT built)
+MOCKUPS (location: ~/Desktop/mockups/ — untracked, NOT in repo)
 ------------------------------------------------------
-Self-contained "bundler" HTML. The real React/Babel component is a
-gzipped asset in a <script type="__bundler/manifest"> referenced by a
-<script type="text/babel" src="UUID">. Each file has TWO babel scripts:
-  1) shared chrome (tokens / Nav / Footer)   2) the page itself (LAST one)
-To read a page's design, extract the LAST text/babel asset:
-  - decode the JSON-escaped string on the __bundler/template line
-  - regex the text/babel src UUIDs, take the last
-  - base64-decode + gunzip that manifest entry -> JSX
-(A python helper for this was used at /tmp/extract_page.py — recreate if gone.)
+Files: BlackFriday.html, Top5.html, Blogs.html, Contact.html,
+       Shops.html, Prikbord.html, "Diski Homepage Sample.html".
+Self-contained "bundler" HTML (~2MB each). The page source is a
+gzipped asset in <script type="__bundler/manifest">, a JSON map of
+UUID -> { mime, compressed, data }, where data = base64(gzip(code)).
+(NOTE: the old "<script type=text/babel src=UUID>" recipe is stale —
+the current files have NO text/babel refs; decode the manifest instead.)
+To read a page's design:
+  - parse the __bundler/manifest JSON
+  - for each entry: base64-decode data, gunzip if compressed -> source
+  - the SHARED CHROME entry starts "// diski.nl — shared chrome ..."
+    (tokens F/C/LBL/LINK, Mark/Wordmark/Btn/Nav/Footer)
+  - the PAGE entry starts "// diski.nl — <Page name>"
+A working python helper lives in the session scratchpad (extract_page.py
+fallback dumps all entries by size); recreate if gone.
+
+VERIFY TOOLING (headless screenshots + layout metrics)
+------------------------------------------------------
+No puppeteer in the repo, but system Chrome is at
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome".
+Install puppeteer-core in the scratchpad (not the repo) and drive it.
+IMPORTANT: the live R2 feeds (spotted_promotions.json, shop_registry.json)
+are CORS-blocked from http://localhost — they 200 server-side but the
+browser XHR fails, so the page is stuck on skeletons in local dev.
+To see real cards, intercept those requests in puppeteer and re-serve
+the bodies (fetched server-side) with Access-Control-Allow-Origin:*.
 
 PER-PAGE APPROACH
 -----------------
