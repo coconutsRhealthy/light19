@@ -462,7 +462,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
         'description': v.description ?? `Video van ${name}.`,
         'thumbnailUrl': v.poster,
         'contentUrl': v.src,
-        'uploadDate': v.uploadDate ?? this.lastCheckedIso,
+        'uploadDate': this.toIsoDateTime(v.uploadDate ?? this.lastCheckedIso),
         'inLanguage': 'nl-NL',
         'publisher': { '@id': 'https://diski.nl/#organization' },
         ...(v.duration ? { 'duration': `PT${Math.round(v.duration)}S` } : {})
@@ -496,6 +496,16 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     const mm = String(d.getMonth() + 1).padStart(2, '0');
     const dd = String(d.getDate()).padStart(2, '0');
     return `${d.getFullYear()}-${mm}-${dd}`;
+  }
+
+  // Normalize a date(-time) string to a full ISO 8601 value that carries a timezone,
+  // as Google's VideoObject uploadDate requires. A bare "YYYY-MM-DD" is anchored to
+  // midnight UTC; values that already include a time + offset are passed through.
+  private toIsoDateTime(value: string): string {
+    if (!value) return value;
+    if (/T.*(Z|[+-]\d{2}:?\d{2})$/.test(value)) return value;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return `${value}T00:00:00Z`;
+    return value;
   }
 
   private formatValue(rawValue: string, isPercent: boolean): string {

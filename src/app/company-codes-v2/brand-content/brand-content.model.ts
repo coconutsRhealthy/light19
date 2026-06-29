@@ -22,7 +22,7 @@ export interface BrandVideo {
   duration?: number;    // seconds (for VideoObject duration)
   title?: string;       // VideoObject name + visible caption
   description?: string; // VideoObject description
-  uploadDate?: string;  // ISO date (VideoObject uploadDate; required for rich results)
+  uploadDate?: string;  // "YYYY-MM-DD" (or full ISO 8601); normalized to a tz-aware datetime at emit
   caption?: string;     // short visible line under the video
 }
 

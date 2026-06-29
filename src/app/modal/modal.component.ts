@@ -71,7 +71,7 @@ export class ModalComponent {
   // voorwaarden, landingspagina) for each live, confirmed Samsung promotion.
   get samsungPromotion(): SamsungPromotion | undefined {
     if (this._discount?.companySlug?.toLowerCase() !== 'samsung') return undefined;
-    return getSamsungPromotion(this._discount.discountCode);
+    return getSamsungPromotion(this._discount.label);
   }
 
   constructor(private analyticsEventService: AnalyticsEventService,

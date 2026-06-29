@@ -9,6 +9,7 @@ import { PrikbordComponent } from './prikbord/prikbord.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { SpaceNkBlogComponent } from './blogs/space-nk/space-nk-blog.component';
 import { LookfantasticBlogComponent } from './blogs/lookfantastic/lookfantastic-blog.component';
+import { UniqloBlogComponent } from './blogs/uniqlo/uniqlo-blog.component';
 import { Top5Component } from './top5/top5.component';
 import { ShareCodeComponent } from './share-code/share-code.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
@@ -25,6 +26,7 @@ export const routes: Routes = [
   { path: 'blogs', component: BlogsComponent },
   { path: 'blogs/space-nk', component: SpaceNkBlogComponent },
   { path: 'blogs/lookfantastic', component: LookfantasticBlogComponent },
+  { path: 'blogs/uniqlo', component: UniqloBlogComponent },
   { path: 'top5', component: Top5Component },
   { path: 'code-delen', component: ShareCodeComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },

@@ -155,7 +155,7 @@ export class AffiliateLinkService {
         dummyCode: 'OTRI3009T'
     },
     'zelesta.nl': {
-        url: 'https://tidd.ly/4dyxrUU',
+        url: 'https://zelesta-cpc-nl.mtpc.se/6289058',
         dummyCode: 'BEAUTY25VEL'
     },
     'smartphoto.nl': {
@@ -614,10 +614,10 @@ export class AffiliateLinkService {
         url: 'https://deals.flexispot.nl/c?c=36652&m=12&a=448474&r=&u=%2F',
         dummyCode: 'FSN55'
     },
-//     'gymshark': {
-//         url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
-//         dummyCode: 'AFSPORTPOEDER'
-//     },
+    'gymshark': {
+        url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
+        dummyCode: 'AFSPORTPOEDER'
+    },
     '24uomo': {
         url: 'https://tc.tradetracker.net/?c=37672&m=12&a=448474&r=&u=%2F',
         dummyCode: '12EXTRA'
@@ -775,7 +775,7 @@ export class AffiliateLinkService {
         dummyCode: 'PB10'
     },
     'wefashion': {
-        url: 'https://www.stylink.it/1ax9NfqR11p',
+        url: 'https://adtr.co/0j1yo1',
         dummyCode: 'MAYRAXWE'
     },
     'weekday': {
@@ -843,7 +843,7 @@ export class AffiliateLinkService {
         dummyCode: 'HOLIDAYS'
     },
     'sacha': {
-        url: 'https://www.stylink.it/x063BhOldge',
+        url: 'https://lt45.net/c/?si=13103&li=1576355&wi=421806&dl=',
         dummyCode: 'ELLE20'
     },
     'notino': {
@@ -1131,7 +1131,7 @@ export class AffiliateLinkService {
         dummyCode: '15LEUK'
     },
     'maje': {
-        url: 'https://glp8.net/c/?si=19592&li=1839487&wi=418827&dl=https%3A%2F%2Feu.maje.com%2F',
+        url: 'https://glp8.net/c/?si=19592&li=1839487&wi=418827&dl=https%3A%2F%2Feu.maje.com%2F%3Fcountry%3DNL',
         dummyCode: '10MAJE'
     },
     'hostinger': {
@@ -1167,7 +1167,7 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'parfumado': {
-        url: 'https://fr135.net/c/?si=15178&li=1658200&wi=418827&dl=',
+        url: 'https://fr135.net/c/?si=15178&li=1658200&wi=421806&dl=campaign%2Fhome',
         dummyCode: 'MEGAN50'
     },
     'vanastenbabysuperstore': {
@@ -1799,7 +1799,7 @@ export class AffiliateLinkService {
         dummyCode: 'ACTIE10'
     },
     'sissyboy': {
-        url: 'https://pzz.to/adfhFQ',
+        url: 'https://rkn3.net/c/?si=14446&li=1621003&wi=421806&dl=',
         dummyCode: '10ACTIE'
     },
     'sneakin': {
@@ -2105,6 +2105,14 @@ export class AffiliateLinkService {
     'bellaandduke': {
         url: 'https://tidd.ly/4xLF83M',
         dummyCode: 'BD10'
+    },
+    'isabelmarant': {
+        url: 'https://bdt9.net/c/?si=18138&li=1785243&wi=418827&dl=en-nl%3Fsrsltid%3DAfmBOopOFxxEisxItbMOWek0rLj1D0ebFo686MdhiSmpfe7VCAxZ6cpJ',
+        dummyCode: 'SHOP15'
+    },
+    'cider': {
+        url: 'https://fxo.co/JDoH',
+        dummyCode: 'NOAXX15'
     },
   };
 

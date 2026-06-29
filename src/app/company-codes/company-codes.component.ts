@@ -275,11 +275,11 @@ export class CompanyCodesComponent implements OnInit {
 
   // Samsung partner requirement: surface the official promo voorwaarden for each
   // live Samsung promotion on the /samsung page (same source as the modal).
-  get samsungPromoList(): { code: string; promo: SamsungPromotion }[] {
+  get samsungPromoList(): { code: string; label: string; promo: SamsungPromotion }[] {
     if (this.company?.toLowerCase() !== 'samsung') return [];
     return this.discountCodes
-      .map(c => ({ code: c.code, promo: samsungPromotions[c.code] }))
-      .filter((x): x is { code: string; promo: SamsungPromotion } => !!x.promo);
+      .map(c => ({ code: c.code, label: c.label ?? '', promo: samsungPromotions[c.label ?? ''] }))
+      .filter((x): x is { code: string; label: string; promo: SamsungPromotion } => !!x.promo);
   }
 
   sendGiftcardEventsToGa(wlsckUrl: string) {
