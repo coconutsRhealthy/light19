@@ -25,7 +25,14 @@ interface Category {
 export class Top5Component {
   currentMonth: string;
   logos: { [companyName: string]: string } = {};
-  expandedIndexes = new Set<number>();
+
+  // The redesign shows one category at a time, picked from the pill row
+  // (replacing the old per-category accordion). First category is shown by default.
+  selectedIndex = 0;
+
+  get activeCategory(): Category {
+    return this.categories[this.selectedIndex];
+  }
 
   categories: Category[] = [
     {
@@ -324,15 +331,9 @@ export class Top5Component {
     this.currentMonth = `${monthName} ${year}`;
   }
 
-  /**
-   * Open / sluit een categorie
-   */
-  toggleCategory(index: number): void {
-    if (this.expandedIndexes.has(index)) {
-      this.expandedIndexes.delete(index);
-    } else {
-      this.expandedIndexes.add(index);
-    }
+  /** Switch the visible category. */
+  selectCategory(index: number): void {
+    this.selectedIndex = index;
   }
 
   resolveShopUrl(shop: TopShop): string {
@@ -359,16 +360,6 @@ export class Top5Component {
     }
 
     return logoUrl;
-  }
-
-  getLogoImageClass(shop: TopShop) {
-    const logoUrl = this.getLogoUrl(shop);
-
-    if(logoUrl.includes("default_logo.webp") ){
-      return "tw-w-16 tw-h-16 md:tw-w-20 md:tw-h-20 tw-rounded-md tw-object-contain tw-bg-gray-50";
-    } else {
-      return "tw-w-16 tw-h-16 md:tw-w-20 md:tw-h-20 tw-rounded-md tw-object-contain tw-bg-gray-50 tw-border tw-border-gray-300";
-    }
   }
 
   sendEventToGa(shop: TopShop): void {

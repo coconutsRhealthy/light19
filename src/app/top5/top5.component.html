@@ -1,128 +1,91 @@
 <app-navbar></app-navbar>
 
-<div class="tw-max-w-5xl tw-mx-auto tw-px-4 tw-my-8">
+<main class="tw-font-body tw-text-ink tw-pb-16">
 
-    <h1 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-3">
-        Top 5 webshops per categorie
+  <!-- ===================== HERO ===================== -->
+  <section class="tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-pt-10 sm:tw-pt-14 tw-pb-2">
+    <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">
+      Bijgewerkt · {{ currentMonth }}
+    </div>
+    <h1 class="tw-font-title tw-font-bold tw-text-4xl sm:tw-text-5xl lg:tw-text-6xl tw-tracking-tight tw-mt-2">
+      Top 5 per categorie<span class="tw-text-dot">.</span>
     </h1>
-
-    <p class="tw-text-center tw-text-gray-500 tw-mb-6">
-        De top shops van {{ currentMonth }} volgens Diski
+    <p class="tw-font-body tw-text-base sm:tw-text-lg tw-text-ink/65 tw-mt-3 tw-max-w-xl tw-leading-relaxed">
+      De vijf populairste, geteste shops per categorie. Kies een categorie
+      om de beste van dit moment te zien.
     </p>
+  </section>
 
-    <!-- Categorieën -->
-    <div class="tw-space-y-10">
-        @for (category of categories; track category.title) {
-            <section>
-                <!-- Accordion -->
-                <div class="tw-border tw-rounded-xl tw-shadow-sm tw-overflow-hidden">
+  <!-- ===================== CATEGORY PILLS ===================== -->
+  <section class="tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-6 sm:tw-mt-8" aria-label="Categorieën">
+    <div class="tw-flex tw-flex-wrap tw-gap-2">
+      @for (category of categories; track category.title; let i = $index) {
+        <button (click)="selectCategory(i)"
+          class="tw-rounded-full tw-font-body tw-text-sm tw-py-2 tw-px-4 tw-transition"
+          [class]="selectedIndex === i
+            ? 'tw-bg-ink tw-text-cream tw-font-semibold'
+            : 'tw-bg-panel tw-border tw-border-ink/10 tw-text-ink/70 hover:tw-text-ink'">
+          {{ category.title }}
+        </button>
+      }
+    </div>
+  </section>
 
-                    <!-- Header -->
-                    <button
-                            type="button"
-                            (click)="toggleCategory($index)"
-                            class="tw-w-full tw-flex tw-justify-between tw-items-center
-                       tw-px-4 tw-py-3 tw-font-semibold
-                       tw-bg-gray-50 hover:tw-bg-gray-100
-                       tw-transition"
-                    >
-                <span class="tw-mx-auto">
-                  <h2>Bekijk top 5 {{ category.title }}</h2>
-                </span>
-
-                        <svg
-                                class="tw-w-5 tw-h-5 tw-ml-2 tw-transition-transform tw-duration-200"
-                                [class.tw-rotate-180]="expandedIndexes.has($index)"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                        >
-                            <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M19 9l-7 7-7-7"
-                            />
-                        </svg>
-                    </button>
-
-                    <!-- Content -->
-                    @if (expandedIndexes.has($index)) {
-                    <ul class="tw-divide-y">
-                        @for (shop of category.shops; track shop.name) {
-
-                        <li>
-                            <a
-                                    [href]="resolveShopUrl(shop)"
-                                    (click)="sendEventToGa(shop)"
-                                    target="_blank"
-                                    rel="noopener"
-                                    class="tw-flex tw-items-center tw-justify-between
-                                       tw-px-4 tw-py-3
-                                       hover:tw-bg-gray-50 tw-transition
-                                       tw-no-underline
-                                       hover:tw-cursor-pointer"
-                            >
-
-                                <!-- LINKS: ranking + shopnaam -->
-                                <div class="tw-flex tw-items-center">
-                                    <span
-                                            class="tw-flex tw-items-center tw-justify-center
-                                               tw-w-7 tw-h-7 tw-mr-3
-                                               tw-rounded-full tw-bg-indigo-600
-                                               tw-text-white tw-text-sm tw-font-bold"
-                                    >
-                                        {{ $index + 1 }}
-                                    </span>
-
-                                    <span class="tw-text-indigo-600 tw-font-medium">
-                                        {{ shop.name }}
-                                    </span>
-                                </div>
-
-                                <!-- RECHTS: logo -->
-                                <img
-                                        [src]="getLogoUrl(shop)"
-                                        [class]="getLogoImageClass(shop)"
-                                        alt="{{ shop.name }} logo"
-                                />
-
-                            </a>
-                        </li>
-
-                        }
-                    </ul>
-                    }
-
-                </div>
-            </section>
-        }
+  <!-- ===================== ACTIVE CATEGORY · TOP 5 ===================== -->
+  <section class="tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-8 sm:tw-mt-10">
+    <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[12px] tw-text-ink/55 tw-mb-4">
+      Top 5 · {{ activeCategory.title }}
     </div>
 
-    <section class="tw-max-w-3xl tw-mx-auto tw-mt-16 tw-text-gray-700">
-        <h2 class="tw-text-xl tw-font-semibold tw-mb-3">
-            Hoe bepalen wij deze top 5 webshops?
-        </h2>
+    <ol class="tw-list-none tw-p-0 tw-m-0 tw-flex tw-flex-col tw-gap-3">
+      @for (shop of activeCategory.shops; track shop.name; let i = $index) {
+        <li>
+          <a [href]="resolveShopUrl(shop)" (click)="sendEventToGa(shop)"
+             target="_blank" rel="noopener noreferrer sponsored"
+             class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-px-4 sm:tw-px-6 tw-py-4 tw-flex tw-items-center tw-gap-3 sm:tw-gap-5 tw-no-underline tw-text-ink hover:tw-shadow-md active:tw-scale-[0.99] tw-transition tw-duration-200"
+             [class.tw-ring-2]="i === 0" [class.tw-ring-sky]="i === 0">
+            <!-- rank -->
+            <span class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl tw-leading-none tw-tracking-tight tw-w-7 sm:tw-w-9 tw-text-center tw-shrink-0"
+                  [class]="i === 0 ? 'tw-text-link' : 'tw-text-ink/20'">{{ i + 1 }}</span>
+            <!-- logo -->
+            <img [src]="getLogoUrl(shop)" [alt]="shop.name + ' logo'" loading="lazy" width="48" height="48"
+                 class="tw-w-11 tw-h-11 sm:tw-w-12 sm:tw-h-12 tw-rounded-xl tw-object-contain tw-bg-cream tw-border tw-border-ink/10 tw-p-1 tw-shrink-0" />
+            <!-- name -->
+            <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-leading-tight tw-min-w-0 tw-break-words tw-flex-1">{{ shop.name }}</span>
+            <!-- cta -->
+            <span class="tw-font-body tw-text-sm tw-font-semibold tw-text-link tw-shrink-0 group-hover:tw-translate-x-0.5 tw-transition">Naar shop →</span>
+          </a>
+        </li>
+      }
+    </ol>
+  </section>
 
-        <p class="tw-mb-3">
-            Op Diski vergelijken we dagelijks kortingscodes, deals en acties van honderden webshops.
-            Op basis van populariteit, betrouwbaarheid en actuele aanbiedingen stellen wij per categorie
-            een Top 5 webshops samen. Hierboven vind je onze selectie voor deze maand.
-        </p>
-
-        <p class="tw-mb-3">
-            De top 5 webshops per categorie worden samengesteld op basis van
-            populariteit bij onze bezoekers, actuele kortingscodes, betrouwbaarheid
-            en gebruikservaring. We volgen dagelijks welke deals het meest worden
-            gebruikt op Diski.
-        </p>
-
+  <!-- ===================== SEO / EXPLAINER ===================== -->
+  <section class="tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-14 sm:tw-mt-20">
+    <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-p-6 sm:tw-p-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight">
+        Hoe bepalen wij deze top 5 webshops<span class="tw-text-dot">?</span>
+      </h2>
+      <div class="tw-mt-4 tw-space-y-3 tw-font-body tw-text-ink/70 tw-leading-relaxed">
         <p>
-            Mis je een webshop of denk je dat een shop hoger hoort te staan?
-            Neem gerust contact met ons op — onze lijsten worden regelmatig bijgewerkt.
+          Op Diski vergelijken we dagelijks kortingscodes, deals en acties van honderden webshops.
+          Op basis van populariteit, betrouwbaarheid en actuele aanbiedingen stellen wij per categorie
+          een Top 5 webshops samen. Hierboven vind je onze selectie voor deze maand.
         </p>
-    </section>
-</div>
+        <p>
+          De top 5 webshops per categorie worden samengesteld op basis van
+          populariteit bij onze bezoekers, actuele kortingscodes, betrouwbaarheid
+          en gebruikservaring. We volgen dagelijks welke deals het meest worden
+          gebruikt op Diski.
+        </p>
+        <p>
+          Mis je een webshop of denk je dat een shop hoger hoort te staan?
+          Neem gerust contact met ons op — onze lijsten worden regelmatig bijgewerkt.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <app-footer></app-footer>

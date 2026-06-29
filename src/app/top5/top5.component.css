@@ -1,0 +1,9 @@
+/* Top 5 — new diski look. Page is styled with Tailwind utilities.
+
+   The shared app.component.css applies `h1 { text-align: center }` (and h2).
+   Angular scopes it with the component attribute, which outranks Tailwind's
+   utilities, so re-assert left alignment at matching specificity via :host. */
+:host h1,
+:host h2 {
+  text-align: left;
+}

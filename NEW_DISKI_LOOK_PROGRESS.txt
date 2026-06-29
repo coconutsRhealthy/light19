@@ -32,9 +32,21 @@ DONE (committed)
       it outranks .tw-text-left; left-align is forced via :host h1,h2 in
       blackfriday.component.css. Same trap applies to the remaining pages.
 
+[x] Top 5 /top5 src/app/top5/*
+    - light hero, left-aligned, dot accent (mockup uses a light hero, not dark)
+    - replaced the 28-category accordion (expandedIndexes/toggleCategory) with
+      a wrapping pill selector (selectedIndex/selectCategory + activeCategory
+      getter) showing one category's ranked rows — matches the mockup
+    - rows: big rank number (#1 in link colour + sky ring), logo, shop name,
+      "Naar shop →"; kept resolveShopUrl (affiliate), getLogoUrl, sendEventToGa
+    - mockup's per-row discount code + "Kopieer" button dropped: NO backing
+      data (real TopShop has only name/url/affiliateKey, no codes/offers)
+    - removed unused getLogoImageClass; added top5.component.css (was referenced
+      in styleUrls but never existed) with the :host h1,h2 left-align override
+    - SEO explainer kept, restyled into a panel card
+
 REMAINING (still old style; mockups ready in mockups/)
 ------------------------------------------------------
-[ ] Top 5         /top5         src/app/top5/*         -> mockups/Top5.html
 [ ] Blogs         /blogs        src/app/blogs/*        -> mockups/Blogs.html
 [ ] Contact       /contact      src/app/contact/*      -> mockups/Contact.html
 [ ] Individual brand pages (large; ~1200 routes) - not started
