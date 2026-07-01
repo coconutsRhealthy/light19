@@ -25,7 +25,6 @@
   <link rel="dns-prefetch" href="https://www.awin1.com">
   <link rel="dns-prefetch" href="https://a1.awin1.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <link rel="dns-prefetch" href="https://s.skimresources.com">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVP906XC65"></script>
@@ -58,13 +57,6 @@
         function loadThirdParty() {
           if (loaded) return;
           loaded = true;
-
-          // Google AdSense
-          var ad = document.createElement('script');
-          ad.async = true;
-          ad.crossOrigin = 'anonymous';
-          ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3761954510194394';
-          document.head.appendChild(ad);
 
           // Skimlinks
           var sk = document.createElement('script');
