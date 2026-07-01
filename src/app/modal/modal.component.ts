@@ -6,7 +6,6 @@ import { getSamsungPromotion, SamsungPromotion } from '../data/samsung-promotion
 import { FormsModule } from '@angular/forms';
 
 declare let gtag: Function;
-declare let fbq: Function;
 
 @Component({
   selector: 'app-modal',
@@ -157,12 +156,6 @@ export class ModalComponent {
         this.showTooltip();
         // The user actually took the code — the key conversion of the normal flow.
         this.trackCodeEvent('code_copy', this.discount?.companySlug?.toLowerCase());
-        if (typeof fbq === 'function') {
-          fbq('trackCustom', 'CopyCode', {
-            company: this.discount?.company ?? '',
-            code: text,
-          });
-        }
       },
       (err) => {
         console.error('Failed to copy: ', err);
