@@ -1,25 +1,25 @@
 @if (isVisible) {
 <!-- Backdrop -->
 <div
-        class="tw-fixed tw-inset-0 tw-bg-black/40 tw-backdrop-blur-sm tw-z-40 tw-animate-fadeIn"
+        class="tw-fixed tw-inset-0 tw-bg-ink/40 tw-backdrop-blur-sm tw-z-40 tw-animate-fadeIn"
         (click)="closeModal()"
 ></div>
 
 <!-- Modal wrapper -->
-<div class="tw-fixed tw-inset-0 tw-flex tw-items-center tw-justify-center tw-z-50">
+<div class="tw-fixed tw-inset-0 tw-flex tw-items-center tw-justify-center tw-z-50 tw-font-body tw-text-ink">
 
     <!-- ⚫ BLACK FRIDAY MODAL -->
     @if(isBlackFriday(discount)) {
-    <div class="tw-bg-white tw-rounded-3xl tw-shadow-2xl tw-border tw-border-gray-100 tw-w-[90%] sm:tw-w-[420px] tw-overflow-hidden tw-animate-slideUp">
+    <div class="tw-bg-panel tw-rounded-3xl tw-shadow-2xl tw-border tw-border-ink/10 tw-w-[90%] sm:tw-w-[420px] tw-overflow-hidden tw-animate-slideUp">
 
         <!-- Header -->
-        <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-gray-200">
-            <h2 class="tw-font-bold tw-text-lg tw-text-gray-900">
+        <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-ink/10">
+            <h2 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink">
                 {{ discount.company }} deal 🔥
             </h2>
             <button
                     (click)="closeModal()"
-                    class="tw-text-gray-400 hover:tw-text-gray-600 tw-transition"
+                    class="tw-text-ink/40 hover:tw-text-ink tw-transition"
                     aria-label="Close"
             >
                 ✕
@@ -29,11 +29,11 @@
         <!-- Body -->
         <div class="tw-px-6 tw-py-6 tw-space-y-5">
 
-            <p class="tw-text-sm tw-leading-relaxed">
+            <p class="tw-text-sm tw-leading-relaxed tw-text-ink/80">
                 {{ discount.discountCode.replace('BF_', '') }}
             </p>
 
-            <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
+            <div class="tw-flex tw-justify-between tw-text-sm tw-text-ink/70">
                 <span>Gespot op</span>
                 <span>{{ getCorrectFormatOfCodeDate(discount.date) }}</span>
             </div>
@@ -41,12 +41,12 @@
         </div>
 
         <!-- Footer -->
-        <div class="tw-bg-gray-50 tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-gray-200">
+        <div class="tw-bg-cream tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-ink/10">
             <a
                     [href]="getDiscountUrl()"
                     target="_blank"
                     rel="sponsored"
-                    class="tw-bg-amber-500 hover:tw-bg-amber-600 tw-text-white tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
+                    class="tw-bg-ink tw-text-cream tw-font-semibold tw-rounded-full tw-px-6 tw-py-2.5 hover:tw-opacity-90 tw-transition"
             >
                 Naar winkel →
             </a>
@@ -56,11 +56,11 @@
 
     <!-- ⭐ NORMALE MODAL (fallback) -->
     @else {
-    <div class="tw-bg-white tw-rounded-3xl tw-shadow-2xl tw-border tw-border-gray-100 tw-w-[90%] sm:tw-w-[420px] tw-overflow-hidden tw-animate-slideUp">
+    <div class="tw-bg-panel tw-rounded-3xl tw-shadow-2xl tw-border tw-border-ink/10 tw-w-[90%] sm:tw-w-[420px] tw-overflow-hidden tw-animate-slideUp">
 
         <!-- Header -->
-        <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-gray-200">
-            <h2 class="tw-font-bold tw-text-lg tw-text-gray-900">
+        <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-ink/10">
+            <h2 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink">
                 @if (discount.discountCode.startsWith('http')) {
                     🎉 {{ discount.company }} giftcard
                 } @else {
@@ -69,7 +69,7 @@
             </h2>
             <button
                     (click)="closeModal()"
-                    class="tw-text-gray-400 hover:tw-text-gray-600 tw-transition"
+                    class="tw-text-ink/40 hover:tw-text-ink tw-transition"
                     aria-label="Close"
             >
                 ✕
@@ -82,13 +82,13 @@
 
             <!-- EMAIL BLOCK -->
             @if (showEmailBlock) {
-            <div class="tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-lg tw-p-3 sm:tw-p-4 tw-space-y-2 sm:tw-space-y-3">
+            <div class="tw-bg-cream tw-border tw-border-ink/10 tw-rounded-xl tw-p-3 sm:tw-p-4 tw-space-y-2 sm:tw-space-y-3">
 
-                <div class="tw-text-lg sm:tw-text-lg tw-text-gray-700">
+                <div class="tw-font-title tw-font-bold tw-text-lg tw-text-ink">
                     Ontgrendel de kortingscode
                 </div>
 
-                <div class="tw-text-base sm:tw-text-base tw-text-gray-500">
+                <div class="tw-text-base sm:tw-text-base tw-text-ink/60">
                     Vul eenmalig je e-mailadres in om deze en andere codes op diski.nl zichtbaar te maken
                 </div>
 
@@ -98,18 +98,18 @@
                             type="email"
                             [placeholder]="emailPlaceholder"
                             name="email"
-                            class="tw-flex-1 tw-border tw-border-gray-300 tw-rounded-md
-                   tw-px-2 tw-py-1 sm:tw-px-3 sm:tw-py-2
-                   focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-400 tw-transition tw-text-sm sm:tw-text-sm"
+                            class="tw-flex-1 tw-min-w-0 tw-bg-panel tw-border tw-border-ink/20 tw-rounded-full
+                   tw-px-3 tw-py-1.5 sm:tw-px-4 sm:tw-py-2 tw-text-ink placeholder:tw-text-ink/40
+                   focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-sky tw-transition tw-text-sm sm:tw-text-sm"
                             [disabled]="isUnlocked"
                     />
 
                     <button
                             (click)="unlockCode()"
-                            class="tw-bg-blue-600 tw-text-white tw-font-medium
-                   tw-px-2 tw-py-1 sm:tw-px-4 sm:tw-py-2 tw-rounded-md
-                   hover:tw-bg-blue-700 tw-transition disabled:tw-opacity-50
-                   tw-text-xs sm:tw-text-sm"
+                            class="tw-bg-ink tw-text-cream tw-font-semibold
+                   tw-px-3 tw-py-1.5 sm:tw-px-5 sm:tw-py-2 tw-rounded-full
+                   hover:tw-opacity-90 tw-transition disabled:tw-opacity-40
+                   tw-text-xs sm:tw-text-sm tw-whitespace-nowrap"
                             [disabled]="!mailAddress || isUnlocked || !acceptedPrivacy"
                     >
                         Toon code
@@ -120,18 +120,18 @@
                 <div class="tw-space-y-2">
 
                     <!-- Privacy (required) -->
-                    <label class="tw-flex tw-items-start tw-gap-2 tw-text-xs tw-text-gray-600">
+                    <label class="tw-flex tw-items-start tw-gap-2 tw-text-xs tw-text-ink/60">
                         <input
                                 type="checkbox"
                                 [(ngModel)]="acceptedPrivacy"
-                                class="tw-mt-0.5"
+                                class="tw-mt-0.5 tw-accent-ink"
                         />
-                        <span class="tw-text-[9px] sm:tw-text-xs tw-text-gray-500">
+                        <span class="tw-text-[9px] sm:tw-text-xs tw-text-ink/60">
                           Ik heb de
                           <a href="/privacy-policy"
                              target="_blank"
                              rel="noopener noreferrer"
-                             class="tw-text-blue-600 hover:tw-underline">
+                             class="tw-text-link hover:tw-underline">
                             privacyverklaring
                           </a> gelezen en ga hiermee akkoord, en ontvang graag af en toe exclusieve kortingen en deals*
                         </span>
@@ -139,13 +139,13 @@
 
                     <!-- Error message -->
                     @if (showPrivacyError) {
-                        <div class="tw-text-red-500 tw-text-xs">
+                        <div class="tw-text-red-600 tw-text-xs">
                             Je moet akkoord gaan met de privacyverklaring
                         </div>
                     }
 
                     <!-- Verplicht veld uitleg -->
-                    <div class="tw-text-gray-500 tw-text-[10px] sm:tw-text-xs tw-mt-1">
+                    <div class="tw-text-ink/45 tw-text-[10px] sm:tw-text-xs tw-mt-1">
                         * Verplicht veld
                     </div>
                 </div>
@@ -154,13 +154,13 @@
 
             <!-- CODE -->
             <div class="tw-flex tw-items-center tw-justify-between">
-                <span class="tw-font-semibold tw-text-gray-600">Code</span>
+                <span class="tw-font-semibold tw-text-ink/60">Code</span>
 
                 @if (discount.discountCode.startsWith('http')) {
                     <a [href]="discount.discountCode"
                        target="_blank"
                        (click)="sendGiftcardEventsToGa(discount.company)"
-                       class="tw-text-blue-600 tw-font-bold hover:tw-underline hover:tw-text-blue-700 tw-transition"
+                       class="tw-text-link tw-font-bold hover:tw-underline tw-transition"
                     >
                         KLIK
                     </a>
@@ -168,7 +168,7 @@
 
                 <!-- LOCKED STATE -->
                 @if (!isUnlocked) {
-                    <div class="tw-flex tw-items-center tw-gap-2 tw-text-gray-400 tw-text-sm tw-bg-gray-100 tw-border tw-border-gray-200 tw-rounded-md tw-px-3 tw-py-1.5">
+                    <div class="tw-flex tw-items-center tw-gap-2 tw-text-ink/45 tw-text-sm tw-bg-cream tw-border tw-border-ink/10 tw-rounded-md tw-px-3 tw-py-1.5">
                         🔒 Code verborgen
                     </div>
                 }
@@ -178,11 +178,11 @@
                 <div class="tw-flex tw-items-center tw-gap-2">
                 <button
                         (click)="copyToClipboard(discountCode)"
-                        class="tw-group tw-flex tw-items-center tw-gap-2 tw-font-mono tw-text-gray-900 tw-text-base tw-bg-green-50 tw-border tw-border-green-200 tw-rounded-md tw-px-3 tw-py-1.5 hover:tw-bg-green-100 tw-transition tw-relative tw-w-fit"
+                        class="tw-group tw-flex tw-items-center tw-gap-2 tw-font-mono tw-text-ink tw-text-base tw-bg-sky/25 tw-border tw-border-sky/60 tw-rounded-md tw-px-3 tw-py-1.5 hover:tw-bg-sky/40 tw-transition tw-relative tw-w-fit"
                 >
                     <span>{{ discountCode }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg"
-                         class="tw-h-4 tw-w-4 tw-text-gray-500 group-hover:tw-text-gray-700 tw-transition"
+                         class="tw-h-4 tw-w-4 tw-text-ink/50 group-hover:tw-text-ink tw-transition"
                          fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <rect x="9" y="9" width="13" height="13" rx="2"/>
                         <rect x="2" y="2" width="13" height="13" rx="2"/>
@@ -190,9 +190,9 @@
 
                     @if (isCopied) {
                     <div class="tw-absolute tw--top-6 tw-left-1/2 tw--translate-x-1/2
-                                    tw-bg-gray-900 tw-text-white tw-text-xs tw-rounded
+                                    tw-bg-ink tw-text-cream tw-text-xs tw-rounded
                                     tw-px-2 tw-py-[2px] tw-shadow-md">
-                        Copied!
+                        Gekopieerd!
                     </div>
                     }
                 </button>
@@ -200,7 +200,7 @@
                 @if (canShare) {
                 <button
                         (click)="shareCode()"
-                        class="tw-flex tw-items-center tw-gap-1.5 tw-text-sm tw-text-gray-500 hover:tw-text-gray-700 tw-border tw-border-gray-200 tw-rounded-md tw-px-2.5 tw-py-1.5 hover:tw-bg-gray-50 tw-transition"
+                        class="tw-flex tw-items-center tw-gap-1.5 tw-text-sm tw-text-ink/55 hover:tw-text-ink tw-border tw-border-ink/15 tw-rounded-md tw-px-2.5 tw-py-1.5 hover:tw-bg-cream tw-transition"
                         aria-label="Deel code"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-4 tw-w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -216,37 +216,37 @@
             </div>
 
             <!-- Discount -->
-            <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
+            <div class="tw-flex tw-justify-between tw-text-sm tw-text-ink/70">
                 <span>Korting</span>
-                <span class="tw-font-medium">
+                <span class="tw-font-medium tw-text-ink">
                 {{ getCorrectFormatDiscountPercentage(discount.percentage) }}
               </span>
             </div>
 
             <!-- Geldig op -->
             @if (discount.label) {
-            <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
+            <div class="tw-flex tw-justify-between tw-text-sm tw-text-ink/70">
                 <span>Geldig op</span>
-                <span class="tw-font-medium">{{ discount.label }}</span>
+                <span class="tw-font-medium tw-text-ink">{{ discount.label }}</span>
             </div>
             }
 
             <!-- Date -->
-            <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
+            <div class="tw-flex tw-justify-between tw-text-sm tw-text-ink/70">
                 <span>Gespot op</span>
                 <span>{{ getCorrectFormatOfCodeDate(discount.date) }}</span>
             </div>
 
             <!-- Samsung: officiële actievoorwaarden -->
             @if (samsungPromotion) {
-            <div class="tw-border-t tw-border-gray-200 tw-pt-4 tw-space-y-2">
-                <div class="tw-font-semibold tw-text-gray-800 tw-text-sm">Actievoorwaarden</div>
-                <p class="tw-text-sm tw-text-gray-700 tw-leading-relaxed">{{ samsungPromotion.promoText }}</p>
-                <div class="tw-flex tw-justify-between tw-text-sm tw-text-gray-700">
+            <div class="tw-border-t tw-border-ink/10 tw-pt-4 tw-space-y-2">
+                <div class="tw-font-semibold tw-text-ink tw-text-sm">Actievoorwaarden</div>
+                <p class="tw-text-sm tw-text-ink/70 tw-leading-relaxed">{{ samsungPromotion.promoText }}</p>
+                <div class="tw-flex tw-justify-between tw-text-sm tw-text-ink/70">
                     <span>Looptijd</span>
-                    <span class="tw-font-medium">{{ samsungPromotion.period }}</span>
+                    <span class="tw-font-medium tw-text-ink">{{ samsungPromotion.period }}</span>
                 </div>
-                <ul class="tw-list-disc tw-pl-5 tw-text-xs tw-text-gray-500 tw-space-y-1">
+                <ul class="tw-list-disc tw-pl-5 tw-text-xs tw-text-ink/55 tw-space-y-1">
                     @for (condition of samsungPromotion.conditions; track condition) {
                         <li>{{ condition }}</li>
                     }
@@ -254,7 +254,7 @@
                 <a [href]="samsungPromotion.landingUrl"
                    target="_blank"
                    rel="sponsored"
-                   class="tw-inline-block tw-text-sm tw-text-blue-600 hover:tw-underline tw-font-medium">
+                   class="tw-inline-block tw-text-sm tw-text-link hover:tw-underline tw-font-medium">
                     Bekijk de actiepagina →
                 </a>
             </div>
@@ -263,12 +263,12 @@
         }
 
         <!-- Footer -->
-        <div class="tw-bg-gray-50 tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-gray-200">
+        <div class="tw-bg-cream tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-ink/10">
             <a
                     [href]="getDiscountUrl()"
                     target="_blank"
                     rel="sponsored"
-                    class="tw-bg-amber-500 hover:tw-bg-amber-600 tw-text-white tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
+                    class="tw-bg-ink tw-text-cream tw-font-semibold tw-rounded-full tw-px-6 tw-py-2.5 hover:tw-opacity-90 tw-transition"
             >
                 @if (discount.discountCode.startsWith('http')) {
                     Naar giftcard →
