@@ -57,8 +57,13 @@ export class ModalComponent {
         this.mailAddress = savedEmail ?? '';
         this.isUnlocked = true;
         this.showEmailBlock = false;
+        // Denominator for the normal flow: modal opened with the code visible
+        // immediately (ungated brand, or a returning user who already unlocked).
+        this.trackCodeEvent('code_open_nogate', companySlug);
       } else {
         this.showEmailBlock = true;
+        // Denominator for the email-gate funnel: the gate was actually shown.
+        this.trackCodeEvent('code_gate_shown', companySlug);
       }
     }
   }
@@ -150,6 +155,8 @@ export class ModalComponent {
     navigator.clipboard.writeText(text).then(
       () => {
         this.showTooltip();
+        // The user actually took the code — the key conversion of the normal flow.
+        this.trackCodeEvent('code_copy', this.discount?.companySlug?.toLowerCase());
         if (typeof fbq === 'function') {
           fbq('trackCustom', 'CopyCode', {
             company: this.discount?.company ?? '',
@@ -168,11 +175,6 @@ export class ModalComponent {
     setTimeout(() => {
       this.isCopied = false;
     }, 1500);
-  }
-
-  sendEventToGa(eventName: string, eventLabel: string): void {
-    var eventLabelToUse = "copycode_" + eventLabel.toLowerCase();
-    this.analyticsEventService.sendEventToGa(eventName, eventLabelToUse);
   }
 
   sendGiftcardEventsToGa(company: string): void {
@@ -261,5 +263,21 @@ export class ModalComponent {
         this.discount?.company ?? '',
         window.location.pathname
       );
+
+      // Numerator for the email-gate funnel: the user actually submitted their
+      // email to reveal the code. unlock / gate_shown = fill-in rate.
+      this.trackCodeEvent('code_unlock_email', this.discount?.companySlug?.toLowerCase());
+  }
+
+  /**
+   * Fire a code-interaction event to GA, both an overall label (for the total)
+   * and a per-company label (to compare brands). Used for the email-gate funnel
+   * (code_gate_shown / code_unlock_email) and the copy action (code_copy).
+   */
+  private trackCodeEvent(action: string, companySlug?: string): void {
+    this.analyticsEventService.sendEventToGa(action, action);
+    if (companySlug) {
+      this.analyticsEventService.sendEventToGa(action, `${action}_${companySlug}`);
+    }
   }
 }
