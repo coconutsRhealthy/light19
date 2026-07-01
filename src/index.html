@@ -28,9 +28,15 @@
   <meta name="d76d0d3f7a550ad" content="8fbff403f984b465d10e71c0d4ecb26f" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- diski brand fonts: self-hosted, preload the above-the-fold weights -->
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/fraunces-latin-700.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-latin-400.woff2" crossorigin>
+  <!-- NB: do NOT preload the brand fonts. The LCP element is hero TEXT with
+       font-display:swap, so it paints in the fallback immediately and never waits
+       for the web font. Preloading the fonts (highest priority) only starved the
+       async stylesheet / render path on mobile — measured LCP 4.8s -> 1.7s once the
+       preloads were removed. Fonts load at normal priority and swap in a beat later. -->
+
+  <!-- Shop logos + og:image are served from jsDelivr; warm the connection early
+       (DNS+TCP+TLS off the critical path) to help mobile LCP. -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <link rel="dns-prefetch" href="https://www.awin1.com">
   <link rel="dns-prefetch" href="https://a1.awin1.com">

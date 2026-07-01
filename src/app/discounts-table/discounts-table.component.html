@@ -89,7 +89,7 @@
       <div class="tw-grid tw-grid-cols-3 sm:tw-grid-cols-4 md:tw-grid-cols-6 tw-gap-3">
         @for (b of popularLogoBrands; track b.slug) {
           <a [routerLink]="['/' + b.slug + '/']" class="tw-bg-white tw-border tw-border-ink/10 tw-rounded-2xl tw-h-20 sm:tw-h-24 tw-flex tw-items-center tw-justify-center tw-p-3 tw-shadow-[0_8px_24px_rgba(67,48,46,0.05)] tw-no-underline hover:tw-shadow-md tw-transition">
-            <img [src]="b.logo" [alt]="b.name + ' logo'" class="tw-max-h-12 tw-max-w-full tw-object-contain" loading="lazy" />
+            <img [src]="b.logo" [alt]="b.name + ' logo'" width="112" height="48" class="tw-max-h-12 tw-max-w-full tw-object-contain" loading="lazy" />
           </a>
         }
       </div>
@@ -174,6 +174,7 @@
                 <img
                   [src]="getLogoUrl(discount.company)"
                   [alt]="getDisplayName(discount.company) + ' logo'"
+                  width="44" height="44"
                   class="tw-w-11 tw-h-11 tw-rounded-xl tw-object-contain tw-bg-white tw-border tw-border-ink/10 tw-p-1 tw-shrink-0"
                   loading="lazy"
                 />
