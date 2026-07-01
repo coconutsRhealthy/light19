@@ -5,14 +5,14 @@
 }
 
 @if (discountCodes.length > 0) {
-<div class="tw-flex tw-flex-col tw-min-h-screen tw-bg-pink-50">
+<div class="tw-flex tw-flex-col tw-min-h-screen tw-bg-cream tw-font-body tw-text-ink">
   <app-navbar></app-navbar>
     <!-- Social Banner: schermbreed -->
-    <div class="tw-w-full tw-bg-yellow-100 tw-text-pink-800 tw-text-[10px] md:tw-text-xs tw-text-center tw-font-small tw-border-b tw-border-gray-200 tw-relative">
+    <div class="tw-w-full tw-bg-butter tw-text-ink tw-text-[10px] md:tw-text-xs tw-text-center tw-font-small tw-border-b tw-border-ink/10 tw-relative">
 
         <!-- Sluitknop -->
         <button
-                class="tw-absolute tw-top-0 tw-right-0 tw-m-1 tw-text-pink-800 hover:tw-text-pink-900 tw-font-bold tw-text-sm"
+                class="tw-absolute tw-top-0 tw-right-0 tw-m-1 tw-text-ink/60 hover:tw-text-ink tw-font-bold tw-text-sm"
                 onclick="this.parentElement.style.display='none'">&times;</button>
 
         <!-- Social tekst -->
@@ -20,45 +20,45 @@
             &rarr; Volg &#64;wiegeeftkorting op
             <a href="https://www.instagram.com/wiegeeftkorting/"
                onclick="gtag('event', 'insta', {'event_category': 'Social', 'event_label': 'insta_top'});"
-               class="tw-underline tw-font-semibold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">insta</a> en
+               class="tw-underline tw-font-semibold hover:tw-opacity-80 tw-text-link tw-transition-colors">insta</a> en
             <a href="https://www.tiktok.com/&#64;wiegeeftkorting2"
                onclick="gtag('event', 'tiktok', {'event_category': 'Social', 'event_label': 'tiktok_top'});"
-               class="tw-underline tw-font-semibold hover:tw-text-blue-500 tw-text-blue-600 tw-transition-colors">tiktok</a>
+               class="tw-underline tw-font-semibold hover:tw-opacity-80 tw-text-link tw-transition-colors">tiktok</a>
             voor code updates
         </div>
 
     </div>
 
   <div class="tw-w-full tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">
-    <nav aria-label="Breadcrumb" class="tw-text-xs tw-text-gray-500 tw-mt-4 tw-mb-2">
+    <nav aria-label="Breadcrumb" class="tw-text-xs tw-text-ink/55 tw-mt-4 tw-mb-2">
       <ol class="tw-flex tw-items-center tw-gap-1">
-        <li><a routerLink="/" class="hover:tw-underline tw-text-blue-600">Kortingscodes</a></li>
+        <li><a routerLink="/" class="hover:tw-underline tw-text-link">Kortingscodes</a></li>
         <li aria-hidden="true">&rsaquo;</li>
-        <li class="tw-text-gray-700 tw-font-medium" aria-current="page">{{ webshopName }}</li>
+        <li class="tw-text-ink/70 tw-font-medium" aria-current="page">{{ webshopName }}</li>
       </ol>
     </nav>
-    <h1 class="tw-text-3xl md:tw-text-4xl tw-font-extrabold tw-text-700 tw-mt-4 tw-mb-4 tw-text-center">{{ webshopName }} kortingscode</h1>
-    <h2 class="tw-text-center">Alle werkende {{ webshopName }} kortingscodes in {{ monthYear }}</h2>
+    <h1 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl lg:tw-text-5xl tw-tracking-tight tw-text-ink tw-mt-4 tw-mb-2">{{ webshopName }} kortingscode</h1>
+    <h2 class="tw-font-body tw-text-base sm:tw-text-lg tw-text-ink/65 tw-mb-2">Alle werkende {{ webshopName }} kortingscodes in {{ monthYear }}</h2>
     <!-- Discount Codes Cards -->
     <div class="tw-flex tw-flex-col tw-space-y-4 tw-mt-6 tw-mb-6">
       @for (code of discountCodes; track code; let i = $index) {
           @if (code.code.startsWith('http')) {
               <!-- Giftcard card, full clickable -->
-              <a [href]="code.code" target="_blank" (click)="sendGiftcardEventsToGa(code.code)" class="tw-block">
-                <div class="tw-bg-yellow-100 tw-p-4 tw-rounded-2xl tw-shadow-md hover:tw-bg-yellow-200 tw-transition-colors">
+              <a [href]="code.code" target="_blank" (click)="sendGiftcardEventsToGa(code.code)" class="tw-block tw-no-underline">
+                <div class="tw-bg-butter tw-border tw-border-ink/10 tw-p-4 tw-rounded-2xl hover:tw-shadow-md tw-transition">
                   <div class="tw-flex tw-justify-between tw-items-center tw-mb-2">
-                      <span class="tw-font-semibold tw-underline tw-text-blue-600 tw-text-lg">
+                      <span class="tw-font-title tw-font-bold tw-text-ink tw-text-lg">
                         @if (code.code.includes('foldersnl')) {
                           {{ webshopName | uppercase }} cashback
                         } @else {
                           {{ webshopName | uppercase }} GIFTCARD
                         }
                       </span>
-                    <span class="tw-font-medium tw-text-gray-700">
+                    <span class="tw-font-medium tw-text-ink/70">
                       {{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }}
                       </span>
                   </div>
-                  <div class="tw-text-xs tw-text-pink-600 tw-mt-1">
+                  <div class="tw-text-xs tw-text-ink/60 tw-mt-1">
                     @if (code.code.includes('foldersnl')) {
                       Op al je online bestellingen bij  {{ webshopName }}
                     } @else {
@@ -72,7 +72,7 @@
             @if (affiliateLink) {
                 <div
                         (click)="trackCompanyInteraction(); sendAffEventsToGa(); openNewPageWithCodeDetailModal(i)"
-                        class="tw-bg-white tw-p-4 tw-rounded-2xl tw-shadow-md tw-cursor-pointer hover:tw-shadow-lg tw-transition tw-duration-200"
+                        class="tw-bg-panel tw-border tw-border-ink/10 tw-p-4 tw-rounded-2xl tw-cursor-pointer hover:tw-shadow-md tw-transition tw-duration-200"
                 >
                     <div class="tw-flex tw-justify-between tw-items-center tw-mb-2">
                         <button
@@ -82,25 +82,25 @@
                             {{getCardButtonText(code.code)}}
                         </button>
 
-                        <span class="tw-font-medium tw-text-gray-700">
+                        <span class="tw-font-medium tw-text-ink/70">
                             💸 {{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }} korting
                         </span>
                     </div>
 
                     @if (code.label) {
                         <div class="tw-mb-2">
-                            <span class="tw-inline-block tw-bg-pink-100 tw-text-pink-700 tw-text-xs tw-font-semibold tw-px-2 tw-py-0.5 tw-rounded-full">
+                            <span class="tw-inline-block tw-bg-sky tw-text-ink tw-text-xs tw-font-semibold tw-px-2.5 tw-py-0.5 tw-rounded-full">
                                 geldig op: {{ code.label }}
                             </span>
                         </div>
                     }
 
-                    <div class="tw-text-sm tw-text-gray-500">
+                    <div class="tw-text-sm tw-text-ink/50">
                         gespot op: {{ formatDate(code.date) }}
                     </div>
                 </div>
             } @else {
-                <div class="tw-bg-white tw-p-4 tw-rounded-2xl tw-shadow-md">
+                <div class="tw-bg-panel tw-border tw-border-ink/10 tw-p-4 tw-rounded-2xl">
                     <div class="tw-flex tw-justify-between tw-items-center tw-mb-2">
                         <button
                                 (click)="trackCompanyInteraction(); openModal(code)"
@@ -108,16 +108,16 @@
                         >
                             {{getCardButtonText(code.code)}}
                         </button>
-                        <span class="tw-font-medium tw-text-gray-700">💸 {{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }} korting</span>
+                        <span class="tw-font-medium tw-text-ink/70">💸 {{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }} korting</span>
                     </div>
                     @if (code.label) {
                         <div class="tw-mb-2">
-                            <span class="tw-inline-block tw-bg-pink-100 tw-text-pink-700 tw-text-xs tw-font-semibold tw-px-2 tw-py-0.5 tw-rounded-full">
+                            <span class="tw-inline-block tw-bg-sky tw-text-ink tw-text-xs tw-font-semibold tw-px-2.5 tw-py-0.5 tw-rounded-full">
                                 geldig op: {{ code.label }}
                             </span>
                         </div>
                     }
-                    <div class="tw-text-sm tw-text-gray-500">gespot op: {{ formatDate(code.date) }}</div>
+                    <div class="tw-text-sm tw-text-ink/50">gespot op: {{ formatDate(code.date) }}</div>
                 </div>
 
             }
@@ -134,25 +134,25 @@
 
       <!-- Samsung: officiële actievoorwaarden per promotie -->
       @if (samsungPromoList.length > 0) {
-        <section class="tw-mt-2 tw-mb-6 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-8 tw-max-w-4xl tw-mx-auto">
-          <h2 class="tw-text-xl md:tw-text-2xl tw-font-semibold tw-text-gray-800 tw-mb-5">Actievoorwaarden per promotie</h2>
+        <section class="tw-mt-2 tw-mb-6 tw-bg-panel tw-rounded-3xl tw-border tw-border-ink/10 tw-p-6 md:tw-p-8 tw-max-w-4xl tw-mx-auto">
+          <h2 class="tw-font-title tw-text-xl md:tw-text-2xl tw-font-bold tw-tracking-tight tw-text-ink tw-mb-5">Actievoorwaarden per promotie</h2>
           <div class="tw-space-y-5">
             @for (item of samsungPromoList; track item.label) {
-              <div class="tw-border tw-border-gray-200 tw-rounded-xl tw-p-4">
-                <h3 class="tw-text-base tw-font-semibold tw-text-gray-900 tw-mb-2">{{ item.promo.promoText }}</h3>
-                <dl class="tw-text-sm tw-text-gray-700 tw-space-y-1">
+              <div class="tw-border tw-border-ink/10 tw-rounded-xl tw-p-4">
+                <h3 class="tw-font-title tw-text-base tw-font-bold tw-text-ink tw-mb-2">{{ item.promo.promoText }}</h3>
+                <dl class="tw-text-sm tw-text-ink/70 tw-space-y-1">
                   @if (item.code !== 'geen code nodig') {
                     <div class="tw-flex tw-gap-2">
-                      <dt class="tw-font-medium tw-text-gray-500 tw-w-24 tw-flex-shrink-0">Code</dt>
+                      <dt class="tw-font-medium tw-text-ink/50 tw-w-24 tw-flex-shrink-0">Code</dt>
                       <dd class="tw-font-mono">{{ item.code }}</dd>
                     </div>
                   }
                   <div class="tw-flex tw-gap-2">
-                    <dt class="tw-font-medium tw-text-gray-500 tw-w-24 tw-flex-shrink-0">Looptijd</dt>
+                    <dt class="tw-font-medium tw-text-ink/50 tw-w-24 tw-flex-shrink-0">Looptijd</dt>
                     <dd>{{ item.promo.period }}</dd>
                   </div>
                   <div class="tw-flex tw-gap-2">
-                    <dt class="tw-font-medium tw-text-gray-500 tw-w-24 tw-flex-shrink-0">Voorwaarden</dt>
+                    <dt class="tw-font-medium tw-text-ink/50 tw-w-24 tw-flex-shrink-0">Voorwaarden</dt>
                     <dd>
                       <ul class="tw-list-disc tw-pl-5 tw-space-y-1">
                         @for (condition of item.promo.conditions; track condition) {
@@ -165,7 +165,7 @@
                 <a [href]="item.promo.landingUrl"
                    target="_blank"
                    rel="sponsored"
-                   class="tw-inline-block tw-mt-3 tw-text-sm tw-text-blue-600 hover:tw-underline tw-font-medium">
+                   class="tw-inline-block tw-mt-3 tw-text-sm tw-text-link hover:tw-underline tw-font-medium">
                   Bekijk de actiepagina →
                 </a>
               </div>
@@ -177,23 +177,23 @@
       @if (seoContent) {
         <div [innerHTML]="seoContent" (click)="onSeoLinkClick($event)"></div>
       } @else if (seoContentLoading) {
-        <div class="tw-mt-10 tw-mb-16 tw-bg-white tw-rounded-3xl tw-shadow-lg tw-border tw-border-pink-100 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto tw-animate-pulse">
-          <div class="tw-h-7 tw-bg-gray-200 tw-rounded tw-w-2/3 tw-mx-auto tw-mb-8"></div>
+        <div class="tw-mt-10 tw-mb-16 tw-bg-panel tw-rounded-3xl tw-border tw-border-ink/10 tw-p-6 md:tw-p-10 tw-max-w-4xl tw-mx-auto tw-animate-pulse">
+          <div class="tw-h-7 tw-bg-ink/10 tw-rounded tw-w-2/3 tw-mx-auto tw-mb-8"></div>
           <div class="tw-space-y-3 tw-mb-8">
-            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-full"></div>
-            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-5/6"></div>
-            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-4/6"></div>
+            <div class="tw-h-4 tw-bg-ink/10 tw-rounded tw-w-full"></div>
+            <div class="tw-h-4 tw-bg-ink/10 tw-rounded tw-w-5/6"></div>
+            <div class="tw-h-4 tw-bg-ink/10 tw-rounded tw-w-4/6"></div>
           </div>
-          <div class="tw-h-5 tw-bg-gray-200 tw-rounded tw-w-1/2 tw-mb-4"></div>
+          <div class="tw-h-5 tw-bg-ink/10 tw-rounded tw-w-1/2 tw-mb-4"></div>
           <div class="tw-space-y-3 tw-mb-8">
-            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-full"></div>
-            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-3/4"></div>
+            <div class="tw-h-4 tw-bg-ink/10 tw-rounded tw-w-full"></div>
+            <div class="tw-h-4 tw-bg-ink/10 tw-rounded tw-w-3/4"></div>
           </div>
-          <div class="tw-h-5 tw-bg-gray-200 tw-rounded tw-w-1/2 tw-mb-4"></div>
+          <div class="tw-h-5 tw-bg-ink/10 tw-rounded tw-w-1/2 tw-mb-4"></div>
           <div class="tw-space-y-3">
-            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-full"></div>
-            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-5/6"></div>
-            <div class="tw-h-4 tw-bg-gray-200 tw-rounded tw-w-2/3"></div>
+            <div class="tw-h-4 tw-bg-ink/10 tw-rounded tw-w-full"></div>
+            <div class="tw-h-4 tw-bg-ink/10 tw-rounded tw-w-5/6"></div>
+            <div class="tw-h-4 tw-bg-ink/10 tw-rounded tw-w-2/3"></div>
           </div>
         </div>
       }
@@ -201,15 +201,15 @@
 
   @if (relatedShops.length > 0) {
     <div class="tw-w-full tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8 tw-mt-8 tw-mb-4">
-      <h2 class="tw-text-sm tw-font-semibold tw-text-gray-500 tw-uppercase tw-tracking-wide tw-mb-4">
+      <h2 class="tw-font-label tw-text-sm tw-font-semibold tw-text-ink/55 tw-uppercase tw-tracking-label tw-mb-4">
         Nieuwe codes bij andere shops
       </h2>
       <div class="tw-grid tw-grid-cols-3 sm:tw-grid-cols-6 tw-gap-3">
         @for (shop of relatedShops; track shop.slug) {
           <a
             [routerLink]="['/' + shop.slug + '/']"
-            class="tw-flex tw-flex-col tw-items-center tw-gap-2 tw-bg-white tw-rounded-2xl tw-shadow-sm
-                   hover:tw-shadow-md tw-border tw-border-gray-100 tw-p-3 tw-no-underline
+            class="tw-flex tw-flex-col tw-items-center tw-gap-2 tw-bg-panel tw-rounded-2xl
+                   hover:tw-shadow-md tw-border tw-border-ink/10 tw-p-3 tw-no-underline tw-text-ink
                    tw-transition tw-duration-200 active:tw-scale-[0.97]"
           >
             @if (getRelatedLogoUrl(shop.name)) {
@@ -220,14 +220,14 @@
                 loading="lazy"
               />
             } @else {
-              <div class="tw-w-10 tw-h-10 tw-rounded-full tw-bg-pink-100 tw-flex tw-items-center tw-justify-center tw-text-pink-600 tw-font-bold tw-text-sm">
+              <div class="tw-w-10 tw-h-10 tw-rounded-full tw-bg-sky tw-flex tw-items-center tw-justify-center tw-text-ink tw-font-title tw-font-bold tw-text-sm">
                 {{ shop.name.charAt(0) }}
               </div>
             }
-            <span class="tw-text-xs tw-font-semibold tw-text-gray-800 tw-text-center tw-leading-tight tw-line-clamp-2">
+            <span class="tw-text-xs tw-font-semibold tw-text-ink tw-text-center tw-leading-tight tw-line-clamp-2">
               {{ shop.name }}
             </span>
-            <span class="tw-text-[11px] tw-text-pink-600 tw-font-medium">
+            <span class="tw-text-[11px] tw-text-link tw-font-medium">
               {{ formatRelatedPercentage(shop.percentage) }} korting
             </span>
           </a>

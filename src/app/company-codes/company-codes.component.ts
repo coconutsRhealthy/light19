@@ -393,11 +393,9 @@ export class CompanyCodesComponent implements OnInit {
   }
 
   getCardButtonClasses(discountCode: string) {
-    if(discountCode.startsWith("BF_")) {
-        return "tw-font-semibold tw-text-white tw-bg-blue-900 hover:tw-bg-blue-1000 tw-rounded-md tw-px-4 tw-py-2 tw-transition tw-duration-200 tw-shadow-sm hover:tw-shadow-md tw-uppercase";
-    } else {
-        return "tw-font-semibold tw-text-white tw-bg-sky-500 hover:tw-bg-sky-600 tw-rounded-md tw-px-4 tw-py-2 tw-transition tw-duration-200 tw-shadow-sm hover:tw-shadow-md tw-uppercase";
-    }
+    // Soft-modern look: ink pill, cream label. BF stays the same shape (kept
+    // uppercase for the "Bekijk Deal" call-to-action).
+    return "tw-font-body tw-font-semibold tw-text-cream tw-bg-ink hover:tw-opacity-90 tw-rounded-full tw-px-5 tw-py-2 tw-transition tw-duration-200 tw-uppercase tw-text-sm tw-whitespace-nowrap";
   }
 
   private loadRelatedShops(currentSlug: string, allData: string[]): void {

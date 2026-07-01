@@ -91,9 +91,43 @@ ALL MAIN NAV PAGES ARE NOW DONE.
     - No :host override needed (these use styles:``, not app.component.css).
     - Verified: 0 overflow at 390/1280, h1 left-aligned, prod build clean.
 
+BRAND PAGES (the ~1200 routes) — done in phases, all "restyle only":
+[x] Phase 0 — code modal  src/app/modal/modal.component.html
+    - shared email-gate/copy/unlock/share modal -> brand tokens (panel card,
+      Fraunces, cream email block, sky code chip, ink CTAs). Logic + GA events kept.
+[x] Phase 1 — v2 brand page (352 brands)  company-codes-v2.component.css
+    - restyled the bespoke CSS to brand tokens (template untouched); dropped the
+      dead header.site/footer.site rules (uses shared navbar/footer). Video kept.
+    - NOTE: the v2 brand video autoplays on nav but NOT on a hard load under
+      `ng serve` (dev-server hydration/idle-callback timing). The TS is byte-
+      identical to the prod-working claude_seo_improvements version, so the
+      PRODUCTION build plays fine (confirmed on the live old-look site). It is a
+      dev-server artifact, not a regression — do not "fix" it chasing localhost.
+[x] Phase 2 — v1 brand page (long-tail fallback)  company-codes.component.{html,ts}
+    - restyled the chrome: social banner (butter), breadcrumb, Fraunces h1,
+      code cards (panel + ink "PAK CODE" pill + sky "geldig op" pill), giftcard
+      card (butter), Samsung conditions, related shops (sky placeholders, link %),
+      skeleton. getCardButtonClasses() -> ink pill.
+    - !!! SEO CONTENT NOT REBRANDED (chose OPTION A for now) !!!
+      The per-brand SEO prose is injected via [innerHTML] from company-seo-content/
+      *.ts (579 files) and is the BULK of a v1 page. Angular component styles do
+      NOT reach [innerHTML], so that prose keeps its old styling (gray text, blue
+      links, and a dark gray/orange comparison table). Readable on cream, but not
+      on-brand. Options considered:
+        A (CHOSEN, for now): ship chrome-only; leave the SEO prose old-styled.
+           v1 is the lower-traffic long tail; the top of the page is on-brand.
+        B (maybe later): wrap the [innerHTML] in a `.seo-content` container and add
+           a GLOBAL block in styles.css (global CSS DOES reach innerHTML) that
+           recolours headings->Fraunces/ink, body->ink, links->link and neutralises
+           the dark table/pink callouts. One place covers all 579 pages at once.
+           `.seo-content <tag>` (0,1,1) beats the inline `tw-text-gray-*` (0,1,0),
+           so overrides work. Moderate effort + verify across a few SEO shapes.
+        C: update the 579 content files individually — impractical.
+      -> Revisit B when there's appetite to finish the long-tail look.
+
 REMAINING
 ------------------------------------------------------
-[ ] Individual brand pages (large; ~1200 routes) - not started
+[ ] (optional) Option B: rebrand the v1 [innerHTML] SEO content globally (see above)
 
 DESIGN TOKENS (tailwind.config.js) — reuse these, do NOT add fonts
 -----------------------------------------------------------------
