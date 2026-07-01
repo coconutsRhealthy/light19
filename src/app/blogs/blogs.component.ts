@@ -25,8 +25,8 @@ export class BlogsComponent {
     {
       slug: 'uniqlo',
       category: 'Fashion & Style',
-      title: 'Uniqlo AIRism — 5 summer pieces that keep you cool',
-      excerpt: 'The five best AIRism pieces to build your summer wardrobe around — plus how the quick-dry fabric actually works, and an FAQ.',
+      title: 'Uniqlo AIRism — 5 zomerstukken die je koel houden',
+      excerpt: 'De vijf beste AIRism-stukken om je zomergarderobe rond op te bouwen — plus hoe de sneldrogende stof echt werkt, en een FAQ.',
       date: 'Juni 2025',
       emoji: '👕',
       tint: 'tw-bg-sky',

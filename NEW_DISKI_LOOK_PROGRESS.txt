@@ -73,9 +73,26 @@ DONE (committed)
 
 ALL MAIN NAV PAGES ARE NOW DONE.
 
+[x] Individual blog posts src/app/blogs/{uniqlo,lookfantastic,space-nk}/*
+    - NO mockups existed; applied the established soft-modern vocabulary
+      (cream/panel/ink/sky/butter/link + font-title/body/label) consistently.
+    - Article layout: light hero (breadcrumb, link-colour category eyebrow,
+      Fraunces title, lede, label-style meta), max-w-3xl reading column.
+    - Reusable blocks now in the new look: TOC panel card, section h2 (font-title),
+      pull quotes (border-l link + sky/20 bg), fast-facts (link numbers),
+      product cards (panel + cream image block + ink CTA button), numbered steps
+      (ink circles), "let op" note (butter), FAQ, dark ink conclusion CTA, tags.
+    - Code spotlight (LF/space-nk): butter-bordered panel, ink code pill + Kopieer
+      (copyCode() kept), ink shop button. Badges -> sky/butter.
+    - Swapped ALL old-branding colours (emerald/green/teal, rose/pink/fuchsia,
+      gray-50/100, gray-900 buttons) for brand tokens. Content preserved (LF +
+      space-nk verbatim; uniqlo was ALSO translated EN -> NL at the same time,
+      incl. its card title/excerpt in blogs.component.ts; product names kept).
+    - No :host override needed (these use styles:``, not app.component.css).
+    - Verified: 0 overflow at 390/1280, h1 left-aligned, prod build clean.
+
 REMAINING
 ------------------------------------------------------
-[ ] Individual blog posts (uniqlo, lookfantastic, space-nk) - old style, no mockups
 [ ] Individual brand pages (large; ~1200 routes) - not started
 
 DESIGN TOKENS (tailwind.config.js) — reuse these, do NOT add fonts

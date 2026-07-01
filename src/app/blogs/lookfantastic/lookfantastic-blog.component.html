@@ -1,315 +1,314 @@
 <app-navbar></app-navbar>
 
-<!-- HERO -->
-<div class="tw-bg-gradient-to-br tw-from-rose-50 tw-via-pink-50 tw-to-fuchsia-50 tw-border-b tw-border-pink-100">
-  <div class="tw-max-w-3xl tw-mx-auto tw-px-4 tw-py-12">
+<main class="tw-font-body tw-text-ink tw-pb-16">
 
+  <!-- HERO -->
+  <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-6 tw-pt-8 sm:tw-pt-12 tw-pb-2">
     <!-- Breadcrumb -->
-    <nav class="tw-text-sm tw-text-gray-400 tw-mb-6 tw-flex tw-items-center tw-gap-1">
-      <a routerLink="/" class="hover:tw-text-pink-500 tw-transition-colors">Diski</a>
+    <nav class="tw-font-body tw-text-sm tw-text-ink/50 tw-mb-6 tw-flex tw-items-center tw-gap-1.5">
+      <a routerLink="/" class="hover:tw-text-link tw-transition-colors tw-no-underline tw-text-ink/50">Diski</a>
       <span>/</span>
-      <a routerLink="/blogs" class="hover:tw-text-pink-500 tw-transition-colors">Blogs</a>
+      <a routerLink="/blogs" class="hover:tw-text-link tw-transition-colors tw-no-underline tw-text-ink/50">Blogs</a>
       <span>/</span>
-      <span class="tw-text-gray-600">Lookfantastic kortingscode</span>
+      <span class="tw-text-ink/70">Lookfantastic kortingscode</span>
     </nav>
 
-    <!-- Category chip -->
-    <span class="tw-inline-block tw-bg-pink-100 tw-text-pink-700 tw-text-xs tw-font-semibold tw-uppercase tw-tracking-wider tw-px-3 tw-py-1 tw-rounded-full tw-mb-4">
+    <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-link tw-mb-3">
       Beauty &amp; Skincare
-    </span>
+    </div>
 
-    <h1 class="tw-text-3xl md:tw-text-4xl tw-font-extrabold tw-text-gray-900 tw-leading-tight tw-mb-4">
+    <h1 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl lg:tw-text-5xl tw-tracking-tight tw-leading-tight tw-mb-4">
       Lookfantastic kortingscode: zo bespaar je tot 25% op je favoriete beauty
     </h1>
 
-    <p class="tw-text-lg tw-text-gray-600 tw-mb-6">
-      Op zoek naar een werkende <strong class="tw-font-semibold tw-text-gray-900">Lookfantastic kortingscode</strong>? Lookfantastic is de grootste online beauty retailer van Europa, met meer dan 14.000 producten van merken als Olaplex, CeraVe, MAC en The Ordinary. We delen precies hoe je het meeste bespaart — van studentenkorting tot de razend populaire Beauty Box.
+    <p class="tw-font-body tw-text-lg tw-text-ink/70 tw-leading-relaxed tw-mb-6">
+      Op zoek naar een werkende <strong class="tw-font-semibold tw-text-ink">Lookfantastic kortingscode</strong>? Lookfantastic is de grootste online beauty retailer van Europa, met meer dan 14.000 producten van merken als Olaplex, CeraVe, MAC en The Ordinary. We delen precies hoe je het meeste bespaart — van studentenkorting tot de razend populaire Beauty Box.
     </p>
 
     <!-- Meta -->
-    <div class="tw-flex tw-items-center tw-gap-4 tw-text-sm tw-text-gray-400">
-      <span>Door <strong class="tw-text-gray-600">Diski</strong></span>
-      <span class="tw-w-1 tw-h-1 tw-rounded-full tw-bg-gray-300"></span>
+    <div class="tw-flex tw-items-center tw-gap-3 tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/50">
+      <span>Door <strong class="tw-text-ink/70 tw-font-semibold">Diski</strong></span>
+      <span class="tw-w-1 tw-h-1 tw-rounded-full tw-bg-ink/30"></span>
       <span>Bijgewerkt juni 2026</span>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- MAIN CONTENT -->
-<div class="tw-max-w-3xl tw-mx-auto tw-px-4 tw-py-10 tw-text-gray-800 tw-leading-relaxed">
+  <!-- MAIN CONTENT -->
+  <div class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-6 tw-mt-8 tw-text-ink/80 tw-leading-relaxed">
 
-  <!-- DISCOUNT CODE SPOTLIGHT -->
-  <div class="tw-bg-white tw-border-2 tw-border-pink-300 tw-rounded-2xl tw-p-6 tw-mb-10 tw-shadow-sm">
-    <p class="tw-text-xs tw-font-bold tw-uppercase tw-tracking-widest tw-text-pink-400 tw-mb-2">Exclusieve diski kortingscode</p>
-    <h2 class="tw-text-xl tw-font-bold tw-text-gray-900 tw-mb-1">Tot 25% korting bij Lookfantastic</h2>
-    <p class="tw-text-gray-500 tw-text-sm tw-mb-4">Geldig op geselecteerde producten</p>
+    <!-- DISCOUNT CODE SPOTLIGHT -->
+    <div class="tw-bg-panel tw-border-2 tw-border-butter tw-rounded-2xl tw-p-6 tw-mb-10">
+      <p class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-link tw-mb-2">Exclusieve diski kortingscode</p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl tw-tracking-tight tw-text-ink tw-mb-1">Tot 25% korting bij Lookfantastic</h2>
+      <p class="tw-text-ink/55 tw-text-sm tw-mb-4">Geldig op geselecteerde producten</p>
 
-    <div class="tw-flex tw-items-center tw-gap-3 tw-flex-wrap">
-      <div class="tw-flex tw-items-center tw-gap-2 tw-bg-gray-900 tw-text-white tw-rounded-xl tw-px-4 tw-py-3 tw-font-mono tw-text-xl tw-font-bold tw-tracking-widest">
-        LFDISKI
-        <button
-          (click)="copyCode('LFDISKI')"
-          class="tw-ml-2 tw-bg-white tw-text-gray-900 tw-text-xs tw-font-semibold tw-px-2 tw-py-1 tw-rounded-md hover:tw-bg-gray-100 tw-transition-colors"
+      <div class="tw-flex tw-items-center tw-gap-3 tw-flex-wrap">
+        <div class="tw-flex tw-items-center tw-gap-2 tw-bg-ink tw-text-cream tw-rounded-xl tw-px-4 tw-py-3 tw-font-mono tw-text-xl tw-font-bold tw-tracking-widest">
+          LFDISKI
+          <button
+            (click)="copyCode('LFDISKI')"
+            class="tw-ml-2 tw-bg-cream tw-text-ink tw-text-xs tw-font-semibold tw-px-2 tw-py-1 tw-rounded-md hover:tw-opacity-90 tw-transition"
+          >
+            {{ copied ? 'Gekopieerd!' : 'Kopieer' }}
+          </button>
+        </div>
+        <a
+          href="https://tidd.ly/4iykJXb"
+          target="_blank"
+          rel="nofollow sponsored"
+          class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-ink hover:tw-opacity-90 tw-text-cream tw-font-semibold tw-px-5 tw-py-3 tw-rounded-full tw-transition tw-no-underline"
         >
-          {{ copied ? 'Gekopieerd!' : 'Kopieer' }}
-        </button>
+          Naar Lookfantastic
+          <svg class="tw-w-4 tw-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
       </div>
+    </div>
+
+    <!-- INHOUDSOPGAVE -->
+    <nav class="tw-mb-10 tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-5">
+      <p class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55 tw-mb-3">In dit artikel</p>
+      <ul class="tw-space-y-2 tw-list-none tw-p-0 tw-m-0">
+        <li><a href="#over-lookfantastic" class="tw-text-sm tw-text-link hover:tw-underline">→ Wat is Lookfantastic?</a></li>
+        <li><a href="#kortingscode-gebruiken" class="tw-text-sm tw-text-link hover:tw-underline">→ Hoe gebruik je een Lookfantastic kortingscode?</a></li>
+        <li><a href="#manieren-besparen" class="tw-text-sm tw-text-link hover:tw-underline">→ 7 manieren om te besparen bij Lookfantastic</a></li>
+        <li><a href="#populaire-producten" class="tw-text-sm tw-text-link hover:tw-underline">→ Populaire producten om met korting te kopen</a></li>
+        <li><a href="#beauty-box" class="tw-text-sm tw-text-link hover:tw-underline">→ De Lookfantastic Beauty Box</a></li>
+        <li><a href="#studentenkorting" class="tw-text-sm tw-text-link hover:tw-underline">→ Studentenkorting bij Lookfantastic</a></li>
+        <li><a href="#faq" class="tw-text-sm tw-text-link hover:tw-underline">→ Veelgestelde vragen</a></li>
+      </ul>
+    </nav>
+
+    <!-- OVER LOOKFANTASTIC -->
+    <section id="over-lookfantastic" class="tw-mb-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-text-ink tw-mb-4">Wat is Lookfantastic?</h2>
+      <p class="tw-mb-4">
+        <strong class="tw-font-semibold tw-text-ink">Lookfantastic</strong> is de nummer één online beauty retailer van Europa. De webshop biedt meer dan 14.000 producten van ruim 350 merken, verdeeld over haar, make-up, huidverzorging, nagels, parfum en elektronica. Of je nu fan bent van betaalbare helden zoals The Ordinary en CeraVe, of liever investeert in luxe merken als Estée Lauder en YSL — je vindt het allemaal op één plek.
+      </p>
+      <p class="tw-mb-4">
+        Wat Lookfantastic vooral interessant maakt voor slimme shoppers is het brede aanbod aan kortingen. Er is bijna altijd een <strong class="tw-font-semibold tw-text-ink">Lookfantastic kortingscode</strong> beschikbaar waarmee je 20% tot 25% bespaart, en tijdens speciale acties lopen de kortingen nog verder op. In de rest van dit artikel laten we precies zien hoe je daar gebruik van maakt.
+      </p>
+    </section>
+
+    <!-- HOE GEBRUIK JE EEN KORTINGSCODE -->
+    <section id="kortingscode-gebruiken" class="tw-mb-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-text-ink tw-mb-4">Hoe gebruik je een Lookfantastic kortingscode?</h2>
+      <p class="tw-mb-6">
+        Een kortingscode toepassen bij Lookfantastic is eenvoudig. Volg deze stappen en je korting wordt direct verrekend:
+      </p>
+      <ol class="tw-space-y-3 tw-list-none tw-p-0 tw-m-0">
+        <li class="tw-flex tw-gap-3">
+          <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-ink tw-text-cream tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">1</span>
+          <p><strong class="tw-text-ink tw-font-semibold">Vul je winkelmandje.</strong> Voeg je favoriete beauty producten toe aan je winkelmandje op lookfantastic.nl.</p>
+        </li>
+        <li class="tw-flex tw-gap-3">
+          <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-ink tw-text-cream tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">2</span>
+          <p><strong class="tw-text-ink tw-font-semibold">Ga naar het afrekenscherm.</strong> Klik op je winkelmandje en ga door naar de kassa.</p>
+        </li>
+        <li class="tw-flex tw-gap-3">
+          <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-ink tw-text-cream tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">3</span>
+          <p>Zoek het veld <strong class="tw-text-ink tw-font-semibold">"Heeft u een kortingscode?"</strong> onder het productoverzicht en klik daarop.</p>
+        </li>
+        <li class="tw-flex tw-gap-3">
+          <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-ink tw-text-cream tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">4</span>
+          <p><strong class="tw-text-ink tw-font-semibold">Plak je kortingscode</strong> en klik op "Toevoegen". De korting wordt direct van het totaalbedrag afgetrokken.</p>
+        </li>
+        <li class="tw-flex tw-gap-3">
+          <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-ink tw-text-cream tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">5</span>
+          <p><strong class="tw-text-ink tw-font-semibold">Reken af.</strong> Controleer je korting en rond de bestelling af. Klaar!</p>
+        </li>
+      </ol>
+      <p class="tw-mt-5 tw-bg-butter tw-border tw-border-ink/10 tw-rounded-lg tw-px-4 tw-py-3 tw-text-sm tw-text-ink/80">
+        <strong class="tw-font-semibold tw-text-ink">Let op:</strong> je kunt per bestelling maar één kortingscode gebruiken — korting op korting is meestal niet mogelijk. Kies dus de code die jou het meeste voordeel oplevert.
+      </p>
+    </section>
+
+    <!-- 7 MANIEREN OM TE BESPAREN -->
+    <section id="manieren-besparen" class="tw-mb-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-text-ink tw-mb-6">7 manieren om te besparen bij Lookfantastic</h2>
+
+      <div class="tw-space-y-6">
+        <div class="tw-border-l-4 tw-border-link tw-pl-4">
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-1">1. Gebruik een kortingscode (tot 25%)</h3>
+          <p>Kortingscodes voor 20% tot 25% korting zijn er bij Lookfantastic vrijwel altijd. Check de actuele <a routerLink="/lookfantastic" class="tw-text-link hover:tw-underline">Lookfantastic kortingscodes op diski.nl</a> voordat je afrekent.</p>
+        </div>
+
+        <div class="tw-border-l-4 tw-border-link tw-pl-4">
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-1">2. Profiteer van gratis verzending</h3>
+          <p>Bij een bestelling vanaf €40 betaal je geen verzendkosten. Blijf je daaronder, dan kost verzending €3,95. Voeg een klein extra product toe om de drempel te halen en bespaar op verzendkosten.</p>
+        </div>
+
+        <div class="tw-border-l-4 tw-border-link tw-pl-4">
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-1">3. Bestel via de app (22% korting)</h3>
+          <p>Download je de Lookfantastic app, dan krijg je vaak een welkomstkorting op je eerste app-bestelling. Een mooie manier om extra te besparen op je eerste aankoop.</p>
+        </div>
+
+        <div class="tw-border-l-4 tw-border-link tw-pl-4">
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-1">4. Verjaardagskorting</h3>
+          <p>Maak een account aan en vul je geboortedatum in. Rond je verjaardag ontvang je dan een persoonlijke kortingscode als cadeautje.</p>
+        </div>
+
+        <div class="tw-border-l-4 tw-border-link tw-pl-4">
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-1">5. Verwijs een vriend (geef €5, krijg €5)</h3>
+          <p>Via het referral-programma deel je een verwijzingscode. Plaatst je vriend(in) een bestelling, dan krijgen jullie allebei €5 shoptegoed.</p>
+        </div>
+
+        <div class="tw-border-l-4 tw-border-link tw-pl-4">
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-1">6. Snuffel in de Outlet (tot 75%)</h3>
+          <p>De Outlet-sectie bevat meer dan 2.500 items met kortingen tot wel 75%. Producten belanden hier door einde seizoen, vernieuwde verpakking of overschot — de kwaliteit is gewoon top.</p>
+        </div>
+
+        <div class="tw-border-l-4 tw-border-link tw-pl-4">
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-1">7. Word lid van LF Beauty Plus+</h3>
+          <p>Met het loyaliteitsprogramma LF Beauty Plus+ spaar je punten en krijg je toegang tot exclusieve aanbiedingen en vroege toegang tot sales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPULAIRE PRODUCTEN -->
+    <section id="populaire-producten" class="tw-mb-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-text-ink tw-mb-2">Populaire producten om met korting te kopen</h2>
+      <p class="tw-text-ink/55 tw-mb-6">
+        Niet zeker waar je moet beginnen? Dit zijn op dit moment de meest gezochte beauty producten bij Lookfantastic — perfect om met een <strong class="tw-font-semibold tw-text-ink">kortingscode</strong> in huis te halen.
+      </p>
+
+      <!-- Product grid -->
+      <div class="tw-grid sm:tw-grid-cols-2 tw-gap-5">
+
+        <!-- Product 1 -->
+        <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col">
+          <div class="tw-aspect-square tw-bg-cream tw-border-b tw-border-ink/10">
+            <img src="/blog/lookfantastic/olaplex.avif" alt="Olaplex No.3 Hair Perfector" loading="lazy" class="tw-w-full tw-h-full tw-object-contain tw-p-4">
+          </div>
+          <div class="tw-p-4 tw-flex tw-flex-col tw-flex-grow">
+            <h3 class="tw-font-title tw-font-bold tw-text-ink tw-mb-1">Olaplex No.3 Hair Perfector</h3>
+            <p class="tw-text-sm tw-text-ink/70 tw-mb-3 tw-flex-grow">De bestseller voor beschadigd haar. Een bond-repair behandeling die het haar van binnenuit herstelt — al jaren een vaste favoriet.</p>
+            <a href="https://tidd.ly/4iykJXb" target="_blank" rel="nofollow sponsored" class="tw-text-sm tw-font-semibold tw-text-link hover:tw-underline">Bekijk met korting →</a>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col">
+          <div class="tw-aspect-square tw-bg-cream tw-border-b tw-border-ink/10">
+            <img src="/blog/lookfantastic/cerave.avif" alt="CeraVe Hydraterende Reiniger" loading="lazy" class="tw-w-full tw-h-full tw-object-contain tw-p-4">
+          </div>
+          <div class="tw-p-4 tw-flex tw-flex-col tw-flex-grow">
+            <h3 class="tw-font-title tw-font-bold tw-text-ink tw-mb-1">CeraVe Hydraterende Reiniger</h3>
+            <p class="tw-text-sm tw-text-ink/70 tw-mb-3 tw-flex-grow">Dermatoloog-favoriet met ceramiden en niacinamide. Reinigt zonder de huid uit te drogen — geschikt voor elk huidtype.</p>
+            <a href="https://tidd.ly/4iykJXb" target="_blank" rel="nofollow sponsored" class="tw-text-sm tw-font-semibold tw-text-link hover:tw-underline">Bekijk met korting →</a>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col">
+          <div class="tw-aspect-square tw-bg-cream tw-border-b tw-border-ink/10">
+            <img src="/blog/lookfantastic/the_ordinary.avif" alt="The Ordinary Niacinamide 10% + Zinc 1%" loading="lazy" class="tw-w-full tw-h-full tw-object-contain tw-p-4">
+          </div>
+          <div class="tw-p-4 tw-flex tw-flex-col tw-flex-grow">
+            <h3 class="tw-font-title tw-font-bold tw-text-ink tw-mb-1">The Ordinary Niacinamide 10% + Zinc 1%</h3>
+            <p class="tw-text-sm tw-text-ink/70 tw-mb-3 tw-flex-grow">Niacinamide is dé viral skincare-ingrediënt van het moment. Dit betaalbare serum helpt bij een egalere huid en verfijnde poriën.</p>
+            <a href="https://tidd.ly/4iykJXb" target="_blank" rel="nofollow sponsored" class="tw-text-sm tw-font-semibold tw-text-link hover:tw-underline">Bekijk met korting →</a>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col">
+          <div class="tw-aspect-square tw-bg-cream tw-border-b tw-border-ink/10">
+            <img src="/blog/lookfantastic/medik8.avif" alt="Medik8 Vitamine C serum" loading="lazy" class="tw-w-full tw-h-full tw-object-contain tw-p-4">
+          </div>
+          <div class="tw-p-4 tw-flex tw-flex-col tw-flex-grow">
+            <h3 class="tw-font-title tw-font-bold tw-text-ink tw-mb-1">Medik8 Vitamine C serum</h3>
+            <p class="tw-text-sm tw-text-ink/70 tw-mb-3 tw-flex-grow">Een high-performance antioxidant serum dat de huid laat stralen. Medik8 is een van de snelst groeiende skincare-merken.</p>
+            <a href="https://tidd.ly/4iykJXb" target="_blank" rel="nofollow sponsored" class="tw-text-sm tw-font-semibold tw-text-link hover:tw-underline">Bekijk met korting →</a>
+          </div>
+        </div>
+
+      </div>
+      <p class="tw-text-xs tw-text-ink/45 tw-mt-4">Prijzen en beschikbaarheid variëren. Controleer de actuele prijs op lookfantastic.nl.</p>
+    </section>
+
+    <!-- BEAUTY BOX -->
+    <section id="beauty-box" class="tw-mb-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-text-ink tw-mb-4">De Lookfantastic Beauty Box: slim besparen</h2>
+      <p class="tw-mb-4">
+        Een van de leukste manieren om te besparen is de <strong class="tw-font-semibold tw-text-ink">Lookfantastic Beauty Box</strong>. Elke maand ontvang je een box gevuld met beauty producten voor huid, haar en gezicht — een mix van samples en full-size items. De inhoud heeft altijd een waarde van minimaal €55, terwijl je maandelijks een fractie van die prijs betaalt.
+      </p>
+      <p class="tw-mb-4">
+        Daarnaast is er jaarlijks de befaamde <strong class="tw-font-semibold tw-text-ink">Beauty Egg</strong>, die inmiddels negen jaar op rij is uitverkocht. Met een waarde van ruim €220 zit deze boordevol producten van merken als Color Wow, Medik8 en Benefit. Wees er snel bij, want deze verkoopt traditioneel razendsnel uit.
+      </p>
+    </section>
+
+    <!-- STUDENTENKORTING -->
+    <section id="studentenkorting" class="tw-mb-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-text-ink tw-mb-4">Studentenkorting bij Lookfantastic</h2>
+      <p class="tw-mb-4">
+        Studeer je nog? Dan profiteer je bij Lookfantastic van <strong class="tw-font-semibold tw-text-ink">25% studentenkorting</strong> op geselecteerde niet-afgeprijsde producten, plus 7% op geselecteerde sale-artikelen. Je activeert de korting eenvoudig:
+      </p>
+      <ul class="tw-space-y-2 tw-mb-4 tw-list-none tw-p-0 tw-m-0">
+        <li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-link tw-font-bold tw-mt-0.5">✓</span><span>Verifieer je studentenstatus via <strong class="tw-font-semibold tw-text-ink">Student Beans</strong>, UNiDAYS of studentenkorting.nl</span></li>
+        <li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-link tw-font-bold tw-mt-0.5">✓</span><span>Je ontvangt een unieke Lookfantastic kortingscode</span></li>
+        <li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-link tw-font-bold tw-mt-0.5">✓</span><span>Vul de code in bij het afrekenen en je korting wordt verrekend</span></li>
+      </ul>
+      <p>
+        Geen student meer? Lookfantastic heeft ook een <strong class="tw-font-semibold tw-text-ink">jongerenkorting</strong> (onder 26 jaar) en een <strong class="tw-font-semibold tw-text-ink">seniorenkorting</strong> van 26% (vanaf 60 jaar). Verifieer je leeftijd via GoCertify om deze te activeren.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="tw-mb-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-text-ink tw-mb-6">Veelgestelde vragen over de Lookfantastic kortingscode</h2>
+      <div class="tw-space-y-6">
+        <div>
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-2">Hoeveel korting krijg ik met een Lookfantastic kortingscode?</h3>
+          <p>Kortingscodes van 20% tot 25% zijn vrijwel altijd beschikbaar. Tijdens speciale acties zoals seizoenssales en de outlet kunnen kortingen oplopen tot 50% of zelfs 75%. Check altijd de <a routerLink="/lookfantastic" class="tw-text-link hover:tw-underline">actuele codes op diski.nl</a>.</p>
+        </div>
+        <div>
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-2">Kan ik meerdere kortingscodes combineren?</h3>
+          <p>Nee, je kunt per bestelling maar één kortingscode gebruiken. Korting op korting is niet mogelijk. Wel kun je soms een code combineren met al afgeprijsde outlet-producten.</p>
+        </div>
+        <div>
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-2">Wat zijn de verzendkosten bij Lookfantastic?</h3>
+          <p>Bestellingen vanaf €40 worden gratis verzonden. Daaronder betaal je €3,95 verzendkosten. De levertijd is doorgaans 2 tot 5 werkdagen.</p>
+        </div>
+        <div>
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-2">Werkt de studentenkorting op alle producten?</h3>
+          <p>De studentenkorting geldt op geselecteerde niet-afgeprijsde producten. Sommige merken zijn uitgesloten. Je kunt de studentenkorting niet combineren met een andere kortingscode.</p>
+        </div>
+        <div>
+          <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-2">Hoe vaak komen er nieuwe kortingscodes?</h3>
+          <p>Lookfantastic deelt regelmatig nieuwe codes en acties. Op diski.nl houden we de werkende Lookfantastic kortingscodes actueel bij, zodat je altijd de beste deal vindt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLACK FRIDAY -->
+    <section class="tw-mb-10 tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-6">
+      <h2 class="tw-font-title tw-font-bold tw-text-xl tw-tracking-tight tw-text-ink tw-mb-3">Lookfantastic en Black Friday</h2>
+      <p>
+        Tijdens <strong class="tw-font-semibold tw-text-ink">Black Friday</strong> pakt Lookfantastic traditioneel flink uit met kortingen die kunnen oplopen tot 50%. Wil je weten welke merken meedoen en wanneer de beste deals live gaan? Bekijk dan onze <a routerLink="/blackfriday" class="tw-text-link hover:tw-underline tw-font-semibold">Black Friday dealpagina</a> voor het laatste overzicht.
+      </p>
+    </section>
+
+    <!-- CONCLUSION / CTA -->
+    <div class="tw-bg-ink tw-rounded-3xl tw-p-8 tw-text-cream tw-text-center">
+      <p class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-cream/70 tw-mb-2">Klaar om te besparen?</p>
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-mb-2">Gebruik code LFDISKI en bespaar tot 25%</h2>
+      <p class="tw-text-cream/85 tw-mb-6">Bekijk alle actuele Lookfantastic kortingscodes en bespaar op je volgende beauty bestelling.</p>
       <a
         href="https://tidd.ly/4iykJXb"
         target="_blank"
         rel="nofollow sponsored"
-        class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-pink-500 hover:tw-bg-pink-600 tw-text-white tw-font-semibold tw-px-5 tw-py-3 tw-rounded-xl tw-transition-colors tw-no-underline"
+        class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-cream tw-text-ink tw-font-bold tw-px-6 tw-py-3 tw-rounded-full hover:tw-opacity-90 tw-transition tw-no-underline"
       >
         Naar Lookfantastic
         <svg class="tw-w-4 tw-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
       </a>
     </div>
+
+    <p class="tw-text-xs tw-text-ink/45 tw-text-center tw-mt-6">
+      Dit artikel bevat affiliate links. Bestel je via deze links, dan ontvangen wij mogelijk een kleine commissie — zonder extra kosten voor jou.
+    </p>
+
   </div>
-
-  <!-- INHOUDSOPGAVE -->
-  <nav class="tw-mb-10 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-2xl tw-p-5">
-    <p class="tw-text-sm tw-font-semibold tw-text-gray-700 tw-mb-3">In dit artikel</p>
-    <ul class="tw-space-y-2">
-      <li><a href="#over-lookfantastic" class="tw-text-sm tw-text-pink-600 hover:tw-underline">→ Wat is Lookfantastic?</a></li>
-      <li><a href="#kortingscode-gebruiken" class="tw-text-sm tw-text-pink-600 hover:tw-underline">→ Hoe gebruik je een Lookfantastic kortingscode?</a></li>
-      <li><a href="#manieren-besparen" class="tw-text-sm tw-text-pink-600 hover:tw-underline">→ 7 manieren om te besparen bij Lookfantastic</a></li>
-      <li><a href="#populaire-producten" class="tw-text-sm tw-text-pink-600 hover:tw-underline">→ Populaire producten om met korting te kopen</a></li>
-      <li><a href="#beauty-box" class="tw-text-sm tw-text-pink-600 hover:tw-underline">→ De Lookfantastic Beauty Box</a></li>
-      <li><a href="#studentenkorting" class="tw-text-sm tw-text-pink-600 hover:tw-underline">→ Studentenkorting bij Lookfantastic</a></li>
-      <li><a href="#faq" class="tw-text-sm tw-text-pink-600 hover:tw-underline">→ Veelgestelde vragen</a></li>
-    </ul>
-  </nav>
-
-  <!-- OVER LOOKFANTASTIC -->
-  <section id="over-lookfantastic" class="tw-mb-10">
-    <h2 class="tw-text-2xl tw-font-bold tw-mb-4">Wat is Lookfantastic?</h2>
-    <p class="tw-mb-4">
-      <strong class="tw-font-semibold tw-text-gray-900">Lookfantastic</strong> is de nummer één online beauty retailer van Europa. De webshop biedt meer dan 14.000 producten van ruim 350 merken, verdeeld over haar, make-up, huidverzorging, nagels, parfum en elektronica. Of je nu fan bent van betaalbare helden zoals The Ordinary en CeraVe, of liever investeert in luxe merken als Estée Lauder en YSL — je vindt het allemaal op één plek.
-    </p>
-    <p class="tw-mb-4">
-      Wat Lookfantastic vooral interessant maakt voor slimme shoppers is het brede aanbod aan kortingen. Er is bijna altijd een <strong class="tw-font-semibold tw-text-gray-900">Lookfantastic kortingscode</strong> beschikbaar waarmee je 20% tot 25% bespaart, en tijdens speciale acties lopen de kortingen nog verder op. In de rest van dit artikel laten we precies zien hoe je daar gebruik van maakt.
-    </p>
-  </section>
-
-  <!-- HOE GEBRUIK JE EEN KORTINGSCODE -->
-  <section id="kortingscode-gebruiken" class="tw-mb-10">
-    <h2 class="tw-text-2xl tw-font-bold tw-mb-4">Hoe gebruik je een Lookfantastic kortingscode?</h2>
-    <p class="tw-mb-6">
-      Een kortingscode toepassen bij Lookfantastic is eenvoudig. Volg deze stappen en je korting wordt direct verrekend:
-    </p>
-    <ol class="tw-space-y-3">
-      <li class="tw-flex tw-gap-3">
-        <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-pink-500 tw-text-white tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">1</span>
-        <p><strong>Vul je winkelmandje.</strong> Voeg je favoriete beauty producten toe aan je winkelmandje op lookfantastic.nl.</p>
-      </li>
-      <li class="tw-flex tw-gap-3">
-        <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-pink-500 tw-text-white tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">2</span>
-        <p><strong>Ga naar het afrekenscherm.</strong> Klik op je winkelmandje en ga door naar de kassa.</p>
-      </li>
-      <li class="tw-flex tw-gap-3">
-        <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-pink-500 tw-text-white tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">3</span>
-        <p>Zoek het veld <strong>"Heeft u een kortingscode?"</strong> onder het productoverzicht en klik daarop.</p>
-      </li>
-      <li class="tw-flex tw-gap-3">
-        <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-pink-500 tw-text-white tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">4</span>
-        <p><strong>Plak je kortingscode</strong> en klik op "Toevoegen". De korting wordt direct van het totaalbedrag afgetrokken.</p>
-      </li>
-      <li class="tw-flex tw-gap-3">
-        <span class="tw-flex-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-bg-pink-500 tw-text-white tw-text-sm tw-font-bold tw-flex tw-items-center tw-justify-center">5</span>
-        <p><strong>Reken af.</strong> Controleer je korting en rond de bestelling af. Klaar!</p>
-      </li>
-    </ol>
-    <p class="tw-mt-5 tw-text-gray-600 tw-bg-amber-50 tw-border tw-border-amber-200 tw-rounded-lg tw-px-4 tw-py-3 tw-text-sm">
-      <strong class="tw-font-semibold">Let op:</strong> je kunt per bestelling maar één kortingscode gebruiken — korting op korting is meestal niet mogelijk. Kies dus de code die jou het meeste voordeel oplevert.
-    </p>
-  </section>
-
-  <!-- 7 MANIEREN OM TE BESPAREN -->
-  <section id="manieren-besparen" class="tw-mb-10">
-    <h2 class="tw-text-2xl tw-font-bold tw-mb-6">7 manieren om te besparen bij Lookfantastic</h2>
-
-    <div class="tw-space-y-6">
-      <div class="tw-border-l-4 tw-border-pink-300 tw-pl-4">
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-1">1. Gebruik een kortingscode (tot 25%)</h3>
-        <p>Kortingscodes voor 20% tot 25% korting zijn er bij Lookfantastic vrijwel altijd. Check de actuele <a routerLink="/lookfantastic" class="tw-text-pink-600 hover:tw-underline">Lookfantastic kortingscodes op diski.nl</a> voordat je afrekent.</p>
-      </div>
-
-      <div class="tw-border-l-4 tw-border-pink-300 tw-pl-4">
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-1">2. Profiteer van gratis verzending</h3>
-        <p>Bij een bestelling vanaf €40 betaal je geen verzendkosten. Blijf je daaronder, dan kost verzending €3,95. Voeg een klein extra product toe om de drempel te halen en bespaar op verzendkosten.</p>
-      </div>
-
-      <div class="tw-border-l-4 tw-border-pink-300 tw-pl-4">
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-1">3. Bestel via de app (22% korting)</h3>
-        <p>Download je de Lookfantastic app, dan krijg je vaak een welkomstkorting op je eerste app-bestelling. Een mooie manier om extra te besparen op je eerste aankoop.</p>
-      </div>
-
-      <div class="tw-border-l-4 tw-border-pink-300 tw-pl-4">
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-1">4. Verjaardagskorting</h3>
-        <p>Maak een account aan en vul je geboortedatum in. Rond je verjaardag ontvang je dan een persoonlijke kortingscode als cadeautje.</p>
-      </div>
-
-      <div class="tw-border-l-4 tw-border-pink-300 tw-pl-4">
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-1">5. Verwijs een vriend (geef €5, krijg €5)</h3>
-        <p>Via het referral-programma deel je een verwijzingscode. Plaatst je vriend(in) een bestelling, dan krijgen jullie allebei €5 shoptegoed.</p>
-      </div>
-
-      <div class="tw-border-l-4 tw-border-pink-300 tw-pl-4">
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-1">6. Snuffel in de Outlet (tot 75%)</h3>
-        <p>De Outlet-sectie bevat meer dan 2.500 items met kortingen tot wel 75%. Producten belanden hier door einde seizoen, vernieuwde verpakking of overschot — de kwaliteit is gewoon top.</p>
-      </div>
-
-      <div class="tw-border-l-4 tw-border-pink-300 tw-pl-4">
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-1">7. Word lid van LF Beauty Plus+</h3>
-        <p>Met het loyaliteitsprogramma LF Beauty Plus+ spaar je punten en krijg je toegang tot exclusieve aanbiedingen en vroege toegang tot sales.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- POPULAIRE PRODUCTEN -->
-  <section id="populaire-producten" class="tw-mb-10">
-    <h2 class="tw-text-2xl tw-font-bold tw-mb-2">Populaire producten om met korting te kopen</h2>
-    <p class="tw-text-gray-500 tw-mb-6">
-      Niet zeker waar je moet beginnen? Dit zijn op dit moment de meest gezochte beauty producten bij Lookfantastic — perfect om met een <strong class="tw-font-semibold tw-text-gray-900">kortingscode</strong> in huis te halen.
-    </p>
-
-    <!-- Product grid -->
-    <div class="tw-grid sm:tw-grid-cols-2 tw-gap-5">
-
-      <!-- Product 1 -->
-      <div class="tw-border tw-border-gray-200 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col">
-        <div class="tw-aspect-square tw-bg-white tw-border-b tw-border-gray-100">
-          <img src="/blog/lookfantastic/olaplex.avif" alt="Olaplex No.3 Hair Perfector" loading="lazy" class="tw-w-full tw-h-full tw-object-contain tw-p-4">
-        </div>
-        <div class="tw-p-4 tw-flex tw-flex-col tw-flex-grow">
-          <h3 class="tw-font-semibold tw-text-gray-900 tw-mb-1">Olaplex No.3 Hair Perfector</h3>
-          <p class="tw-text-sm tw-text-gray-600 tw-mb-3 tw-flex-grow">De bestseller voor beschadigd haar. Een bond-repair behandeling die het haar van binnenuit herstelt — al jaren een vaste favoriet.</p>
-          <a href="https://tidd.ly/4iykJXb" target="_blank" rel="nofollow sponsored" class="tw-text-sm tw-font-semibold tw-text-pink-600 hover:tw-underline">Bekijk met korting →</a>
-        </div>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="tw-border tw-border-gray-200 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col">
-        <div class="tw-aspect-square tw-bg-white tw-border-b tw-border-gray-100">
-          <img src="/blog/lookfantastic/cerave.avif" alt="CeraVe Hydraterende Reiniger" loading="lazy" class="tw-w-full tw-h-full tw-object-contain tw-p-4">
-        </div>
-        <div class="tw-p-4 tw-flex tw-flex-col tw-flex-grow">
-          <h3 class="tw-font-semibold tw-text-gray-900 tw-mb-1">CeraVe Hydraterende Reiniger</h3>
-          <p class="tw-text-sm tw-text-gray-600 tw-mb-3 tw-flex-grow">Dermatoloog-favoriet met ceramiden en niacinamide. Reinigt zonder de huid uit te drogen — geschikt voor elk huidtype.</p>
-          <a href="https://tidd.ly/4iykJXb" target="_blank" rel="nofollow sponsored" class="tw-text-sm tw-font-semibold tw-text-pink-600 hover:tw-underline">Bekijk met korting →</a>
-        </div>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="tw-border tw-border-gray-200 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col">
-        <div class="tw-aspect-square tw-bg-white tw-border-b tw-border-gray-100">
-          <img src="/blog/lookfantastic/the_ordinary.avif" alt="The Ordinary Niacinamide 10% + Zinc 1%" loading="lazy" class="tw-w-full tw-h-full tw-object-contain tw-p-4">
-        </div>
-        <div class="tw-p-4 tw-flex tw-flex-col tw-flex-grow">
-          <h3 class="tw-font-semibold tw-text-gray-900 tw-mb-1">The Ordinary Niacinamide 10% + Zinc 1%</h3>
-          <p class="tw-text-sm tw-text-gray-600 tw-mb-3 tw-flex-grow">Niacinamide is dé viral skincare-ingrediënt van het moment. Dit betaalbare serum helpt bij een egalere huid en verfijnde poriën.</p>
-          <a href="https://tidd.ly/4iykJXb" target="_blank" rel="nofollow sponsored" class="tw-text-sm tw-font-semibold tw-text-pink-600 hover:tw-underline">Bekijk met korting →</a>
-        </div>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="tw-border tw-border-gray-200 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col">
-        <div class="tw-aspect-square tw-bg-white tw-border-b tw-border-gray-100">
-          <img src="/blog/lookfantastic/medik8.avif" alt="Medik8 Vitamine C serum" loading="lazy" class="tw-w-full tw-h-full tw-object-contain tw-p-4">
-        </div>
-        <div class="tw-p-4 tw-flex tw-flex-col tw-flex-grow">
-          <h3 class="tw-font-semibold tw-text-gray-900 tw-mb-1">Medik8 Vitamine C serum</h3>
-          <p class="tw-text-sm tw-text-gray-600 tw-mb-3 tw-flex-grow">Een high-performance antioxidant serum dat de huid laat stralen. Medik8 is een van de snelst groeiende skincare-merken.</p>
-          <a href="https://tidd.ly/4iykJXb" target="_blank" rel="nofollow sponsored" class="tw-text-sm tw-font-semibold tw-text-pink-600 hover:tw-underline">Bekijk met korting →</a>
-        </div>
-      </div>
-
-    </div>
-    <p class="tw-text-xs tw-text-gray-400 tw-mt-4">Prijzen en beschikbaarheid variëren. Controleer de actuele prijs op lookfantastic.nl.</p>
-  </section>
-
-  <!-- BEAUTY BOX -->
-  <section id="beauty-box" class="tw-mb-10">
-    <h2 class="tw-text-2xl tw-font-bold tw-mb-4">De Lookfantastic Beauty Box: slim besparen</h2>
-    <p class="tw-mb-4">
-      Een van de leukste manieren om te besparen is de <strong class="tw-font-semibold tw-text-gray-900">Lookfantastic Beauty Box</strong>. Elke maand ontvang je een box gevuld met beauty producten voor huid, haar en gezicht — een mix van samples en full-size items. De inhoud heeft altijd een waarde van minimaal €55, terwijl je maandelijks een fractie van die prijs betaalt.
-    </p>
-    <p class="tw-mb-4">
-      Daarnaast is er jaarlijks de befaamde <strong class="tw-font-semibold tw-text-gray-900">Beauty Egg</strong>, die inmiddels negen jaar op rij is uitverkocht. Met een waarde van ruim €220 zit deze boordevol producten van merken als Color Wow, Medik8 en Benefit. Wees er snel bij, want deze verkoopt traditioneel razendsnel uit.
-    </p>
-  </section>
-
-  <!-- STUDENTENKORTING -->
-  <section id="studentenkorting" class="tw-mb-10">
-    <h2 class="tw-text-2xl tw-font-bold tw-mb-4">Studentenkorting bij Lookfantastic</h2>
-    <p class="tw-mb-4">
-      Studeer je nog? Dan profiteer je bij Lookfantastic van <strong class="tw-font-semibold tw-text-gray-900">25% studentenkorting</strong> op geselecteerde niet-afgeprijsde producten, plus 7% op geselecteerde sale-artikelen. Je activeert de korting eenvoudig:
-    </p>
-    <ul class="tw-space-y-2 tw-mb-4">
-      <li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-pink-500 tw-font-bold tw-mt-0.5">✓</span><span>Verifieer je studentenstatus via <strong class="tw-font-semibold tw-text-gray-900">Student Beans</strong>, UNiDAYS of studentenkorting.nl</span></li>
-      <li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-pink-500 tw-font-bold tw-mt-0.5">✓</span><span>Je ontvangt een unieke Lookfantastic kortingscode</span></li>
-      <li class="tw-flex tw-items-start tw-gap-2"><span class="tw-text-pink-500 tw-font-bold tw-mt-0.5">✓</span><span>Vul de code in bij het afrekenen en je korting wordt verrekend</span></li>
-    </ul>
-    <p>
-      Geen student meer? Lookfantastic heeft ook een <strong class="tw-font-semibold tw-text-gray-900">jongerenkorting</strong> (onder 26 jaar) en een <strong class="tw-font-semibold tw-text-gray-900">seniorenkorting</strong> van 26% (vanaf 60 jaar). Verifieer je leeftijd via GoCertify om deze te activeren.
-    </p>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="tw-mb-10">
-    <h2 class="tw-text-2xl tw-font-bold tw-mb-6">Veelgestelde vragen over de Lookfantastic kortingscode</h2>
-    <div class="tw-space-y-6">
-      <div>
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoeveel korting krijg ik met een Lookfantastic kortingscode?</h3>
-        <p>Kortingscodes van 20% tot 25% zijn vrijwel altijd beschikbaar. Tijdens speciale acties zoals seizoenssales en de outlet kunnen kortingen oplopen tot 50% of zelfs 75%. Check altijd de <a routerLink="/lookfantastic" class="tw-text-pink-600 hover:tw-underline">actuele codes op diski.nl</a>.</p>
-      </div>
-      <div>
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Kan ik meerdere kortingscodes combineren?</h3>
-        <p>Nee, je kunt per bestelling maar één kortingscode gebruiken. Korting op korting is niet mogelijk. Wel kun je soms een code combineren met al afgeprijsde outlet-producten.</p>
-      </div>
-      <div>
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Wat zijn de verzendkosten bij Lookfantastic?</h3>
-        <p>Bestellingen vanaf €40 worden gratis verzonden. Daaronder betaal je €3,95 verzendkosten. De levertijd is doorgaans 2 tot 5 werkdagen.</p>
-      </div>
-      <div>
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Werkt de studentenkorting op alle producten?</h3>
-        <p>De studentenkorting geldt op geselecteerde niet-afgeprijsde producten. Sommige merken zijn uitgesloten. Je kunt de studentenkorting niet combineren met een andere kortingscode.</p>
-      </div>
-      <div>
-        <h3 class="tw-text-lg tw-font-semibold tw-text-gray-800 tw-mb-2">Hoe vaak komen er nieuwe kortingscodes?</h3>
-        <p>Lookfantastic deelt regelmatig nieuwe codes en acties. Op diski.nl houden we de werkende Lookfantastic kortingscodes actueel bij, zodat je altijd de beste deal vindt.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLACK FRIDAY -->
-  <section class="tw-mb-10 tw-bg-gray-50 tw-border tw-border-gray-200 tw-rounded-2xl tw-p-6">
-    <h2 class="tw-text-xl tw-font-bold tw-mb-3">Lookfantastic en Black Friday</h2>
-    <p>
-      Tijdens <strong class="tw-font-semibold tw-text-gray-900">Black Friday</strong> pakt Lookfantastic traditioneel flink uit met kortingen die kunnen oplopen tot 50%. Wil je weten welke merken meedoen en wanneer de beste deals live gaan? Bekijk dan onze <a routerLink="/blackfriday" class="tw-text-pink-600 hover:tw-underline tw-font-semibold">Black Friday dealpagina</a> voor het laatste overzicht.
-    </p>
-  </section>
-
-  <!-- CONCLUSION / CTA -->
-  <div class="tw-bg-gradient-to-br tw-from-pink-500 tw-to-rose-500 tw-rounded-2xl tw-p-8 tw-text-white tw-text-center">
-    <p class="tw-text-sm tw-font-semibold tw-uppercase tw-tracking-widest tw-mb-2 tw-opacity-80">Klaar om te besparen?</p>
-    <h2 class="tw-text-2xl tw-font-extrabold tw-mb-2">Gebruik code LFDISKI en bespaar tot 25%</h2>
-    <p class="tw-opacity-90 tw-mb-6">Bekijk alle actuele Lookfantastic kortingscodes en bespaar op je volgende beauty bestelling.</p>
-    <a
-      href="https://tidd.ly/4iykJXb"
-      target="_blank"
-      rel="nofollow sponsored"
-      class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-white tw-text-pink-600 tw-font-bold tw-px-6 tw-py-3 tw-rounded-xl hover:tw-bg-pink-50 tw-transition-colors tw-no-underline"
-    >
-      Naar Lookfantastic
-      <svg class="tw-w-4 tw-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-    </a>
-  </div>
-
-  <p class="tw-text-xs tw-text-gray-400 tw-text-center tw-mt-6">
-    Dit artikel bevat affiliate links. Bestel je via deze links, dan ontvangen wij mogelijk een kleine commissie — zonder extra kosten voor jou.
-  </p>
-
-</div>
+</main>
 
 <app-footer></app-footer>
