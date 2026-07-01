@@ -43,6 +43,12 @@
     </div>
   </section>
 
+  <!-- Search-aware order: while typing, the "Nieuwste codes" grid (below) jumps
+       above these editorial sections, which drop beneath it. Pure CSS order via
+       isSearching — no DOM move, reverts instantly when the field is cleared. -->
+  <div class="tw-flex tw-flex-col">
+  <div [class.tw-order-last]="isSearching">
+
   <!-- ====================== TOP DEALS CAROUSEL ====================== -->
   <!-- Placeholder editorial content — not yet wired to the live feed. -->
   <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-py-8 sm:tw-py-12">
@@ -134,9 +140,10 @@
       </div>
     </div>
   </section>
+  </div><!-- /editorial group -->
 
   <!-- ====================== NIEUWSTE CODES (real data) ====================== -->
-  <section id="nieuwste-codes" class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pt-2 tw-pb-14 sm:tw-pb-20 tw-scroll-mt-20">
+  <section id="nieuwste-codes" class="tw-w-full tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pt-2 tw-pb-14 sm:tw-pb-20 tw-scroll-mt-20">
     <div class="tw-flex tw-flex-col sm:tw-flex-row sm:tw-justify-between sm:tw-items-end tw-gap-4 tw-mb-6 sm:tw-mb-8">
       <div>
         <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">
@@ -234,6 +241,7 @@
       </button>
     </div>
   </section>
+  </div><!-- /search-reorder zone -->
 
   <!-- ====================== TRUST ====================== -->
   <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-py-12 sm:tw-py-16 lg:tw-py-20 tw-border-t tw-border-ink/10">

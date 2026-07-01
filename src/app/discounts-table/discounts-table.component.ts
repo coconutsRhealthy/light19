@@ -170,6 +170,12 @@ export class DiscountsTableComponent implements OnInit {
     }
   }
 
+  /** True while there's a search term — used to surface the results grid above the
+   *  editorial sections on the homepage. */
+  get isSearching(): boolean {
+    return this.searchTerm.trim().length > 0;
+  }
+
   onSearch() {
     const normalizedSearchTerm = this.searchTerm.toLowerCase().replace(/[^a-z0-9]/g, '');
 
