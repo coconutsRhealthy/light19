@@ -35,9 +35,6 @@
   <link rel="dns-prefetch" href="https://www.awin1.com">
   <link rel="dns-prefetch" href="https://a1.awin1.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
-  <link rel="dns-prefetch" href="https://connect.facebook.net">
-  <link rel="dns-prefetch" href="https://s.skimresources.com">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVP906XC65"></script>
   <script>
@@ -62,65 +59,8 @@
   </script>
 
   <meta name="facebook-domain-verification" content="vs16s2ctfs40umqcvd9h1oc2wnyr1r" />
-
-    <!-- Meta Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[]}(window, document,'script');
-        fbq('init', '790112370507856');
-        fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code -->
-
-    <script>
-      (function () {
-        var loaded = false;
-        function loadThirdParty() {
-          if (loaded) return;
-          loaded = true;
-
-          // Meta Pixel library
-          var fb = document.createElement('script');
-          fb.async = true;
-          fb.src = 'https://connect.facebook.net/en_US/fbevents.js';
-          document.head.appendChild(fb);
-
-          // Google AdSense
-          var ad = document.createElement('script');
-          ad.async = true;
-          ad.crossOrigin = 'anonymous';
-          ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3761954510194394';
-          document.head.appendChild(ad);
-
-          // Skimlinks
-          var sk = document.createElement('script');
-          sk.src = 'https://s.skimresources.com/js/302650X1790655.skimlinks.js';
-          document.body.appendChild(sk);
-        }
-
-        var events = ['scroll', 'mousemove', 'touchstart', 'pointerdown', 'keydown'];
-        function onFirstInteraction() {
-          events.forEach(function (e) { window.removeEventListener(e, onFirstInteraction, { passive: true }); });
-          loadThirdParty();
-        }
-        events.forEach(function (e) { window.addEventListener(e, onFirstInteraction, { passive: true }); });
-
-        // Fallback for sessions that never interact (e.g. lab tests, bots): load on idle.
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(loadThirdParty, { timeout: 5000 });
-        } else {
-          setTimeout(loadThirdParty, 5000);
-        }
-      })();
-    </script>
 </head>
 <body class="tw-bg-cream">
-  <noscript><img height="1" width="1" style="display:none"
-                 src="https://www.facebook.com/tr?id=790112370507856&ev=PageView&noscript=1"
-  /></noscript>
   <app-root></app-root>
 </body>
 </html>

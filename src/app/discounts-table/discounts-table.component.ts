@@ -227,7 +227,6 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   trackBrandClick(company: string): void {
-    this.sendCompanyClickToFb(company);
     this.visitorProfile.trackCompanyClick('company_click_homepage', company);
     if (this.isBrowser && typeof window.sendCopyCodeToGa === 'function') {
       window.sendCopyCodeToGa(company);
@@ -368,12 +367,6 @@ export class DiscountsTableComponent implements OnInit {
       return window.sendCopyCodeToGa;
     }
     return () => {};
-  }
-
-  sendCompanyClickToFb(company: string): void {
-    if (this.isBrowser && typeof (window as any).fbq === 'function') {
-      (window as any).fbq('trackCustom', 'CompanyClickHomepage', { company });
-    }
   }
 
   fillBolVariables() {
