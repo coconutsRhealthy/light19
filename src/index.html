@@ -25,7 +25,6 @@
   <link rel="dns-prefetch" href="https://www.awin1.com">
   <link rel="dns-prefetch" href="https://a1.awin1.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://s.skimresources.com">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DVP906XC65"></script>
   <script>
@@ -50,35 +49,6 @@
   </script>
 
   <meta name="facebook-domain-verification" content="vs16s2ctfs40umqcvd9h1oc2wnyr1r" />
-
-    <script>
-      (function () {
-        var loaded = false;
-        function loadThirdParty() {
-          if (loaded) return;
-          loaded = true;
-
-          // Skimlinks
-          var sk = document.createElement('script');
-          sk.src = 'https://s.skimresources.com/js/302650X1790655.skimlinks.js';
-          document.body.appendChild(sk);
-        }
-
-        var events = ['scroll', 'mousemove', 'touchstart', 'pointerdown', 'keydown'];
-        function onFirstInteraction() {
-          events.forEach(function (e) { window.removeEventListener(e, onFirstInteraction, { passive: true }); });
-          loadThirdParty();
-        }
-        events.forEach(function (e) { window.addEventListener(e, onFirstInteraction, { passive: true }); });
-
-        // Fallback for sessions that never interact (e.g. lab tests, bots): load on idle.
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(loadThirdParty, { timeout: 5000 });
-        } else {
-          setTimeout(loadThirdParty, 5000);
-        }
-      })();
-    </script>
 </head>
 <body class="tw-bg-pink-50">
   <app-root></app-root>
