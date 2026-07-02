@@ -25,7 +25,7 @@ interface PrikbordEntry {
   selector: 'app-prikbord',
   imports: [PrikbordModalComponent, FooterComponent, NavbarComponent, FormsModule, RouterModule],
   templateUrl: './prikbord.component.html',
-  styleUrls: ['./prikbord.component.css', './../app.component.css'],
+  styleUrls: ['./prikbord.component.css'],
   providers: [
     DatePipe,
     { provide: LOCALE_ID, useValue: 'nl' },
