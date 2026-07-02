@@ -70,14 +70,6 @@ export class DiscountsTableComponent implements OnInit {
   // --- new-look homepage: placeholder content for sections without data yet ---
   // The carousel of "highest discount codes of today" is not modelled in the
   // feed yet, so this is editorial sample content until it's wired to real data.
-  topDeals = [
-    { brand: 'Oral-B',     label: 'Kortingscode', title: '50% korting',  desc: 'Scoor een Oral-B kortingscode voor 50% korting als je nu bestelt.', exp: '23-12-2026' },
-    { brand: 'Tenways',    label: 'Korting',      title: '€200 korting', desc: 'Met deze deal scoor je €200 korting bij Tenways.',                  exp: '31-08-2026' },
-    { brand: 'Fotocadeau', label: 'Kortingscode', title: '61% korting',  desc: 'Met deze code ontvang je 61% korting op alles bij Fotocadeau.',     exp: '01-02-2027' },
-    { brand: 'NA-KD',      label: 'Kortingscode', title: '25% korting',  desc: '25% korting op de hele zomercollectie bij NA-KD.',                 exp: '30-06-2026' },
-    { brand: 'Gymshark',   label: 'Kortingscode', title: '20% korting',  desc: '20% korting op je hele bestelling bij Gymshark.',                  exp: '15-07-2026' },
-  ];
-
   socialCards = [
     { tag: 'Instagram + TikTok', title: 'Volg @wiegeeftkorting', desc: 'Dagelijkse codes, sale-alerts en de beste vondsten op je tijdlijn.', cta: 'Volgen', href: 'https://www.instagram.com/wiegeeftkorting/' },
     { tag: 'Prikbord',           title: 'Deel een code die werkt', desc: 'Zelf een goede code gespot? Zet hem op het prikbord en help de rest.', cta: 'Naar prikbord →', href: '/prikbord' },

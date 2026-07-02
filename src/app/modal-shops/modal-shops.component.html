@@ -1,51 +1,67 @@
 @if (isVisible) {
 <!-- Backdrop -->
 <div
-        class="tw-fixed tw-inset-0 tw-bg-black/40 tw-backdrop-blur-sm tw-z-40 tw-animate-fadeIn"
+        class="tw-fixed tw-inset-0 tw-bg-ink/40 tw-backdrop-blur-sm tw-z-40 tw-animate-fadeIn"
         (click)="closeModal()"
 ></div>
 
 <!-- Modal wrapper -->
-<div class="tw-fixed tw-inset-0 tw-flex tw-items-center tw-justify-center tw-z-50">
+<div class="tw-fixed tw-inset-0 tw-flex tw-items-center tw-justify-center tw-z-50 tw-p-4 tw-font-body tw-text-ink">
 
-    <div class="tw-bg-white tw-rounded-3xl tw-shadow-2xl tw-border tw-border-gray-100 tw-w-[90%] sm:tw-w-[420px] tw-overflow-hidden tw-animate-slideUp">
+    <div class="tw-bg-panel tw-rounded-3xl tw-shadow-2xl tw-border tw-border-ink/10 tw-w-full sm:tw-w-[460px] tw-max-h-[85vh] tw-flex tw-flex-col tw-overflow-hidden tw-animate-slideUp">
 
         <!-- Header -->
-        <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-gray-200">
-            <h2 class="tw-font-bold tw-text-lg tw-text-gray-900 tw-text-center tw-w-full">
-                Shops met nieuwe codes ({{ dateStringLatestShops }})
-            </h2>
+        <div class="tw-flex tw-justify-between tw-items-start tw-gap-4 tw-px-6 tw-py-5 tw-border-b tw-border-ink/10">
+            <div>
+                <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/55">
+                    Nieuwe codes · {{ dateStringLatestShops }}
+                </div>
+                <h2 class="tw-font-title tw-font-bold tw-text-xl tw-tracking-tight tw-text-ink tw-mt-1">
+                    Shops met nieuwe codes<span class="tw-text-dot">.</span>
+                </h2>
+            </div>
             <button
                     (click)="closeModal()"
-                    class="tw-text-gray-400 hover:tw-text-gray-600 tw-transition"
-                    aria-label="Close"
+                    class="tw-shrink-0 tw-w-9 tw-h-9 tw-rounded-full tw-bg-ink/5 hover:tw-bg-ink/10 tw-text-ink/60 tw-flex tw-items-center tw-justify-center tw-transition"
+                    aria-label="Sluiten"
             >
                 ✕
             </button>
         </div>
 
         <!-- Body -->
-        <div class="tw-px-6 tw-py-4 tw-max-h-[60vh] tw-overflow-y-auto tw-space-y-2">
-            @for (shop of shops; track shop) {
-                <a
-                        [routerLink]="['/', shop.toLowerCase()]"
-                        class="tw-block tw-border-b tw-border-gray-200 tw-py-2 tw-text-blue-600 hover:tw-text-blue-800 hover:tw-underline tw-transition"
-                >
-                    {{ shop }}
-                </a>
-            }
-            @if (shops.length === 0) {
-                <div class="tw-text-gray-500 tw-text-sm tw-text-center tw-py-4">
+        <div class="tw-px-6 tw-py-5 tw-overflow-y-auto tw-flex-1">
+            @if (shops.length) {
+                <div class="tw-grid tw-grid-cols-2 tw-gap-2">
+                    @for (shop of shops; track shop) {
+                        <a
+                                [routerLink]="['/', shop.toLowerCase()]"
+                                (click)="closeModal()"
+                                class="tw-bg-cream tw-border tw-border-ink/10 tw-rounded-xl tw-px-4 tw-py-2.5 tw-font-body tw-text-sm tw-text-ink tw-no-underline tw-truncate hover:tw-border-ink/25 hover:tw-shadow-sm tw-transition"
+                        >
+                            {{ shop }}
+                        </a>
+                    }
+                </div>
+            } @else {
+                <div class="tw-text-ink/55 tw-text-sm tw-text-center tw-py-6">
                     Geen shops gevonden.
                 </div>
             }
         </div>
 
         <!-- Footer -->
-        <div class="tw-bg-gray-50 tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-gray-200">
+        <div class="tw-bg-cream tw-px-6 tw-py-4 tw-flex tw-justify-between tw-items-center tw-gap-3 tw-border-t tw-border-ink/10">
+            <a
+                    [routerLink]="['/winkels/']"
+                    (click)="closeModal()"
+                    class="tw-font-body tw-font-semibold tw-text-sm tw-text-link tw-no-underline hover:tw-underline tw-transition"
+            >
+                Bekijk alle shops →
+            </a>
             <button
                     (click)="closeModal()"
-                    class="tw-bg-blue-600 hover:tw-bg-blue-700 tw-text-white tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
+                    class="tw-bg-ink tw-text-cream tw-font-semibold tw-text-sm tw-rounded-full tw-px-6 tw-py-2.5 hover:tw-opacity-90 tw-transition"
             >
                 Sluiten
             </button>

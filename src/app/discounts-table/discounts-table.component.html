@@ -5,12 +5,8 @@
   <!-- ============================ HERO ============================ -->
   <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-pt-12 sm:tw-pt-16 lg:tw-pt-20 tw-pb-6 sm:tw-pb-10 tw-flex tw-flex-col tw-items-center tw-text-center">
     <h1 class="tw-max-w-full tw-font-title tw-font-bold tw-text-ink tw-tracking-tight tw-leading-[0.98] tw-text-[2rem] sm:tw-text-6xl lg:tw-text-7xl">
-      Codes die écht werken<span class="tw-text-dot">.</span>
+      Kortingscodes die écht werken<span class="tw-text-dot">.</span>
     </h1>
-    <p class="tw-font-body tw-text-ink/70 tw-mt-5 sm:tw-mt-6 tw-text-base sm:tw-text-lg lg:tw-text-xl tw-leading-relaxed tw-max-w-xl">
-      Elke kortingscode op diski wordt door een echt persoon getest voordat hij online komt. Werkt hij niet, dan zetten we hem er niet op.
-    </p>
-
     <!-- search (drives the grid below) -->
     <div class="tw-w-full tw-max-w-xl tw-mt-7 sm:tw-mt-8">
       <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-p-2 tw-pl-5 sm:tw-pl-6 tw-flex tw-items-center tw-gap-2 tw-shadow-[0_16px_40px_rgba(67,48,46,0.07)]">
@@ -49,49 +45,9 @@
   <div class="tw-flex tw-flex-col">
   <div [class.tw-order-last]="isSearching">
 
-  <!-- ====================== TOP DEALS CAROUSEL ====================== -->
-  <!-- Placeholder editorial content — not yet wired to the live feed. -->
-  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-py-8 sm:tw-py-12">
-    <div class="tw-flex tw-justify-between tw-items-end tw-gap-4 tw-mb-5 sm:tw-mb-6">
-      <div>
-        <h2 class="tw-font-title tw-font-bold tw-tracking-tight tw-text-2xl sm:tw-text-3xl lg:tw-text-4xl tw-leading-tight">
-          De hoogste kortingscodes van vandaag
-        </h2>
-        <p class="tw-font-body tw-text-ink/65 tw-mt-2 tw-text-sm sm:tw-text-base">Met deze kortingen bespaar je nu het meest</p>
-      </div>
-      <div class="tw-hidden sm:tw-flex tw-gap-2.5 tw-shrink-0">
-        <button (click)="rail.scrollBy({ left: -400, behavior: 'smooth' })" aria-label="Vorige" class="tw-w-11 tw-h-11 tw-rounded-full tw-border tw-border-ink/10 tw-bg-panel tw-text-ink tw-flex tw-items-center tw-justify-center tw-text-2xl tw-leading-none tw-pb-1">‹</button>
-        <button (click)="rail.scrollBy({ left: 400, behavior: 'smooth' })" aria-label="Volgende" class="tw-w-11 tw-h-11 tw-rounded-full tw-border tw-border-ink/10 tw-bg-panel tw-text-ink tw-flex tw-items-center tw-justify-center tw-text-2xl tw-leading-none tw-pb-1">›</button>
-      </div>
-    </div>
-
-    <div #rail class="deal-rail tw-flex tw-gap-4 sm:tw-gap-5 tw-overflow-x-auto tw-snap-x tw-snap-mandatory tw--mx-4 tw-px-4 sm:tw-mx-0 sm:tw-px-0 tw-pb-2">
-      @for (d of topDeals; track d.brand) {
-        <div class="tw-snap-start tw-shrink-0 tw-w-[280px] sm:tw-w-[340px]">
-          <div class="tw-h-40 sm:tw-h-52 tw-rounded-2xl tw-bg-gradient-to-br tw-from-sky tw-to-butter"></div>
-          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw--mt-12 tw-mx-4 tw-relative tw-shadow-[0_18px_44px_rgba(67,48,46,0.10)] tw-grid tw-grid-cols-[88px_1fr] tw-overflow-hidden">
-            <div class="tw-flex tw-items-center tw-justify-center tw-bg-white tw-border-r tw-border-ink/10 tw-p-3">
-              <span class="tw-font-title tw-font-bold tw-text-center tw-leading-tight tw-text-sm tw-tracking-tight">{{ d.brand }}</span>
-            </div>
-            <div class="tw-p-4">
-              <div class="tw-flex tw-justify-between tw-items-baseline tw-gap-2">
-                <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-link">{{ d.label }}</span>
-                <span class="tw-font-body tw-text-[11px] tw-text-ink/60">{{ d.brand }}</span>
-              </div>
-              <div class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-mt-1">{{ d.title }}</div>
-              <div class="tw-font-body tw-text-xs sm:tw-text-[13px] tw-text-ink/65 tw-mt-1.5 tw-leading-snug">{{ d.desc }}</div>
-              <div class="tw-font-body tw-text-[11px] tw-text-ink/50 tw-mt-2">Verloopdatum: {{ d.exp }}</div>
-            </div>
-          </div>
-        </div>
-      }
-    </div>
-  </section>
-
   <!-- ====================== POPULAIRE SHOPS (real logos) ====================== -->
   @if (popularLogoBrands.length) {
     <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-10 sm:tw-pb-14">
-      <p class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] sm:tw-text-[11px] tw-text-ink/55 tw-text-center tw-mb-4 sm:tw-mb-5">Populaire shops op diski</p>
       <div class="tw-grid tw-grid-cols-3 sm:tw-grid-cols-4 md:tw-grid-cols-6 tw-gap-3">
         @for (b of popularLogoBrands; track b.slug) {
           <a [routerLink]="['/' + b.slug + '/']" class="tw-bg-white tw-border tw-border-ink/10 tw-rounded-2xl tw-h-20 sm:tw-h-24 tw-flex tw-items-center tw-justify-center tw-p-3 tw-shadow-[0_8px_24px_rgba(67,48,46,0.05)] tw-no-underline hover:tw-shadow-md tw-transition">
@@ -122,24 +78,6 @@
     </div>
   </section>
 
-  <!-- ====================== DISKI PICK (static) ====================== -->
-  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-10 sm:tw-pb-14">
-    <div class="tw-bg-ink tw-text-cream tw-rounded-3xl tw-p-7 sm:tw-p-10 lg:tw-p-12 tw-grid tw-grid-cols-1 lg:tw-grid-cols-[1fr_auto] tw-gap-7 lg:tw-gap-10 lg:tw-items-center">
-      <div>
-        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-cream/65">Diski Pick · deze week</div>
-        <div class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl lg:tw-text-4xl tw-leading-tight tw-tracking-tight tw-mt-2">
-          NA-KD — 25% op de hele zomercollectie<span class="tw-text-sky">.</span>
-        </div>
-        <p class="tw-font-body tw-text-sm sm:tw-text-base tw-text-cream/80 tw-mt-3 tw-max-w-xl tw-leading-relaxed">
-          Onze redactie-keuze van de week. Getest op de checkout, geldig t/m zondag.
-        </p>
-      </div>
-      <div class="tw-flex tw-flex-col tw-gap-2.5 lg:tw-min-w-[240px]">
-        <div class="tw-bg-cream tw-text-ink tw-rounded-xl tw-py-4 tw-px-5 tw-font-label tw-tracking-[0.08em] tw-text-lg sm:tw-text-xl tw-text-center">DISKI25</div>
-        <a [routerLink]="['/na-kd/']" class="tw-bg-sky tw-text-ink tw-rounded-full tw-py-3.5 tw-px-6 tw-font-body tw-font-semibold tw-text-sm sm:tw-text-base tw-no-underline tw-text-center">Kopieer &amp; shop →</a>
-      </div>
-    </div>
-  </section>
   </div><!-- /editorial group -->
 
   <!-- ====================== NIEUWSTE CODES (real data) ====================== -->
@@ -147,7 +85,10 @@
     <div class="tw-flex tw-flex-col sm:tw-flex-row sm:tw-justify-between sm:tw-items-end tw-gap-4 tw-mb-6 sm:tw-mb-8">
       <div>
         <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">
-          @if (dateStringLatestShops) { Laatste update: {{ dateStringLatestShops }} · {{ newShopsCount }} nieuwe shops }
+          @if (dateStringLatestShops) {
+            Laatste update: {{ dateStringLatestShops }} ·
+            <button type="button" (click)="openShopsModal()" class="tw-font-label tw-uppercase tw-tracking-label tw-text-link hover:tw-underline tw-transition">{{ newShopsCount }} nieuwe shops</button>
+          }
         </div>
         <h2 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl lg:tw-text-5xl tw-tracking-tight tw-mt-1.5">
           Nieuwste kortingscodes<span class="tw-text-dot">.</span>
@@ -236,9 +177,9 @@
     }
 
     <div class="tw-flex tw-justify-center tw-mt-9">
-      <button (click)="openShopsModal()" class="tw-bg-panel tw-border tw-border-ink/10 tw-text-ink tw-px-7 tw-py-3.5 tw-rounded-full tw-font-body tw-font-semibold tw-text-sm sm:tw-text-base hover:tw-shadow-md tw-transition">
+      <a [routerLink]="['/winkels/']" class="tw-bg-panel tw-border tw-border-ink/10 tw-text-ink tw-px-7 tw-py-3.5 tw-rounded-full tw-font-body tw-font-semibold tw-text-sm sm:tw-text-base tw-no-underline hover:tw-shadow-md tw-transition">
         Bekijk alle shops →
-      </button>
+      </a>
     </div>
   </section>
   </div><!-- /search-reorder zone -->
