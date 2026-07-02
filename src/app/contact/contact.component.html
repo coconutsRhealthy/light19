@@ -12,47 +12,31 @@
     </h1>
   </section>
 
-  <!-- ===================== BODY: form + sidebar ===================== -->
+  <!-- ===================== BODY: email invite + sidebar ===================== -->
   <section class="tw-max-w-6xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-7 sm:tw-mt-9">
     <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-[1.4fr_1fr] tw-gap-6 lg:tw-gap-10 tw-items-start">
 
-      <!-- Form card -->
-      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-p-6 sm:tw-p-10">
-        <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight">Stuur ons een bericht</h2>
+      <!-- Email invite card -->
+      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-p-6 sm:tw-p-10 lg:tw-p-12">
+        <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl lg:tw-text-4xl tw-tracking-tight tw-leading-[1.05]">
+          Een vraag, tip of samenwerking<span class="tw-text-dot">?</span>
+        </h2>
+        <p class="tw-font-body tw-text-base sm:tw-text-lg tw-text-ink/70 tw-mt-4 tw-leading-relaxed tw-max-w-xl">
+          Stuur ons gewoon een mailtje. We lezen alles zelf en reageren meestal binnen één werkdag —
+          geen formulieren, geen ticketnummers, gewoon even mailen.
+        </p>
 
-        <form (ngSubmit)="submit()" class="tw-mt-6 tw-flex tw-flex-col tw-gap-5">
-          <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 tw-gap-4 sm:tw-gap-5">
-            <label class="tw-flex tw-flex-col tw-gap-2">
-              <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/60">Naam</span>
-              <input name="name" [(ngModel)]="name" placeholder="Je naam"
-                class="tw-bg-cream tw-border tw-border-ink/15 tw-rounded-full tw-px-5 tw-py-3.5 tw-font-body tw-text-ink placeholder:tw-text-ink/40 tw-outline-none focus:tw-border-ink/35 tw-transition" />
-            </label>
-            <label class="tw-flex tw-flex-col tw-gap-2">
-              <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/60">E-mail</span>
-              <input name="email" type="email" [(ngModel)]="email" placeholder="jouw@email.nl"
-                class="tw-bg-cream tw-border tw-border-ink/15 tw-rounded-full tw-px-5 tw-py-3.5 tw-font-body tw-text-ink placeholder:tw-text-ink/40 tw-outline-none focus:tw-border-ink/35 tw-transition" />
-            </label>
-          </div>
+        <!-- Rendered client-side only (see contactEmail in the component) to keep
+             the address out of prerendered HTML and avoid the CF hydration bug. -->
+        <a [href]="contactEmail ? 'mailto:' + contactEmail : null"
+           class="tw-inline-flex tw-items-center tw-gap-2 tw-mt-7 tw-bg-ink tw-text-cream tw-rounded-full tw-px-7 tw-py-4 tw-font-body tw-font-semibold tw-text-base sm:tw-text-lg tw-no-underline hover:tw-opacity-90 active:tw-scale-[0.98] tw-transition">
+          {{ contactEmail || 'Stuur ons een e-mail' }}
+          <span aria-hidden="true">→</span>
+        </a>
 
-          <label class="tw-flex tw-flex-col tw-gap-2">
-            <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/60">Onderwerp</span>
-            <input name="subject" [(ngModel)]="subject" placeholder="Waar gaat het over?"
-              class="tw-bg-cream tw-border tw-border-ink/15 tw-rounded-full tw-px-5 tw-py-3.5 tw-font-body tw-text-ink placeholder:tw-text-ink/40 tw-outline-none focus:tw-border-ink/35 tw-transition" />
-          </label>
-
-          <label class="tw-flex tw-flex-col tw-gap-2">
-            <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/60">Bericht</span>
-            <textarea name="message" [(ngModel)]="message" rows="5" placeholder="Vertel ons wat er speelt…"
-              class="tw-bg-cream tw-border tw-border-ink/15 tw-rounded-2xl tw-px-5 tw-py-3.5 tw-font-body tw-text-ink placeholder:tw-text-ink/40 tw-outline-none focus:tw-border-ink/35 tw-transition tw-resize-y"></textarea>
-          </label>
-
-          <div>
-            <button type="submit"
-              class="tw-font-body tw-font-semibold tw-text-base tw-bg-ink tw-text-cream tw-rounded-full tw-px-7 tw-py-4 hover:tw-opacity-90 active:tw-scale-[0.98] tw-transition">
-              Verstuur bericht
-            </button>
-          </div>
-        </form>
+        <p class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/50 tw-mt-5">
+          Meestal binnen 1 werkdag antwoord
+        </p>
       </div>
 
       <!-- Sidebar -->
@@ -61,7 +45,7 @@
         <div class="tw-bg-sky tw-rounded-3xl tw-p-7 sm:tw-p-8">
           <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink">Een code delen?</h2>
           <p class="tw-font-body tw-text-sm tw-text-ink/80 tw-mt-2 tw-leading-relaxed">
-            Voor het delen van codes hoef je ons niet te mailen — dat kan direct op het prikbord.
+            Daarvoor hoef je ons niet te mailen — zet 'm direct op het prikbord en help de rest.
           </p>
           <a routerLink="/prikbord"
              class="tw-inline-block tw-mt-4 tw-bg-ink tw-text-cream tw-rounded-full tw-px-5 tw-py-3 tw-font-body tw-font-semibold tw-text-sm tw-no-underline hover:tw-opacity-90 tw-transition">
@@ -69,28 +53,17 @@
           </a>
         </div>
 
-        <!-- Contact details -->
+        <!-- Socials -->
         <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-px-7 sm:tw-px-8 tw-py-2">
-          <div class="tw-py-4 tw-border-b tw-border-ink/10">
-            <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10.5px] tw-text-ink/55">E-mail</div>
-            <!-- Rendered client-side only (see contactEmail in the component) to keep
-                 the address out of prerendered HTML and avoid the CF hydration bug. -->
-            <a [href]="contactEmail ? 'mailto:' + contactEmail : null"
-               class="tw-font-body tw-text-base tw-text-ink tw-no-underline hover:tw-text-link tw-transition tw-mt-1 tw-inline-block">{{ contactEmail || 'Stuur ons een e-mail' }}</a>
-          </div>
           <div class="tw-py-4 tw-border-b tw-border-ink/10">
             <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10.5px] tw-text-ink/55">Instagram</div>
             <a href="https://www.instagram.com/wiegeeftkorting" target="_blank" rel="noopener"
                class="tw-font-body tw-text-base tw-text-ink tw-no-underline hover:tw-text-link tw-transition tw-mt-1 tw-inline-block">&#64;wiegeeftkorting</a>
           </div>
-          <div class="tw-py-4 tw-border-b tw-border-ink/10">
+          <div class="tw-py-4">
             <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10.5px] tw-text-ink/55">TikTok</div>
             <a href="https://tiktok.com/@wiegeeftkorting2" target="_blank" rel="noopener"
                class="tw-font-body tw-text-base tw-text-ink tw-no-underline hover:tw-text-link tw-transition tw-mt-1 tw-inline-block">&#64;wiegeeftkorting2</a>
-          </div>
-          <div class="tw-py-4">
-            <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10.5px] tw-text-ink/55">Reactietijd</div>
-            <div class="tw-font-body tw-text-base tw-text-ink tw-mt-1">Meestal binnen 1 werkdag</div>
           </div>
         </div>
       </div>
