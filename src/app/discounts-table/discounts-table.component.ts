@@ -62,6 +62,10 @@ export class DiscountsTableComponent implements OnInit {
   latestShops: string[] = [];
   isShopsModalVisible: boolean = false;
 
+  newsletterEmail: string = '';
+  newsletterSubmitted: boolean = false;
+  newsletterError: boolean = false;
+
   bolHref!: string;
   bolImgSrc!: string;
   bolPixelSrc!: string;
@@ -249,6 +253,21 @@ export class DiscountsTableComponent implements OnInit {
 
   closeShopsModal() {
     this.isShopsModalVisible = false;
+  }
+
+  submitNewsletter(event: Event): void {
+    event.preventDefault();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!this.newsletterEmail || !emailPattern.test(this.newsletterEmail)) {
+      this.newsletterError = true;
+      return;
+    }
+
+    this.newsletterError = false;
+    this.visitorProfile.subscribeNewsletter(this.newsletterEmail);
+    this.newsletterSubmitted = true;
+    this.analyticsEventService.sendEventToGa('newsletter_signup', 'newsletter_signup_homepage');
   }
 
   formatDate(date: string): string {

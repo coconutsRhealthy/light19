@@ -109,6 +109,37 @@ export class VisitorProfileService {
     });
   }
 
+  subscribeNewsletter(email: string): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    localStorage.setItem(EMAIL_KEY, email);
+
+    const profile = this.getProfile();
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    const body = {
+      data: {
+        type: 'profile',
+        attributes: {
+          email,
+          first_name: email.split('@')[0],
+          properties: {
+            // Sentinel written to Brevo's PATH attribute so newsletter-form
+            // signups are distinguishable from code-gate unlocks (which write a
+            // real URL path). Filter Brevo on PATH = 'newsletter-signup'.
+            // Caveat: last-touch — overwritten if this contact later unlocks a code.
+            path: 'newsletter-signup',
+            ...this.buildProfileProperties(profile)
+          }
+        }
+      }
+    };
+
+    this.http.post(WEBHOOK_URL, body, { headers, responseType: 'text' }).subscribe({
+      error: (err) => console.error('Fout bij nieuwsbrief inschrijving:', err)
+    });
+  }
+
   private sendProfileUpdate(email: string, profile: VisitorProfile): void {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
