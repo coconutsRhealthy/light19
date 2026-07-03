@@ -154,8 +154,14 @@ export class ModalComponent {
     navigator.clipboard.writeText(text).then(
       () => {
         this.showTooltip();
-        // The user actually took the code — the key conversion of the normal flow.
-        this.trackCodeEvent('code_copy', this.discount?.companySlug?.toLowerCase());
+        // The user actually took the code — the key conversion.
+        const slug = this.discount?.companySlug?.toLowerCase();
+        // Aggregate copy count (overall total + historical continuity)...
+        this.trackCodeEvent('code_copy', slug);
+        // ...plus a funnel-split variant: showEmailBlock is true only for the gated
+        // flow (mirrors code_gate_shown), false for the no-gate flow (mirrors
+        // code_open_nogate).
+        this.trackCodeEvent(this.showEmailBlock ? 'code_copy_gated' : 'code_copy_nogate', slug);
       },
       (err) => {
         console.error('Failed to copy: ', err);
@@ -265,7 +271,8 @@ export class ModalComponent {
   /**
    * Fire a code-interaction event to GA, both an overall label (for the total)
    * and a per-company label (to compare brands). Used for the email-gate funnel
-   * (code_gate_shown / code_unlock_email) and the copy action (code_copy).
+   * (code_gate_shown / code_unlock_email) and the copy action
+   * (code_copy, plus the split code_copy_gated / code_copy_nogate).
    */
   private trackCodeEvent(action: string, companySlug?: string): void {
     this.analyticsEventService.sendEventToGa(action, action);
