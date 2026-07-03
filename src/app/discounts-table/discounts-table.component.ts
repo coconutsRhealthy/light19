@@ -79,11 +79,18 @@ export class DiscountsTableComponent implements OnInit {
     { tag: 'Prikbord',           title: 'Deel een code die werkt', desc: 'Zelf een goede code gespot? Zet hem op het prikbord en help de rest.', cta: 'Naar prikbord →', href: '/prikbord' },
   ];
 
-  trustSteps = [
-    { n: '01', title: 'Echte mensen testen elke dag', desc: 'Geen bots. We plakken elke code bij de checkout voordat hij live gaat.' },
-    { n: '02', title: 'Met datum en tijdstempel',     desc: 'Elke kaart laat zien wanneer we de code voor het laatst werkend zagen.' },
-    { n: '03', title: 'Werkt hij niet, dan weg',       desc: 'Door jou gemeld, binnen een uur verwijderd. Geen zombie-codes.' },
+  /** Hand-picked, static brands for the "beste sale" block. Deliberately NOT
+   *  wired to the Black Friday feed (external R2 JSON) — this stays a static
+   *  teaser that just links through to /blackfriday. */
+  saleBrandsRaw = [
+    { key: 'zalando',  name: 'Zalando',  tag: 'Mode & kleding' },
+    { key: 'douglas',  name: 'Douglas',  tag: 'Beauty' },
+    { key: 'coolblue', name: 'Coolblue', tag: 'Elektronica' },
   ];
+
+  get saleBrands(): { key: string; name: string; tag: string; logo?: string }[] {
+    return this.saleBrandsRaw.map(b => ({ ...b, logo: this.logos[b.key] }));
+  }
 
   /** First unique companies that have a logo — used for the "populaire shops" row. */
   get popularLogoBrands(): { name: string; slug: string; logo: string }[] {

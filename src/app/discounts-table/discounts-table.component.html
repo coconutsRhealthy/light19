@@ -184,24 +184,37 @@
   </section>
   </div><!-- /search-reorder zone -->
 
-  <!-- ====================== TRUST ====================== -->
+  <!-- ====================== SALE / BLACK FRIDAY (static teaser) ====================== -->
   <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-py-12 sm:tw-py-16 lg:tw-py-20 tw-border-t tw-border-ink/10">
-    <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-[1fr_2fr] tw-gap-8 lg:tw-gap-16 lg:tw-items-start">
+    <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-[1fr_2fr] tw-gap-8 lg:tw-gap-16 lg:tw-items-center">
       <div>
-        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">Hoe we testen</div>
+        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">Sale periodes</div>
         <h2 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl lg:tw-text-5xl tw-leading-[0.98] tw-tracking-tight tw-mt-2">
-          Het saaie werk dat niemand anders doet<span class="tw-text-dot">.</span>
+          Merken met de beste sale<span class="tw-text-dot">.</span>
         </h2>
+        <p class="tw-font-body tw-text-sm sm:tw-text-base tw-text-ink/70 tw-mt-4 tw-max-w-md tw-leading-relaxed">
+          Wij houden bij welke merken de hoogste kortingen geven — zodat jij nooit een grote sale mist.
+        </p>
+        <a routerLink="/blackfriday" class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-ink tw-text-cream tw-rounded-full tw-px-6 tw-py-3.5 tw-mt-6 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-whitespace-nowrap">
+          Bekijk alle sale-merken <span aria-hidden="true">→</span>
+        </a>
       </div>
       <div class="tw-flex tw-flex-col tw-gap-3.5">
-        @for (s of trustSteps; track s.n) {
-          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-5 sm:tw-p-7 tw-grid tw-grid-cols-[36px_1fr] sm:tw-grid-cols-[54px_1fr] tw-gap-4 sm:tw-gap-5 tw-items-center">
-            <div class="tw-font-label tw-text-lg sm:tw-text-xl tw-text-ink/40">{{ s.n }}</div>
-            <div>
-              <div class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight">{{ s.title }}</div>
-              <div class="tw-font-body tw-text-sm tw-text-ink/65 tw-mt-1 tw-leading-relaxed">{{ s.desc }}</div>
+        @for (b of saleBrands; track b.key) {
+          <a routerLink="/blackfriday" class="tw-group tw-bg-white tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-grid tw-grid-cols-[auto_1fr_auto] tw-gap-4 sm:tw-gap-5 tw-items-center tw-no-underline tw-shadow-[0_8px_24px_rgba(67,48,46,0.05)] hover:tw-shadow-md tw-transition">
+            <div class="tw-w-11 tw-h-11 sm:tw-w-12 sm:tw-h-12 tw-rounded-xl tw-bg-panel tw-flex tw-items-center tw-justify-center tw-p-1.5 tw-shrink-0">
+              @if (b.logo) {
+                <img [src]="b.logo" [alt]="b.name + ' logo'" width="40" height="40" class="tw-max-w-full tw-max-h-full tw-object-contain" loading="lazy" />
+              } @else {
+                <span class="tw-font-title tw-font-bold tw-text-ink/50">{{ b.name.charAt(0) }}</span>
+              }
             </div>
-          </div>
+            <div class="tw-min-w-0">
+              <div class="tw-font-title tw-font-bold tw-text-base sm:tw-text-lg tw-tracking-tight tw-text-ink">{{ b.name }}</div>
+              <div class="tw-font-body tw-text-xs sm:tw-text-sm tw-text-ink/55 tw-mt-0.5">{{ b.tag }}</div>
+            </div>
+            <span aria-hidden="true" class="tw-text-ink/35 group-hover:tw-text-ink tw-transition tw-text-lg tw-pr-1">→</span>
+          </a>
         }
       </div>
     </div>
