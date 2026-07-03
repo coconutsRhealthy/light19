@@ -76,11 +76,11 @@
             @if (item.code.startsWith('http')) {
               <a [href]="item.code" target="_blank" rel="noopener"
                  onclick="gtag('event', 'prikbord_linkje', {'event_category': 'PrikbordLinkje', 'event_label': 'prikbord_linkje'});"
-                 class="tw-inline-flex tw-items-center tw-gap-1 tw-font-body tw-font-semibold tw-text-sm tw-text-link tw-no-underline hover:tw-underline">
+                 class="tw-inline-flex tw-items-center tw-gap-1 tw-bg-sky tw-rounded-lg tw-px-3 tw-py-2 tw-font-body tw-font-semibold tw-text-sm tw-text-ink tw-no-underline hover:tw-brightness-95 tw-transition">
                 Bekijk linkje →
               </a>
             } @else {
-              <span class="tw-inline-block tw-max-w-full tw-break-all tw-bg-cream tw-border tw-border-dashed tw-border-ink/25 tw-rounded-lg tw-px-3 tw-py-2 tw-font-label tw-uppercase tw-tracking-[0.05em] tw-text-sm tw-text-ink">{{ item.code }}</span>
+              <span class="tw-inline-block tw-max-w-full tw-break-all tw-bg-sky tw-rounded-lg tw-px-3 tw-py-2 tw-font-label tw-font-semibold tw-uppercase tw-tracking-[0.05em] tw-text-sm tw-text-ink">{{ item.code }}</span>
             }
           </div>
 
