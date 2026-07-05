@@ -101,19 +101,19 @@ console.log(
 // =========================
 // 4. sitemap.xml — the INDEXABLE set
 // =========================
-// Indexable set = shops that always show a code + utility pages.
+// Indexable set = shops that always show a code + utility pages. Every content
+// page now carries a fallback code, so all are safe to index:
 //   - discounts.json slugs: have a live code.
-//   - v2 content slugs: every v2 data file carries a `backupCode` (filled by the
-//     engine's enrich_backup_codes.py), so a v2 page always renders a code even
-//     with no live code — safe to index.
-// Still EXCLUDED: v1-only content slugs with no live code. The v1 template gates
-// its whole body behind `discountCodes.length > 0`, so those pages are thin
-// soft-404 shells until v1 gets its own backup-code handling — don't index them.
+//   - v2 content slugs: each data file has a `backupCode` (engine's
+//     enrich_backup_codes.py).
+//   - v1 content slugs: each has an entry in company-seo-content/backup-codes.ts
+//     (scripts/populate-v1-backup-codes.js), so the v1 page renders its content
+//     instead of the 404 shell even with no live code.
 const BASE_URL = 'https://diski.nl';
 const today = new Date().toISOString().split('T')[0];
 
 const sitemapUtility = new Set(['winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'blackfriday', 'code-delen', '']);
-const sitemapSlugs = Array.from(new Set([...discountSlugs, ...v2Slugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
+const sitemapSlugs = Array.from(new Set([...discountSlugs, ...v1Slugs, ...v2Slugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
 
 const urls = sitemapSlugs.map((route) => {
   const pathPart = route === '' ? '/' : `/${route}/`;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { loadSeoContent } from './company-seo-content/index';
+import { V1_BACKUP_CODES } from './company-seo-content/backup-codes';
 import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -140,6 +141,23 @@ export class CompanyCodesComponent implements OnInit {
             label: label,
           };
         });
+
+      // v1 is frozen and its pages must stay online after codes are pruned from
+      // discounts.json. When a shop has no live code, fall back to the one-off
+      // backup map so the page renders its content (codes + seo + related) instead
+      // of the "404 niet gevonden" shell. Mirrors v2's backupCode behaviour; a live
+      // code always wins. Synchronous, so it's correct in prerender/SSR too.
+      if (this.discountCodes.length === 0) {
+        const backup = V1_BACKUP_CODES[companyName.toLowerCase()];
+        if (backup) {
+          this.discountCodes = [{
+            code: backup.code,
+            discount: backup.discount,
+            date: this.getCurrentDateAsString(),
+            label: undefined,
+          }];
+        }
+      }
 
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);
