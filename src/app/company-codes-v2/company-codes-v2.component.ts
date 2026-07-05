@@ -268,15 +268,23 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     this.dealCodes = parsed.filter(c => c.isDeal);
     this.affiliateLink = this.affiliateLinkService.getAffiliateLink(this.company);
 
-    this.maxDiscount = this.regularCodes
-      .filter(c => c.isPercent)
-      .reduce((max, c) => Math.max(max, Number(c.rawValue)), 0);
-
-    // Page-level "laatst gecontroleerd" from the baked build date (date-only).
+    // Page-level "laatst gecontroleerd" from the baked build date (deterministic,
+    // SSR-safe). Also stamps an injected backup code below.
     const [by, bm, bd] = (BUILD_DATE_ISO || '').split('-').map(Number);
     const checked = (by && bm && bd) ? new Date(by, bm - 1, bd) : now;
     this.lastCheckedIso = BUILD_DATE_ISO || this.toIsoDate(now);
     this.lastCheckedLabel = this.formatDate(checked);
+
+    // Fallback: no live regular code in discounts.json → show the engine-provided
+    // backupCode so a v2 page always has a working code (never a "0 codes" page).
+    // Only kicks in when there's nothing live; a real code always wins.
+    if (this.regularCodes.length === 0 && this.content?.backupCode?.code) {
+      this.regularCodes = [this.backupCodeVM(this.content.backupCode, checked)];
+    }
+
+    this.maxDiscount = this.regularCodes
+      .filter(c => c.isPercent)
+      .reduce((max, c) => Math.max(max, Number(c.rawValue)), 0);
 
     this.buildRelatedShops(lines);
     this.applySeo();
@@ -293,6 +301,31 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
         }
       }
     }
+  }
+
+  /**
+   * A CodeVM built from the engine-provided backupCode — the fallback code shown
+   * only when discounts.json has no live code for this shop. Rendered identically
+   * to a live code (card, modal, affiliate flow). Stamped with the build date so
+   * it stays deterministic (SSR/hydration safe). The engine guarantees the code is
+   * a typeable string (URLs/phrases are filtered out), so isDeal is always false.
+   */
+  private backupCodeVM(backup: { code: string; discount?: string }, date: Date): CodeVM {
+    const rawValue = (backup.discount ?? '').trim();
+    const isPercent = isFinite(Number(rawValue)) && rawValue !== '' && !rawValue.includes('€');
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+    const dd = String(date.getDate()).padStart(2, '0');
+    return {
+      code: backup.code,
+      isDeal: false,
+      rawValue,
+      valueText: this.formatValue(rawValue, isPercent),
+      isPercent,
+      label: undefined,
+      date,
+      rawDate: `${mm}-${dd}`,
+      dateLabel: this.formatDate(date),
+    };
   }
 
   /**

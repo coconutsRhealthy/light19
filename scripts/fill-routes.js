@@ -101,16 +101,19 @@ console.log(
 // =========================
 // 4. sitemap.xml — the INDEXABLE set
 // =========================
-// Deliberately NOT the full route union yet: a content page with no live code and
-// no backup code still renders a soft-404 title (v1) / "0 codes" (v2), so indexing
-// it now would be harmful. Indexing stays limited to shops that have a live code in
-// discounts.json (plus utility pages). Once the backup-code work lands (so every
-// content page always shows a real code), expand this to the content union.
+// Indexable set = shops that always show a code + utility pages.
+//   - discounts.json slugs: have a live code.
+//   - v2 content slugs: every v2 data file carries a `backupCode` (filled by the
+//     engine's enrich_backup_codes.py), so a v2 page always renders a code even
+//     with no live code — safe to index.
+// Still EXCLUDED: v1-only content slugs with no live code. The v1 template gates
+// its whole body behind `discountCodes.length > 0`, so those pages are thin
+// soft-404 shells until v1 gets its own backup-code handling — don't index them.
 const BASE_URL = 'https://diski.nl';
 const today = new Date().toISOString().split('T')[0];
 
 const sitemapUtility = new Set(['winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'blackfriday', 'code-delen', '']);
-const sitemapSlugs = Array.from(new Set([...discountSlugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
+const sitemapSlugs = Array.from(new Set([...discountSlugs, ...v2Slugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
 
 const urls = sitemapSlugs.map((route) => {
   const pathPart = route === '' ? '/' : `/${route}/`;
