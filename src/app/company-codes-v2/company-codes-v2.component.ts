@@ -45,10 +45,11 @@ const DEFAULT_RELATED = ['nakdfashion', 'shein', 'ginatricot', 'gutsgusto', 'tem
 const RELATED_MAX = 8;
 
 /**
- * v2 showcase page — data-driven for ANY shop via the /v2/:company route.
- * Codes come from discounts.json; per-shop copy comes from the brand-content
- * registry (grounded in influencer captions where available). Served noindexed
- * so it never competes with the live pages while we pilot.
+ * v2 showcase page — data-driven for any shop that has a brand-content data file.
+ * Served live and indexable on the real /:company route (the guard routes such
+ * shops here; every other shop falls through to the v1 component). Codes come from
+ * discounts.json; per-shop copy comes from the brand-content registry (grounded in
+ * influencer captions where available).
  */
 @Component({
   selector: 'app-company-codes-v2',
@@ -150,19 +151,12 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     if (!el.muted && el.paused) el.play().catch(() => {});
   }
 
-  /** True on the /v2/ preview route (route data.preview); false on the live /:company route. */
-  private get isPreview(): boolean {
-    return this.route.snapshot.data['preview'] === true;
-  }
-
   /**
-   * Href for a related-shop link. Path-aware like the modal deep-link: on the live
-   * route it points at the real `/{slug}/` page (indexable, never the noindexed
-   * preview); in preview it stays in `/v2/{slug}/`. Always keeps the project-wide
-   * trailing slash.
+   * Href for a related-shop link: the real `/{slug}/` page (indexable). Keeps the
+   * project-wide trailing slash.
    */
   relatedHref(slug: string): string {
-    return this.isPreview ? `/v2/${slug}/` : `/${slug}/`;
+    return `/${slug}/`;
   }
 
   /**
@@ -287,7 +281,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     this.buildRelatedShops(lines);
     this.applySeo();
 
-    // Deep link: opening /v2/{company}#i={index} (e.g. in the new tab spawned by
+    // Deep link: opening /{company}#i={index} (e.g. in the new tab spawned by
     // the affiliate flow) re-opens the code modal for that code — mirrors v1.
     const fragment = this.route.snapshot.fragment;
     if (fragment) {
@@ -363,14 +357,9 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     this.meta.updateMetaInfo(description, 'diski.nl', `${name}, Kortingscode, Korting`);
     this.meta.updateOgTags(title, description, pageUrl);
 
-    // Noindex ONLY on the /v2/ preview route (data.preview). On the real
-    // /:company route (allowlisted go-live shops) the page must be indexable,
-    // so we actively clear any stale noindex left by a prior preview navigation.
-    if (this.isPreview) {
-      this.meta.setNoIndex();
-    } else {
-      this.meta.setIndex();
-    }
+    // Every v2 page is live on the real /:company route, so it must be indexable;
+    // actively clear any stale noindex left by a prior navigation.
+    this.meta.setIndex();
 
     this.meta.setJsonLd('v2-organization', {
       '@context': 'https://schema.org',
@@ -530,9 +519,8 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
   private openNewPageWithCodeDetailModal(codeIndex: number): void {
     if (!this.isBrowser) return;
-    // Deep-link to the page we're actually on: /v2/{company} in preview,
-    // /{company} on the live route. Mirrors v1's new-tab behaviour.
-    const base = this.isPreview ? `/v2/${this.company}` : `/${this.company}`;
+    // Deep-link to the page we're on (mirrors v1's new-tab behaviour).
+    const base = `/${this.company}`;
     const url = `${window.location.origin}${base}#i=${encodeURIComponent(codeIndex)}`;
     window.open(url, '_blank');
     if (this.affiliateLink !== undefined) {
