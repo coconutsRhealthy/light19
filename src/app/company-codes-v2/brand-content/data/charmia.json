@@ -1,6 +1,10 @@
 {
   "slug": "charmia",
   "name": "Charmia",
+  "backupCode": {
+    "code": "NOA15",
+    "discount": "15"
+  },
   "heroLede": "Charmia maakt Italiaanse charmbracelets: armbanden die je zelf samenstelt met losse bedeltjes. Via Nederlandse creators circuleert een kortingscode van 15%, zodat je je eigen gepersonaliseerde armband net wat voordeliger samenstelt.",
   "about": [
     "Charmia is gespecialiseerd in Italiaanse charmarmbanden en bijpassende bedeltjes (charms). Naast armbanden vind je charmhorloges, oorbellen, ringen, kettingen en bangles. De charms zijn er in categorieën als letters, sterrenbeelden, bloemen, symbolen, dieren, vlaggen en seizoensthema's.",

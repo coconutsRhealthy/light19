@@ -1,6 +1,10 @@
 {
   "slug": "buckedup",
   "name": "Bucked Up",
+  "backupCode": {
+    "code": "DKK1",
+    "discount": "10"
+  },
   "heroLede": "Bucked Up is een Amerikaans sportsupplementenmerk dat vooral bekend staat om zijn pre-workouts, naast creatine, eiwitproducten, energy drinks en vitamines. Via ambassadeurs van het merk shop je met een kortingscode met extra voordeel.",
   "about": [
     "Bucked Up (van DAS Labs) richt zich op sporters en is het sterkst geprofileerd op pre-workout. De lijn loopt van een standaardvariant tot zwaardere, hoog-gedoseerde opties zoals Woke AF en de extra sterke Mother Bucker, voor wie meer stimulans en focus zoekt tijdens de training.",

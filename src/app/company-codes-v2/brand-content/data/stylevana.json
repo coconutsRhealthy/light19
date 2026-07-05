@@ -1,6 +1,10 @@
 {
   "slug": "stylevana",
   "name": "Stylevana",
+  "backupCode": {
+    "code": "INF105TANYATS",
+    "discount": "15"
+  },
   "heroLede": "Stylevana is een online retailer gespecialiseerd in Aziatische beauty, met een groot aanbod K-beauty- en J-beauty-skincare en cosmetica. Je vindt er bekende Koreaanse merken als COSRX en Beauty of Joseon, plus virale producten die door creators op TikTok en Instagram veel worden gedeeld.",
   "about": [
     "Stylevana is een webshop die zich richt op Aziatische huidverzorging en make-up, met de nadruk op Koreaanse beauty (K-beauty) en Japanse beauty (J-beauty). Het assortiment loopt van reinigers, toners en serums tot moisturizers, maskers, zonnebrand en skincare-tools.",

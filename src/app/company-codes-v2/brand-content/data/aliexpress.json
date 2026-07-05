@@ -1,6 +1,10 @@
 {
   "slug": "aliexpress",
   "name": "AliExpress",
+  "backupCode": {
+    "code": "NLBB04",
+    "discount": "€4"
+  },
   "heroLede": "Werkende AliExpress kortingscodes op één plek, dagelijks gecontroleerd door onze redactie. Bij AliExpress draaien de codes meestal om een vast bedrag korting (van een paar euro tot enkele tientjes) dat je tijdens het afrekenen invoert, vaak gekoppeld aan een minimaal besteedbedrag. Hieronder lees je hoe de codes werken en waar je op moet letten op deze enorme marktplaats.",
   "about": [
     "AliExpress is de internationale online marktplaats van het Chinese Alibaba, waar je via duizenden losse verkopers vrijwel alles vindt: mode en accessoires, elektronica en gadgets, gereedschap, auto- en fietsonderdelen, huis- en tuinspullen, beauty, speelgoed en hobbymateriaal. Omdat het geen eigen winkel is maar een platform vol aparte sellers, lopen prijs, kwaliteit en levertijd per verkoper uiteen — de reputatie van een specifieke shop en de productreviews zeggen daarom vaak meer dan de merknaam zelf.",

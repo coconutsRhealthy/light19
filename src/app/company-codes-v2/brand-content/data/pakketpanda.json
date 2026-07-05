@@ -1,6 +1,10 @@
 {
   "slug": "pakketpanda",
   "name": "PakketPanda",
+  "backupCode": {
+    "code": "WENDY10",
+    "discount": "€10"
+  },
   "heroLede": "PakketPanda maakt pakketbrievenbussen waarmee je nooit meer een pakje misloopt: de bezorger legt je pakket veilig achter slot en grendel, ook als je niet thuis bent. Met een PakketPanda kortingscode pak je extra voordeel op een van hun weerbestendige stalen pakketboxen.",
   "about": [
     "PakketPanda (pakketpanda.nl) is een Nederlandse webshop die zich volledig richt op pakketbrievenbussen: stevige bussen waarin zowel post als pakketten veilig terechtkomen wanneer je niet thuis bent. De bezorger doet het pakket erin, jij haalt het er met een sleutel weer uit. Geen briefjes in de bus, geen ophalen bij de buren en geen thuisblijfstress meer.",

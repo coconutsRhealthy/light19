@@ -1,6 +1,10 @@
 {
   "slug": "fittasticsportswear",
   "name": "Fittastic Sportswear",
+  "backupCode": {
+    "code": "Kayleigh",
+    "discount": "10"
+  },
   "related": [
     "hillsidethelabel",
     "jhpfashion.nl",

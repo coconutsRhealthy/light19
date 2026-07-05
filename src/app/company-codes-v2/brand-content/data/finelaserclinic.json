@@ -1,6 +1,10 @@
 {
   "slug": "finelaserclinic",
   "name": "Fine LaserClinic",
+  "backupCode": {
+    "code": "INDIGO10",
+    "discount": "10"
+  },
   "heroLede": "Fine LaserClinic is een Nederlandse laser- en huidkliniek met vestigingen in Amersfoort, Arnhem en Amsterdam. De kliniek is gespecialiseerd in definitieve laserontharing en biedt daarnaast huidverbetering, tattoo- en PMU-verwijdering, microneedling en kalknagelbehandelingen. Met de code op deze pagina boek je voordeliger je afspraak.",
   "about": [
     "Fine LaserClinic richt zich op definitieve ontharing en huidverbetering vanuit drie vestigingen: Amersfoort (Kamp 46), Arnhem (Willemsplein 35a) en Amsterdam (Rijnstraat 130). De kliniek werkt met een eigen behandelprotocol en zegt vooral 'echt de tijd voor je te nemen' met een persoonlijk afgestemd plan.",

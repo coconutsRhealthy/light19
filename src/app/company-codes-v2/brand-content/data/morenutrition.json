@@ -1,6 +1,10 @@
 {
   "slug": "morenutrition",
   "name": "More Nutrition",
+  "backupCode": {
+    "code": "SABRINA",
+    "discount": "10"
+  },
   "heroLede": "More Nutrition draait om eiwitrijk en suikerarm genieten: van de Chunky Flavour smaakpoeders en Zerup-siropen tot proteïnerepen, kwark-recepten en Satisbites. Op social media duikt het merk vooral op in recepten van Nederlandse fit- en leefstijlcreators, vaak met een persoonlijke kortingscode erbij.",
   "about": [
     "More Nutrition is een voedingsmerk met een breed assortiment rond 'calorieën besparen met volle smaak'. Het draait om producten die je dagelijkse eten lekkerder maken zonder veel extra suiker of calorieën: smaakpoeders (de bekende Chunky Flavour), suikervrije Zerup-siropen, proteïnepoeders, light sauzen en eiwitrijke snacks.",

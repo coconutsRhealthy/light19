@@ -1,6 +1,10 @@
 {
   "slug": "kaartje2go",
   "name": "Kaartje2go",
+  "backupCode": {
+    "code": "AYDB10",
+    "discount": "10"
+  },
   "heroLede": "Kaartje2go is dé Nederlandse webshop om gepersonaliseerde wenskaarten en fotocadeaus te maken en direct naar de ontvanger te laten versturen. Of het nu om een verjaardag, een geboorte, kerst of een condoleance gaat: je ontwerpt je kaart online, voegt eigen foto's en tekst toe, en Kaartje2go drukt en verzendt hem voor je. Met een kortingscode pak je nog wat extra voordeel op je bestelling.",
   "about": [
     "Kaartje2go is gevestigd in Zwolle en gespecialiseerd in persoonlijke wenskaarten en fotoproducten. In de online editor pas je een kaart helemaal naar wens aan: je uploadt je eigen foto's, verandert de tekst, kiest een ander lettertype of kleur en voegt kaders of decoratie toe. Wie liever niet zelf hoeft te schrijven, vindt voorbeeldteksten per gelegenheid.",

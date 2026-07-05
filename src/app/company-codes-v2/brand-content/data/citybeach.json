@@ -1,6 +1,10 @@
 {
   "slug": "citybeach",
   "name": "City Beach",
+  "backupCode": {
+    "code": "STYLESZN",
+    "discount": "20"
+  },
   "heroLede": "City Beach is een Australische lifestyle-retailer voor swim-, surf-, skate- en streetfashion sinds 1985. Je vindt er zwemkleding, sneakers, boardsports en streetwear voor dames, heren en kids van merken als Billabong, Vans en Nike. Creators delen op TikTok hun outfits met een persoonlijke kortingscode — daarmee shop je het assortiment voordeliger.",
   "about": [
     "City Beach is een Australische lifestyle-winkel die sinds 1985 swimwear, surf-, skate- en streetfashion verkoopt voor dames, heren en kids. Wat begon als één strandwinkel groeide uit tot een van de bekendere Australische lifestyle-retailers met tientallen filialen en een webshop die ook internationaal verzendt.",

@@ -1,6 +1,10 @@
 {
   "slug": "mothersearth",
   "name": "Mother's Earth",
+  "backupCode": {
+    "code": "NOES15",
+    "discount": "15"
+  },
   "related": [
     "achateshop.com",
     "wildrefill",

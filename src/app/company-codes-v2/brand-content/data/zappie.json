@@ -1,6 +1,10 @@
 {
   "slug": "zappie",
   "name": "Zappie",
+  "backupCode": {
+    "code": "ROMY20",
+    "discount": "20"
+  },
   "heroLede": "Zappie (Zappiebox) is een Nederlandse maandelijkse ontdekbox waarmee kinderen van ongeveer 5 tot 9 jaar zelf aan de slag gaan met wetenschap en techniek. Elke maand bouwen ze een nieuw project, van een pingpongschieter tot een hydraulische arm, helemaal zelf en met alle materialen erbij. Met een geldige Zappie kortingscode shop je een box of abonnement voordeliger.",
   "about": [
     "Zappie, online bekend als Zappiebox, maakt maandelijkse Science & Technology-boxen voor kinderen. In elke box zit een compleet bouwproject met stap-voor-stap-instructies, en volgens Zappie zit “alles wat je nodig hebt” er al in — tot en met de batterijen. Creator suusgro liet bijvoorbeeld een pingpongschieter zien die haar kind zelf in elkaar zette, en omschreef het idee precies zoals Zappie het bedoelt: kinderen bouwen elke maand iets gaafs, helemaal zelf, geleverd met alle materialen en duidelijke instructies.",

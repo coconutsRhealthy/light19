@@ -1,6 +1,10 @@
 {
   "slug": "cityfit.reformer",
   "name": "CityFit Reformer",
+  "backupCode": {
+    "code": "JOY",
+    "discount": "10"
+  },
   "heroLede": "CityFit Reformer is de reformer pilates-studio van CityFit in Doetinchem, waar je in kleine groepjes traint op moderne reformer-banken. Met een kortingscode van een van de vaste creators pak je korting op een lespakket.",
   "about": [
     "CityFit Reformer is het reformer pilates-aanbod van CityFit Doetinchem, een sportstudio aan de C. Missetstraat in Doetinchem. Naast reformer pilates draait CityFit ook small group training, fitness, EGYM en mindfulness onder één dak.",

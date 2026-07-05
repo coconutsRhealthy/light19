@@ -1,6 +1,10 @@
 {
   "slug": "garmundo.nl",
   "name": "Garmundo",
+  "backupCode": {
+    "code": "NATALIE10",
+    "discount": "10"
+  },
   "heroLede": "Garmundo is een Nederlandse tuinplanten-webshop die planten vers van de kweker rechtstreeks naar je tuin stuurt. Van haagplanten en borderpakketten tot fruitbomen, vaste planten en sedum voor groene daken: met een persoonlijke Garmundo kortingscode pak je er meestal 10% korting bij.",
   "about": [
     "Garmundo levert tuinplanten 'vers van de kweker' en slaat zo de tussenstop bij het tuincentrum over. De webshop is volgens eigen zeggen onderdeel van een van de oudste boomkwekerijen van Europa, met een lange traditie in de boomkwekerij, en werkt samen met Nederlandse en Belgische familiekwekers die elk hun eigen specialiteit hebben.",

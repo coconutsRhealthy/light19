@@ -1,6 +1,10 @@
 {
   "slug": "charlottetilbury",
   "name": "Charlotte Tilbury",
+  "backupCode": {
+    "code": "lena76",
+    "discount": "10"
+  },
   "related": [
     "paulaschoice.nl",
     "achateshop.com",

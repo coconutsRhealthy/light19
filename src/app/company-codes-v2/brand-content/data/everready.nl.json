@@ -1,6 +1,10 @@
 {
   "slug": "everready.nl",
   "name": "Ever Ready",
+  "backupCode": {
+    "code": "SIMONE15",
+    "discount": "15"
+  },
   "heroLede": "Ever Ready maakt vegan verzorgingsproducten voor sporters: een verwarmende crème voor de warming-up, cooling gel voor het herstel en verzorging als douchegel en deodorant. Met een geldige kortingscode betaal je minder voor de crème, gel of een van de bundels.",
   "about": [
     "Ever Ready is een Nederlandse webshop die zich richt op actieve lichaamsverzorging rond drie momenten: warm worden vóór de inspanning, afkoelen en herstellen erna, en de dagelijkse hygiëne. De producten draaien om beweging, vandaar de regels 'Warm op, beweeg vrij' en 'Koel af, herstel sneller'.",

@@ -1,6 +1,10 @@
 {
   "slug": "insentials.supplements",
   "name": "Insentials",
+  "backupCode": {
+    "code": "danielle-de-ridder",
+    "discount": "10"
+  },
   "heroLede": "Insentials is een merk van wetenschappelijk onderbouwde voedingssupplementen, geproduceerd in België, dat draait om gepersonaliseerde routines voor energie, darmgezondheid, huid en balans van binnenuit. Met een persoonlijke kortingscode pak je meestal 10% korting op je eerste bestelling.",
   "about": [
     "Insentials maakt voedingssupplementen die volgens het merk wetenschappelijk onderbouwd en in België geproduceerd zijn. In plaats van losse potjes denkt Insentials in routines: dagelijkse protocollen (de zogenoemde Routines 1-2-3) die je per doel samenstelt, van darmgezondheid en energie tot huid en hormonale balans.",

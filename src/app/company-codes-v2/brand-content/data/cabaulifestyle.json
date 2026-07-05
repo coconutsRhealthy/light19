@@ -1,6 +1,10 @@
 {
   "slug": "cabaulifestyle",
   "name": "Cabau Lifestyle",
+  "backupCode": {
+    "code": "STEVIE10",
+    "discount": "10"
+  },
   "related": [
     "nakdfashion",
     "emmasleepnl",

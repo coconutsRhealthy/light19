@@ -1,6 +1,10 @@
 {
   "slug": "parfumado",
   "name": "Parfumado",
+  "backupCode": {
+    "code": "EVAx10",
+    "discount": "10"
+  },
   "heroLede": "Parfumado is een parfumabonnement waarmee je elke maand een travelsize-flesje van een designer- of nicheparfum door de brievenbus krijgt. Op TikTok en Instagram nemen creators je mee in hun dag en delen ze hun favoriete geur van de maand, vaak met een persoonlijke kortingscode voor je eerste maand.",
   "about": [
     "Parfumado is een Nederlandse fragrance-discovery service: in plaats van meteen een hele fles te kopen, ontvang je maandelijks een travelsize-parfum dat je kunt uitproberen. Volgens het merk gaat een flesje van 8 ml ongeveer 30 dagen mee bij zo'n 4 sprays per dag, en wordt het altijd gratis thuisbezorgd.",

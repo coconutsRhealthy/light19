@@ -1,6 +1,10 @@
 {
   "slug": "wildrefill",
   "name": "Wild",
+  "backupCode": {
+    "code": "LENAOLIVA",
+    "discount": "15"
+  },
   "related": [
     "mothersearth",
     "nakdfashion",

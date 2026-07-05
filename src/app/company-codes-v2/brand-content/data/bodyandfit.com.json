@@ -1,6 +1,10 @@
 {
   "slug": "bodyandfit.com",
   "name": "Body & Fit",
+  "backupCode": {
+    "code": "KOEN",
+    "discount": "10"
+  },
   "heroLede": "Body & Fit is een grote webshop voor sportvoeding en supplementen, van whey- en vegan-eiwit tot creatine, pre-workout en eiwitrepen. In de fitnesscommunity op TikTok en Instagram duikt het merk continu op in unboxings en gym-content van Nederlandse creators, vaak met een persoonlijke code die bovenop de lopende deals nog extra korting geeft. Hier lees je hoe dat werkt.",
   "about": [
     "Body & Fit is gespecialiseerd in sportvoeding en fitnesssupplementen. Het assortiment loopt onder meer van eiwitpoeders (whey, isolaat, caseïne en vegan) en creatine tot pre-workout, eiwitrepen en maaltijdvervangers, aangevuld met vitamines en mineralen, aminozuren en elektrolyten en wat sportkleding en accessoires.",

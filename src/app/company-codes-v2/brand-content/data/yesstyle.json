@@ -1,6 +1,10 @@
 {
   "slug": "yesstyle",
   "name": "YesStyle",
+  "backupCode": {
+    "code": "SUMMERSALE15",
+    "discount": "20"
+  },
   "related": [
     "shein",
     "temu",

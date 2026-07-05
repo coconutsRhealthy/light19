@@ -1,6 +1,10 @@
 {
   "slug": "loopearplugs",
   "name": "Loop Earplugs",
+  "backupCode": {
+    "code": "LOOPX-CEDRIC",
+    "discount": "20"
+  },
   "related": [
     "currentbody.com",
     "emmasleepnl",

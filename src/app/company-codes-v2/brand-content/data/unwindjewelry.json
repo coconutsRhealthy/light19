@@ -1,6 +1,10 @@
 {
   "slug": "unwindjewelry",
   "name": "UNWIND Jewelry",
+  "backupCode": {
+    "code": "LOVEKATIE",
+    "discount": "15"
+  },
   "heroLede": "UNWIND Jewelry is een Amsterdams sieradenmerk dat draait om waterproof, niet-verkleurende sieraden die je dag in dag uit kunt dragen. Ringen, oorbellen, kettingen, armbanden en enkelbandjes met een luxe uitstraling voor een toegankelijke prijs - bedoeld om gewoon aan te houden onder de douche, in zee of in het zwembad.",
   "about": [
     "UNWIND Jewelry begon volgens het merk eind 2021 als een handgemaakte collectie vanuit een studentenkamer in Breda en groeide uit tot een sieradenmerk met een vaste winkel in Amsterdam, in de Negen Straatjes. De insteek bleef hetzelfde: betaalbare sieraden die qua afwerking lang meegaan.",

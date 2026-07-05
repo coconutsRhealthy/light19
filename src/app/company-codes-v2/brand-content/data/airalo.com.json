@@ -1,6 +1,10 @@
 {
   "slug": "airalo.com",
   "name": "Airalo",
+  "backupCode": {
+    "code": "ISALUNA3",
+    "discount": "€3"
+  },
   "heroLede": "Airalo is een wereldwijde eSIM-marktplaats waarmee je in meer dan 200 landen en regio's mobiele data regelt zonder fysieke simkaart of roamingkosten. Je downloadt een datapakket, installeert de eSIM op je telefoon en bent zo online op je bestemming. Op deze pagina lees je hoe Airalo werkt en hoe je met een kortingscode bespaart op je eerste eSIM.",
   "about": [
     "Airalo is een digitale marktplaats voor eSIM's (embedded SIM's): een soort digitale simkaart die je rechtstreeks op je toestel downloadt in plaats van een plastic kaartje te wisselen. Zo krijg je internet in het buitenland zonder een lokale simkaart te hoeven kopen of dure roamingkosten te betalen.",

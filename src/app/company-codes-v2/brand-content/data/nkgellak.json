@@ -1,6 +1,10 @@
 {
   "slug": "nkgellak",
   "name": "NK Gellak",
+  "backupCode": {
+    "code": "LAKT10",
+    "discount": "10"
+  },
   "heroLede": "NK Gellak is een Nederlandse webshop voor gellak en gelnagellak in salonkwaliteit voor thuis. Het assortiment draait om sterk gepigmenteerde gellak, builder gel en alles wat je nodig hebt om je nagels zelf te doen. Met de kortingscode LAKT10 krijg je 10% korting op je bestelling.",
   "about": [
     "NK Gellak is gespecialiseerd in gelnagellak en bijbehorende nageltools voor wie thuis een salonresultaat wil. Het merk legt de nadruk op hoge pigmentatie: volgens de webshop is daardoor vaak maar een kleurlaag nodig voor een dekkend resultaat.",

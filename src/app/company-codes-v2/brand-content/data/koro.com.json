@@ -1,6 +1,10 @@
 {
   "slug": "koro.com",
   "name": "KoRo",
+  "backupCode": {
+    "code": "DISKI5",
+    "discount": "5"
+  },
   "heroLede": "KoRo is de Nederlands-Belgische webshop voor boodschappen in grootverpakking: noten, gedroogd fruit, notenpasta's, snacks, granola en proteïneproducten in grote zakken tegen een scherpe kiloprijs. In de praktijk duikt het merk vooral op in de keuken- en snackvideo's van Nederlandse creators, die er hun recepten en meal-prep mee maken.",
   "about": [
     "KoRo verkoopt alledaagse producten in grootverpakking: van pindakaas en notenpasta tot gedroogd fruit, vriesdroog, chocolade-omhulde bessen, kokoschips, granola, havermout, pasta en proteïnepoeders. Het idee is simpel: grotere verpakkingen, een gunstigere prijs per kilo en minder los verpakkingsmateriaal.",
