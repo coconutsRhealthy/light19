@@ -16,8 +16,7 @@ import { BUILD_DATE_ISO } from '../build-info';
 declare let gtag: Function;
 
 interface CodeVM {
-  code: string;        // the coupon code, or an outbound URL for deals
-  isDeal: boolean;     // true when `code` is a URL (cashback/giftcard)
+  code: string;        // the coupon code
   rawValue: string;    // e.g. "15", "20", "€7.50"
   valueText: string;   // display value, e.g. "15%", "€7,50"
   isPercent: boolean;
@@ -73,7 +72,6 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
   maxDiscount = 0;
 
   regularCodes: CodeVM[] = [];
-  dealCodes: CodeVM[] = [];
   relatedShops: RelatedShopVM[] = [];
 
   affiliateLink: string | undefined;
@@ -246,13 +244,11 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
         const bracket = companyRaw.match(/\(([^)]*)\)/);
         const label = bracket ? bracket[1].trim() : undefined;
-        const isDeal = code.startsWith('http');
         const isPercent = isFinite(Number(rawValue)) && rawValue !== '' && !rawValue.includes('€');
         const date = this.parseDate(dateStr, year);
 
         return {
           code,
-          isDeal,
           rawValue,
           valueText: this.formatValue(rawValue, isPercent),
           isPercent,
@@ -264,8 +260,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       })
       .sort((a, b) => b.date.getTime() - a.date.getTime());
 
-    this.regularCodes = parsed.filter(c => !c.isDeal);
-    this.dealCodes = parsed.filter(c => c.isDeal);
+    this.regularCodes = parsed;
     this.affiliateLink = this.affiliateLinkService.getAffiliateLink(this.company);
 
     // Page-level "laatst gecontroleerd" from the baked build date (deterministic,
@@ -307,8 +302,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
    * A CodeVM built from the engine-provided backupCode — the fallback code shown
    * only when discounts.json has no live code for this shop. Rendered identically
    * to a live code (card, modal, affiliate flow). Stamped with the build date so
-   * it stays deterministic (SSR/hydration safe). The engine guarantees the code is
-   * a typeable string (URLs/phrases are filtered out), so isDeal is always false.
+   * it stays deterministic (SSR/hydration safe).
    */
   private backupCodeVM(backup: { code: string; discount?: string }, date: Date): CodeVM {
     const rawValue = (backup.discount ?? '').trim();
@@ -317,7 +311,6 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     const dd = String(date.getDate()).padStart(2, '0');
     return {
       code: backup.code,
-      isDeal: false,
       rawValue,
       valueText: this.formatValue(rawValue, isPercent),
       isPercent,
@@ -383,8 +376,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     const title = `Werkende ${name} kortingscode ${this.monthYear} → ${valuePhrase} | Diski`;
     const description =
       `${count} werkende ${name} kortingscode${count === 1 ? '' : 's'} in ${this.monthYear}, ` +
-      `dagelijks gecontroleerd door onze redactie. Bespaar ${valuePhrase}` +
-      `${this.dealCodes.length ? ' plus cashback' : ''} op je bestelling bij ${name}.`;
+      `dagelijks gecontroleerd door onze redactie. Bespaar ${valuePhrase} op je bestelling bij ${name}.`;
 
     this.meta.updateTitle(title);
     this.meta.updateMetaInfo(description, 'diski.nl', `${name}, Kortingscode, Korting`);
@@ -456,18 +448,14 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       });
     }
 
-    const offerItems = [...this.regularCodes, ...this.dealCodes].map((c, i) => ({
+    const offerItems = this.regularCodes.map((c, i) => ({
       '@type': 'ListItem',
       'position': i + 1,
       'item': {
         '@type': 'Offer',
-        'name': c.isDeal
-          ? `${c.valueText} cashback bij ${name}`
-          : `${name} kortingscode: ${c.code}`,
-        'description': c.isDeal
-          ? `${c.valueText} cashback op je bestelling bij ${name}.`
-          : `${c.valueText} korting bij ${name}${c.label ? ' (' + c.label + ')' : ''}.`,
-        'category': c.isDeal ? 'Aanbieding' : 'Kortingscode',
+        'name': `${name} kortingscode: ${c.code}`,
+        'description': `${c.valueText} korting bij ${name}${c.label ? ' (' + c.label + ')' : ''}.`,
+        'category': 'Kortingscode',
         'validFrom': this.toIsoDate(c.date),
         'seller': { '@type': 'Organization', 'name': name }
       }
