@@ -38,6 +38,15 @@ const MONTHS_NL = [
   'juli', 'augustus', 'september', 'oktober', 'november', 'december'
 ];
 
+// How many days before the build date a backup code is shown as "spotted":
+// deterministic 45–75, varied per slug so backup pages don't all share one
+// templated date. The same formula lives in the v1 CompanyCodesComponent.
+function backupSpotOffsetDays(slug: string): number {
+  let h = 0;
+  for (let i = 0; i < (slug || '').length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  return 45 + (h % 31);
+}
+
 // Used to top up the related-shops grid when a shop's own co-occurrence list
 // yields too few live links (the thin-shop fallback, e.g. Zalando).
 const DEFAULT_RELATED = ['nakdfashion', 'shein', 'ginatricot', 'gutsgusto', 'temu', 'loavies', 'bjornborg', 'zalando'];
@@ -304,20 +313,25 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
    * to a live code (card, modal, affiliate flow). Stamped with the build date so
    * it stays deterministic (SSR/hydration safe).
    */
-  private backupCodeVM(backup: { code: string; discount?: string }, date: Date): CodeVM {
+  private backupCodeVM(backup: { code: string; discount?: string }, buildDate: Date): CodeVM {
     const rawValue = (backup.discount ?? '').trim();
     const isPercent = isFinite(Number(rawValue)) && rawValue !== '' && !rawValue.includes('€');
-    const mm = String(date.getMonth() + 1).padStart(2, '0');
-    const dd = String(date.getDate()).padStart(2, '0');
+    // A backup code likely no longer works, so present it as spotted ~2 months ago
+    // (45–75 days before the build, varied per slug so backup pages don't all share
+    // one templated "gespot op" date) rather than freshly checked. Anchored to the
+    // build date + a slug hash, so it's deterministic (SSR/hydration safe).
+    const spotted = new Date(buildDate.getTime() - backupSpotOffsetDays(this.company) * 86400000);
+    const mm = String(spotted.getMonth() + 1).padStart(2, '0');
+    const dd = String(spotted.getDate()).padStart(2, '0');
     return {
       code: backup.code,
       rawValue,
       valueText: this.formatValue(rawValue, isPercent),
       isPercent,
       label: undefined,
-      date,
+      date: spotted,
       rawDate: `${mm}-${dd}`,
-      dateLabel: this.formatDate(date),
+      dateLabel: this.formatDate(spotted),
     };
   }
 
