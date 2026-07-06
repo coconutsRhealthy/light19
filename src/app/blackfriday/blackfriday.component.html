@@ -180,7 +180,7 @@
           {{ d.webshop_name.charAt(0).toUpperCase() }}
         </div>
       }
-      <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/55 tw-bg-cream tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1 tw-shrink-0">
+      <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink tw-font-semibold tw-bg-cream tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1 tw-shrink-0">
         {{ categoryLabel(d.shop_category) }}
       </span>
     </div>
@@ -190,7 +190,7 @@
       <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/50">
         {{ isSpottedToday(d.date) ? 'Vandaag gespot' : 'Gespot ' + formatDate(d.date) }}
       </span>
-      <span class="tw-font-body tw-text-sm tw-font-semibold tw-text-link tw-shrink-0 group-hover:tw-translate-x-0.5 tw-transition">Bekijk deal →</span>
+      <span class="tw-bg-sky tw-text-ink tw-rounded-full tw-px-4 tw-py-2 tw-font-body tw-font-semibold tw-text-sm tw-shrink-0 group-hover:tw-brightness-95 tw-transition">Bekijk deal →</span>
     </div>
   </a>
 </ng-template>
