@@ -181,12 +181,29 @@ export class DiscountsTableComponent implements OnInit {
 
   onSearch() {
     const normalizedSearchTerm = this.searchTerm.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const normalize = (company: string) => company.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-    this.filteredDiscounts = this.discounts.filter((discount) => {
-      const normalizedCompany = discount.company.toLowerCase().replace(/[^a-z0-9]/g, '');
-      return normalizedCompany.includes(normalizedSearchTerm);
-    });
+    let matches = this.discounts.filter((discount) =>
+      normalize(discount.company).includes(normalizedSearchTerm)
+    );
 
+    // Rank exact matches first, then prefix matches, then the rest — so the shop
+    // you typed (e.g. "hunkemoller") lands at the top instead of buried in the feed.
+    // Keep the original feed order within each rank (stable via the index tiebreak).
+    if (normalizedSearchTerm) {
+      const rank = (company: string): number => {
+        const c = normalize(company);
+        if (c === normalizedSearchTerm) return 0;
+        if (c.startsWith(normalizedSearchTerm)) return 1;
+        return 2;
+      };
+      matches = matches
+        .map((d, i) => ({ d, i }))
+        .sort((a, b) => rank(a.d.company) - rank(b.d.company) || a.i - b.i)
+        .map((x) => x.d);
+    }
+
+    this.filteredDiscounts = matches;
     this.page = 1;
 
     if (this.searchTerm.length >= 5 || normalizedSearchTerm === 'temu') {
