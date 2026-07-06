@@ -82,19 +82,22 @@
 
   <!-- ====================== NIEUWSTE CODES (real data) ====================== -->
   <section id="nieuwste-codes" class="tw-w-full tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pt-2 tw-pb-14 sm:tw-pb-20 tw-scroll-mt-20">
-    <div class="tw-flex tw-flex-col sm:tw-flex-row sm:tw-justify-between sm:tw-items-end tw-gap-4 tw-mb-6 sm:tw-mb-8">
-      <div>
-        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">
-          @if (dateStringLatestShops) {
-            Laatste update: {{ dateStringLatestShops }} ·
-            <button type="button" (click)="openShopsModal()" class="tw-font-label tw-uppercase tw-tracking-label tw-text-link hover:tw-underline tw-transition">{{ newShopsCount }} nieuwe shops</button>
-          }
+    <!-- Header hidden while searching so the result cards sit as high as possible -->
+    @if (!isSearching) {
+      <div class="tw-flex tw-flex-col sm:tw-flex-row sm:tw-justify-between sm:tw-items-end tw-gap-4 tw-mb-6 sm:tw-mb-8">
+        <div>
+          <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">
+            @if (dateStringLatestShops) {
+              Laatste update: {{ dateStringLatestShops }} ·
+              <button type="button" (click)="openShopsModal()" class="tw-font-label tw-uppercase tw-tracking-label tw-text-link hover:tw-underline tw-transition">{{ newShopsCount }} nieuwe shops</button>
+            }
+          </div>
+          <h2 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl lg:tw-text-5xl tw-tracking-tight tw-mt-1.5">
+            Nieuwste kortingscodes<span class="tw-text-dot">.</span>
+          </h2>
         </div>
-        <h2 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl lg:tw-text-5xl tw-tracking-tight tw-mt-1.5">
-          Nieuwste kortingscodes<span class="tw-text-dot">.</span>
-        </h2>
       </div>
-    </div>
+    }
 
     <!-- Resultaatkaarten -->
     <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4 sm:tw-gap-5">
