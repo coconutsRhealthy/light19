@@ -891,7 +891,7 @@ export class AffiliateLinkService {
         dummyCode: 'MW10'
     },
     'hollandandbarrett': {
-        url: 'https://holland-barrett.mtpc.se/5924504',
+        url: 'https://tidd.ly/4v4VqC3',
         dummyCode: 'SHOP15'
     },
     'wehkamp': {
@@ -1507,8 +1507,8 @@ export class AffiliateLinkService {
         dummyCode: '15OFF'
     },
     'doreandrose': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.doreandrose.com%2F',
-        dummyCode: 'SHOP15'
+        url: 'https://www.doreandrose.com/INDY34514',
+        dummyCode: 'INDY34514'
     },
     'dreame': {
         url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.dreametech.com%2F',
@@ -1871,7 +1871,7 @@ export class AffiliateLinkService {
         dummyCode: '10OFF'
     },
     'samsonite': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.samsonite.nl%2F',
+        url: 'https://tidd.ly/4wr08eK',
         dummyCode: 'EXTRA10'
     },
     'lebara': {
