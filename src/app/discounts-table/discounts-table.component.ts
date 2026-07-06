@@ -125,7 +125,7 @@ export class DiscountsTableComponent implements OnInit {
       "logo": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp",
       "sameAs": [
         "https://www.instagram.com/wiegeeftkorting/",
-        "https://www.tiktok.com/@wiegeeftkorting2"
+        "https://www.tiktok.com/@andyyrobe"
       ]
     });
     this.meta.setJsonLd('website', {

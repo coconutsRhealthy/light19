@@ -412,7 +412,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       },
       'sameAs': [
         'https://www.instagram.com/wiegeeftkorting/',
-        'https://www.tiktok.com/@wiegeeftkorting2'
+        'https://www.tiktok.com/@andyyrobe'
       ]
     });
 
