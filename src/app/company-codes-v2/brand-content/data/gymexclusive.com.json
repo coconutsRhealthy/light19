@@ -1,6 +1,10 @@
 {
   "slug": "gymexclusive.com",
   "name": "Gym Exclusive",
+  "backupCode": {
+    "code": "Maxime10",
+    "discount": "10"
+  },
   "heroLede": "Gym Exclusive is een Nederlands merk voor dames-sportkleding dat vooral bekend is van de Unified-sets: matchende leggings met bijpassende sport-bh's in opvallende kleuren. Met een persoonlijke kortingscode van een van de fitgirls die het merk dragen, pak je meestal extra korting op je nieuwe gym-outfit.",
   "about": [
     "Gym Exclusive richt zich volledig op sportkleding voor vrouwen. Het assortiment draait om leggings, sport-bh's, shorts, tops, joggers en jasjes, met de squat-proof Unified-legging en de Sculpt-top als veelgenoemde favorieten in de community.",

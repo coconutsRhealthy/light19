@@ -1,6 +1,10 @@
 {
   "slug": "mydearbeer_nl",
   "name": "My Dear Beer",
+  "backupCode": {
+    "code": "BOOKSBEERS25",
+    "discount": "25"
+  },
   "heroLede": "My Dear Beer is een Nederlandse online speciaalbier-winkel met een bierabonnement: maandelijks een box met zorgvuldig gekozen bieren van lokale en internationale topbrouwers. Hieronder lees je wat My Dear Beer biedt, wat je in een box kunt verwachten en hoe je met een kortingscode voordeliger bestelt.",
   "about": [
     "My Dear Beer combineert een online bierwinkel met een bierabonnement, de My Dear Beer Club. Je kunt losse speciaalbieren kopen, zelf een bierpakket samenstellen of maandelijks een verrassingsbox laten bezorgen die op je smaak is afgestemd.",

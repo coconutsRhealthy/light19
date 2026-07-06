@@ -1,6 +1,10 @@
 {
   "slug": "moostwanted",
   "name": "Moost Wanted",
+  "backupCode": {
+    "code": "marlon10",
+    "discount": "10"
+  },
   "heroLede": "Moost Wanted is het Amsterdamse boho-merk met een 'Brands of Ibiza'-gevoel: wapperende maxi-jurken, satijnen sets, franjes en zachte natuurtinten voor festival- en resortlooks. Met een persoonlijke kortingscode van een creator pak je meestal 10% korting op je bestelling.",
   "about": [
     "Moost Wanted is een Nederlands modemerk uit Amsterdam dat zichzelf positioneert rondom een Ibiza- en festivalgevoel. De collecties draaien om bohemian stijl met een randje: lange jurken, wrap-tops, playsuits, rokken, broeken, gebreide items en bijpassende accessoires zoals tassen, riemen en sieraden.",

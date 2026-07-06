@@ -2,6 +2,15 @@
  v2 LIVE ROLLOUT PLAN — serve v2 on the REAL /:company route per shop,
  fall back to v1 (company-codes) for shops without v2 content.
 
+ *** SUPERSEDED 2026-07-05: the ALLOWLIST described below is RETIRED. ***
+ It had become a 1:1 mirror of "has a v2 content file" (0 preview-only shops),
+ so it was removed. live-v2-slugs.ts is deleted; the guard now reads an auto-
+ generated manifest (brand-content/v2-content-slugs.ts, rebuilt from data/ by
+ scripts/fill-routes.js). Having a data file IS being live on v2. Separately,
+ routes.txt now prerenders the UNION of discounts + v1 + v2 content slugs, so a
+ page survives its codes being pruned from discounts.json. Read the rest as
+ history; the plan's ORIGINAL "any shop with v2 content" idea is what now holds.
+
  *** IMPLEMENTED 2026-06-02 *** for the 25 not-indexed-shop pages, with ONE
  change from the plan below: instead of "any shop with v2 content", go-live is
  gated by an explicit ALLOWLIST (brand-content/live-v2-slugs.ts) so the original

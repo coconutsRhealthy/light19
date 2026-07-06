@@ -1,6 +1,10 @@
 {
   "slug": "curlsbyiris.nl",
   "name": "Curls by Iris",
+  "backupCode": {
+    "code": "BYE15",
+    "discount": "15"
+  },
   "heroLede": "Curls by Iris is de webshop en krullenkapsalon van Iris uit Arnhem, helemaal gericht op het verzorgen en stylen van krullen. Je vindt er bekende krullenmerken als Olaplex, Curly Secret, ECRU New York en Pretty Curly Girl, plus de eigen kortingsacties die Iris regelmatig deelt.",
   "about": [
     "Curls by Iris draait om één ding: het beste uit jouw krullen halen. Wat begon als een kapsalon aan huis in Arnhem, gericht op het knippen en verzorgen van krullen, groeide uit tot een webshop met een zorgvuldig samengestelde selectie krullenproducten.",

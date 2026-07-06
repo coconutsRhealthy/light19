@@ -1,6 +1,10 @@
 {
   "slug": "7oclock.de",
   "name": "7 O'Clock",
+  "backupCode": {
+    "code": "JESSICATREUREN",
+    "discount": "10"
+  },
   "heroLede": "7 O'Clock is de Duitse webshop voor stijlvolle woon- en tafelaccessoires: van vazen en glazen tot serviesgoed en decoratie met tijdloze designs. Met een kortingscode pak je voordeel op de stukken die interieurmakers graag delen.",
   "about": [
     "7 O'Clock is een Duitse home- en lifestyle-webshop die zich richt op woon- en tafelaccessoires met een rustige, tijdloze look. Het assortiment loopt van glaswerk (drinkglazen, karaffen) en serviesgoed tot keramiek, vazen, decoratie zoals spiegels en serveerplanken, en zelfs kunstbloemen.",

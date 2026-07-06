@@ -30,9 +30,7 @@ export const routes: Routes = [
   { path: 'top5', component: Top5Component },
   { path: 'code-delen', component: ShareCodeComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  // Noindexed preview of ANY shop with v2 content (data.preview drives the noindex).
-  { path: 'v2/:company', component: CompanyCodesV2Component, data: { preview: true }, resolve: { brandContent: brandContentResolver } },
-  // Real route: serve v2 (indexable) only for allowlisted go-live shops; the guard
+  // Real route: serve v2 (indexable) for any shop that has v2 content; the guard
   // falls through to the v1 route below for every other shop.
   { path: ':company', component: CompanyCodesV2Component, canMatch: [hasV2Content], resolve: { brandContent: brandContentResolver } },
   { path: ':company', component: CompanyCodesComponent },

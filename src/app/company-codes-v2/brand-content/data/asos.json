@@ -1,6 +1,10 @@
 {
   "slug": "asos",
   "name": "ASOS",
+  "backupCode": {
+    "code": "SPEEDY",
+    "discount": "20"
+  },
   "heroLede": "ASOS is een van de grootste online modewinkels, met kleding, schoenen, accessoires en beauty voor een breed publiek. Naast honderden externe merken verkoopt ASOS ook eigen labels zoals ASOS DESIGN, Topshop en Topman, van betaalbaar tot wat meer premium.",
   "about": [
     "ASOS is een Britse online modebestemming die zich richt op een breed, modebewust publiek. Het platform combineert een enorm aanbod externe merken met een sterke eigen merkenportefeuille, waardoor je van basics tot trend-items in een keer kunt vinden.",

@@ -1,6 +1,10 @@
 {
   "slug": "opberghoekje.nl",
   "name": "Opberghoekje",
+  "backupCode": {
+    "code": "julia10",
+    "discount": "10"
+  },
   "heroLede": "Opberghoekje maakt handgemaakte opbergmeubels op maat die speelgoed netjes uit het zicht houden zonder dat je inlevert op de uitstraling van je interieur. Denk aan de kinderhoek, de opbergbox en de kinderbank, in kleuren die je zelf afstemt op je woonstijl. Met de kortingscode julia10 krijg je 10% korting op je bestelling.",
   "about": [
     "Opberghoekje is een Nederlandse webshop die zich richt op handgemaakte, stijlvolle opbergoplossingen voor speelgoed. Het idee erachter is dat je orde kunt scheppen in een huis met kinderen zonder dat de woonkamer eruitziet als een speelkamer. De meubels zijn ontworpen om op te gaan in een rustig, opgeruimd interieur in plaats van eruit te springen.",

@@ -1,6 +1,10 @@
 {
   "slug": "calliegifts",
   "name": "Callie Gifts",
+  "backupCode": {
+    "code": "sweetq122",
+    "discount": "15"
+  },
   "related": [
     "achateshop.com",
     "geurwolkje",

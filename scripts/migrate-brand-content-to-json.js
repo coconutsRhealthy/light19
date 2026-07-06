@@ -19,7 +19,6 @@ fs.mkdirSync(outDir, { recursive: true });
 const SKIP = new Set([
   'brand-content.model.ts',
   'index.ts',
-  'live-v2-slugs.ts',
   'brand-content.token.ts',
   'brand-content.server.ts',
   'brand-content.service.ts',

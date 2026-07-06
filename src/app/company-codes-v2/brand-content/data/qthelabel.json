@@ -1,6 +1,10 @@
 {
   "slug": "qthelabel",
   "name": "Q The Label",
+  "backupCode": {
+    "code": "sofie10",
+    "discount": "10"
+  },
   "heroLede": "Q The Label maakt gepersonaliseerde, handgemaakte kleding in een eigen atelier in Nederland — bekend om de gepersonaliseerde blazers met je eigen initialen. Met een kortingscode van een van de creators die het label dragen shop je de hele collectie meestal met 10% korting.",
   "about": [
     "Q The Label is een Nederlands label dat ontstond uit de samenwerking tussen Quinty en haar oma. De oma brengt meer dan vijftig jaar naai-ervaring en traditioneel vakmanschap mee, terwijl Quinty de moderne, eigentijdse blik toevoegt. Elk stuk wordt naar verluidt met de hand in eigen atelier gemaakt, waardoor het meer aanvoelt als made-to-order dan als massaproductie.",

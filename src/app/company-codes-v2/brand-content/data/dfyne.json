@@ -1,6 +1,10 @@
 {
   "slug": "dfyne",
   "name": "DFYNE",
+  "backupCode": {
+    "code": "FITBYSAV",
+    "discount": "10"
+  },
   "heroLede": "DFYNE is het sportmerk dat in de gym-community opvalt met zijn sculpting activewear: matchende sets, supportieve sportbh's en zachte legging-stof. Veel fitgirls stylen hun outfits met een persoonlijke code waarmee jij voordeel pakt.",
   "about": [
     "DFYNE is een activewear-merk voor heren en dames met een complete lijn sportkleding: leggings, sportbh's, shorts, tops, hoodies, joggers en tracksuits. Het merk werkt met vaste collectielijnen zoals Impact, Origin, Dynamic, Defy en Revive, die regelmatig in nieuwe kleuren 'droppen'.",

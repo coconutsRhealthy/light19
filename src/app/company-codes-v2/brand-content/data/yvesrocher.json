@@ -1,6 +1,10 @@
 {
   "slug": "yvesrocher",
   "name": "Yves Rocher",
+  "backupCode": {
+    "code": "ENJOY10",
+    "discount": "10"
+  },
   "heroLede": "Yves Rocher is het Franse beautymerk dat zichzelf sinds 1959 dé expert in plantaardige cosmetica noemt. Op yves-rocher.nl shop je huid- en lichaamsverzorging, make-up, haarverzorging en parfum waarin de kracht van planten centraal staat, vaak voor toegankelijke prijzen.",
   "about": [
     "Yves Rocher werd in 1959 opgericht door de gelijknamige Yves Rocher in het Bretonse dorpje La Gacilly, waar het merk nog altijd zijn wortels heeft. Het uitgangspunt is van begin af aan hetzelfde gebleven: de werking van planten inzetten voor verzorgingsproducten, een aanpak die het merk zelf 'Plantaardige Cosmetica' noemt.",

@@ -1,6 +1,10 @@
 {
   "slug": "juuniek",
   "name": "Juuniek",
+  "backupCode": {
+    "code": "HUISJE10",
+    "discount": "10"
+  },
   "heroLede": "Juuniek maakt van jouw favoriete foto een handgetekend lijnportret, vervolgens uitgesneden in duurzaam hout. Een Belgisch merk van Anneleen Claesen dat dierbare momenten — een gezinsfoto, een geboorte of een herinnering aan iemand die je mist — vertaalt naar een tijdloos object voor aan de muur of op de kast.",
   "about": [
     "Juuniek is een Belgisch label dat ontstond toen oprichtster Anneleen Claesen haar zoon Juul zag opgroeien en die momenten tastbaar wilde bewaren. De naam is een samentrekking van Juul en 'uniek', en dat tweede deel is meteen het uitgangspunt: elk stuk wordt op basis van jouw eigen foto('s) ontworpen, dus geen twee portretten zijn hetzelfde.",

@@ -2,90 +2,123 @@ const fs = require('fs');
 const path = require('path');
 
 // routes-extractor.js
-// Hardcoded input file path
-const inputPath = path.join(__dirname, '../src/app/data/discounts.json');
-
-// Load JSON file
-const raw = fs.readFileSync(inputPath, 'utf8');
-const json = JSON.parse(raw);
-
-// A Set to collect unique cleaned entries
-const results = new Set();
-
-// Iterate each line (assuming json is an array of strings)
-json.forEach((line) => {
-  if (typeof line !== 'string') return;
-
-  if (line.includes(',')) {
-    let beforeComma = line.split(',')[0].trim();
-
-    // Remove parentheses and content inside
-    beforeComma = beforeComma.replace(/\([^)]*\)/g, '').trim();
-
-    if (beforeComma.length > 0) {
-      results.add(beforeComma);
-    }
-  }
-});
-
-// --- Add hardcoded routes ---
-const hardcodedRoutes = ['/winkels', '/contact', '/top5', '/privacy-policy', '/blackfriday', '/prikbord', '/blogs', '/blogs/space-nk', '/blogs/lookfantastic', '/code-delen', '/'];
-hardcodedRoutes.forEach(route => results.add(route.replace(/^\//, '')));
-
-// Sort alphabetically
-const sorted = Array.from(results).sort((a, b) => a.localeCompare(b));
-
-// =========================
-// v2 preview routes (/v2/{slug})
-// =========================
-// Prerender a noindexed /v2/{slug} preview for every shop that has a v2 brand-
-// content data file but is NOT on the go-live allowlist (i.e. the preview-only
-// shops). Live shops are already prerendered at /{slug} from discounts.json, so
-// they don't need a duplicate /v2/ render. Prerendering the previews means they
-// also get their content inlined via TransferState (no client-side data needed).
 //
-// These are added to routes.txt ONLY — never to sitemap.xml (they are noindex).
-const contentDir = path.join(__dirname, '../src/app/company-codes-v2/brand-content/data');
-const liveSlugsFile = path.join(__dirname, '../src/app/company-codes-v2/brand-content/live-v2-slugs.ts');
+// Generates three build artifacts from the source of truth:
+//   1. routes.txt          — every URL that must be prerendered
+//   2. src/sitemap.xml      — the indexable URL set
+//   3. brand-content/v2-content-slugs.ts — the router guard's allowlist of shops
+//      served by v2 (auto-generated; replaces the old hand-maintained live-v2-slugs.ts)
+//
+// KEY POLICY (changed 2026-07-05): a detail page's existence is driven by CONTENT,
+// not by discounts.json. A shop keeps its prerendered /{slug} page as long as it
+// has v1 seo-content OR v2 brand-content — even after its codes are pruned from
+// discounts.json. discounts.json now only contributes the "code-only" shops that
+// have no editorial content. The route universe is therefore the UNION:
+//
+//     discounts.json slugs  ∪  v1 seo-content slugs  ∪  v2 brand-content slugs
+//
+// The old /v2/{slug} noindexed "preview" tier is retired: there is no allowlist
+// anymore, so every shop with v2 content is live v2 on its real /{slug} route.
 
-const contentSlugs = fs.existsSync(contentDir)
-  ? fs.readdirSync(contentDir).filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, '').toLowerCase())
-  : [];
+const ROOT = path.join(__dirname, '..');
+const discountsPath = path.join(ROOT, 'src/app/data/discounts.json');
+const v1IndexPath = path.join(ROOT, 'src/app/company-codes/company-seo-content/index.ts');
+const v2DataDir = path.join(ROOT, 'src/app/company-codes-v2/brand-content/data');
+const manifestPath = path.join(ROOT, 'src/app/company-codes-v2/brand-content/v2-content-slugs.ts');
 
-// Parse the allowlisted (live) slugs straight out of live-v2-slugs.ts.
-const liveSlugs = new Set();
-if (fs.existsSync(liveSlugsFile)) {
-  const txt = fs.readFileSync(liveSlugsFile, 'utf8');
-  const setBody = txt.slice(txt.indexOf('new Set('), txt.indexOf('])') + 1);
-  for (const m of setBody.matchAll(/'([^']+)'/g)) liveSlugs.add(m[1].toLowerCase());
+// =========================
+// 1. Collect slugs from every source
+// =========================
+
+// --- discounts.json: shops that currently have at least one live code ---
+const discountSlugs = new Set();
+for (const line of JSON.parse(fs.readFileSync(discountsPath, 'utf8'))) {
+  if (typeof line !== 'string' || !line.includes(',')) continue;
+  const slug = line.split(',')[0].replace(/\([^)]*\)/g, '').trim();
+  if (slug) discountSlugs.add(slug);
 }
 
-const previewRoutes = contentSlugs
-  .filter(slug => !liveSlugs.has(slug))
-  .map(slug => `/v2/${slug}`)
-  .sort((a, b) => a.localeCompare(b));
+// --- v1 seo-content: the AUTHORITATIVE slug is the switch label in index.ts, not
+//     the filename (e.g. `case 'about you'` -> ./about-you, `case 'h&m'` -> ./h-m). ---
+const v1Slugs = new Set();
+if (fs.existsSync(v1IndexPath)) {
+  const idx = fs.readFileSync(v1IndexPath, 'utf8');
+  for (const m of idx.matchAll(/case\s+'([^']+)':/g)) v1Slugs.add(m[1]);
+}
+
+// --- v2 brand-content: the filename IS the slug (server loader reads `${slug}.json`). ---
+const v2Slugs = new Set(
+  fs.existsSync(v2DataDir)
+    ? fs.readdirSync(v2DataDir).filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, ''))
+    : []
+);
 
 // =========================
-// 1. routes.txt genereren
+// 2. Emit the v2-content manifest the router guard reads
 // =========================
-const routesTxt = [...sorted.map((v) => `/${v}`), ...previewRoutes].join('\n');
-fs.writeFileSync('routes.txt', routesTxt, 'utf8');
+// The guard runs in the browser bundle and must stay plain strings (it must NOT
+// pull the content loader client-side). So we bake the list of v2-content slugs
+// into a tiny generated module. This is the single source of truth for "serve v2
+// on /:company"; every other shop falls through to the v1 component.
+const sortedV2 = Array.from(v2Slugs).sort((a, b) => a.localeCompare(b));
+const manifest = `// AUTO-GENERATED by scripts/fill-routes.js — DO NOT EDIT BY HAND.
+// One entry per shop that has a v2 brand-content data file. A slug listed here is
+// served by CompanyCodesV2Component on the real /:company route (indexed); every
+// other shop falls through to the v1 CompanyCodesComponent. Regenerated on every
+// prod build, so adding a data file is all it takes to take a shop live on v2.
+export const V2_CONTENT_SLUGS: ReadonlySet<string> = new Set([
+${sortedV2.map(s => `  '${s.replace(/'/g, "\\'")}',`).join('\n')}
+]);
 
-console.log(`routes.txt generated successfully (${previewRoutes.length} v2 preview route(s) appended).`);
-
+export function hasV2ContentSlug(slug: string | undefined | null): boolean {
+  return !!slug && V2_CONTENT_SLUGS.has(slug.toLowerCase());
+}
+`;
+fs.writeFileSync(manifestPath, manifest, 'utf8');
 
 // =========================
-// 2. sitemap.xml genereren
+// 3. routes.txt — prerender the UNION of all page sources + the utility pages
 // =========================
+const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'prikbord', 'blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'code-delen', ''];
+
+const pageSlugs = new Set([...discountSlugs, ...v1Slugs, ...v2Slugs]);
+const sortedPages = Array.from(pageSlugs).sort((a, b) => a.localeCompare(b));
+
+const allRoutes = new Set([
+  ...utilityRoutes.map(r => (r === '' ? '/' : `/${r}`)),
+  ...sortedPages.map(s => `/${s}`),
+]);
+const routesTxt = Array.from(allRoutes).sort((a, b) => a.localeCompare(b)).join('\n');
+fs.writeFileSync(path.join(ROOT, 'routes.txt'), routesTxt, 'utf8');
+
+const contentOnly = sortedPages.filter(s => !discountSlugs.has(s)).length;
+console.log(
+  `routes.txt generated: ${sortedPages.length} shop pages ` +
+  `(${discountSlugs.size} from discounts, ${contentOnly} content-only kept online), ` +
+  `${sortedV2.length} on v2.`
+);
+
+// =========================
+// 4. sitemap.xml — the INDEXABLE set
+// =========================
+// Indexable set = shops that always show a code + utility pages. Every content
+// page now carries a fallback code, so all are safe to index:
+//   - discounts.json slugs: have a live code.
+//   - v2 content slugs: each data file has a `backupCode` (engine's
+//     enrich_backup_codes.py).
+//   - v1 content slugs: each has an entry in company-seo-content/backup-codes.ts
+//     (scripts/populate-v1-backup-codes.js), so the v1 page renders its content
+//     instead of the 404 shell even with no live code.
 const BASE_URL = 'https://diski.nl';
 const today = new Date().toISOString().split('T')[0];
 
-const utilityRoutes = new Set(['winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'blackfriday', 'code-delen', '']);
+const sitemapUtility = new Set(['winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'blackfriday', 'code-delen', '']);
+const sitemapSlugs = Array.from(new Set([...discountSlugs, ...v1Slugs, ...v2Slugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
 
-const urls = sorted.map((route) => {
+const urls = sitemapSlugs.map((route) => {
   const pathPart = route === '' ? '/' : `/${route}/`;
   const isHome = route === '';
-  const isUtility = utilityRoutes.has(route);
+  const isUtility = sitemapUtility.has(route);
   const priority = isHome ? '1.0' : isUtility ? '0.6' : '0.8';
   const changefreq = isHome ? 'daily' : isUtility ? 'monthly' : 'weekly';
   return `
@@ -102,14 +135,8 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${urls}
 </urlset>`;
 
-// Schrijf naar Angular src map
-fs.writeFileSync(
-  path.join(__dirname, '../src/sitemap.xml'),
-  sitemap,
-  'utf8'
-);
-
-console.log('sitemap.xml generated successfully.');
+fs.writeFileSync(path.join(ROOT, 'src/sitemap.xml'), sitemap, 'utf8');
+console.log(`sitemap.xml generated: ${sitemapSlugs.length} indexable URLs.`);
 
 function escapeXml(str) {
   return str.replace(/&/g, '&amp;')

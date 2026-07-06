@@ -1,6 +1,10 @@
 {
   "slug": "lionheart.fest",
   "name": "Lionheart Festival",
+  "backupCode": {
+    "code": "CFM",
+    "discount": "10"
+  },
   "heroLede": "Lionheart is een muziek-, kunst- en wellnessfestival in Orlando (Florida) dat draait om elektronische muziek met een missie: het werd opgericht door overlevenden en zet zich in voor slachtoffers van huiselijk geweld. Creators die er zelf naartoe gaan, delen vaak de code CFM om te besparen op je toegangsbewijs — die vind je hieronder terug.",
   "about": [
     "Lionheart (op Instagram @lionheart.fest) is een EDM-festival in Orlando, Florida, dat zichzelf omschrijft als een Music, Art & Wellness Festival. Naast een line-up van opkomende elektronische artiesten combineert het evenement live optredens met kunstinstallaties en wellnessprogramma's op één locatie.",

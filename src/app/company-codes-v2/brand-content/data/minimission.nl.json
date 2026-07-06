@@ -1,6 +1,10 @@
 {
   "slug": "minimission.nl",
   "name": "Mini Mission",
+  "backupCode": {
+    "code": "MOEDERLIEFDE",
+    "discount": "10"
+  },
   "heroLede": "Mini Mission is een kleinschalige Nederlandse webshop met bewust gekozen speelgoed voor baby's, dreumesen en peuters. Met de kortingscode MOEDERLIEFDE krijg je 10% korting op ontwikkelingsgericht en duurzaam speelgoed dat per leeftijdsfase is samengesteld.",
   "about": [
     "Mini Mission is opgericht door Karlijn, pedagoog en moeder, beter bekend van haar Instagramaccount @pedagogischemama. Vanuit de vraag van haar volgers welk speelgoed nu écht bijdraagt aan de ontwikkeling van een kind, bundelde ze haar aanbevelingen in een eigen webshop. Het uitgangspunt: \"speelgoed met een missie, bewust gekozen voor de allerkleinsten\".",

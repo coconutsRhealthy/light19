@@ -1,6 +1,10 @@
 {
   "slug": "glutespop.com",
   "name": "GlutesPop",
+  "backupCode": {
+    "code": "NATHALIE",
+    "discount": "10"
+  },
   "related": [
     "aybl",
     "fitjeans.com",

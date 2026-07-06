@@ -1,6 +1,10 @@
 {
   "slug": "mysample.nl",
   "name": "MySample",
+  "backupCode": {
+    "code": "10OFF",
+    "discount": "10"
+  },
   "heroLede": "Alle werkende MySample kortingscodes op één plek — bespaar op parfum samples van designer- en nichehuizen, zodat je een geur eerst rustig test voordat je een hele fles koopt. Onze redactie controleert de codes dagelijks.",
   "about": [
     "MySample is een Nederlandse webshop die parfum samples van 1 tot 10 ml verkoopt: kleine flesjes van bekende geuren waarmee je een parfum eerst op je gemak uitprobeert in plaats van meteen een volle fles te kopen. De winkel is helemaal ingericht op het voorkomen van een 'blind buy' — je ruikt een geur van de topnoten tot de basisnoten en bouwt zo gericht je eigen collectie op.",

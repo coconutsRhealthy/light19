@@ -29,6 +29,10 @@ export interface BrandVideo {
 export interface BrandContent {
   slug: string;          // matches discounts.json + ai_canonical, e.g. "nakdfashion"
   name: string;          // display name, e.g. "NA-KD"
+  backupCode?: {         // fallback code shown when discounts.json has no live code
+    code: string;        // for this shop. Filled by the content engine's
+    discount?: string;   // enrich_backup_codes.py (discounts.json → diski.discounts
+  };                     // → synthesized). Raw discount string, e.g. "15", "€100".
   heroLede: string;      // one-paragraph intro under the H1
   about: string[];       // paragraphs for the "Over {name}" section
   why: TitledText[];     // "Waarom shoppen bij {name}" bullets

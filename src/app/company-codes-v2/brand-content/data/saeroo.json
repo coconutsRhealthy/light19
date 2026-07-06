@@ -1,6 +1,10 @@
 {
   "slug": "saeroo",
   "name": "SAEROO",
+  "backupCode": {
+    "code": "DAPHNE10",
+    "discount": "10"
+  },
   "heroLede": "SAEROO is een Nederlandse mode-boutique voor vrouwen die houden van kleur en een bold touch. Met een persoonlijke code van een van de creators die het merk dragen, pak je meestal 10% korting op kleurrijke jasjes, matchende setjes en sieraden.",
   "about": [
     "SAEROO is een online dameskledingwinkel uit Nederland die draait om vrouwelijke, statement-makende stukken. In hun eigen woorden: \"never boring, always feminine with a bold touch\" — en ze zeggen graag ja tegen kleur. Denk aan opvallende prints zoals strepen, stippen en animal, met silhouetten die net even anders zijn.",

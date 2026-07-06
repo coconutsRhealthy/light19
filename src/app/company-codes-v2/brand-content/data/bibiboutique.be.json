@@ -1,6 +1,10 @@
 {
   "slug": "bibiboutique.be",
   "name": "Bibi Boutique",
+  "backupCode": {
+    "code": "MARIT",
+    "discount": "10"
+  },
   "heroLede": "Bibi Boutique is een Belgische fashionwebshop vol musthaves en accessoires, die ook naar Nederland levert. Met de code MARIT pak je bij je bestelling korting, en dankzij de gekoppelde acties loopt het voordeel verder op naarmate je meer items combineert.",
   "about": [
     "Bibi Boutique is een online boutique uit België die zich richt op betaalbare dameskleding met een eigen, trendy uitstraling. De collectie draait om complete outfits: van blazers, blouses, truien en vesten tot jurken, jumpsuits, jeans, broeken, rokjes en bijpassende sets.",

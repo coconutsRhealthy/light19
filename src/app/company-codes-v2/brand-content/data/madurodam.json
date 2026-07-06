@@ -1,6 +1,10 @@
 {
   "slug": "madurodam",
   "name": "Madurodam",
+  "backupCode": {
+    "code": "MEIVAKANTIE",
+    "discount": "50"
+  },
   "heroLede": "Madurodam is het bekende attractiepark in Den Haag waar je heel Nederland in het klein ontdekt: miniaturen van iconen zoals de Erasmusbrug en de SS Rotterdam, plus volop interactieve doe-attracties voor het hele gezin. Met een kortingscode of een actie in de vakantie scheelt een dagje uit zomaar tot 50%.",
   "about": [
     "Madurodam ligt aan het George Maduroplein in Den Haag en presenteert zichzelf als hét leuke attractiepark óver Nederland. In de buitenlucht wandel je langs honderden minutieus nagebouwde miniaturen van Nederlandse iconen, van de Erasmusbrug tot de SS Rotterdam, terwijl er binnen en buiten genoeg interactieve attracties zijn om zelf van alles te doen.",

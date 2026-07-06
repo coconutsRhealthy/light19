@@ -1,6 +1,10 @@
 {
   "slug": "fuelyourbody",
   "name": "FuelYourBody",
+  "backupCode": {
+    "code": "IRENE10",
+    "discount": "10"
+  },
   "heroLede": "FuelYourBody maakt kant-en-klare, eiwitrijke sportmaaltijden die in een paar minuten klaar zijn uit magnetron, pan of oven. Bedoeld voor wie traint en weinig tijd heeft om te koken, maar wel grip wil houden op eiwitten en calorieën.",
   "about": [
     "FuelYourBody (online via fuelyourbody.nl) richt zich op gezonde, kant-en-klare maaltijden voor sporters. Het assortiment draait om hoog-in-eiwit maaltijden met kip, rund, vis of een vegetarische optie, plus snacks, sauzen en losse componenten om je eigen sportmaaltijd samen te stellen.",

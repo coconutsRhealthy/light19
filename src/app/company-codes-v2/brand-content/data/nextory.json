@@ -1,6 +1,10 @@
 {
   "slug": "nextory",
   "name": "Nextory",
+  "backupCode": {
+    "code": "BOOKSBEERS60",
+    "discount": "10"
+  },
   "heroLede": "Nextory is een streamingdienst voor luisterboeken en e-books: één abonnement, onbeperkt of per uurpakket lezen en luisteren via de app. Met een Nextory-code via een creator pak je vaak een fors verlengde gratis proefperiode in plaats van het standaardaanbod, zodat je de app eerst rustig kunt uitproberen.",
   "about": [
     "Nextory is een Zweedse streamingdienst voor digitale boeken en draait sinds de Nederlandse lancering ook hier mee. Je betaalt een vast bedrag per maand en krijgt daarvoor toegang tot een grote catalogus aan luisterboeken en e-books, in zowel het Nederlands als het Engels. Alles draait via de Nextory-app op je telefoon of tablet, met de optie om titels offline te downloaden zodat je ook zonder verbinding verder kunt.",

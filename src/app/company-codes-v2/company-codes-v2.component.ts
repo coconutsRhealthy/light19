@@ -16,8 +16,7 @@ import { BUILD_DATE_ISO } from '../build-info';
 declare let gtag: Function;
 
 interface CodeVM {
-  code: string;        // the coupon code, or an outbound URL for deals
-  isDeal: boolean;     // true when `code` is a URL (cashback/giftcard)
+  code: string;        // the coupon code
   rawValue: string;    // e.g. "15", "20", "€7.50"
   valueText: string;   // display value, e.g. "15%", "€7,50"
   isPercent: boolean;
@@ -39,16 +38,26 @@ const MONTHS_NL = [
   'juli', 'augustus', 'september', 'oktober', 'november', 'december'
 ];
 
+// How many days before the build date a backup code is shown as "spotted":
+// deterministic 45–75, varied per slug so backup pages don't all share one
+// templated date. The same formula lives in the v1 CompanyCodesComponent.
+function backupSpotOffsetDays(slug: string): number {
+  let h = 0;
+  for (let i = 0; i < (slug || '').length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  return 45 + (h % 31);
+}
+
 // Used to top up the related-shops grid when a shop's own co-occurrence list
 // yields too few live links (the thin-shop fallback, e.g. Zalando).
 const DEFAULT_RELATED = ['nakdfashion', 'shein', 'ginatricot', 'gutsgusto', 'temu', 'loavies', 'bjornborg', 'zalando'];
 const RELATED_MAX = 8;
 
 /**
- * v2 showcase page — data-driven for ANY shop via the /v2/:company route.
- * Codes come from discounts.json; per-shop copy comes from the brand-content
- * registry (grounded in influencer captions where available). Served noindexed
- * so it never competes with the live pages while we pilot.
+ * v2 showcase page — data-driven for any shop that has a brand-content data file.
+ * Served live and indexable on the real /:company route (the guard routes such
+ * shops here; every other shop falls through to the v1 component). Codes come from
+ * discounts.json; per-shop copy comes from the brand-content registry (grounded in
+ * influencer captions where available).
  */
 @Component({
   selector: 'app-company-codes-v2',
@@ -72,7 +81,6 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
   maxDiscount = 0;
 
   regularCodes: CodeVM[] = [];
-  dealCodes: CodeVM[] = [];
   relatedShops: RelatedShopVM[] = [];
 
   affiliateLink: string | undefined;
@@ -150,19 +158,12 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     if (!el.muted && el.paused) el.play().catch(() => {});
   }
 
-  /** True on the /v2/ preview route (route data.preview); false on the live /:company route. */
-  private get isPreview(): boolean {
-    return this.route.snapshot.data['preview'] === true;
-  }
-
   /**
-   * Href for a related-shop link. Path-aware like the modal deep-link: on the live
-   * route it points at the real `/{slug}/` page (indexable, never the noindexed
-   * preview); in preview it stays in `/v2/{slug}/`. Always keeps the project-wide
-   * trailing slash.
+   * Href for a related-shop link: the real `/{slug}/` page (indexable). Keeps the
+   * project-wide trailing slash.
    */
   relatedHref(slug: string): string {
-    return this.isPreview ? `/v2/${slug}/` : `/${slug}/`;
+    return `/${slug}/`;
   }
 
   /**
@@ -252,13 +253,11 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
         const bracket = companyRaw.match(/\(([^)]*)\)/);
         const label = bracket ? bracket[1].trim() : undefined;
-        const isDeal = code.startsWith('http');
         const isPercent = isFinite(Number(rawValue)) && rawValue !== '' && !rawValue.includes('€');
         const date = this.parseDate(dateStr, year);
 
         return {
           code,
-          isDeal,
           rawValue,
           valueText: this.formatValue(rawValue, isPercent),
           isPercent,
@@ -270,24 +269,31 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       })
       .sort((a, b) => b.date.getTime() - a.date.getTime());
 
-    this.regularCodes = parsed.filter(c => !c.isDeal);
-    this.dealCodes = parsed.filter(c => c.isDeal);
+    this.regularCodes = parsed;
     this.affiliateLink = this.affiliateLinkService.getAffiliateLink(this.company);
 
-    this.maxDiscount = this.regularCodes
-      .filter(c => c.isPercent)
-      .reduce((max, c) => Math.max(max, Number(c.rawValue)), 0);
-
-    // Page-level "laatst gecontroleerd" from the baked build date (date-only).
+    // Page-level "laatst gecontroleerd" from the baked build date (deterministic,
+    // SSR-safe). Also stamps an injected backup code below.
     const [by, bm, bd] = (BUILD_DATE_ISO || '').split('-').map(Number);
     const checked = (by && bm && bd) ? new Date(by, bm - 1, bd) : now;
     this.lastCheckedIso = BUILD_DATE_ISO || this.toIsoDate(now);
     this.lastCheckedLabel = this.formatDate(checked);
 
+    // Fallback: no live regular code in discounts.json → show the engine-provided
+    // backupCode so a v2 page always has a working code (never a "0 codes" page).
+    // Only kicks in when there's nothing live; a real code always wins.
+    if (this.regularCodes.length === 0 && this.content?.backupCode?.code) {
+      this.regularCodes = [this.backupCodeVM(this.content.backupCode, checked)];
+    }
+
+    this.maxDiscount = this.regularCodes
+      .filter(c => c.isPercent)
+      .reduce((max, c) => Math.max(max, Number(c.rawValue)), 0);
+
     this.buildRelatedShops(lines);
     this.applySeo();
 
-    // Deep link: opening /v2/{company}#i={index} (e.g. in the new tab spawned by
+    // Deep link: opening /{company}#i={index} (e.g. in the new tab spawned by
     // the affiliate flow) re-opens the code modal for that code — mirrors v1.
     const fragment = this.route.snapshot.fragment;
     if (fragment) {
@@ -299,6 +305,34 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
         }
       }
     }
+  }
+
+  /**
+   * A CodeVM built from the engine-provided backupCode — the fallback code shown
+   * only when discounts.json has no live code for this shop. Rendered identically
+   * to a live code (card, modal, affiliate flow). Stamped with the build date so
+   * it stays deterministic (SSR/hydration safe).
+   */
+  private backupCodeVM(backup: { code: string; discount?: string }, buildDate: Date): CodeVM {
+    const rawValue = (backup.discount ?? '').trim();
+    const isPercent = isFinite(Number(rawValue)) && rawValue !== '' && !rawValue.includes('€');
+    // A backup code likely no longer works, so present it as spotted ~2 months ago
+    // (45–75 days before the build, varied per slug so backup pages don't all share
+    // one templated "gespot op" date) rather than freshly checked. Anchored to the
+    // build date + a slug hash, so it's deterministic (SSR/hydration safe).
+    const spotted = new Date(buildDate.getTime() - backupSpotOffsetDays(this.company) * 86400000);
+    const mm = String(spotted.getMonth() + 1).padStart(2, '0');
+    const dd = String(spotted.getDate()).padStart(2, '0');
+    return {
+      code: backup.code,
+      rawValue,
+      valueText: this.formatValue(rawValue, isPercent),
+      isPercent,
+      label: undefined,
+      date: spotted,
+      rawDate: `${mm}-${dd}`,
+      dateLabel: this.formatDate(spotted),
+    };
   }
 
   /**
@@ -356,21 +390,15 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     const title = `Werkende ${name} kortingscode ${this.monthYear} → ${valuePhrase} | Diski`;
     const description =
       `${count} werkende ${name} kortingscode${count === 1 ? '' : 's'} in ${this.monthYear}, ` +
-      `dagelijks gecontroleerd door onze redactie. Bespaar ${valuePhrase}` +
-      `${this.dealCodes.length ? ' plus cashback' : ''} op je bestelling bij ${name}.`;
+      `dagelijks gecontroleerd door onze redactie. Bespaar ${valuePhrase} op je bestelling bij ${name}.`;
 
     this.meta.updateTitle(title);
     this.meta.updateMetaInfo(description, 'diski.nl', `${name}, Kortingscode, Korting`);
     this.meta.updateOgTags(title, description, pageUrl);
 
-    // Noindex ONLY on the /v2/ preview route (data.preview). On the real
-    // /:company route (allowlisted go-live shops) the page must be indexable,
-    // so we actively clear any stale noindex left by a prior preview navigation.
-    if (this.isPreview) {
-      this.meta.setNoIndex();
-    } else {
-      this.meta.setIndex();
-    }
+    // Every v2 page is live on the real /:company route, so it must be indexable;
+    // actively clear any stale noindex left by a prior navigation.
+    this.meta.setIndex();
 
     this.meta.setJsonLd('v2-organization', {
       '@context': 'https://schema.org',
@@ -434,18 +462,14 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       });
     }
 
-    const offerItems = [...this.regularCodes, ...this.dealCodes].map((c, i) => ({
+    const offerItems = this.regularCodes.map((c, i) => ({
       '@type': 'ListItem',
       'position': i + 1,
       'item': {
         '@type': 'Offer',
-        'name': c.isDeal
-          ? `${c.valueText} cashback bij ${name}`
-          : `${name} kortingscode: ${c.code}`,
-        'description': c.isDeal
-          ? `${c.valueText} cashback op je bestelling bij ${name}.`
-          : `${c.valueText} korting bij ${name}${c.label ? ' (' + c.label + ')' : ''}.`,
-        'category': c.isDeal ? 'Aanbieding' : 'Kortingscode',
+        'name': `${name} kortingscode: ${c.code}`,
+        'description': `${c.valueText} korting bij ${name}${c.label ? ' (' + c.label + ')' : ''}.`,
+        'category': 'Kortingscode',
         'validFrom': this.toIsoDate(c.date),
         'seller': { '@type': 'Organization', 'name': name }
       }
@@ -530,9 +554,8 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
   private openNewPageWithCodeDetailModal(codeIndex: number): void {
     if (!this.isBrowser) return;
-    // Deep-link to the page we're actually on: /v2/{company} in preview,
-    // /{company} on the live route. Mirrors v1's new-tab behaviour.
-    const base = this.isPreview ? `/v2/${this.company}` : `/${this.company}`;
+    // Deep-link to the page we're on (mirrors v1's new-tab behaviour).
+    const base = `/${this.company}`;
     const url = `${window.location.origin}${base}#i=${encodeURIComponent(codeIndex)}`;
     window.open(url, '_blank');
     if (this.affiliateLink !== undefined) {

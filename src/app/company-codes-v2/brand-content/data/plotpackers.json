@@ -1,6 +1,10 @@
 {
   "slug": "plotpackers",
   "name": "Plotpackers",
+  "backupCode": {
+    "code": "LARA10",
+    "discount": "10"
+  },
   "heroLede": "Plotpackers organiseert betaalbare groepsreizen voor wie er met een groep gelijkgestemden op uit wil, van een trip naar de Malediven of Sri Lanka tot Costa Rica en IJsland. Met een persoonlijke kortingscode bespaar je meestal 10% op het reisbedrag.",
   "about": [
     "Plotpackers is een reisorganisatie die zich richt op groepsreizen voor avontuurlijke reizigers. Het bedrijf werd in 2023 opgericht en is sindsdien snel gegroeid: inmiddels worden er reizen aangeboden naar een groot aantal bestemmingen verspreid over meerdere continenten.",

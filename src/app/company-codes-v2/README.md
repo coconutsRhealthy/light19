@@ -65,6 +65,18 @@ parallel to the live `:company` v1 pages). Built as a pilot to test a specific b
 > grown to **251 slugs (242 live on the real `:company` route)** across batches through
 > June 11, all **deployed live in production**. Of the original 5 pilots, only `zalando`
 > remains on v1. `brand-content/live-v2-slugs.ts` is the source of truth for what's live.
+>
+> **Update 2026-07-05 — the allowlist is RETIRED.** It had become a hand-maintained
+> mirror of "has a v2 content file" (every one of the 353 data files was allowlisted;
+> the noindexed-preview tier had 0 members), so it added complexity without changing
+> behaviour. It is gone. **Having a `brand-content/data/{slug}.json` file now IS being
+> live on v2** — no separate go-live switch. The router guard reads an auto-generated
+> manifest (`brand-content/v2-content-slugs.ts`, rebuilt from `data/` on every prod
+> build) instead of the deleted `live-v2-slugs.ts`. Related change: a shop's page now
+> stays prerendered as long as it has v1 or v2 content, **independent of whether
+> `discounts.json` still lists a code for it** (see `scripts/fill-routes.js`). Read the
+> two sections below as history — where they say "allowlist", substitute "has a v2
+> content file".
 
 ## Live rollout — IMPLEMENTED (2026-06-02) for the 25, NOT the original 5
 The `canMatch` approach from `../live-rollout-plan.txt` is now wired up, with one
@@ -81,7 +93,9 @@ deliberate change: an explicit **allowlist** instead of "any shop with v2 conten
   `/{slug}/index.html` render v2 with NO noindex; original 5 + all other shops render v1.
 - The modal deep-link (`openNewPageWithCodeDetailModal`) is now path-aware (`/v2/{slug}` in
   preview, `/{slug}` live). Self-canonical is added at build by `scripts/set-canonicals.js`,
-  and the 25 are already in `sitemap.xml`/`routes.txt` (generated from `discounts.json`).
+  and the 25 are already in `sitemap.xml`/`routes.txt` (as of 2026-07-05 `routes.txt` is
+  the UNION of `discounts.json` + v1 + v2 content slugs; `sitemap.xml` is still limited to
+  shops with a live code — see `scripts/fill-routes.js`).
 - **To ship changes:** run `npm run build:prod` and deploy locally from the Mac (no remote
   push required — deploys can include uncommitted local changes).
   Add a shop later → add its slug to `live-v2-slugs.ts`; revert a shop → remove it.
@@ -93,8 +107,9 @@ in a **separate project**, not in this frontend:
 That project's only output is the validated `BrandContent` JSON files it writes to
 `brand-content/data/{slug}.json` here. The recipe/guardrails (`docs/CONTENT-GENERATION.md`),
 the output contract (`schema/brand_content.schema.json`), and the input-data analysis
-all live there. This repo just **consumes** the JSON at build and controls publication
-(the `live-v2-slugs.ts` allowlist).
+all live there. This repo just **consumes** the JSON at build; as of 2026-07-05 dropping a
+`{slug}.json` into `brand-content/data/` is all it takes to publish the shop on v2 (the
+`live-v2-slugs.ts` allowlist that used to gate this is retired — see the 2026-07-05 update above).
 
 ## Map of this folder
 - `company-codes-v2.component.*` — the page (data-driven for any shop).

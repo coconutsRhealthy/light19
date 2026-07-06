@@ -1,6 +1,10 @@
 {
   "slug": "fit20nl",
   "name": "fit20",
+  "backupCode": {
+    "code": "KEK20",
+    "discount": "10"
+  },
   "heroLede": "fit20 is geen klassieke sportschool maar een afsprakenconcept: één keer per week 20 minuten intensieve krachttraining, één-op-één begeleid door een persoonlijke trainer. Veel effect in weinig tijd, zonder dat je je hoeft om te kleden. Met een fit20 kortingscode pak je voordeel op je kennismaking of abonnement.",
   "about": [
     "fit20 draait om één simpele belofte: maximaal trainingseffect in slechts 20 minuten per week. Je traint op afspraak, altijd onder begeleiding van een vaste, gecertificeerde fit20-trainer die je techniek corrigeert en je net even verder pusht dan je alleen zou doen.",

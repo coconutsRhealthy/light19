@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { loadSeoContent } from './company-seo-content/index';
+import { V1_BACKUP_CODES } from './company-seo-content/backup-codes';
+import { BUILD_DATE_ISO } from '../build-info';
 import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -141,6 +143,23 @@ export class CompanyCodesComponent implements OnInit {
           };
         });
 
+      // v1 is frozen and its pages must stay online after codes are pruned from
+      // discounts.json. When a shop has no live code, fall back to the one-off
+      // backup map so the page renders its content (codes + seo + related) instead
+      // of the "404 niet gevonden" shell. Mirrors v2's backupCode behaviour; a live
+      // code always wins. Synchronous, so it's correct in prerender/SSR too.
+      if (this.discountCodes.length === 0) {
+        const backup = V1_BACKUP_CODES[companyName.toLowerCase()];
+        if (backup) {
+          this.discountCodes = [{
+            code: backup.code,
+            discount: backup.discount,
+            date: this.backupSpotDate(companyName),
+            label: undefined,
+          }];
+        }
+      }
+
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);
         this.monthYear = this.meta.getDateString();
@@ -238,6 +257,19 @@ export class CompanyCodesComponent implements OnInit {
   getCurrentDateAsString(): string {
     const currentDate = new Date();
     return String(currentDate.getMonth() + 1).padStart(2, '0') + '-' + String(currentDate.getDate()).padStart(2, '0');
+  }
+
+  // A backup code likely no longer works, so present it as spotted 45–75 days
+  // before the build (varied per slug so backup pages don't all share one templated
+  // date). Anchored to the build date + a slug hash → deterministic (SSR/hydration
+  // safe). Returns MM-DD, the format formatDate() expects. Same formula as v2.
+  private backupSpotDate(slug: string): string {
+    const [y, m, d] = (BUILD_DATE_ISO || '').split('-').map(Number);
+    const anchor = (y && m && d) ? new Date(y, m - 1, d) : new Date();
+    let h = 0;
+    for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+    const spot = new Date(anchor.getTime() - (45 + (h % 31)) * 86400000);
+    return String(spot.getMonth() + 1).padStart(2, '0') + '-' + String(spot.getDate()).padStart(2, '0');
   }
 
   getDateFromDateString(dateString: string) {

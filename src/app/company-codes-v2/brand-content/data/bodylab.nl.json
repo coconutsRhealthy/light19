@@ -1,6 +1,10 @@
 {
   "slug": "bodylab.nl",
   "name": "Bodylab",
+  "backupCode": {
+    "code": "DELAYLA",
+    "discount": "10"
+  },
   "related": [
     "icaniwill",
     "moovvmore.nl",

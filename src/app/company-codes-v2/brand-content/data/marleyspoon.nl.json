@@ -1,6 +1,10 @@
 {
   "slug": "marleyspoon.nl",
   "name": "Marley Spoon",
+  "backupCode": {
+    "code": "NLMSAFFAWIN76M26",
+    "discount": "€76"
+  },
   "heroLede": "Marley Spoon is een maaltijdboxdienst die wekelijks verse, voorgeportioneerde ingrediënten met stap-voor-stap recepten bij je thuisbezorgt. Je stelt zelf je box samen — aantal personen, aantal maaltijden en de bezorgdag — en het abonnement is flexibel: overslaan, pauzeren of opzeggen kan meestal tot enkele dagen voor de bezorging.",
   "about": [
     "Marley Spoon levert maaltijdboxen waarmee je zelf kookt met verse, op de gram afgewogen ingrediënten en bijgeleverde receptkaarten. Het idee is minder voedselverspilling, minder rompslomp en minder bedenken wat je 's avonds eet — je volgt simpelweg het recept, vaak klaar in zo'n 20 tot 30 minuten.",

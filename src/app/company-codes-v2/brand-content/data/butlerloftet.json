@@ -1,6 +1,10 @@
 {
   "slug": "butlerloftet",
   "name": "Butler Loftet",
+  "backupCode": {
+    "code": "Caitlin20",
+    "discount": "20"
+  },
   "heroLede": "Butler Loftet is een Deens modehuis dat sinds kort ook in Nederland te shoppen is. De webshop bundelt meerdere winkelconcepten voor dames en heren onder één dak, met een Scandinavisch geselecteerd aanbod van kleding, schoenen en accessoires. Met een persoonlijke code van een van de creators die het merk in Nederland lanceerden, krijg je meestal 20% korting op je bestelling.",
   "about": [
     "Butler Loftet komt oorspronkelijk uit Aalborg in Noord-Jutland, Denemarken, waar de familie Wagner in 1971 begon met de herenmodewinkel Butler. Sindsdien is het uitgegroeid tot een lifestyle-bestemming met meerdere concepten onder één naam.",

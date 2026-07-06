@@ -1,6 +1,10 @@
 {
   "slug": "legionathletics",
   "name": "Legion Athletics",
+  "backupCode": {
+    "code": "GYMBRO",
+    "discount": "10"
+  },
   "related": [
     "dfyne"
   ],

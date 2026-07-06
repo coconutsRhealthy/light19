@@ -1,6 +1,10 @@
 {
   "slug": "haarshop",
   "name": "Haarshop.nl",
+  "backupCode": {
+    "code": "GLOWUP",
+    "discount": "12"
+  },
   "heroLede": "Haarshop.nl is een Nederlandse webshop voor professionele haarverzorging en styling, met meer dan honderd salonmerken als Moroccanoil, Olaplex, Kérastase, Wella en Schwarzkopf. Voor 22:00 besteld is je pakket meestal de volgende dag in huis, en vanaf zo'n 35 euro betaal je doorgaans geen verzendkosten.",
   "about": [
     "Haarshop.nl richt zich op professionele haar- en beautyproducten die je normaal bij de kapper vindt. Het assortiment loopt van shampoo, conditioner en leave-in tot haarmaskers, treatments en styling- & finishingproducten, aangevuld met haartools zoals föhns, stylers en krultangen.",

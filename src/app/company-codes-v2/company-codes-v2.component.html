@@ -29,7 +29,6 @@
       <span class="badge">✓ Getest door de redactie</span>
       <span><span class="ok">Laatst gecontroleerd op</span>&nbsp;<time [attr.datetime]="lastCheckedIso">{{ lastCheckedLabel }}</time></span>
       <span>{{ regularCodes.length }} actieve kortingscode{{ regularCodes.length === 1 ? '' : 's' }}</span>
-      @if (dealCodes.length) { <span>+ {{ dealCodes.length }} cashback deal</span> }
     </div>
   </div>
 
@@ -60,23 +59,7 @@
         </article>
       }
 
-      @for (d of dealCodes; track d.code) {
-        <article class="coupon">
-          <div class="val"><div class="big">{{ d.valueText }}</div><div class="small">Cashback</div></div>
-          <div class="body">
-            <h3>{{ d.valueText }} cashback bij {{ displayName }}</h3>
-            <p class="meta">
-              <span class="verified">✓ Getest door de redactie</span>
-              &nbsp;·&nbsp; Gespot op {{ d.dateLabel }}
-            </p>
-          </div>
-          <div class="reveal">
-            <a class="btn" [href]="d.code" rel="sponsored nofollow" target="_blank">Naar de deal</a>
-          </div>
-        </article>
-      }
-
-      @if (!regularCodes.length && !dealCodes.length) {
+      @if (!regularCodes.length) {
         <p class="meta" style="color:var(--muted)">Er staan op dit moment geen codes voor {{ displayName }}. Onze redactie voegt nieuwe codes toe zodra ze opduiken.</p>
       }
     </div>
