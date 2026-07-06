@@ -46,3 +46,16 @@ html, body {
 div p + p {
   margin-top: 12px;
 }
+
+/* iOS Safari auto-zooms into any form control whose font-size is < 16px when it
+   gets focus — tapping a search field then feels like an unwanted "zoom". Our
+   inputs are 14–16px, so enforce a 16px minimum on small screens to suppress it
+   (bumps the 14px ones up; nothing shrinks). Covers every search/email field
+   at once — homepage, winkels, black friday, newsletter, prikbord, contact. */
+@media (max-width: 640px) {
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
