@@ -16,48 +16,56 @@
     </p>
   </section>
 
-  <!-- ===================== CATEGORY PILLS ===================== -->
+  <!-- ===================== CATEGORY DROPDOWN ===================== -->
   <section class="tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-6 sm:tw-mt-8" aria-label="Categorieën">
-    <div class="tw-flex tw-flex-wrap tw-gap-2">
-      @for (category of categories; track category.title; let i = $index) {
-        <button (click)="selectCategory(i)"
-          class="tw-rounded-full tw-font-body tw-text-sm tw-py-2 tw-px-4 tw-transition"
-          [class]="selectedIndex === i
-            ? 'tw-bg-ink tw-text-cream tw-font-semibold'
-            : 'tw-bg-panel tw-border tw-border-ink/10 tw-text-ink/70 hover:tw-text-ink'">
-          {{ category.title }}
-        </button>
-      }
+    <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-ink/55">Categorie</div>
+    <div class="tw-relative tw-mt-2 tw-max-w-sm">
+      <select
+        aria-label="Kies een categorie"
+        (change)="selectCategory(+$any($event.target).value)"
+        class="tw-appearance-none tw-w-full tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-font-body tw-font-semibold tw-text-ink tw-text-sm sm:tw-text-base tw-py-3 tw-pl-5 tw-pr-12 tw-cursor-pointer tw-outline-none focus:tw-border-ink/30 tw-transition">
+        <option [value]="-1" [selected]="selectedIndex === -1">Alle categorieën</option>
+        @for (category of categories; track category.title; let i = $index) {
+          <option [value]="i" [selected]="selectedIndex === i">{{ category.title }}</option>
+        }
+      </select>
+      <span class="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-right-4 tw-flex tw-items-center tw-text-ink/50">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </span>
     </div>
   </section>
 
-  <!-- ===================== ACTIVE CATEGORY · TOP 5 ===================== -->
+  <!-- ===================== TOP 5 LIST(S) ===================== -->
   <section class="tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-8 sm:tw-mt-10">
-    <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[12px] tw-text-ink/55 tw-mb-4">
-      Top 5 · {{ activeCategory.title }}
-    </div>
+    @for (category of visibleCategories; track category.title) {
+      <div class="tw-mb-10 sm:tw-mb-12 last:tw-mb-0">
+        <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[12px] tw-text-ink/55 tw-mb-4">
+          Top 5 · {{ category.title }}
+        </div>
 
-    <ol class="tw-list-none tw-p-0 tw-m-0 tw-flex tw-flex-col tw-gap-3">
-      @for (shop of activeCategory.shops; track shop.name; let i = $index) {
-        <li>
-          <a [href]="resolveShopUrl(shop)" (click)="sendEventToGa(shop)"
-             target="_blank" rel="noopener noreferrer sponsored"
-             class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-px-4 sm:tw-px-6 tw-py-4 tw-flex tw-items-center tw-gap-3 sm:tw-gap-5 tw-no-underline tw-text-ink hover:tw-shadow-md active:tw-scale-[0.99] tw-transition tw-duration-200"
-             [class.tw-ring-2]="i === 0" [class.tw-ring-sky]="i === 0">
-            <!-- rank -->
-            <span class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl tw-leading-none tw-tracking-tight tw-w-7 sm:tw-w-9 tw-text-center tw-shrink-0"
-                  [class]="i === 0 ? 'tw-text-link' : 'tw-text-ink/20'">{{ i + 1 }}</span>
-            <!-- logo -->
-            <img [src]="getLogoUrl(shop)" [alt]="shop.name + ' logo'" loading="lazy" width="48" height="48"
-                 class="tw-w-11 tw-h-11 sm:tw-w-12 sm:tw-h-12 tw-rounded-xl tw-object-contain tw-bg-cream tw-border tw-border-ink/10 tw-p-1 tw-shrink-0" />
-            <!-- name -->
-            <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-leading-tight tw-min-w-0 tw-break-words tw-flex-1">{{ shop.name }}</span>
-            <!-- cta -->
-            <span class="tw-font-body tw-text-sm tw-font-semibold tw-text-link tw-shrink-0 group-hover:tw-translate-x-0.5 tw-transition">Naar shop →</span>
-          </a>
-        </li>
-      }
-    </ol>
+        <ol class="tw-list-none tw-p-0 tw-m-0 tw-flex tw-flex-col tw-gap-3">
+          @for (shop of category.shops; track shop.name; let i = $index) {
+            <li>
+              <a [href]="resolveShopUrl(shop)" (click)="sendEventToGa(shop)"
+                 target="_blank" rel="noopener noreferrer sponsored"
+                 class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-px-4 sm:tw-px-6 tw-py-4 tw-flex tw-items-center tw-gap-3 sm:tw-gap-5 tw-no-underline tw-text-ink hover:tw-shadow-md active:tw-scale-[0.99] tw-transition tw-duration-200"
+                 [class.tw-ring-2]="i === 0" [class.tw-ring-sky]="i === 0">
+                <!-- rank -->
+                <span class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl tw-leading-none tw-tracking-tight tw-w-7 sm:tw-w-9 tw-text-center tw-shrink-0"
+                      [class]="i === 0 ? 'tw-text-link' : 'tw-text-ink/20'">{{ i + 1 }}</span>
+                <!-- logo -->
+                <img [src]="getLogoUrl(shop)" [alt]="shop.name + ' logo'" loading="lazy" width="48" height="48"
+                     class="tw-w-11 tw-h-11 sm:tw-w-12 sm:tw-h-12 tw-rounded-xl tw-object-contain tw-bg-cream tw-border tw-border-ink/10 tw-p-1 tw-shrink-0" />
+                <!-- name -->
+                <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-leading-tight tw-min-w-0 tw-break-words tw-flex-1">{{ shop.name }}</span>
+                <!-- cta -->
+                <span class="tw-font-body tw-text-sm tw-font-semibold tw-text-link tw-shrink-0 group-hover:tw-translate-x-0.5 tw-transition">Naar shop →</span>
+              </a>
+            </li>
+          }
+        </ol>
+      </div>
+    }
   </section>
 
   <!-- ===================== SEO / EXPLAINER ===================== -->

@@ -26,12 +26,17 @@ export class Top5Component {
   currentMonth: string;
   logos: { [companyName: string]: string } = {};
 
-  // The redesign shows one category at a time, picked from the pill row
-  // (replacing the old per-category accordion). First category is shown by default.
-  selectedIndex = 0;
+  // -1 = "Alle categorieën" (the default): show every category's Top 5.
+  // A concrete index narrows the view to just that one category.
+  selectedIndex = -1;
 
   get activeCategory(): Category {
     return this.categories[this.selectedIndex];
+  }
+
+  /** Categories to render: all of them in "Alle categorieën" mode, else just the picked one. */
+  get visibleCategories(): Category[] {
+    return this.selectedIndex < 0 ? this.categories : [this.categories[this.selectedIndex]];
   }
 
   categories: Category[] = [
