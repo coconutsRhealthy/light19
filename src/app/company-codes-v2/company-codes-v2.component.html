@@ -1,4 +1,4 @@
-<a class="skip" href="#main" (click)="scrollToSection($event, 'main')">Direct naar de kortingscodes</a>
+<a class="skip" href="#codes" (click)="scrollToSection($event, 'codes')">Direct naar de kortingscodes</a>
 
 <app-navbar></app-navbar>
 
@@ -21,10 +21,17 @@
       <div class="logo logo-ph" aria-hidden="true">{{ displayName.charAt(0) }}</div>
     }
     <h1>{{ displayName }} Kortingscode {{ monthYear | titlecase }}</h1>
-    <p class="lede">
-      @if (content?.heroLede) { {{ content?.heroLede }} }
-      @else { Alle werkende {{ displayName }} kortingscodes en aanbiedingen op één plek, dagelijks gecontroleerd door onze redactie. }
-    </p>
+    <div class="lede">
+      <p class="lede-text" #ledeText [class.clamped]="!ledeExpanded">
+        @if (content?.heroLede) { {{ content?.heroLede }} }
+        @else { Alle werkende {{ displayName }} kortingscodes en aanbiedingen op één plek, dagelijks gecontroleerd door onze redactie. }
+      </p>
+      @if (ledeOverflows) {
+        <button type="button" class="lede-more" (click)="ledeExpanded = !ledeExpanded" [attr.aria-expanded]="ledeExpanded">
+          {{ ledeExpanded ? 'Minder ↑' : 'Meer ↓' }}
+        </button>
+      }
+    </div>
     <div class="trust">
       <span class="badge">✓ Getest door de redactie</span>
       <span><span class="ok">Laatst gecontroleerd op</span>&nbsp;<time [attr.datetime]="lastCheckedIso">{{ lastCheckedLabel }}</time></span>

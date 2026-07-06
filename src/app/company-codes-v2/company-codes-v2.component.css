@@ -52,6 +52,12 @@ nav.crumbs li:last-child::after{content:""}
 h1{font-family:var(--font-title);font-weight:700;letter-spacing:-0.02em;
   font-size:32px;line-height:1.15;margin:0 0 8px}
 .lede{color:var(--muted);margin:0 0 14px;font-size:16px}
+.lede-text{margin:0}
+/* Toggle is mobile-only (desktop always shows the full lede); shown via the
+   media query below, and only rendered when ledeOverflows. */
+.lede-more{display:none;margin-top:5px;background:none;border:0;padding:0;cursor:pointer;
+  font-family:var(--font-body);font-weight:600;font-size:13px;color:var(--link)}
+.lede-more:hover{text-decoration:underline}
 .trust{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13.5px;color:var(--muted);align-items:center}
 .trust .ok{color:var(--link);font-weight:600}
 .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(193,219,232,0.45);color:var(--ink);
@@ -119,15 +125,22 @@ details .ans{padding:0 0 16px;color:var(--muted)}
 .toc ol{margin:0;padding-left:1.2em;columns:2;gap:20px;list-style:decimal}
 
 @media(max-width:640px){
-  /* Mobile: keep the H1 beside the logo on the top row, but let the lede and
-     trust badges drop to full width below (spanning under the logo too). */
-  .hero{padding:20px;column-gap:16px;
-    grid-template-areas:"logo h1" "lede lede" "trust trust"}
-  .hero .logo{width:64px;height:64px}
+  /* Mobile: compact the hero hard so at least the first codes sit above the
+     fold — this is a discount-code site, users must see codes immediately.
+     H1 (SEO keyword) + lede stay; the trust row is hidden because every coupon
+     already repeats "✓ Getest · Gespot op {date}". */
+  .hero{padding:14px 16px;column-gap:14px;margin:4px 0 14px;
+    grid-template-areas:"logo h1" "lede lede"}
+  .hero .logo{width:48px;height:48px;padding:6px;border-radius:12px}
   .hero h1{align-self:center}
-  h1{font-size:26px}
-  .lede{font-size:14px;margin-top:14px;margin-bottom:12px}
-  .coupon{flex-wrap:wrap}
+  h1{font-size:22px;line-height:1.12}
+  .lede{font-size:13.5px;margin-top:10px;margin-bottom:0}
+  .lede-text.clamped{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .lede-more{display:inline-block}
+  .trust{display:none}
+  section{margin:16px 0}
+  h2{font-size:20px;margin:0 0 10px}
+  .coupon{flex-wrap:wrap;padding:14px 16px}
   /* Keep the title beside the big % (flex-basis:0 stops .body wrapping below it
      on narrow screens); only the full-width button drops to its own row. */
   .coupon .body{flex-basis:0}

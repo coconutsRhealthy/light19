@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, PLATFORM_ID, ElementRef, ViewChildren, QueryList, afterNextRender, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, PLATFORM_ID, ElementRef, ViewChild, ViewChildren, QueryList, afterNextRender, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -89,6 +89,13 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
   readonly codeCollapseLimit = 15;
   showAllCodes = false;
+
+  // Hero lede: on mobile it clamps to 2 lines with a "Meer" toggle so codes sit
+  // higher above the fold. ledeOverflows gates the toggle — a short lede that
+  // already fits 2 lines gets no toggle. Both are measured client-side.
+  ledeExpanded = false;
+  ledeOverflows = false;
+  @ViewChild('ledeText') private ledeTextRef?: ElementRef<HTMLElement>;
 
   get visibleRegularCodes(): CodeVM[] {
     return this.showAllCodes ? this.regularCodes : this.regularCodes.slice(0, this.codeCollapseLimit);
@@ -181,6 +188,17 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     history.replaceState(null, '', `${location.pathname}${location.search}#${id}`);
   }
 
+  /** Does the (mobile-clamped) hero lede overflow 2 lines? Decides whether the
+   *  "Meer" toggle is shown. Only meaningful while collapsed — when expanded the
+   *  clamp is off so height would read as non-overflowing. Bound as a property so
+   *  it can (de)register directly as a resize listener. */
+  private measureLede = (): void => {
+    if (!this.isBrowser || this.ledeExpanded) return;
+    const el = this.ledeTextRef?.nativeElement;
+    if (!el) return;
+    this.ledeOverflows = el.scrollHeight - el.clientHeight > 2;
+  };
+
   constructor(
     private route: ActivatedRoute,
     private discounts: DiscountsService,
@@ -195,7 +213,11 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     // after, leaving any observer attached in ngAfterViewInit watching detached
     // elements (so the live clips never muted/played). afterNextRender fires after
     // the post-hydration render, so setupVideos sees the real, connected elements.
-    afterNextRender(() => this.setupVideos());
+    afterNextRender(() => {
+      this.setupVideos();
+      this.measureLede();
+      window.addEventListener('resize', this.measureLede);
+    });
   }
 
   ngOnInit(): void {
@@ -212,6 +234,9 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     this.route.data.subscribe(data => {
       this.company = (this.route.snapshot.paramMap.get('company') ?? '').toLowerCase();
       this.showAllCodes = false;
+      this.ledeExpanded = false;
+      this.ledeOverflows = false;
+      if (this.isBrowser) setTimeout(() => this.measureLede(), 0);
       this.isModalVisible = false;
       this.selectedDiscount = null;
       this.mutedFlags = [];
@@ -226,6 +251,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
   ngOnDestroy(): void {
     this.videoObserver?.disconnect();
+    if (this.isBrowser) window.removeEventListener('resize', this.measureLede);
   }
 
   private applyDisplayName(): void {
