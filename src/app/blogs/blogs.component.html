@@ -15,38 +15,18 @@
     </p>
   </section>
 
-  <!-- ===================== FEATURED ===================== -->
-  <section class="tw-max-w-6xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-7 sm:tw-mt-9">
-    <a [routerLink]="'/blogs/' + featured.slug" class="tw-group tw-block tw-no-underline tw-text-ink">
-      <article class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-overflow-hidden tw-grid tw-grid-cols-1 md:tw-grid-cols-2 hover:tw-shadow-md active:tw-scale-[0.99] tw-transition tw-duration-200">
-        <div class="tw-flex tw-items-center tw-justify-center tw-min-h-[200px] md:tw-min-h-[340px]" [class]="featured.tint">
-          <span class="tw-text-6xl sm:tw-text-7xl">{{ featured.emoji }}</span>
-        </div>
-        <div class="tw-p-7 sm:tw-p-10 tw-flex tw-flex-col tw-justify-center">
-          <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-link">
-            Uitgelicht · {{ featured.category }}
-          </div>
-          <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl lg:tw-text-4xl tw-tracking-tight tw-leading-tight tw-mt-3">
-            {{ featured.title }}
-          </h2>
-          <p class="tw-font-body tw-text-ink/70 tw-mt-4 tw-leading-relaxed">{{ featured.excerpt }}</p>
-          <div class="tw-flex tw-items-center tw-gap-3 tw-mt-6">
-            <span class="tw-font-body tw-text-sm tw-font-semibold tw-text-link group-hover:tw-translate-x-0.5 tw-transition">Lees meer →</span>
-            <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/50">{{ featured.date }}</span>
-          </div>
-        </div>
-      </article>
-    </a>
-  </section>
-
   <!-- ===================== GRID ===================== -->
-  <section class="tw-max-w-6xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-5 sm:tw-mt-6">
+  <section class="tw-max-w-6xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-7 sm:tw-mt-9">
     <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4 sm:tw-gap-5">
-      @for (post of rest; track post.slug) {
+      @for (post of posts; track post.slug) {
         <a [routerLink]="'/blogs/' + post.slug" class="tw-group tw-block tw-no-underline tw-text-ink">
           <article class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col tw-h-full hover:tw-shadow-md active:tw-scale-[0.99] tw-transition tw-duration-200">
-            <div class="tw-h-40 tw-flex tw-items-center tw-justify-center" [class]="post.tint">
-              <span class="tw-text-5xl">{{ post.emoji }}</span>
+            <div class="tw-h-40 tw-flex tw-items-center tw-justify-center tw-p-5" [class]="post.tint">
+              @if (post.image) {
+                <img [src]="post.image" [alt]="post.title" loading="lazy" class="tw-max-h-full tw-max-w-full tw-object-contain" />
+              } @else {
+                <span class="tw-text-5xl">{{ post.emoji }}</span>
+              }
             </div>
             <div class="tw-p-6 tw-flex tw-flex-col tw-gap-2 tw-flex-1">
               <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10.5px] tw-text-link">{{ post.category }}</div>

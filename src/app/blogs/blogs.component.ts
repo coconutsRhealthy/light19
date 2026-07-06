@@ -10,8 +10,10 @@ interface BlogPost {
   excerpt: string;
   date: string;
   emoji: string;
-  // Tailwind bg utility for the card's image block (brand palette, no images).
+  // Tailwind bg utility for the card's image block (brand palette).
   tint: string;
+  // Preview image reused from the article itself; falls back to emoji if absent.
+  image?: string;
 }
 
 @Component({
@@ -27,9 +29,10 @@ export class BlogsComponent {
       category: 'Fashion & Style',
       title: 'Uniqlo AIRism — 5 zomerstukken die je koel houden',
       excerpt: 'De vijf beste AIRism-stukken om je zomergarderobe rond op te bouwen — plus hoe de sneldrogende stof echt werkt, en een FAQ.',
-      date: 'Juni 2025',
+      date: 'Juni 2026',
       emoji: '👕',
       tint: 'tw-bg-sky',
+      image: '/blog/uniqlo/airism-1.avif',
     },
     {
       slug: 'lookfantastic',
@@ -39,6 +42,7 @@ export class BlogsComponent {
       date: 'Juni 2026',
       emoji: '✨',
       tint: 'tw-bg-butter',
+      image: '/blog/lookfantastic/olaplex.avif',
     },
     {
       slug: 'space-nk',
@@ -48,14 +52,7 @@ export class BlogsComponent {
       date: 'April 2026',
       emoji: '💄',
       tint: 'tw-bg-dot/40',
+      image: '/blog/space-nk/byoma.jpg',
     },
   ];
-
-  // The newest post leads as the featured article; the rest fill the grid.
-  get featured(): BlogPost {
-    return this.posts[0];
-  }
-  get rest(): BlogPost[] {
-    return this.posts.slice(1);
-  }
 }
