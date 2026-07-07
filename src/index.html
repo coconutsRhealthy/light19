@@ -17,8 +17,8 @@
   <meta property="og:site_name" content="Diski">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
-  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://diski.nl/logos/webp/diski-og.webp">
+  <meta name="twitter:card" content="summary_large_image">
 
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="jRfLunpMsGQCYaJ40KQABA" async></script>
 
@@ -33,10 +33,6 @@
        for the web font. Preloading the fonts (highest priority) only starved the
        async stylesheet / render path on mobile — measured LCP 4.8s -> 1.7s once the
        preloads were removed. Fonts load at normal priority and swap in a beat later. -->
-
-  <!-- Shop logos + og:image are served from jsDelivr; warm the connection early
-       (DNS+TCP+TLS off the critical path) to help mobile LCP. -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <link rel="dns-prefetch" href="https://www.awin1.com">
   <link rel="dns-prefetch" href="https://a1.awin1.com">

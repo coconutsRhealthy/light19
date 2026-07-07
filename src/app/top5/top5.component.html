@@ -53,9 +53,14 @@
                 <!-- rank -->
                 <span class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl tw-leading-none tw-tracking-tight tw-w-7 sm:tw-w-9 tw-text-center tw-shrink-0"
                       [class]="i === 0 ? 'tw-text-link' : 'tw-text-ink/20'">{{ i + 1 }}</span>
-                <!-- logo -->
-                <img [src]="getLogoUrl(shop)" [alt]="shop.name + ' logo'" loading="lazy" width="48" height="48"
-                     class="tw-w-11 tw-h-11 sm:tw-w-12 sm:tw-h-12 tw-rounded-xl tw-object-contain tw-bg-cream tw-border tw-border-ink/10 tw-p-1 tw-shrink-0" />
+                <!-- logo (real image, or first-letter tile as fallback) -->
+                @if (hasLogo(shop)) {
+                  <img [src]="getLogoUrl(shop)" [alt]="shop.name + ' logo'" loading="lazy" width="48" height="48"
+                       class="tw-w-11 tw-h-11 sm:tw-w-12 sm:tw-h-12 tw-rounded-xl tw-object-contain tw-bg-cream tw-border tw-border-ink/10 tw-p-1 tw-shrink-0" />
+                } @else {
+                  <span aria-hidden="true"
+                        class="tw-w-11 tw-h-11 sm:tw-w-12 sm:tw-h-12 tw-rounded-xl tw-bg-sky tw-border tw-border-ink/10 tw-shrink-0 tw-flex tw-items-center tw-justify-center tw-font-title tw-font-bold tw-text-ink tw-text-xl sm:tw-text-2xl tw-leading-none">{{ logoInitial(shop) }}</span>
+                }
                 <!-- name -->
                 <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-leading-tight tw-min-w-0 tw-break-words tw-flex-1">{{ shop.name }}</span>
                 <!-- cta -->

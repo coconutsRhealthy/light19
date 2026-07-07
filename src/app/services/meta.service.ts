@@ -2,7 +2,8 @@ import { Injectable, Inject } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/common';
 
-const OG_IMAGE = 'https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/diski-og.webp';
+// Self-hosted 1200x630 branded OG banner (butter bg + "d" mark + wordmark + tagline).
+const OG_IMAGE = 'https://diski.nl/logos/webp/diski-og.webp';
 
 @Injectable({
     providedIn: 'root'

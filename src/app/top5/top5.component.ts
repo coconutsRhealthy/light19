@@ -352,19 +352,21 @@ export class Top5Component {
     return affiliateUrl || shop.url;
   }
 
+  // Only called from the template when hasLogo(shop) is true, so a real logo exists.
   getLogoUrl(shop: TopShop): string {
     const key = shop.affiliateKey?.trim();
-    let logoUrl: string | undefined;
+    return (key && this.logos[key]) || '';
+  }
 
-    if (key) {
-      logoUrl = this.logos[key];
-    }
+  /** True when the shop has a real logo (not just the generic fallback). */
+  hasLogo(shop: TopShop): boolean {
+    const key = shop.affiliateKey?.trim();
+    return !!key && this.logos[key] !== undefined;
+  }
 
-    if (logoUrl === undefined) {
-      logoUrl = this.logos['default_top5'];
-    }
-
-    return logoUrl;
+  /** First letter for the no-logo placeholder tile. */
+  logoInitial(shop: TopShop): string {
+    return (shop.name?.trim().charAt(0) || '?').toUpperCase();
   }
 
   sendEventToGa(shop: TopShop): void {
