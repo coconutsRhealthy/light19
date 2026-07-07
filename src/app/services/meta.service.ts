@@ -33,7 +33,7 @@ export class MetaService {
         this.meta.updateTag({ property: 'og:image', content: OG_IMAGE });
         this.meta.updateTag({ property: 'og:site_name', content: 'Diski' });
         this.meta.updateTag({ property: 'og:locale', content: 'nl_NL' });
-        this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
+        this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
         this.meta.updateTag({ name: 'twitter:title', content: title });
         this.meta.updateTag({ name: 'twitter:description', content: description });
         this.meta.updateTag({ name: 'twitter:image', content: OG_IMAGE });
