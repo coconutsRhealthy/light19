@@ -122,7 +122,7 @@ export class DiscountsTableComponent implements OnInit {
       "@type": "Organization",
       "name": "Diski",
       "url": "https://diski.nl",
-      "logo": "https://diski.nl/logos/webp/avatar.webp",
+      "logo": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp",
       "sameAs": [
         "https://www.instagram.com/wiegeeftkorting/",
         "https://www.tiktok.com/@andyyrobe"

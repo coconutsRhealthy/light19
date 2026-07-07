@@ -34,6 +34,10 @@
        async stylesheet / render path on mobile — measured LCP 4.8s -> 1.7s once the
        preloads were removed. Fonts load at normal priority and swap in a beat later. -->
 
+  <!-- Shop logos are served from jsDelivr; warm the connection early
+       (DNS+TCP+TLS off the critical path) to help mobile LCP. -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
   <link rel="dns-prefetch" href="https://www.awin1.com">
   <link rel="dns-prefetch" href="https://a1.awin1.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">

@@ -434,7 +434,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       'url': 'https://diski.nl/',
       'logo': {
         '@type': 'ImageObject',
-        'url': 'https://diski.nl/logos/webp/avatar.webp'
+        'url': 'https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp'
       },
       'sameAs': [
         'https://www.instagram.com/wiegeeftkorting/',

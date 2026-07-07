@@ -37,7 +37,7 @@
 
   <!-- ===================== TOP 5 LIST(S) ===================== -->
   <section class="tw-max-w-5xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-mt-8 sm:tw-mt-10">
-    @for (category of visibleCategories; track category.title) {
+    @for (category of visibleCategories; track category.title; let ci = $index) {
       <div class="tw-mb-10 sm:tw-mb-12 last:tw-mb-0">
         <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[12px] tw-text-ink/55 tw-mb-4">
           Top 5 · {{ category.title }}
@@ -55,7 +55,7 @@
                       [class]="i === 0 ? 'tw-text-link' : 'tw-text-ink/20'">{{ i + 1 }}</span>
                 <!-- logo (real image, or first-letter tile as fallback) -->
                 @if (hasLogo(shop)) {
-                  <img [src]="getLogoUrl(shop)" [alt]="shop.name + ' logo'" loading="lazy" width="48" height="48"
+                  <img [src]="getLogoUrl(shop)" [alt]="shop.name + ' logo'" [attr.loading]="ci === 0 ? 'eager' : 'lazy'" width="48" height="48"
                        class="tw-w-11 tw-h-11 sm:tw-w-12 sm:tw-h-12 tw-rounded-xl tw-object-contain tw-bg-cream tw-border tw-border-ink/10 tw-p-1 tw-shrink-0" />
                 } @else {
                   <span aria-hidden="true"
