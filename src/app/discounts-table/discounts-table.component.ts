@@ -271,6 +271,21 @@ export class DiscountsTableComponent implements OnInit {
     }
   }
 
+  /** Same behaviour as onCardClick, for the static "beste sale" brand tiles.
+   *  b.key is already the lowercase slug used both for the detail page and the
+   *  affiliate lookup. Without an affiliate link the routerLink handles the nav. */
+  onSaleBrandClick(brand: { key: string; name: string }, event: MouseEvent) {
+    this.trackBrandClick(brand.name);
+
+    const affiliateLink = this.affiliateLinkService.getAffiliateLink(brand.key);
+    if (affiliateLink !== undefined && this.isBrowser) {
+      event.preventDefault();
+      const brandPageUrl = `${window.location.origin}/${brand.key}/`;
+      window.open(brandPageUrl, '_blank');
+      location.href = affiliateLink;
+    }
+  }
+
   openShopsModal() {
     this.isShopsModalVisible = true;
   }

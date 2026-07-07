@@ -204,7 +204,7 @@
       </div>
       <div class="tw-flex tw-flex-col tw-gap-3.5">
         @for (b of saleBrands; track b.key) {
-          <a routerLink="/blackfriday" class="tw-group tw-bg-white tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-grid tw-grid-cols-[auto_1fr_auto] tw-gap-4 sm:tw-gap-5 tw-items-center tw-no-underline tw-shadow-[0_8px_24px_rgba(67,48,46,0.05)] hover:tw-shadow-md tw-transition">
+          <a [routerLink]="'/' + b.key + '/'" (click)="onSaleBrandClick(b, $event)" class="tw-group tw-bg-white tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-grid tw-grid-cols-[auto_1fr_auto] tw-gap-4 sm:tw-gap-5 tw-items-center tw-no-underline tw-shadow-[0_8px_24px_rgba(67,48,46,0.05)] hover:tw-shadow-md tw-transition">
             <div class="tw-w-11 tw-h-11 sm:tw-w-12 sm:tw-h-12 tw-rounded-xl tw-bg-panel tw-flex tw-items-center tw-justify-center tw-p-1.5 tw-shrink-0">
               @if (b.logo) {
                 <img [src]="b.logo" [alt]="b.name + ' logo'" width="40" height="40" class="tw-max-w-full tw-max-h-full tw-object-contain" loading="lazy" />
@@ -258,7 +258,7 @@
               placeholder="jouw@email.nl"
               class="tw-flex-1 tw-min-w-0 tw-bg-transparent tw-outline-none tw-font-body tw-text-sm sm:tw-text-base tw-text-ink placeholder:tw-text-ink/50"
             />
-            <button type="submit" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-5 sm:tw-px-6 tw-py-3 tw-font-body tw-font-semibold tw-text-sm tw-whitespace-nowrap">Inschrijven</button>
+            <button type="submit" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-5 sm:tw-px-6 tw-py-3 tw-font-body tw-font-semibold tw-text-sm tw-whitespace-nowrap">Join de club</button>
           </form>
           @if (newsletterError) {
             <p class="tw-font-body tw-text-sm tw-text-ink/75 tw-mt-2 tw-pl-5 sm:tw-pl-6">Vul een geldig e-mailadres in.</p>

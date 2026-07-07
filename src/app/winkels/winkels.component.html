@@ -16,7 +16,7 @@
         <input
           type="text"
           class="tw-flex-1 tw-min-w-0 tw-bg-transparent tw-outline-none tw-font-body tw-text-sm sm:tw-text-base tw-text-ink placeholder:tw-text-ink/50"
-          placeholder="Zoek een shop — bijv. NA-KD, Temu, Gymshark…"
+          placeholder="Zoek op webshop..."
           [(ngModel)]="searchTerm"
         />
         @if (searchTerm) {
@@ -30,11 +30,11 @@
   <!-- Alphabet filter -->
   @if (!loading) {
     <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-py-6">
-      <div class="tw-flex tw-flex-wrap tw-gap-2">
+      <div class="tw-flex tw-flex-wrap tw-gap-1 sm:tw-gap-1.5">
         @for (l of letters; track l) {
           <button
-            (click)="selectLetter(l)"
-            class="tw-rounded-full tw-font-body tw-text-sm tw-py-2 tw-px-3 tw-min-w-[38px] tw-text-center tw-transition"
+            (click)="selectedLetter = l"
+            class="tw-rounded-full tw-font-body tw-text-xs sm:tw-text-sm tw-leading-none tw-py-1.5 tw-px-2 sm:tw-px-2.5 tw-text-center tw-transition"
             [class]="selectedLetter === l
               ? 'tw-bg-ink tw-text-cream tw-font-semibold'
               : 'tw-bg-panel tw-border tw-border-ink/10 tw-text-ink/70 hover:tw-text-ink'">
@@ -56,21 +56,28 @@
           </div>
         }
       </div>
-    } @else if (filteredShops.length) {
-      <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
-        @for (shop of filteredShops; track shop) {
-          <a [routerLink]="['/' + shop.toLowerCase() + '/']"
-             class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-flex tw-flex-col tw-gap-1.5 tw-min-h-[120px] tw-no-underline tw-text-ink active:tw-scale-[0.98] tw-transition tw-duration-200 hover:tw-shadow-md">
-            <div class="tw-flex tw-justify-between tw-items-start tw-gap-2">
-              <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-leading-tight tw-break-words tw-min-w-0">{{ shop }}</span>
-              @if (offers[shop]) {
-                <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-text-link tw-shrink-0">{{ formatOffer(offers[shop]) }}</span>
-              }
-            </div>
-            <span class="tw-mt-auto tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/55">Bekijk codes →</span>
-          </a>
-        }
-      </div>
+    } @else if (filteredGroups.length) {
+      @for (group of filteredGroups; track group.letter) {
+        <div class="tw-mb-8 sm:tw-mb-10">
+          <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-mb-3 sm:tw-mb-4">
+            {{ group.letter }}<span class="tw-text-dot">.</span>
+          </h2>
+          <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
+            @for (shop of group.shops; track shop) {
+              <a [routerLink]="['/' + shop.toLowerCase() + '/']"
+                 class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-flex tw-flex-col tw-gap-1.5 tw-min-h-[120px] tw-no-underline tw-text-ink active:tw-scale-[0.98] tw-transition tw-duration-200 hover:tw-shadow-md">
+                <div class="tw-flex tw-justify-between tw-items-start tw-gap-2">
+                  <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-leading-tight tw-break-words tw-min-w-0">{{ shop }}</span>
+                  @if (offers[shop]) {
+                    <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-text-link tw-shrink-0">{{ formatOffer(offers[shop]) }}</span>
+                  }
+                </div>
+                <span class="tw-mt-auto tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/55">Bekijk codes →</span>
+              </a>
+            }
+          </div>
+        </div>
+      }
     } @else {
       <div class="tw-text-center tw-text-ink/55 tw-py-16 tw-font-body tw-text-lg">
         Geen shops gevonden@if (searchTerm) { voor “{{ searchTerm }}”}.

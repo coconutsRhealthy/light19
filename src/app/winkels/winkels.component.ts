@@ -61,21 +61,35 @@ export class WinkelsComponent implements OnInit {
       present.add(/[A-Z]/.test(c) ? c : '#');
     }
     const alpha = Array.from(present).filter(l => l !== '#').sort();
-    return ['Alle', ...(present.has('#') ? ['#'] : []), ...alpha];
+    return ['Alle', ...(present.has('#') ? ['0-9'] : []), ...alpha];
   }
 
   get filteredShops(): string[] {
     const term = this.searchTerm.toLowerCase().trim();
     return this.allShops.filter((s) => {
       const okLetter = this.selectedLetter === 'Alle'
-        || (this.selectedLetter === '#' ? /^[^a-zA-Z]/.test(s) : s.toUpperCase().startsWith(this.selectedLetter));
+        || (this.selectedLetter === '0-9' ? /^[^a-zA-Z]/.test(s) : s.toUpperCase().startsWith(this.selectedLetter));
       const okText = !term || s.toLowerCase().includes(term);
       return okLetter && okText;
     });
   }
 
-  selectLetter(letter: string): void {
-    this.selectedLetter = letter;
+  // Group the filtered shops under a heading per first letter (A, B, C…),
+  // with anything non-alphabetic (digits/symbols) collapsed into a "0-9" bucket.
+  // filteredShops is already sorted, so groups come out in order and 0-9 leads.
+  get filteredGroups(): { letter: string; shops: string[] }[] {
+    const groups: { letter: string; shops: string[] }[] = [];
+    for (const shop of this.filteredShops) {
+      const c = shop.charAt(0).toUpperCase();
+      const letter = /[A-Z]/.test(c) ? c : '0-9';
+      let group = groups.find((g) => g.letter === letter);
+      if (!group) {
+        group = { letter, shops: [] };
+        groups.push(group);
+      }
+      group.shops.push(shop);
+    }
+    return groups;
   }
 
   formatOffer(raw: string): string {
