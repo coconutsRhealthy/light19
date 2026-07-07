@@ -14,6 +14,7 @@
 /about you
 /acculaders.nl
 /acer
+/acetaylor
 /achateshop.com
 /acrylfoto.nl
 /action
@@ -471,6 +472,7 @@
 /flowsteamofficial
 /fluofree
 /flytex.fr
+/fntcase
 /foodello
 /foodtownyume
 /footlocker
@@ -557,6 +559,7 @@
 /gymexclusive
 /gymexclusive.com
 /gympin
+/gymraceutrecht
 /gymshark
 /h&m
 /haarliefjes
@@ -729,7 +732,6 @@
 /little_monkeez.nl
 /littledutch
 /littlemaryam
-/livalapip
 /livin24
 /lkswimwear
 /loavies
@@ -1025,7 +1027,6 @@
 /raamtekening
 /raboesy
 /radero.nl
-/raevie
 /raizzed
 /ralphlauren
 /rapunzelofsweden
@@ -1038,10 +1039,10 @@
 /refurbished
 /reinders
 /reiss
+/renpho
 /repeatcashmere
 /retrostage
 /revitaltrax
-/revvi
 /rienthelabel
 /rif010.nl
 /rihoas
@@ -1201,6 +1202,7 @@
 /styrekx
 /subdued
 /sudio
+/sueltajewelry
 /suite702
 /sumisuknives
 /suncamp
@@ -1316,6 +1318,7 @@
 /ugg-australia
 /ullapopken
 /ullapopken.nl
+/ultimate.travel
 /ultimategainz
 /ultimatetravel
 /ultrahuman_ring
@@ -1423,6 +1426,7 @@
 /wish.com
 /withlovewrapped
 /wizzimo_store
+/wolfpak.official
 /womensbest
 /woood
 /workliving.nl
@@ -1451,7 +1455,6 @@
 /yvesrocher
 /zadigvoltaire
 /zalando
-/zapaka
 /zappie
 /zappiebox
 /zarzour
@@ -1473,9 +1476,11 @@
 /zinzytoys
 /zippit
 /zizzifashion
+/zolunalighting
 /zomerweek
 /zone2club
 /zone2sportswear
+/zonneschermdoek.nl
 /zooplus.nl
 /zoorie.com
 /zorgkiezer
