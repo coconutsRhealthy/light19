@@ -107,11 +107,39 @@
     </div><!-- /.codes-layout -->
   </section>
 
+  <!-- ====================== SALE HISTORY (spotted-promotions feed, prerendered) ====================== -->
+  @if (saleHistory.length) {
+    <section id="sale-historie" aria-labelledby="sale-historie-h">
+      <h2 id="sale-historie-h">{{ displayName }} sale geschiedenis</h2>
+      <p class="meta" style="color:var(--muted);font-size:14px;margin:-6px 0 14px">
+        Sales en acties die onze redactie eerder bij {{ displayName }} spotte, met de datum waarop we ze zagen.
+      </p>
+      <ul class="sale-history">
+        @for (s of visibleSaleHistory; track s.text) {
+          <li class="sale-item">
+            <div class="sale-body">
+              <span class="sale-text">{{ s.text }}</span>
+              @if (s.isNew) { <span class="sale-new">Nieuw</span> }
+            </div>
+            <time class="sale-date" [attr.datetime]="s.iso">Gespot op {{ s.dateLabel }}</time>
+          </li>
+        }
+      </ul>
+
+      @if (saleHistory.length > saleCollapseLimit && !showAllSales) {
+        <button class="show-all" (click)="showAllSales = true">
+          Toon volledige sale geschiedenis ({{ saleHistory.length }}) ↓
+        </button>
+      }
+    </section>
+  }
+
   <!-- On-page table of contents — collapsed, since the codes are already above -->
   <details class="toc">
     <summary>Op deze pagina</summary>
     <ol>
       <li><a href="#codes" (click)="scrollToSection($event, 'codes')">Actieve kortingscodes</a></li>
+      @if (saleHistory.length) { <li><a href="#sale-historie" (click)="scrollToSection($event, 'sale-historie')">Sale geschiedenis</a></li> }
       @if (content?.codeInfo?.length) { <li><a href="#zo-werkt" (click)="scrollToSection($event, 'zo-werkt')">Zo werkt een {{ displayName }} code</a></li> }
       @if (content?.about?.length) { <li><a href="#over" (click)="scrollToSection($event, 'over')">Over {{ displayName }}</a></li> }
       @if (content?.creators?.length) { <li><a href="#creators" (click)="scrollToSection($event, 'creators')">Bij creators</a></li> }

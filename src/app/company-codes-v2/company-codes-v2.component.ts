@@ -12,6 +12,7 @@ import { VisitorProfileService } from '../services/visitor-profile.service';
 import { ModalComponent } from '../modal/modal.component';
 import { BrandContent, BrandVideo } from './brand-content/brand-content.model';
 import { BUILD_DATE_ISO } from '../build-info';
+import spottedSalesData from '../data/spotted-sales.json';
 
 declare let gtag: Function;
 
@@ -32,6 +33,23 @@ interface RelatedShopVM {
   logo?: string;
   topDiscount?: string;
 }
+
+// One past sale spotting for this shop, from the R2 "spotted promotions" feed
+// baked into spotted-sales.json at build time (so it's prerendered, no runtime
+// fetch). `isNew` is measured against the build date, not runtime, to stay
+// deterministic / hydration-safe.
+interface SaleVM {
+  text: string;       // Dutch summary of the sale, e.g. "Zomersale met 40% korting"
+  dateLabel: string;  // "7 juli 2026"
+  iso: string;        // "2026-07-07" (for <time datetime>)
+  isNew: boolean;     // spotted within 7 days of the build date
+}
+
+// The bundled feed, keyed by the same slug the pages use.
+const SPOTTED_SALES = spottedSalesData as { [slug: string]: { text: string; date: string }[] };
+
+// A sale spotted within this many days of the build date gets the "Nieuw" badge.
+const SALE_NEW_WINDOW_DAYS = 7;
 
 const MONTHS_NL = [
   'januari', 'februari', 'maart', 'april', 'mei', 'juni',
@@ -82,6 +100,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
   regularCodes: CodeVM[] = [];
   relatedShops: RelatedShopVM[] = [];
+  saleHistory: SaleVM[] = [];
 
   affiliateLink: string | undefined;
   isModalVisible = false;
@@ -92,6 +111,13 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
   get visibleRegularCodes(): CodeVM[] {
     return this.showAllCodes ? this.regularCodes : this.regularCodes.slice(0, this.codeCollapseLimit);
+  }
+
+  readonly saleCollapseLimit = 6;
+  showAllSales = false;
+
+  get visibleSaleHistory(): SaleVM[] {
+    return this.showAllSales ? this.saleHistory : this.saleHistory.slice(0, this.saleCollapseLimit);
   }
 
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
@@ -212,6 +238,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     this.route.data.subscribe(data => {
       this.company = (this.route.snapshot.paramMap.get('company') ?? '').toLowerCase();
       this.showAllCodes = false;
+      this.showAllSales = false;
       this.isModalVisible = false;
       this.selectedDiscount = null;
       this.mutedFlags = [];
@@ -290,6 +317,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       .filter(c => c.isPercent)
       .reduce((max, c) => Math.max(max, Number(c.rawValue)), 0);
 
+    this.buildSaleHistory(checked);
     this.buildRelatedShops(lines);
     this.applySeo();
 
@@ -333,6 +361,33 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       rawDate: `${mm}-${dd}`,
       dateLabel: this.formatDate(spotted),
     };
+  }
+
+  /**
+   * Sale history: every past sale we spotted for this shop (from the R2 "spotted
+   * promotions" feed, baked into spotted-sales.json at build time so it renders
+   * prerendered with no runtime fetch). Deduped + newest-first already; here we
+   * just format the dates and flag the recent ones. "Recent" is measured against
+   * the BUILD date (buildDate), not runtime, so the badge stays deterministic and
+   * doesn't drift / cause a hydration mismatch as the static HTML ages.
+   */
+  private buildSaleHistory(buildDate: Date): void {
+    const entries = SPOTTED_SALES[this.company] ?? [];
+    this.saleHistory = entries.map(e => {
+      const d = this.parseIsoDate(e.date);
+      const ageDays = (buildDate.getTime() - d.getTime()) / 86400000;
+      return {
+        text: e.text,
+        dateLabel: this.formatDate(d),
+        iso: e.date,
+        isNew: ageDays <= SALE_NEW_WINDOW_DAYS,
+      };
+    });
+  }
+
+  private parseIsoDate(iso: string): Date {
+    const [y, m, d] = (iso || '').split('-').map(Number);
+    return (y && m && d) ? new Date(y, m - 1, d) : new Date(NaN);
   }
 
   /**
