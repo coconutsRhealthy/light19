@@ -24,7 +24,6 @@
 /aeg
 /aelfriceden
 /aelfriceden.com
-/afibanaturals
 /ag1
 /agradi.official
 /agtronica
@@ -83,6 +82,7 @@
 /aurgan.nl
 /authenticbeautyconcept
 /autovibe.nl
+/autowrapnl
 /avaewear
 /avondmakers
 /awbridal
@@ -103,6 +103,7 @@
 /banden.nl
 /bartogi
 /basalbasics.nl
+/bataviastad.nl
 /bbdebiestraatseweide
 /beachresortpuntwest
 /bearswithbenefits
@@ -117,6 +118,7 @@
 /bellure.fashion
 /beltegoed.nl
 /ben
+/benbits.nl
 /berghoffhome
 /berlinerbags
 /berlook
@@ -559,6 +561,7 @@
 /gymexclusive
 /gymexclusive.com
 /gympin
+/gymrace
 /gymraceutrecht
 /gymshark
 /h&m
@@ -609,12 +612,12 @@
 /housevitaminnl
 /houtenplenkske
 /houtolie
+/httpsmakeupfactory.nl
 /huawei
 /hugesupplements
 /hunkemoller
 /hydrojug
 /hypostoreofficial
-/hyrox
 /ibood
 /icaniwill
 /iciparisxl
@@ -698,7 +701,6 @@
 /kymocleaning
 /labelish
 /lakkiegellak
-/lalousieraden
 /laluunbaby
 /lameremodesty
 /lampen24
@@ -772,6 +774,7 @@
 /maisemirae
 /maje
 /makemefamousshop
+/makeupfactory.nl
 /malelions
 /maletasgreenwich
 /malwim.de
@@ -842,7 +845,6 @@
 /msmode
 /muchachomalo
 /mudmasky.nl
-/musehome
 /mvolo.nl
 /my.milea
 /mydearbeer_nl
@@ -910,7 +912,6 @@
 /oglmove
 /ohcascas amsterdam
 /olcaygulsenbeauty
-/olieo
 /olijfolieconcurrent
 /oliveyoungglobal
 /oliviakate
@@ -971,6 +972,7 @@
 /peterhahn
 /petree
 /petsecur
+/philips
 /philips lumea
 /philipshue
 /photowall_sweden
@@ -1004,6 +1006,7 @@
 /prenatal
 /prepmymeal.nl
 /prescription-beauty.nl
+/prettycurlygirl_products
 /prettylittlething
 /prikbord
 /primevideo
@@ -1020,6 +1023,7 @@
 /purenaturegoods
 /puritybase
 /q-park
+/qallolifestyle
 /qathu
 /qthelabel
 /queentarzi
@@ -1120,6 +1124,7 @@
 /silabrows
 /silkelegancemanon
 /silksilky_official
+/simbiosis
 /simmilondon
 /simpel
 /simplydream
@@ -1145,6 +1150,7 @@
 /smashedlemon
 /smeg
 /smellacloud.de
+/smplskincare
 /sneakin
 /snipes
 /snuggs
@@ -1225,6 +1231,7 @@
 /swapan
 /swapfiets
 /swehealth
+/swiefies
 /swimessentials
 /synnamoncandy
 /tadaaz
@@ -1238,6 +1245,7 @@
 /tbjp
 /teamathlevel
 /techweise
+/teddah
 /tedhilley
 /tefal
 /temu
@@ -1256,7 +1264,6 @@
 /theconfidenceconcept
 /theey
 /thefarm
-/thefarm.nl
 /thegelexpert
 /thegoodroll
 /thejewellershop
@@ -1462,7 +1469,6 @@
 /zavvi
 /zazanederland
 /zee.belgium
-/zeeuwsdotje
 /zelesta.nl
 /zenggi
 /zenhotels
