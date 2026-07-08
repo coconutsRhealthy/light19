@@ -91,6 +91,7 @@ ul.sale-history{list-style:none;margin:0;padding:0;display:grid;gap:10px}
   font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
   padding:2px 8px;border-radius:999px}
 .sale-date{flex:0 0 auto;color:var(--muted);font-size:13px;white-space:nowrap}
+.sale-source{color:var(--muted);font-size:13.5px;margin-top:12px}
 @media(max-width:640px){
   .sale-item{flex-direction:column;align-items:flex-start;gap:6px}
   .sale-text{font-size:14.5px}
