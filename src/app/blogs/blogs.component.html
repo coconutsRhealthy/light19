@@ -21,9 +21,9 @@
       @for (post of posts; track post.slug) {
         <a [routerLink]="'/blogs/' + post.slug" class="tw-group tw-block tw-no-underline tw-text-ink">
           <article class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-overflow-hidden tw-flex tw-flex-col tw-h-full hover:tw-shadow-md active:tw-scale-[0.99] tw-transition tw-duration-200">
-            <div class="tw-h-40 tw-flex tw-items-center tw-justify-center tw-p-5" [class]="post.tint">
+            <div class="tw-h-28 sm:tw-h-32 tw-flex tw-items-center tw-justify-center tw-overflow-hidden" [class]="post.tint">
               @if (post.image) {
-                <img [src]="post.image" [alt]="post.title" loading="lazy" class="tw-max-h-full tw-max-w-full tw-object-contain" />
+                <img [src]="post.image" [alt]="post.title" loading="lazy" class="tw-w-full tw-h-full tw-object-cover" />
               } @else {
                 <span class="tw-text-5xl">{{ post.emoji }}</span>
               }
@@ -42,7 +42,6 @@
 
       <!-- Teaser for future blogs -->
       <div class="tw-border tw-border-dashed tw-border-ink/20 tw-rounded-2xl tw-flex tw-flex-col tw-items-center tw-justify-center tw-p-8 tw-text-center tw-min-h-[260px]">
-        <span class="tw-text-4xl tw-mb-3">✍️</span>
         <p class="tw-font-title tw-font-bold tw-text-lg tw-text-ink">Meer blogs komen eraan</p>
         <p class="tw-font-body tw-text-sm tw-text-ink/55 tw-mt-1">We werken aan meer gidsen over kortingscodes en deals.</p>
       </div>

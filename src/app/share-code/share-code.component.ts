@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, afterNextRender } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { MetaService } from '../services/meta.service';
 
 @Component({
   selector: 'app-share-code',
-  imports: [FooterComponent, NavbarComponent, RouterLink],
+  imports: [FooterComponent, NavbarComponent],
   templateUrl: './share-code.component.html',
   styles: ``
 })
 export class ShareCodeComponent {
+
+  // Rendered ONLY in the browser, after hydration. A visible email (or mailto)
+  // in the prerendered HTML gets rewritten by Cloudflare's email-obfuscation,
+  // which breaks Angular hydration (the URL strips back to root). Empty during
+  // SSR + first client paint (so hydration matches), then filled. Mirrors the
+  // Contact page's approach.
+  shareEmail = '';
+
   constructor(private meta: MetaService) {
     this.meta.updateTitle('Samenwerken met Diski | Deel jouw kortingscode');
     this.meta.updateMetaInfo(
@@ -18,5 +25,9 @@ export class ShareCodeComponent {
       'diski.nl',
       'samenwerken met Diski, kortingscode delen, partnership, influencer korting, code insturen'
     );
+
+    afterNextRender(() => {
+      this.shareEmail = 'wouter' + '@' + 'diski.nl';
+    });
   }
 }

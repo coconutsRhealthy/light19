@@ -75,7 +75,7 @@ export class DiscountsTableComponent implements OnInit {
   // The carousel of "highest discount codes of today" is not modelled in the
   // feed yet, so this is editorial sample content until it's wired to real data.
   socialCards = [
-    { tag: 'Instagram + TikTok', title: 'Volg @wiegeeftkorting', desc: 'Dagelijkse codes, sale-alerts en de beste vondsten op je tijdlijn.', cta: 'Volgen', href: 'https://www.instagram.com/wiegeeftkorting/' },
+    { tag: 'Instagram', title: 'Volg @wiegeeftkorting', desc: 'Dagelijkse codes, sale-alerts en de beste vondsten op je tijdlijn.', cta: 'Volgen', href: 'https://www.instagram.com/wiegeeftkorting/' },
     { tag: 'Prikbord',           title: 'Deel een code die werkt', desc: 'Zelf een goede code gespot? Zet hem op het prikbord en help de rest.', cta: 'Naar prikbord →', href: '/prikbord' },
   ];
 

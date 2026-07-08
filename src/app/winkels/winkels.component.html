@@ -48,9 +48,9 @@
   <!-- Shop grid -->
   <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-16">
     @if (loading) {
-      <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
+      <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
         @for (s of [1,2,3,4,5,6,7,8]; track s) {
-          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-min-h-[120px] tw-flex tw-flex-col tw-gap-2">
+          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-min-h-[88px] sm:tw-min-h-[120px] tw-flex tw-flex-col tw-gap-2">
             <div class="tw-h-5 tw-bg-ink/10 tw-rounded tw-w-2/3 tw-animate-pulse"></div>
             <div class="tw-h-3 tw-bg-ink/10 tw-rounded tw-w-1/3 tw-mt-auto tw-animate-pulse"></div>
           </div>
@@ -62,10 +62,10 @@
           <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-mb-3 sm:tw-mb-4">
             {{ group.letter }}<span class="tw-text-dot">.</span>
           </h2>
-          <div class="tw-grid tw-grid-cols-2 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
+          <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
             @for (shop of group.shops; track shop) {
               <a [routerLink]="['/' + shop.toLowerCase() + '/']"
-                 class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-flex tw-flex-col tw-gap-1.5 tw-min-h-[120px] tw-no-underline tw-text-ink active:tw-scale-[0.98] tw-transition tw-duration-200 hover:tw-shadow-md">
+                 class="tw-group tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 sm:tw-p-5 tw-flex tw-flex-col tw-gap-1.5 tw-min-h-[88px] sm:tw-min-h-[120px] tw-no-underline tw-text-ink active:tw-scale-[0.98] tw-transition tw-duration-200 hover:tw-shadow-md">
                 <div class="tw-flex tw-justify-between tw-items-start tw-gap-2">
                   <span class="tw-font-title tw-font-bold tw-text-lg sm:tw-text-xl tw-tracking-tight tw-leading-tight tw-break-words tw-min-w-0">{{ shop }}</span>
                   @if (offers[shop]) {
