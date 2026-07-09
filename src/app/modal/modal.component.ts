@@ -5,8 +5,6 @@ import { DiscountsService } from '../services/discounts.service';
 import { getSamsungPromotion, SamsungPromotion } from '../data/samsung-promotions';
 import { FormsModule } from '@angular/forms';
 
-declare let gtag: Function;
-
 @Component({
   selector: 'app-modal',
   imports: [FormsModule],
@@ -176,28 +174,7 @@ export class ModalComponent {
     }, 1500);
   }
 
-  sendGiftcardEventsToGa(company: string): void {
-    if (typeof gtag === 'function') {
-      const companyLowerCase = company.toLowerCase();
-      gtag('event', 'giftcard', {
-        'event_category': 'Giftcard',
-        'event_label': 'giftcard_inmodal'
-      });
-
-      gtag('event', 'giftcard', {
-        'event_category': 'Giftcard',
-        'event_label': 'giftcard_inmodal_' + companyLowerCase
-      });
-    } else {
-      console.error('gtag is not defined');
-    }
-  }
-
   getDiscountUrl(): string {
-    if (this.discount?.discountCode.startsWith('http')) {
-      return this.discount.discountCode;
-    }
-
     if (this.discount?.affiliateLink) {
       return this.discount.affiliateLink;
     }

@@ -61,11 +61,7 @@
         <!-- Header -->
         <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-gray-200">
             <h2 class="tw-font-bold tw-text-lg tw-text-gray-900">
-                @if (discount.discountCode.startsWith('http')) {
-                    🎉 {{ discount.company }} giftcard
-                } @else {
-                    🎉 {{ discount.company }} kortingscode
-                }
+                🎉 {{ discount.company }} kortingscode
             </h2>
             <button
                     (click)="closeModal()"
@@ -156,16 +152,6 @@
             <div class="tw-flex tw-items-center tw-justify-between">
                 <span class="tw-font-semibold tw-text-gray-600">Code</span>
 
-                @if (discount.discountCode.startsWith('http')) {
-                    <a [href]="discount.discountCode"
-                       target="_blank"
-                       (click)="sendGiftcardEventsToGa(discount.company)"
-                       class="tw-text-blue-600 tw-font-bold hover:tw-underline hover:tw-text-blue-700 tw-transition"
-                    >
-                        KLIK
-                    </a>
-                } @else {
-
                 <!-- LOCKED STATE -->
                 @if (!isUnlocked) {
                     <div class="tw-flex tw-items-center tw-gap-2 tw-text-gray-400 tw-text-sm tw-bg-gray-100 tw-border tw-border-gray-200 tw-rounded-md tw-px-3 tw-py-1.5">
@@ -211,7 +197,6 @@
                 </button>
                 }
                 </div>
-                }
                 }
             </div>
 
@@ -270,11 +255,7 @@
                     rel="sponsored"
                     class="tw-bg-amber-500 hover:tw-bg-amber-600 tw-text-white tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
             >
-                @if (discount.discountCode.startsWith('http')) {
-                    Naar giftcard →
-                } @else {
-                    Naar winkel →
-                }
+                Naar winkel →
             </a>
         </div>
     </div>
