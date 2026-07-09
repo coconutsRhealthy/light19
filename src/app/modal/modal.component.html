@@ -41,9 +41,10 @@
         </div>
 
         <!-- Footer -->
+        @if (discountUrl) {
         <div class="tw-bg-gray-50 tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-gray-200">
             <a
-                    [href]="getDiscountUrl()"
+                    [href]="discountUrl"
                     target="_blank"
                     rel="sponsored"
                     class="tw-bg-amber-500 hover:tw-bg-amber-600 tw-text-white tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
@@ -51,6 +52,7 @@
                 Naar winkel →
             </a>
         </div>
+        }
     </div>
     }
 
@@ -248,9 +250,10 @@
         }
 
         <!-- Footer -->
+        @if (discountUrl) {
         <div class="tw-bg-gray-50 tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-gray-200">
             <a
-                    [href]="getDiscountUrl()"
+                    [href]="discountUrl"
                     target="_blank"
                     rel="sponsored"
                     class="tw-bg-amber-500 hover:tw-bg-amber-600 tw-text-white tw-font-semibold tw-rounded-xl tw-px-6 tw-py-2 tw-transition"
@@ -258,6 +261,7 @@
                 Naar winkel →
             </a>
         </div>
+        }
     </div>
     }
 </div>

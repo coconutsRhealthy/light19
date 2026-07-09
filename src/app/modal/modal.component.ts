@@ -4,6 +4,7 @@ import { VisitorProfileService } from '../services/visitor-profile.service';
 import { DiscountsService } from '../services/discounts.service';
 import { getSamsungPromotion, SamsungPromotion } from '../data/samsung-promotions';
 import { FormsModule } from '@angular/forms';
+import shopUrls from '../data/shop-urls.json';
 
 @Component({
   selector: 'app-modal',
@@ -28,6 +29,7 @@ export class ModalComponent {
   isCopied = false;
 
   discountCode: string = '';
+  discountUrl: string | null = null;
 
   private _discount: any = null;
 
@@ -41,6 +43,7 @@ export class ModalComponent {
   @Input()
   set discount(value: any) {
     this._discount = value;
+    this.discountUrl = value ? this.resolveDiscountUrl() : null;
     if (value) {
       this.discountCode = value.discountCode;
 
@@ -174,15 +177,22 @@ export class ModalComponent {
     }, 1500);
   }
 
-  getDiscountUrl(): string {
+  /**
+   * Where "Naar winkel" points: the affiliate link if we have one, otherwise the
+   * shop's own URL from the prerendered registry map. Null when we know neither
+   * — the footer CTA is then hidden rather than sent somewhere it can't reach.
+   */
+  private resolveDiscountUrl(): string | null {
     if (this.discount?.affiliateLink) {
       return this.discount.affiliateLink;
     }
 
-    let companyName = this.discount.company?.replace(/\s*\(.*?\)\s*$/, '') ?? '';
+    const slug = this.toSlug(this.discount?.companySlug ?? this.discount?.company ?? '');
+    return (shopUrls as Record<string, string>)[slug] ?? null;
+  }
 
-    const query = encodeURIComponent(`${companyName} nl`);
-    return `https://search.brave.com/search?q=${query}`;
+  private toSlug(companyName: string): string {
+    return companyName.replace(/\s*\([^)]*\)\s*$/, '').trim().toLowerCase();
   }
 
     isBlackFriday(discount: any): boolean {
