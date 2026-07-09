@@ -264,6 +264,7 @@ export const V2_CONTENT_SLUGS: ReadonlySet<string> = new Set([
   'naduvi.nl',
   'nakdfashion',
   'nelsonschoenen',
+  'newbalance',
   'nextextreme',
   'nextory',
   'ninjakitchen',
