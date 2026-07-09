@@ -189,6 +189,12 @@
       "date": "2026-06-11"
     }
   ],
+  "aromadiffusing.nl": [
+    {
+      "text": "15% korting met code Summer, alleen 72 uur geldig",
+      "date": "2026-07-08"
+    }
+  ],
   "asos": [
     {
       "text": "Start van een sale met kortingen op geselecteerde items, beperkte tijd geldig",
@@ -331,6 +337,12 @@
     {
       "text": "Speciale aanbieding: kies 4 telefoonhoesjes, betaal er slechts 2",
       "date": "2026-05-06"
+    }
+  ],
+  "butternutbox": [
+    {
+      "text": "20% korting op de eerste 2 boxen",
+      "date": "2026-07-08"
     }
   ],
   "bybrielshuysje": [
@@ -561,6 +573,12 @@
       "date": "2026-06-30"
     }
   ],
+  "easywalker": [
+    {
+      "text": "Gratis stuurwiel bij aankoop van MileyGO, Jackey NXT of Jackey NXT XL tot 31 juli 2026",
+      "date": "2026-07-08"
+    }
+  ],
   "eeveveofficial": [
     {
       "text": "€5 korting op een aankoop",
@@ -667,6 +685,10 @@
   ],
   "fatmoose": [
     {
+      "text": "Zomersale: tot 40% korting op speeltorens, geldig tot 13 juli",
+      "date": "2026-07-08"
+    },
+    {
       "text": "10% extra korting bij bestellingen vanaf €750 met code SUN10, geldig tot 29 juni",
       "date": "2026-06-26"
     },
@@ -702,6 +724,10 @@
     }
   ],
   "ginatricot": [
+    {
+      "text": "Tot 70% korting op meer toegevoegde items",
+      "date": "2026-07-08"
+    },
     {
       "text": "3 artikelen kopen voor de prijs van 2",
       "date": "2026-06-26"
@@ -1722,6 +1748,10 @@
     }
   ],
   "rituals": [
+    {
+      "text": "25% korting op alle Shimmer Oils",
+      "date": "2026-07-08"
+    },
     {
       "text": "Tot 50% korting tijdens de SALE",
       "date": "2026-06-15"
