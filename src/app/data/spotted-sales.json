@@ -691,6 +691,10 @@
   ],
   "fatmoose": [
     {
+      "text": "10% extra korting bij bestellingen vanaf €750 met code SUN10, geldig tot 13 juli",
+      "date": "2026-07-10"
+    },
+    {
       "text": "Zomersale: tot 40% korting op speeltorens, geldig tot 13 juli",
       "date": "2026-07-08"
     },
@@ -727,6 +731,12 @@
     {
       "text": "Gratis okselbehandeling op zaterdag 13 juni, alleen die dag geldig.",
       "date": "2026-06-15"
+    }
+  ],
+  "flexispot": [
+    {
+      "text": "Maak een foto en deel deze voor kans op 100% cashback, actie loopt tot 19 juli",
+      "date": "2026-07-10"
     }
   ],
   "fotofabriek.nl": [
@@ -1810,6 +1820,10 @@
     }
   ],
   "rungne": [
+    {
+      "text": "25% korting op alles in de winkel, geldig tot 31 juli",
+      "date": "2026-07-10"
+    },
     {
       "text": "Gratis shorts bij aankoop van Harness Pants, geldig tot 30 juni",
       "date": "2026-06-26"
