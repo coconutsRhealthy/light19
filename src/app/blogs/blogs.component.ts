@@ -27,7 +27,7 @@ export class BlogsComponent {
     {
       slug: 'uniqlo',
       category: 'Fashion & Style',
-      title: 'Uniqlo AIRism — 5 zomerstukken die je koel houden',
+      title: 'Uniqlo, 5 zomerpieces die je koel houden',
       excerpt: 'De vijf beste AIRism-stukken om je zomergarderobe rond op te bouwen — plus hoe de sneldrogende stof echt werkt, en een FAQ.',
       date: 'Juni 2026',
       emoji: '👕',
@@ -37,7 +37,7 @@ export class BlogsComponent {
     {
       slug: 'lookfantastic',
       category: 'Beauty & Skincare',
-      title: 'Lookfantastic kortingscode — bespaar tot 25% op beauty',
+      title: 'Lookfantastic, de plek voor kwaliteit beauty voor een goede prijs',
       excerpt: 'Zo bespaar je het meeste bij Lookfantastic: van kortingscode en studentenkorting tot de populaire Beauty Box en FAQ.',
       date: 'Juni 2026',
       emoji: '✨',
@@ -47,7 +47,7 @@ export class BlogsComponent {
     {
       slug: 'space-nk',
       category: 'Beauty & Skincare',
-      title: 'Space NK kortingscode — bespaar op luxe beauty',
+      title: 'Space-NK, de site voor luxe beauty met unieke merken',
       excerpt: 'De beste manieren om te besparen bij Space NK. Inclusief welkomstcode, productaanbevelingen en stap-voor-stap uitleg.',
       date: 'April 2026',
       emoji: '💄',
