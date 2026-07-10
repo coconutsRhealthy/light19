@@ -118,9 +118,12 @@ export class BlackfridayComponent implements OnInit {
     private logosService: LogosService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.meta.updateTitle(`Black Friday ${this.year} — alle deals per categorie | Diski`);
+    // The page is presented to visitors as "Best Deals" (year-round framing), but
+    // the SEO layer stays fully Black Friday: slug, title, description, keywords
+    // and the anchor text of every internal link pointing here.
+    this.meta.updateTitle(`Black Friday Deals ${this.year} — de beste prijzen per categorie | Diski.nl`);
     this.meta.updateMetaInfo(
-      `Alle Black Friday ${this.year} sales en aanbiedingen overzichtelijk per categorie. Blader door mode, beauty, elektronica en meer, of zoek direct je favoriete webshop op diski.nl.`,
+      `Onze beste deals, het hele jaar door bijgewerkt. Tijdens Black Friday ${this.year} vind je hier alle sales en aanbiedingen overzichtelijk per categorie: mode, beauty, elektronica en meer. Of zoek direct je favoriete webshop op diski.nl.`,
       "diski.nl",
       "black friday, black friday deals, sale, aanbiedingen, kortingscode"
     );
