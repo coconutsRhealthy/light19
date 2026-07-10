@@ -41,9 +41,10 @@
         </div>
 
         <!-- Footer -->
+        @if (discountUrl) {
         <div class="tw-bg-cream tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-ink/10">
             <a
-                    [href]="getDiscountUrl()"
+                    [href]="discountUrl"
                     target="_blank"
                     rel="sponsored"
                     class="tw-bg-ink tw-text-cream tw-font-semibold tw-rounded-full tw-px-6 tw-py-2.5 hover:tw-opacity-90 tw-transition"
@@ -51,6 +52,7 @@
                 Naar winkel →
             </a>
         </div>
+        }
     </div>
     }
 
@@ -61,11 +63,7 @@
         <!-- Header -->
         <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-ink/10">
             <h2 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink">
-                @if (discount.discountCode.startsWith('http')) {
-                    🎉 {{ discount.company }} giftcard
-                } @else {
-                    🎉 {{ discount.company }} kortingscode
-                }
+                🎉 {{ discount.company }} kortingscode
             </h2>
             <button
                     (click)="closeModal()"
@@ -128,7 +126,7 @@
                         />
                         <span class="tw-text-[9px] sm:tw-text-xs tw-text-ink/60">
                           Ik heb de
-                          <a href="/privacy-policy"
+                          <a href="/privacy-policy/"
                              target="_blank"
                              rel="noopener noreferrer"
                              class="tw-text-link hover:tw-underline">
@@ -155,16 +153,6 @@
             <!-- CODE -->
             <div class="tw-flex tw-items-center tw-justify-between">
                 <span class="tw-font-semibold tw-text-ink/60">Code</span>
-
-                @if (discount.discountCode.startsWith('http')) {
-                    <a [href]="discount.discountCode"
-                       target="_blank"
-                       (click)="sendGiftcardEventsToGa(discount.company)"
-                       class="tw-text-link tw-font-bold hover:tw-underline tw-transition"
-                    >
-                        KLIK
-                    </a>
-                } @else {
 
                 <!-- LOCKED STATE -->
                 @if (!isUnlocked) {
@@ -211,7 +199,6 @@
                 </button>
                 }
                 </div>
-                }
                 }
             </div>
 
@@ -263,20 +250,18 @@
         }
 
         <!-- Footer -->
+        @if (discountUrl) {
         <div class="tw-bg-cream tw-px-6 tw-py-4 tw-flex tw-justify-center tw-border-t tw-border-ink/10">
             <a
-                    [href]="getDiscountUrl()"
+                    [href]="discountUrl"
                     target="_blank"
                     rel="sponsored"
                     class="tw-bg-ink tw-text-cream tw-font-semibold tw-rounded-full tw-px-6 tw-py-2.5 hover:tw-opacity-90 tw-transition"
             >
-                @if (discount.discountCode.startsWith('http')) {
-                    Naar giftcard →
-                } @else {
-                    Naar winkel →
-                }
+                Naar winkel →
             </a>
         </div>
+        }
     </div>
     }
 </div>
