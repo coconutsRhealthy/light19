@@ -74,10 +74,21 @@ export class DiscountsTableComponent implements OnInit {
   // --- new-look homepage: placeholder content for sections without data yet ---
   // The carousel of "highest discount codes of today" is not modelled in the
   // feed yet, so this is editorial sample content until it's wired to real data.
+  // ga* mirror the events the old homepage fired, so reporting stays continuous
+  // across the redesign (event_category differs per event, hence the raw gtag
+  // call in trackSocialCard rather than AnalyticsEventService.sendEventToGa).
   socialCards = [
-    { tag: 'Instagram', title: 'Volg @wiegeeftkorting', desc: 'Dagelijkse codes, sale-alerts en de beste vondsten op je tijdlijn.', cta: 'Volgen', href: 'https://www.instagram.com/wiegeeftkorting/' },
-    { tag: 'Prikbord',           title: 'Deel een code die werkt', desc: 'Zelf een goede code gespot? Zet hem op het prikbord en help de rest.', cta: 'Naar prikbord →', href: '/prikbord' },
+    { tag: 'Instagram', title: 'Volg @wiegeeftkorting', desc: 'Dagelijkse codes, sale-alerts en de beste vondsten op je tijdlijn.', cta: 'Volgen', href: 'https://www.instagram.com/wiegeeftkorting/', gaEvent: 'insta', gaCategory: 'Social', gaLabel: 'insta_top' },
+    { tag: 'Prikbord',           title: 'Deel een code die werkt', desc: 'Zelf een goede code gespot? Zet hem op het prikbord en help de rest.', cta: 'Naar prikbord →', href: '/prikbord', gaEvent: 'prikbord', gaCategory: 'Prikbord', gaLabel: 'prikbord_intable_homepage' },
   ];
+
+  trackSocialCard(card: { gaEvent: string; gaCategory: string; gaLabel: string }): void {
+    if (!this.isBrowser) return;
+    const gtag = (window as any).gtag;
+    if (typeof gtag === 'function') {
+      gtag('event', card.gaEvent, { event_category: card.gaCategory, event_label: card.gaLabel });
+    }
+  }
 
   /** Hand-picked, static brands for the "beste sale" block. Deliberately NOT
    *  wired to the Black Friday feed (external R2 JSON) — this stays a static

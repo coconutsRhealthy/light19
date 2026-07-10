@@ -69,9 +69,9 @@
             <div class="tw-font-body tw-text-sm tw-text-ink/65 tw-mt-2 tw-leading-relaxed">{{ c.desc }}</div>
           </div>
           @if (c.href.startsWith('http')) {
-            <a [href]="c.href" target="_blank" rel="noopener" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-6 tw-py-2.5 sm:tw-py-3.5 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
+            <a [href]="c.href" target="_blank" rel="noopener" (click)="trackSocialCard(c)" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-6 tw-py-2.5 sm:tw-py-3.5 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
           } @else {
-            <a [routerLink]="[c.href]" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-6 tw-py-2.5 sm:tw-py-3.5 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
+            <a [routerLink]="[c.href]" (click)="trackSocialCard(c)" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-6 tw-py-2.5 sm:tw-py-3.5 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
           }
         </div>
       }
