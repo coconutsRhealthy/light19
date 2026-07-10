@@ -229,6 +229,12 @@
       "date": "2026-03-17"
     }
   ],
+  "athleticbees.com": [
+    {
+      "text": "Koop 2, krijg 1 gratis",
+      "date": "2026-07-09"
+    }
+  ],
   "aybl": [
     {
       "text": "Tot 60% Off Sitewide",
@@ -701,6 +707,12 @@
       "date": "2026-06-18"
     }
   ],
+  "featherwomen": [
+    {
+      "text": "Gratis Summer Tote Bag bij aankoop van 4+ items uit de zomercollectie of een Summer Bundle",
+      "date": "2026-07-09"
+    }
+  ],
   "fejo_studio": [
     {
       "text": "Stapelkorting met 10%, 15% of 20% korting afhankelijk van het aantal items",
@@ -788,6 +800,10 @@
     }
   ],
   "haarshop": [
+    {
+      "text": "20% extra korting op geselecteerde bundels met code HAIRWASHDAY",
+      "date": "2026-07-09"
+    },
     {
       "text": "Kans op gratis overnachting voor 2 personen bij besteding vanaf €75",
       "date": "2026-06-30"
@@ -983,6 +999,10 @@
   ],
   "jeuliajewelry": [
     {
+      "text": "Zomeruitverkoop met 30% korting bij koop van twee artikelen met code SUMMER",
+      "date": "2026-07-09"
+    },
+    {
       "text": "10% korting op alles met code WEDSEASON tijdens trouwseizoen",
       "date": "2026-06-26"
     },
@@ -1061,8 +1081,18 @@
   ],
   "lakkiegellak": [
     {
+      "text": "20% korting op geselecteerde producten",
+      "date": "2026-07-08"
+    },
+    {
       "text": "10% korting bij eerste bestelling na aanmelding",
       "date": "2026-07-07"
+    }
+  ],
+  "large.nl": [
+    {
+      "text": "Tot 50% korting tijdens de Summer Sale",
+      "date": "2026-07-09"
     }
   ],
   "leolive": [
@@ -1096,6 +1126,10 @@
     }
   ],
   "loavies": [
+    {
+      "text": "Zomersale met kortingen tot 40%",
+      "date": "2026-07-09"
+    },
     {
       "text": "25% korting op alle swimwear",
       "date": "2026-06-26"
@@ -1475,6 +1509,10 @@
   ],
   "omoda": [
     {
+      "text": "Sale met tot 70% korting",
+      "date": "2026-07-09"
+    },
+    {
       "text": "Sale met tot 50% korting",
       "date": "2026-05-31"
     },
@@ -1526,6 +1564,10 @@
     }
   ],
   "osock_performance": [
+    {
+      "text": "Direct 20% korting op je aankoop",
+      "date": "2026-07-09"
+    },
     {
       "text": "Direct 20% korting op aankoop na invullen reden compressiesokken",
       "date": "2026-06-10"
@@ -1737,6 +1779,12 @@
       "date": "2026-07-04"
     }
   ],
+  "plussupermarkt": [
+    {
+      "text": "1+1 gratis aanbieding op alle Calvé pindakaas van 350 gram",
+      "date": "2026-07-08"
+    }
+  ],
   "rihoas": [
     {
       "text": "Tot 30% korting bij aankoop van 2, derde artikel gratis met code SUN60 en gratis vierde artikel bij aankoop van 3 met code SUN100",
@@ -1777,6 +1825,12 @@
     {
       "text": "35% korting op de 2e aankoop met code ANNSA35",
       "date": "2026-06-17"
+    }
+  ],
+  "samsung": [
+    {
+      "text": "Tijdgebonden evenement Galaxy Unpacked op 22 juli 2026 om 15:00 uur",
+      "date": "2026-07-08"
     }
   ],
   "sellpy": [
@@ -1869,6 +1923,12 @@
     {
       "text": "Archive Sale met tot 60% korting",
       "date": "2026-05-10"
+    }
+  ],
+  "skechers": [
+    {
+      "text": "Tot 30% korting op geselecteerde artikelen geldig tot 31 juli",
+      "date": "2026-07-08"
     }
   ],
   "smartphonehoesjes.nl": [
@@ -1973,6 +2033,10 @@
   ],
   "stylewe": [
     {
+      "text": "Zomerse uitverkoop met tot 50% korting",
+      "date": "2026-07-09"
+    },
+    {
       "text": "4-daagse zomeraanbieding met 10% korting bij 2 artikelen en 15% korting bij 3 artikelen, geen code nodig, geldig tot 07/06/2026.",
       "date": "2026-07-03"
     },
@@ -1983,6 +2047,12 @@
     {
       "text": "Korting tot $60 bij besteding van $100, $200 of $300, geen code nodig, actie loopt tot 30/06/2026",
       "date": "2026-06-19"
+    }
+  ],
+  "superdry": [
+    {
+      "text": "Zomersale met tot 50% korting",
+      "date": "2026-07-09"
     }
   ],
   "swimessentials": [
@@ -2024,6 +2094,14 @@
     }
   ],
   "ullapopken.nl": [
+    {
+      "text": "Extra zomeruitverkoop met alles onder €30 en een gratis badhanddoek bij besteding vanaf €99",
+      "date": "2026-07-09"
+    },
+    {
+      "text": "16% korting op alles met code 28435, tijdelijk",
+      "date": "2026-07-08"
+    },
     {
       "text": "Tot 50% korting plus 20% extra korting met code 72728",
       "date": "2026-07-01"

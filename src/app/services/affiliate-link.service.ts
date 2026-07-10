@@ -823,7 +823,7 @@ export class AffiliateLinkService {
         dummyCode: 'HOME20'
     },
     'newbalance': {
-        url: 'https://www.stylink.it/dv2lRhNpPxP',
+        url: 'https://nl.newbalance.eu/nl/outlet/dames-1/',
         dummyCode: 'NBSALE25'
     },
     'omoda': {
