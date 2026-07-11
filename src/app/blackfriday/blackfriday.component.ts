@@ -118,7 +118,7 @@ export class BlackfridayComponent implements OnInit {
     private logosService: LogosService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.meta.updateTitle(`Black Friday ${this.year} — alle deals per categorie | Diski`);
+    this.meta.updateTitle(`Black Friday ${this.year}: alle deals per categorie | Diski`);
     this.meta.updateMetaInfo(
       `Alle Black Friday ${this.year} sales en aanbiedingen overzichtelijk per categorie. Blader door mode, beauty, elektronica en meer, of zoek direct je favoriete webshop op diski.nl.`,
       "diski.nl",
