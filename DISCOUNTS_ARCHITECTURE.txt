@@ -19,7 +19,7 @@ THE PIPELINE, END TO END
   [diski-input-insta]  (private, the master data)
       src/assets/discounts.json          <- YOU EDIT THIS. Column 4 = influencer handle.
              |
-             |  npm run discounts   (scripts/run-all.js)
+             |  node scripts/run-all.js
              |    1. add-dummy-codes.js  — fills gaps with fallback codes
              |    2. anonymize.js        — blanks column 4 to "zzz"
              |    3. get-missing-companies.js — reports gaps
@@ -190,12 +190,15 @@ DAY-TO-DAY: HOW DO I ...
 ------------------------
 ADD OR CHANGE A CODE
   Edit diski-input-insta/src/assets/discounts.json, then:
-      cd diski-input-insta && npm run discounts
-  That publishes to R2. The app sees it immediately. The website sees it on its
-  next build.
+      cd diski-input-insta && node scripts/run-all.js
+  That fills dummy codes, anonymizes, and publishes to R2. The app sees it
+  immediately. The website sees it on its next build.
 
   Dry run (does everything except the upload):
-      npm run discounts:dry
+      node scripts/run-all.js --dry-run
+
+  (`npm run discounts` / `npm run discounts:dry` do the same thing. The R2
+  credentials load from diski-input-insta/.env automatically either way.)
 
 REFRESH CODES FOR LOCAL DEV
   `ng serve` does NOT fetch from R2 — it just uses whatever discounts.json is on
