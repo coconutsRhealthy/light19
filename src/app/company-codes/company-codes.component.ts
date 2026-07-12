@@ -425,12 +425,25 @@ export class CompanyCodesComponent implements OnInit {
       })
       .filter((shop): shop is RelatedShop => shop !== null);
 
+    this.relatedShops = this.seededShuffle(pool, currentSlugLc).slice(0, 6);
+  }
+
+  // Shuffle deterministically instead of with Math.random(): ngOnInit runs twice —
+  // once at prerender, once at hydration — and two different draws would make the
+  // client tear down the prerendered list (@for tracks by slug) and swap the shops
+  // out under the user. Seeding from the slug gives every shop its own stable
+  // ordering that server and client both reproduce. Same hash as backupSpotDate().
+  private seededShuffle<T>(items: T[], seed: string): T[] {
+    let h = 0;
+    for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+
+    const pool = [...items];
     for (let i = pool.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      h = (h * 1664525 + 1013904223) >>> 0; // LCG step — cheap, deterministic
+      const j = h % (i + 1);
       [pool[i], pool[j]] = [pool[j], pool[i]];
     }
-
-    this.relatedShops = pool.slice(0, 6);
+    return pool;
   }
 
   formatRelatedPercentage(percentage: string): string {
