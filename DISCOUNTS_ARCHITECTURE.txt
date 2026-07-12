@@ -1,0 +1,231 @@
+DISCOUNTS ARCHITECTURE — how codes get onto diski.nl
+====================================================
+Last updated: 2026-07-12
+
+
+THE ONE-PARAGRAPH VERSION
+-------------------------
+Discount codes live in Cloudflare R2. They are published there by the
+diski-input-insta repo, and read from there by two consumers: the diski app (at
+runtime) and light19 (at build time). light19 turns that feed into
+src/app/data/discounts.json, topping it up with a "backup code" for any shop whose
+live codes have been pruned. Every part of the website reads that one file. A page
+exists on diski.nl if, and only if, it has an entry in it.
+
+
+THE PIPELINE, END TO END
+------------------------
+
+  [diski-input-insta]  (private, the master data)
+      src/assets/discounts.json          <- YOU EDIT THIS. Column 4 = influencer handle.
+             |
+             |  npm run discounts   (scripts/run-all.js)
+             |    1. add-dummy-codes.js  — fills gaps with fallback codes
+             |    2. anonymize.js        — blanks column 4 to "zzz"
+             |    3. get-missing-companies.js — reports gaps
+             |    4. publish-discounts-to-r2.js  <-- uploads
+             v
+  [Cloudflare R2]  bucket "promotions", key "discounts.json"
+      https://pub-a3be569620e4415b916e737210363aee.r2.dev/discounts.json
+      Public. Clean JSON. THE SOURCE OF TRUTH FOR LIVE CODES.
+             |
+             +---------------------------+
+             |                           |
+             v                           v
+  [diski app]                   [light19]  npm run build:prod
+   fetches at runtime            scripts/fetch-discounts.js
+                                   - fetches the R2 feed
+                                   - converts to the legacy line format
+                                   - INJECTS backup codes (see below)
+                                   - writes src/app/data/discounts.json
+                                        |
+                                        v
+                                 everything else reads that file
+
+
+THE PUBLISHED FEED (what's in R2)
+---------------------------------
+  {
+    "generated": "2026-07-12T14:26:46.297Z",
+    "count": 3281,
+    "discounts": [
+      { "shop": "loavies", "code": "LOTTE20", "value": "20", "added": "2026-07-10" },
+      { "shop": "footlocker", "code": "FL10", "value": "10", "added": "2026-07-08",
+        "condition": "new app user" },
+      ...
+    ]
+  }
+
+Clean objects. No influencer handles. Dates have a real year. The "(condition)"
+suffix is split out of the shop name into its own field.
+
+SAFETY: publish-discounts-to-r2.js reads discounts_anon.json and NOTHING ELSE, and
+refuses to upload if any row still carries a real influencer handle where "zzz"
+should be. The master and the handles never leave diski-input-insta.
+
+Credentials: diski-input-insta/.env (gitignored) — R2_ACCOUNT_ID / R2_ACCESS_KEY /
+R2_SECRET_KEY, copied from claude_diski_data/.env. The publisher has zero npm
+dependencies (SigV4 signed with node:crypto), because that repo's Angular 10
+dependency tree can't take an `npm install`.
+
+
+discounts.json IN LIGHT19 (the file the whole site reads)
+---------------------------------------------------------
+Format is unchanged from before — a JSON array of comma-joined strings:
+
+    "footlocker (new app user), FL10, 10, zzz, 07-08"
+     \_______ company ______/  code  val  zzz  date
+
+The "zzz" is the blanked influencer column. It's dead, but every consumer still
+splits on commas by position, so the placeholder stays.
+
+IT IS A GENERATED ARTIFACT. Hand-editing it does nothing — the next build
+overwrites it. Codes are edited in diski-input-insta. It stays committed so builds
+are reproducible and work offline: if R2 is unreachable, fetch-discounts.js warns
+and keeps the last known-good copy rather than shipping a site with no codes.
+
+Contents after a build:
+    3281 live codes    (from R2)
+  +  275 backup codes  (injected — see below)
+  = 3556 lines
+
+
+BACKUP CODES
+------------
+A shop whose live codes have been pruned still has a page, and that page still
+needs a working code on it. That's what a backup code is.
+
+WHERE THE DATA LIVES (unchanged, still the source of truth):
+  - v2: each brand-content file's `backupCode` field
+        src/app/company-codes-v2/brand-content/data/{slug}.json
+        Written by the content engine (pipeline/enrich_backup_codes.py).
+  - v1: src/app/company-codes/company-seo-content/backup-codes.json
+        578 entries, slug -> {code, discount}. Generated once by
+        scripts/populate-v1-backup-codes.js (v1 is frozen).
+
+HOW THEY GET USED:
+fetch-discounts.js injects a shop's backup code into discounts.json IF AND ONLY IF
+the R2 feed has no entry for that shop. A real code always wins. Injected lines are
+appended AFTER the live codes, because consumers rely on the feed being newest-first
+(/winkels takes a shop's first occurrence as its latest offer; the homepage reads
+discounts[0].date as "last updated").
+
+THE DATE ON A BACKUP CODE — 45 to 75 days before the build, with the exact offset
+derived from hashing the slug. This is NOT cosmetic. Three things depend on it:
+
+  1. Honesty. A backup code probably doesn't work anymore, so the page doesn't
+     claim it was freshly checked.
+  2. It keeps backup codes OUT of the homepage's "X nieuwe shops" counter, which
+     counts shops carrying the newest date in the feed.
+  3. It keeps backup codes OUT of the modal's email gate, which demands an email
+     before revealing any code added in the last 5 days. Putting a probably-dead
+     code behind a lead-gen wall would be the worst possible thing to gate.
+
+The hash (rather than one fixed date) means the ~275 backup pages don't all show
+one identical templated "gespot op" date. It's deterministic, so prerender and
+browser hydration agree.
+
+
+PAGE EXISTENCE — ONE RULE
+-------------------------
+    A page exists if it has an entry in discounts.json. That's the whole rule.
+
+scripts/fill-routes.js builds routes.txt and sitemap.xml straight from that file.
+It used to compute a three-way union (discounts ∪ v1 content ∪ v2 content), because
+back then a pruned shop's code was applied inside the component and discounts.json
+never learned the shop existed. Now that backup codes are injected into the file
+itself, every content page has an entry there by construction, and the union
+collapsed to its first term.
+
+fill-routes.js still reads the v2 content directory — but only to answer a DIFFERENT
+question: which COMPONENT renders a slug (v2 vs v1). It generates
+brand-content/v2-content-slugs.ts, the manifest the router guard reads. Having a
+data/{slug}.json file IS being live on v2.
+
+THE GUARD. That rule is now load-bearing: a content page missing from discounts.json
+would simply not exist — no route, no page, silently. So fetch-discounts.js FAILS THE
+BUILD, naming the shop, if any v1 or v2 brand page ends up with neither a live code
+nor a backup code. A brand page with no code is a content bug, not something to paper
+over. (Before, the union would have quietly kept such a page online.)
+
+
+WHO READS discounts.json
+------------------------
+  discounts-table.component.ts   the homepage code table, search, "X nieuwe shops"
+  winkels.component.ts           the /winkels shop directory
+  company-codes.component.ts     v1 brand pages
+  company-codes-v2.component.ts  v2 brand pages
+  fill-routes.js                 routes.txt + sitemap.xml (at build time)
+
+The service (services/discounts.service.ts) statically imports the file, so it is
+BUNDLED, not fetched at runtime. That is deliberate: the codes must be in the
+prerendered HTML or Google never sees them.
+
+THIS IS WHY BACKUP CODES ARE INJECTED INTO THE DATA RATHER THAN APPLIED IN A
+COMPONENT. They used to be applied inside the two brand-page components, at render
+time. The page got its code — but discounts.json never learned the shop existed, so
+the homepage table, /winkels, the search, and other pages' related-shops grids all
+behaved as if it didn't. 275 shops were online, with a working code, and unfindable.
+Moving the fallback from the view into the data fixed all of them at once, deleted
+both component fallbacks, and dropped the v1 backup map out of the client bundle
+(initial bundle 1.01 MB -> 989 kB, because the browser no longer downloads 578 backup
+codes it will never use).
+
+
+BUILD ORDER (npm run build:prod)
+--------------------------------
+  1. stamp-build.js          writes BUILD_DATE_ISO into src/app/build-info.ts
+                             MUST be first — fetch-discounts.js needs it to date
+                             backup codes, and the pages stamp themselves with it.
+  2. fetch-discounts.js      R2 feed + injected backup codes -> discounts.json
+                             MUST be before fill-routes.js, which reads that file.
+  3. fill-routes.js          routes.txt, sitemap.xml, v2-content-slugs.ts
+  4. generate-spotted-sales.js
+  5. generate-shop-urls.js
+  6. ng build --configuration production   (prerenders ~1499 routes)
+  7. set-canonicals.js
+
+
+DAY-TO-DAY: HOW DO I ...
+------------------------
+ADD OR CHANGE A CODE
+  Edit diski-input-insta/src/assets/discounts.json, then:
+      cd diski-input-insta && npm run discounts
+  That publishes to R2. The app sees it immediately. The website sees it on its
+  next build.
+
+  Dry run (does everything except the upload):
+      npm run discounts:dry
+
+REFRESH CODES FOR LOCAL DEV
+  `ng serve` does NOT fetch from R2 — it just uses whatever discounts.json is on
+  disk. To pull fresh data first:
+      node scripts/fetch-discounts.js && npm start
+
+CHANGE A BACKUP CODE
+  v2: edit backupCode in brand-content/data/{slug}.json
+  v1: edit src/app/company-codes/company-seo-content/backup-codes.json
+  Takes effect on the next build.
+
+ADD A NEW V2 BRAND PAGE
+  Drop a data/{slug}.json file in. It goes live on v2 automatically. But it MUST
+  have a backupCode unless the shop already has live codes — otherwise the build
+  fails with a message naming it. That's deliberate.
+
+THE BUILD FAILED WITH "brand page(s) have neither a live code nor a backup code"
+  Exactly what it says: that shop would get no route and vanish from the site. Add
+  a backupCode to its brand-content file (v2) or to backup-codes.json (v1).
+
+
+GOTCHAS
+-------
+- discounts.json in light19 is GENERATED. Do not hand-edit it.
+- Codes ship in the JS bundle by design (prerendered HTML needs them for SEO).
+  Do not "optimise" this into a runtime fetch.
+- The website's codes are only as fresh as its last build. The app's are live.
+  If you want the site fresher, trigger a rebuild when R2 is written.
+- Publishing must stay the LAST step of run-all.js — it ships whatever the earlier
+  steps produced.
+- The R2 feed contains NO backup codes. They are a website-only concept. If the app
+  should show them too, that's a deliberate decision to make, not an accident to
+  discover.
