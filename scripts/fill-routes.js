@@ -9,41 +9,37 @@ const path = require('path');
 //   3. brand-content/v2-content-slugs.ts — the router guard's allowlist of shops
 //      served by v2 (auto-generated; replaces the old hand-maintained live-v2-slugs.ts)
 //
-// KEY POLICY (changed 2026-07-05): a detail page's existence is driven by CONTENT,
-// not by discounts.json. A shop keeps its prerendered /{slug} page as long as it
-// has v1 seo-content OR v2 brand-content — even after its codes are pruned from
-// discounts.json. discounts.json now only contributes the "code-only" shops that
-// have no editorial content. The route universe is therefore the UNION:
+// KEY POLICY: a page exists if, and only if, it has an entry in discounts.json.
 //
-//     discounts.json slugs  ∪  v1 seo-content slugs  ∪  v2 brand-content slugs
+// This used to be a three-way union (discounts ∪ v1 seo-content ∪ v2 brand-content),
+// because a shop whose codes had been pruned still needed to keep its page — its code
+// came from a fallback applied inside the component, which discounts.json never saw.
+// fetch-discounts.js now injects those backup codes into discounts.json itself, so every
+// content page has an entry there by construction and the union collapses to its first
+// term. fetch-discounts.js fails the build if that ever stops being true, so this script
+// can trust discounts.json completely.
+//
+// v2 brand-content is still read here — but only to answer a different question: WHICH
+// COMPONENT renders a slug (v2 vs v1), not whether the page exists.
 //
 // The old /v2/{slug} noindexed "preview" tier is retired: there is no allowlist
 // anymore, so every shop with v2 content is live v2 on its real /{slug} route.
 
 const ROOT = path.join(__dirname, '..');
 const discountsPath = path.join(ROOT, 'src/app/data/discounts.json');
-const v1IndexPath = path.join(ROOT, 'src/app/company-codes/company-seo-content/index.ts');
 const v2DataDir = path.join(ROOT, 'src/app/company-codes-v2/brand-content/data');
 const manifestPath = path.join(ROOT, 'src/app/company-codes-v2/brand-content/v2-content-slugs.ts');
 
 // =========================
-// 1. Collect slugs from every source
+// 1. Collect slugs
 // =========================
 
-// --- discounts.json: shops that currently have at least one live code ---
+// --- discounts.json: every shop with a page, and its codes (live or backup) ---
 const discountSlugs = new Set();
 for (const line of JSON.parse(fs.readFileSync(discountsPath, 'utf8'))) {
   if (typeof line !== 'string' || !line.includes(',')) continue;
   const slug = line.split(',')[0].replace(/\([^)]*\)/g, '').trim();
   if (slug) discountSlugs.add(slug);
-}
-
-// --- v1 seo-content: the AUTHORITATIVE slug is the switch label in index.ts, not
-//     the filename (e.g. `case 'about you'` -> ./about-you, `case 'h&m'` -> ./h-m). ---
-const v1Slugs = new Set();
-if (fs.existsSync(v1IndexPath)) {
-  const idx = fs.readFileSync(v1IndexPath, 'utf8');
-  for (const m of idx.matchAll(/case\s+'([^']+)':/g)) v1Slugs.add(m[1]);
 }
 
 // --- v2 brand-content: the filename IS the slug (server loader reads `${slug}.json`). ---
@@ -77,12 +73,11 @@ export function hasV2ContentSlug(slug: string | undefined | null): boolean {
 fs.writeFileSync(manifestPath, manifest, 'utf8');
 
 // =========================
-// 3. routes.txt — prerender the UNION of all page sources + the utility pages
+// 3. routes.txt — every shop in discounts.json + the utility pages
 // =========================
 const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'prikbord', 'blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'code-delen', ''];
 
-const pageSlugs = new Set([...discountSlugs, ...v1Slugs, ...v2Slugs]);
-const sortedPages = Array.from(pageSlugs).sort((a, b) => a.localeCompare(b));
+const sortedPages = Array.from(discountSlugs).sort((a, b) => a.localeCompare(b));
 
 const allRoutes = new Set([
   ...utilityRoutes.map(r => (r === '' ? '/' : `/${r}`)),
@@ -91,29 +86,18 @@ const allRoutes = new Set([
 const routesTxt = Array.from(allRoutes).sort((a, b) => a.localeCompare(b)).join('\n');
 fs.writeFileSync(path.join(ROOT, 'routes.txt'), routesTxt, 'utf8');
 
-const contentOnly = sortedPages.filter(s => !discountSlugs.has(s)).length;
-console.log(
-  `routes.txt generated: ${sortedPages.length} shop pages ` +
-  `(${discountSlugs.size} from discounts, ${contentOnly} content-only kept online), ` +
-  `${sortedV2.length} on v2.`
-);
+console.log(`routes.txt generated: ${sortedPages.length} shop pages, ${sortedV2.length} on v2.`);
 
 // =========================
 // 4. sitemap.xml — the INDEXABLE set
 // =========================
-// Indexable set = shops that always show a code + utility pages. Every content
-// page now carries a fallback code, so all are safe to index:
-//   - discounts.json slugs: have a live code.
-//   - v2 content slugs: each data file has a `backupCode` (engine's
-//     enrich_backup_codes.py).
-//   - v1 content slugs: each has an entry in company-seo-content/backup-codes.ts
-//     (scripts/populate-v1-backup-codes.js), so the v1 page renders its content
-//     instead of the 404 shell even with no live code.
+// Every shop in discounts.json shows a code — live, or the backup code that
+// fetch-discounts.js injected — so the whole set is safe to index.
 const BASE_URL = 'https://diski.nl';
 const today = new Date().toISOString().split('T')[0];
 
 const sitemapUtility = new Set(['winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'blackfriday', 'code-delen', '']);
-const sitemapSlugs = Array.from(new Set([...discountSlugs, ...v1Slugs, ...v2Slugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
+const sitemapSlugs = Array.from(new Set([...discountSlugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
 
 const urls = sitemapSlugs.map((route) => {
   const pathPart = route === '' ? '/' : `/${route}/`;

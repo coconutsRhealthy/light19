@@ -1,17 +1,30 @@
-// Fetches the discounts feed from R2 — the single source of truth, published by
-// diski-input-insta's `npm run discounts` and also read at runtime by the diski app —
-// and writes it to src/app/data/discounts.json in the legacy string format the Angular
-// code already expects.
+// Builds src/app/data/discounts.json, the file every page of the site reads.
 //
-// Runs FIRST in `build:prod`, because everything downstream reads that file:
-//   - discounts.service.ts   imports it statically (so it ships in the bundle,
-//                            which is what puts the codes in the prerendered HTML)
-//   - fill-routes.js         derives part of the route/sitemap universe from it
+// Two inputs:
+//   1. R2 — the live codes, published by diski-input-insta's `npm run discounts` and
+//      read at runtime by the diski app too. R2 is the source of truth for live codes.
+//   2. Backup codes — a fallback code per shop, for shops whose live codes have been
+//      pruned. v2's come from each brand-content JSON's `backupCode`; v1's from the
+//      generated V1_BACKUP_CODES map. A shop gets its backup code injected ONLY if it
+//      has no entry in the feed. A real code always wins.
 //
-// discounts.json therefore becomes a GENERATED artifact. Editing it by hand no longer
-// does anything — the next build overwrites it. Codes are edited in diski-input-insta.
-// It stays committed so builds are reproducible and work offline: if R2 is unreachable
-// we keep the last known-good copy rather than shipping a site with no codes.
+// Backup codes used to be applied inside the components, at the moment a brand page
+// rendered. That kept them invisible to everything else: discounts.json never learned
+// about the shop, so the homepage table, /winkels, the search and the related-shops
+// grids all behaved as if it didn't exist — even though its page was online with a
+// working code. Injecting them here instead means every consumer sees one consistent
+// picture, and the two component fallbacks (plus their duplicated date formula) are gone.
+//
+// Because every content page now has an entry here — live or backup — discounts.json is
+// once again the single answer to "which pages exist". fill-routes.js relies on that, so
+// assertEveryContentPageHasCode() fails the build if a content page ends up with neither.
+//
+// Runs after stamp-build.js (it needs BUILD_DATE_ISO) and before fill-routes.js.
+//
+// discounts.json is a GENERATED artifact: hand-edits are overwritten by the next build.
+// Codes are edited in diski-input-insta. It stays committed so builds are reproducible
+// and work offline — if R2 is unreachable we keep the last known-good copy rather than
+// shipping a site with no codes.
 //
 // Feed shape (published schema):
 //   { generated, count, discounts: [ { shop, code, value, added, condition? }, ... ] }
@@ -21,13 +34,26 @@
 const fs = require('fs');
 const path = require('path');
 
+const ROOT = path.join(__dirname, '..');
 const FEED_URL = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/discounts.json';
-const OUT_PATH = path.join(__dirname, '../src/app/data/discounts.json');
+const OUT_PATH = path.join(ROOT, 'src/app/data/discounts.json');
+const BUILD_INFO_PATH = path.join(ROOT, 'src/app/build-info.ts');
+const V1_INDEX_PATH = path.join(ROOT, 'src/app/company-codes/company-seo-content/index.ts');
+const V1_BACKUP_PATH = path.join(ROOT, 'src/app/company-codes/company-seo-content/backup-codes.ts');
+const V2_DATA_DIR = path.join(ROOT, 'src/app/company-codes-v2/brand-content/data');
 
 // The "zzz" column is the influencer handle, blanked out before publishing. It no longer
-// exists in the feed, but discounts.service.ts and fill-routes.js still split on commas
-// by position, so the placeholder has to stay in the line we write.
+// exists in the feed, but the components and fill-routes.js still split on commas by
+// position, so the placeholder has to stay in the line we write.
 const ANON_PLACEHOLDER = 'zzz';
+
+// Strip a trailing "(condition)" and lowercase — the slug normalisation every consumer
+// of discounts.json already applies.
+const toSlug = (company) => company.replace(/\s*\([^)]*\)\s*/g, '').trim().toLowerCase();
+
+// =========================
+// 1. The live feed (R2)
+// =========================
 
 function toLegacyLine(entry) {
   const company = entry.condition ? `${entry.shop} (${entry.condition})` : entry.shop;
@@ -44,7 +70,7 @@ function isValidEntry(entry) {
   );
 }
 
-async function main() {
+async function fetchLiveLines() {
   let feed;
   try {
     const res = await fetch(`${FEED_URL}?t=${Date.now()}`);
@@ -52,15 +78,14 @@ async function main() {
     feed = await res.json();
   } catch (err) {
     console.warn(`[fetch-discounts] Could not fetch feed (${err.message}); keeping existing ${path.basename(OUT_PATH)}.`);
-    return;
+    return null;
   }
 
-  // Refuse to act on a payload we don't recognise. Downstream, an empty or malformed
-  // discounts.json would quietly strip code-only shops from the sitemap and ship pages
-  // with no codes — better to build from the last known-good copy and say so.
+  // Refuse to act on a payload we don't recognise. An empty or malformed feed would
+  // strip every code-only shop from the site and the sitemap.
   if (!feed || !Array.isArray(feed.discounts) || feed.discounts.length === 0) {
     console.warn('[fetch-discounts] Feed was empty or malformed; keeping existing file.');
-    return;
+    return null;
   }
 
   const valid = feed.discounts.filter(isValidEntry);
@@ -70,13 +95,147 @@ async function main() {
   }
   if (valid.length === 0) {
     console.warn('[fetch-discounts] No valid entries; keeping existing file.');
-    return;
+    return null;
   }
 
-  const lines = valid.map(toLegacyLine);
-  fs.writeFileSync(OUT_PATH, JSON.stringify(lines, null, 2) + '\n');
-
-  console.log(`[fetch-discounts] Wrote ${lines.length} discounts (feed generated ${feed.generated}).`);
+  console.log(`[fetch-discounts] Feed: ${valid.length} live codes (generated ${feed.generated}).`);
+  return valid.map(toLegacyLine);
 }
 
-main();
+// =========================
+// 2. Backup codes
+// =========================
+
+// v2: every brand-content file carries a backupCode, filled by the content engine.
+function readV2Backups() {
+  const backups = new Map();
+  for (const file of fs.readdirSync(V2_DATA_DIR)) {
+    if (!file.endsWith('.json')) continue;
+    const content = JSON.parse(fs.readFileSync(path.join(V2_DATA_DIR, file), 'utf8'));
+    const code = content.backupCode?.code;
+    if (code) {
+      backups.set(file.replace(/\.json$/, '').toLowerCase(), {
+        code,
+        discount: (content.backupCode.discount ?? '').trim(),
+      });
+    }
+  }
+  return backups;
+}
+
+// v1: a generated literal map — `'adidas': { code: 'SOPHIE15RUS', discount: '15' },`.
+// v1 is frozen, so this is parsed rather than imported (it's a .ts file).
+function readV1Backups() {
+  const backups = new Map();
+  const src = fs.readFileSync(V1_BACKUP_PATH, 'utf8');
+  for (const m of src.matchAll(/'([^']+)':\s*\{\s*code:\s*'([^']*)',\s*discount:\s*'([^']*)'\s*\}/g)) {
+    backups.set(m[1].toLowerCase(), { code: m[2], discount: m[3] });
+  }
+  return backups;
+}
+
+// The slugs that have a brand page. For v1 the authoritative slug is the switch label in
+// index.ts, not the filename (`case 'about you'` -> ./about-you). For v2 the filename IS
+// the slug.
+function readContentSlugs() {
+  const v1 = new Set(
+    [...fs.readFileSync(V1_INDEX_PATH, 'utf8').matchAll(/case\s+'([^']+)':/g)].map(m => m[1].toLowerCase())
+  );
+  const v2 = new Set(
+    fs.readdirSync(V2_DATA_DIR).filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, '').toLowerCase())
+  );
+  return { v1, v2 };
+}
+
+// A backup code likely no longer works, so don't present it as freshly spotted: date it
+// 45–75 days before the build, with the offset derived from the slug so the ~275 backup
+// pages don't all share one templated date. Deterministic — this is the formula the two
+// component fallbacks each used to carry.
+function backupSpotDate(slug, buildDate) {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) hash = (hash * 31 + slug.charCodeAt(i)) >>> 0;
+
+  const spotted = new Date(buildDate.getTime() - (45 + (hash % 31)) * 86400000);
+  return String(spotted.getMonth() + 1).padStart(2, '0') + '-' + String(spotted.getDate()).padStart(2, '0');
+}
+
+// Anchored to the same build date the pages stamp themselves with, so a backup code's
+// "gespot op" can never be newer than the build that produced it.
+function readBuildDate() {
+  const match = fs.readFileSync(BUILD_INFO_PATH, 'utf8').match(/BUILD_DATE_ISO\s*=\s*'(\d{4})-(\d{2})-(\d{2})'/);
+  if (!match) throw new Error(`Could not read BUILD_DATE_ISO from ${BUILD_INFO_PATH}. Does stamp-build.js run first?`);
+  const [, y, m, d] = match;
+  return new Date(Number(y), Number(m) - 1, Number(d));
+}
+
+// =========================
+// 3. Guard: discounts.json must cover every content page
+// =========================
+
+// fill-routes.js derives the whole route + sitemap universe from discounts.json, so a
+// content page missing from it simply would not exist — no route, no page, silently. That
+// used to be impossible (routes were the union of discounts + content), so make the new
+// invariant loud instead of assumed. A brand page with no live code AND no backup code is
+// a content bug; fail the build and name it rather than dropping the page.
+function assertEveryContentPageHasCode(slugs, content) {
+  const missing = [
+    ...[...content.v1].filter(s => !slugs.has(s)).map(s => `v1: ${s}`),
+    ...[...content.v2].filter(s => !slugs.has(s)).map(s => `v2: ${s}`),
+  ];
+
+  if (missing.length) {
+    throw new Error(
+      `${missing.length} brand page(s) have neither a live code nor a backup code, so they ` +
+      `would get no route and vanish from the site:\n` +
+      missing.slice(0, 10).map(s => `  ${s}`).join('\n') +
+      (missing.length > 10 ? `\n  ...and ${missing.length - 10} more` : '') +
+      `\n\nAdd a backupCode to the brand-content file (v2) or to backup-codes.ts (v1).`
+    );
+  }
+}
+
+// =========================
+// 4. Main
+// =========================
+
+async function main() {
+  const liveLines = await fetchLiveLines();
+  if (!liveLines) return; // fetch failed — keep the committed copy, warning already logged
+
+  const liveSlugs = new Set(liveLines.map(line => toSlug(line.split(',')[0])));
+
+  // v2 wins where a slug has both: if a shop has a v2 brand page, that's the page being
+  // served, so its engine-provided backup code is the authoritative one.
+  const backups = new Map([...readV1Backups(), ...readV2Backups()]);
+
+  const buildDate = readBuildDate();
+  const backupLines = [];
+  for (const [slug, backup] of backups) {
+    if (liveSlugs.has(slug)) continue; // a real code always wins
+    backupLines.push(
+      `${slug}, ${backup.code}, ${backup.discount}, ${ANON_PLACEHOLDER}, ${backupSpotDate(slug, buildDate)}`
+    );
+  }
+
+  // Backups go last: the feed is newest-first, and consumers lean on that ordering
+  // (winkels takes a shop's first occurrence as its latest offer; the homepage reads
+  // discounts[0].date as "last updated"). A backup shop has no other entry by
+  // definition, so appending can't displace a real code.
+  const lines = [...liveLines, ...backupLines];
+
+  const content = readContentSlugs();
+  assertEveryContentPageHasCode(new Set(lines.map(line => toSlug(line.split(',')[0]))), content);
+
+  fs.writeFileSync(OUT_PATH, JSON.stringify(lines, null, 2) + '\n');
+
+  console.log(
+    `[fetch-discounts] Wrote ${lines.length} discounts: ` +
+    `${liveLines.length} live + ${backupLines.length} backup ` +
+    `(covering all ${content.v1.size} v1 + ${content.v2.size} v2 brand pages).`
+  );
+}
+
+main().catch(err => {
+  console.error(`\n[fetch-discounts] ${err.message}\n`);
+  process.exit(1);
+});

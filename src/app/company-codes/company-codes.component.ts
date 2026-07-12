@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { loadSeoContent } from './company-seo-content/index';
-import { V1_BACKUP_CODES } from './company-seo-content/backup-codes';
-import { BUILD_DATE_ISO } from '../build-info';
 import { DatePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -125,22 +123,11 @@ export class CompanyCodesComponent implements OnInit {
           };
         });
 
-      // v1 is frozen and its pages must stay online after codes are pruned from
-      // discounts.json. When a shop has no live code, fall back to the one-off
-      // backup map so the page renders its content (codes + seo + related) instead
-      // of the "404 niet gevonden" shell. Mirrors v2's backupCode behaviour; a live
-      // code always wins. Synchronous, so it's correct in prerender/SSR too.
-      if (this.discountCodes.length === 0) {
-        const backup = V1_BACKUP_CODES[companyName.toLowerCase()];
-        if (backup) {
-          this.discountCodes = [{
-            code: backup.code,
-            discount: backup.discount,
-            date: this.backupSpotDate(companyName),
-            label: undefined,
-          }];
-        }
-      }
+      // No backup-code fallback here: fetch-discounts.js injects a shop's V1_BACKUP_CODES
+      // entry into discounts.json at build time when it has no live code, so the filter
+      // above already found it. That keeps the rest of the site (homepage table, /winkels,
+      // search, related-shops grids) able to see the shop too — the old in-component
+      // fallback was invisible to every other consumer of discounts.json.
 
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);
@@ -232,19 +219,6 @@ export class CompanyCodesComponent implements OnInit {
   formatDate(date: string): string {
     const formattedDate = this.getDateFromDateString(date);
     return this.datePipe.transform(formattedDate, 'd MMM') ?? '';
-  }
-
-  // A backup code likely no longer works, so present it as spotted 45–75 days
-  // before the build (varied per slug so backup pages don't all share one templated
-  // date). Anchored to the build date + a slug hash → deterministic (SSR/hydration
-  // safe). Returns MM-DD, the format formatDate() expects. Same formula as v2.
-  private backupSpotDate(slug: string): string {
-    const [y, m, d] = (BUILD_DATE_ISO || '').split('-').map(Number);
-    const anchor = (y && m && d) ? new Date(y, m - 1, d) : new Date();
-    let h = 0;
-    for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
-    const spot = new Date(anchor.getTime() - (45 + (h % 31)) * 86400000);
-    return String(spot.getMonth() + 1).padStart(2, '0') + '-' + String(spot.getDate()).padStart(2, '0');
   }
 
   getDateFromDateString(dateString: string) {
@@ -432,7 +406,7 @@ export class CompanyCodesComponent implements OnInit {
   // once at prerender, once at hydration — and two different draws would make the
   // client tear down the prerendered list (@for tracks by slug) and swap the shops
   // out under the user. Seeding from the slug gives every shop its own stable
-  // ordering that server and client both reproduce. Same hash as backupSpotDate().
+  // ordering that server and client both reproduce.
   private seededShuffle<T>(items: T[], seed: string): T[] {
     let h = 0;
     for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;

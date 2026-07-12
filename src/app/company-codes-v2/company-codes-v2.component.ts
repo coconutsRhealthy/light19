@@ -56,15 +56,6 @@ const MONTHS_NL = [
   'juli', 'augustus', 'september', 'oktober', 'november', 'december'
 ];
 
-// How many days before the build date a backup code is shown as "spotted":
-// deterministic 45–75, varied per slug so backup pages don't all share one
-// templated date. The same formula lives in the v1 CompanyCodesComponent.
-function backupSpotOffsetDays(slug: string): number {
-  let h = 0;
-  for (let i = 0; i < (slug || '').length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
-  return 45 + (h % 31);
-}
-
 // Used to top up the related-shops grid when a shop's own co-occurrence list
 // yields too few live links (the thin-shop fallback, e.g. Zalando).
 const DEFAULT_RELATED = ['nakdfashion', 'shein', 'ginatricot', 'gutsgusto', 'temu', 'loavies', 'bjornborg', 'zalando'];
@@ -325,19 +316,16 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     this.regularCodes = parsed;
     this.affiliateLink = this.affiliateLinkService.getAffiliateLink(this.company);
 
-    // Page-level "laatst gecontroleerd" from the baked build date (deterministic,
-    // SSR-safe). Also stamps an injected backup code below.
+    // Page-level "laatst gecontroleerd" from the baked build date (deterministic, SSR-safe).
     const [by, bm, bd] = (BUILD_DATE_ISO || '').split('-').map(Number);
     const checked = (by && bm && bd) ? new Date(by, bm - 1, bd) : now;
     this.lastCheckedIso = BUILD_DATE_ISO || this.toIsoDate(now);
     this.lastCheckedLabel = this.formatDate(checked);
 
-    // Fallback: no live regular code in discounts.json → show the engine-provided
-    // backupCode so a v2 page always has a working code (never a "0 codes" page).
-    // Only kicks in when there's nothing live; a real code always wins.
-    if (this.regularCodes.length === 0 && this.content?.backupCode?.code) {
-      this.regularCodes = [this.backupCodeVM(this.content.backupCode, checked)];
-    }
+    // No backup-code fallback here: fetch-discounts.js injects a shop's backupCode into
+    // discounts.json at build time when it has no live code, so `parsed` above already
+    // contains it. That keeps the rest of the site (homepage table, /winkels, search,
+    // related-shops grids) able to see the shop too.
 
     this.maxDiscount = this.regularCodes
       .filter(c => c.isPercent)
@@ -359,34 +347,6 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
         }
       }
     }
-  }
-
-  /**
-   * A CodeVM built from the engine-provided backupCode — the fallback code shown
-   * only when discounts.json has no live code for this shop. Rendered identically
-   * to a live code (card, modal, affiliate flow). Stamped with the build date so
-   * it stays deterministic (SSR/hydration safe).
-   */
-  private backupCodeVM(backup: { code: string; discount?: string }, buildDate: Date): CodeVM {
-    const rawValue = (backup.discount ?? '').trim();
-    const isPercent = isFinite(Number(rawValue)) && rawValue !== '' && !rawValue.includes('€');
-    // A backup code likely no longer works, so present it as spotted ~2 months ago
-    // (45–75 days before the build, varied per slug so backup pages don't all share
-    // one templated "gespot op" date) rather than freshly checked. Anchored to the
-    // build date + a slug hash, so it's deterministic (SSR/hydration safe).
-    const spotted = new Date(buildDate.getTime() - backupSpotOffsetDays(this.company) * 86400000);
-    const mm = String(spotted.getMonth() + 1).padStart(2, '0');
-    const dd = String(spotted.getDate()).padStart(2, '0');
-    return {
-      code: backup.code,
-      rawValue,
-      valueText: this.formatValue(rawValue, isPercent),
-      isPercent,
-      label: undefined,
-      date: spotted,
-      rawDate: `${mm}-${dd}`,
-      dateLabel: this.formatDate(spotted),
-    };
   }
 
   /**
