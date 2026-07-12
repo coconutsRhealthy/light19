@@ -1,6 +1,10 @@
 {
   "slug": "newbalance",
   "name": "New Balance",
+  "backupCode": {
+    "code": "NBSALE25",
+    "discount": "25"
+  },
   "heroLede": "Bij New Balance profiteer je nu via de outlet en de sale van flinke kortingen — volgens de huidige actie tot wel 50% korting. Je hebt daar geen kortingscode voor nodig: de afprijzing is al verwerkt in de outletprijs, dus je rekent gewoon af tegen het lagere bedrag. Onze redactie controleert dagelijks of de aanbieding nog loopt, zodat je hier steeds de actuele New Balance sale vindt.",
   "about": [
     "New Balance is een van origine Amerikaans sport- en lifestylemerk dat vooral bekendstaat om zijn schoenen. Volgens algemene merkgeschiedenis gaan de wortels terug tot 1906 in Boston; controleer die historische details gerust even bij een tweede bron. Vandaag de dag verkoopt het merk zowel echte hardloopschoenen als casual sneakers, plus bijpassende kleding en accessoires. In Nederland shop je rechtstreeks via de officiële webshop op nl.newbalance.eu, met aparte afdelingen voor heren, dames en kids.",
