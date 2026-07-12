@@ -197,8 +197,8 @@ ADD OR CHANGE A CODE
   Dry run (does everything except the upload):
       node scripts/run-all.js --dry-run
 
-  (`npm run discounts` / `npm run discounts:dry` do the same thing. The R2
-  credentials load from diski-input-insta/.env automatically either way.)
+  The R2 credentials load from diski-input-insta/.env automatically — nothing to
+  remember, no flags.
 
 REFRESH CODES FOR LOCAL DEV
   `ng serve` does NOT fetch from R2 — it just uses whatever discounts.json is on

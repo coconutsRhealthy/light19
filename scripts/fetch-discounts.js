@@ -1,8 +1,8 @@
 // Builds src/app/data/discounts.json, the file every page of the site reads.
 //
 // Two inputs:
-//   1. R2 — the live codes, published by diski-input-insta's `npm run discounts` and
-//      read at runtime by the diski app too. R2 is the source of truth for live codes.
+//   1. R2 — the live codes, published by diski-input-insta's `node scripts/run-all.js`
+//      and read at runtime by the diski app too. R2 is the source of truth for live codes.
 //   2. Backup codes — a fallback code per shop, for shops whose live codes have been
 //      pruned. v2's come from each brand-content JSON's `backupCode`; v1's from the
 //      generated V1_BACKUP_CODES map. A shop gets its backup code injected ONLY if it
