@@ -39,6 +39,10 @@
   ],
   "about-you": [
     {
+      "text": "Extra deals met kortingen tot 50%",
+      "date": "2026-07-11"
+    },
+    {
       "text": "Zomerse uitverkoop met kortingen tot 50%",
       "date": "2026-06-19"
     },
@@ -525,6 +529,12 @@
       "date": "2026-04-29"
     }
   ],
+  "doreandrose": [
+    {
+      "text": "Mid-season uitverkoop met tot 40% korting op bundels",
+      "date": "2026-07-11"
+    }
+  ],
   "douglas": [
     {
       "text": "20% korting op alles via de Douglas app met code APPONLY",
@@ -578,6 +588,10 @@
     }
   ],
   "dyson": [
+    {
+      "text": "Exclusieve zomerkortingen tot €300 op Dyson assortiment",
+      "date": "2026-07-11"
+    },
     {
       "text": "Exclusieve aanbiedingen met besparing tot € 200",
       "date": "2026-06-30"
@@ -853,6 +867,12 @@
     {
       "text": "25% korting op het goedkoopste product bij aankoop van 4 producten",
       "date": "2026-03-12"
+    }
+  ],
+  "halara": [
+    {
+      "text": "Gratis cadeau met gegarandeerde prijzen bij deelname aan het rad van fortuin voor nieuwe gebruikers.",
+      "date": "2026-07-12"
     }
   ],
   "hellofresh.nl": [
@@ -1441,6 +1461,10 @@
   ],
   "nakdfashion": [
     {
+      "text": "Nieuwe zomerse uitverkoop promotie",
+      "date": "2026-07-12"
+    },
+    {
       "text": "30% korting op alles",
       "date": "2026-07-05"
     },
@@ -1498,6 +1522,10 @@
     }
   ],
   "oliviakate": [
+    {
+      "text": "Gratis strandtas bij bestellingen vanaf €125",
+      "date": "2026-07-11"
+    },
     {
       "text": "20% korting op geselecteerde items tijdens de zomersale",
       "date": "2026-07-07"
@@ -1596,6 +1624,10 @@
     }
   ],
   "otensien.nl": [
+    {
+      "text": "Koop 3 artikelen, betaal er slechts 1",
+      "date": "2026-07-11"
+    },
     {
       "text": "Koop 8 artikelen, betaal er slechts 3",
       "date": "2026-06-23"
@@ -1800,6 +1832,10 @@
     }
   ],
   "plotpackers": [
+    {
+      "text": "22% korting op Budget Trip - Simply Sri Lanka",
+      "date": "2026-07-11"
+    },
     {
       "text": "17% korting op Budget Trip - Introducing India",
       "date": "2026-07-04"
@@ -2318,6 +2354,10 @@
     }
   ],
   "whitefoxboutique": [
+    {
+      "text": "Tot 60% korting op nieuwe stijlen",
+      "date": "2026-07-11"
+    },
     {
       "text": "20% korting op je volgende bestelling bij aanmelding",
       "date": "2026-07-10"
