@@ -39,7 +39,7 @@ const FEED_URL = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/discounts.
 const OUT_PATH = path.join(ROOT, 'src/app/data/discounts.json');
 const BUILD_INFO_PATH = path.join(ROOT, 'src/app/build-info.ts');
 const V1_INDEX_PATH = path.join(ROOT, 'src/app/company-codes/company-seo-content/index.ts');
-const V1_BACKUP_PATH = path.join(ROOT, 'src/app/company-codes/company-seo-content/backup-codes.ts');
+const V1_BACKUP_PATH = path.join(ROOT, 'src/app/company-codes/company-seo-content/backup-codes.json');
 const V2_DATA_DIR = path.join(ROOT, 'src/app/company-codes-v2/brand-content/data');
 
 // The "zzz" column is the influencer handle, blanked out before publishing. It no longer
@@ -123,15 +123,12 @@ function readV2Backups() {
   return backups;
 }
 
-// v1: a generated literal map — `'adidas': { code: 'SOPHIE15RUS', discount: '15' },`.
-// v1 is frozen, so this is parsed rather than imported (it's a .ts file).
+// v1: a generated map, slug -> {code, discount}, written by populate-v1-backup-codes.js.
 function readV1Backups() {
-  const backups = new Map();
-  const src = fs.readFileSync(V1_BACKUP_PATH, 'utf8');
-  for (const m of src.matchAll(/'([^']+)':\s*\{\s*code:\s*'([^']*)',\s*discount:\s*'([^']*)'\s*\}/g)) {
-    backups.set(m[1].toLowerCase(), { code: m[2], discount: m[3] });
-  }
-  return backups;
+  const map = JSON.parse(fs.readFileSync(V1_BACKUP_PATH, 'utf8'));
+  return new Map(
+    Object.entries(map).map(([slug, backup]) => [slug.toLowerCase(), backup])
+  );
 }
 
 // The slugs that have a brand page. For v1 the authoritative slug is the switch label in
