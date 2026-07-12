@@ -167,6 +167,10 @@
   ],
   "amazon": [
     {
+      "text": "15% korting op geselecteerde aanbiedingen die binnenkort aflopen",
+      "date": "2026-07-10"
+    },
+    {
       "text": "7 dagen epische tech deals met tot 30% korting",
       "date": "2026-04-27"
     }
@@ -977,6 +981,10 @@
   ],
   "jbl": [
     {
+      "text": "Gratis JBL festival oordopjes bij aankoop van geselecteerde luidsprekers boven €109,99",
+      "date": "2026-07-10"
+    },
+    {
       "text": "Gratis JBL koelbox bij koptelefoonbestellingen boven €99,99 met code JBLCOOLBOX t/m 30-06-2026",
       "date": "2026-06-15"
     }
@@ -1309,6 +1317,10 @@
   ],
   "lyko": [
     {
+      "text": "25% korting op COSRX-favorieten",
+      "date": "2026-07-10"
+    },
+    {
       "text": "Nieuwe aanbieding: The Sunkissed Kit voor €49,90 met een waarde van €356",
       "date": "2026-06-27"
     },
@@ -1591,6 +1603,10 @@
   ],
   "otrium": [
     {
+      "text": "Koop 3 items, krijg het 4e gratis dit weekend",
+      "date": "2026-07-10"
+    },
+    {
       "text": "Summer sale gestart met hete deals voor beperkte tijd",
       "date": "2026-06-25"
     },
@@ -1836,6 +1852,10 @@
     }
   ],
   "samiol.com": [
+    {
+      "text": "Koop 1, krijg 2e 25% korting met code beach25 en $20 korting bij bestellingen boven $120 met code beach20",
+      "date": "2026-07-10"
+    },
     {
       "text": "35% korting op de 2e aankoop met code ANNSA35",
       "date": "2026-06-17"
@@ -2298,6 +2318,10 @@
     }
   ],
   "whitefoxboutique": [
+    {
+      "text": "20% korting op je volgende bestelling bij aanmelding",
+      "date": "2026-07-10"
+    },
     {
       "text": "4th of July uitverkoop: 30% korting op alles met code SALE30",
       "date": "2026-07-03"
