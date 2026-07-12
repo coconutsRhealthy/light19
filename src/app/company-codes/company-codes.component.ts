@@ -108,37 +108,19 @@ export class CompanyCodesComponent implements OnInit {
         };
       });
 
-      const urlString = 'https://';
-
       this.discountCodes = allDiscountCodes
           .filter(entry => {
             const companyNoBrackets = entry.company.replace(/\s*\(.*?\)\s*/g, '');
-            const companyNoBracketsLc = companyNoBrackets.toLowerCase();
-
-//             if(companyNoBracketsLc === 'leolive') {
-//                 if(!entry.discountCode.startsWith(urlString)) {
-//                     return false;
-//                 }
-//             }
-
-            return companyNoBracketsLc === companyName.toLowerCase();
+            return companyNoBrackets.toLowerCase() === companyName.toLowerCase();
           })
         .map(entry => {
-          let date;
-
-          if (entry.discountCode.startsWith(urlString)) {
-            date = this.getCurrentDateAsString();
-          } else {
-            date = entry.date;
-          }
-
           const bracketMatch = entry.company.match(/\(([^)]*)\)/);
           const label = bracketMatch ? bracketMatch[1].trim() : undefined;
 
           return {
             code: entry.discountCode,
             discount: entry.percentage.toString(),
-            date: date,
+            date: entry.date,
             label: label,
           };
         });
@@ -163,7 +145,7 @@ export class CompanyCodesComponent implements OnInit {
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);
         this.monthYear = this.meta.getDateString();
-        const codeCount = this.discountCodes.filter(c => !c.code.startsWith('http')).length || 1;
+        const codeCount = this.discountCodes.length || 1;
         const pageUrl = "https://diski.nl/" + this.company + "/";
         const title = "Werkende " + this.webshopName + " kortingscode in " + this.monthYear;
         const description = codeCount + " actieve " + this.webshopName + " kortingscode" + (codeCount !== 1 ? 's' : '') + " in " + this.monthYear + "; Bespaar met deze kortingscodes op online shoppen bij " + this.webshopName;
@@ -179,7 +161,6 @@ export class CompanyCodesComponent implements OnInit {
           ]
         });
         const codeItems = this.discountCodes
-          .filter(c => !c.code.startsWith('http'))
           .slice(0, 10)
           .map((c, i) => ({
             "@type": "ListItem",
@@ -205,7 +186,6 @@ export class CompanyCodesComponent implements OnInit {
       }
 
       this.affiliateLink = this.affiliateLinkService.getAffiliateLink(companyName)
-      this.discountCodes.sort((a, b) => a.code.startsWith(urlString) ? -1 : 1);
       this.loadRelatedShops(companyName, data);
 
       this.route.fragment.subscribe(fragment => {
@@ -254,11 +234,6 @@ export class CompanyCodesComponent implements OnInit {
     return this.datePipe.transform(formattedDate, 'd MMM') ?? '';
   }
 
-  getCurrentDateAsString(): string {
-    const currentDate = new Date();
-    return String(currentDate.getMonth() + 1).padStart(2, '0') + '-' + String(currentDate.getDate()).padStart(2, '0');
-  }
-
   // A backup code likely no longer works, so present it as spotted 45–75 days
   // before the build (varied per slug so backup pages don't all share one templated
   // date). Anchored to the build date + a slug hash → deterministic (SSR/hydration
@@ -301,10 +276,6 @@ export class CompanyCodesComponent implements OnInit {
     return shouldDisplayPercent;
   }
 
-  get hasHttpCodes(): boolean {
-    return this.discountCodes.some(code => code.code.startsWith('http'));
-  }
-
   // Samsung partner requirement: surface the official promo voorwaarden for each
   // live Samsung promotion on the /samsung page (same source as the modal).
   get samsungPromoList(): { code: string; label: string; promo: SamsungPromotion }[] {
@@ -312,29 +283,6 @@ export class CompanyCodesComponent implements OnInit {
     return this.discountCodes
       .map(c => ({ code: c.code, label: c.label ?? '', promo: samsungPromotions[c.label ?? ''] }))
       .filter((x): x is { code: string; label: string; promo: SamsungPromotion } => !!x.promo);
-  }
-
-  sendGiftcardEventsToGa(wlsckUrl: string) {
-    const isCashback = wlsckUrl.includes("foldersnl");
-
-    const event = isCashback ? 'cashback' : 'giftcard';
-    const eventCategory = isCashback ? 'Cashback' : 'Giftcard';
-    const eventLabelOverall = isCashback ? 'cashback_companypage_table' : 'giftcard_companypage_table';
-    const eventLabelSpecific = `${eventLabelOverall}_${this.company}`;
-
-    if (typeof gtag === 'function') {
-      gtag('event', event, {
-        'event_category': eventCategory,
-        'event_label': eventLabelOverall
-      });
-
-      gtag('event', event, {
-        'event_category': eventCategory,
-        'event_label': eventLabelSpecific
-      });
-    } else {
-      console.error('gtag is not defined');
-    }
   }
 
   sendAffEventsToGa() {

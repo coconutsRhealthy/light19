@@ -418,7 +418,7 @@ export class DiscountsTableComponent implements OnInit {
     this.dateStringLatestShops = this.formatDate(lastUpdated);
 
     const shopsOnLatestDate = this.discounts
-      .filter(d => d.date === lastUpdated && !d.discountCode.startsWith('http'))
+      .filter(d => d.date === lastUpdated)
       .map(d => {
         let name = d.company.trim();
         name = name.replace(/\s*\(.*?\)/g, '');

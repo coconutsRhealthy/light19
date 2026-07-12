@@ -21,32 +21,6 @@
     <!-- Discount Codes Cards -->
     <div class="tw-flex tw-flex-col tw-space-y-4 tw-mt-6 tw-mb-6">
       @for (code of discountCodes; track code; let i = $index) {
-          @if (code.code.startsWith('http')) {
-              <!-- Giftcard card, full clickable -->
-              <a [href]="code.code" target="_blank" (click)="sendGiftcardEventsToGa(code.code)" class="tw-block tw-no-underline">
-                <div class="tw-bg-butter tw-border tw-border-ink/10 tw-p-4 tw-rounded-2xl hover:tw-shadow-md tw-transition">
-                  <div class="tw-flex tw-justify-between tw-items-center tw-mb-2">
-                      <span class="tw-font-title tw-font-bold tw-text-ink tw-text-lg">
-                        @if (code.code.includes('foldersnl')) {
-                          {{ webshopName | uppercase }} cashback
-                        } @else {
-                          {{ webshopName | uppercase }} GIFTCARD
-                        }
-                      </span>
-                    <span class="tw-font-medium tw-text-ink/70">
-                      {{ shouldDisplayPercent(code.discount) ? (code.discount + '%') : code.discount }}
-                      </span>
-                  </div>
-                  <div class="tw-text-xs tw-text-ink/60 tw-mt-1">
-                    @if (code.code.includes('foldersnl')) {
-                      Op al je online bestellingen bij  {{ webshopName }}
-                    } @else {
-                      Werkt bovenop eventuele andere kortingscodes
-                    }
-                  </div>
-                </div>
-              </a>
-          } @else {
             <!-- Regular code card -->
             @if (affiliateLink) {
                 <div
@@ -100,7 +74,6 @@
                 </div>
 
             }
-          }
       }
 
 <!--        @if (company === 'leolive') {-->
