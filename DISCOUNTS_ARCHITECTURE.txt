@@ -1,6 +1,16 @@
 DISCOUNTS ARCHITECTURE — how codes get onto diski.nl
 ====================================================
-Last updated: 2026-07-12
+Last updated: 2026-07-13 (after the first full production run through the pipeline)
+
+!! USE NODE 22. Your shell's default node is too old — the pipeline will die with
+!! "process.loadEnvFile is not a function". Both repos:
+!!     source ~/.nvm/nvm.sh && nvm use 22
+!! light19's build has always needed it; run-all.js needs it now too, because it
+!! fetches over the network.
+
+(The counts in this document — 3281 codes, 275 backup, 1488 pages — are whatever
+they happened to be on the day it was written. They move every run. Don't treat
+them as targets.)
 
 
 THE ONE-PARAGRAPH VERSION
@@ -19,10 +29,12 @@ THE PIPELINE, END TO END
   [diski-input-insta]  (private, the master data)
       src/assets/discounts.json          <- YOU EDIT THIS. Column 4 = influencer handle.
              |
-             |  node scripts/run-all.js
-             |    1. add-dummy-codes.js  — fills gaps with fallback codes
+             |  node scripts/run-all.js          (NODE 22)
+             |    1. add-dummy-codes.js  — every affiliate partner with no code gets
+             |                             its dummyCode from affiliate-link.service.ts
              |    2. anonymize.js        — blanks column 4 to "zzz"
-             |    3. get-missing-companies.js — reports gaps
+             |    3. get-missing-companies.js — self-check: any affiliate partner still
+             |                             with no code? Should always print []
              |    4. publish-discounts-to-r2.js  <-- uploads
              v
   [Cloudflare R2]  bucket "promotions", key "discounts.json"
@@ -88,6 +100,45 @@ Contents after a build:
     3281 live codes    (from R2)
   +  275 backup codes  (injected — see below)
   = 3556 lines
+
+
+TWO FALLBACKS — DO NOT CONFUSE THEM
+-----------------------------------
+There are TWO independent "the shop has no code" fallbacks, in two different repos,
+and they fire in sequence. Getting these mixed up will make you predict the wrong
+thing (it did, the first time we ran this for real).
+
+  1. DUMMY CODES — diski-input-insta, scripts/dummy_codes/add-dummy-codes.js
+     For shops that have an AFFILIATE LINK but no influencer code in the master.
+     The code comes from light19's affiliate-link.service.ts (`dummyCode` per shop).
+     They are added BEFORE anonymize, so they end up in the published R2 feed as
+     ordinary LIVE CODES — downstream, nothing can tell them apart from a real one.
+     Rationale: an affiliate partner with no code on its page is lost revenue.
+
+  2. BACKUP CODES — light19, scripts/fetch-discounts.js
+     For shops that have a BRAND PAGE but no entry in the feed at all. Injected at
+     build time with an aged date (see below).
+
+So a shop only reaches the backup-code stage if it has NEITHER an influencer code
+NOR a dummy code — i.e. it's not an affiliate partner.
+
+Worked example from the 2026-07-13 run. Six shops were pruned from the master:
+bellobox.nl, heine, neonail, mijnhummeltje, babista.nl, fotocadeau.nl. NONE of them
+got a backup code — they all have affiliate links, so add-dummy-codes.js caught them
+first and they're still in the feed as live codes (bellobox.nl -> DISKI10,
+heine -> 45569, neonail -> ESMEEHES10). Only the five shops with no affiliate link
+(volero.nl, fithlon, gastonluga, opberghoekje.nl, ultrahuman_ring) fell through to a
+backup code.
+
+CROSS-REPO COUPLING (fragile, worth knowing): both add-dummy-codes.js and
+get-missing-companies.js read light19's affiliate-link.service.ts by HARDCODED
+ABSOLUTE PATH and eval() the affiliateLinks object out of it:
+
+    /Users/LennartMac/Documents/Projects/light19/src/app/services/affiliate-link.service.ts
+
+So diski-input-insta depends on light19 living at exactly that path on this machine.
+Move a folder, or run it elsewhere, and the dummy-code step breaks. This is the most
+fragile joint in the whole pipeline.
 
 
 BACKUP CODES
@@ -218,6 +269,18 @@ ADD A NEW V2 BRAND PAGE
 THE BUILD FAILED WITH "brand page(s) have neither a live code nor a backup code"
   Exactly what it says: that shop would get no route and vanish from the site. Add
   a backupCode to its brand-content file (v2) or to backup-codes.json (v1).
+
+READ THE OUTPUT OF A RUN
+  fetch-discounts.js prints e.g.
+      Wrote 3532 discounts: 3253 live + 279 backup (covering all 578 v1 + 409 v2)
+  Watch the BACKUP number between runs. It going UP means shops lost their last live
+  code and fell back (their pages stay, they stay findable). It going DOWN means a
+  backup shop got a real code again and was promoted into the live block.
+
+  routes.txt going DOWN is normal and correct when a CODE-ONLY shop (no v1/v2
+  content) loses its last code: there is nothing left to put on a page, so the page
+  goes. Those URLs will start 404ing and will show up in Search Console. A shop WITH
+  content never disappears — it falls back to its backup code instead.
 
 
 GOTCHAS
