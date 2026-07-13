@@ -21,18 +21,9 @@
   <meta name="verify-admitad" content="1759314d52" />
   <meta name="fo-verify" content="4aeedfba-f202-4791-85f8-0bf598a1b121" />
   <meta name="d76d0d3f7a550ad" content="8fbff403f984b465d10e71c0d4ecb26f" />
-  <!-- SVG first for modern browsers; the .ico stays as the fallback. -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
 
-  <!-- NB: do NOT preload the brand fonts. The LCP element is hero TEXT with
-       font-display:swap, so it paints in the fallback immediately and never waits
-       for the web font. Preloading the fonts (highest priority) only starved the
-       async stylesheet / render path on mobile — measured LCP 4.8s -> 1.7s once the
-       preloads were removed. Fonts load at normal priority and swap in a beat later. -->
-
-  <!-- Shop logos are served from jsDelivr; warm the connection early
-       (DNS+TCP+TLS off the critical path) to help mobile LCP. -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
   <link rel="dns-prefetch" href="https://www.awin1.com">
