@@ -167,7 +167,6 @@
 /boohooman
 /bookbeat
 /boomba
-/boshuisjeloua
 /boshuisjemaisondubois
 /bottger
 /bowork
@@ -246,10 +245,12 @@
 /clearsmile
 /clearsmile.nl
 /cloudpillo.nl
+/clovira.creations
 /clubrepublique
 /cluse
 /cnsupplements
 /cocktailzak
+/cocunat
 /code-delen
 /colliegoud
 /colorbestie.app
@@ -415,6 +416,7 @@
 /etsy
 /euroflorist
 /eurowheelz
+/eventstylingfotografiebijdo
 /everdrop
 /everready
 /everready.nl
@@ -423,7 +425,6 @@
 /evolveyou
 /evryjewels
 /expedia
-/extrajoss
 /ezwlz.com
 /fabiennechapot
 /fabrique
@@ -582,7 +583,6 @@
 /happy-size
 /happy-size.nl
 /headshop
-/heijnenplanten
 /heine
 /helicoptercentremallorca
 /hellobeautybychantal
@@ -695,6 +695,7 @@
 /koro.com
 /kossonutrition.nl
 /kpactive
+/krabpalenvanhout
 /kraywoodseyewear
 /kswiss
 /kudlworld
@@ -736,6 +737,7 @@
 /littledutch
 /littlemaryam
 /livin24
+/lkbennett
 /lkswimwear
 /loavies
 /loccitane
@@ -755,6 +757,7 @@
 /lovelysbyheleen
 /lucardi
 /lucovitaal
+/luminoranl
 /lunaswimwear
 /lunchboxpacks
 /lureaux
@@ -802,6 +805,7 @@
 /maycosmetics.nl
 /maysoncosmetics
 /mediamarkt
+/medpets
 /meetmethere
 /melanojewelry
 /mepal
@@ -863,6 +867,7 @@
 /naduvi.nl
 /nakdfashion
 /nameit
+/namimatcha
 /namly.nl
 /natracare
 /naturalslim
@@ -887,7 +892,6 @@
 /noelie
 /nolimithair.nl
 /nolten
-/nomadesim
 /nordicnest
 /nordvpn
 /noshirt
@@ -897,7 +901,6 @@
 /nsconsumenten
 /nuki
 /numsy.nl
-/nxtlevel
 /oace
 /oakley
 /obelink
@@ -1084,6 +1087,7 @@
 /samsung
 /sandandsky
 /sanitaironline
+/sansbeaute.nl
 /sapph
 /saralune
 /saslooks
@@ -1176,10 +1180,10 @@
 /sportenspelvoordieren.nl
 /sprookjeshof
 /sproudsy
+/squla
 /stanley
 /stardoorsnl
 /startselect
-/staycuracao
 /stayokayhostels
 /steamone
 /stedelijkmuseumbreda
@@ -1217,6 +1221,7 @@
 /sueltajewelry
 /suite702
 /sumisuknives
+/summergear
 /suncamp
 /sunday
 /sunday.nl
@@ -1267,6 +1272,7 @@
 /teveo
 /thebrandfelice
 /thebrowniebox.nl
+/thecollectorthehague
 /theconfidenceconcept
 /theey
 /thefarm
@@ -1347,6 +1353,7 @@
 /upway
 /upway.nl
 /urbanoutfitters
+/useframes
 /uwantisell
 /v&d
 /vacansoleil
@@ -1490,7 +1497,6 @@
 /zizzifashion
 /zolunalighting
 /zone2club
-/zone2sportswear
 /zonneschermdoek.nl
 /zooplus.nl
 /zoorie.com
