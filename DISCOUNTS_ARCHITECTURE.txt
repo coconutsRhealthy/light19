@@ -141,6 +141,32 @@ Move a folder, or run it elsewhere, and the dummy-code step breaks. This is the 
 fragile joint in the whole pipeline.
 
 
+PLANNED: KILL THE DUMMY-CODE MECHANISM (not possible yet)
+---------------------------------------------------------
+The end state is ONE fallback, not two. A dummyCode exists so an affiliate partner's
+page is never empty — which is exactly what a backup code already does. Once every
+affiliate partner has a brand page, dummyCode is redundant and the whole mechanism
+goes: add-dummy-codes.js, the dummyCode fields in affiliate-link.service.ts, AND the
+hardcoded cross-repo eval above.
+
+WHY NOT YET (measured 2026-07-13):
+    525  affiliate partners have a dummyCode
+    259  of them already have a v1/v2 brand page
+    266  have NO brand page  <-- the blocker
+
+Careful — those 266 shops DO have pages today, but ONLY because their dummy code puts
+them in discounts.json, and a page exists iff it's in discounts.json. Their pages have
+no editorial content; the dummy code is the only thing holding them up. Delete
+dummyCode today and you don't just lose a fallback code, you DELETE 266 PAGES.
+
+SEQUENCE:
+  1. Give those 266 shops v2 brand content (content engine; v1 is frozen).
+  2. Each new brand page ships with a backupCode — that covers the "never an empty
+     page" job dummyCode was doing.
+  3. THEN delete the dummy-code mechanism. Two fallbacks collapse into one, and the
+     fragile cross-repo path disappears with it.
+
+
 BACKUP CODES
 ------------
 A shop whose live codes have been pruned still has a page, and that page still
