@@ -19,7 +19,9 @@
           (click)="trackBrandClick(c)"
           class="tw-snap-start tw-shrink-0 tw-w-[280px] sm:tw-w-[340px] tw-no-underline tw-text-ink"
         >
-          <div class="tw-h-20 sm:tw-h-[6.5rem] tw-rounded-2xl tw-bg-gradient-to-br tw-from-sky tw-to-butter"></div>
+          <div class="tw-h-20 sm:tw-h-[6.5rem] tw-rounded-2xl tw-bg-gradient-to-br tw-from-sky tw-to-butter tw-flex tw-items-start tw-justify-center tw-px-4 tw-pt-3">
+            <span class="tw-font-title tw-font-bold tw-tracking-tight tw-text-ink/40 tw-text-sm sm:tw-text-base">{{ c.name }}</span>
+          </div>
           <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw--mt-12 tw-mx-4 tw-relative tw-shadow-[0_18px_44px_rgba(67,48,46,0.10)] tw-grid tw-grid-cols-[88px_1fr] tw-overflow-hidden">
             <div class="tw-flex tw-items-center tw-justify-center tw-bg-white tw-border-r tw-border-ink/10 tw-p-3">
               @if (c.logo) {
@@ -33,7 +35,6 @@
                 <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-link">
                   {{ c.kind === 'code' ? 'Kortingscode' : 'Sale' }}
                 </span>
-                <span class="tw-font-body tw-text-[11px] tw-text-ink/60">{{ c.name }}</span>
               </div>
 
               @if (c.kind === 'code') {
