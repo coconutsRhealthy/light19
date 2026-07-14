@@ -11,6 +11,7 @@ import { MetaService } from '../services/meta.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ModalShopsComponent } from '../modal-shops/modal-shops.component';
+import { FeaturedDealsComponent } from '../featured-deals/featured-deals.component';
 import { RouterModule } from '@angular/router';
 import { PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -33,7 +34,7 @@ interface Discount {
 
 @Component({
   selector: 'app-discounts-table',
-  imports: [FooterComponent, NavbarComponent, FormsModule, ModalShopsComponent, RouterModule],
+  imports: [FooterComponent, NavbarComponent, FormsModule, ModalShopsComponent, RouterModule, FeaturedDealsComponent],
   templateUrl: './discounts-table.component.html',
   styleUrls: ['./discounts-table.component.css'],
   providers: [
@@ -71,9 +72,6 @@ export class DiscountsTableComponent implements OnInit {
   bolPixelSrc!: string;
   bolType!: string;
 
-  // --- new-look homepage: placeholder content for sections without data yet ---
-  // The carousel of "highest discount codes of today" is not modelled in the
-  // feed yet, so this is editorial sample content until it's wired to real data.
   // ga* mirror the events the old homepage fired, so reporting stays continuous
   // across the redesign (event_category differs per event, hence the raw gtag
   // call in trackSocialCard rather than AnalyticsEventService.sendEventToGa).
