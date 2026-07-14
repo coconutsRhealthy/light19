@@ -16,7 +16,7 @@
       @for (c of cards; track c.kind + c.slug) {
         <a
           [routerLink]="['/', c.slug]"
-          (click)="trackBrandClick(c)"
+          (click)="onCardClick(c, $event)"
           class="tw-snap-start tw-shrink-0 tw-w-[280px] sm:tw-w-[340px] tw-no-underline tw-text-ink"
         >
           <div class="tw-h-20 sm:tw-h-[6.5rem] tw-rounded-2xl tw-bg-gradient-to-br tw-from-sky tw-to-butter tw-flex tw-items-start tw-justify-center tw-px-4 tw-pt-3">

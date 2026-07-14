@@ -1,11 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DiscountsService } from '../services/discounts.service';
 import { LogosService } from '../services/logos.service';
 import { WebshopNameService } from '../services/webshop-name.service';
+import { AffiliateLinkService } from '../services/affiliate-link.service';
+import { VisitorProfileService } from '../services/visitor-profile.service';
 import { BUILD_DATE_ISO } from '../build-info';
 import { FEATURED_SLUGS } from '../data/featured-slugs';
 import spottedSalesData from '../data/spotted-sales.json';
+
+declare global {
+  interface Window {
+    sendEventToGa: (eventName: string, eventLabel: string) => void;
+  }
+}
 
 // Both feeds are bundled, so this section prerenders — no runtime fetch.
 // Sales are keyed by the same slug the brand pages use, newest-first already
@@ -58,11 +67,14 @@ export class FeaturedDealsComponent implements OnInit {
   cards: FeaturedCardVM[] = [];
 
   private logos: { [slug: string]: string } = {};
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   constructor(
     private discountsService: DiscountsService,
     private logosService: LogosService,
     private names: WebshopNameService,
+    private affiliateLinkService: AffiliateLinkService,
+    private visitorProfile: VisitorProfileService,
   ) {}
 
   ngOnInit(): void {
@@ -186,13 +198,31 @@ export class FeaturedDealsComponent implements OnInit {
     return out;
   }
 
-  trackBrandClick(card: FeaturedCardVM): void {
-    const gtag = (window as any).gtag;
-    if (typeof gtag === 'function') {
-      gtag('event', 'brand_click', {
-        event_category: 'Featured_Deals',
-        event_label: `featured_${card.kind}_${card.slug}`,
-      });
+  /** Same flow as the homepage code cards and the "beste sale" tiles: track the
+   *  click, then hand the visitor off to the affiliate link while the brand page
+   *  opens in a new tab. Without an affiliate link the routerLink just navigates. */
+  onCardClick(card: FeaturedCardVM, event: MouseEvent): void {
+    this.trackBrandClick(card);
+
+    const affiliateLink = this.affiliateLinkService.getAffiliateLink(card.slug);
+    if (affiliateLink !== undefined && this.isBrowser) {
+      event.preventDefault();
+      const brandPageUrl = `${window.location.origin}/${card.slug}/`;
+      window.open(brandPageUrl, '_blank');
+      location.href = affiliateLink;
+    }
+  }
+
+  private trackBrandClick(card: FeaturedCardVM): void {
+    // Same profile stream as every other brand click on the homepage, so the
+    // visitor's interest in this shop is recorded the usual way.
+    this.visitorProfile.trackCompanyClick('company_click_homepage', card.slug);
+    if (!this.isBrowser) return;
+
+    // The rail gets its own GA event (deliberately NOT the sitewide CopyCode one):
+    // the code/sale split keeps the rail's clicks separable from the rest.
+    if (typeof window.sendEventToGa === 'function') {
+      window.sendEventToGa('FeaturedDeal', `${card.kind}_${card.slug}`);
     }
   }
 
