@@ -3,7 +3,7 @@
 <div class="tw-bg-cream tw-text-ink tw-font-body tw-overflow-x-hidden">
 
   <!-- ============================ HERO ============================ -->
-  <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-pt-12 sm:tw-pt-16 lg:tw-pt-20 tw-pb-6 sm:tw-pb-10 tw-flex tw-flex-col tw-items-center tw-text-center">
+  <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-pt-12 sm:tw-pt-16 lg:tw-pt-20 tw-pb-2 sm:tw-pb-4 tw-flex tw-flex-col tw-items-center tw-text-center">
     <h1 class="tw-max-w-full tw-font-title tw-font-bold tw-text-ink tw-tracking-tight tw-leading-[0.98] tw-text-[2rem] sm:tw-text-6xl lg:tw-text-7xl">
       Online shoppen met kortingscodes<span class="tw-text-dot">.</span>
     </h1>
@@ -30,12 +30,6 @@
           class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-5 sm:tw-px-6 tw-py-3 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-whitespace-nowrap"
         >Zoeken</a>
       </div>
-    </div>
-
-    <div class="tw-flex tw-flex-wrap tw-justify-center tw-gap-x-3 tw-gap-y-1 tw-mt-5 tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] sm:tw-text-[11px] tw-text-ink/60">
-      <span>Vandaag getest ✓</span><span class="tw-opacity-40">·</span>
-      <span>Geen account</span><span class="tw-opacity-40">·</span>
-      <span>Geen pop-ups</span>
     </div>
   </section>
 
@@ -64,16 +58,16 @@
   <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-10 sm:tw-pb-14">
     <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-4 sm:tw-gap-5">
       @for (c of socialCards; track c.title) {
-        <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-3xl tw-p-4 sm:tw-p-7 tw-flex tw-flex-col sm:tw-flex-row sm:tw-items-center tw-gap-3 sm:tw-gap-5">
+        <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-3 sm:tw-p-4 tw-flex tw-flex-col sm:tw-flex-row sm:tw-items-center tw-gap-2 sm:tw-gap-4">
           <div class="tw-flex-1">
-            <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/55">{{ c.tag }}</div>
-            <div class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-mt-1.5">{{ c.title }}</div>
-            <div class="tw-font-body tw-text-sm tw-text-ink/65 tw-mt-2 tw-leading-relaxed">{{ c.desc }}</div>
+            <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[9px] tw-text-ink/55">{{ c.tag }}</div>
+            <div class="tw-font-title tw-font-bold tw-text-base sm:tw-text-lg tw-tracking-tight tw-mt-0.5">{{ c.title }}</div>
+            <div class="tw-font-body tw-text-xs tw-text-ink/65 tw-mt-1 tw-leading-snug">{{ c.desc }}</div>
           </div>
           @if (c.href.startsWith('http')) {
-            <a [href]="c.href" target="_blank" rel="noopener" (click)="trackSocialCard(c)" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-6 tw-py-2.5 sm:tw-py-3.5 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
+            <a [href]="c.href" target="_blank" rel="noopener" (click)="trackSocialCard(c)" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-4 tw-py-2 tw-font-body tw-font-semibold tw-text-xs tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
           } @else {
-            <a [routerLink]="[c.href]" (click)="trackSocialCard(c)" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-6 tw-py-2.5 sm:tw-py-3.5 tw-font-body tw-font-semibold tw-text-sm tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
+            <a [routerLink]="[c.href]" (click)="trackSocialCard(c)" class="tw-shrink-0 tw-bg-ink tw-text-cream tw-rounded-full tw-px-4 tw-py-2 tw-font-body tw-font-semibold tw-text-xs tw-no-underline tw-text-center tw-whitespace-nowrap">{{ c.cta }}</a>
           }
         </div>
       }
