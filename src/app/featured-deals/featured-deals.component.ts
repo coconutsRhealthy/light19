@@ -27,9 +27,10 @@ const MAX_CARDS = 5;
 /** A sale older than this (relative to the build date) is stale and never shown. */
 const SALE_MAX_AGE_DAYS = 1;
 
-// One slot goes to the single freshest sale across the whole allowlist; the rest
-// go to codes from randomly drawn shops. When no sale is fresh enough, its slot
-// falls back to another code so the rail is never short.
+// One slot (pinned to the bottom of the rail — card 4 or 5) goes to the single
+// freshest sale across the WHOLE spotted-sales feed, not just the featured slugs;
+// the rest go to codes from randomly drawn featured shops. When no sale is fresh
+// enough, its slot falls back to another code so the rail is never short.
 const SALE_SLOTS = 1;
 
 const MONTHS_NL = [
@@ -104,20 +105,40 @@ export class FeaturedDealsComponent implements OnInit {
     const codeSlots = MAX_CARDS - (saleCard ? SALE_SLOTS : 0);
 
     // Seeded on the build date: a fresh draw every build, but prerender and
-    // hydration reproduce the same one (see seededShuffle).
+    // hydration reproduce the same one (see seededShuffle). Codes lead the rail,
+    // sorted newest-first among themselves.
     const codeCards = this.seededShuffle(codePool, BUILD_DATE_ISO)
       .slice(0, codeSlots)
-      .map(slug => this.toCodeCard(slug, newestCode.get(slug)!));
+      .map(slug => this.toCodeCard(slug, newestCode.get(slug)!))
+      .sort((a, b) => b.spottedAt.getTime() - a.spottedAt.getTime());
 
-    const cards = saleCard ? [...codeCards, saleCard] : codeCards;
-    return cards.sort((a, b) => b.spottedAt.getTime() - a.spottedAt.getTime());
+    if (!saleCard) return codeCards;
+
+    // The sale always tails the rail — slot 4 or 5, never floated to the top by
+    // recency. 4-vs-5 is seeded on the build date so prerender and hydration agree.
+    const cards = [...codeCards];
+    const bottom = Math.max(0, cards.length - 1);   // index of the 4th card (of 5)
+    const insertIndex = this.seededBit(BUILD_DATE_ISO) ? bottom : cards.length;
+    cards.splice(insertIndex, 0, saleCard);
+    return cards;
   }
 
-  /** The freshest sale across every allowed shop — one card, or none if all are stale. */
+  /** Deterministic coin flip from a seed — used to alternate the sale between
+   *  slot 4 and slot 5 without Math.random() (prerender/hydration must agree). */
+  private seededBit(seed: string): boolean {
+    let h = 0;
+    for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+    h = (h * 1664525 + 1013904223) >>> 0;   // one LCG step, same family as seededShuffle
+    return (h & 1) === 0;
+  }
+
+  /** The freshest sale across EVERY shop in the feed — not just the featured slugs —
+   *  as one card, or none if all are stale. The sale slot is deliberately unrestricted:
+   *  we just want the single most recent sale that's available anywhere. */
   private pickSaleCard(buildDate: Date): FeaturedCardVM | null {
     let best: { slug: string; text: string; date: Date; iso: string } | null = null;
 
-    for (const slug of FEATURED_SLUGS) {
+    for (const slug of Object.keys(SPOTTED_SALES)) {
       const sale = SPOTTED_SALES[slug]?.[0];   // each shop's list is newest-first
       if (!sale) continue;
 

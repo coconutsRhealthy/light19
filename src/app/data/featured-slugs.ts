@@ -21,5 +21,6 @@ export const FEATURED_SLUGS: string[] = [
   'ginatricot',
   'creamyfabrics',
   'bylashbabe',
-  'oduree.nl'
+  'oduree.nl',
+  'loavies'
 ];
