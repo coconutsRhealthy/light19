@@ -61,7 +61,6 @@
 /anneday.nl
 /anthropologie
 /anwbwinkel
-/aoolia
 /apercueyewear
 /applesandbananasofficial
 /archy
@@ -139,7 +138,6 @@
 /biteswelove
 /biyu
 /bjornborg
-/bkcookware
 /blackboughswim
 /blackfriday
 /blackroll
@@ -161,7 +159,6 @@
 /boerschappen
 /bohae.nl
 /bol.com
-/bonnemaman
 /bonprix
 /boohoo
 /boohooman
@@ -421,6 +418,7 @@
 /everready
 /everready.nl
 /everyfoods
+/eves_hopnl
 /evite
 /evolveyou
 /evryjewels
@@ -462,7 +460,6 @@
 /fitshop.nl
 /fittasticsportswear
 /fittwear.nl
-/fitzwanger
 /fjuled
 /flaatch.nl
 /flaconi
@@ -586,6 +583,7 @@
 /heine
 /helicoptercentremallorca
 /hellobeautybychantal
+/hellochair
 /hellofresh.nl
 /hema
 /herokacosmetics
@@ -593,7 +591,6 @@
 /het_speelatelier
 /hetheleplaatje
 /hetinpakhuis
-/hetperfectehuisje
 /hetspeellab.nl
 /hexxee
 /heydude
@@ -612,6 +609,7 @@
 /horseflex.nl
 /hostinger
 /hostnet
+/hotelstacherhof
 /hotelwereldsgenieten
 /housevitaminnl
 /houtenplenkske
@@ -775,7 +773,6 @@
 /maevenart
 /magictourclub
 /maicazz.nl
-/maisemirae
 /maje
 /makemefamousshop
 /makeupfactory.nl
@@ -819,7 +816,6 @@
 /mijnboxspring
 /mijnhummeltje
 /mijnkindplanner
-/mijnkoes
 /milezbracelets
 /mimamsterdam
 /mimmti.com
@@ -866,6 +862,7 @@
 /mytrip
 /naduvi.nl
 /nakdfashion
+/name_on_it_by_kos
 /nameit
 /namimatcha
 /namly.nl
@@ -878,7 +875,6 @@
 /nelson
 /nelsonschoenen
 /neonail
-/neonaliving
 /newbalance
 /next
 /nextextreme
@@ -925,7 +921,6 @@
 /omoda
 /on
 /onceuponapp
-/ondulato
 /onebioshop
 /oneill
 /oneplus
@@ -933,6 +928,7 @@
 /ongediertewinkel
 /only
 /onlyformen
+/onlywow.nl
 /onthatass
 /opberghoekje.nl
 /opulairejewelry
@@ -1055,6 +1051,7 @@
 /rienthelabel
 /rif010.nl
 /rihoas
+/ripstar_travel
 /ripsvintage
 /rngne
 /robell
@@ -1108,6 +1105,7 @@
 /selana
 /sellpy
 /sembo
+/sensitestbv
 /september18
 /sev.plantenbakken
 /shannonchristina
@@ -1115,6 +1113,7 @@
 /shaporashein
 /sharkclean
 /sharkclean.nl
+/sharkninja.nl
 /sheclothes
 /shein
 /shellac4u_
@@ -1227,7 +1226,6 @@
 /sunday.nl
 /sunday.running24
 /suneclipse
-/sunfere
 /suntip
 /suntip.nl
 /sunweb
@@ -1376,7 +1374,6 @@
 /vedder.vedder
 /veganboost
 /velostore
-/venconcepts
 /veneta
 /veromoda
 /vertbaudet
@@ -1385,7 +1382,6 @@
 /vigorbuy
 /vikingdirect
 /vildthelabel
-/villaforyou
 /vimasantorini
 /vingino
 /viperdrinks
@@ -1426,7 +1422,6 @@
 /wearedynter
 /weargalvier
 /wearingmotion
-/wedtrend
 /weekday
 /wefashion
 /wehkamp
@@ -1451,7 +1446,6 @@
 /womensbest
 /woood
 /workliving.nl
-/wumby
 /xiaomi
 /xoxowildhearts
 /xpluswear

@@ -605,12 +605,12 @@
   ],
   "eeveveofficial": [
     {
-      "text": "€5 korting op een aankoop",
-      "date": "2026-07-05"
+      "text": "10% korting bij toevoegen van een knoeimat aan je speelmat",
+      "date": "2026-07-13"
     },
     {
-      "text": "10% korting bij toevoegen van een knoeimat aan je speelmat",
-      "date": "2026-07-02"
+      "text": "€5 korting op een aankoop",
+      "date": "2026-07-05"
     },
     {
       "text": "10% korting bij aankoop van een knoeimat bij een speelmat",
@@ -1037,16 +1037,16 @@
   ],
   "jeuliajewelry": [
     {
+      "text": "Draai aan het rad en maak kans op een gratis ring",
+      "date": "2026-07-13"
+    },
+    {
       "text": "Zomeruitverkoop met 30% korting bij koop van twee artikelen met code SUMMER",
       "date": "2026-07-09"
     },
     {
       "text": "10% korting op alles met code WEDSEASON tijdens trouwseizoen",
       "date": "2026-06-26"
-    },
-    {
-      "text": "Draai aan het rad en maak kans op een gratis ring",
-      "date": "2026-06-24"
     },
     {
       "text": "20% korting op Timeless K-Gold collectie plus gratis cadeau",
@@ -1117,6 +1117,12 @@
       "date": "2026-06-12"
     }
   ],
+  "kudlworld": [
+    {
+      "text": "10% korting op de bestelling",
+      "date": "2026-07-13"
+    }
+  ],
   "lakkiegellak": [
     {
       "text": "20% korting op geselecteerde producten",
@@ -1125,6 +1131,12 @@
     {
       "text": "10% korting bij eerste bestelling na aanmelding",
       "date": "2026-07-07"
+    }
+  ],
+  "lampen24": [
+    {
+      "text": "Extra 10% korting vanaf €99 en 13% vanaf €159 met code ZOMER",
+      "date": "2026-07-13"
     }
   ],
   "large.nl": [
@@ -1191,6 +1203,10 @@
   ],
   "lookfantastic": [
     {
+      "text": "25% korting op bijna alles met code MAANDAG",
+      "date": "2026-07-13"
+    },
+    {
       "text": "30% korting op favoriete producten met code ZONDAG, alleen vandaag",
       "date": "2026-07-05"
     },
@@ -1201,10 +1217,6 @@
     {
       "text": "20% korting op (bijna) alles met code SHOP",
       "date": "2026-06-09"
-    },
-    {
-      "text": "25% korting op bijna alles met code MAANDAG",
-      "date": "2026-06-08"
     },
     {
       "text": "30% korting op geselecteerde producten op koopzondag met code ZONDAG",
@@ -1275,6 +1287,10 @@
   ],
   "lucardi": [
     {
+      "text": "Nieuwe sale met kortingen tot 70% op diverse producten",
+      "date": "2026-07-13"
+    },
+    {
       "text": "25% korting op alles tijdens Member shopping day",
       "date": "2026-07-12"
     },
@@ -1341,6 +1357,10 @@
   ],
   "lyko": [
     {
+      "text": "15% korting op Kérastase producten",
+      "date": "2026-07-14"
+    },
+    {
       "text": "25% korting op COSRX-favorieten",
       "date": "2026-07-10"
     },
@@ -1388,6 +1408,10 @@
     }
   ],
   "micas": [
+    {
+      "text": "Tijdelijke aanbieding: koop 3, krijg 1 gratis",
+      "date": "2026-07-15"
+    },
     {
       "text": "Vakantie-uitverkoop met tot 60% korting",
       "date": "2026-06-17"
@@ -1459,18 +1483,22 @@
   ],
   "mysample.nl": [
     {
+      "text": "Gratis hervulbare travelspray bij besteding vanaf €35",
+      "date": "2026-07-13"
+    },
+    {
       "text": "15% korting met code ZOMER15",
       "date": "2026-06-27"
     }
   ],
   "nakdfashion": [
     {
-      "text": "Nieuwe zomerse uitverkoop promotie",
-      "date": "2026-07-12"
+      "text": "30% korting op alles",
+      "date": "2026-07-14"
     },
     {
-      "text": "30% korting op alles",
-      "date": "2026-07-05"
+      "text": "Nieuwe zomerse uitverkoop promotie",
+      "date": "2026-07-12"
     },
     {
       "text": "Nieuwe stijlen toegevoegd voor minder dan €10",
@@ -2017,6 +2045,10 @@
   ],
   "snuggs": [
     {
+      "text": "30% korting op menstruatie- en gewone zwemkleding",
+      "date": "2026-07-13"
+    },
+    {
       "text": "47% korting op 7 producten gedurende 7 dagen",
       "date": "2026-06-15"
     },
@@ -2042,6 +2074,10 @@
     }
   ],
   "sophiamae": [
+    {
+      "text": "Cadeau bij aankopen vanaf €60",
+      "date": "2026-07-13"
+    },
     {
       "text": "Twee bestsellers samen in een luxe geschenkdoos",
       "date": "2026-06-30"
@@ -2096,6 +2132,14 @@
     }
   ],
   "stylekorean": [
+    {
+      "text": "4 dagen aanbieding: K-Hidden Gems voor slechts $29",
+      "date": "2026-07-14"
+    },
+    {
+      "text": "Extra 10%, 20% en 30% korting op bestellingen vanaf respectievelijk $0, $120 en $200 met de nieuwe Glow Savings Coupon",
+      "date": "2026-07-13"
+    },
     {
       "text": "3 dagen aanbieding: Pharmacy Box 2 voor slechts $85 met 22 klinische producten",
       "date": "2026-07-06"
@@ -2168,6 +2212,10 @@
     }
   ],
   "ullapopken.nl": [
+    {
+      "text": "Tijdelijke actie: alles voor de halve prijs",
+      "date": "2026-07-15"
+    },
     {
       "text": "Extra zomeruitverkoop met alles onder €30 en een gratis badhanddoek bij besteding vanaf €99",
       "date": "2026-07-09"

@@ -59,7 +59,7 @@ export class AffiliateLinkService {
         dummyCode: 'SHOPPING30QO9'
     },
     'lookfantastic': {
-        url: 'https://tidd.ly/4iykJXb',
+        url: 'https://www.awin1.com/cread.php?awinmid=15785&awinaffid=1870794&ued=https%3A%2F%2Fwww.lookfantastic.nl%2Fc%2Foffers%2Feu-exclusions%2Faffiliates%2Fflat%2F',
         dummyCode: 'LFDISKI'
     },
     'h&m': {
