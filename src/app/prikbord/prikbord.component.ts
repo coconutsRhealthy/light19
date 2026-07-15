@@ -138,8 +138,11 @@ export class PrikbordComponent implements OnInit {
   }
 
   onSearch() {
+    // Strip non-alphanumerics on both sides so a spaced query like "le olive"
+    // still matches "leolive" (matches homepage/winkels search behaviour).
+    const term = this.searchTerm.toLowerCase().replace(/[^a-z0-9]/g, '');
     this.filteredprikbordData = this.prikbordData.filter((PrikbordEntry) =>
-      PrikbordEntry.webshop.toLowerCase().includes(this.searchTerm.toLowerCase())
+      PrikbordEntry.webshop.toLowerCase().replace(/[^a-z0-9]/g, '').includes(term)
     );
     this.page = 1;
   }

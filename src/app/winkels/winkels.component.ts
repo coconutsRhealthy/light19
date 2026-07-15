@@ -65,11 +65,13 @@ export class WinkelsComponent implements OnInit {
   }
 
   get filteredShops(): string[] {
-    const term = this.searchTerm.toLowerCase().trim();
+    // Normalize by stripping non-alphanumerics on both sides so a spaced query
+    // like "le olive" still matches the "leolive" slug (matches homepage search).
+    const term = this.searchTerm.toLowerCase().replace(/[^a-z0-9]/g, '');
     return this.allShops.filter((s) => {
       const okLetter = this.selectedLetter === 'Alle'
         || (this.selectedLetter === '0-9' ? /^[^a-zA-Z]/.test(s) : s.toUpperCase().startsWith(this.selectedLetter));
-      const okText = !term || s.toLowerCase().includes(term);
+      const okText = !term || s.toLowerCase().replace(/[^a-z0-9]/g, '').includes(term);
       return okLetter && okText;
     });
   }
