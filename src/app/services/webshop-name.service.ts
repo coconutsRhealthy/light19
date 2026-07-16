@@ -17,6 +17,7 @@ export class WebshopNameService {
     'gutsgusto': 'Guts en Gusto',
     'hellofresh.nl': 'HelloFresh',
     'hm': 'H&M',
+    'h&m': 'H&M',
     'hunkemoller': 'Hunkemöller',
     'icaniwill': 'ICANIWILL',
     'idealofsweden': 'iDeal of Sweden',
