@@ -14,42 +14,63 @@
 
     <div #rail class="deal-rail tw-flex tw-gap-4 sm:tw-gap-5 tw-overflow-x-auto tw-snap-x tw-snap-mandatory tw-pb-2">
       @for (c of cards; track c.kind + c.slug) {
-        <a
-          [routerLink]="['/', c.slug]"
-          (click)="onCardClick(c, $event)"
-          class="tw-snap-start tw-shrink-0 tw-w-[280px] sm:tw-w-[340px] tw-no-underline tw-text-ink"
-        >
-          <div class="tw-h-20 sm:tw-h-[6.5rem] tw-rounded-2xl tw-bg-gradient-to-br tw-from-sky tw-to-butter tw-flex tw-items-start tw-justify-center tw-px-4 tw-pt-3">
-            <span class="tw-font-title tw-font-bold tw-tracking-tight tw-text-ink/40 tw-text-sm sm:tw-text-base">{{ c.name }}</span>
-          </div>
-          <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw--mt-12 tw-mx-4 tw-relative tw-shadow-[0_18px_44px_rgba(67,48,46,0.10)] tw-grid tw-grid-cols-[88px_1fr] tw-overflow-hidden">
-            <div class="tw-flex tw-items-center tw-justify-center tw-bg-white tw-border-r tw-border-ink/10 tw-p-3">
-              @if (c.logo) {
-                <img [src]="c.logo" [alt]="c.name" width="64" height="64" loading="lazy" class="tw-max-w-full tw-h-auto tw-object-contain" />
-              } @else {
-                <span class="tw-font-title tw-font-bold tw-text-center tw-leading-tight tw-text-sm tw-tracking-tight">{{ c.name }}</span>
-              }
-            </div>
-            <div class="tw-p-4">
-              <div class="tw-flex tw-justify-between tw-items-baseline tw-gap-2">
-                <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-link">
-                  {{ c.kind === 'code' ? 'Kortingscode' : 'Sale' }}
-                </span>
-              </div>
-
-              @if (c.kind === 'code') {
-                <div class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-mt-1">{{ c.titleText }}</div>
-              } @else {
-                <div class="tw-font-body tw-text-xs sm:tw-text-[13px] tw-text-ink/70 tw-mt-1.5 tw-leading-snug">{{ c.saleText }}</div>
-              }
-
-              <time [attr.datetime]="c.dateIso" class="tw-block tw-font-body tw-text-[11px] tw-text-ink/50 tw-mt-2">
-                Gespot op {{ c.dateLabel }}
-              </time>
-            </div>
-          </div>
-        </a>
+        @if (c.linkUrl) {
+          <a
+            [href]="c.linkUrl"
+            target="_blank"
+            rel="noopener sponsored"
+            (click)="onCardClick(c, $event)"
+            class="tw-snap-start tw-shrink-0 tw-w-[280px] sm:tw-w-[340px] tw-no-underline tw-text-ink"
+          >
+            <ng-container [ngTemplateOutlet]="cardInner" [ngTemplateOutletContext]="{ $implicit: c }"></ng-container>
+          </a>
+        } @else {
+          <a
+            [routerLink]="['/', c.slug]"
+            (click)="onCardClick(c, $event)"
+            class="tw-snap-start tw-shrink-0 tw-w-[280px] sm:tw-w-[340px] tw-no-underline tw-text-ink"
+          >
+            <ng-container [ngTemplateOutlet]="cardInner" [ngTemplateOutletContext]="{ $implicit: c }"></ng-container>
+          </a>
+        }
       }
     </div>
   </section>
 }
+
+<!-- Shared card body — used by both the routerLink and custom-url anchors above. -->
+<ng-template #cardInner let-c>
+  <div class="tw-h-20 sm:tw-h-[6.5rem] tw-rounded-2xl tw-bg-gradient-to-br tw-from-sky tw-to-butter tw-flex tw-items-start tw-justify-center tw-px-4 tw-pt-3">
+    <span class="tw-font-title tw-font-bold tw-tracking-tight tw-text-ink/40 tw-text-sm sm:tw-text-base">{{ c.name }}</span>
+  </div>
+  <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw--mt-12 tw-mx-4 tw-relative tw-shadow-[0_18px_44px_rgba(67,48,46,0.10)] tw-grid tw-grid-cols-[88px_1fr] tw-overflow-hidden">
+    <div class="tw-flex tw-items-center tw-justify-center tw-bg-white tw-border-r tw-border-ink/10 tw-p-3">
+      @if (c.logo) {
+        <img [src]="c.logo" [alt]="c.name" width="64" height="64" loading="lazy" class="tw-max-w-full tw-h-auto tw-object-contain" />
+      } @else {
+        <span class="tw-font-title tw-font-bold tw-text-center tw-leading-tight tw-text-sm tw-tracking-tight">{{ c.name }}</span>
+      }
+    </div>
+    <div class="tw-p-4">
+      <div class="tw-flex tw-justify-between tw-items-baseline tw-gap-2">
+        @if (c.kind === 'top') {
+          <span class="tw-inline-flex tw-items-center tw-gap-1 tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink tw-bg-butter tw-rounded-full tw-px-2 tw-py-0.5">★ Top deal</span>
+        } @else {
+          <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-link">
+            {{ c.kind === 'code' ? 'Kortingscode' : 'Sale' }}
+          </span>
+        }
+      </div>
+
+      @if (c.kind === 'code') {
+        <div class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-mt-1">{{ c.titleText }}</div>
+      } @else {
+        <div class="tw-font-body tw-text-xs sm:tw-text-[13px] tw-text-ink/70 tw-mt-1.5 tw-leading-snug">{{ c.saleText }}</div>
+      }
+
+      <time [attr.datetime]="c.dateIso" class="tw-block tw-font-body tw-text-[11px] tw-text-ink/50 tw-mt-2">
+        Gespot op {{ c.dateLabel }}
+      </time>
+    </div>
+  </div>
+</ng-template>

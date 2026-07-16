@@ -1,5 +1,5 @@
 import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgTemplateOutlet } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DiscountsService } from '../services/discounts.service';
 import { LogosService } from '../services/logos.service';
@@ -9,6 +9,7 @@ import { VisitorProfileService } from '../services/visitor-profile.service';
 import { BUILD_DATE_ISO } from '../build-info';
 import { FEATURED_SLUGS } from '../data/featured-slugs';
 import spottedSalesData from '../data/spotted-sales.json';
+import topDealsData from '../data/top-deals.json';
 
 declare global {
   interface Window {
@@ -20,6 +21,11 @@ declare global {
 // Sales are keyed by the same slug the brand pages use, newest-first already
 // (see scripts/generate-spotted-sales.js).
 const SPOTTED_SALES = spottedSalesData as { [slug: string]: { text: string; date: string }[] };
+
+// Hand-written "top deals" (src/app/data/top-deals.json). These outrank the code
+// and sale cards and take the first slots in the rail. Fully manual — no feed data.
+interface TopDeal { slug: string; text: string; date: string; url?: string; }
+const TOP_DEALS = (topDealsData.deals ?? []) as TopDeal[];
 
 /** Never render more than this many cards, however many slugs are eligible. */
 const MAX_CARDS = 5;
@@ -40,7 +46,7 @@ const MONTHS_NL = [
 
 /** One card. A shop can produce a code card AND a sale card — they're separate. */
 export interface FeaturedCardVM {
-  kind: 'code' | 'sale';
+  kind: 'code' | 'sale' | 'top';
   slug: string;
   name: string;
   logo?: string;
@@ -49,8 +55,12 @@ export interface FeaturedCardVM {
   valueText?: string;   // "25%" or "€8"
   titleText?: string;   // "25% korting"
 
-  // kind === 'sale'
+  // kind === 'sale' | 'top' — free text shown on the card
   saleText?: string;
+
+  // kind === 'top' — optional custom destination; when set the card links here
+  // (external, new tab) instead of the brand page.
+  linkUrl?: string;
 
   /** When this code/sale was spotted; drives the rail order. */
   spottedAt: Date;
@@ -60,7 +70,7 @@ export interface FeaturedCardVM {
 
 @Component({
   selector: 'app-featured-deals',
-  imports: [RouterModule],
+  imports: [RouterModule, NgTemplateOutlet],
   templateUrl: './featured-deals.component.html',
   styleUrls: ['./featured-deals.component.css'],
 })
@@ -93,34 +103,66 @@ export class FeaturedDealsComponent implements OnInit {
     const buildDate = this.buildDate();
     const newestCode = this.newestCodePerSlug(lines, buildDate.getFullYear());
 
-    // --- the sale slot: the single freshest sale across the whole allowlist ----
-    const saleCard = this.pickSaleCard(buildDate);
+    // --- top deals: hand-written, always lead the rail (first/left-most slots) --
+    const topCards = this.pickTopCards().slice(0, MAX_CARDS);
+    const topSlugs = new Set(topCards.map(c => c.slug));
+    const roomAfterTop = MAX_CARDS - topCards.length;
+
+    // --- the sale slot: the single freshest sale across the whole feed ---------
+    // Skip shops already shown as a top deal so no brand appears twice.
+    const saleCard = roomAfterTop > 0 ? this.pickSaleCard(buildDate, topSlugs) : null;
 
     // --- the code slots: shops drawn at random, each showing its newest code ---
-    // Don't let the sale's shop take a code slot too — five cards, five shops.
+    // Exclude the sale's shop and any top-deal shop so every card is a new brand.
     const codePool = FEATURED_SLUGS
       .filter(slug => newestCode.has(slug))
-      .filter(slug => slug !== saleCard?.slug);
+      .filter(slug => slug !== saleCard?.slug)
+      .filter(slug => !topSlugs.has(slug));
 
-    const codeSlots = MAX_CARDS - (saleCard ? SALE_SLOTS : 0);
+    const codeSlots = roomAfterTop - (saleCard ? SALE_SLOTS : 0);
 
     // Seeded on the build date: a fresh draw every build, but prerender and
-    // hydration reproduce the same one (see seededShuffle). Codes lead the rail,
-    // sorted newest-first among themselves.
+    // hydration reproduce the same one (see seededShuffle). Codes sit in the
+    // middle, sorted newest-first among themselves.
     const codeCards = this.seededShuffle(codePool, BUILD_DATE_ISO)
-      .slice(0, codeSlots)
+      .slice(0, Math.max(0, codeSlots))
       .map(slug => this.toCodeCard(slug, newestCode.get(slug)!))
       .sort((a, b) => b.spottedAt.getTime() - a.spottedAt.getTime());
 
-    if (!saleCard) return codeCards;
-
-    // The sale always tails the rail — slot 4 or 5, never floated to the top by
+    // The sale tails the code group (slot 4/5 of that group), never floated up by
     // recency. 4-vs-5 is seeded on the build date so prerender and hydration agree.
-    const cards = [...codeCards];
-    const bottom = Math.max(0, cards.length - 1);   // index of the 4th card (of 5)
-    const insertIndex = this.seededBit(BUILD_DATE_ISO) ? bottom : cards.length;
-    cards.splice(insertIndex, 0, saleCard);
-    return cards;
+    let tail = codeCards;
+    if (saleCard) {
+      tail = [...codeCards];
+      const bottom = Math.max(0, tail.length - 1);
+      const insertIndex = this.seededBit(BUILD_DATE_ISO) ? bottom : tail.length;
+      tail.splice(insertIndex, 0, saleCard);
+    }
+
+    // Top deals lead, then codes, then the sale at the bottom.
+    return [...topCards, ...tail].slice(0, MAX_CARDS);
+  }
+
+  /** The hand-written top deals as cards, newest date first. Fully manual —
+   *  no feed lookups; the slug just supplies the logo, name and link. */
+  private pickTopCards(): FeaturedCardVM[] {
+    return TOP_DEALS
+      .filter(d => d && d.slug && d.text && /^\d{4}-\d{2}-\d{2}$/.test(d.date))
+      .map(d => {
+        const date = this.parseIsoDate(d.date);
+        return {
+          kind: 'top' as const,
+          slug: d.slug,
+          name: this.displayName(d.slug),
+          logo: this.logos[d.slug],
+          saleText: d.text,
+          linkUrl: d.url?.trim() || undefined,   // custom landing page, if any
+          spottedAt: date,
+          dateLabel: this.formatDate(date),
+          dateIso: d.date,
+        };
+      })
+      .sort((a, b) => b.spottedAt.getTime() - a.spottedAt.getTime());
   }
 
   /** Deterministic coin flip from a seed — used to alternate the sale between
@@ -135,10 +177,11 @@ export class FeaturedDealsComponent implements OnInit {
   /** The freshest sale across EVERY shop in the feed — not just the featured slugs —
    *  as one card, or none if all are stale. The sale slot is deliberately unrestricted:
    *  we just want the single most recent sale that's available anywhere. */
-  private pickSaleCard(buildDate: Date): FeaturedCardVM | null {
+  private pickSaleCard(buildDate: Date, exclude: Set<string> = new Set()): FeaturedCardVM | null {
     let best: { slug: string; text: string; date: Date; iso: string } | null = null;
 
     for (const slug of Object.keys(SPOTTED_SALES)) {
+      if (exclude.has(slug)) continue;         // already shown as a top deal
       const sale = SPOTTED_SALES[slug]?.[0];   // each shop's list is newest-first
       if (!sale) continue;
 
@@ -224,6 +267,10 @@ export class FeaturedDealsComponent implements OnInit {
    *  opens in a new tab. Without an affiliate link the routerLink just navigates. */
   onCardClick(card: FeaturedCardVM, event: MouseEvent): void {
     this.trackBrandClick(card);
+
+    // A top deal with a custom landing page is a plain external link — let the
+    // anchor's href handle navigation (no affiliate/brand-page redirect).
+    if (card.linkUrl) return;
 
     const affiliateLink = this.affiliateLinkService.getAffiliateLink(card.slug);
     if (affiliateLink !== undefined && this.isBrowser) {

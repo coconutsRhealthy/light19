@@ -1,0 +1,6 @@
+{
+  "_readme": "Hand-written TOP DEALS for the homepage rail ('De beste deals van vandaag'). A top deal ALWAYS outranks the auto-generated kortingscode and sale cards and takes the first (left-most) slots. Fully manual: nothing is pulled from the live feeds. Each deal has: slug (a real brand-page slug, e.g. 'gymshark' or 'oduree.nl' — drives the logo, name and link; does NOT need a code or sale in the feeds), text (free text shown on the card, keep it short), date (YYYY-MM-DD, shown as 'Gespot op ...' and used to order multiple deals, newest first), and OPTIONAL url (a specific landing page for this promotion — when set the card links there in a new tab; when omitted or empty the card links to the normal brand page for the slug). Top deals do NOT auto-expire — remove the entry when it's no longer relevant. Empty 'deals' array = rail behaves as before (4 codes + 1 sale).",
+  "deals": [
+    { "slug": "myproteinnl", "text": "Pre-Workout voor slechts €17,99 voor nieuwe klanten", "date": "2026-07-16" }
+  ]
+}
