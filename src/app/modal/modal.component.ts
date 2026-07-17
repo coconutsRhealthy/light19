@@ -24,6 +24,33 @@ export class ModalComponent {
   ]);
   private static readonly RECENT_DAYS = 5;
 
+  /**
+   * Brands that never see the email gate, whatever the rules below say.
+   *
+   * These are not in EVERGREEN_BRANDS — they get gated only because RECENT_DAYS
+   * sweeps in anything published in the last 5 days, which keys off our own
+   * publishing schedule rather than a brand's pulling power. This set is the
+   * override for brands where the gate isn't earning its keep.
+   */
+  private static readonly NEVER_GATE = new Set<string>([
+    'elvou',
+    'lookfantastic',
+    'myproteinnl',
+    'creamyfabrics',
+    'idealofsweden',
+    'desenio',
+    'vitakruid',
+    'bylashbabe',
+    'hellofresh.nl',
+    'ubereats',
+    'prozis',
+    'yesstyle',
+    'oduree.nl',
+    'leolive',
+    'sunday.nl',
+    'koro.com',
+  ]);
+
   @Input() isVisible = false;
   @Output() closed = new EventEmitter<void>();
   isCopied = false;
@@ -51,7 +78,8 @@ export class ModalComponent {
       const companySlug = this.discount?.companySlug?.toLowerCase();
       const recentSlugs = this.discountsService.getRecentlyAddedSlugs(ModalComponent.RECENT_DAYS);
       const requiresEmail =
-        ModalComponent.EVERGREEN_BRANDS.has(companySlug) || recentSlugs.has(companySlug);
+        !ModalComponent.NEVER_GATE.has(companySlug) &&
+        (ModalComponent.EVERGREEN_BRANDS.has(companySlug) || recentSlugs.has(companySlug));
 
       if (savedEmail || !requiresEmail) {
         this.mailAddress = savedEmail ?? '';
