@@ -5,8 +5,9 @@
 .env.local
 scripts/.env.local
 
-# GSC analysis tooling — local-only, never commit (also keeps keys out as a backstop)
+# GSC / GA4 analysis tooling — local-only, never commit (also keeps keys out as a backstop)
 scripts/gsc/
+scripts/ga4/
 *service-account*.json
 *-sa.json
 
