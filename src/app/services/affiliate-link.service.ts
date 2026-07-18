@@ -899,7 +899,7 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'cabaulifestyle': {
-        url: 'https://cabau-lifestyle-nl.mtpc.se/5924518',
+        url: 'https://conversions.cabaulifestyle.com/c?c=34848&m=12&a=509848&r=&u=%2Fnl',
         dummyCode: 'STEVIE'
     },
     'xxlnutrition': {

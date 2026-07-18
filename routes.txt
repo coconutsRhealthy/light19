@@ -40,7 +40,6 @@
 /albertheijn
 /alectobaby
 /aliexpress
-/allroundstylingbycharlotte
 /allsaints
 /alohas
 /alpha.lion
@@ -54,6 +53,7 @@
 /amisamour
 /amsliving
 /amsliving.nl
+/analogapp
 /anewsta
 /angskincare
 /animigo
@@ -113,6 +113,7 @@
 /bellaandduke
 /bellabarnett
 /bellabarnett.official
+/bellakini
 /bellelux
 /bellobox.nl
 /bellure.fashion
@@ -152,6 +153,7 @@
 /bloomfull.nl
 /bloominggoodofficial
 /bloomon
+/bluegroundhomes
 /bluetomato
 /blumill.nl
 /bodyandfit.com
@@ -203,7 +205,6 @@
 /byrenee.nl
 /cabaia
 /cabaulifestyle
-/cadeauvanjou
 /caiacosmetics
 /calliegifts
 /calvinklein
@@ -241,6 +242,7 @@
 /cleansreinigingen
 /clearsmile
 /clearsmile.nl
+/cleenlab
 /cloudpillo.nl
 /clovira.creations
 /clubrepublique
@@ -429,6 +431,7 @@
 /factormeals
 /familieresortmolenwaard
 /famousstore
+/fannyfitcom
 /farmcamps
 /farmina
 /fashionabels.eu
@@ -731,10 +734,12 @@
 /linguaplanta
 /linniesfashion
 /lionheart.fest
+/lipoelastic
 /little_monkeez.nl
 /littledutch
 /littlemaryam
 /livin24
+/lizetbeek_shop
 /lkbennett
 /lkswimwear
 /loavies
@@ -793,6 +798,7 @@
 /marleyspoon.nl
 /marliesdekkers
 /marlydesign_com
+/marrygrafie
 /massivewood_
 /matchu
 /matrasatelier
@@ -826,6 +832,7 @@
 /misspompadour
 /mizuno
 /mkbmshop
+/mkbmshopkillerbodyfood
 /mockberg
 /modofashion.nl
 /moisecare
@@ -910,6 +917,7 @@
 /oduree.nl
 /oemaayah
 /ofm
+/ogbbeautyofficial
 /oglmove
 /ohcascas amsterdam
 /olcaygulsenbeauty
@@ -965,7 +973,6 @@
 /pascaud
 /passatennis
 /paulaschoice.nl
-/pauliepocket
 /paulvalentine
 /peek&cloppenburg
 /peintagone_nl
@@ -1016,6 +1023,7 @@
 /privacy-policy
 /proglow
 /proshop
+/proteinicedcoffee
 /prozis
 /prydligt
 /puckababy
@@ -1195,6 +1203,7 @@
 /stiksen
 /stoxenergy
 /stradivarius
+/strandparkvlugtenburg
 /street-one
 /street-one.nl
 /strellson
@@ -1246,7 +1255,9 @@
 /tadaaz
 /tadaaz.nl
 /tafelloodz
+/tallishop.nl
 /tallk
+/tallknl
 /tallowcosmetics
 /tanrevel
 /tapoutclub
@@ -1324,6 +1335,7 @@
 /tuinmeubelshop.nl
 /tuinmeubelwereld
 /tweedekansje
+/twinkeyeurope
 /twinky.nl
 /twinkystore
 /twinkystore.nl
@@ -1453,6 +1465,7 @@
 /yas
 /yehwang_wholesale
 /yehwang-wholesale
+/yepoda
 /yesstyle
 /yfn
 /yfood

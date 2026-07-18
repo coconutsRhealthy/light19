@@ -13,6 +13,10 @@
   ],
   "3bearsporridge": [
     {
+      "text": "Zomeruitverkoop met dubbele besparingen",
+      "date": "2026-07-17"
+    },
+    {
       "text": "15% korting bij eerste bestelling na aanmelding nieuwsbrief",
       "date": "2026-05-12"
     }
@@ -106,7 +110,7 @@
   "airalo.com": [
     {
       "text": "Tot 10% cashback verdienen bij reizen, automatisch",
-      "date": "2026-06-12"
+      "date": "2026-07-15"
     }
   ],
   "akuwoodpenal": [
@@ -185,6 +189,12 @@
       "date": "2026-05-17"
     }
   ],
+  "anthropologie": [
+    {
+      "text": "25% korting op nieuwe kleding en accessoires",
+      "date": "2026-07-16"
+    }
+  ],
   "arket": [
     {
       "text": "Meld je aan als ARKET-lid voor vroege toegang tot de uitverkoop.",
@@ -192,6 +202,10 @@
     }
   ],
   "armedangels": [
+    {
+      "text": "Tot 60% korting op dames- en herensale",
+      "date": "2026-07-16"
+    },
     {
       "text": "Tot 30% korting op denim voor dames en heren",
       "date": "2026-06-11"
@@ -391,6 +405,12 @@
     {
       "text": "Exclusieve pre-party summer sale met speciale deals en gratis shoppen voor de eerste 100 klanten op maandag 10:00 uur.",
       "date": "2026-05-23"
+    }
+  ],
+  "cecil": [
+    {
+      "text": "Zomerse uitverkoop met aanbiedingen voor dames en heren",
+      "date": "2026-07-15"
     }
   ],
   "charlottetilbury": [
@@ -737,6 +757,10 @@
   ],
   "fejo_studio": [
     {
+      "text": "50% korting op Swim Essentials met code SWIM50, tijdgebonden actie",
+      "date": "2026-07-17"
+    },
+    {
       "text": "Stapelkorting met 10%, 15% of 20% korting afhankelijk van het aantal items",
       "date": "2026-06-24"
     },
@@ -749,6 +773,12 @@
     {
       "text": "Gratis okselbehandeling op zaterdag 13 juni, alleen die dag geldig.",
       "date": "2026-06-15"
+    }
+  ],
+  "fittasticsportswear": [
+    {
+      "text": "Gratis tote bag bij elke bestelling tot 15 juli, zolang de voorraad strekt.",
+      "date": "2026-07-15"
     }
   ],
   "flexispot": [
@@ -797,6 +827,12 @@
     {
       "text": "15% korting op je eerste bestelling bij inschrijving op de nieuwsbrief",
       "date": "2026-05-21"
+    }
+  ],
+  "goodevas.com": [
+    {
+      "text": "Tot 45% korting",
+      "date": "2026-07-16"
     }
   ],
   "gympin": [
@@ -1083,7 +1119,17 @@
       "date": "2026-04-16"
     }
   ],
+  "kasteeloost": [
+    {
+      "text": "1+1 gratis op cocktails tijdens Summer Weekends elke vrijdag t/m zondag van 16.00-18.00",
+      "date": "2026-07-15"
+    }
+  ],
   "kenwood": [
+    {
+      "text": "20% korting met code FRESH20 op zomerse gerechten",
+      "date": "2026-07-15"
+    },
     {
       "text": "2 gratis accessoires bij aankoop als introductieaanbod",
       "date": "2026-07-02"
@@ -1287,6 +1333,10 @@
   ],
   "lucardi": [
     {
+      "text": "Tijdelijke 1+1 gratis actie op alle sale artikelen, alleen vanavond geldig",
+      "date": "2026-07-17"
+    },
+    {
       "text": "Nieuwe sale met kortingen tot 70% op diverse producten",
       "date": "2026-07-13"
     },
@@ -1435,6 +1485,12 @@
       "date": "2026-04-11"
     }
   ],
+  "mothersearth": [
+    {
+      "text": "Nieuw rad van fortuin met kans op 5% korting, gratis cadeau, gratis verzending of speciale deal",
+      "date": "2026-07-16"
+    }
+  ],
   "msmode": [
     {
       "text": "Sale met kortingen tot 50%",
@@ -1554,6 +1610,10 @@
     }
   ],
   "oliviakate": [
+    {
+      "text": "15% korting op alles, inclusief sale, met code HEATWAVE",
+      "date": "2026-07-16"
+    },
     {
       "text": "Gratis strandtas bij bestellingen vanaf €125",
       "date": "2026-07-11"
@@ -1875,6 +1935,10 @@
   ],
   "plussupermarkt": [
     {
+      "text": "50% korting op Beemster kaassalade en tapenade",
+      "date": "2026-07-15"
+    },
+    {
       "text": "1+1 gratis aanbieding op alle Calvé pindakaas van 350 gram",
       "date": "2026-07-08"
     }
@@ -1890,6 +1954,10 @@
     }
   ],
   "rituals": [
+    {
+      "text": "Tot 50% korting tijdens de sale",
+      "date": "2026-07-15"
+    },
     {
       "text": "25% korting op alle Shimmer Oils",
       "date": "2026-07-08"
@@ -1913,6 +1981,12 @@
       "date": "2026-06-26"
     }
   ],
+  "saeroo": [
+    {
+      "text": "10% korting op eerste bestelling bij aanmelding Club SAEROO",
+      "date": "2026-07-17"
+    }
+  ],
   "safira": [
     {
       "text": "Tot 50% korting tijdens de sale",
@@ -1933,6 +2007,12 @@
     {
       "text": "Tijdgebonden evenement Galaxy Unpacked op 22 juli 2026 om 15:00 uur",
       "date": "2026-07-08"
+    }
+  ],
+  "sandandsky": [
+    {
+      "text": "25% korting op alles plus een gratis cadeau tijdens de Mid-Year Reset",
+      "date": "2026-07-16"
     }
   ],
   "sellpy": [
@@ -1985,6 +2065,10 @@
   ],
   "shoeby": [
     {
+      "text": "Nieuwe sale met kortingen tot 60% op dames-, heren- en kinderkleding",
+      "date": "2026-07-15"
+    },
+    {
       "text": "Tot 50% korting op dames-, heren- en kinderkleding",
       "date": "2026-06-21"
     },
@@ -2006,6 +2090,10 @@
     }
   ],
   "silksilky_official": [
+    {
+      "text": "50% korting op het derde kledingstuk voor dames",
+      "date": "2026-07-15"
+    },
     {
       "text": "Bij aankoop van 3 slaapkledingstukken is het 3e item 50% korting",
       "date": "2026-06-17"
@@ -2111,6 +2199,10 @@
   ],
   "stronger": [
     {
+      "text": "15% korting op eerste bestelling bij aanmaken account",
+      "date": "2026-07-15"
+    },
+    {
       "text": "Tot 60% korting op geselecteerde artikelen",
       "date": "2026-07-03"
     },
@@ -2150,6 +2242,10 @@
     }
   ],
   "stylewe": [
+    {
+      "text": "Tot 30% korting tijdens de Early Fall Event, beperkte tijd geldig.",
+      "date": "2026-07-16"
+    },
     {
       "text": "Zomerse uitverkoop met tot 50% korting",
       "date": "2026-07-09"
@@ -2200,6 +2296,10 @@
     }
   ],
   "to-be-dressed.nl": [
+    {
+      "text": "Zomeruitverkoop met tot 70% korting",
+      "date": "2026-07-15"
+    },
     {
       "text": "Zomeruitverkoop met tot 60% korting",
       "date": "2026-06-17"
@@ -2435,6 +2535,10 @@
   ],
   "womensbest": [
     {
+      "text": "Tot 50% korting op sportkleding en outlet",
+      "date": "2026-07-16"
+    },
+    {
       "text": "Tot 30% korting op geselecteerde Emphasize sportkleding",
       "date": "2026-07-05"
     },
@@ -2462,6 +2566,10 @@
     }
   ],
   "xoxowildhearts": [
+    {
+      "text": "20% korting met een kortingscode",
+      "date": "2026-07-15"
+    },
     {
       "text": "Nieuwe mystery korting actie waarbij je een envelop kunt openen voor een korting",
       "date": "2026-07-03"
