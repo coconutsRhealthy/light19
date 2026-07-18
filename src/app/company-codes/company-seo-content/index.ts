@@ -529,7 +529,7 @@ export async function loadSeoContent(company: string): Promise<string | null> {
     case 'twinkystore': return import('./twinkystore').then(m => m.default);
     case 'twistshakebaby': return import('./twistshakebaby').then(m => m.default);
     case 'tylko': return import('./tylko').then(m => m.default);
-    case 'uber-eats': return import('./uber-eats').then(m => m.default);
+    case 'ubereats': return import('./ubereats').then(m => m.default);
     case 'ugg-australia': return import('./ugg-australia').then(m => m.default);
     case 'ullapopken': return import('./ullapopken').then(m => m.default);
     case 'ultimatetravel': return import('./ultimatetravel').then(m => m.default);
