@@ -314,10 +314,6 @@ export class AffiliateLinkService {
         url: 'https://clk.tradedoubler.com/click?p=376362&a=3427761&url=https%3A%2F%2Fwww.skateshop.be%2Fnl%2F',
         dummyCode: 'SKAT10M5V'
     },
-    'purenaturegoods': {
-        url: 'https://tidd.ly/3FaGtdY',
-        dummyCode: 'PURE5CDA'
-    },
     'stekkies': {
         url: 'https://in.stekkies.com/t/t?a=1962471956&as=1971143404&t=2&tk=1',
         dummyCode: 'LOVELY259AQ'
@@ -637,10 +633,6 @@ export class AffiliateLinkService {
     'cosmopolitan': {
         url: 'https://tc.tradetracker.net/?c=30806&m=12&a=448474&r=&u=',
         dummyCode: 'COSMO5'
-    },
-    'outfitrer': {
-        url: 'https://tidd.ly/49JPhEC',
-        dummyCode: 'EXTRA10'
     },
     'osloskinlab': {
         url: 'https://tidd.ly/487Nms4',
