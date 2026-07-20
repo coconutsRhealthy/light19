@@ -7,7 +7,7 @@ import { WebshopNameService } from '../services/webshop-name.service';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
 import { BUILD_DATE_ISO } from '../build-info';
-import { FEATURED_SLUGS } from '../data/featured-slugs';
+import { FEATURED_SLUGS, PINNED_SLUGS } from '../data/featured-slugs';
 import spottedSalesData from '../data/spotted-sales.json';
 import topDealsData from '../data/top-deals.json';
 
@@ -108,18 +108,33 @@ export class FeaturedDealsComponent implements OnInit {
     const topSlugs = new Set(topCards.map(c => c.slug));
     const roomAfterTop = MAX_CARDS - topCards.length;
 
+    // --- pinned shops: guaranteed a slot, in listed order, before the draw -----
+    // Their cards come from the live feed like any other code card, so a pin
+    // always shows that shop's newest code. Skipped when it has none, or when
+    // it's already leading the rail as a top deal.
+    const pinnedCards = PINNED_SLUGS
+      .filter(slug => newestCode.has(slug))
+      .filter(slug => !topSlugs.has(slug))
+      .slice(0, roomAfterTop)
+      .map(slug => this.toCodeCard(slug, newestCode.get(slug)!));
+
+    const pinnedSlugs = new Set(pinnedCards.map(c => c.slug));
+    const spokenFor = new Set([...topSlugs, ...pinnedSlugs]);
+    const roomAfterPinned = roomAfterTop - pinnedCards.length;
+
     // --- the sale slot: the single freshest sale across the whole feed ---------
-    // Skip shops already shown as a top deal so no brand appears twice.
-    const saleCard = roomAfterTop > 0 ? this.pickSaleCard(buildDate, topSlugs) : null;
+    // Skip shops already shown as a top deal or a pin so no brand appears twice.
+    const saleCard = roomAfterPinned > 0 ? this.pickSaleCard(buildDate, spokenFor) : null;
 
     // --- the code slots: shops drawn at random, each showing its newest code ---
-    // Exclude the sale's shop and any top-deal shop so every card is a new brand.
+    // Exclude the sale's shop and anything already spoken for, so every card is
+    // a different brand.
     const codePool = FEATURED_SLUGS
       .filter(slug => newestCode.has(slug))
       .filter(slug => slug !== saleCard?.slug)
-      .filter(slug => !topSlugs.has(slug));
+      .filter(slug => !spokenFor.has(slug));
 
-    const codeSlots = roomAfterTop - (saleCard ? SALE_SLOTS : 0);
+    const codeSlots = roomAfterPinned - (saleCard ? SALE_SLOTS : 0);
 
     // Seeded on the build date: a fresh draw every build, but prerender and
     // hydration reproduce the same one (see seededShuffle). Codes sit in the
@@ -139,8 +154,8 @@ export class FeaturedDealsComponent implements OnInit {
       tail.splice(insertIndex, 0, saleCard);
     }
 
-    // Top deals lead, then codes, then the sale at the bottom.
-    return [...topCards, ...tail].slice(0, MAX_CARDS);
+    // Top deals lead, then pins, then codes, then the sale at the bottom.
+    return [...topCards, ...pinnedCards, ...tail].slice(0, MAX_CARDS);
   }
 
   /** The hand-written top deals as cards, newest date first. Fully manual —
@@ -241,9 +256,10 @@ export class FeaturedDealsComponent implements OnInit {
     return pool;
   }
 
-  /** The single most recent code per featured slug. */
+  /** The single most recent code per featured or pinned slug. A pin does not have
+   *  to be in FEATURED_SLUGS, so both lists are looked up. */
   private newestCodePerSlug(lines: string[], year: number): Map<string, { rawValue: string; date: Date }> {
-    const wanted = new Set(FEATURED_SLUGS);
+    const wanted = new Set([...FEATURED_SLUGS, ...PINNED_SLUGS]);
     const out = new Map<string, { rawValue: string; date: Date }>();
 
     for (const line of lines) {
