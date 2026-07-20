@@ -523,7 +523,6 @@ export async function loadSeoContent(company: string): Promise<string | null> {
     case 'trendcarpet': return import('./trendcarpet').then(m => m.default);
     case 'triplezeropro': return import('./triplezeropro').then(m => m.default);
     case 'troispommeshome': return import('./troispommeshome').then(m => m.default);
-    case 'tuinmeubelshop': return import('./tuinmeubelshop').then(m => m.default);
     case 'tuinmeubelwereld': return import('./tuinmeubelwereld').then(m => m.default);
     case 'tweedekansje': return import('./tweedekansje').then(m => m.default);
     case 'twinkystore': return import('./twinkystore').then(m => m.default);
