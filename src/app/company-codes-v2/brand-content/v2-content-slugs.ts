@@ -387,6 +387,7 @@ export const V2_CONTENT_SLUGS: ReadonlySet<string> = new Set([
   'tractive',
   'trail',
   'trendcarpet',
+  'tuinmeubelshop.nl',
   'twinkystore.nl',
   'twistshakebaby',
   'ullapopken.nl',
