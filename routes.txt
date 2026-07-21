@@ -43,6 +43,7 @@
 /allsaints
 /alohas
 /alpha.lion
+/alphalete
 /alpinehearingprotection
 /amagard
 /amanoknitwear
@@ -159,7 +160,6 @@
 /bodyandfit.com
 /bodylab.nl
 /boerschappen
-/bohae.nl
 /bol.com
 /bonprix
 /boohoo
@@ -665,7 +665,6 @@
 /jotoys
 /journaway
 /joybuy
-/juicyeguide
 /juuniek
 /jwverzekeringen
 /kaartje2go
@@ -679,7 +678,6 @@
 /keukentrend
 /keukenwrap.nl
 /kidcarcastle
-/kiddibee.nl
 /kidsdeco.nl
 /kidsdepartment
 /kiehls
@@ -761,8 +759,8 @@
 /lucardi
 /lucovitaal
 /luminoranl
+/lumoa.nl
 /lunaswimwear
-/lunchboxpacks
 /lureaux
 /lusini
 /luuloo.nl
@@ -823,6 +821,7 @@
 /mijnhummeltje
 /mijnkindplanner
 /milezbracelets
+/millarovekamp
 /mimamsterdam
 /mimmti.com
 /mimshoes
@@ -890,7 +889,6 @@
 /nike
 /ninjakitchen
 /nkgellak
-/noaendje.nl
 /noboringsuitcases
 /noelie
 /nolimithair.nl
@@ -907,7 +905,6 @@
 /oace
 /oakley
 /obelink
-/obsessedbylashes
 /ochtendblauw
 /odespleasure
 /odido mobiel
@@ -948,7 +945,6 @@
 /osock_performance
 /otensien.nl
 /otrium
-/outfitrer
 /ovabalance
 /overstappen.nl
 /ownesim
@@ -1000,6 +996,7 @@
 /plotpackers
 /plussupermarkt
 /plutosport
+/pluvion.nl
 /podobrace
 /poederbaas
 /poelmanbrands
@@ -1029,8 +1026,8 @@
 /puckababy
 /pullandbear
 /puma
+/purebyme
 /purebyzizo.nl
-/purenaturegoods
 /puritybase
 /q-park
 /qallolifestyle
@@ -1124,7 +1121,6 @@
 /sharkninja.nl
 /sheclothes
 /shein
-/shellac4u_
 /sherose
 /shesaidyes_official
 /shirttuning
@@ -1193,6 +1189,7 @@
 /startselect
 /stayokayhostels
 /steamone
+/steamstory
 /stedelijkmuseumbreda
 /stekkies
 /stellamccartney
@@ -1216,7 +1213,6 @@
 /studiofloraflora
 /studiofrenchie
 /studiogimme
-/studiolova
 /studiomint
 /studioroem
 /studiovreeken
@@ -1266,6 +1262,7 @@
 /teamathlevel
 /techweise
 /teddah
+/teddypeps.nl
 /tedhilley
 /tefal
 /temu
@@ -1288,7 +1285,6 @@
 /thegelexpert
 /thegoodroll
 /thejewellershop
-/themeadowscasino
 /themissingpiece
 /theordinary
 /theorie
@@ -1331,7 +1327,6 @@
 /tripadvisor
 /triplezeropro
 /troispommeshome
-/tuinmeubelshop
 /tuinmeubelshop.nl
 /tuinmeubelwereld
 /tweedekansje
@@ -1341,7 +1336,6 @@
 /twinkystore.nl
 /twistshakebaby
 /tylko
-/uber-eats
 /ubereats
 /ugg
 /ugg-australia
@@ -1387,6 +1381,7 @@
 /veganboost
 /velostore
 /veneta
+/verblijfbijhygge
 /veromoda
 /vertbaudet
 /vevor

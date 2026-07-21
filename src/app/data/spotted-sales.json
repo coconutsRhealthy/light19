@@ -13,6 +13,10 @@
   ],
   "3bearsporridge": [
     {
+      "text": "Tot 30% korting met extra 15% korting bovenop",
+      "date": "2026-07-20"
+    },
+    {
       "text": "Zomeruitverkoop met dubbele besparingen",
       "date": "2026-07-17"
     },
@@ -153,12 +157,12 @@
   ],
   "alpha.lion": [
     {
-      "text": "Nieuwe limited edition Freedom Stack met 2 pre-workouts en gratis reisverpakking",
-      "date": "2026-07-04"
+      "text": "Tot 33% korting plus gratis welkomstpakket",
+      "date": "2026-07-21"
     },
     {
-      "text": "Tot 33% korting plus gratis welkomstpakket",
-      "date": "2026-07-03"
+      "text": "Nieuwe limited edition Freedom Stack met 2 pre-workouts en gratis reisverpakking",
+      "date": "2026-07-04"
     }
   ],
   "alpinehearingprotection": [
@@ -277,6 +281,12 @@
     {
       "text": "25% korting op elk 2e artikel met code GOLDEN25",
       "date": "2026-06-21"
+    }
+  ],
+  "bibiboutique.be": [
+    {
+      "text": "10% korting met kortingscode BIBI",
+      "date": "2026-07-19"
     }
   ],
   "bijenkorf": [
@@ -467,6 +477,12 @@
       "date": "2026-04-03"
     }
   ],
+  "citybeach": [
+    {
+      "text": "Einde van seizoen uitverkoop met tot 60% korting",
+      "date": "2026-07-19"
+    }
+  ],
   "colorescience": [
     {
       "text": "15% korting op alles plus gratis verzending",
@@ -500,6 +516,10 @@
     }
   ],
   "creamyfabrics": [
+    {
+      "text": "Gratis pet bij bestellingen vanaf €75 zolang de voorraad strekt",
+      "date": "2026-07-18"
+    },
     {
       "text": "Tussenseizoenuitverkoop met tot 50% korting",
       "date": "2026-06-06"
@@ -731,6 +751,12 @@
       "date": "2026-06-18"
     }
   ],
+  "fashionette": [
+    {
+      "text": "25% korting vanaf €300 bestelwaarde met code VACAY25",
+      "date": "2026-07-18"
+    }
+  ],
   "fashiontiger.nl": [
     {
       "text": "Gratis World Cup sjaal bij bestellingen vanaf €10, alleen vandaag",
@@ -793,12 +819,12 @@
   ],
   "flexispot": [
     {
-      "text": "Tot 33% korting tijdens de zomeruitverkoop van 1 juli tot 31 juli",
-      "date": "2026-07-17"
+      "text": "Maak een foto en deel deze voor kans op 100% cashback, actie loopt tot 19 juli",
+      "date": "2026-07-19"
     },
     {
-      "text": "Maak een foto en deel deze voor kans op 100% cashback, actie loopt tot 19 juli",
-      "date": "2026-07-10"
+      "text": "Tot 33% korting tijdens de zomeruitverkoop van 1 juli tot 31 juli",
+      "date": "2026-07-17"
     }
   ],
   "fotofabriek.nl": [
@@ -1127,6 +1153,10 @@
   ],
   "journaway": [
     {
+      "text": "Twee voor de prijs van één aanbieding voor reizen naar Japan",
+      "date": "2026-07-19"
+    },
+    {
       "text": "Tweede persoon reist gratis bij Vietnam reizen",
       "date": "2026-06-26"
     }
@@ -1177,6 +1207,12 @@
     {
       "text": "Voorjaarsuitverkoop: 15% korting op geselecteerde merken",
       "date": "2026-04-03"
+    }
+  ],
+  "koro.com": [
+    {
+      "text": "Tot 50% korting vanwege magazijnopruiming",
+      "date": "2026-07-20"
     }
   ],
   "kpactive": [
@@ -1270,6 +1306,10 @@
     }
   ],
   "lookfantastic": [
+    {
+      "text": "30% korting op koopzondag met code ZONDAG, korting neemt af gedurende de dag",
+      "date": "2026-07-19"
+    },
     {
       "text": "25% korting op bijna alles met code MAANDAG",
       "date": "2026-07-13"
@@ -2007,12 +2047,6 @@
       "date": "2026-06-26"
     }
   ],
-  "saeroo": [
-    {
-      "text": "10% korting op eerste bestelling bij aanmelding Club SAEROO",
-      "date": "2026-07-17"
-    }
-  ],
   "safira": [
     {
       "text": "Tot 50% korting tijdens de sale",
@@ -2125,6 +2159,12 @@
       "date": "2026-06-17"
     }
   ],
+  "siroko": [
+    {
+      "text": "Flash sale tot 65% korting van 20 juli 8:00 tot 26 juli 23:59",
+      "date": "2026-07-20"
+    }
+  ],
   "sissy-boy": [
     {
       "text": "Sale met tot 40% korting",
@@ -2189,6 +2229,10 @@
   ],
   "sophiamae": [
     {
+      "text": "Cadeau: Lip Glaze Soft Lavender bij aankopen vanaf €80, beperkte tijd",
+      "date": "2026-07-20"
+    },
+    {
       "text": "Cadeau bij aankopen vanaf €60",
       "date": "2026-07-13"
     },
@@ -2225,6 +2269,10 @@
   ],
   "stronger": [
     {
+      "text": "Extra 10% korting tijdens Summer Sale",
+      "date": "2026-07-20"
+    },
+    {
       "text": "15% korting op eerste bestelling bij aanmaken account",
       "date": "2026-07-15"
     },
@@ -2251,6 +2299,10 @@
   ],
   "stylekorean": [
     {
+      "text": "Dagelijkse $1 aanbieding, elke dag een nieuwe $1 deal",
+      "date": "2026-07-20"
+    },
+    {
       "text": "50% korting op Green Tea Fresh Sunscreen Duo met code DRASM06-SCG2",
       "date": "2026-07-17"
     },
@@ -2273,12 +2325,12 @@
   ],
   "stylewe": [
     {
-      "text": "Tot 30% korting tijdens de Early Fall Event, beperkte tijd geldig.",
-      "date": "2026-07-16"
+      "text": "Zomerse uitverkoop met tot 50% korting",
+      "date": "2026-07-20"
     },
     {
-      "text": "Zomerse uitverkoop met tot 50% korting",
-      "date": "2026-07-09"
+      "text": "Tot 30% korting tijdens de Early Fall Event, beperkte tijd geldig.",
+      "date": "2026-07-16"
     },
     {
       "text": "4-daagse zomeraanbieding met 10% korting bij 2 artikelen en 15% korting bij 3 artikelen, geen code nodig, geldig tot 07/06/2026.",
@@ -2303,6 +2355,12 @@
     {
       "text": "Sale met kortingen tot 50% op geselecteerde items",
       "date": "2026-06-28"
+    }
+  ],
+  "tenways": [
+    {
+      "text": "Zomerse uitverkoop met €100 korting op CGO800 Plus, tot €130 korting op CGO600 en €30 voucher voor accessoires",
+      "date": "2026-07-19"
     }
   ],
   "terstal": [
@@ -2336,6 +2394,10 @@
     }
   ],
   "tractive": [
+    {
+      "text": "40% korting op slimme trackers voor honden",
+      "date": "2026-07-20"
+    },
     {
       "text": "30% korting bij inschrijving voor de nieuwsbrief",
       "date": "2026-06-19"
@@ -2453,6 +2515,12 @@
     {
       "text": "Gratis slobberlepel bij aankoop van een 6 kg slobber, actie loopt tot 1 augustus.",
       "date": "2026-07-06"
+    }
+  ],
+  "viverelondon": [
+    {
+      "text": "Tot 50% korting",
+      "date": "2026-07-18"
     }
   ],
   "volero.nl": [
@@ -2630,6 +2698,10 @@
     }
   ],
   "zalando": [
+    {
+      "text": "20% korting op Beauty met kortingscode SUNGLOW",
+      "date": "2026-07-19"
+    },
     {
       "text": "Tot 70% plus 20% extra korting met kortingscode ZOMERLOOKS, laatste dagen van de sale",
       "date": "2026-07-05"
