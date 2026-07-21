@@ -38,13 +38,20 @@ export default {
         firstSeen = new Date().toISOString().slice(0, 10);
       }
 
+      // Brevo's stored EVENTS set (append-only) — read now so we can merge, never
+      // clobber, whatever intentional conversions this contact already has. Only
+      // trust the read when the lookup actually succeeded (present/absent); on a
+      // transient "unknown" we must NOT touch EVENTS or we'd wipe the stored set.
+      const existingEvents = look.contact?.attributes?.EVENTS;
+      const eventsKnown = look.status === "present" || look.status === "absent";
+
       // updateEnabled makes this a single upsert for both POST (new unlock) and
       // PATCH (returning visitor). If a contact ever went missing, a PATCH now
       // recreates it from the client's cumulative totals instead of failing.
       const payload = {
         email,
         updateEnabled: true,
-        attributes: buildBrevoAttributes(firstName, incomingProps, firstSeen)
+        attributes: buildBrevoAttributes(firstName, incomingProps, firstSeen, existingEvents, eventsKnown)
       };
 
       if (env.BREVO_LIST_ID) {
@@ -92,7 +99,7 @@ async function lookupBrevoContact(env, email) {
   }
 }
 
-function buildBrevoAttributes(firstName, props, firstSeen) {
+function buildBrevoAttributes(firstName, props, firstSeen, existingEvents, eventsKnown) {
   const p = props ?? {};
   const attrs = {};
 
@@ -102,6 +109,18 @@ function buildBrevoAttributes(firstName, props, firstSeen) {
   if (p.site_visits != null) attrs.SITE_VISITS = p.site_visits;
   if (p.unlock_date) attrs.UNLOCK_DATE = String(p.unlock_date).slice(0, 10); // Brevo dates: YYYY-MM-DD
   if (firstSeen) attrs.FIRST_SEEN = String(firstSeen).slice(0, 10);
+
+  // EVENTS: durable, append-only set of intentional conversions
+  // (code_unlock, newsletter, app_waitlist), stored as a comma-separated text
+  // attribute. Read-merged against Brevo's stored value so it only ever GROWS —
+  // unlike PATH (last-touch) it survives later overwrites, localStorage clears
+  // and multi-device. Only touched when the client sends an `event` (i.e. on an
+  // actual conversion); plain profile syncs omit it and leave Brevo's value be.
+  if (eventsKnown && p.event != null && String(p.event).trim() !== "") {
+    const prior = String(existingEvents ?? "")
+      .split(",").map(s => s.trim()).filter(Boolean);
+    attrs.EVENTS = Array.from(new Set([...prior, String(p.event).trim()])).join(",");
+  }
 
   // Brevo can't store nested objects → keep the count-maps as JSON text
   if (p.visited_companies != null) attrs.VISITED_COMPANIES = JSON.stringify(p.visited_companies);

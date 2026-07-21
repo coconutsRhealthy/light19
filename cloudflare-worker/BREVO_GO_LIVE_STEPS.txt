@@ -51,9 +51,21 @@ Brevo rejects/ignores unknown attributes, so create these first:
     VISITED_COMPANIES    Text      (stores a JSON string, e.g. {"Nike":2})
     SEARCHED_TERMS       Text      (stores a JSON string)
     VISITED_PAGES        Text      (stores a JSON string)
+    EVENTS               Text      (append-only set, comma-separated)
 
 Notes:
 - FIRSTNAME already exists in Brevo by default, no need to create it.
+- EVENTS is a durable, append-only record of intentional conversions. Values
+  the app currently sends: code_unlock, newsletter, app_waitlist. Stored as a
+  comma-separated string (e.g. "newsletter,code_unlock"). The worker READ-MERGES
+  it: it looks the contact up, unions the new event into whatever is already
+  stored, and writes the set back — so it only ever grows. Unlike PATH (which is
+  last-touch and gets overwritten), EVENTS survives later actions, localStorage
+  clears and multi-device. It is only written when the client sends an `event`
+  (i.e. on an actual conversion); ordinary page-view syncs leave it untouched.
+  Segment/automation trigger: "EVENTS contains app_waitlist" (Brevo's segment
+  builder supports `contains` on text attributes). Keep it TEXT, not
+  multiple-choice, so new event types need no Brevo config.
 - The three "VISITED_*"/"SEARCHED_*" attributes hold JSON text because Brevo
   cannot store nested objects the way Klaviyo can. All the data is preserved;
   it just lives as a string you'd JSON.parse() if you ever segment on it.

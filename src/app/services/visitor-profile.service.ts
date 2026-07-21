@@ -98,6 +98,7 @@ export class VisitorProfileService {
             company,
             unlock_date: new Date().toISOString(),
             path,
+            event: 'code_unlock',
             ...this.buildProfileProperties(profile)
           }
         }
@@ -124,11 +125,12 @@ export class VisitorProfileService {
           email,
           first_name: email.split('@')[0],
           properties: {
-            // Sentinel written to Brevo's PATH attribute so newsletter-form
-            // signups are distinguishable from code-gate unlocks (which write a
-            // real URL path). Filter Brevo on PATH = 'newsletter-signup'.
-            // Caveat: last-touch — overwritten if this contact later unlocks a code.
+            // PATH is the immediate last-touch signal (distinguishes this signup
+            // from a code-gate unlock, but gets overwritten if this contact later
+            // unlocks a code). The durable record is `event`, which the worker
+            // merges into the append-only EVENTS set in Brevo.
             path: 'newsletter-signup',
+            event: 'newsletter',
             ...this.buildProfileProperties(profile)
           }
         }
@@ -137,6 +139,37 @@ export class VisitorProfileService {
 
     this.http.post(WEBHOOK_URL, body, { headers, responseType: 'text' }).subscribe({
       error: (err) => console.error('Fout bij nieuwsbrief inschrijving:', err)
+    });
+  }
+
+  subscribeAppWaitlist(email: string): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    localStorage.setItem(EMAIL_KEY, email);
+
+    const profile = this.getProfile();
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    const body = {
+      data: {
+        type: 'profile',
+        attributes: {
+          email,
+          first_name: email.split('@')[0],
+          properties: {
+            // Same pattern as the newsletter: PATH = last-touch signal, `event`
+            // = durable membership of the app waitlist (merged into EVENTS in
+            // Brevo, so it survives later code unlocks and localStorage clears).
+            path: 'app-subscription',
+            event: 'app_waitlist',
+            ...this.buildProfileProperties(profile)
+          }
+        }
+      }
+    };
+
+    this.http.post(WEBHOOK_URL, body, { headers, responseType: 'text' }).subscribe({
+      error: (err) => console.error('Fout bij app-wachtlijst inschrijving:', err)
     });
   }
 

@@ -67,6 +67,11 @@ export class DiscountsTableComponent implements OnInit {
   newsletterSubmitted: boolean = false;
   newsletterError: boolean = false;
 
+  appWaitlistEmail: string = '';
+  appWaitlistSubmitted: boolean = false;
+  appWaitlistError: boolean = false;
+  appWaitlistBarDismissed: boolean = false;
+
   bolHref!: string;
   bolImgSrc!: string;
   bolPixelSrc!: string;
@@ -148,6 +153,11 @@ export class DiscountsTableComponent implements OnInit {
 
   ngOnInit() {
     this.initialPageLoad = true;
+
+    if (this.isBrowser) {
+      this.appWaitlistBarDismissed =
+        localStorage.getItem('app_waitlist_bar_dismissed') === '1';
+    }
 
     if (this.isBrowser && window.innerWidth < 768) {
       this.itemsPerPage = 18;
@@ -316,6 +326,28 @@ export class DiscountsTableComponent implements OnInit {
     this.visitorProfile.subscribeNewsletter(this.newsletterEmail);
     this.newsletterSubmitted = true;
     this.analyticsEventService.sendEventToGa('newsletter_signup', 'newsletter_signup_homepage');
+  }
+
+  submitAppWaitlist(event: Event): void {
+    event.preventDefault();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!this.appWaitlistEmail || !emailPattern.test(this.appWaitlistEmail)) {
+      this.appWaitlistError = true;
+      return;
+    }
+
+    this.appWaitlistError = false;
+    this.visitorProfile.subscribeAppWaitlist(this.appWaitlistEmail);
+    this.appWaitlistSubmitted = true;
+    this.analyticsEventService.sendEventToGa('app_waitlist_signup', 'app_waitlist_signup_homepage');
+  }
+
+  dismissAppWaitlistBar(): void {
+    this.appWaitlistBarDismissed = true;
+    if (this.isBrowser) {
+      localStorage.setItem('app_waitlist_bar_dismissed', '1');
+    }
   }
 
   formatDate(date: string): string {
