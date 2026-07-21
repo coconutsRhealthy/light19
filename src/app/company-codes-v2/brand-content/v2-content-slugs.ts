@@ -6,6 +6,7 @@
 export const V2_CONTENT_SLUGS: ReadonlySet<string> = new Set([
   '24uomo',
   '3bearsporridge',
+  '4endurance',
   '4shine.nl',
   '7oclock.de',
   '8849tech',
@@ -139,6 +140,7 @@ export const V2_CONTENT_SLUGS: ReadonlySet<string> = new Set([
   'fithlon',
   'fitshop.nl',
   'fittasticsportswear',
+  'flaconi',
   'flamengolife',
   'flexispot',
   'florencenails',
