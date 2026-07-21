@@ -52,6 +52,15 @@
     }
   </script>
 
+  <script>
+    try {
+      if (localStorage.getItem('app_waitlist_bar_dismissed') === '1') {
+        document.documentElement.classList.add('awl-dismissed');
+      }
+    } catch (e) {}
+  </script>
+  <style>.awl-dismissed .js-app-waitlist-bar{display:none !important;}</style>
+
   <meta name="facebook-domain-verification" content="vs16s2ctfs40umqcvd9h1oc2wnyr1r" />
 </head>
 <body class="tw-bg-cream">
