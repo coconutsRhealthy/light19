@@ -309,6 +309,7 @@ export const V2_CONTENT_SLUGS: ReadonlySet<string> = new Set([
   'otensien.nl',
   'ovabalance',
   'oxknit',
+  'padelmarket',
   'pakketpanda',
   'parfumado',
   'parisactivewear',
