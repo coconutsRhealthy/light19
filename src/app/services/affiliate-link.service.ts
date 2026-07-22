@@ -1531,7 +1531,7 @@ export class AffiliateLinkService {
         dummyCode: 'SHOP10'
     },
     'kymocleaning': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fkymocleaning.com%2F',
+        url: 'https://partner.kymocleaning.com/c?c=39963&m=0&a=511210&r=&u=',
         dummyCode: 'OFF15'
     },
     'logitech': {
@@ -1575,7 +1575,7 @@ export class AffiliateLinkService {
         dummyCode: '10OFF'
     },
     'tommyteleshopping': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.tommyteleshopping.com%2Fnl%2F',
+        url: 'https://partner.tommyteleshopping.com/c?c=13594&m=0&a=511210&r=&u=',
         dummyCode: '10WELCOME'
     },
     'training-fit.nl': {
@@ -1683,11 +1683,11 @@ export class AffiliateLinkService {
         dummyCode: 'OFF15'
     },
     'drukwerknodig': {
-        url: 'https://pzz.to/bbkZHq',
+        url: 'https://www.drukwerknodig.nl/content/shopping/index.aspx/?tt=30553_0_511210_&r=',
         dummyCode: '15OFF'
     },
     'efteling': {
-        url: 'https://pzz.to/FCn__d',
+        url: 'https://tc.tradetracker.net/?c=25801&m=0&a=511210&r=&u=',
         dummyCode: 'ACTIE15'
     },
     'freddelabretoniere': {
@@ -1879,11 +1879,11 @@ export class AffiliateLinkService {
         dummyCode: '15OFF'
     },
     'q-park': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.q-park.nl%2F',
+        url: 'https://tc.tradetracker.net/?c=22543&m=0&a=511210&r=&u=',
         dummyCode: '10SHOP'
     },
     'nh-hotels': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.nh-hotels.nl%2F',
+        url: 'https://tc.tradetracker.net/?c=37646&m=0&a=511210&r=&u=',
         dummyCode: 'ACTIE15'
     },
     'leonardohotels': {
@@ -1915,7 +1915,7 @@ export class AffiliateLinkService {
         dummyCode: 'SHOP10'
     },
     'inglot': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.inglot.nl%2F',
+        url: 'https://deal.inglot.nl/c?c=39306&m=0&a=511210&r=&u=',
         dummyCode: '10OFF'
     },
     'flaconi': {
@@ -1943,7 +1943,7 @@ export class AffiliateLinkService {
         dummyCode: '10SHOP'
     },
     'dolfinarium': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.dolfinarium.nl%2F',
+        url: 'https://tc.tradetracker.net/?c=23457&m=0&a=511210&r=&u=',
         dummyCode: 'ACTIE15'
     },
     'duinrell': {
@@ -1967,7 +1967,7 @@ export class AffiliateLinkService {
         dummyCode: '15SHOP'
     },
     'vertbaudet': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vertbaudet.nl%2F',
+        url: 'https://tc.tradetracker.net/?c=33198&m=0&a=511210&r=&u=',
         dummyCode: '10ACTIE'
     },
     'vikingdirect': {
@@ -1983,7 +1983,7 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'posters': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.posters.nl%2F',
+        url: 'https://partner.posters.nl/c?c=39673&m=0&a=511210&r=&u=',
         dummyCode: 'ACTIE10'
     },
     'inktweb': {
@@ -2003,7 +2003,7 @@ export class AffiliateLinkService {
         dummyCode: '10SHOP'
     },
     'panamajack': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.panamajack.nl%2F',
+        url: 'https://partner.panamajack.nl/c?c=40537&m=0&a=511210&r=&u=',
         dummyCode: 'ACTIE15'
     },
     'powerpeers': {
