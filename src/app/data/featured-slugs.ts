@@ -26,7 +26,6 @@
 // random rotation that gives the rail its variety. Clear it when the promotion
 // is over — pins do not expire on their own.
 export const PINNED_SLUGS: string[] = [
-  'zalando',
   'douglas'
 ];
 

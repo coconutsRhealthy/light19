@@ -570,10 +570,6 @@ export class AffiliateLinkService {
         url: 'https://tidd.ly/4nGulkV',
         dummyCode: 'EXTRA10'
     },
-    'koro.com': {
-        url: 'https://tidd.ly/47P0Rg7',
-        dummyCode: 'MIRJANNE'
-    },
     'yfn': {
         url: 'https://tidd.ly/4858Ioy',
         dummyCode: 'EXTRA10'
@@ -815,7 +811,7 @@ export class AffiliateLinkService {
         dummyCode: 'HOME20'
     },
     'newbalance': {
-        url: 'https://nl.newbalance.eu/nl/outlet/dames-1/',
+        url: 'https://newbalanceemea.pxf.io/k4Qmm3',
         dummyCode: 'NBSALE25'
     },
     'omoda': {
@@ -1923,7 +1919,7 @@ export class AffiliateLinkService {
         dummyCode: '10OFF'
     },
     'flaconi': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.flaconi.nl%2F',
+        url: 'https://tidd.ly/44Gxb2o',
         dummyCode: 'EXTRA10'
     },
     'peterhahn': {
@@ -2105,6 +2101,70 @@ export class AffiliateLinkService {
     'cider': {
         url: 'https://fxo.co/JDoH',
         dummyCode: 'NOAXX15'
+    },
+    'alectobaby': {
+        url: 'https://partner.alectobaby.nl/c?c=37230&m=0&a=511210&r=&u=',
+        dummyCode: 'DEBBIE15'
+    },
+    'amicicosmetics': {
+        url: 'https://amicicosmetics.com/cosmetics/?tt=40338_0_511210_&r=',
+        dummyCode: 'musthave'
+    },
+    'badjasparadijs': {
+        url: 'https://www.badjasparadijs.nl/tradetracker/?tt=1820_0_448474_&r=',
+        dummyCode: 'blissofmel15'
+    },
+    'bodyandfit.com': {
+        url: 'https://partner.bodyandfit.com/c?c=11113&m=0&a=511210&r=&u=',
+        dummyCode: 'FINN'
+    },
+    'buvanha': {
+        url: 'https://partner.buvanha.nl/c?c=35152&m=0&a=511210&r=&u=',
+        dummyCode: 'maisondemanon15'
+    },
+    'depindakaaswinkel': {
+        url: 'https://partner.depindakaaswinkel.nl/c?c=33306&m=0&a=511210&r=&u=',
+        dummyCode: 'MARIKE25'
+    },
+    'desktronic': {
+        url: 'https://partner.desktronic.nl/c?c=39661&m=0&a=511210&r=&u=',
+        dummyCode: 'GOUDENHAP'
+    },
+    'flamengolife': {
+        url: 'https://tc.tradetracker.net/?c=37561&m=0&a=511210&r=&u=',
+        dummyCode: 'CATHELIJNE'
+    },
+    'greengypsyspices': {
+        url: 'https://www.greengypsyspices.com/poeder/?tt=35863_0_511210_&r=',
+        dummyCode: 'Jill10'
+    },
+    'hellochair': {
+        url: 'https://deals.hellochair.nl/c?c=33374&m=0&a=511210&r=&u=',
+        dummyCode: 'HELLOROMI15'
+    },
+    'pillowbuddies': {
+        url: 'https://partner.pillowbuddies.nl/c?c=35852&m=0&a=511210&r=&u=',
+        dummyCode: 'TROY15'
+    },
+    'repeatcashmere': {
+        url: 'https://tc.tradetracker.net/?c=19243&m=0&a=448474&r=&u=',
+        dummyCode: 'LINDA26'
+    },
+    'tallowcosmetics': {
+        url: 'https://partner.tallowcosmetics.com/c?c=40809&m=0&a=511210&r=&u=',
+        dummyCode: 'lotteger10'
+    },
+    'vitaminfit.eu': {
+        url: 'https://www.vitaminfit.eu/tracking/tradetracker/redirect/?tt=36825_0_511210_&r=',
+        dummyCode: 'babybird10'
+    },
+    'vuurkorfwinkel': {
+        url: 'https://deals.vuurkorfwinkel.nl/c?c=38631&m=0&a=511210&r=&u=',
+        dummyCode: 'HUIZE15'
+    },
+    'yfood': {
+        url: 'https://tc.tradetracker.net/?c=32811&m=0&a=511210&r=&u=',
+        dummyCode: 'TESSA-INSTA'
     },
   };
 
