@@ -278,6 +278,14 @@ export class DiscountsTableComponent implements OnInit {
     }
   }
 
+  /** Dedicated tracking for the "Populaire shops" logo strip. Fires its own
+   *  GA event (LogoShopHomepage) so logo clicks are separable in GA, unlike the
+   *  shared CopyCode event used by trackBrandClick. */
+  trackLogoShopClick(company: string): void {
+    this.visitorProfile.trackCompanyClick('company_click_homepage', company);
+    this.analyticsEventService.sendEventToGa('LogoShopHomepage', company);
+  }
+
   onCardClick(discount: Discount, event: MouseEvent) {
     this.trackBrandClick(discount.company);
 
