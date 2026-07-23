@@ -9,6 +9,7 @@
 /50plusmobiel
 /7oclock.de
 /8849tech
+/aadrink
 /abib.global
 /abloomskincare
 /about you
@@ -48,7 +49,6 @@
 /amagard
 /amanoknitwear
 /amazon
-/amici
 /amicicosmetics
 /amikoandfriends
 /amisamour
@@ -130,6 +130,7 @@
 /bestecanvas
 /beukers
 /beurseigenhuis
+/bevital
 /bibiboutique.be
 /bienvenumaison
 /bigsizeshirts
@@ -149,7 +150,6 @@
 /blogs/lookfantastic
 /blogs/space-nk
 /blokkadoo
-/bloom
 /bloomfoldhome
 /bloomfull.nl
 /bloominggoodofficial
@@ -475,7 +475,6 @@
 /flixbus
 /florencenails
 /florianhorsefood
-/flowstar
 /flowsteamofficial
 /flytex.fr
 /fntcase
@@ -613,7 +612,6 @@
 /hostinger
 /hostnet
 /hotelstacherhof
-/hotelwereldsgenieten
 /housevitaminnl
 /houtenplenkske
 /houtolie
@@ -639,6 +637,7 @@
 /innerstate
 /inokastudio
 /insentials.supplements
+/insta360
 /intergard
 /internetslagerij
 /invitationtoimagine
@@ -671,6 +670,7 @@
 /kaptenandson
 /kaspersky
 /kasteeloost
+/kayasieraden
 /kayori
 /keepitsneaker
 /kenwood
@@ -698,7 +698,6 @@
 /kraywoodseyewear
 /kswiss
 /kudlworld
-/kuvings
 /kwakzalversports
 /kymocleaning
 /labelish
@@ -777,7 +776,6 @@
 /magictourclub
 /maicazz.nl
 /maje
-/makemefamousshop
 /makeupfactory.nl
 /malelions
 /maletasgreenwich
@@ -902,6 +900,7 @@
 /nsconsumenten
 /nuki
 /numsy.nl
+/nutchelcabins
 /oace
 /oakley
 /obelink
@@ -970,6 +969,7 @@
 /passatennis
 /paulaschoice.nl
 /paulvalentine
+/pawness_dog_essentials
 /peek&cloppenburg
 /peintagone_nl
 /perfumetrader
@@ -991,7 +991,6 @@
 /pitpit
 /plein
 /plein.nl
-/plein5living
 /plnktn
 /plotpackers
 /plussupermarkt
@@ -1061,6 +1060,7 @@
 /rngne
 /robell
 /rockerz
+/rocksdiscount
 /rosalique
 /rosaodor
 /rosental-organics.nl
@@ -1092,7 +1092,6 @@
 /sansbeaute.nl
 /sapph
 /saralune
-/saslooks
 /scandinavianactivewear
 /scapino
 /scentivo
@@ -1277,7 +1276,6 @@
 /teveeo
 /teveo
 /thebrandfelice
-/thebrowniebox.nl
 /thecollectorthehague
 /theconfidenceconcept
 /theey
@@ -1347,6 +1345,7 @@
 /ultrahuman_ring
 /ultrahuman-ring
 /underarmour
+/understatementunderwear
 /uniekliedje.nl
 /unikq
 /unisa
@@ -1379,6 +1378,7 @@
 /vd
 /vedder.vedder
 /veganboost
+/velluto
 /velostore
 /veneta
 /verblijfbijhygge
@@ -1458,6 +1458,7 @@
 /xpluswear
 /xxlnutrition
 /yas
+/yazio
 /yehwang_wholesale
 /yehwang-wholesale
 /yepoda
