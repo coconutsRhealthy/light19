@@ -435,7 +435,7 @@ export async function loadSeoContent(company: string): Promise<string | null> {
     case 'skinnydiplondon': return import('./skinnydiplondon').then(m => m.default);
     case 'skrub': return import('./skrub').then(m => m.default);
     case 'slingershop': return import('./slingershop').then(m => m.default);
-    case 'smartphonehoesjes-nl': return import('./smartphonehoesjes-nl').then(m => m.default);
+    case 'smartphonehoesjes.nl': return import('./smartphonehoesjes.nl').then(m => m.default);
     case 'smartphoto': return import('./smartphoto').then(m => m.default);
     case 'smartwatchbanden-nl': return import('./smartwatchbanden-nl').then(m => m.default);
     case 'smeg': return import('./smeg').then(m => m.default);
