@@ -1,9 +1,18 @@
-<!-- ============ APP-WAITLIST ANNOUNCEMENT BAR (homepage top) ============ -->
+<!-- ====== STICKY TOP: app-waitlist bar + navbar ======
+     Mobile: wrapper is display:contents (generates no box), so the bar + navbar
+     behave as direct children of the page. The bar's own `sticky top-0` (below)
+     then pins against the FULL-page scroll (not this short wrapper), while the
+     navbar stays non-sticky and scrolls away — matching the old mobile behavior.
+     Desktop (lg+): wrapper becomes a real sticky box (lg:block + lg:sticky) that
+     pins bar + navbar together as one unit, avoiding a top:0 overlap (the navbar
+     is lg:sticky on its own). z-30 matches the navbar's old layer so the modal
+     backdrop (z-40) still covers it. -->
+<div class="tw-contents lg:tw-block lg:tw-sticky lg:tw-top-0 tw-z-30">
 @if (!appWaitlistBarDismissed) {
-  <!-- Static top announcement bar: it scrolls away with the page (the navbar keeps
-       its own lg:sticky). js-app-waitlist-bar lets the index.html guard hide it
+  <!-- App-waitlist announcement bar — now pinned (with the navbar) via the sticky
+       wrapper above. js-app-waitlist-bar lets the index.html guard hide it
        pre-paint for visitors who already dismissed it. -->
-  <div class="js-app-waitlist-bar tw-bg-ink tw-text-cream tw-font-body">
+  <div class="js-app-waitlist-bar tw-sticky tw-top-0 lg:tw-static tw-z-40 tw-bg-ink tw-text-cream tw-font-body">
     <!-- Mobile: two rows via flex-wrap + order — [text .. ×] then [form]. Desktop:
          one row, order restored to text | form | ×. -->
     <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8 tw-py-2.5 tw-flex tw-flex-wrap sm:tw-flex-nowrap tw-items-start sm:tw-items-center tw-gap-x-3 tw-gap-y-2.5 sm:tw-gap-5">
@@ -12,7 +21,8 @@
           <span aria-hidden="true">✨</span>
           <p class="tw-text-sm tw-leading-tight tw-min-w-0">
             <span class="tw-font-semibold">De Diski-app komt eraan.</span>
-            <span class="tw-text-cream/75"> Schrijf je in en krijg als eerste toegang.</span>
+            <span class="tw-text-cream/75"> Schrijf je in en maak kans op een </span>
+            <span class="tw-font-semibold tw-text-butter">€200 giftcard naar keuze.</span>
           </p>
         </div>
         <form (submit)="submitAppWaitlist($event)" class="tw-order-3 sm:tw-order-2 tw-flex tw-items-center tw-gap-2 tw-w-full sm:tw-w-auto">
@@ -46,6 +56,9 @@
 }
 
 <app-navbar></app-navbar>
+</div><!-- /sticky top -->
+
+
 
 <div class="tw-bg-cream tw-text-ink tw-font-body tw-overflow-x-hidden">
 
