@@ -205,9 +205,16 @@
           {{ d.webshop_name.charAt(0).toUpperCase() }}
         </div>
       }
-      <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink tw-font-semibold tw-bg-cream tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1 tw-shrink-0">
-        {{ categoryLabel(d.shop_category) }}
-      </span>
+      <div class="tw-flex tw-flex-col tw-items-end tw-gap-1 tw-shrink-0">
+        <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink tw-font-semibold tw-bg-cream tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1">
+          {{ categoryLabel(d.shop_category) }}
+        </span>
+        @if (d.from_newsletter) {
+          <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[9px] tw-text-ink/60 tw-bg-transparent tw-border tw-border-ink/10 tw-rounded-full tw-px-2 tw-py-0.5 tw-whitespace-nowrap">
+            ✉ nieuwsbrief
+          </span>
+        }
+      </div>
     </div>
     <h3 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-leading-tight tw-break-words">{{ d.webshop_name }}</h3>
     <p class="tw-font-body tw-text-sm tw-text-ink/70 tw-leading-relaxed tw-break-words">{{ d.korting_text_nl || d.korting_text }}</p>

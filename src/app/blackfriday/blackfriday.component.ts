@@ -22,6 +22,11 @@ interface WebshopKorting {
   // deal). The key is absent when not flagged — never written as false — so a
   // missing value means "not flagged" (for older entries: "unreviewed").
   thumbs_down?: boolean;
+  // Set on deals that came from the newsletter feed (spotted_mails.json), so the
+  // card can show a small "nieuwsbrief" label. Absent on homepage-spotted deals.
+  from_newsletter?: boolean;
+  // On newsletter deals: true when the same deal is already in the homepage feed.
+  also_on_homepage?: boolean;
 }
 
 interface CategoryGroup {
@@ -49,6 +54,9 @@ export class BlackfridayComponent implements OnInit {
   // Live deals feed, and the shop registry that provides each shop's category.
   // Both live on R2 so they update without an app redeploy.
   private promotionsUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/spotted_promotions.json';
+  // Second feed: promotions read out of newsletters (the claude_diski_mail tool).
+  // Same shape as promotionsUrl; merged in and tagged from_newsletter.
+  private mailsUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/spotted_mails.json';
   private registryUrl = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/webshops_info/shop_registry.json';
 
   private readonly fallbackCategory = 'other';
@@ -138,25 +146,35 @@ export class BlackfridayComponent implements OnInit {
 
     const t = new Date().getTime();
     const promotions$ = this.http.get<WebshopKorting[]>(`${this.promotionsUrl}?t=${t}`);
-    // The registry is best-effort: if it fails, deals still render (all in "Overig").
+    // The newsletter feed and registry are both best-effort: if either fails the
+    // page still renders (deals from the other source, categories fall to "Overig").
+    const mails$ = this.http.get<WebshopKorting[]>(`${this.mailsUrl}?t=${t}`).pipe(
+      catchError(() => of([] as WebshopKorting[]))
+    );
     const registry$ = this.http.get<ShopRegistry>(`${this.registryUrl}?t=${t}`).pipe(
       catchError(() => of(null))
     );
 
-    forkJoin({ promotions: promotions$, registry: registry$ }).subscribe(({ promotions, registry }) => {
+    forkJoin({ promotions: promotions$, mails: mails$, registry: registry$ }).subscribe(({ promotions, mails, registry }) => {
       const shops = registry?.shops ?? {};
 
-      this.allDiscounts = promotions
-        // Drop deals an operator flagged 👎 as bad/noise in the review bot.
-        // Only true is ever written; absent means not-flagged, so keep those.
-        .filter((item) => item.thumbs_down !== true)
-        .map((item) => ({
+      // Same resolution for both feeds: affiliate link + category from the registry.
+      const resolve = (item: WebshopKorting): WebshopKorting => ({
         ...item,
         url: this.affiliateLinkService.getAffiliateLink(item.webshop_name) || item.url,
-        // Category comes from the registry; fall back to the feed's own value (if any),
-        // then to "other" when the shop can't be resolved.
         shop_category: shops[item.webshop_name]?.category || item.shop_category || this.fallbackCategory,
-      }));
+      });
+
+      // Drop deals an operator flagged 👎 as bad/noise. Only true is ever written;
+      // absent means not-flagged, so keep those.
+      const kept = (item: WebshopKorting) => item.thumbs_down !== true;
+
+      const spotted = promotions.filter(kept).map(resolve);
+      // Newsletter deals get tagged so the card shows a small label.
+      const fromMail = mails.filter(kept).map((item) => ({ ...resolve(item), from_newsletter: true }));
+
+      // Two feeds merged into one list; buildAlle/buildGroups sort by date.
+      this.allDiscounts = [...spotted, ...fromMail];
 
       this.buildGroups();
       this.buildAlle();
