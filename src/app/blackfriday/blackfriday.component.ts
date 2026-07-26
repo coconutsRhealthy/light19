@@ -170,8 +170,12 @@ export class BlackfridayComponent implements OnInit {
       const kept = (item: WebshopKorting) => item.thumbs_down !== true;
 
       const spotted = promotions.filter(kept).map(resolve);
-      // Newsletter deals get tagged so the card shows a small label.
-      const fromMail = mails.filter(kept).map((item) => ({ ...resolve(item), from_newsletter: true }));
+      // Newsletter deals: drop any already in the homepage feed (also_on_homepage),
+      // so the same deal is never shown twice. Tag the rest so the card labels them.
+      const fromMail = mails
+        .filter(kept)
+        .filter((item) => item.also_on_homepage !== true)
+        .map((item) => ({ ...resolve(item), from_newsletter: true }));
 
       // Two feeds merged into one list; buildAlle/buildGroups sort by date.
       this.allDiscounts = [...spotted, ...fromMail];
