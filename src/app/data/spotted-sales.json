@@ -139,6 +139,14 @@
   ],
   "aliexpress": [
     {
+      "text": "Nieuwe promotie met 54% korting zichtbaar op homepage",
+      "date": "2026-07-24"
+    },
+    {
+      "text": "Nieuwe promotie met 66% korting op geselecteerde producten",
+      "date": "2026-07-22"
+    },
+    {
       "text": "Kortingen tot €50 met codes bij bestellingen vanaf €139 t/m 10 juni",
       "date": "2026-06-05"
     },
@@ -509,6 +517,12 @@
       "date": "2026-05-20"
     }
   ],
+  "costes": [
+    {
+      "text": "Tot 50% korting, alleen in de winkel",
+      "date": "2026-07-23"
+    }
+  ],
   "cottonclub": [
     {
       "text": "Gratis festival sjaal bij aankoop vanaf €39,95 aan festival items",
@@ -757,6 +771,10 @@
   ],
   "fashionette": [
     {
+      "text": "Einde van seizoen uitverkoop met kortingen tot 70%",
+      "date": "2026-07-24"
+    },
+    {
       "text": "25% korting vanaf €300 bestelwaarde met code VACAY25",
       "date": "2026-07-18"
     }
@@ -768,6 +786,10 @@
     }
   ],
   "fatmoose": [
+    {
+      "text": "10% extra korting bij bestellingen vanaf €750 met code FMSUM",
+      "date": "2026-07-24"
+    },
     {
       "text": "Zomeruitverkoop met tot 40% korting op speeltoestellen",
       "date": "2026-07-21"
@@ -827,6 +849,10 @@
   ],
   "flexispot": [
     {
+      "text": "8% korting op comfortproducten van 21 tot 26 juli met code FSO8",
+      "date": "2026-07-23"
+    },
+    {
       "text": "Maak een foto en deel deze voor kans op 100% cashback, actie loopt tot 19 juli",
       "date": "2026-07-19"
     },
@@ -842,6 +868,10 @@
     }
   ],
   "ginatricot": [
+    {
+      "text": "Tot 70% korting op alle sale artikelen",
+      "date": "2026-07-22"
+    },
     {
       "text": "Tot 70% korting op meer toegevoegde items",
       "date": "2026-07-08"
@@ -972,6 +1002,10 @@
     }
   ],
   "hollandandbarrett": [
+    {
+      "text": "10% korting bij besteding vanaf €45 met code WKND",
+      "date": "2026-07-24"
+    },
     {
       "text": "15% korting bij besteding van €45 met code MEGA",
       "date": "2026-07-01"
@@ -1125,12 +1159,16 @@
   ],
   "jeuliajewelry": [
     {
-      "text": "Tot 50% korting op geselecteerde sieraden",
-      "date": "2026-07-17"
+      "text": "Draai aan het rad en maak kans op een gratis ring",
+      "date": "2026-07-26"
     },
     {
-      "text": "Draai aan het rad en maak kans op een gratis ring",
-      "date": "2026-07-13"
+      "text": "Koop 3 artikelen en ontvang een gratis ketting",
+      "date": "2026-07-22"
+    },
+    {
+      "text": "Tot 50% korting op geselecteerde sieraden",
+      "date": "2026-07-17"
     },
     {
       "text": "Zomeruitverkoop met 30% korting bij koop van twee artikelen met code SUMMER",
@@ -1197,6 +1235,12 @@
     {
       "text": "Tot 35% korting tijdens Kenwood Days, exclusief voor nieuwsbriefinschrijvers",
       "date": "2026-06-16"
+    }
+  ],
+  "kidsdepartment": [
+    {
+      "text": "15% extra korting tijdelijk beschikbaar",
+      "date": "2026-07-26"
     }
   ],
   "koreanskincare": [
@@ -1315,6 +1359,10 @@
   ],
   "lookfantastic": [
     {
+      "text": "Gratis cadeau bij aankoop vanaf €70",
+      "date": "2026-07-24"
+    },
+    {
       "text": "Summer Sale met kortingen tot 50%",
       "date": "2026-07-21"
     },
@@ -1407,6 +1455,18 @@
   ],
   "lucardi": [
     {
+      "text": "Tijdelijke actie: 20% korting op alles, alleen vandaag geldig",
+      "date": "2026-07-26"
+    },
+    {
+      "text": "20% extra korting op sale artikelen",
+      "date": "2026-07-24"
+    },
+    {
+      "text": "40% korting op alle zilveren en stainless steel sieraden",
+      "date": "2026-07-23"
+    },
+    {
       "text": "Tijdelijke 1+1 gratis actie op alle sale artikelen, alleen vanavond geldig",
       "date": "2026-07-16"
     },
@@ -1480,6 +1540,14 @@
     }
   ],
   "lyko": [
+    {
+      "text": "Tot 50% korting op meer dan 1000 merken",
+      "date": "2026-07-24"
+    },
+    {
+      "text": "15% korting op Kérastase haarproducten",
+      "date": "2026-07-23"
+    },
     {
       "text": "Tot 30% korting op zomerse favorieten",
       "date": "2026-07-21"
@@ -1911,6 +1979,10 @@
   ],
   "paulaschoice.nl": [
     {
+      "text": "20% korting op alles tijdens Friends & Family actie",
+      "date": "2026-07-25"
+    },
+    {
       "text": "20% korting op alle producten tijdens de Summer Sale",
       "date": "2026-06-23"
     },
@@ -1933,6 +2005,12 @@
     {
       "text": "15% korting op exfolianten",
       "date": "2026-04-09"
+    }
+  ],
+  "photowall_sweden": [
+    {
+      "text": "20% korting op behang plus gratis lijm bij aankoop met code FREEGLUE",
+      "date": "2026-07-25"
     }
   ],
   "pinkgellac": [
@@ -2081,6 +2159,10 @@
   ],
   "samsung": [
     {
+      "text": "Tot €880 korting bij inruil van oude producten",
+      "date": "2026-07-22"
+    },
+    {
       "text": "Tijdgebonden evenement Galaxy Unpacked op 22 juli 2026 om 15:00 uur",
       "date": "2026-07-08"
     }
@@ -2198,6 +2280,10 @@
     }
   ],
   "skechers": [
+    {
+      "text": "Leden krijgen tot 15% extra korting op afgeprijsde artikelen tot 31 juli.",
+      "date": "2026-07-26"
+    },
     {
       "text": "Tot 30% korting op geselecteerde artikelen geldig tot 31 juli",
       "date": "2026-07-08"
@@ -2341,16 +2427,16 @@
   ],
   "stylewe": [
     {
-      "text": "Tot 30% korting tijdens het Early Fall Event, beperkte tijd geldig.",
-      "date": "2026-07-22"
+      "text": "Einde-zomer uitverkoop met tot 70% korting",
+      "date": "2026-07-25"
+    },
+    {
+      "text": "Tot 30% korting tijdens de Early Fall Event, beperkte tijd geldig.",
+      "date": "2026-07-24"
     },
     {
       "text": "Zomerse uitverkoop met tot 50% korting",
       "date": "2026-07-20"
-    },
-    {
-      "text": "Tot 30% korting tijdens de Early Fall Event, beperkte tijd geldig.",
-      "date": "2026-07-16"
     },
     {
       "text": "4-daagse zomeraanbieding met 10% korting bij 2 artikelen en 15% korting bij 3 artikelen, geen code nodig, geldig tot 07/06/2026.",
@@ -2375,6 +2461,12 @@
     {
       "text": "Sale met kortingen tot 50% op geselecteerde items",
       "date": "2026-06-28"
+    }
+  ],
+  "tadaaz.nl": [
+    {
+      "text": "Gratis proefdruk bij geboorte, trouwen en eigen ontwerp met code PROEFNL",
+      "date": "2026-07-25"
     }
   ],
   "tenways": [
@@ -2556,6 +2648,10 @@
     }
   ],
   "weekday": [
+    {
+      "text": "10% korting bij aanmelding",
+      "date": "2026-07-22"
+    },
     {
       "text": "Zomersale met tot wel 50% korting",
       "date": "2026-06-24"

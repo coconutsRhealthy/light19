@@ -2166,6 +2166,10 @@ export class AffiliateLinkService {
         url: 'https://tc.tradetracker.net/?c=32811&m=0&a=511210&r=&u=',
         dummyCode: 'TESSA-INSTA'
     },
+    'flowsteamofficial': {
+        url: 'https://tidd.ly/4wX67rJ',
+        dummyCode: 'DAHLES'
+    },
   };
 
   constructor() { }
