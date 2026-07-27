@@ -1,3 +1,15 @@
+<!-- ====== STICKY TOP: app-waitlist bar + navbar ======
+     Mobile: wrapper is display:contents (generates no box), so the bar + navbar
+     behave as direct children of the page (the host is display:contents too).
+     The bar's own `sticky top-0` then pins against the FULL-page scroll (not
+     this short wrapper), while the navbar stays non-sticky and scrolls away.
+     Desktop (lg+): wrapper becomes a real sticky box (lg:block + lg:sticky) that
+     pins bar + navbar together as one unit, avoiding a top:0 overlap (the navbar
+     is lg:sticky on its own). z-30 matches the navbar's layer so the modal
+     backdrop (z-40) still covers it. -->
+<div class="tw-contents lg:tw-block lg:tw-sticky lg:tw-top-0 tw-z-30">
+<app-waitlist-bar></app-waitlist-bar>
+
 <nav class="lg:tw-sticky lg:tw-top-0 tw-z-30 tw-bg-cream/90 tw-backdrop-blur-md tw-border-b tw-border-ink/10 tw-text-ink tw-font-body">
     <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">
         <div class="tw-flex tw-justify-between tw-items-center tw-h-16">
@@ -128,3 +140,4 @@
         </div>
     }
 </nav>
+</div><!-- /sticky top -->
