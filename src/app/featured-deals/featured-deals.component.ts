@@ -24,7 +24,7 @@ const SPOTTED_SALES = spottedSalesData as { [slug: string]: { text: string; date
 
 // Hand-written "top deals" (src/app/data/top-deals.json). These outrank the code
 // and sale cards and take the first slots in the rail. Fully manual — no feed data.
-interface TopDeal { slug: string; text: string; date: string; url?: string; }
+interface TopDeal { slug: string; text: string; date: string; url?: string; image?: string; }
 const TOP_DEALS = (topDealsData.deals ?? []) as TopDeal[];
 
 /** Never render more than this many cards, however many slugs are eligible. */
@@ -61,6 +61,10 @@ export interface FeaturedCardVM {
   // kind === 'top' — optional custom destination; when set the card links here
   // (external, new tab) instead of the brand page.
   linkUrl?: string;
+
+  // kind === 'top' — optional artwork for the card's header strip; replaces the
+  // sky→butter gradient (and the brand name printed on it).
+  imageUrl?: string;
 
   /** When this code/sale was spotted; drives the rail order. */
   spottedAt: Date;
@@ -172,6 +176,7 @@ export class FeaturedDealsComponent implements OnInit {
           logo: this.logos[d.slug],
           saleText: d.text,
           linkUrl: d.url?.trim() || undefined,   // custom landing page, if any
+          imageUrl: d.image?.trim() || undefined,  // header artwork, if any
           spottedAt: date,
           dateLabel: this.formatDate(date),
           dateIso: d.date,

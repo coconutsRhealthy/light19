@@ -40,9 +40,19 @@
 
 <!-- Shared card body — used by both the routerLink and custom-url anchors above. -->
 <ng-template #cardInner let-c>
-  <div class="tw-h-20 sm:tw-h-[6.5rem] tw-rounded-2xl tw-bg-gradient-to-br tw-from-sky tw-to-butter tw-flex tw-items-start tw-justify-center tw-px-4 tw-pt-3">
-    <span class="tw-font-title tw-font-bold tw-tracking-tight tw-text-ink/40 tw-text-sm sm:tw-text-base">{{ c.name }}</span>
-  </div>
+  @if (c.imageUrl) {
+    <!-- Top deal with artwork: the image replaces the gradient AND the brand name
+         (the logo sits right below it anyway). Only the strip above the panel is
+         visible, hence object-top — see top-deals.json for the asset guidance. -->
+    <div class="tw-h-20 sm:tw-h-[6.5rem] tw-rounded-2xl tw-overflow-hidden tw-bg-sky">
+      <img [src]="c.imageUrl" [alt]="c.name" width="340" height="104" loading="lazy"
+           class="tw-w-full tw-h-full tw-object-cover tw-object-top" />
+    </div>
+  } @else {
+    <div class="tw-h-20 sm:tw-h-[6.5rem] tw-rounded-2xl tw-bg-gradient-to-br tw-from-sky tw-to-butter tw-flex tw-items-start tw-justify-center tw-px-4 tw-pt-3">
+      <span class="tw-font-title tw-font-bold tw-tracking-tight tw-text-ink/40 tw-text-sm sm:tw-text-base">{{ c.name }}</span>
+    </div>
+  }
   <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw--mt-12 tw-mx-4 tw-relative tw-shadow-[0_18px_44px_rgba(67,48,46,0.10)] tw-grid tw-grid-cols-[88px_1fr] tw-overflow-hidden">
     <div class="tw-flex tw-items-center tw-justify-center tw-bg-white tw-border-r tw-border-ink/10 tw-p-3">
       @if (c.logo) {
