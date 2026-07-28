@@ -26,8 +26,22 @@
 // random rotation that gives the rail its variety. Clear it when the promotion
 // is over — pins do not expire on their own.
 export const PINNED_SLUGS: string[] = [
-  'tenways'
+  'loavies'
 ];
+
+// The shop that gets the rail's single SALE slot. Empty string = pick
+// automatically (the freshest sale across the whole feed, which among same-day
+// ties resolves alphabetically — so a manual pick is the way to surface a shop
+// that would otherwise never win one).
+//
+// When set, the card shows that shop's most recent entry in spotted-sales.json.
+// Unlike the automatic pick this ignores the freshness cutoff (SALE_MAX_AGE_DAYS)
+// — you asked for this shop, so an older sale still renders.
+//
+// Falls back to the automatic pick when the slug has no sale in the feed, or
+// when that shop is already on the rail as a top deal or a pin (it would
+// otherwise appear twice). Does not expire — clear it when the promotion ends.
+export const SALE_SLUG: string = '';
 
 export const FEATURED_SLUGS: string[] = [
   'nakdfashion',

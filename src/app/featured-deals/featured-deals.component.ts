@@ -7,7 +7,7 @@ import { WebshopNameService } from '../services/webshop-name.service';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
 import { BUILD_DATE_ISO } from '../build-info';
-import { FEATURED_SLUGS, PINNED_SLUGS } from '../data/featured-slugs';
+import { FEATURED_SLUGS, PINNED_SLUGS, SALE_SLUG } from '../data/featured-slugs';
 import spottedSalesData from '../data/spotted-sales.json';
 import topDealsData from '../data/top-deals.json';
 
@@ -194,10 +194,33 @@ export class FeaturedDealsComponent implements OnInit {
     return (h & 1) === 0;
   }
 
-  /** The freshest sale across EVERY shop in the feed — not just the featured slugs —
-   *  as one card, or none if all are stale. The sale slot is deliberately unrestricted:
-   *  we just want the single most recent sale that's available anywhere. */
+  /** The rail's single sale card: the hand-picked SALE_SLUG when one is set,
+   *  otherwise the freshest sale across EVERY shop in the feed (not just the
+   *  featured slugs — the slot is deliberately unrestricted). Null when neither
+   *  yields anything. */
   private pickSaleCard(buildDate: Date, exclude: Set<string> = new Set()): FeaturedCardVM | null {
+    return this.pickChosenSaleCard(exclude) ?? this.pickFreshestSaleCard(buildDate, exclude);
+  }
+
+  /** The hand-picked sale from SALE_SLUG, or null to fall back to the automatic
+   *  pick — when nothing is set, the shop has no sale in the feed, or it's already
+   *  on the rail as a top deal or a pin (it would otherwise show up twice).
+   *  Deliberately skips the SALE_MAX_AGE_DAYS cutoff: the slug was named by hand,
+   *  so an older sale still renders rather than silently doing nothing. */
+  private pickChosenSaleCard(exclude: Set<string>): FeaturedCardVM | null {
+    const slug = SALE_SLUG.trim().toLowerCase();
+    if (!slug || exclude.has(slug)) return null;
+
+    const sale = SPOTTED_SALES[slug]?.[0];   // each shop's list is newest-first
+    if (!sale) return null;
+
+    return this.toSaleCard(slug, sale.text, sale.date);
+  }
+
+  /** The single most recent sale anywhere in the feed, or none if all are stale.
+   *  Ties are broken by feed order, which is alphabetical — set SALE_SLUG when a
+   *  specific shop has to win the slot. */
+  private pickFreshestSaleCard(buildDate: Date, exclude: Set<string>): FeaturedCardVM | null {
     let best: { slug: string; text: string; date: Date; iso: string } | null = null;
 
     for (const slug of Object.keys(SPOTTED_SALES)) {
@@ -214,17 +237,20 @@ export class FeaturedDealsComponent implements OnInit {
       }
     }
 
-    if (!best) return null;
+    return best ? this.toSaleCard(best.slug, best.text, best.iso) : null;
+  }
 
+  private toSaleCard(slug: string, text: string, iso: string): FeaturedCardVM {
+    const date = this.parseIsoDate(iso);
     return {
       kind: 'sale',
-      slug: best.slug,
-      name: this.displayName(best.slug),
-      logo: this.logos[best.slug],
-      saleText: best.text,
-      spottedAt: best.date,
-      dateLabel: this.formatDate(best.date),
-      dateIso: best.iso,
+      slug,
+      name: this.displayName(slug),
+      logo: this.logos[slug],
+      saleText: text,
+      spottedAt: date,
+      dateLabel: this.formatDate(date),
+      dateIso: iso,
     };
   }
 
