@@ -291,6 +291,12 @@
       "date": "2026-06-21"
     }
   ],
+  "bershka": [
+    {
+      "text": "5% korting bij 2 items, 10% bij 3 of meer",
+      "date": "2026-07-26"
+    }
+  ],
   "bibiboutique.be": [
     {
       "text": "10% korting met kortingscode BIBI",
@@ -601,6 +607,10 @@
   ],
   "douglas": [
     {
+      "text": "25% korting op alles bij besteding vanaf €25 tijdens de Shopping Night, plus cadeau vanaf €60",
+      "date": "2026-07-27"
+    },
+    {
       "text": "20% korting op alles via de Douglas app met code APPONLY",
       "date": "2026-06-10"
     },
@@ -837,6 +847,10 @@
   ],
   "finelaserclinic": [
     {
+      "text": "Gratis okselpakket bij aankoop van groot bikinilijn pakket bij afspraak in augustus",
+      "date": "2026-07-28"
+    },
+    {
       "text": "Gratis okselbehandeling op zaterdag 13 juni, alleen die dag geldig.",
       "date": "2026-06-15"
     }
@@ -848,6 +862,10 @@
     }
   ],
   "flexispot": [
+    {
+      "text": "Tot 15% korting op het volledige assortiment",
+      "date": "2026-07-27"
+    },
     {
       "text": "8% korting op comfortproducten van 21 tot 26 juli met code FSO8",
       "date": "2026-07-23"
@@ -911,6 +929,12 @@
     {
       "text": "Tot 45% korting",
       "date": "2026-07-16"
+    }
+  ],
+  "gutsgusto": [
+    {
+      "text": "Gratis verzending met code SUNKISSED, alleen vandaag en morgen",
+      "date": "2026-07-28"
     }
   ],
   "gympin": [
@@ -1079,6 +1103,16 @@
     {
       "text": "Tot 50% korting tijdens Amazon Prime Sale",
       "date": "2026-06-24"
+    }
+  ],
+  "iciparisxl": [
+    {
+      "text": "30% korting op bijna alle sets en 20% op geuren vanaf €25",
+      "date": "2026-07-27"
+    },
+    {
+      "text": "25% korting op bijna alles vanaf €25, alleen vandaag",
+      "date": "2026-07-26"
     }
   ],
   "idealofsweden": [
@@ -1333,6 +1367,10 @@
   ],
   "loavies": [
     {
+      "text": "20% korting op alles met code SUMMER20",
+      "date": "2026-07-27"
+    },
+    {
       "text": "Zomersale met kortingen tot 40%",
       "date": "2026-07-09"
     },
@@ -1359,6 +1397,14 @@
   ],
   "lookfantastic": [
     {
+      "text": "25% korting op bijna alles met code MAANDAG",
+      "date": "2026-07-28"
+    },
+    {
+      "text": "30% korting op een giga selectie met code ZONDAG, alleen vandaag",
+      "date": "2026-07-27"
+    },
+    {
       "text": "Gratis cadeau bij aankoop vanaf €70",
       "date": "2026-07-24"
     },
@@ -1369,10 +1415,6 @@
     {
       "text": "30% korting op koopzondag met code ZONDAG, korting neemt af gedurende de dag",
       "date": "2026-07-19"
-    },
-    {
-      "text": "25% korting op bijna alles met code MAANDAG",
-      "date": "2026-07-13"
     },
     {
       "text": "30% korting op favoriete producten met code ZONDAG, alleen vandaag",
@@ -1699,6 +1741,10 @@
   ],
   "nakdfashion": [
     {
+      "text": "Tijdgebonden aanbieding zichtbaar met afteltimer",
+      "date": "2026-07-27"
+    },
+    {
       "text": "30% korting op alles",
       "date": "2026-07-14"
     },
@@ -1751,6 +1797,12 @@
     {
       "text": "Bespaar tot 12% met de code SWA12",
       "date": "2026-04-14"
+    }
+  ],
+  "notino": [
+    {
+      "text": "Tot 40% korting op geselecteerde producten met code sale (of saleapp in de app), t/m 2 augustus",
+      "date": "2026-07-27"
     }
   ],
   "olcaygulsenbeauty": [
@@ -1815,6 +1867,10 @@
   ],
   "only": [
     {
+      "text": "Koop 2 artikelen en krijg 20% korting op geselecteerde merken",
+      "date": "2026-07-27"
+    },
+    {
       "text": "Zomersale met kortingen tot 50%",
       "date": "2026-06-26"
     },
@@ -1876,6 +1932,10 @@
     }
   ],
   "otrium": [
+    {
+      "text": "Summer sale met tot 85% korting plus 15% extra korting op alle sale deze week",
+      "date": "2026-07-27"
+    },
     {
       "text": "Koop 3 items, krijg het 4e gratis dit weekend",
       "date": "2026-07-10"
@@ -2595,6 +2655,10 @@
   ],
   "veromoda": [
     {
+      "text": "10% extra korting op sale bij 3 of meer sale-artikelen, t/m 27 juli",
+      "date": "2026-07-26"
+    },
+    {
       "text": "40% korting op geselecteerde sale-artikelen",
       "date": "2026-06-18"
     },
@@ -2814,6 +2878,10 @@
     }
   ],
   "zalando": [
+    {
+      "text": "15% extra korting op de nieuwste looks met kortingscode TREAT-YOURSELF",
+      "date": "2026-07-27"
+    },
     {
       "text": "20% korting op Beauty met kortingscode SUNGLOW",
       "date": "2026-07-19"

@@ -206,6 +206,7 @@
 /bydreamlash.nl
 /bygge.store
 /byivy
+/bykimstore
 /bylashbabe
 /bylouashop
 /byluvera.nl
@@ -229,6 +230,7 @@
 /cecil
 /cfab
 /chador
+/chagou
 /chalkbuddyuk
 /charlottetilbury
 /charmia
@@ -263,7 +265,6 @@
 /colorco
 /colorescience
 /colourfulrebel
-/comfykidzzz
 /commense
 /conceptglobalco
 /conrad
@@ -311,13 +312,13 @@
 /deachterstehoef
 /debekershop.nl
 /decantalo
-/decarba_store
 /decathlon
 /decodedgear
 /dedic8apparel
 /deflierefluiter
 /degeleflamingo
 /degoedkoopsteoutlet
+/deinterieurplakkers
 /delampfabriek.nl
 /deleca.nl
 /deleistert
@@ -425,6 +426,7 @@
 /etsy
 /euroflorist
 /eurowheelz
+/evecurls
 /eventstylingfotografiebijdo
 /everdrop
 /everready
@@ -457,6 +459,7 @@
 /felman
 /femininestore
 /fest
+/fever
 /feverhubutrecht
 /fietsleaseholland
 /fietsparadijs
@@ -607,6 +610,7 @@
 /hetinpakhuis
 /hetspeellab.nl
 /hexxee
+/heydaystudio.nl
 /heydude
 /heymarly
 /hijabie.nl
@@ -735,7 +739,6 @@
 /leukstetickets
 /levis
 /lichtenmeubels
-/lift.lake
 /lilatelier
 /linda.trui
 /linguaplanta
@@ -803,7 +806,7 @@
 /marfum
 /marfum.nl
 /marie-stella-maris
-/marleyoliver
+/marleenkookt
 /marleyspoon.nl
 /marliesdekkers
 /marlydesign_com
@@ -811,6 +814,7 @@
 /massivewood_
 /matchu
 /matrasatelier
+/mauihair
 /maxbenjamin
 /maxicosi
 /mayafreya
@@ -864,7 +868,6 @@
 /muchachomalo
 /mudmasky.nl
 /mvolo.nl
-/my.milea
 /mydearbeer_nl
 /mydentalproducts
 /myitalianbracelet
@@ -916,7 +919,6 @@
 /oace
 /oakley
 /obelink
-/ochtendblauw
 /odespleasure
 /odido mobiel
 /odido thuis
@@ -1058,7 +1060,6 @@
 /rectifynutrition
 /refineddepartment
 /refurbished
-/reinders
 /reiss
 /renpho
 /repeatcashmere
@@ -1088,7 +1089,6 @@
 /safira
 /saintblanc
 /saintblancofficial
-/salcuranlbe
 /salontopper
 /saltokindermobel
 /samakocleaning
@@ -1203,6 +1203,7 @@
 /steddi_store
 /stedelijkmuseumbreda
 /stekkies
+/stekkit
 /stellamccartney
 /sterrenstore
 /stevemadden
