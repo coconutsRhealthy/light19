@@ -156,6 +156,7 @@
 /blogs
 /blogs/lookfantastic
 /blogs/space-nk
+/blogs/uniqlo
 /blokkadoo
 /bloomfoldhome
 /bloomfull.nl

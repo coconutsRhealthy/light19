@@ -75,7 +75,10 @@ fs.writeFileSync(manifestPath, manifest, 'utf8');
 // =========================
 // 3. routes.txt — every shop in discounts.json + the utility pages
 // =========================
-const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'prikbord', 'blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'code-delen', ''];
+// Every blog article needs its own entry: discoverRoutes is false, so a route
+// missing here is never prerendered and the host falls back to the generic
+// index.html — which means crawlers see the homepage title, not the article's.
+const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'prikbord', 'blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'blogs/uniqlo', 'code-delen', ''];
 
 const sortedPages = Array.from(discountSlugs).sort((a, b) => a.localeCompare(b));
 

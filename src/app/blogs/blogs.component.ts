@@ -2,6 +2,13 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { MetaService } from '../services/meta.service';
+
+const URL = 'https://diski.nl/blogs';
+const TITLE = 'Blogs over slim shoppen en besparen | Diski';
+const DESCRIPTION =
+  'Onze artikelen over slim online shoppen: van de beste AIRism-zomerstukken ' +
+  'van Uniqlo tot besparen op beauty bij Lookfantastic en Space NK.';
 
 interface BlogPost {
   slug: string;
@@ -23,6 +30,14 @@ interface BlogPost {
   styles: ``
 })
 export class BlogsComponent {
+  // See uniqlo-blog.component.ts for why this sits in the constructor.
+  constructor(private meta: MetaService) {
+    this.meta.updateTitle(TITLE);
+    this.meta.updateMetaInfo(DESCRIPTION, 'diski.nl',
+      'blog, slim shoppen, besparen, kortingscode, beauty, mode');
+    this.meta.updateOgTags(TITLE, DESCRIPTION, URL);
+  }
+
   posts: BlogPost[] = [
     {
       slug: 'uniqlo',
