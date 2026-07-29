@@ -2,13 +2,13 @@
   "slug": "gymexclusive.com",
   "name": "Gym Exclusive",
   "backupCode": {
-    "code": "Maxime10",
+    "code": "MARISSA",
     "discount": "10"
   },
   "heroLede": "Gym Exclusive is een Nederlands merk voor dames-sportkleding dat vooral bekend is van de Unified-sets: matchende leggings met bijpassende sport-bh's in opvallende kleuren. Met een persoonlijke kortingscode van een van de fitgirls die het merk dragen, pak je meestal extra korting op je nieuwe gym-outfit.",
   "about": [
     "Gym Exclusive richt zich volledig op sportkleding voor vrouwen. Het assortiment draait om leggings, sport-bh's, shorts, tops, joggers en jasjes, met de squat-proof Unified-legging en de Sculpt-top als veelgenoemde favorieten in de community.",
-    "De collecties verschijnen in golven: het merk werkt met drops en restocks, vaak met early access voor wie zich heeft aangemeld en een livegang rond 17:00. Nieuwe kleuren komen er regelmatig bij — in de posts van creators zie je onder meer Emerald Green, Forest Green, Burgundy, Electric Purple, Navy en Baby Blue voorbijkomen.",
+    "De collecties verschijnen in golven: het merk werkt met drops en restocks, vaak met early access voor wie zich heeft aangemeld en een livegang rond 17:00. Nieuwe kleuren komen er regelmatig bij — onder meer Emerald Green, Forest Green, Burgundy, Electric Purple, Navy en Baby Blue.",
     "Het is een Nederlandse webshop: prijzen in euro's, een Nederlandse taaloptie en verzending vanuit Nederland. De meeste losse items liggen ruwweg tussen de €12 en €55, waardoor een complete set relatief betaalbaar blijft."
   ],
   "why": [
@@ -18,7 +18,7 @@
     },
     {
       "h": "Squat-proof en functioneel",
-      "p": "Het merk maakt kleding die bedoeld is om in te trainen — van leg day tot back day. In de captions draait het om echte workouts, niet alleen om de look."
+      "p": "Het merk maakt kleding die bedoeld is om in te trainen — van leg day tot back day. Het draait om echte workouts, niet alleen om de look."
     },
     {
       "h": "Snelle verzending vanuit NL",
@@ -36,24 +36,17 @@
     "Seizoenssales, zoals de New Year's sale met kortingen tot 25%"
   ],
   "codeInfo": [
-    "Gym Exclusive werkt met persoonlijke kortingscodes van creators. De codes die we in de posts terugzien zijn onder meer STERRE (via @sterrebelen_) en FAUZ10 (via @fitbyfauz), die meestal goed zijn voor zo'n 10% korting; daarnaast noemen creators codes als ELLIS, ESMEE en MARISSA.",
+    "Gym Exclusive werkt met persoonlijke kortingscodes van creators. Die staan meestal op naam van de creator zelf en zijn doorgaans goed voor zo'n 10% korting op je bestelling.",
     "Je vult de code in tijdens het afrekenen. Tijdens grotere acties — zoals de New Year's sale met 25% korting op alles — geven creators aan dat hun code daar nog wat extra korting bovenop legt. Check altijd de exacte voorwaarden in de winkelwagen, want kortingen en uitzonderingen kunnen per actie verschillen."
-  ],
-  "creators": [
-    "@sterrebelen_",
-    "@fitbyfauz",
-    "@esmeelenferink",
-    "@ellisvandermeulen",
-    "@marissaplezier"
   ],
   "tips": [
     {
       "h": "Wacht op een drop of restock",
-      "p": "Populaire kleuren en de Unified-set zijn snel uitverkocht. Creators kondigen restocks en early access vaak van tevoren aan, meestal met een livegang rond 17:00 — handig om op tijd bij te zijn."
+      "p": "Populaire kleuren en de Unified-set zijn snel uitverkocht. Restocks en early access worden vaak van tevoren aangekondigd, meestal met een livegang rond 17:00 — handig om op tijd bij te zijn."
     },
     {
       "h": "Combineer een code met een sale",
-      "p": "Tijdens seizoensacties zoals de New Year's sale lopen de kortingen op (tot 25%). Een persoonlijke creatorcode geeft daar volgens hun posts vaak nog wat extra korting bovenop."
+      "p": "Tijdens seizoensacties zoals de New Year's sale lopen de kortingen op (tot 25%). Een persoonlijke code geeft daar vaak nog wat extra korting bovenop."
     },
     {
       "h": "Bestel boven €99 voor gratis verzending",
@@ -71,11 +64,15 @@
     },
     {
       "q": "Hoeveel korting geeft een Gym Exclusive kortingscode?",
-      "a": "De creatorcodes die we terugzien, zoals STERRE en FAUZ10, geven meestal zo'n 10% korting. Tijdens grotere sales kan de korting hoger oplopen; controleer altijd het exacte bedrag in je winkelwagen."
+      "a": "De persoonlijke codes van creators geven meestal zo'n 10% korting. Tijdens grotere sales kan de korting hoger oplopen; controleer altijd het exacte bedrag in je winkelwagen."
     },
     {
       "q": "Hoe gebruik ik een Gym Exclusive kortingscode?",
       "a": "Vul de code in tijdens het afrekenen. De korting wordt dan in je winkelwagen verrekend. Let op eventuele uitzonderingen, want voorwaarden kunnen per actie verschillen."
+    },
+    {
+      "q": "Hoe werken de drops en restocks?",
+      "a": "Het merk brengt collecties in golven uit, met drops en restocks die vooraf worden aangekondigd. Vaak is er early access voor wie zich heeft aangemeld en gaat de verkoop rond 17:00 live. Populaire kleuren en de Unified-set zijn daarna snel uitverkocht."
     },
     {
       "q": "Wat zijn de verzend- en retourvoorwaarden?",
@@ -84,10 +81,6 @@
     {
       "q": "Is Gym Exclusive een Nederlandse webshop?",
       "a": "Ja, Gym Exclusive is een Nederlandse webshop met prijzen in euro's, een Nederlandse taaloptie en verzending vanuit Nederland."
-    },
-    {
-      "q": "Welke creators dragen Gym Exclusive?",
-      "a": "Onder meer @sterrebelen_, @fitbyfauz, @esmeelenferink, @ellisvandermeulen en @marissaplezier laten hun outfits en codes zien in hun posts."
     }
   ],
   "related": [
