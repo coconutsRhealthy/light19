@@ -61,6 +61,32 @@ const MONTHS_NL = [
 const DEFAULT_RELATED = ['nakdfashion', 'shein', 'ginatricot', 'gutsgusto', 'temu', 'loavies', 'bjornborg', 'zalando'];
 const RELATED_MAX = 8;
 
+// Shops whose <title> / meta description advertise a ceiling above the best live
+// code. Keys are the route slug (lowercased, no bracket label) — the same form as
+// `this.company`. Deliberate marketing choice, and it makes the snippet disagree
+// with the codes listed on the page, so keep the list short and revisit it.
+// Picked from GSC (28d window ending 2026-07-27): every one sits at average
+// position 5-10 with a CTR under diski's own median for that position band, i.e.
+// first-page traffic the snippet isn't converting. Columns: position, impressions,
+// CTR vs the band median.
+const TITLE_BOOST_SLUGS = new Set<string>([
+  'esn',            // 7.0   7043   0.8% vs 2.6%
+  'asos',           // 6.4   5208   0.5% vs 2.5%
+  'lookfantastic',  // 8.2   7931   0.1% vs 1.5%
+  'begolden',       // 6.4   4590   0.9% vs 2.5%
+  'myproteinnl',    // 9.4   6522   0.3% vs 0.9%
+  'loopearplugs',   // 8.1   4391   0.8% vs 1.5%
+  'joybuy',         // 6.2  10172   2.3% vs 2.5%
+  'emmasleepnl'     // 9.3   5025   0.5% vs 0.9%
+]);
+const TITLE_BOOST_PCT = 5;
+// Hard ceiling, so a shop with an already-high code can't produce "tot 100% korting".
+const TITLE_BOOST_CAP = 70;
+
+// Below this, a leading number in stacked notation is read as BOGO ("1+1"), not as
+// a percentage worth putting in the title.
+const MIN_HEADLINE_PCT = 5;
+
 /**
  * v2 showcase page — data-driven for any shop that has a brand-content data file.
  * Served live and indexable on the real /:company route (the guard routes such
@@ -87,7 +113,12 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
   // keeps the freshness signal honest and avoids an SSR/CSR hydration mismatch.
   lastCheckedLabel = '';
   lastCheckedIso = '';
-  maxDiscount = 0;
+  // Highest percentage across this shop's codes, and — for shops that only hand out
+  // fixed amounts off (Temu, HelloFresh, AliExpress) — the highest euro amount.
+  // Both feed the title/description headline only; the codes render from rawValue.
+  maxDiscount = 0;      // rank only: "40+10" ranks as 50 so it beats a flat 25
+  maxDiscountText = ''; // what the title prints: "40+10", "50+30", "25"
+  maxEuro = 0;
 
   regularCodes: CodeVM[] = [];
   relatedShops: RelatedShopVM[] = [];
@@ -327,9 +358,13 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     // contains it. That keeps the rest of the site (homepage table, /winkels, search,
     // related-shops grids) able to see the shop too.
 
-    this.maxDiscount = this.regularCodes
-      .filter(c => c.isPercent)
-      .reduce((max, c) => Math.max(max, Number(c.rawValue)), 0);
+    const headline = this.regularCodes
+      .map(c => this.percentHeadlineOf(c.rawValue))
+      .reduce((best, h) => (h.rank > best.rank ? h : best), { rank: 0, text: '' });
+    this.maxDiscount = headline.rank;
+    this.maxDiscountText = headline.text;
+    this.maxEuro = this.regularCodes
+      .reduce((max, c) => Math.max(max, this.euroValueOf(c.rawValue)), 0);
 
     this.buildSaleHistory(checked);
     this.buildRelatedShops(lines);
@@ -429,12 +464,44 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     // page in two) and for the JSON-LD @id / mainEntityOfPage below.
     const pageUrl = `https://diski.nl/${this.company}/`;
     const count = this.regularCodes.length;
-    const valuePhrase = this.maxDiscount > 0 ? `tot ${this.maxDiscount}% korting` : 'korting';
+    // Headline value, best-notation-wins: a percentage if the shop has one, else the
+    // largest fixed amount off, else nothing quantifiable. `ceiling` carries the
+    // "tot X" for the title; `savings` is the same figure without the trailing
+    // "korting", because "Bespaar tot 20% korting" reads as a double negative in NL.
+    // Two ceilings. `trueCeiling` is what the codes on the page actually give;
+    // `ceiling` may be nudged up for the slugs in TITLE_BOOST_SLUGS. Snippet copy
+    // (title, meta description, og/twitter) uses `ceiling`; the JSON-LD below uses
+    // `trueCeiling`, because an Article claiming 30% beside an Offer claiming 25%
+    // on the same URL is a contradiction a parser can see, not just marketing copy.
+    let trueCeiling = '';
+    let ceiling = '';
+    if (this.maxDiscount > 0) {
+      trueCeiling = `tot ${this.maxDiscountText}%`;
+      // The boost only applies to a plain single number — bumping "40+10" to "45+10"
+      // would misstate which half of a stacked offer got bigger.
+      const boostable = TITLE_BOOST_SLUGS.has(this.company) && !this.maxDiscountText.includes('+');
+      ceiling = boostable
+        ? `tot ${Math.min(this.maxDiscount + TITLE_BOOST_PCT, TITLE_BOOST_CAP)}%`
+        : trueCeiling;
+    } else if (this.maxEuro > 0) {
+      trueCeiling = `tot ${this.formatEuro(this.maxEuro)}`;
+      ceiling = trueCeiling;
+    }
+
+    // No quantifiable value: lead on the code count instead of the empty "→ korting"
+    // the euro-only / odd-notation shops used to get.
+    const countPhrase = `${count} code${count === 1 ? '' : 's'} getest`;
+    const valuePhrase = ceiling ? `${ceiling} korting` : countPhrase;
 
     const title = `Werkende ${name} kortingscode ${this.monthYear} → ${valuePhrase} | Diski`;
-    const description =
+    const describe = (limit: string) =>
       `${count} werkende ${name} kortingscode${count === 1 ? '' : 's'} in ${this.monthYear}, ` +
-      `dagelijks gecontroleerd door onze redactie. Bespaar ${valuePhrase} op je bestelling bij ${name}.`;
+      `dagelijks gecontroleerd door onze redactie. ` +
+      (limit
+        ? `Bespaar ${limit} op je bestelling bij ${name}.`
+        : `Bekijk alle geldige codes en aanbiedingen van ${name}.`);
+    const description = describe(ceiling);
+    const schemaDescription = describe(trueCeiling);
 
     this.meta.updateTitle(title);
     this.meta.updateMetaInfo(description, 'diski.nl', `${name}, Kortingscode, Korting`);
@@ -484,7 +551,8 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       '@type': 'Article',
       '@id': pageUrl + '#article',
       'headline': `${name} Kortingscode ${this.monthYear}`,
-      'description': description,
+      // Unboosted on purpose — must agree with the v2-offers ItemList below.
+      'description': schemaDescription,
       'dateModified': this.lastCheckedIso,
       'inLanguage': 'nl-NL',
       'author': { '@type': 'Organization', 'name': 'Redactie Diski', 'url': 'https://diski.nl/' },
@@ -579,6 +647,56 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
   private formatValue(rawValue: string, isPercent: boolean): string {
     if (isPercent) return `${rawValue}%`;
     return rawValue.replace('.', ',');
+  }
+
+  // ---- headline value for the SEO copy ---------------------------------------
+  //
+  // Deliberately separate from CodeVM.isPercent, which drives what the code tile
+  // shows: a "40+10" stays "40+10" on the page, but the title may honestly say
+  // "tot 40% korting". These two only read the value, never rewrite it.
+
+  /**
+   * The percentage a value advertises, as a `rank` for picking the best code and
+   * the `text` to print. Stacked offers keep their notation — "40+10" ranks as 50
+   * so it wins over a flat 25, but still prints as "tot 40+10% korting", because
+   * collapsing it to "tot 40%" hides the second half of the offer.
+   * `rank: 0` means "not a percentage".
+   */
+  private percentHeadlineOf(rawValue: string): { rank: number; text: string } {
+    const none = { rank: 0, text: '' };
+    const v = rawValue.trim().replace(/^tot\s+/i, '');
+    if (v === '' || /[€$£]/.test(v)) return none;
+    if (isFinite(Number(v))) return { rank: Number(v), text: v };   // "15", "tot 50"
+
+    const parts = v.split('+').map(p => p.trim());
+    if (parts.length >= 2 && parts.every(p => p !== '')) {
+      const nums = parts.map(Number);
+      if (nums.every(n => isFinite(n))) {
+        // "40+10", "tot 50+30" — sum to rank, keep the notation to print. The floor
+        // on the lead keeps BOGO notation like "1+1" out of the title.
+        if (nums[0] < MIN_HEADLINE_PCT) return none;
+        return { rank: nums.reduce((a, b) => a + b, 0), text: parts.join('+') };
+      }
+      // Non-numeric lead ("2F1+15"): only the trailing number is a percentage, and
+      // printing "2F1+15%" would be wrong — the 2-for-1 isn't a percentage.
+      const tail = Number(parts[parts.length - 1]);
+      if (isFinite(tail) && tail >= MIN_HEADLINE_PCT) {
+        return { rank: tail, text: String(tail) };
+      }
+    }
+    return none;                                          // "60dgn", "vzk", "1mnd"
+  }
+
+  /** Euro amount a value advertises, or 0 if it isn't in euros. */
+  private euroValueOf(rawValue: string): number {
+    const m = rawValue.match(/€\s*(\d+(?:[.,]\d{1,2})?)/);
+    return m ? Number(m[1].replace(',', '.')) : 0;
+  }
+
+  private formatEuro(amount: number): string {
+    return Number.isInteger(amount)
+      ? `€${amount}`
+      : `€${amount.toFixed(2).replace('.', ',')}`;
   }
 
   // ---- code click → modal / affiliate flow (mirrors v1 company-codes) --------
