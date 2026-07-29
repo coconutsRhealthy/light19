@@ -1,5 +1,6 @@
 /
 /123jaloezie.nl
+/123theorie.nl
 /24s
 /24uomo
 /3bearsporridge
@@ -278,6 +279,7 @@
 /cooper.quint
 /cooperandquint
 /corendon
+/corlienkael
 /cortexropes
 /cos
 /coseystudio
@@ -389,7 +391,6 @@
 /easytoys
 /easywalker
 /eclat
-/ecocut.kitchenware
 /eddna
 /edgardcooper
 /edgy
@@ -435,6 +436,7 @@
 /everyfoods
 /eves_hopnl
 /evite
+/eviteshop
 /evolveyou
 /evryjewels
 /expedia
@@ -451,6 +453,7 @@
 /fashionette
 /fashionomi
 /fashiontiger.nl
+/fashionwebshop
 /fatmoose
 /faume
 /FBTO Zorg
@@ -509,6 +512,7 @@
 /frenkiesfashion
 /frenkylewisdogcare
 /frenkysfashion
+/freyara
 /friends-of.nl
 /fritsy
 /frmtegelwerk
@@ -619,6 +623,7 @@
 /hivefamilyplanner
 /holafly
 /hollandandbarrett
+/homary
 /homarycom
 /home24
 /homefitnesscode
@@ -688,7 +693,6 @@
 /kaspersky
 /kasteeloost
 /kayasieraden
-/kayori
 /keepitsneaker
 /kenwood
 /kessberlin
@@ -755,6 +759,7 @@
 /lkswimwear
 /loavies
 /loccitane
+/locktowel
 /loesjesfavs
 /loftymanner
 /logitech
@@ -1071,7 +1076,6 @@
 /rihoas
 /ripstar_travel
 /ripsvintage
-/rngne
 /robell
 /rockerz
 /rocksdiscount
@@ -1139,7 +1143,6 @@
 /shirttuning.nl
 /shoeby
 /shoesme
-/shokz.nl
 /shopatlot
 /shopify
 /shopnoxare
@@ -1171,7 +1174,6 @@
 /smartwatchbanden-nl
 /smashedlemon
 /smeg
-/smellacloud.de
 /smplskincare
 /sneakin
 /snipes
@@ -1334,7 +1336,6 @@
 /travelcircus
 /trendcarpet
 /trendzdameskleding
-/triathlonworld
 /trip
 /tripadvisor
 /triplezeropro
@@ -1466,7 +1467,9 @@
 /womensbest
 /woood
 /workliving.nl
+/worthit
 /xiaomi
+/xlash
 /xoxowildhearts
 /xpluswear
 /xxlnutrition
@@ -1478,7 +1481,6 @@
 /yesstyle
 /yfn
 /yfood
-/yindea.nl
 /yogashop
 /yoozyfashion
 /youfone
