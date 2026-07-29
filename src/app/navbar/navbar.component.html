@@ -16,10 +16,14 @@
             <!-- Brand mark + wordmark -->
             <a routerLink="/" class="tw-flex tw-items-center tw-gap-2.5 tw-no-underline"
                onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_logo'})">
-                <span class="tw-relative tw-w-10 tw-h-10 tw-rounded-[11px] tw-bg-sky tw-flex tw-items-center tw-justify-center tw-shrink-0">
-                    <span class="tw-font-title tw-font-bold tw-text-ink tw-text-[26px] tw-leading-none tw--mt-0.5 tw-tracking-tight">d</span>
-                    <span class="tw-absolute tw-bottom-1.5 tw-right-1.5 tw-w-[5px] tw-h-[5px] tw-rounded-full tw-bg-ink"></span>
-                </span>
+                <!-- The favicon SVG *is* the brand mark, so the navbar, the tab icon
+                     and the Instagram avatar stay one geometry. Don't re-compose it
+                     from a letter + a CSS dot: absolute positioning anchors the dot to
+                     the box corner, which puts it below the d's baseline instead of
+                     beside it. The rounded corner comes from the SVG's own rx (0.275
+                     of the side = 11px at 40px), so no CSS radius is needed. -->
+                <img src="/favicon.svg" alt="" width="40" height="40"
+                     class="tw-w-10 tw-h-10 tw-shrink-0" />
                 <span class="tw-font-title tw-font-bold tw-text-ink tw-text-2xl tw-leading-none tw-tracking-tight">diski<span class="tw-text-dot">.</span></span>
             </a>
 

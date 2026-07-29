@@ -8,6 +8,9 @@ scripts/.env.local
 # GSC / GA4 analysis tooling — local-only, never commit (also keeps keys out as a backstop)
 scripts/gsc/
 scripts/ga4/
+
+# scripts/og/ IS committed (it builds a committed asset) — just not its virtualenv
+scripts/og/.venv/
 *service-account*.json
 *-sa.json
 
