@@ -4,7 +4,7 @@ import { FooterComponent } from '../../footer/footer.component';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { MetaService } from '../../services/meta.service';
 
-const URL = 'https://diski.nl/blogs/lookfantastic';
+const URL = 'https://diski.nl/blogs/lookfantastic/';
 const TITLE = 'Lookfantastic kortingscode: bespaar tot 25% | Diski';
 const DESCRIPTION =
   'Zo bespaar je het meeste bij Lookfantastic: een werkende kortingscode tot ' +

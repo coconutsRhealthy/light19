@@ -101,10 +101,14 @@ export class WinkelsComponent implements OnInit {
 
   private setMeta(): void {
     const monthYear = this.meta.getDateString();
-    this.meta.updateTitle('Alle winkels met kortingscodes in ' + monthYear);
-    this.meta.updateMetaInfo(
-      'Overzicht van webshops met werkende kortingscodes in ' + monthYear + '; Bespaar met deze kortingscodes op online shoppen via diski.nl',
-      'diski.nl', 'Kortingscode, Korting'
-    );
+    const title = 'Alle winkels met kortingscodes in ' + monthYear;
+    const description =
+      'Overzicht van webshops met werkende kortingscodes in ' + monthYear +
+      '; Bespaar met deze kortingscodes op online shoppen via diski.nl';
+    this.meta.updateTitle(title);
+    this.meta.updateMetaInfo(description, 'diski.nl', 'Kortingscode, Korting');
+    // Without og tags a shared link falls back to whatever the platform scrapes,
+    // which is usually nothing useful. Trailing slash matches the canonical.
+    this.meta.updateOgTags(title, description, 'https://diski.nl/winkels/');
   }
 }

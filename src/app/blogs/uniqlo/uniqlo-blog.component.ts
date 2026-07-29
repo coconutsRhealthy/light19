@@ -4,7 +4,7 @@ import { FooterComponent } from '../../footer/footer.component';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { MetaService } from '../../services/meta.service';
 
-const URL = 'https://diski.nl/blogs/uniqlo';
+const URL = 'https://diski.nl/blogs/uniqlo/';
 const TITLE = 'Uniqlo AIRism: 5 zomerstukken die je koel houden | Diski';
 const DESCRIPTION =
   "Uniqlo's AIRism is het antwoord op het zomerkleding-dilemma: goed uitzien én " +

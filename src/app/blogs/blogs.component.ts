@@ -4,7 +4,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { MetaService } from '../services/meta.service';
 
-const URL = 'https://diski.nl/blogs';
+const URL = 'https://diski.nl/blogs/';
 const TITLE = 'Blogs over slim shoppen en besparen | Diski';
 const DESCRIPTION =
   'Onze artikelen over slim online shoppen: van de beste AIRism-zomerstukken ' +

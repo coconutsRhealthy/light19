@@ -4,7 +4,7 @@ import { FooterComponent } from '../../footer/footer.component';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { MetaService } from '../../services/meta.service';
 
-const URL = 'https://diski.nl/blogs/space-nk';
+const URL = 'https://diski.nl/blogs/space-nk/';
 const TITLE = 'Space NK kortingscode: 15% korting voor nieuwe klanten | Diski';
 const DESCRIPTION =
   'Bespaar op luxe beauty bij Space NK: 15% welkomstkorting voor nieuwe klanten, ' +

@@ -424,7 +424,10 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
 
   private applySeo(): void {
     const name = this.displayName;
-    const pageUrl = `https://diski.nl/${this.company}`;
+    // Trailing slash, matching v1 and the canonical set-canonicals.js writes.
+    // Used for og:url (social platforms cache on it, so a mismatch splits the
+    // page in two) and for the JSON-LD @id / mainEntityOfPage below.
+    const pageUrl = `https://diski.nl/${this.company}/`;
     const count = this.regularCodes.length;
     const valuePhrase = this.maxDiscount > 0 ? `tot ${this.maxDiscount}% korting` : 'korting';
 

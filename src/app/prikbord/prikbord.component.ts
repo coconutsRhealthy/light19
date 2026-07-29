@@ -42,8 +42,13 @@ export class PrikbordComponent implements OnInit {
 
   constructor(private meta: MetaService, private http: HttpClient, private analyticsEventService: AnalyticsEventService, private datePipe: DatePipe, @Inject(PLATFORM_ID) private platformId: Object) {
     var monthYear = this.meta.getDateString();
-    this.meta.updateTitle("Deel kortingscodes en bespaar samen meer – Prikbord | Diski")
-    this.meta.updateMetaInfo("Gespot? Deel je kortingscode op het prikbord van Diski en help anderen besparen. Ontdek zelf ook nieuwe codes die net gedeeld zijn!", "diski.nl", "kortingscode, korting, kortingscode toevoegen, kortingscode delen, kortingscode zoeken, diski prikbord");
+    const title = "Deel kortingscodes en bespaar samen meer – Prikbord | Diski";
+    const description = "Gespot? Deel je kortingscode op het prikbord van Diski en help anderen besparen. Ontdek zelf ook nieuwe codes die net gedeeld zijn!";
+    this.meta.updateTitle(title)
+    this.meta.updateMetaInfo(description, "diski.nl", "kortingscode, korting, kortingscode toevoegen, kortingscode delen, kortingscode zoeken, diski prikbord");
+    // The prikbord is the page people actually share with each other, so it
+    // needs og tags most. Trailing slash matches the canonical.
+    this.meta.updateOgTags(title, description, "https://diski.nl/prikbord/");
   }
 
   ngOnInit() {

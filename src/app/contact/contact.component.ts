@@ -18,8 +18,11 @@ export class ContactComponent {
   contactEmail = '';
 
   constructor(private meta: MetaService) {
-    this.meta.updateTitle("Neem Contact Op met Diski | Kortingscodes en Samenwerkingen");
-    this.meta.updateMetaInfo("Duizenden online shoppers maken gebruik van de kortingscodes die Diski deelt. Heb je vragen, verzoeken of ideeën voor samenwerkingen of adverteren? Neem contact op en ontdek hoe we samen kunnen werken via Diski.nl en @wiegeeftkorting.", "diski.nl", "Samenwerken met Diski, Adverteren op kortingscode platform, Kortingscodes voor online shoppers, Samenwerkingen met bedrijven");
+    const title = "Neem Contact Op met Diski | Kortingscodes en Samenwerkingen";
+    const description = "Duizenden online shoppers maken gebruik van de kortingscodes die Diski deelt. Heb je vragen, verzoeken of ideeën voor samenwerkingen of adverteren? Neem contact op en ontdek hoe we samen kunnen werken via Diski.nl en @wiegeeftkorting.";
+    this.meta.updateTitle(title);
+    this.meta.updateMetaInfo(description, "diski.nl", "Samenwerken met Diski, Adverteren op kortingscode platform, Kortingscodes voor online shoppers, Samenwerkingen met bedrijven");
+    this.meta.updateOgTags(title, description, "https://diski.nl/contact/");
 
     afterNextRender(() => {
       this.contactEmail = 'info' + '@' + 'diski.nl';

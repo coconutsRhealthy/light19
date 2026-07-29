@@ -12,8 +12,11 @@ import { MetaService } from '../services/meta.service';
 export class PrivacyPolicyComponent {
 
   constructor(private meta: MetaService) {
-    this.meta.updateTitle("Privacyverklaring | Diski.nl");
-    this.meta.updateMetaInfo("Lees hoe Diski.nl (LWPH Media) omgaat met je persoonsgegevens: welke gegevens wij verwerken, waarvoor wij ze gebruiken, met wie wij ze delen en hoe je jouw gegevens kunt inzien, aanpassen of verwijderen.", "diski.nl", "Privacyverklaring Diski, Privacybeleid kortingscodes, Persoonsgegevens AVG, Cookies en lokale opslag");
+    const title = "Privacyverklaring | Diski.nl";
+    const description = "Lees hoe Diski.nl (LWPH Media) omgaat met je persoonsgegevens: welke gegevens wij verwerken, waarvoor wij ze gebruiken, met wie wij ze delen en hoe je jouw gegevens kunt inzien, aanpassen of verwijderen.";
+    this.meta.updateTitle(title);
+    this.meta.updateMetaInfo(description, "diski.nl", "Privacyverklaring Diski, Privacybeleid kortingscodes, Persoonsgegevens AVG, Cookies en lokale opslag");
+    this.meta.updateOgTags(title, description, "https://diski.nl/privacy-policy/");
   }
 
 }

@@ -125,7 +125,10 @@ export class DiscountsTableComponent implements OnInit {
     const description = "De nieuwste werkende kortingscodes van een groot aantal webshops; Bespaar op online shoppen in " + monthYear + " via diski.nl";
     this.meta.updateTitle(title);
     this.meta.updateMetaInfo(description, "diski.nl", "Kortingscode, Korting");
-    this.meta.updateOgTags(title, description, "https://diski.nl");
+    // Trailing slash on purpose: set-canonicals.js always emits the canonical
+    // with one, and social platforms cache on og:url — if the two disagree the
+    // same page gets two entries and its share counts split.
+    this.meta.updateOgTags(title, description, "https://diski.nl/");
     this.meta.setJsonLd('organization', {
       "@context": "https://schema.org",
       "@type": "Organization",

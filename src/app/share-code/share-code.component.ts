@@ -19,12 +19,16 @@ export class ShareCodeComponent {
   shareEmail = '';
 
   constructor(private meta: MetaService) {
-    this.meta.updateTitle('Samenwerken met Diski | Deel jouw kortingscode');
+    const title = 'Samenwerken met Diski | Deel jouw kortingscode';
+    const description =
+      'Heb je een eigen kortingscode? Deel hem met de shoppers van Diski. Stuur ons een mailtje, dan kijken we samen wat er mogelijk is — van een plaatsing tot een langere samenwerking.';
+    this.meta.updateTitle(title);
     this.meta.updateMetaInfo(
-      'Heb je een eigen kortingscode? Deel hem met de shoppers van Diski. Stuur ons een mailtje, dan kijken we samen wat er mogelijk is — van een plaatsing tot een langere samenwerking.',
+      description,
       'diski.nl',
       'samenwerken met Diski, kortingscode delen, partnership, influencer korting, code insturen'
     );
+    this.meta.updateOgTags(title, description, 'https://diski.nl/code-delen/');
 
     afterNextRender(() => {
       this.shareEmail = 'wouter' + '@' + 'diski.nl';

@@ -345,7 +345,7 @@ export class Top5Component {
     this.meta.updateTitle(title);
     this.meta.updateMetaInfo(description, 'diski.nl',
       'top 5 webshops, beste webshops, kortingscode, online shoppen per categorie');
-    this.meta.updateOgTags(title, description, 'https://diski.nl/top5');
+    this.meta.updateOgTags(title, description, 'https://diski.nl/top5/');
   }
 
   /** Switch the visible category. */

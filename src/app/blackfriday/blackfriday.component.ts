@@ -121,12 +121,15 @@ export class BlackfridayComponent implements OnInit {
     private logosService: LogosService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.meta.updateTitle(`Black Friday ${this.year}: alle deals per categorie | Diski`);
+    const title = `Black Friday ${this.year}: alle deals per categorie | Diski`;
+    const description = `Alle Black Friday ${this.year} sales en aanbiedingen overzichtelijk per categorie. Blader door mode, beauty, elektronica en meer, of zoek direct je favoriete webshop op diski.nl.`;
+    this.meta.updateTitle(title);
     this.meta.updateMetaInfo(
-      `Alle Black Friday ${this.year} sales en aanbiedingen overzichtelijk per categorie. Blader door mode, beauty, elektronica en meer, of zoek direct je favoriete webshop op diski.nl.`,
+      description,
       "diski.nl",
       "black friday, black friday deals, sale, aanbiedingen, kortingscode"
     );
+    this.meta.updateOgTags(title, description, "https://diski.nl/blackfriday/");
   }
 
   ngOnInit() {
