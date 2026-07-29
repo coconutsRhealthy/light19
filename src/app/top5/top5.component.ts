@@ -4,6 +4,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { AffiliateLinkService } from '../services/affiliate-link.service';
 import { LogosService } from '../services/logos.service';
 import { AnalyticsEventService } from '../services/analytics-event.service';
+import { MetaService } from '../services/meta.service';
 
 interface TopShop {
   name: string;
@@ -328,12 +329,23 @@ export class Top5Component {
     });
   }
 
-  constructor(private affiliateLinkService: AffiliateLinkService, private logosService: LogosService, private analyticsEventService: AnalyticsEventService) {
+  constructor(private affiliateLinkService: AffiliateLinkService, private logosService: LogosService, private analyticsEventService: AnalyticsEventService, private meta: MetaService) {
     const today = new Date();
     const monthName = today.toLocaleString('nl-NL', { month: 'long' });
     const year = today.getFullYear();
 
     this.currentMonth = `${monthName} ${year}`;
+
+    // Without this the page inherited the generic index.html head — it was the
+    // last route in the build still serving the homepage <title>.
+    const title = `Top 5 beste webshops per categorie in ${this.currentMonth} | Diski`;
+    const description =
+      `De vijf populairste webshops per categorie in ${this.currentMonth}: van mode en ` +
+      `sneakers tot wonen, elektronica en reizen. Met de kortingscodes die er werken.`;
+    this.meta.updateTitle(title);
+    this.meta.updateMetaInfo(description, 'diski.nl',
+      'top 5 webshops, beste webshops, kortingscode, online shoppen per categorie');
+    this.meta.updateOgTags(title, description, 'https://diski.nl/top5');
   }
 
   /** Switch the visible category. */

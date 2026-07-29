@@ -75,10 +75,16 @@ fs.writeFileSync(manifestPath, manifest, 'utf8');
 // =========================
 // 3. routes.txt — every shop in discounts.json + the utility pages
 // =========================
-// Every blog article needs its own entry: discoverRoutes is false, so a route
-// missing here is never prerendered and the host falls back to the generic
-// index.html — which means crawlers see the homepage title, not the article's.
-const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'prikbord', 'blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'blogs/uniqlo', 'code-delen', ''];
+// The blog: the index plus one entry per article. Written out once and reused
+// for routes.txt AND the sitemap below — two separate hand-kept copies is how
+// /blogs/uniqlo ended up never prerendered (serving the homepage <title>) while
+// every article was missing from the sitemap. Add a new article to this one list
+// and it gets both.
+const blogRoutes = ['blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'blogs/uniqlo'];
+
+// discoverRoutes is false, so a route missing from routes.txt is never
+// prerendered and the host falls back to the generic index.html.
+const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'prikbord', ...blogRoutes, 'code-delen', ''];
 
 const sortedPages = Array.from(discountSlugs).sort((a, b) => a.localeCompare(b));
 
@@ -99,7 +105,9 @@ console.log(`routes.txt generated: ${sortedPages.length} shop pages, ${sortedV2.
 const BASE_URL = 'https://diski.nl';
 const today = new Date().toISOString().split('T')[0];
 
-const sitemapUtility = new Set(['winkels', 'contact', 'top5', 'privacy-policy', 'blogs', 'prikbord', 'blackfriday', 'code-delen', '']);
+// ...blogRoutes, not a bare 'blogs': the index page alone used to be listed here,
+// so the articles were prerendered but never submitted for indexing.
+const sitemapUtility = new Set(['winkels', 'contact', 'top5', 'privacy-policy', ...blogRoutes, 'prikbord', 'blackfriday', 'code-delen', '']);
 const sitemapSlugs = Array.from(new Set([...discountSlugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
 
 const urls = sitemapSlugs.map((route) => {
