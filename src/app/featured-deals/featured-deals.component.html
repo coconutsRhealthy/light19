@@ -75,7 +75,13 @@
       @if (c.kind === 'code') {
         <div class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-mt-1">{{ c.titleText }}</div>
       } @else {
-        <div class="tw-font-body tw-text-xs sm:tw-text-[13px] tw-text-ink/70 tw-mt-1.5 tw-leading-snug">{{ c.saleText }}</div>
+        <!-- Clamped to 3 lines. Sale copy is upstream data and its length varies a
+             lot (median 50 chars, p95 92, max 136). The rail is a flex row, so it
+             stretches to its tallest card — one long entry made every card tall.
+             3 lines fits ~p95 uncut; the tail truncates with an ellipsis, and the
+             full text stays available via the title attribute. -->
+        <div [title]="c.saleText"
+             class="tw-font-body tw-text-xs sm:tw-text-[13px] tw-text-ink/70 tw-mt-1.5 tw-leading-snug tw-line-clamp-3">{{ c.saleText }}</div>
       }
 
       <time [attr.datetime]="c.dateIso" class="tw-block tw-font-body tw-text-[11px] tw-text-ink/50 tw-mt-2">
