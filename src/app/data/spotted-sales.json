@@ -1123,6 +1123,10 @@
   ],
   "iciparisxl": [
     {
+      "text": "25% korting op bijna alles vanaf €25 tijdens de Shopping Night, alleen 29 juli van 18:00 tot 23:59 uur",
+      "date": "2026-07-29"
+    },
+    {
       "text": "30% korting op bijna alle sets en 20% op geuren vanaf €25",
       "date": "2026-07-27"
     },
@@ -1514,6 +1518,10 @@
     }
   ],
   "loungeunderwear": [
+    {
+      "text": "Zomersale met tot 60% korting",
+      "date": "2026-07-30"
+    },
     {
       "text": "Tot 60% korting van 8 tot 10 juni",
       "date": "2026-06-08"
@@ -2599,15 +2607,19 @@
   ],
   "tractive": [
     {
-      "text": "30% korting bij inschrijving voor de nieuwsbrief",
-      "date": "2026-07-29"
-    },
-    {
       "text": "40% korting op slimme trackers voor honden",
       "date": "2026-07-20"
+    },
+    {
+      "text": "30% korting bij inschrijving voor de nieuwsbrief",
+      "date": "2026-06-19"
     }
   ],
   "ullapopken.nl": [
+    {
+      "text": "25% korting op zomerkleding met code SUN25",
+      "date": "2026-07-30"
+    },
     {
       "text": "20% korting op alles bij aankoop van minimaal 3 artikelen met code 24645",
       "date": "2026-07-28"
