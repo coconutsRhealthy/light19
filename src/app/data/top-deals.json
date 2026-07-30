@@ -3,11 +3,11 @@
   "_image_readme": "OPTIONAL 'image': artwork for the coloured strip at the top of the card. When set it replaces both the sky→butter gradient and the brand name printed on it (the logo still shows in the card below). Drop the file in public/deals/ and reference it from the site root, e.g. \"image\": \"/deals/gymshark-zomersale.webp\". Sizing: the strip is 340x104 CSS px, so export ~680x208 for retina; .webp preferred. IMPORTANT — the white card overlaps the bottom of this strip, leaving only the top ~32px (mobile) / ~56px (desktop) visible, so keep the important part of the artwork in the TOP HALF; the image is cropped with object-fit: cover, anchored to its top edge. Best results with a wide, low-detail banner (pattern, product close-up, brand colour) rather than something with text or a centred subject.",
   "deals": [
     {
-      "_note": "Atmooz-actie: DISKI10 blijft geldig t/m 31-07-2026, €10 vanaf €150, excl. lichtbronnen en reserve-onderdelen. VERWIJDER deze entry op 1 augustus — top deals verlopen niet vanzelf. Geen 'url': de kaart gebruikt de gewone flow (merkpagina + affiliate-link uit affiliate-link.service.ts).",
-      "slug": "atmooz.com",
-      "text": "€10 korting vanaf €150 met code DISKI10",
-      "date": "2026-07-27",
-      "image": "/deals/atmooz-10-euro-korting.webp"
+      "_note": "Space NK sitewide sale: 20% korting op (bijna) alles, GEEN code nodig — de actie zit in de winkelwagen. Loopt t/m 31-07-2026. VERWIJDER deze entry op 1 augustus — top deals verlopen niet vanzelf. Banner op spacenk.com zei 'ENJOY 20% OFF (ALMOST) EVERYTHING / LIMITED TIME ONLY / T&Cs and exclusions apply'; einddatum komt van de NL-hero, niet van de .com-banner. Geen 'url': de kaart gebruikt de gewone flow (merkpagina + affiliate-link uit affiliate-link.service.ts). Let op: de losse code in discounts.json (30-07-2026: FIRST15, daarvoor FIRST20) is een eerste-bestelling-code, niet deze sale — de merkpagina-titel toont daarom een ander percentage dan deze kaart.",
+      "slug": "spacenk.com",
+      "text": "20% korting op (bijna) alles, geen code nodig",
+      "date": "2026-07-30",
+      "image": "/deals/spacenk-20-procent-korting.webp"
     }
   ]
 }
