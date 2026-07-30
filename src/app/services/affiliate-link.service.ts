@@ -1379,7 +1379,7 @@ export class AffiliateLinkService {
         dummyCode: '10EXTRA'
     },
     'oduree.nl': {
-        url: 'https://oduree.nl/discount/WGK10',
+        url: 'https://oduree.nl/discount/DISKI',
         dummyCode: 'WGK10'
     },
     'burga': {
