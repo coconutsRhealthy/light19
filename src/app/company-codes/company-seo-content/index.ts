@@ -443,7 +443,6 @@ export async function loadSeoContent(company: string): Promise<string | null> {
     case 'snuggs': return import('./snuggs').then(m => m.default);
     case 'softsundays': return import('./softsundays').then(m => m.default);
     case 'soholife': return import('./soholife').then(m => m.default);
-    case 'spacenk': return import('./spacenk').then(m => m.default);
     case 'sparkleanddream': return import('./sparkleanddream').then(m => m.default);
     case 'spinforlife': return import('./spinforlife').then(m => m.default);
     case 'sport-korting': return import('./sport-korting').then(m => m.default);
