@@ -1,10 +1,6 @@
 {
   "slug": "oduree.nl",
   "name": "Oduree",
-  "backupCode": {
-    "code": "DISKI",
-    "discount": "5"
-  },
   "heroLede": "Oduree maakt autoparfum die ruikt naar bekende luxegeuren en volgens het merk veel langer blijft hangen dan een gewone luchtverfrisser. In Nederlandse reels komt het vooral langs als cadeautip en als oplossing tegen muffe of rokerige auto's. Hieronder lees je wat Oduree verkoopt, hoe creators het gebruiken en hoe je met een kortingscode voordeliger shopt.",
   "about": [
     "Oduree is een Nederlands merk dat zich richt op autoparfum en aanverwante geuren. Het assortiment bestaat onder meer uit een autoparfum-spray (een full-size en een kleinere to-go), een autoparfum-hanger en huisparfum met geurstokjes.",
@@ -36,14 +32,14 @@
     "Geuren als Million, Savage en La Vie Est Belle"
   ],
   "codeInfo": [
-    "Vrijwel alle creators delen een persoonlijke kortingscode die je bij het afrekenen invult voor 10% korting op je bestelling.",
-    "Die codes zijn vernoemd naar de creator die ze deelt en eindigen meestal op '10'. Welke code op een moment werkt, hangt af van de lopende campagne; check daarom de actuele code.",
-    "Het kortingspercentage is consistent 10%. Controleer voor de zekerheid altijd de voorwaarden en of de code op het hele assortiment geldt voordat je betaalt."
+    "Vrijwel alle creators delen een persoonlijke kortingscode die je bij het afrekenen invult voor 5% korting op je bestelling.",
+    "Die codes zijn vernoemd naar de creator die ze deelt. Welke code op een moment werkt, hangt af van de lopende campagne; check daarom de actuele code.",
+    "Het kortingspercentage is consistent 5%. Controleer voor de zekerheid altijd de voorwaarden en of de code op het hele assortiment geldt voordat je betaalt."
   ],
   "tips": [
     {
-      "h": "Reken op 10% met een persoonlijke code",
-      "p": "De codes die creators delen geven steeds 10% korting. Vul de actuele code bij het afrekenen in en controleer dat de korting wordt toegepast."
+      "h": "Reken op 5% met een persoonlijke code",
+      "p": "De codes die creators delen geven steeds 5% korting. Vul de actuele code bij het afrekenen in en controleer dat de korting wordt toegepast."
     },
     {
       "h": "Slim voor cadeaumomenten",
@@ -61,7 +57,7 @@
     },
     {
       "q": "Hoe werkt een Oduree kortingscode?",
-      "a": "Je vult de code bij het afrekenen in. Vrijwel alle creators delen een persoonlijke code die 10% korting geeft (vaak eindigend op '10'). Controleer altijd de actuele code en voorwaarden."
+      "a": "Je vult de code bij het afrekenen in. Vrijwel alle creators delen een persoonlijke code die 5% korting geeft. Controleer altijd de actuele code en voorwaarden."
     },
     {
       "q": "Blijft de geur echt lang hangen?",
@@ -80,15 +76,8 @@
     "ahead-nutrition",
     "amicicosmetics"
   ],
-  "video": {
-    "src": "https://media.diski.nl/oduree.nl/ootd-1.mp4",
-    "poster": "https://media.diski.nl/oduree.nl/ootd-1.jpg",
-    "w": 540,
-    "h": 960,
-    "duration": 21,
-    "title": "Indy over Oduree",
-    "description": "Indy laat de autoparfums van Oduree zien.",
-    "uploadDate": "2026-06-16",
-    "caption": "Indy over de autoparfums van Oduree. Tap voor geluid."
+  "backupCode": {
+    "code": "DISKI",
+    "discount": "5"
   }
 }
