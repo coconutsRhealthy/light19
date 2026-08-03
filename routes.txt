@@ -89,7 +89,6 @@
 /aurgan.nl
 /aurisa
 /authenticbeautyconcept
-/autovibe.nl
 /autowrapnl
 /avaewear
 /avondmakers
@@ -179,6 +178,7 @@
 /bottger
 /bowork
 /bozasieraden
+/braincaps
 /brand-parts.nl
 /brandofme
 /bravas.nl
@@ -264,8 +264,8 @@
 /code-delen
 /colliegoud
 /colorbestie.app
-/colorco
 /colorescience
+/colorfulstandard
 /colourfulrebel
 /commense
 /conceptglobalco
@@ -349,6 +349,7 @@
 /dikkedame.com
 /dilling
 /dimora
+/dirndlstern
 /disinofashionboutique
 /disneyland
 /dogwithamission
@@ -385,6 +386,8 @@
 /dyu.official
 /earkings
 /earkings.nl
+/earlyjewels
+/earthraceevents
 /eastpak
 /easyplants_greenlife
 /easyplants-greenlife
@@ -410,7 +413,6 @@
 /elsuvon
 /elvou
 /emc
-/emizajewellery.com
 /emmanoah
 /emmanoahbaby.nl
 /emmasleepnl
@@ -421,7 +423,6 @@
 /equalite.thelabel
 /ersanails
 /escaperoomzevenhuizen
-/esdushi_com
 /esn
 /essenzahome
 /etos
@@ -466,6 +467,7 @@
 /fever
 /feverhubutrecht
 /fietsleaseholland
+/fietsoptimaal
 /fietsparadijs
 /finaste.nl
 /finelaserclinic
@@ -562,13 +564,11 @@
 /goodweigh
 /goodweigh.nl
 /gotbag
-/gouddroogchallenge
 /goyu
 /graashoeveamelte
 /graceisgreen
 /grandoptical
 /grandvaliramoda
-/graskampioen
 /greengypsyspices
 /greenpan
 /greenstickiq
@@ -622,12 +622,12 @@
 /hippegeboortekaartjes
 /hivefamilyplanner
 /holafly
+/holistic_life.care
 /hollandandbarrett
 /homary
 /homarycom
 /home24
 /homefitnesscode
-/homelightsnl
 /hondensupplement
 /horloge.nl
 /horseflex.nl
@@ -665,6 +665,7 @@
 /internetslagerij
 /invitationtoimagine
 /iphone-cases.nl
+/irisbeautysalon
 /isabelbernard
 /isabelmarant
 /iscooter
@@ -744,6 +745,7 @@
 /leukstetickets
 /levis
 /lichtenmeubels
+/lift.lake
 /lilatelier
 /linda.trui
 /linguaplanta
@@ -768,6 +770,7 @@
 /loomathelabel.com
 /loopearplugs
 /loragal
+/loragal_eshop
 /lounge by zalando
 /loungeunderwear
 /lovd_store
@@ -786,6 +789,7 @@
 /luuloo.nl
 /luvmehair
 /luxury.musthave
+/luxuryescapes
 /luxuryfragrances.nl
 /lycamobile
 /lyko
@@ -819,7 +823,6 @@
 /marrygrafie
 /massivewood_
 /matchu
-/matrasatelier
 /mauihair
 /maxbenjamin
 /maxicosi
@@ -832,14 +835,12 @@
 /mepal
 /merakitech
 /meraux
-/merelinwonderland
 /merkmeisjeskleding
 /merodacosmetics
+/metcynthiaopreis
 /micas
 /michaelkors
-/mijnboxspring
 /mijnhummeltje
-/mijnkindplanner
 /milezbracelets
 /millarovekamp
 /mimamsterdam
@@ -925,7 +926,6 @@
 /oace
 /oakley
 /obelink
-/odespleasure
 /odido mobiel
 /odido thuis
 /odido zakelijk
@@ -975,6 +975,7 @@
 /palladium
 /panamajack
 /paneli
+/paperloops_official
 /papique
 /paragonfitwear
 /parfumado
@@ -1054,7 +1055,6 @@
 /qthelabel
 /queentarzi
 /quotrell
-/raamtekening
 /raboesy
 /radero.nl
 /raizzed
@@ -1079,6 +1079,7 @@
 /robell
 /rockerz
 /rocksdiscount
+/rondoozatelier
 /rosalique
 /rosaodor
 /rosental-organics.nl
@@ -1137,7 +1138,6 @@
 /sharkninja.nl
 /sheclothes
 /shein
-/sherose
 /shesaidyes_official
 /shirttuning
 /shirttuning.nl
@@ -1152,7 +1152,6 @@
 /silkelegancemanon
 /silksilky_official
 /simbiosis
-/simmilondon
 /simpel
 /simyo
 /siroko
@@ -1164,6 +1163,7 @@
 /skechers
 /skims
 /skinnydiplondon
+/skintemporarytattoos
 /skrub
 /slingershop
 /smaakamsterdam
@@ -1180,7 +1180,6 @@
 /snuggs
 /softsundays
 /soholife
-/sojosvision
 /solitsocks
 /soliver
 /sophior_official
@@ -1197,7 +1196,6 @@
 /sproudsy
 /squla
 /stanley
-/stardoorsnl
 /startselect
 /stayokayhostels
 /steamone
@@ -1224,6 +1222,7 @@
 /strongeaglewear
 /stronger
 /studiobabs
+/studiobloomly
 /studiofloraflora
 /studiofrenchie
 /studiogimme
@@ -1250,9 +1249,11 @@
 /sunweb
 /sunwisescreens
 /superdry
+/superrichkids
 /superyoga
 /surebird
 /surfblend
+/surfercat
 /suuksess
 /svibe
 /swapan
@@ -1264,15 +1265,16 @@
 /tadaaz
 /tadaaz.nl
 /tafelloodz
+/tafelplein
 /tallishop.nl
 /tallk
 /tallknl
 /tallowcosmetics
 /tandenblekerzwolle
+/tanglecreations
 /tanrevel
 /tapoutclub
 /tastypresent
-/tbjp
 /teamathlevel
 /techweise
 /teddah
@@ -1329,6 +1331,7 @@
 /top5
 /toutvintageshop
 /tractive
+/traderepublic
 /trail
 /training-fit
 /training-fit.nl
@@ -1394,11 +1397,13 @@
 /veganboost
 /velluto
 /velostore
+/veloura.nailshop
 /veneta
 /verblijfbijhygge
 /veromoda
 /vertbaudet
 /vevor
+/vibe
 /vidaxl
 /vigorbuy
 /vikingdirect
@@ -1422,6 +1427,7 @@
 /viverelondon
 /vliegwinkel
 /vloer.nu
+/vlr
 /voghion
 /volero.nl
 /vonroc
@@ -1453,7 +1459,6 @@
 /wesmyle
 /westwing
 /whitefoxboutique
-/wholybones
 /wigiwama
 /wijnvoordeel
 /wildrefill
