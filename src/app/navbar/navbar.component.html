@@ -8,7 +8,11 @@
      is lg:sticky on its own). z-30 matches the navbar's layer so the modal
      backdrop (z-40) still covers it. -->
 <div class="tw-contents lg:tw-block lg:tw-sticky lg:tw-top-0 tw-z-30">
-<app-waitlist-bar></app-waitlist-bar>
+<!-- App-waitlist bar taken offline 2026-07-31. Ran 21-30 July and collected 76
+     signups (63 of them on the homepage). Re-enable by uncommenting this line —
+     the component, its GA event (app_waitlist_signup_<page>) and the Brevo
+     app_waitlist path are all still wired up and untouched. -->
+<!-- <app-waitlist-bar></app-waitlist-bar> -->
 
 <nav class="lg:tw-sticky lg:tw-top-0 tw-z-30 tw-bg-cream/90 tw-backdrop-blur-md tw-border-b tw-border-ink/10 tw-text-ink tw-font-body">
     <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">

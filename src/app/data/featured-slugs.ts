@@ -26,7 +26,6 @@
 // random rotation that gives the rail its variety. Clear it when the promotion
 // is over — pins do not expire on their own.
 export const PINNED_SLUGS: string[] = [
-  'zalando'
 ];
 
 // The shop that gets the rail's single SALE slot. Empty string = pick
@@ -41,7 +40,7 @@ export const PINNED_SLUGS: string[] = [
 // Falls back to the automatic pick when the slug has no sale in the feed, or
 // when that shop is already on the rail as a top deal or a pin (it would
 // otherwise appear twice). Does not expire — clear it when the promotion ends.
-export const SALE_SLUG: string = '';
+export const SALE_SLUG: string = 'uwantisell';
 
 export const FEATURED_SLUGS: string[] = [
   'nakdfashion',
@@ -55,5 +54,6 @@ export const FEATURED_SLUGS: string[] = [
   'creamyfabrics',
   'bylashbabe',
   'oduree.nl',
-  'loavies'
+  'loavies',
+  'gutsgusto'
 ];

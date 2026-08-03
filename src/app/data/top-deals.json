@@ -1,13 +1,5 @@
 {
   "_readme": "Hand-written TOP DEALS for the homepage rail ('De beste deals van vandaag'). A top deal ALWAYS outranks the auto-generated kortingscode and sale cards and takes the first (left-most) slots. Fully manual: nothing is pulled from the live feeds. Each deal has: slug (a real brand-page slug, e.g. 'gymshark' or 'oduree.nl' — drives the logo, name and link; does NOT need a code or sale in the feeds), text (free text shown on the card, keep it short), date (YYYY-MM-DD, shown as 'Gespot op ...' and used to order multiple deals, newest first), OPTIONAL url (a specific landing page for this promotion — when set the card links there in a new tab; when omitted or empty the card links to the normal brand page for the slug), and OPTIONAL image (see _image_readme). Top deals do NOT auto-expire — remove the entry when it's no longer relevant. Empty 'deals' array = rail behaves as before (4 codes + 1 sale).",
   "_image_readme": "OPTIONAL 'image': artwork for the coloured strip at the top of the card. When set it replaces both the sky→butter gradient and the brand name printed on it (the logo still shows in the card below). Drop the file in public/deals/ and reference it from the site root, e.g. \"image\": \"/deals/gymshark-zomersale.webp\". Sizing: the strip is 340x104 CSS px, so export ~680x208 for retina; .webp preferred. IMPORTANT — the white card overlaps the bottom of this strip, leaving only the top ~32px (mobile) / ~56px (desktop) visible, so keep the important part of the artwork in the TOP HALF; the image is cropped with object-fit: cover, anchored to its top edge. Best results with a wide, low-detail banner (pattern, product close-up, brand colour) rather than something with text or a centred subject.",
-  "deals": [
-    {
-      "_note": "Space NK sitewide sale: 20% korting op (bijna) alles, GEEN code nodig — de actie zit in de winkelwagen. Loopt t/m 31-07-2026. VERWIJDER deze entry op 1 augustus — top deals verlopen niet vanzelf. Banner op spacenk.com zei 'ENJOY 20% OFF (ALMOST) EVERYTHING / LIMITED TIME ONLY / T&Cs and exclusions apply'; einddatum komt van de NL-hero, niet van de .com-banner. Geen 'url': de kaart gebruikt de gewone flow (merkpagina + affiliate-link uit affiliate-link.service.ts). Let op: de losse code in discounts.json (30-07-2026: FIRST15, daarvoor FIRST20) is een eerste-bestelling-code, niet deze sale — de merkpagina-titel toont daarom een ander percentage dan deze kaart.",
-      "slug": "spacenk.com",
-      "text": "20% korting op (bijna) alles, geen code nodig",
-      "date": "2026-07-30",
-      "image": "/deals/spacenk-20-procent-korting.webp"
-    }
-  ]
+  "deals": []
 }
