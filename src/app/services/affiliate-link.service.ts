@@ -763,7 +763,7 @@ export class AffiliateLinkService {
         dummyCode: 'PB10'
     },
     'wefashion': {
-        url: 'https://adtr.co/0j1yo1',
+        url: '',
         dummyCode: 'MAYRAXWE'
     },
     'weekday': {
@@ -803,7 +803,7 @@ export class AffiliateLinkService {
         dummyCode: 'LOFTYXJULIA'
     },
     'manfield': {
-        url: 'https://lt45.net/c/?si=10842&li=1485384&wi=418827&dl=%2F',
+        url: '',
         dummyCode: 'MICHELLE15'
     },
     'mango': {
@@ -827,11 +827,11 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'puma': {
-        url: 'https://jf79.net/c/?si=17002&li=1733660&wi=418827&ws=&dl=nl%2Fnl%2Fhome',
+        url: '',
         dummyCode: 'HOLIDAYS'
     },
     'sacha': {
-        url: 'https://lt45.net/c/?si=13103&li=1576355&wi=421806&dl=',
+        url: '',
         dummyCode: 'ELLE20'
     },
     'notino': {
@@ -955,7 +955,7 @@ export class AffiliateLinkService {
         dummyCode: 'NS10'
     },
     'ofm': {
-        url: 'https://ofm.mtpc.se/5924502',
+        url: '',
         dummyCode: 'SHOP10'
     },
     'plein.nl': {
@@ -979,7 +979,7 @@ export class AffiliateLinkService {
         dummyCode: 'WALK10'
     },
     'shoesme': {
-        url: 'https://glp8.net/c/?si=20528&li=1870190&wi=418827&dl=',
+        url: '',
         dummyCode: 'ME10'
     },
     'lilatelier': {
@@ -1047,7 +1047,7 @@ export class AffiliateLinkService {
         dummyCode: 'HUM10'
     },
     'nolten': {
-        url: 'https://ds1.nl/c/?si=9375&li=1423071&wi=418827&ws=&dl=',
+        url: '',
         dummyCode: 'EXTRA15'
     },
     'superdry': {
@@ -1055,7 +1055,7 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'vanarendonk': {
-        url: 'https://lt45.net/c/?si=11852&li=1523584&wi=418827&dl=%2F',
+        url: '',
         dummyCode: 'SHOP15'
     },
     'bartogi': {
@@ -1063,7 +1063,7 @@ export class AffiliateLinkService {
         dummyCode: 'SHOPBARTO'
     },
     'plein': {
-        url: 'https://fr135.net/c/?si=3366&li=1161224&wi=418827&dl=',
+        url: '',
         dummyCode: 'SHOP10PLEIN'
     },
     'myka': {
@@ -1111,7 +1111,7 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'trail': {
-        url: 'https://link.trail.nl/c/?si=18704&li=1803809&wi=418827&ws=&dl=',
+        url: '',
         dummyCode: 'TRAIL15'
     },
     'leukstetickets': {
@@ -1127,11 +1127,11 @@ export class AffiliateLinkService {
         dummyCode: 'OFF10'
     },
     'levis': {
-        url: 'https://glp8.net/c/?si=19949&li=1850890&wi=418827&dl=NL%2Fnl_NL%2F',
+        url: '',
         dummyCode: '501FORYOU'
     },
     'littledutch': {
-        url: 'https://aff.little-dutch.com/c/?si=19527&li=1836661&wi=418827&dl=%2F',
+        url: '',
         dummyCode: 'DUTCH10'
     },
     'acculaders.nl': {
@@ -1155,15 +1155,15 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'parfumado': {
-        url: 'https://fr135.net/c/?si=15178&li=1658200&wi=421806&dl=campaign%2Fhome',
+        url: '',
         dummyCode: 'MEGAN50'
     },
     'vanastenbabysuperstore': {
-        url: 'https://c.vanastenbabysuperstore.nl/c/?si=14844&li=1640919&wi=418827&dl=%2F',
+        url: '',
         dummyCode: 'BABY-10'
     },
     'fietsparadijs': {
-        url: 'https://lt45.net/c/?si=12168&li=1536530&wi=418827&dl=',
+        url: '',
         dummyCode: 'SHOPFIETS10'
     },
     'skinnydiplondon': {
@@ -1183,7 +1183,7 @@ export class AffiliateLinkService {
         dummyCode: 'SHOPHEAD'
     },
     'haarspullen': {
-        url: 'https://jf79.net/c/?si=16563&li=1711168&wi=418827&dl=',
+        url: '',
         dummyCode: '10OFF'
     },
     'stellamccartney': {
@@ -1191,7 +1191,7 @@ export class AffiliateLinkService {
         dummyCode: 'STELLA-10'
     },
     'foodello': {
-        url: 'https://partners.foodello.nl/c/?si=17066&li=1737047&wi=418827&dl=%2F',
+        url: '',
         dummyCode: 'EXTRA10'
     },
     'kiwi.com': {
@@ -1199,7 +1199,7 @@ export class AffiliateLinkService {
         dummyCode: '10EXTRA'
     },
     'lego': {
-        url: 'https://bdt9.net/c/?si=18488&li=1798470&wi=418827&dl=en-nl',
+        url: '',
         dummyCode: 'BRICKOFF'
     },
     'oakley': {
@@ -1207,11 +1207,11 @@ export class AffiliateLinkService {
         dummyCode: 'THEOAK'
     },
     'tuinmeubelwereld': {
-        url: 'https://bdt9.net/c/?si=19167&li=1822967&wi=418827&dl=%2F',
+        url: '',
         dummyCode: 'TUIN10'
     },
     'vvvcadeaukaarten': {
-        url: 'https://fr135.net/c/?si=15261&li=1660848&wi=418827&dl=',
+        url: '',
         dummyCode: 'SARAH'
     },
     'joybuy': {
@@ -1219,11 +1219,11 @@ export class AffiliateLinkService {
         dummyCode: 'JOY10'
     },
     'salontopper': {
-        url: 'https://lt45.net/c/?si=12554&li=1549340&wi=418827&ws=&dl=c%2F%3Fsi%3D20823%26li%3D1881811%26wi%3D418827%26dl%3D',
+        url: '',
         dummyCode: 'TOP10'
     },
     'flink': {
-        url: 'https://jf79.net/c/?si=16070&li=1691645&wi=418827&dl=shop%2Fen-NL%2F',
+        url: '',
         dummyCode: 'ANNICKK15'
     },
     'theorie.nl': {
@@ -1231,7 +1231,7 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'cookandpan': {
-        url: 'https://glp8.net/c/?si=21326&li=1907615&wi=418827&dl=',
+        url: '',
         dummyCode: '10NOOM'
     },
     'lease.auto': {
@@ -1263,7 +1263,7 @@ export class AffiliateLinkService {
         dummyCode: '10SHOP'
     },
     'olijfolieconcurrent': {
-        url: 'https://glp8.net/c/?si=20259&li=1864453&wi=418827&dl=',
+        url: '',
         dummyCode: 'SHOPOLIVE'
     },
     'suntip.nl': {
@@ -1427,11 +1427,11 @@ export class AffiliateLinkService {
         dummyCode: '10OFF'
     },
     'daka': {
-        url: 'https://partner.daka.nl/c/?si=7290&li=1338482&wi=418827&dl=%2F',
+        url: '',
         dummyCode: 'EXTRA10'
     },
     'pipoos': {
-        url: 'https://fr135.net/c/?si=15493&li=1670531&wi=418827&dl=',
+        url: '',
         dummyCode: 'OFF10'
     },
     'allsaints': {
@@ -1451,11 +1451,11 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'beltegoed.nl': {
-        url: 'https://glp8.net/c/?si=19549&li=1837751&wi=418827&dl=',
+        url: '',
         dummyCode: '10EXTRA'
     },
     'weightworld': {
-        url: 'https://fr135.net/c/?si=15441&li=1668942&wi=418827&dl=',
+        url: '',
         dummyCode: 'CC10EXTRA'
     },
     'animigo': {
@@ -1483,7 +1483,7 @@ export class AffiliateLinkService {
         dummyCode: 'WELCOME10'
     },
     'bjornborg': {
-        url: 'https://adtr.co/y9q0cv',
+        url: 'https://to.bjornborg.com/t/t?a=1212697158&as=2091458876&t=2&tk=1',
         dummyCode: 'LYDIA20'
     },
     'buitiqo': {
@@ -1727,7 +1727,7 @@ export class AffiliateLinkService {
         dummyCode: '10ACTIE'
     },
     'lyko': {
-        url: 'https://adtr.co/wzq262',
+        url: '',
         dummyCode: 'EXTRA10'
     },
     'maevenart': {
@@ -1787,7 +1787,7 @@ export class AffiliateLinkService {
         dummyCode: 'ACTIE10'
     },
     'sissyboy': {
-        url: 'https://rkn3.net/c/?si=14446&li=1621003&wi=421806&dl=',
+        url: '',
         dummyCode: '10ACTIE'
     },
     'sneakin': {
