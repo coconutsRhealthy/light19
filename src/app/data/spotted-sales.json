@@ -919,6 +919,10 @@
   ],
   "flexispot": [
     {
+      "text": "50% korting op E7 PLUS vanaf 5 augustus 10:00 uur",
+      "date": "2026-08-03"
+    },
+    {
       "text": "Tot 50% korting op E7 Plus vanaf 5 augustus 10:00 uur",
       "date": "2026-08-01"
     },
@@ -992,6 +996,10 @@
     }
   ],
   "gutsgusto": [
+    {
+      "text": "Minstens 20% korting op alle tops en blouses, t/m woensdag, online en in de winkels",
+      "date": "2026-08-03"
+    },
     {
       "text": "Gratis verzending met code SUNKISSED, alleen vandaag en morgen",
       "date": "2026-07-28"
@@ -1186,6 +1194,10 @@
     }
   ],
   "iciparisxl": [
+    {
+      "text": "25% korting op bijna alle oogmake-up vanaf €25, t/m 16 augustus",
+      "date": "2026-08-03"
+    },
     {
       "text": "21% korting op bijna alles vanaf €25 tijdens het Tax Free Shopping Weekend, 30 juli t/m 2 augustus",
       "date": "2026-07-30"
@@ -1917,6 +1929,10 @@
   ],
   "notino": [
     {
+      "text": "20% zomerkorting op geselecteerde producten, 3 t/m 9 augustus",
+      "date": "2026-08-03"
+    },
+    {
       "text": "Tot 40% korting op geselecteerde producten met code sale (of saleapp in de app), t/m 2 augustus",
       "date": "2026-07-27"
     }
@@ -2291,6 +2307,12 @@
     {
       "text": "10% extra korting op geselecteerde slippers en sandalen met code WEEKENDDEALNL, bovenop kortingen tot 60%, alleen dit weekend",
       "date": "2026-07-31"
+    }
+  ],
+  "praxis": [
+    {
+      "text": "Tot 50% korting op geselecteerde tuinmeubelen",
+      "date": "2026-08-03"
     }
   ],
   "rihoas": [
