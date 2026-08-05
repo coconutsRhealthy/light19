@@ -63,7 +63,7 @@
         <!-- Header -->
         <div class="tw-flex tw-justify-between tw-items-center tw-px-6 tw-py-4 tw-border-b tw-border-ink/10">
             <h2 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink">
-                🎉 {{ discount.company }} kortingscode
+                🎉 {{ discount.company }} {{ discount.companySlug?.toLowerCase() === 'bol.com' ? 'deal' : 'kortingscode' }}
             </h2>
             <button
                     (click)="closeModal()"
@@ -224,26 +224,35 @@
                 <span>{{ getCorrectFormatOfCodeDate(discount.date) }}</span>
             </div>
 
-            <!-- Samsung: officiële actievoorwaarden -->
-            @if (samsungPromotion) {
+            <!-- Per-shop promo block (data/shop-promotions.ts). Only promoText is
+                 required: a partner like Samsung fills in looptijd, voorwaarden and
+                 a landingspagina, while a shop that just needs one line describing
+                 the deal omits them and renders nothing but the text. -->
+            @if (promotion) {
             <div class="tw-border-t tw-border-ink/10 tw-pt-4 tw-space-y-2">
-                <div class="tw-font-semibold tw-text-ink tw-text-sm">Actievoorwaarden</div>
-                <p class="tw-text-sm tw-text-ink/70 tw-leading-relaxed">{{ samsungPromotion.promoText }}</p>
+                <div class="tw-font-semibold tw-text-ink tw-text-sm">{{ promotion.heading ?? 'Actievoorwaarden' }}</div>
+                <p class="tw-text-sm tw-text-ink/70 tw-leading-relaxed">{{ promotion.promoText }}</p>
+                @if (promotion.period) {
                 <div class="tw-flex tw-justify-between tw-text-sm tw-text-ink/70">
                     <span>Looptijd</span>
-                    <span class="tw-font-medium tw-text-ink">{{ samsungPromotion.period }}</span>
+                    <span class="tw-font-medium tw-text-ink">{{ promotion.period }}</span>
                 </div>
+                }
+                @if (promotion.conditions?.length) {
                 <ul class="tw-list-disc tw-pl-5 tw-text-xs tw-text-ink/55 tw-space-y-1">
-                    @for (condition of samsungPromotion.conditions; track condition) {
+                    @for (condition of promotion.conditions; track condition) {
                         <li>{{ condition }}</li>
                     }
                 </ul>
-                <a [href]="samsungPromotion.landingUrl"
+                }
+                @if (promotion.landingUrl) {
+                <a [href]="promotion.landingUrl"
                    target="_blank"
                    rel="sponsored"
                    class="tw-inline-block tw-text-sm tw-text-link hover:tw-underline tw-font-medium">
                     Bekijk de actiepagina →
                 </a>
+                }
             </div>
             }
         </div>

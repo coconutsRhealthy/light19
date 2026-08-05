@@ -84,47 +84,6 @@
 <!--        }-->
     </div>
 
-      <!-- Samsung: officiële actievoorwaarden per promotie -->
-      @if (samsungPromoList.length > 0) {
-        <section class="tw-mt-2 tw-mb-6 tw-bg-panel tw-rounded-3xl tw-border tw-border-ink/10 tw-p-6 md:tw-p-8 tw-max-w-4xl tw-mx-auto">
-          <h2 class="tw-font-title tw-text-xl md:tw-text-2xl tw-font-bold tw-tracking-tight tw-text-ink tw-mb-5">Actievoorwaarden per promotie</h2>
-          <div class="tw-space-y-5">
-            @for (item of samsungPromoList; track item.label) {
-              <div class="tw-border tw-border-ink/10 tw-rounded-xl tw-p-4">
-                <h3 class="tw-font-title tw-text-base tw-font-bold tw-text-ink tw-mb-2">{{ item.promo.promoText }}</h3>
-                <dl class="tw-text-sm tw-text-ink/70 tw-space-y-1">
-                  @if (item.code !== 'geen code nodig') {
-                    <div class="tw-flex tw-gap-2">
-                      <dt class="tw-font-medium tw-text-ink/50 tw-w-24 tw-flex-shrink-0">Code</dt>
-                      <dd class="tw-font-mono">{{ item.code }}</dd>
-                    </div>
-                  }
-                  <div class="tw-flex tw-gap-2">
-                    <dt class="tw-font-medium tw-text-ink/50 tw-w-24 tw-flex-shrink-0">Looptijd</dt>
-                    <dd>{{ item.promo.period }}</dd>
-                  </div>
-                  <div class="tw-flex tw-gap-2">
-                    <dt class="tw-font-medium tw-text-ink/50 tw-w-24 tw-flex-shrink-0">Voorwaarden</dt>
-                    <dd>
-                      <ul class="tw-list-disc tw-pl-5 tw-space-y-1">
-                        @for (condition of item.promo.conditions; track condition) {
-                          <li>{{ condition }}</li>
-                        }
-                      </ul>
-                    </dd>
-                  </div>
-                </dl>
-                <a [href]="item.promo.landingUrl"
-                   target="_blank"
-                   rel="sponsored"
-                   class="tw-inline-block tw-mt-3 tw-text-sm tw-text-link hover:tw-underline tw-font-medium">
-                  Bekijk de actiepagina →
-                </a>
-              </div>
-            }
-          </div>
-        </section>
-      }
 
       @if (seoContent) {
         <div [innerHTML]="seoContent" (click)="onSeoLinkClick($event)"></div>

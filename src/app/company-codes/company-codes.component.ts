@@ -17,7 +17,6 @@ import { PLATFORM_ID, PendingTasks, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { VisitorProfileService } from '../services/visitor-profile.service';
-import { samsungPromotions, SamsungPromotion } from '../data/samsung-promotions';
 
 import { ModalComponent } from '../modal/modal.component';
 
@@ -251,15 +250,6 @@ export class CompanyCodesComponent implements OnInit {
     return shouldDisplayPercent;
   }
 
-  // Samsung partner requirement: surface the official promo voorwaarden for each
-  // live Samsung promotion on the /samsung page (same source as the modal).
-  get samsungPromoList(): { code: string; label: string; promo: SamsungPromotion }[] {
-    if (this.company?.toLowerCase() !== 'samsung') return [];
-    return this.discountCodes
-      .map(c => ({ code: c.code, label: c.label ?? '', promo: samsungPromotions[c.label ?? ''] }))
-      .filter((x): x is { code: string; label: string; promo: SamsungPromotion } => !!x.promo);
-  }
-
   sendAffEventsToGa() {
     const event = 'comp_codes';
     const eventCategory = 'Comp_codes';
@@ -342,6 +332,8 @@ export class CompanyCodesComponent implements OnInit {
   getCardButtonText(discountCode: string) {
     if(discountCode.startsWith("BF_")) {
         return "Bekijk Deal";
+    } else if(this.company?.toLowerCase() === "bol.com") {
+        return "PAK KORTING";
     } else {
         return "PAK CODE";
     }

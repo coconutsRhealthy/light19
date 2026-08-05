@@ -736,7 +736,7 @@ export class AffiliateLinkService {
     },
     'bol.com': {
         url: 'https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fcmp%2Fdrogisterijdeals%2F1916%2F&f=BAN&name=Dagelijkse%20inkopen&subid=',
-        dummyCode: 'MA15R'
+        dummyCode: 'geen code nodig'
     },
     'bershka': {
         url: 'https://www.stylink.it/24M9kt0LXAb',

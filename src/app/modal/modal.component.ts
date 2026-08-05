@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
 import { DiscountsService } from '../services/discounts.service';
-import { getSamsungPromotion, SamsungPromotion } from '../data/samsung-promotions';
+import { getShopPromotion, ShopPromotion } from '../data/shop-promotions';
 import { FormsModule } from '@angular/forms';
 import shopUrls from '../data/shop-urls.json';
 
@@ -100,11 +100,12 @@ export class ModalComponent {
     return this._discount;
   }
 
-  // Samsung partner requirement: show the official promo details (looptijd,
-  // voorwaarden, landingspagina) for each live, confirmed Samsung promotion.
-  get samsungPromotion(): SamsungPromotion | undefined {
-    if (this._discount?.companySlug?.toLowerCase() !== 'samsung') return undefined;
-    return getSamsungPromotion(this._discount.label);
+  // Partner requirement for some shops: show the official promo details (looptijd,
+  // voorwaarden, landingspagina) alongside the code. Driven entirely by the
+  // registry in data/shop-promotions.ts — no slug is hardcoded here, so adding a
+  // shop is a data change. Shops without an entry render no block.
+  get promotion(): ShopPromotion | undefined {
+    return getShopPromotion(this._discount?.companySlug, this._discount?.label);
   }
 
   constructor(private analyticsEventService: AnalyticsEventService,
