@@ -45,24 +45,28 @@ export const DEFAULT_LABEL = '';
 
 export const shopPromotions: Record<string, Record<string, ShopPromotion>> = {
   // Single promotion, no bracket label in the feed -> the DEFAULT_LABEL key.
-  // Not a code deal: the discount sits in the Aanvuldeals campaign itself, so the
+  // Not a code deal: the discount sits in the Dagdeals campaign itself, so the
   // block explains what the visitor is clicking through to rather than listing
   // voorwaarden. period/conditions are deliberately omitted.
   //
-  // No landingUrl on purpose. The bol.com affiliate link in affiliate-link.service.ts
-  // already points at this same campaign (1916), and the modal's "Naar winkel →"
-  // button uses it. Adding the plain bol.com URL here would put a second link to the
-  // same page in the modal, and that one would be untracked — so the visitor could
-  // reach the deal through a link that earns nothing.
+  // KEEP IN STEP with the bol.com affiliate link in affiliate-link.service.ts —
+  // this copy describes wherever that link lands. It currently points at campaign
+  // 610 (Dagdeal); it previously pointed at 1916 (Aanvuldeals) and the copy here
+  // described that instead. Change one without the other and the modal promises a
+  // deal the visitor never sees.
+  //
+  // No landingUrl on purpose: the affiliate link already goes to this campaign and
+  // the modal's "Naar winkel →" button uses it. A plain bol.com URL here would put
+  // a second, untracked route to the same page in front of the visitor.
   'bol.com': {
     '': {
       code: 'geen code nodig',
       heading: 'Over deze deal',
       promoText:
-        'Met de Aanvuldeals vul je je voorraad extra voordelig aan: toiletpapier, ' +
-        'vaatwastabletten, koffie, luiers en verzorging. Vaak met volumevoordeel — ' +
-        'hoe meer je pakt, hoe lager de prijs per stuk. Geen code nodig, de korting ' +
-        'zit al in de actie.',
+        'Bij de Dagdeals vind je elke dag een wisselende selectie met flinke korting: ' +
+        'elektronica, huishoudelijke apparaten, speelgoed en meer. De actie loopt 24 ' +
+        'uur en op is op — morgen staat er weer iets anders. Geen code nodig, de ' +
+        'korting zit al in de actie.',
     },
   },
   samsung: {

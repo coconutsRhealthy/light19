@@ -171,7 +171,7 @@ export class AffiliateLinkService {
         dummyCode: 'JULIA30O7A'
     },
     'fashionette': {
-        url: 'https://tidd.ly/4j3pE2h',
+        url: '',
         dummyCode: 'FASH30XMQ'
     },
     'vidaxl': {
@@ -735,7 +735,7 @@ export class AffiliateLinkService {
         dummyCode: 'SEP10'
     },
     'bol.com': {
-        url: 'https://partner.bol.com/click/click?p=1&t=url&s=1507667&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fcmp%2Fdrogisterijdeals%2F1916%2F&f=BAN&name=Dagelijkse%20inkopen&subid=',
+        url: 'https://partner.bol.com/click/click?p=2&t=url&s=1509486&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fcmp%2Fdagdeal%2F610%2F&name=Dagdeal',
         dummyCode: 'geen code nodig'
     },
     'bershka': {
@@ -1515,7 +1515,7 @@ export class AffiliateLinkService {
 //         dummyCode: '15SHOP'
 //     },
     'jackery': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.jackery.com%2F',
+        url: 'https://itjackery.pxf.io/bk02qg',
         dummyCode: '10OFF'
     },
     'jetpacglobal': {

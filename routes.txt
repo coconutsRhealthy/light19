@@ -5,7 +5,6 @@
 /24uomo
 /3bearsporridge
 /4endurance
-/4seizoenentuinmeubelen
 /4shine.nl
 /50plusmobiel
 /7oclock.de
@@ -48,7 +47,6 @@
 /alpha.lion
 /alphalete
 /alpinehearingprotection
-/amagard
 /amanoknitwear
 /amazfit
 /amazon
@@ -76,6 +74,7 @@
 /armedangels
 /aromadiffusing.nl
 /aromatiqueshop.nl
+/artofmats
 /ashleysboutiique
 /asos
 /assem
@@ -338,6 +337,7 @@
 /desi-kurti
 /desieradenconcurrent
 /designbyremember
+/designforpets.eu
 /designstoel4u
 /desigual
 /desktronic
@@ -412,7 +412,6 @@
 /ellos
 /elsuvon
 /elvou
-/emc
 /emmanoah
 /emmanoahbaby.nl
 /emmasleepnl
@@ -460,6 +459,7 @@
 /FBTO Zorg
 /featherwomen
 /feedmefashion.nl
+/fehaute
 /fejo_studio
 /felman
 /femininestore
@@ -483,7 +483,6 @@
 /fitshop.nl
 /fittasticsportswear
 /fittwear.nl
-/fjuled
 /flaatch.nl
 /flaconi
 /flamengolife
@@ -519,7 +518,6 @@
 /fritsy
 /frmtegelwerk
 /fuelyourbody
-/funkyfatfoods
 /furrygoodiez
 /fusecommunity
 /futbeaul
@@ -528,6 +526,7 @@
 /garmundo.nl
 /gastonluga
 /gekopkussens
+/gelukinbloei
 /gembermember
 /gerardbrinard
 /gereedschapcentrum.nl
@@ -584,6 +583,7 @@
 /gymalpha
 /gymexclusive
 /gymexclusive.com
+/gymfit
 /gympin
 /gymrace
 /gymraceutrecht
@@ -620,6 +620,7 @@
 /heymarly
 /hijabie.nl
 /hippegeboortekaartjes
+/hive
 /hivefamilyplanner
 /holafly
 /holistic_life.care
@@ -729,6 +730,7 @@
 /lampgigant
 /large.nl
 /lasers_en_laagjes
+/lashesbyorschi
 /laukisieraden
 /lavaverf
 /laveos_com
@@ -775,7 +777,6 @@
 /loungeunderwear
 /lovd_store
 /lovebylily
-/loveli.care
 /lovelysbyheleen
 /lucardi
 /lucovitaal
@@ -866,6 +867,7 @@
 /moostwanted
 /moovvmore.nl
 /morenutrition
+/moreprotein
 /mostwanted
 /motelamiio
 /mothersearth
@@ -909,10 +911,10 @@
 /nike
 /ninjakitchen
 /nkgellak
-/noboringsuitcases
 /noelie
 /nolimithair.nl
 /nolten
+/nomadesim
 /nordicnest
 /nordvpn
 /noshirt
@@ -1009,6 +1011,7 @@
 /pinkgellac
 /pinnedbyk
 /pipoos
+/pippaequestrian
 /pitpit
 /plein
 /plein.nl
@@ -1073,6 +1076,7 @@
 /revitaltrax
 /rienthelabel
 /rif010.nl
+/rifcare
 /rihoas
 /ripstar_travel
 /ripsvintage
@@ -1110,8 +1114,8 @@
 /sansbeaute.nl
 /sapph
 /saralune
-/scandinavianactivewear
 /scapino
+/scentech.eu
 /scentivo
 /schaefershop
 /schuurman schoenen
@@ -1155,6 +1159,7 @@
 /simpel
 /simyo
 /siroko
+/sirokocycling
 /sissyboy
 /sixt
 /size
@@ -1223,11 +1228,9 @@
 /stronger
 /studiobabs
 /studiobloomly
-/studiofloraflora
 /studiofrenchie
 /studiogimme
 /studiomint
-/studioroem
 /studiovreeken
 /stylekorean
 /stylevana
@@ -1261,6 +1264,7 @@
 /swehealth
 /swiefies
 /swimessentials
+/swingjewels
 /synnamoncandy
 /tadaaz
 /tadaaz.nl
@@ -1300,6 +1304,7 @@
 /thegelexpert
 /thegoodroll
 /thejewellershop
+/thelekkercompany
 /themissingpiece
 /theordinary
 /theorie
@@ -1343,6 +1348,7 @@
 /triplezeropro
 /troispommeshome
 /ttdathletics
+/tuinmeubelland
 /tuinmeubelshop.nl
 /tuinmeubelwereld
 /tweedekansje
