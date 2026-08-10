@@ -132,6 +132,7 @@
 /berlook
 /bershka
 /beslank
+/beste-bonus
 /bestecanvas
 /beukers
 /beurseigenhuis

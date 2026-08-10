@@ -1,0 +1,232 @@
+<app-navbar></app-navbar>
+
+<main class="tw-font-body tw-text-ink tw-pb-16">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pt-6 sm:tw-pt-10">
+    <div class="tw-relative tw-overflow-hidden tw-rounded-3xl tw-bg-ink tw-text-cream tw-px-6 sm:tw-px-10 lg:tw-px-12 tw-py-9 sm:tw-py-12">
+      <h1 class="tw-text-left tw-font-title tw-font-bold tw-text-4xl sm:tw-text-5xl lg:tw-text-6xl tw-tracking-tight tw-leading-[0.98] tw-mt-2">
+        Beste bonus<span class="tw-text-sky">.</span>
+      </h1>
+      <p class="tw-font-body tw-text-base sm:tw-text-lg tw-text-cream/80 tw-mt-3 tw-max-w-xl tw-leading-relaxed">
+        Hetzelfde product, tien winkels — van Albert Heijn tot Kruidvat. Elke dag
+        opnieuw vergeleken, zodat je meteen ziet waar de bonus het meest oplevert.
+      </p>
+
+      <!-- Search -->
+      <div class="tw-mt-6 tw-max-w-xl">
+        <div class="tw-bg-cream tw-rounded-full tw-p-2 tw-pl-5 tw-flex tw-items-center tw-gap-2 tw-shadow-[0_16px_40px_rgba(0,0,0,0.18)]">
+          <svg class="tw-w-5 tw-h-5 tw-text-ink/50 tw-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="text"
+            class="tw-flex-1 tw-min-w-0 tw-bg-transparent tw-outline-none tw-font-body tw-text-sm sm:tw-text-base tw-text-ink placeholder:tw-text-ink/50"
+            placeholder="Zoek op product, bijv. tandpasta of melk…"
+            aria-label="Zoek een product"
+            [(ngModel)]="searchTerm"
+            (input)="onSearch()"
+          />
+          @if (searchTerm) {
+            <button type="button" (click)="clearSearch()" aria-label="Zoekopdracht wissen"
+              class="tw-shrink-0 tw-w-8 tw-h-8 tw-rounded-full tw-bg-ink/5 hover:tw-bg-ink/10 tw-text-ink/60 tw-flex tw-items-center tw-justify-center tw-transition">&times;</button>
+          }
+        </div>
+      </div>
+
+      @if (!loading && !failed) {
+        <div class="tw-mt-5 tw-flex tw-flex-wrap tw-items-center tw-gap-x-3 tw-gap-y-2 tw-font-body tw-text-sm tw-text-cream/75">
+          <span><strong class="tw-font-semibold tw-text-cream">{{ totalDeals }}</strong> prijsverschillen</span>
+          <span class="tw-w-1 tw-h-1 tw-rounded-full tw-bg-cream/40"></span>
+          <span><strong class="tw-font-semibold tw-text-cream">10</strong> winkels</span>
+          <span class="tw-w-1 tw-h-1 tw-rounded-full tw-bg-cream/40"></span>
+          <span class="tw-inline-flex tw-items-center tw-gap-1.5">
+            <span class="tw-w-1.5 tw-h-1.5 tw-rounded-full tw-bg-[#6FCF97] tw-animate-pulse"></span>
+            dagelijks bijgewerkt
+          </span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ===================== CONTROLS ===================== -->
+  @if (!loading && !failed) {
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-mt-6 sm:tw-mt-8">
+
+      <!-- Category chips -->
+      <div class="tw-flex tw-gap-2 tw-overflow-x-auto no-scrollbar tw-py-1" aria-label="Categorieën">
+        <button (click)="selectCategory('alle')"
+          class="tw-shrink-0 tw-rounded-full tw-px-4 tw-py-2 tw-text-sm tw-font-body tw-transition tw-border"
+          [class]="activeCategory === 'alle'
+            ? 'tw-bg-ink tw-text-cream tw-border-ink'
+            : 'tw-bg-panel tw-text-ink/70 tw-border-ink/10 hover:tw-border-ink/25'">
+          Alle <span class="tw-opacity-60">{{ totalDeals }}</span>
+        </button>
+        @for (c of categories; track c.name) {
+          <button (click)="selectCategory(c.name)"
+            class="tw-shrink-0 tw-rounded-full tw-px-4 tw-py-2 tw-text-sm tw-font-body tw-transition tw-border"
+            [class]="activeCategory === c.name
+              ? 'tw-bg-ink tw-text-cream tw-border-ink'
+              : 'tw-bg-panel tw-text-ink/70 tw-border-ink/10 hover:tw-border-ink/25'">
+            {{ c.name }} <span class="tw-opacity-60">{{ c.count }}</span>
+          </button>
+        }
+      </div>
+
+      <!-- Result count + sort -->
+      <div class="tw-mt-4 tw-flex tw-flex-wrap tw-items-center tw-justify-between tw-gap-3">
+        <p class="tw-font-body tw-text-sm tw-text-ink/60">
+          {{ resultCount }} {{ resultCount === 1 ? 'product' : 'producten' }}
+          @if (searchTerm) { <span>voor “{{ searchTerm }}”</span> }
+        </p>
+        <div class="tw-flex tw-items-center tw-gap-1 tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-p-1">
+          <button (click)="setSort('pop')"
+            class="tw-rounded-full tw-px-3 tw-py-1.5 tw-text-xs sm:tw-text-sm tw-transition"
+            [class]="sort === 'pop' ? 'tw-bg-ink tw-text-cream' : 'tw-text-ink/60 hover:tw-text-ink'">
+            Meest populair
+          </button>
+          <button (click)="setSort('gap')"
+            class="tw-rounded-full tw-px-3 tw-py-1.5 tw-text-xs sm:tw-text-sm tw-transition"
+            [class]="sort === 'gap' ? 'tw-bg-ink tw-text-cream' : 'tw-text-ink/60 hover:tw-text-ink'">
+            Grootste verschil
+          </button>
+        </div>
+      </div>
+    </section>
+  }
+
+  <!-- ===================== STATES ===================== -->
+  @if (loading) {
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-mt-8">
+      <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
+        @for (s of [1,2,3,4,5,6,7,8]; track s) {
+          <div class="tw-rounded-2xl tw-bg-panel tw-border tw-border-ink/10 tw-h-64 tw-animate-pulse"></div>
+        }
+      </div>
+    </section>
+  }
+
+  @if (failed) {
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-mt-10">
+      <div class="tw-rounded-2xl tw-bg-panel tw-border tw-border-ink/10 tw-p-8 tw-text-center">
+        <p class="tw-font-title tw-text-xl tw-text-ink">De prijzen konden even niet geladen worden.</p>
+        <p class="tw-font-body tw-text-sm tw-text-ink/60 tw-mt-2">Probeer de pagina te herladen.</p>
+      </div>
+    </section>
+  }
+
+  @if (!loading && !failed && resultCount === 0) {
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-mt-10">
+      <div class="tw-rounded-2xl tw-bg-panel tw-border tw-border-ink/10 tw-p-8 tw-text-center">
+        <p class="tw-font-title tw-text-xl tw-text-ink">Niets gevonden voor “{{ searchTerm }}”.</p>
+        <p class="tw-font-body tw-text-sm tw-text-ink/60 tw-mt-2">
+          Probeer een algemener woord, bijvoorbeeld “shampoo” in plaats van een merknaam.
+        </p>
+      </div>
+    </section>
+  }
+
+  <!-- ===================== GRID ===================== -->
+  @if (!loading && !failed && resultCount > 0) {
+    <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-mt-5">
+      <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 lg:tw-grid-cols-4 tw-gap-3 sm:tw-gap-4">
+
+        @for (d of visible; track trackById($index, d)) {
+          <article class="tw-flex tw-flex-col tw-rounded-2xl tw-bg-panel tw-border tw-border-ink/10 tw-overflow-hidden">
+
+            <!-- Photo. Fixed box, contained image: packshots arrive at wildly
+                 different aspect ratios and any cropping cuts the label off. -->
+            <div class="tw-relative tw-bg-white tw-flex tw-items-center tw-justify-center tw-p-3 deal-photo">
+              @if (d.image) {
+                <img [src]="d.image" [alt]="d.name" loading="lazy" decoding="async"
+                     class="tw-max-w-full tw-max-h-full tw-object-contain" />
+              } @else {
+                <span class="tw-font-label tw-text-[10px] tw-tracking-label tw-uppercase tw-text-ink/25">geen foto</span>
+              }
+              <span class="tw-absolute tw-top-2 tw-left-2 tw-rounded-full tw-bg-ink tw-text-cream tw-text-xs tw-font-semibold tw-px-2.5 tw-py-1">
+                &euro;{{ euro(d.gap) }} verschil
+              </span>
+            </div>
+
+            <div class="tw-flex tw-flex-col tw-flex-1 tw-p-3">
+              <h2 class="tw-font-body tw-text-sm tw-font-semibold tw-leading-snug tw-text-ink tw-line-clamp-2">{{ d.name }}</h2>
+              @if (d.size) {
+                <p class="tw-font-label tw-text-[10px] tw-tracking-label tw-uppercase tw-text-ink/40 tw-mt-1">{{ d.size }}</p>
+              }
+
+              <!-- Prices, cheapest first. The first row is the claim the card makes. -->
+              <ul class="tw-mt-3 tw-flex tw-flex-col tw-gap-1.5">
+                @for (o of shownOffers(d); track trackByChain($index, o); let first = $first) {
+                  <li>
+                    <a [href]="o.url" target="_blank" rel="noopener nofollow"
+                       class="tw-flex tw-items-baseline tw-gap-2 tw-group">
+                      <span class="tw-w-1.5 tw-h-1.5 tw-rounded-full tw-shrink-0 tw-self-center"
+                            [style.background-color]="chainHue(o.chain)"></span>
+                      <span class="tw-flex-1 tw-min-w-0 tw-truncate tw-font-body tw-text-xs group-hover:tw-underline"
+                            [class]="first ? 'tw-text-ink tw-font-semibold' : 'tw-text-ink/55'">
+                        {{ chainName(o.chain) }}
+                      </span>
+                      <span class="tw-font-body tw-text-xs tw-tabular-nums tw-shrink-0"
+                            [class]="first ? 'tw-text-ink tw-font-bold' : 'tw-text-ink/55'">
+                        &euro;{{ euro(o.price) }}
+                      </span>
+                    </a>
+                    @if (o.deal || o.was) {
+                      <p class="tw-pl-3.5 tw-font-body tw-text-[10px] tw-text-ink/45 tw-leading-tight">
+                        <!-- Control-flow blocks collapse the whitespace between
+                             them, so the gap has to be a margin, not a space. -->
+                        @if (o.was) { <s class="tw-mr-1.5">&euro;{{ euro(o.was) }}</s> }
+                        @if (o.deal) { <span>{{ o.deal }}</span> }
+                        @if (promoWindow(o)) { <span class="tw-block">{{ promoWindow(o) }}</span> }
+                        @if (chainNote(o.chain)) {
+                          <span class="tw-block tw-italic tw-text-ink/35">{{ chainNote(o.chain) }}</span>
+                        }
+                      </p>
+                    }
+                  </li>
+                }
+              </ul>
+
+              @if (hiddenCount(d) > 0) {
+                <button (click)="toggle(d)"
+                  class="tw-mt-2 tw-self-start tw-font-body tw-text-[11px] tw-text-link hover:tw-underline">
+                  + {{ hiddenCount(d) }} andere {{ hiddenCount(d) === 1 ? 'winkel' : 'winkels' }}
+                </button>
+              } @else if (isExpanded(d)) {
+                <button (click)="toggle(d)"
+                  class="tw-mt-2 tw-self-start tw-font-body tw-text-[11px] tw-text-link hover:tw-underline">
+                  minder tonen
+                </button>
+              }
+
+              @if (d.spotted) {
+                <p class="tw-mt-auto tw-pt-3 tw-font-label tw-text-[10px] tw-tracking-label tw-uppercase tw-text-ink/30">
+                  gespot op {{ shortDate(d.spotted) }}
+                </p>
+              }
+            </div>
+          </article>
+        }
+      </div>
+
+      @if (hasMore) {
+        <div class="tw-mt-8 tw-flex tw-justify-center">
+          <button (click)="showMore()"
+            class="tw-rounded-full tw-bg-ink tw-text-cream tw-font-body tw-text-sm tw-px-7 tw-py-3 hover:tw-opacity-90 tw-transition">
+            Meer laden
+          </button>
+        </div>
+      }
+
+      <p class="tw-mt-10 tw-font-body tw-text-xs tw-text-ink/40 tw-text-center tw-max-w-2xl tw-mx-auto tw-leading-relaxed">
+        Prijzen zijn de laatst waargenomen prijs per winkel, inclusief lopende acties omgerekend
+        naar de prijs per stuk. Ze kunnen per filiaal en per dag verschillen — controleer altijd de
+        winkel zelf voordat je gaat.
+      </p>
+    </section>
+  }
+</main>
+
+<app-footer></app-footer>

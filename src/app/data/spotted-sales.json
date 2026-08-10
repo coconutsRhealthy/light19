@@ -47,6 +47,10 @@
   ],
   "about-you": [
     {
+      "text": "Eind zomeraanbieding met kortingen tot 60%",
+      "date": "2026-08-08"
+    },
+    {
       "text": "Tijdelijke aanbieding: deals met kortingen tot 60%",
       "date": "2026-07-30"
     },
@@ -659,6 +663,10 @@
   ],
   "douglas": [
     {
+      "text": "15% korting op alle haarverzorging bij aankoop vanaf €19",
+      "date": "2026-08-07"
+    },
+    {
       "text": "Gratis beautypouch met 5 miniaturen bij besteding vanaf €100, t/m 10 augustus",
       "date": "2026-08-05"
     },
@@ -831,6 +839,10 @@
   ],
   "evryjewels": [
     {
+      "text": "50% cashback als cadeaubon op alle bestellingen met code CASHBACK",
+      "date": "2026-08-08"
+    },
+    {
       "text": "Tijdelijke 4th of July Sale promotie",
       "date": "2026-07-02"
     },
@@ -874,7 +886,7 @@
   "fatmoose": [
     {
       "text": "Tot 40% korting op geselecteerde producten",
-      "date": "2026-07-30"
+      "date": "2026-08-08"
     },
     {
       "text": "10% extra korting bij bestellingen vanaf €750 met code FMSUM",
@@ -916,6 +928,10 @@
     }
   ],
   "fejo_studio": [
+    {
+      "text": "10% korting op je bestelling bij inschrijving voor mails",
+      "date": "2026-08-07"
+    },
     {
       "text": "50% korting op Swim Essentials met code SWIM50, tijdgebonden actie",
       "date": "2026-07-17"
@@ -1203,6 +1219,10 @@
   ],
   "hugesupplements": [
     {
+      "text": "40% korting op het nieuwe product UTILIZE",
+      "date": "2026-08-07"
+    },
+    {
       "text": "Tot 30% korting op de hele site tijdens 4th of July sale",
       "date": "2026-07-04"
     }
@@ -1406,6 +1426,10 @@
     }
   ],
   "kaptenandson": [
+    {
+      "text": "Gratis drinkfles bij Back to Work actie",
+      "date": "2026-08-08"
+    },
     {
       "text": "15% korting op de Bergen Bundle: een Bergen Pro rugzak plus een accessoire naar keuze",
       "date": "2026-08-02"
@@ -1825,6 +1849,12 @@
       "date": "2026-08-06"
     }
   ],
+  "maycosmetics.nl": [
+    {
+      "text": "Nieuwe promotie met 1+1 gratis op foundation en shimmer stick en tot 50% korting op alle bundels",
+      "date": "2026-08-08"
+    }
+  ],
   "meetmethere": [
     {
       "text": "20% korting op alles dit weekend met code MMT20, exclusief Filippa collectie",
@@ -1873,6 +1903,10 @@
   ],
   "minioliestore": [
     {
+      "text": "15% korting op alles met code FALL15",
+      "date": "2026-08-08"
+    },
+    {
       "text": "10% korting op eerste aankoop met code NEW10",
       "date": "2026-08-06"
     },
@@ -1882,6 +1916,10 @@
     }
   ],
   "minre": [
+    {
+      "text": "Mid season sale met kortingen tot 60%",
+      "date": "2026-08-08"
+    },
     {
       "text": "10% korting op het gehele assortiment",
       "date": "2026-06-30"
@@ -2015,6 +2053,10 @@
   ],
   "ninjakitchen": [
     {
+      "text": "Meer dan 25% korting op essentials voor studenten tijdens Back-to-school sale",
+      "date": "2026-08-07"
+    },
+    {
       "text": "15% korting op web-exclusives met kortingscode WE15",
       "date": "2026-04-23"
     },
@@ -2046,6 +2088,10 @@
     }
   ],
   "oliviakate": [
+    {
+      "text": "Gratis strandtas bij bestellingen vanaf €100",
+      "date": "2026-08-08"
+    },
     {
       "text": "Finale zomersale met 50% korting op meer dan 300 items",
       "date": "2026-08-07"
@@ -2257,6 +2303,12 @@
     {
       "text": "15% extra korting op geselecteerde items",
       "date": "2026-03-20"
+    }
+  ],
+  "padelmarket": [
+    {
+      "text": "Tot 70% korting op geselecteerde padelproducten",
+      "date": "2026-08-08"
     }
   ],
   "pandora": [
@@ -2657,6 +2709,12 @@
       "date": "2026-05-11"
     }
   ],
+  "smashedlemon": [
+    {
+      "text": "50% korting sale actie",
+      "date": "2026-08-08"
+    }
+  ],
   "snuggs": [
     {
       "text": "30% korting op menstruatie- en gewone zwemkleding",
@@ -2785,12 +2843,12 @@
   ],
   "stylewe": [
     {
-      "text": "Tot 30% korting op nieuwe herfstcollectie",
-      "date": "2026-08-06"
+      "text": "Einde-zomer uitverkoop met tot 70% korting",
+      "date": "2026-08-07"
     },
     {
-      "text": "Einde-zomer uitverkoop met tot 70% korting",
-      "date": "2026-07-25"
+      "text": "Tot 30% korting op nieuwe herfstcollectie",
+      "date": "2026-08-06"
     },
     {
       "text": "Tot 30% korting tijdens de Early Fall Event, beperkte tijd geldig.",
@@ -2820,6 +2878,10 @@
     }
   ],
   "swimessentials": [
+    {
+      "text": "25% korting op alles tijdens de zomersale",
+      "date": "2026-08-08"
+    },
     {
       "text": "Sale met kortingen tot 50% op geselecteerde items",
       "date": "2026-06-28"
@@ -2888,6 +2950,10 @@
     }
   ],
   "ullapopken.nl": [
+    {
+      "text": "33% extra korting op de sale met code EXTRA33",
+      "date": "2026-08-07"
+    },
     {
       "text": "€15 korting op elke jurk met code DRESSDEAL",
       "date": "2026-08-05"

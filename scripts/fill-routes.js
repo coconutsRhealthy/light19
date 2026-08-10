@@ -84,7 +84,7 @@ const blogRoutes = ['blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'blogs/uni
 
 // discoverRoutes is false, so a route missing from routes.txt is never
 // prerendered and the host falls back to the generic index.html.
-const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'prikbord', ...blogRoutes, 'code-delen', ''];
+const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'beste-bonus', 'prikbord', ...blogRoutes, 'code-delen', ''];
 
 const sortedPages = Array.from(discountSlugs).sort((a, b) => a.localeCompare(b));
 
@@ -107,7 +107,7 @@ const today = new Date().toISOString().split('T')[0];
 
 // ...blogRoutes, not a bare 'blogs': the index page alone used to be listed here,
 // so the articles were prerendered but never submitted for indexing.
-const sitemapUtility = new Set(['winkels', 'contact', 'top5', 'privacy-policy', ...blogRoutes, 'prikbord', 'blackfriday', 'code-delen', '']);
+const sitemapUtility = new Set(['winkels', 'contact', 'top5', 'privacy-policy', ...blogRoutes, 'prikbord', 'blackfriday', 'beste-bonus', 'code-delen', '']);
 const sitemapSlugs = Array.from(new Set([...discountSlugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
 
 const urls = sitemapSlugs.map((route) => {

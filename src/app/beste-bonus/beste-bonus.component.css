@@ -1,0 +1,40 @@
+/* The shared app.component.css sets `h1 { text-align: center; font-size: 2rem }`.
+   Angular scopes that rule with the component attribute (h1[_ngcontent-x]), which
+   outranks Tailwind's .tw-text-left and .tw-text-4xl utilities on the element
+   itself — so the hero heading centres and ignores its own size classes no matter
+   what the template says. Re-asserted here at matching specificity via :host, the
+   same way blackfriday.component.css does, so this hero sits identically to it.
+   h2 is included for the card titles, which inherit the same problem. */
+:host h1,
+:host h2 {
+  text-align: left;
+}
+
+/* Kept deliberately small: Angular's anyComponentStyle budget warns at 4 kB, and
+   everything that Tailwind can express already lives in the template. */
+
+/* The photo box needs a DEFINITE height for `max-height:100%` on the image to
+   mean anything. An aspect-ratio box plus a max-height on the image fights
+   itself, and a centred grid item with max-height:100% does not cap at all —
+   both were tried, and both silently cropped or overflowed the packshot. */
+.deal-photo {
+  height: min(42vw, 170px);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .deal-photo { height: 170px; }
+}
+
+/* Two-line clamp for product names, which run long and would otherwise push the
+   price list to different heights across a row. */
+.tw-line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Category chips scroll horizontally; the bar itself should not show a track. */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

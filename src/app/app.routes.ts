@@ -5,6 +5,7 @@ import { CompanyCodesV2Component } from './company-codes-v2/company-codes-v2.com
 import { WinkelsComponent } from './winkels/winkels.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlackfridayComponent } from './blackfriday/blackfriday.component';
+import { BesteBonusComponent } from './beste-bonus/beste-bonus.component';
 import { PrikbordComponent } from './prikbord/prikbord.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { SpaceNkBlogComponent } from './blogs/space-nk/space-nk-blog.component';
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: 'winkels', component: WinkelsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'blackfriday', component: BlackfridayComponent },
+  { path: 'beste-bonus', component: BesteBonusComponent },
   { path: 'prikbord', component: PrikbordComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'blogs/space-nk', component: SpaceNkBlogComponent },
