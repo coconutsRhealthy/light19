@@ -176,7 +176,6 @@
 /boomba
 /boshuisjemaisondubois
 /bottger
-/bowork
 /bozasieraden
 /braincaps
 /brand-parts.nl
@@ -254,6 +253,7 @@
 /clearsmile
 /clearsmile.nl
 /cleenlab
+/closetvanval.nl
 /cloudpillo.nl
 /clovira.creations
 /clubrepublique
@@ -460,6 +460,7 @@
 /FBTO Zorg
 /featherwomen
 /feedmefashion.nl
+/feestbeest_kids.nl
 /fehaute
 /fejo_studio
 /felman
@@ -513,7 +514,6 @@
 /freechoice
 /frenkiesfashion
 /frenkylewisdogcare
-/frenkysfashion
 /freyara
 /friends-of.nl
 /fritsy
@@ -620,6 +620,7 @@
 /heydude
 /heymarly
 /hijabie.nl
+/hip_stoer_en_handgemaakt
 /hippegeboortekaartjes
 /hive
 /hivefamilyplanner
@@ -632,7 +633,6 @@
 /homefitnesscode
 /hondensupplement
 /horloge.nl
-/horseflex.nl
 /hostinger
 /hostnet
 /hotelstacherhof
@@ -733,7 +733,6 @@
 /lasers_en_laagjes
 /lashesbyorschi
 /laukisieraden
-/lavaverf
 /laveos_com
 /lease.auto
 /lebara
@@ -745,6 +744,7 @@
 /leolive
 /leonardohotels
 /leopoldvienna
+/letsrollnl
 /leukstetickets
 /levis
 /lichtenmeubels
@@ -877,6 +877,7 @@
 /msmode
 /muchachomalo
 /mudmasky.nl
+/muse
 /mvolo.nl
 /mydearbeer_nl
 /mydentalproducts
@@ -912,6 +913,7 @@
 /nike
 /ninjakitchen
 /nkgellak
+/noa.sportsnl
 /noelie
 /nolimithair.nl
 /nolten
@@ -939,6 +941,7 @@
 /ogbbeautyofficial
 /oglmove
 /ohcascas amsterdam
+/ohklassy
 /olcaygulsenbeauty
 /olijfolieconcurrent
 /oliveyoungglobal
@@ -963,6 +966,7 @@
 /orangebag
 /organicbasics
 /ortholon
+/osatohome
 /osloskinlab
 /osock_performance
 /otensien.nl
@@ -1150,7 +1154,6 @@
 /shoesme
 /shopatlot
 /shopify
-/shopnoxare
 /si-biza
 /sieradenbydiana
 /silabrows
@@ -1266,7 +1269,6 @@
 /swiefies
 /swimessentials
 /swingjewels
-/synnamoncandy
 /tadaaz
 /tadaaz.nl
 /tafelloodz
@@ -1280,6 +1282,7 @@
 /tanrevel
 /tapoutclub
 /tastypresent
+/tattooyindy
 /teamathlevel
 /techweise
 /teddah
@@ -1302,6 +1305,7 @@
 /theconfidenceconcept
 /theey
 /thefarm
+/thefarmpaintmaterials
 /thegelexpert
 /thegoodroll
 /thejewellershop
@@ -1312,13 +1316,12 @@
 /theorie.nl
 /thephonelab
 /theposterclub
-/thermenberendonck
 /thestorewoerden
 /thestreetfoodclub
-/theturmericco
 /theusualsocial
 /thewinkdrip
 /thieu.lab
+/thingsilikethingsilove
 /thorathletics
 /thuisbezorgd
 /thuysvers
@@ -1347,6 +1350,7 @@
 /trip
 /tripadvisor
 /triplezeropro
+/tripper.nl
 /troispommeshome
 /ttdathletics
 /tuinmeubelland
@@ -1453,6 +1457,7 @@
 /wavenestsurfcamp
 /wavytalkofficial
 /wavzsupplementen
+/weare_zombie
 /wearedynter
 /weargalvier
 /weekday
