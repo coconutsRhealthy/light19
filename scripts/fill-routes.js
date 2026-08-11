@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { encodePath } = require('./url-path');
 
 // routes-extractor.js
 //
@@ -110,8 +111,13 @@ const today = new Date().toISOString().split('T')[0];
 const sitemapUtility = new Set(['winkels', 'contact', 'top5', 'privacy-policy', ...blogRoutes, 'prikbord', 'blackfriday', 'beste-bonus', 'code-delen', '']);
 const sitemapSlugs = Array.from(new Set([...discountSlugs, ...sitemapUtility])).sort((a, b) => a.localeCompare(b));
 
+// Slugs with a space ('lounge by zalando', 'odido thuis') would otherwise land in
+// <loc> raw, which is not a valid URL — encodePath brings them in line with the
+// hrefs Angular renders and with the canonical tag. escapeXml still runs after it:
+// encoding deliberately leaves '&' alone (see scripts/url-path.js), so 'h&m' still
+// needs XML-escaping to keep the document well-formed.
 const urls = sitemapSlugs.map((route) => {
-  const pathPart = route === '' ? '/' : `/${route}/`;
+  const pathPart = route === '' ? '/' : `/${encodePath(route)}/`;
   const isHome = route === '';
   const isUtility = sitemapUtility.has(route);
   const priority = isHome ? '1.0' : isUtility ? '0.6' : '0.8';

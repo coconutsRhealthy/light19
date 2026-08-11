@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { encodePath } = require('./url-path');
 
 const DIST_FOLDER = path.join(__dirname, '../dist/light19/browser');
 const BASE_URL = 'https://diski.nl';
@@ -16,9 +17,11 @@ function processFolder(folderPath) {
     } else if (file === 'index.html') {
       let html = fs.readFileSync(fullPath, 'utf8');
 
-      // Bepaal canonical URL
+      // Bepaal canonical URL. De map op schijf is de ruwe slug ('lounge by
+      // zalando'), dus percent-encode elk segment — anders staat er een spatie
+      // in de href en is de canonical geen geldige URL. Zie scripts/url-path.js.
       let relativePath = path.relative(DIST_FOLDER, folderPath).replace(/\\/g, '/'); // Windows-proof
-      let canonicalUrl = relativePath ? `${BASE_URL}/${relativePath}/` : `${BASE_URL}/`;
+      let canonicalUrl = relativePath ? `${BASE_URL}/${encodePath(relativePath)}/` : `${BASE_URL}/`;
 
       // Vervang placeholder
       html = html.replace('<!--  canonical placeholder-->', `<link rel="canonical" href="${canonicalUrl}" />`);
