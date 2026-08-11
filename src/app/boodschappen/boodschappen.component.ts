@@ -1,9 +1,10 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LOCALE_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MetaService } from '../services/meta.service';
+import { AnalyticsEventService } from '../services/analytics-event.service';
 import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 
@@ -59,7 +60,7 @@ interface Feed {
   styleUrls: ['./boodschappen.component.css', './../app.component.css'],
   providers: [DatePipe, { provide: LOCALE_ID, useValue: 'nl' }],
 })
-export class BoodschappenComponent implements OnInit {
+export class BoodschappenComponent implements OnInit, OnDestroy {
 
   /**
    * Written by eurosgoedkoper's `local.py publish` after every collection cycle.
@@ -98,10 +99,15 @@ export class BoodschappenComponent implements OnInit {
   /** Cards the visitor has expanded to see every chain. */
   private expanded = new Set<number>();
 
+  /** Search-term reporting: debounce handle, and the last term actually sent. */
+  private searchTimer?: ReturnType<typeof setTimeout>;
+  private lastSentTerm = '';
+
   constructor(
     private http: HttpClient,
     private meta: MetaService,
     private datePipe: DatePipe,
+    private analytics: AnalyticsEventService,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
     // Targets the "goedkoopste supermarkt" cluster (3.000/mo at KD 7, plus ~2.200
@@ -177,7 +183,7 @@ export class BoodschappenComponent implements OnInit {
 
   /** Lowercase and strip diacritics, so "creme" finds "crème". */
   private flat(s: string): string {
-    return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
   /**
@@ -292,8 +298,8 @@ export class BoodschappenComponent implements OnInit {
   get hasMore(): boolean { return this.visibleCount < this.filtered.length; }
 
   showMore() { this.visibleCount += this.loadStep; this.slice(); }
-  onSearch() { this.apply(); }
-  clearSearch() { this.searchTerm = ''; this.apply(); }
+  onSearch() { this.apply(); this.queueSearchReport(); }
+  clearSearch() { this.searchTerm = ''; this.apply(); clearTimeout(this.searchTimer); }
   selectCategory(name: string) { this.activeCategory = name; this.apply(); }
   setSort(s: 'pop' | 'gap') { this.sort = s; this.apply(); }
 
@@ -355,4 +361,75 @@ export class BoodschappenComponent implements OnInit {
 
   trackById(_: number, d: Deal) { return d.id; }
   trackByChain(_: number, o: Offer) { return o.chain; }
+
+  // =========================
+  // Analytics
+  // =========================
+  // Two questions this page has to answer: which products people click through
+  // on, and what they search for. Both go through AnalyticsEventService, which
+  // is the window.sendEventToGa helper defined in index.html — the same path the
+  // homepage search and the navbar use. Every call here is behind a user
+  // interaction, so it never runs during prerender.
+
+  /**
+   * A price link was clicked.
+   *
+   * The label leads with the PRODUCT, because "which products get clicked" is
+   * the question; the chain is suffixed after '__' so a contains-filter in GA
+   * ("__ah") still gives per-retailer totals off the same event. Deliberately
+   * one event rather than one per dimension: two events per click would double
+   * the volume and make the click count itself unreadable.
+   */
+  trackOfferClick(d: Deal, o: Offer): void {
+    this.analytics.sendEventToGa(
+      'boodschappen_product_click',
+      `${this.gaSlug(d.name)}__${o.chain}`,
+    );
+  }
+
+  /**
+   * Search terms, sent once typing stops.
+   *
+   * NOT the homepage's rule (fire at >=5 characters, send only the first 5).
+   * That is tuned for shop names. Grocery searches are short — "melk", "kaas",
+   * "ei" never reach five characters and would be invisible — and clipping
+   * "tandpasta" to "tandp" throws away the very answer we are asking for. So:
+   * debounce until the visitor stops typing, then send the whole term. The
+   * dedupe idea is kept, so one search is one event rather than one per
+   * keystroke.
+   *
+   * Not forwarded to VisitorProfileService the way the homepage does either.
+   * That profile feeds Brevo/Klaviyo segments built around fashion and beauty
+   * shops; posting "luiers" into it would pollute those segments to no end.
+   */
+  private queueSearchReport(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    clearTimeout(this.searchTimer);
+    this.searchTimer = setTimeout(() => this.sendSearchReport(), 800);
+  }
+
+  private sendSearchReport(): void {
+    const term = this.gaSlug(this.searchTerm);
+    // Under two characters is a stray keystroke, not a search.
+    if (term.length < 2 || term === this.lastSentTerm) return;
+    this.lastSentTerm = term;
+    this.analytics.sendEventToGa('boodschappen_search', `boodschappen_search_${term}`);
+  }
+
+  /**
+   * GA labels: lowercase, accent-folded, hyphenated, length-capped. Keeps one
+   * product from arriving as three labels because someone typed "Cafe" and the
+   * feed says "Café", and keeps label cardinality bounded.
+   */
+  private gaSlug(s: string, max = 40): string {
+    return this.flat(s)
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+/, '')
+      .slice(0, max)
+      .replace(/-+$/, '');
+  }
+
+  ngOnDestroy(): void {
+    clearTimeout(this.searchTimer);
+  }
 }

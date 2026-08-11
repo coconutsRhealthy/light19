@@ -165,6 +165,7 @@
                 @for (o of shownOffers(d); track trackByChain($index, o); let first = $first) {
                   <li>
                     <a [href]="o.url" target="_blank" rel="noopener nofollow"
+                       (click)="trackOfferClick(d, o)"
                        class="tw-flex tw-items-baseline tw-gap-2 tw-group">
                       <span class="tw-w-1.5 tw-h-1.5 tw-rounded-full tw-shrink-0 tw-self-center"
                             [style.background-color]="chainHue(o.chain)"></span>
