@@ -1,18 +1,23 @@
-<!-- ====== STICKY TOP: app-waitlist bar + navbar ======
-     Mobile: wrapper is display:contents (generates no box), so the bar + navbar
-     behave as direct children of the page (the host is display:contents too).
-     The bar's own `sticky top-0` then pins against the FULL-page scroll (not
-     this short wrapper), while the navbar stays non-sticky and scrolls away.
-     Desktop (lg+): wrapper becomes a real sticky box (lg:block + lg:sticky) that
-     pins bar + navbar together as one unit, avoiding a top:0 overlap (the navbar
-     is lg:sticky on its own). z-30 matches the navbar's layer so the modal
-     backdrop (z-40) still covers it. -->
-<div class="tw-contents lg:tw-block lg:tw-sticky lg:tw-top-0 tw-z-30">
+<!-- ====== TOP: announcement bar + navbar ======
+     The bar scrolls away with the page; only the navbar pins, and only at lg+
+     (via its own `lg:sticky lg:top-0` below).
+
+     There is deliberately NO wrapper element around the bar and the nav. A plain
+     div here would become the nav's containing block, and a sticky child can only
+     stay pinned while its parent is still in view — the parent would be just
+     bar + nav tall, so the navbar would unpin almost immediately. The host is
+     `display: contents` for the same reason. -->
+
 <!-- App-waitlist bar taken offline 2026-07-31. Ran 21-30 July and collected 76
-     signups (63 of them on the homepage). Re-enable by uncommenting this line —
+     signups (63 of them on the homepage). Re-enable by uncommenting this line:
      the component, its GA event (app_waitlist_signup_<page>) and the Brevo
      app_waitlist path are all still wired up and untouched. -->
 <!-- <app-waitlist-bar></app-waitlist-bar> -->
+
+<!-- Only one bar occupies this slot at a time. Two stacked announcement bars
+     would push the navbar off a phone screen, so re-enabling the waitlist bar
+     above means retiring this one. -->
+<app-boodschappen-bar></app-boodschappen-bar>
 
 <nav class="lg:tw-sticky lg:tw-top-0 tw-z-30 tw-bg-cream/90 tw-backdrop-blur-md tw-border-b tw-border-ink/10 tw-text-ink tw-font-body">
     <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">
@@ -32,7 +37,9 @@
             </a>
 
             <!-- Desktop menu -->
-            <div class="tw-hidden lg:tw-flex tw-items-center tw-gap-7">
+            <!-- gap tightens at lg: eight items + the "Nieuw" badge overflow a
+                 1024px viewport at the roomier xl spacing. -->
+            <div class="tw-hidden lg:tw-flex tw-items-center lg:tw-gap-5 xl:tw-gap-7">
                 <a routerLink="/"
                    routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
@@ -56,6 +63,16 @@
                    class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blackfriday'});">
                     Beste deals
+                </a>
+                <!-- Label is "Boodschappen", not the page's own "Goedkoopste
+                     supermarkt": next to "Beste deals" a second superlative blurs,
+                     and a category word does not. The slug carries the keyword. -->
+                <a routerLink="/goedkoopste-supermarkt"
+                   routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline tw-flex tw-items-center tw-gap-1.5 tw-whitespace-nowrap"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_boodschappen'});">
+                    Boodschappen
+                    <span class="tw-bg-butter tw-text-ink tw-font-label tw-text-[9px] tw-font-bold tw-uppercase tw-tracking-label tw-rounded-full tw-pl-1.5 tw-pr-1 tw-py-0.5 tw-leading-none">Nieuw</span>
                 </a>
                 <a routerLink="/top5"
                    routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
@@ -126,6 +143,13 @@
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_blackfriday'});">
                     Beste deals
                 </a>
+                <a routerLink="/goedkoopste-supermarkt" (click)="toggleMenu()"
+                   routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
+                   class="tw-flex tw-items-center tw-gap-2 tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
+                   onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_boodschappen'});">
+                    Boodschappen
+                    <span class="tw-bg-butter tw-text-ink tw-font-label tw-text-[9px] tw-font-bold tw-uppercase tw-tracking-label tw-rounded-full tw-pl-1.5 tw-pr-1 tw-py-0.5 tw-leading-none">Nieuw</span>
+                </a>
                 <a routerLink="/top5" (click)="toggleMenu()"
                    routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
                    class="tw-block tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
@@ -148,4 +172,3 @@
         </div>
     }
 </nav>
-</div><!-- /sticky top -->

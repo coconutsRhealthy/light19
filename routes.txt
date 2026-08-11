@@ -132,7 +132,6 @@
 /berlook
 /bershka
 /beslank
-/beste-bonus
 /bestecanvas
 /beukers
 /beurseigenhuis
@@ -553,6 +552,7 @@
 /goayo.nl
 /goboony
 /goedgemerkt
+/goedkoopste-supermarkt
 /goedkoopstekantoorartikelen
 /goedkopeschoenen
 /goedkopeschoenen.com

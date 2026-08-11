@@ -1,0 +1,37 @@
+@if (!dismissed && !onTargetPage) {
+  <!-- Boodschappen announcement bar. Deliberately NOT sticky: it is an
+       announcement, not navigation, so it scrolls away and leaves the top of the
+       screen to the navbar. js-boodschappen-bar lets the index.html guard hide it
+       pre-paint for visitors who already dismissed it. -->
+  <div class="js-boodschappen-bar tw-bg-ink tw-text-cream tw-font-body">
+    <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8 tw-py-2.5 tw-flex tw-items-center tw-gap-3 sm:tw-gap-5">
+      <a routerLink="/goedkoopste-supermarkt" (click)="track()"
+         class="tw-flex tw-items-center tw-gap-2.5 tw-min-w-0 tw-flex-1 tw-no-underline tw-text-cream">
+        <span class="tw-shrink-0 tw-bg-butter tw-text-ink tw-font-label tw-text-[10px] tw-font-bold tw-uppercase tw-tracking-label tw-rounded-full tw-pl-2 tw-pr-1.5 tw-py-1 tw-leading-none">Nieuw</span>
+        <p class="tw-text-sm tw-leading-tight tw-min-w-0">
+          <!-- The lead is a complete announcement on its own, so a phone can drop
+               the tail without the sentence reading as truncated. -->
+          <span class="tw-font-semibold">Diski vergelijkt nu ook boodschappen.</span>
+          <!-- Mobile-only arrow. The "Vergelijk" button is sm:+ only, so without
+               this a phone gets no cue that the bar is tappable at all. Inline (not
+               a flex sibling) so it hugs the end of the text and rides along if the
+               lead wraps, instead of stranding itself on a line of its own. -->
+          <span aria-hidden="true" class="sm:tw-hidden tw-text-sky tw-font-semibold tw-whitespace-nowrap">&nbsp;&rarr;</span>
+          <span class="tw-text-cream/75 tw-hidden sm:tw-inline"> Zie bij welke winkel je vandaag het goedkoopst uit bent.</span>
+        </p>
+      </a>
+
+      <a routerLink="/goedkoopste-supermarkt" (click)="track()"
+         class="tw-hidden sm:tw-inline-flex tw-shrink-0 tw-items-center tw-gap-1.5 tw-bg-sky tw-text-ink tw-rounded-full tw-px-5 tw-py-2 tw-font-semibold tw-text-sm tw-no-underline tw-whitespace-nowrap">
+        Vergelijk <span aria-hidden="true">&rarr;</span>
+      </a>
+
+      <button
+        type="button"
+        (click)="dismiss()"
+        aria-label="Melding sluiten"
+        class="tw-shrink-0 tw-w-7 tw-h-7 tw-rounded-full tw-text-cream/70 hover:tw-text-cream hover:tw-bg-cream/10 tw-flex tw-items-center tw-justify-center tw-transition tw-text-lg tw-leading-none"
+      >&times;</button>
+    </div>
+  </div>
+}

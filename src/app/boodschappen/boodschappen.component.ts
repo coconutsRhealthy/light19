@@ -53,15 +53,21 @@ interface Feed {
 }
 
 @Component({
-  selector: 'app-beste-bonus',
+  selector: 'app-boodschappen',
   imports: [FooterComponent, NavbarComponent, FormsModule],
-  templateUrl: './beste-bonus.component.html',
-  styleUrls: ['./beste-bonus.component.css', './../app.component.css'],
+  templateUrl: './boodschappen.component.html',
+  styleUrls: ['./boodschappen.component.css', './../app.component.css'],
   providers: [DatePipe, { provide: LOCALE_ID, useValue: 'nl' }],
 })
-export class BesteBonusComponent implements OnInit {
+export class BoodschappenComponent implements OnInit {
 
-  /** Written by eurosgoedkoper's `local.py publish` after every collection cycle. */
+  /**
+   * Written by eurosgoedkoper's `local.py publish` after every collection cycle.
+   *
+   * The `beste-bonus/` segment is that repo's R2 object key, NOT our old page
+   * slug — it survived the 2026-08-11 rename on purpose. Changing it here breaks
+   * the feed; it can only change when eurosgoedkoper publishes to a new key.
+   */
   private feedUrl =
     'https://pub-a3be569620e4415b916e737210363aee.r2.dev/beste-bonus/deals.json';
 
@@ -98,30 +104,40 @@ export class BesteBonusComponent implements OnInit {
     private datePipe: DatePipe,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
-    const title = 'Beste bonus: aanbiedingen van 10 winkels vergeleken | Diski';
+    // Targets the "goedkoopste supermarkt" cluster (3.000/mo at KD 7, plus ~2.200
+    // more across the question variants), not "beste bonus" (90/mo, and "bonus" is
+    // Albert Heijn's brand word). The description leads on "op dit moment" because
+    // that is the top People-Also-Ask phrasing and the one thing the incumbents —
+    // magazines rehashing the annual Consumentenbond survey — structurally cannot
+    // claim, while this page is rebuilt from the feed every day.
+    const title = 'Goedkoopste supermarkt: 10 winkels, elke dag vergeleken | Diski';
+    // "supermarkten en drogisterijen" rather than one flat list of ten names:
+    // Etos and Kruidvat are drogisterijen, and lumping them in with Albert Heijn
+    // reads as sloppy to anyone Dutch. Also keeps this near the ~160 characters
+    // Google actually renders — the flat list ran to 205 and was cut off.
     const description =
-      'Dagelijks vergeleken: dezelfde producten bij Albert Heijn, Jumbo, PLUS, ' +
-      'Dirk, Aldi, Etos, Kruidvat en meer. Zie per product waar de bonus het ' +
-      'meest oplevert en hoeveel je bespaart.';
+      'Welke winkel is op dit moment de goedkoopste? Wij vergelijken elke dag ' +
+      'dezelfde producten bij tien supermarkten en drogisterijen, van Albert ' +
+      'Heijn tot Kruidvat.';
     this.meta.updateTitle(title);
     this.meta.updateMetaInfo(
       description, 'diski.nl',
-      'beste bonus, aanbiedingen vergelijken, supermarkt aanbiedingen, ' +
-      'drogisterij aanbiedingen, goedkoopste winkel, prijzen vergelijken, ' +
-      'bonus deze week, boodschappen besparen',
+      'goedkoopste supermarkt, goedkoopste supermarkt nederland, boodschappen ' +
+      'vergelijken, prijzen vergelijken supermarkt, goedkoopste boodschappen, ' +
+      'supermarkt aanbiedingen, drogisterij aanbiedingen, boodschappen besparen',
     );
     // og:url must match the canonical exactly. Social platforms cache on og:url,
     // so a mismatch splits the same page into two entries and divides its shares.
     // The trailing slash is the site's convention (see TrailingSlashUrlSerializer).
-    this.meta.updateOgTags(title, description, 'https://diski.nl/beste-bonus/');
+    this.meta.updateOgTags(title, description, 'https://diski.nl/goedkoopste-supermarkt/');
     // Structured data, as the home page and shop pages do. CollectionPage rather
     // than ItemList: the contents change every day and are ranked client-side, so
     // enumerating items here would be stale the moment it shipped.
-    this.meta.setJsonLd('beste-bonus', {
+    this.meta.setJsonLd('goedkoopste-supermarkt', {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      name: 'Beste bonus',
-      url: 'https://diski.nl/beste-bonus/',
+      name: 'Goedkoopste supermarkt',
+      url: 'https://diski.nl/goedkoopste-supermarkt/',
       description: description,
       inLanguage: 'nl-NL',
       isPartOf: { '@type': 'WebSite', name: 'Diski', url: 'https://diski.nl' },

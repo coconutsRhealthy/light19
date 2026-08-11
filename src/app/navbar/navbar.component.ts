@@ -4,10 +4,11 @@ import { RouterModule } from '@angular/router';
 // warns (TS-998113) about a standalone import the template no longer uses, so the
 // two have to be re-enabled together.
 // import { AppWaitlistBarComponent } from '../app-waitlist-bar/app-waitlist-bar.component';
+import { BoodschappenBarComponent } from '../boodschappen-bar/boodschappen-bar.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterModule /*, AppWaitlistBarComponent */],
+  imports: [RouterModule, BoodschappenBarComponent /*, AppWaitlistBarComponent */],
   templateUrl: './navbar.component.html',
   // The host must generate no box of its own, or it would sit between the page
   // and the sticky wrapper in the template and break the wrapper's stickiness.

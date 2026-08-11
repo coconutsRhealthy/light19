@@ -5,7 +5,7 @@ import { CompanyCodesV2Component } from './company-codes-v2/company-codes-v2.com
 import { WinkelsComponent } from './winkels/winkels.component';
 import { ContactComponent } from './contact/contact.component';
 import { BlackfridayComponent } from './blackfriday/blackfriday.component';
-import { BesteBonusComponent } from './beste-bonus/beste-bonus.component';
+import { BoodschappenComponent } from './boodschappen/boodschappen.component';
 import { PrikbordComponent } from './prikbord/prikbord.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { SpaceNkBlogComponent } from './blogs/space-nk/space-nk-blog.component';
@@ -23,7 +23,11 @@ export const routes: Routes = [
   { path: 'winkels', component: WinkelsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'blackfriday', component: BlackfridayComponent },
-  { path: 'beste-bonus', component: BesteBonusComponent },
+  // Was /beste-bonus until 2026-08-11: "bonus" is Albert Heijn's own brand word
+  // (90 searches/mo, parent topic "ah bonus"), while "goedkoopste supermarkt" is
+  // 3.000/mo at KD 7. The old path is left to 404 — it was live for two days and
+  // had nothing worth preserving.
+  { path: 'goedkoopste-supermarkt', component: BoodschappenComponent },
   { path: 'prikbord', component: PrikbordComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'blogs/space-nk', component: SpaceNkBlogComponent },

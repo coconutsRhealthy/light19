@@ -52,14 +52,21 @@
     }
   </script>
 
+  <!-- Announcement-bar dismissal, applied before first paint. The bars are in the
+       prerendered HTML, so without this a visitor who already closed one sees it
+       flash until Angular hydrates. One flag per bar; keep the keys in sync with
+       the DISMISSED_KEY constant in each bar component. -->
   <script>
     try {
       if (localStorage.getItem('app_waitlist_bar_dismissed') === '1') {
         document.documentElement.classList.add('awl-dismissed');
       }
+      if (localStorage.getItem('boodschappen_bar_dismissed') === '1') {
+        document.documentElement.classList.add('bb-dismissed');
+      }
     } catch (e) {}
   </script>
-  <style>.awl-dismissed .js-app-waitlist-bar{display:none !important;}</style>
+  <style>.awl-dismissed .js-app-waitlist-bar,.bb-dismissed .js-boodschappen-bar{display:none !important;}</style>
 
   <meta name="facebook-domain-verification" content="vs16s2ctfs40umqcvd9h1oc2wnyr1r" />
 </head>
