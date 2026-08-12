@@ -116,6 +116,7 @@
 /bearswithbenefits
 /beautyplaza
 /begolden
+/bejeweldbyphivi_sieraden
 /bellaandduke
 /bellabarnett
 /bellabarnett.official
@@ -274,7 +275,6 @@
 /coofandy
 /cookandpan
 /coolblue
-/coolkidscompany.nl
 /cooper.quint
 /cooperandquint
 /corendon
@@ -375,6 +375,7 @@
 /drmartens
 /drukwerknodig
 /dryze.nl
+/dualoa
 /duifhuizen.nl
 /duinoord
 /duinrell
@@ -403,6 +404,7 @@
 /efteling
 /egglamp.nl
 /ekkovision
+/elavatesuperfoods
 /elementre
 /eleonorabonucci
 /elevatedfashion.eu
@@ -477,7 +479,6 @@
 /fit20nl
 /fitage.com
 /fithlon
-/fitjeans.com
 /fitmeals
 /fitmeals.nl
 /fitpiggy.nl
@@ -515,7 +516,6 @@
 /frenkylewisdogcare
 /freyara
 /friends-of.nl
-/fritsy
 /frmtegelwerk
 /fuelyourbody
 /furrygoodiez
@@ -602,6 +602,7 @@
 /happatape
 /happy-size
 /happy-size.nl
+/happyhomeveluwe
 /headshop
 /heine
 /helicoptercentremallorca
@@ -611,6 +612,7 @@
 /hema
 /herokacosmetics
 /herqsmoments
+/herzogmedical
 /het_speelatelier
 /hetheleplaatje
 /hetinpakhuis
@@ -636,6 +638,7 @@
 /hostinger
 /hostnet
 /hotelstacherhof
+/hotelvicleiden
 /houseofmabango
 /housevitaminnl
 /houtenplenkske
@@ -683,10 +686,10 @@
 /jeuliajewelry
 /jhpfashion.nl
 /jhypes
+/jippiejeej.be
 /jjshouse
 /joom
 /jorcustom
-/jotoys
 /journaway
 /joybuy
 /juuniek
@@ -757,7 +760,6 @@
 /lipoelastic
 /little_monkeez.nl
 /littledutch
-/littlemaryam
 /livin24
 /lizetbeek_shop
 /lkbennett
@@ -796,7 +798,6 @@
 /lycamobile
 /lyko
 /lzclinics
-/machtigprachtig
 /madlady
 /madurodam
 /mae
@@ -885,7 +886,6 @@
 /myjewellery
 /myka
 /mykinybrandburkini
-/mylky.nl
 /myproteinnl
 /mysample.nl
 /mysteryvoetbalbox
@@ -984,7 +984,6 @@
 /paneli
 /paperloops_official
 /papique
-/paragonfitwear
 /parfumado
 /parfumania
 /parfumdreams.nl
@@ -1036,7 +1035,6 @@
 /posterstore
 /powerpeers
 /praxis
-/precisiontrackday
 /prenatal
 /prepmymeal.nl
 /prescription-beauty.nl
@@ -1067,6 +1065,7 @@
 /radero.nl
 /raizzed
 /ralphlauren
+/rano
 /rapunzelofsweden
 /rawnutrition
 /rayban
@@ -1077,7 +1076,6 @@
 /reiss
 /renpho
 /repeatcashmere
-/retrostage
 /revitaltrax
 /rienthelabel
 /rif010.nl
@@ -1094,7 +1092,9 @@
 /rosental-organics.nl
 /roseskinco
 /rowenta
+/rowsonofficial
 /rugvista
+/runalott
 /rungne
 /runna
 /sabon
@@ -1138,7 +1138,6 @@
 /sembo
 /sensitestbv
 /september18
-/sev.plantenbakken
 /shannonchristina
 /shapora
 /shaporashein
@@ -1170,7 +1169,6 @@
 /sizzthebrand
 /skateshop
 /skechers
-/skims
 /skinnydiplondon
 /skintemporarytattoos
 /skrub
@@ -1287,7 +1285,6 @@
 /techweise
 /teddah
 /teddypeps.nl
-/tedhilley
 /tefal
 /temu
 /tencate
