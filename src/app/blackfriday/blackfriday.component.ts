@@ -10,6 +10,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { forkJoin, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { BLACKFRIDAY_BLOCKED_SHOPS } from '../data/blackfriday-blocked-shops';
 
 interface WebshopKorting {
   webshop_name: string;
@@ -158,6 +159,12 @@ export class BlackfridayComponent implements OnInit {
         // Drop deals an operator flagged 👎 as bad/noise in the review bot.
         // Only true is ever written; absent means not-flagged, so keep those.
         .filter((item) => item.thumbs_down !== true)
+        // Editorial curation. The feed's long tail of brands nobody has heard of
+        // makes the page read as low quality to a first-time visitor. Blocklist
+        // rather than allowlist, so the page stays open by default and a shop we
+        // have never assessed still shows — see the file for the bar and for how
+        // to measure a brand before adding it.
+        .filter((item) => !BLACKFRIDAY_BLOCKED_SHOPS.has(item.webshop_name))
         .map((item) => ({
         ...item,
         url: this.affiliateLinkService.getAffiliateLink(item.webshop_name) || item.url,
