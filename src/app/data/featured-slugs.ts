@@ -25,9 +25,12 @@
 // Keep this SHORT. Every pin costs one of the five slots and squeezes out the
 // random rotation that gives the rail its variety. Clear it when the promotion
 // is over — pins do not expire on their own.
-export const PINNED_SLUGS: string[] = [
-    'lounge by zalando'
-];
+// Empty = nothing pinned, the whole rail comes from top deals + the draw. Note
+// this is [] and not [''] — unlike SALE_SLUG below, where an empty string is the
+// documented "pick automatically" sentinel, an empty string HERE is a slug that
+// happens to match nothing. It would start matching the moment a malformed row
+// with no company name reached discounts.json, and render a nameless card.
+export const PINNED_SLUGS: string[] = [];
 
 // The shop that gets the rail's single SALE slot. Empty string = pick
 // automatically (the freshest sale across the whole feed, which among same-day
