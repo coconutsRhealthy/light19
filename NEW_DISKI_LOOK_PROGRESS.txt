@@ -63,7 +63,7 @@ DONE (committed)
     - form is functional WITHOUT a backend: submit() composes a mailto:
       (built in JS, client-side) so no literal email in prerendered HTML
     - sidebar: sky "Een code delen?" -> routerLink /prikbord, + details card
-      (e-mail, Instagram @wiegeeftkorting, TikTok @wiegeeftkorting2, reactietijd)
+      (e-mail, Instagram @diski.nl, TikTok @andyyrobe, reactietijd)
     - real data used (info@diski.nl, real socials), not mockup placeholders
     - CF EMAIL/HYDRATION GOTCHA: the old `&#64;` entity trick does NOT survive
       Angular SSR (serializes back to a literal `@`). Fix: contactEmail is ''

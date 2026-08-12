@@ -19,7 +19,7 @@ export class ContactComponent {
 
   constructor(private meta: MetaService) {
     const title = "Neem Contact Op met Diski | Kortingscodes en Samenwerkingen";
-    const description = "Duizenden online shoppers maken gebruik van de kortingscodes die Diski deelt. Heb je vragen, verzoeken of ideeën voor samenwerkingen of adverteren? Neem contact op en ontdek hoe we samen kunnen werken via Diski.nl en @wiegeeftkorting.";
+    const description = "Duizenden online shoppers maken gebruik van de kortingscodes die Diski deelt. Heb je vragen, verzoeken of ideeën voor samenwerkingen of adverteren? Neem contact op en ontdek hoe we samen kunnen werken via Diski.nl en @diski.nl.";
     this.meta.updateTitle(title);
     this.meta.updateMetaInfo(description, "diski.nl", "Samenwerken met Diski, Adverteren op kortingscode platform, Kortingscodes voor online shoppers, Samenwerkingen met bedrijven");
     this.meta.updateOgTags(title, description, "https://diski.nl/contact/");

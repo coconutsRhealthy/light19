@@ -76,7 +76,7 @@ export class DiscountsTableComponent implements OnInit {
   // across the redesign (event_category differs per event, hence the raw gtag
   // call in trackSocialCard rather than AnalyticsEventService.sendEventToGa).
   socialCards = [
-    { tag: 'Instagram', title: 'Volg @wiegeeftkorting', desc: 'Dagelijkse codes, sale-alerts en de beste vondsten op je tijdlijn.', cta: 'Volgen', href: 'https://www.instagram.com/wiegeeftkorting/', gaEvent: 'insta', gaCategory: 'Social', gaLabel: 'insta_top' },
+    { tag: 'Instagram', title: 'Volg @diski.nl', desc: 'Dagelijkse codes, sale-alerts en de beste vondsten op je tijdlijn.', cta: 'Volgen', href: 'https://www.instagram.com/diski.nl/', gaEvent: 'insta', gaCategory: 'Social', gaLabel: 'insta_top' },
     { tag: 'Prikbord',           title: 'Deel een code die werkt', desc: 'Zelf een goede code gespot? Zet hem op het prikbord en help de rest.', cta: 'Naar prikbord →', href: '/prikbord', gaEvent: 'prikbord', gaCategory: 'Prikbord', gaLabel: 'prikbord_intable_homepage' },
   ];
 
@@ -136,7 +136,7 @@ export class DiscountsTableComponent implements OnInit {
       "url": "https://diski.nl",
       "logo": "https://cdn.jsdelivr.net/gh/wgknl/diski-assets/logos/webp/avatar.webp",
       "sameAs": [
-        "https://www.instagram.com/wiegeeftkorting/",
+        "https://www.instagram.com/diski.nl/",
         "https://www.tiktok.com/@andyyrobe"
       ]
     });
