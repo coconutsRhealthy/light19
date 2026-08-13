@@ -17,6 +17,7 @@ import { PLATFORM_ID, PendingTasks, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { VisitorProfileService } from '../services/visitor-profile.service';
+import { pickRelatedSlugs } from '../data/related-shops';
 
 import { ModalComponent } from '../modal/modal.component';
 
@@ -345,72 +346,33 @@ export class CompanyCodesComponent implements OnInit {
     return "tw-font-body tw-font-semibold tw-text-cream tw-bg-ink hover:tw-opacity-90 tw-rounded-full tw-px-5 tw-py-2 tw-transition tw-duration-200 tw-uppercase tw-text-sm tw-whitespace-nowrap";
   }
 
+  // The pool used to be a hardcoded 24-slug array shuffled down to 6, which meant
+  // 1,078 v1 pages aimed ~6,500 internal links at those 24 shops. It now draws
+  // from every live shop via src/app/data/related-shops.ts, which documents the
+  // measurements behind the change and keeps the draw deterministic.
   private loadRelatedShops(currentSlug: string, allData: string[]): void {
-    const slugs: string[] = [
-      'zalando',
-      'shein',
-      'nakdfashion',
-      'loavies',
-      'hunkemoller',
-      'oduree.nl',
-      'creamyfabrics',
-      'idealofsweden',
-      'desenio',
-      'lookfantastic',
-      'myproteinnl',
-      'temu',
-      'gymshark',
-      'bylashbabe',
-      'hellofresh.nl',
-      'gutsgusto',
-      'pinkgellac',
-      'vitakruid',
-      'spacenk.com',
-      'leolive',
-      'achateshop.com',
-      'bellobox.nl',
-      'geurwolkje',
-      'ginatricot'
-    ];
-
     const currentSlugLc = currentSlug.toLowerCase();
 
-    const pool: RelatedShop[] = slugs
-      .filter(slug => slug.toLowerCase() !== currentSlugLc)
-      .map(slug => {
-        const match = allData.find(line => {
-          const rawCompany = line.split(', ')[0] ?? '';
-          return rawCompany.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase() === slug.toLowerCase();
-        });
-
-        if (!match) return null;
-
-        const parts = match.split(', ');
-        const name = parts[0].replace(/\s*\(.*$/, '').trim();
-        const percentage = (parts[2] ?? '').trim() || '10';
-        return { name, slug, percentage };
-      })
-      .filter((shop): shop is RelatedShop => shop !== null);
-
-    this.relatedShops = this.seededShuffle(pool, currentSlugLc).slice(0, 6);
-  }
-
-  // Shuffle deterministically instead of with Math.random(): ngOnInit runs twice —
-  // once at prerender, once at hydration — and two different draws would make the
-  // client tear down the prerendered list (@for tracks by slug) and swap the shops
-  // out under the user. Seeding from the slug gives every shop its own stable
-  // ordering that server and client both reproduce.
-  private seededShuffle<T>(items: T[], seed: string): T[] {
-    let h = 0;
-    for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
-
-    const pool = [...items];
-    for (let i = pool.length - 1; i > 0; i--) {
-      h = (h * 1664525 + 1013904223) >>> 0; // LCG step — cheap, deterministic
-      const j = h % (i + 1);
-      [pool[i], pool[j]] = [pool[j], pool[i]];
+    // Index the feed once: slug -> the card's name and percentage. First entry per
+    // shop wins, matching the old allData.find() lookup.
+    const index = new Map<string, RelatedShop>();
+    for (const line of allData) {
+      const parts = line.split(', ');
+      const raw = parts[0] ?? '';
+      const slug = raw.replace(/\s*\(.*?\)\s*/g, '').trim().toLowerCase();
+      if (!slug || index.has(slug)) continue;
+      index.set(slug, {
+        name: raw.replace(/\s*\(.*$/, '').trim(),
+        slug,
+        percentage: (parts[2] ?? '').trim() || '10'
+      });
     }
-    return pool;
+
+    this.relatedShops = pickRelatedSlugs({
+      seed: currentSlugLc,
+      livePool: [...index.keys()],
+      max: 6
+    }).map(slug => index.get(slug)!);
   }
 
   formatRelatedPercentage(percentage: string): string {

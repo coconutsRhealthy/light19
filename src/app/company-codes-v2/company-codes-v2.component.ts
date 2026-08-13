@@ -12,6 +12,7 @@ import { VisitorProfileService } from '../services/visitor-profile.service';
 import { ModalComponent } from '../modal/modal.component';
 import { BrandContent, BrandVideo } from './brand-content/brand-content.model';
 import { BUILD_DATE_ISO } from '../build-info';
+import { pickRelatedSlugs } from '../data/related-shops';
 import spottedSalesData from '../data/spotted-sales.json';
 
 declare let gtag: Function;
@@ -56,9 +57,8 @@ const MONTHS_NL = [
   'juli', 'augustus', 'september', 'oktober', 'november', 'december'
 ];
 
-// Used to top up the related-shops grid when a shop's own co-occurrence list
-// yields too few live links (the thin-shop fallback, e.g. Zalando).
-const DEFAULT_RELATED = ['nakdfashion', 'shein', 'ginatricot', 'gutsgusto', 'temu', 'loavies', 'bjornborg', 'zalando'];
+// The grid is topped up from src/app/data/related-shops.ts, which also documents
+// why the old fixed DEFAULT_RELATED pool was replaced.
 const RELATED_MAX = 8;
 
 // Shops whose <title> / meta description advertise a ceiling above the best live
@@ -412,9 +412,10 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
   }
 
   /**
-   * Builds the related-shops grid. Candidates come from the shop's co-occurrence
-   * list (content.related), topped up with a default pool when too thin, and
-   * filtered to shops that actually have codes (a live page) in the data.
+   * Builds the related-shops grid. The shop's own co-occurrence list
+   * (content.related) takes the first slots; pickRelatedSlugs fills the rest from
+   * the striking-distance list and then the long tail, filtered to shops that
+   * actually have codes (a live page) in the data.
    */
   private buildRelatedShops(lines: string[]): void {
     // Index every shop in the data once: slug -> highest % discount available.
@@ -427,25 +428,17 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       index.set(slug, Math.max(index.get(slug) ?? 0, pct));
     }
 
-    const candidates = [...(this.content?.related ?? []), ...DEFAULT_RELATED];
-    const seen = new Set<string>([this.company]);
-    const out: RelatedShopVM[] = [];
-
-    for (const slug of candidates) {
-      const s = slug.toLowerCase();
-      if (seen.has(s) || !index.has(s)) continue;   // skip self, dupes, and shops without a live page
-      seen.add(s);
-      const pct = index.get(s) ?? 0;
-      out.push({
-        slug: s,
-        name: this.displayNameFor(s),
-        logo: this.allLogos[s],
-        topDiscount: pct > 0 ? `${pct}%` : undefined
-      });
-      if (out.length >= RELATED_MAX) break;
-    }
-
-    this.relatedShops = out;   // default pool is already merged into candidates above
+    this.relatedShops = pickRelatedSlugs({
+      seed: this.company,
+      livePool: [...index.keys()],
+      own: this.content?.related ?? [],
+      max: RELATED_MAX
+    }).map(slug => ({
+      slug,
+      name: this.displayNameFor(slug),
+      logo: this.allLogos[slug],
+      topDiscount: (index.get(slug) ?? 0) > 0 ? `${index.get(slug)}%` : undefined
+    }));
   }
 
   private displayNameFor(slug: string): string {
