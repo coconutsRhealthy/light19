@@ -149,21 +149,26 @@ function readContentSlugs() {
   return { v1, v2 };
 }
 
-// Neither fallback is a freshly-checked offer, so don't date it like one: 45–75 days
-// before the build, with the offset derived from the slug so the fallback pages don't all
-// share one templated date. Deterministic — this is the formula the two component
-// fallbacks each used to carry.
+// A newsletter sign-up doesn't expire, so unlike the invented codes this replaced, its
+// date could honestly be the build date. It is a week earlier instead, because two
+// consumers read recency as a signal and both would misread it:
 //
-// The age is load-bearing, not cosmetic. It keeps injected rows out of the homepage's
-// "X nieuwe shops" counter (which counts shops carrying the newest date in the feed) and
-// out of the modal's email gate (which demands an email for anything added in the last 5
-// days). Both fallbacks need that exclusion, so both use this.
-function agedSpotDate(slug, buildDate) {
-  let hash = 0;
-  for (let i = 0; i < slug.length; i++) hash = (hash * 31 + slug.charCodeAt(i)) >>> 0;
+//   1. The homepage counts every shop carrying the NEWEST date in the feed as a "nieuwe
+//      shop" (discounts-table.component.ts, updateLatestDiscountInfo). Build-dated rows
+//      would announce ~751 new shops on every build.
+//   2. The modal's email gate demands an email for anything added in the last 5 days
+//      (modal.component.ts, RECENT_DAYS). A newsletter row must not sit behind that.
+//
+// A week clears both, and it cannot collide with the counter: codes reach the feed every
+// two to three days, so the newest live code is never a week old.
+//
+// One shared date for all of them, deliberately. The old backup codes spread themselves
+// over 31 hashed dates to look individually spotted — there is nothing to disguise here.
+const NEWSLETTER_AGE_DAYS = 7;
 
-  const spotted = new Date(buildDate.getTime() - (45 + (hash % 31)) * 86400000);
-  return String(spotted.getMonth() + 1).padStart(2, '0') + '-' + String(spotted.getDate()).padStart(2, '0');
+function newsletterDate(buildDate) {
+  const d = new Date(buildDate.getTime() - NEWSLETTER_AGE_DAYS * 86400000);
+  return String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 }
 
 // Anchored to the same build date the pages stamp themselves with, so an injected row's
@@ -231,7 +236,7 @@ async function main() {
     fallbackShops.push(slug);
   }
   const newsletterLines = fallbackShops.map(
-    slug => `${slug}, ${NEWSLETTER_CODE}, , ${ANON_PLACEHOLDER}, ${agedSpotDate(slug.toLowerCase(), buildDate)}`
+    slug => `${slug}, ${NEWSLETTER_CODE}, , ${ANON_PLACEHOLDER}, ${newsletterDate(buildDate)}`
   );
 
   // Injected rows go last: the feed is newest-first, and consumers lean on that ordering
