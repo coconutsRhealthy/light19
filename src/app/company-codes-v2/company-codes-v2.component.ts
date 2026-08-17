@@ -353,10 +353,10 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
     this.lastCheckedIso = BUILD_DATE_ISO || this.toIsoDate(now);
     this.lastCheckedLabel = this.formatDate(checked);
 
-    // No backup-code fallback here: fetch-discounts.js injects a shop's backupCode into
-    // discounts.json at build time when it has no live code, so `parsed` above already
-    // contains it. That keeps the rest of the site (homepage table, /winkels, search,
-    // related-shops grids) able to see the shop too.
+    // No fallback here: fetch-discounts.js injects a newsletter row into discounts.json at
+    // build time when a shop has no live code, so `parsed` above already contains it. That
+    // keeps the rest of the site (homepage table, /winkels, search, related-shops grids)
+    // able to see the shop too.
 
     const headline = this.regularCodes
       .map(c => this.percentHeadlineOf(c.rawValue))

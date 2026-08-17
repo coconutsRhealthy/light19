@@ -123,12 +123,11 @@ export class CompanyCodesComponent implements OnInit {
           };
         });
 
-      // No backup-code fallback here: fetch-discounts.js injects a shop's entry from
-      // company-seo-content/backup-codes.json into discounts.json at build time when it
-      // has no live code, so the filter above already found it. That keeps the rest of the
-      // site (homepage table, /winkels, search, related-shops grids) able to see the shop
-      // too — the old in-component fallback was invisible to every other consumer of
-      // discounts.json.
+      // No fallback here: fetch-discounts.js injects a newsletter row into discounts.json
+      // at build time for any shop with no live code, so the filter above already found
+      // it. That keeps the rest of the site (homepage table, /winkels, search,
+      // related-shops grids) able to see the shop too — the old in-component fallback was
+      // invisible to every other consumer of discounts.json.
 
       if(this.discountCodes.length > 0) {
         this.webshopName = this.getWebshopName(this.company);

@@ -1,10 +1,6 @@
 {
   "slug": "factormeals",
   "name": "Factor",
-  "backupCode": {
-    "code": "VALERIE",
-    "discount": "25"
-  },
   "related": [
     "hellofresh.nl",
     "stoxenergy",

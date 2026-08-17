@@ -1,10 +1,6 @@
 {
   "slug": "hellofresh.nl",
   "name": "HelloFresh",
-  "backupCode": {
-    "code": "KLEINPEPERTJE",
-    "discount": "€110"
-  },
   "heroLede": "HelloFresh bezorgt maaltijdboxen met verse, afgemeten ingrediënten en stap-voor-stap recepten thuis, zodat je doordeweeks niet meer hoeft na te denken over wat je eet. Met een kortingscode pak je flink voordeel op je eerste boxen.",
   "about": [
     "HelloFresh is de bekende maaltijdbox-dienst waarbij je wekelijks een doos vol verse ingrediënten en bijbehorende recepten thuisbezorgd krijgt. Alles zit precies afgemeten in de doos, inclusief duidelijke kaarten waarmee je stap voor stap kookt, zodat er weinig tot geen voedsel verloren gaat.",

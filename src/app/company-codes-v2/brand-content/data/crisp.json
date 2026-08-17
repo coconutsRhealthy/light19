@@ -1,10 +1,6 @@
 {
   "slug": "crisp",
   "name": "Crisp",
-  "backupCode": {
-    "code": "sigourneysorensa10",
-    "discount": "€10"
-  },
   "related": [
     "bestecanvas",
     "deplay",

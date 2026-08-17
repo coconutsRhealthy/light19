@@ -1,10 +1,6 @@
 {
   "slug": "fietsleaseholland",
   "name": "Fietslease Holland",
-  "backupCode": {
-    "code": "MAMA",
-    "discount": "€75"
-  },
   "related": [
     "emmasleepnl",
     "farmcamps",

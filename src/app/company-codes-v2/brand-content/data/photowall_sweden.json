@@ -1,10 +1,6 @@
 {
   "slug": "photowall_sweden",
   "name": "Photowall",
-  "backupCode": {
-    "code": "MEES15",
-    "discount": "15"
-  },
   "related": [
     "nakdfashion",
     "geurwolkje",

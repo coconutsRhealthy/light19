@@ -1,10 +1,6 @@
 {
   "slug": "kossonutrition.nl",
   "name": "Kosso Nutrition",
-  "backupCode": {
-    "code": "BAREND",
-    "discount": "10"
-  },
   "related": [
     "aybl",
     "bjornborg",

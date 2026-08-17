@@ -1,10 +1,6 @@
 {
   "slug": "kiehls",
   "name": "Kiehl's",
-  "backupCode": {
-    "code": "SOSREPAIR",
-    "discount": "10"
-  },
   "related": [
     "paulaschoice.nl",
     "idealofsweden",
