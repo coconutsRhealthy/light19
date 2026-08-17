@@ -5,2211 +5,558 @@ import { Injectable } from '@angular/core';
 })
 export class AffiliateLinkService {
 
-  private affiliateLinks: {[key: string]: { url: string, dummyCode: string }} = {
-    'bylashbabe': {
-        url: 'https://bylashbabe.com?sca_ref=3638091.TQRuyJNRG1',
-        dummyCode: 'STARLASH'
-    },
-    'myproteinnl': {
-        url: 'https://tidd.ly/3Dvhdyg',
-        dummyCode: 'MPDISKI'
-    },
-    'smartphonehoesjes.nl': {
-        url: 'https://tidd.ly/3FRwREQ',
-        dummyCode: 'SHXDISKI725'
-    },
-    'veromoda': {
-        url: 'https://www.stylink.it/6MNk0HeXDDA',
-        dummyCode: 'VERO20DRN'
-    },
-    'ginatricot': {
-        url: 'https://clk.tradedoubler.com/click?p=397652&a=3486306&url=https%3A%2F%2Fwww.ginatricot.com%2Fnl',
-        dummyCode: 'VIP20QZJ'
-    },
-    'hunkemoller': {
-        url: 'https://tidd.ly/4j17AXp',
-        dummyCode: 'HUNK5CUZ'
-    },
-    'thuisbezorgd': {
-        url: 'https://tidd.ly/4jpALTJ',
-        dummyCode: 'THUI25HN7'
-    },
-    'footlocker': {
-        url: 'https://tidd.ly/3G2Kxgs',
-        dummyCode: 'FOOT25JUV'
-    },
-    'ninjakitchen': {
-        url: 'https://tidd.ly/4fd62ue',
-        dummyCode: 'NINJ15BBG'
-    },
-    'samsung': {
-        url: 'https://tidd.ly/4taXxUp',
-        dummyCode: 'SAMS5HR9'
-    },
-    'yesstyle': {
-        url: 'https://www.yesstyle.com/en/home.html?rco=YESGIRL23&utm_term=YESGIRL23&utm_medium=Influencer&utm_source=dynamic&mcg=influencer',
-        dummyCode: 'YESS25JQL'
-    },
-    'asos': {
-        url: 'https://www.stylink.it/RNGo2t6QZeV',
-        dummyCode: 'ASOS10NKD'
-    },
-    'stevemadden': {
-        url: 'https://www.stylink.it/yGz3NSOyQvD',
-        dummyCode: 'SHOPPING30QO9'
-    },
-    'lookfantastic': {
-        url: 'https://www.awin1.com/cread.php?awinmid=15785&awinaffid=1870794&ued=https%3A%2F%2Fwww.lookfantastic.nl%2Fc%2Foffers%2Feu-exclusions%2Faffiliates%2Fflat%2F',
-        dummyCode: 'LFDISKI'
-    },
-    'h&m': {
-        url: 'https://pzz.to/sga4OL',
-        dummyCode: 'PROMO10Q17'
-    },
-    'westwing': {
-        url: 'https://www.stylink.it/NxJO0I67aak',
-        dummyCode: 'WEST20UYH'
-    },
-    'aliexpress': {
-        url: 'https://tidd.ly/3J3ARnG',
-        dummyCode: 'ALIE15LM0'
-    },
-    'adidas': {
-        url: 'https://tidd.ly/4iTlN7Q',
-        dummyCode: 'SOPHIE15RUS'
-    },
-    'only': {
-        url: 'https://www.stylink.it/ZDBMzIpz4yY',
-        dummyCode: 'LOVELY20BTS'
-    },
-    'nike': {
-        url: 'https://www.stylink.it/Ojow9izQX90',
-        dummyCode: 'JULIA30O0T'
-    },
-    'prozis': {
-        url: 'https://prozis.com/NfHG',
-        dummyCode: 'PEPER'
-    },
-    'stylevana': {
-        url: 'https://tidd.ly/4dsPX0F',
-        dummyCode: 'AFFDISKI20'
-    },
-    'temu': {
-        url: 'https://temu.to/m/u0p32ew176i',
-        dummyCode: 'apu12458'
-    },
-    'easytoys': {
-        url: 'https://www.stylink.it/wnG31IJq3q4',
-        dummyCode: 'EASY30HOV'
-    },
-    'iciparisxl': {
-        url: 'https://tidd.ly/4lMFsJA',
-        dummyCode: 'ICIP30GYR'
-    },
-    'yehwang_wholesale': {
-        url: 'https://bit.ly/43fOjKa',
-        dummyCode: 'HAPPY10SZI'
-    },
-    'ullapopken.nl': {
-        url: 'https://tidd.ly/4mmCMCH',
-        dummyCode: 'SHOP106LK'
-    },
-    'maletasgreenwich': {
-        url: 'https://tidd.ly/4lPQy0v',
-        dummyCode: 'MALE15ZVO'
-    },
-    'voghion': {
-        url: 'https://tidd.ly/3Ep876s',
-        dummyCode: 'VOGH5S3X'
-    },
-    'shirttuning.nl': {
-        url: 'https://tidd.ly/4lAMjp6',
-        dummyCode: 'SHIR25YVG'
-    },
-    'street-one.nl': {
-        url: 'https://tidd.ly/44fnr0c',
-        dummyCode: 'STYLE20NUQ'
-    },
-    'zooplus.nl': {
-        url: 'https://tidd.ly/44NnZKP',
-        dummyCode: 'LISA51AW'
-    },
-    'cecil': {
-        url: 'https://tidd.ly/3Sb7l06',
-        dummyCode: 'OFF25C7J'
-    },
-    'stradivarius': {
-        url: 'https://tidd.ly/3YTQORZ',
-        dummyCode: 'PROMO150OX'
-    },
-    'greetz.nl': {
-        url: 'https://click.linksynergy.com/deeplink?id=vErUkuRoyhQ&mid=53875&murl=https%3A%2F%2Fwww.greetz.nl%2Fnl%2F',
-        dummyCode: 'GREE20GGN'
-    },
-    'albelli': {
-        url: 'https://tidd.ly/4ms3olS',
-        dummyCode: 'MARIE25BM1'
-    },
-    'otrium': {
-        url: 'https://tidd.ly/3FpcLSm',
-        dummyCode: 'OTRI3009T'
-    },
-    'zelesta.nl': {
-        url: 'https://zelesta-cpc-nl.mtpc.se/6289058',
-        dummyCode: 'BEAUTY25VEL'
-    },
-    'smartphoto.nl': {
-        url: 'https://www.smartphoto.nl/foto_tt?tt=4903_12_448474_&r=%2F',
-        dummyCode: 'VIP5IRR'
-    },
-    'secretsales.nl': {
-        url: 'https://tidd.ly/43Atcoa',
-        dummyCode: 'STYLE5DCR'
-    },
-    'keepitsneaker': {
-        url: 'https://tidd.ly/4deFHcA',
-        dummyCode: 'JULIA30O7A'
-    },
-    'fashionette': {
-        url: '',
-        dummyCode: 'FASH30XMQ'
-    },
-    'vidaxl': {
-        url: 'https://tidd.ly/42PSPRQ',
-        dummyCode: 'BEAUTY15Q83'
-    },
-    'charlottetilbury': {
-        url: 'https://friends.charlottetilbury.com/s/wiegeeftkorting',
-        dummyCode: 'CHAR5Q0C'
-    },
-    'boohoo': {
-        url: 'https://tidd.ly/3ZsqrTt',
-        dummyCode: 'BOOH5I0M'
-    },
-    'boohooman': {
-        url: 'https://tidd.ly/3GZs30J',
-        dummyCode: 'BOOH2506Z'
-    },
-    'bstn.com': {
-        url: 'https://tidd.ly/3FgECUP',
-        dummyCode: 'PROMO54VH'
-    },
-    'sharkclean.nl': {
-        url: 'https://tidd.ly/4fd62ue',
-        dummyCode: 'ANNA15VGZ'
-    },
-    'prenatal': {
-        url: 'https://tidd.ly/43lmYHH',
-        dummyCode: 'PREN20935'
-    },
-    'wish.com': {
-        url: 'https://click.linksynergy.com/deeplink?id=q0MVTK*mZVE&mid=53194&murl=https%3A%2F%2Fwww.wish.com%2Fnl',
-        dummyCode: 'SOPHIE5FFQ'
-    },
-    'mvolo.nl': {
-        url: 'https://tidd.ly/3H0Mw5m',
-        dummyCode: 'MVOL253PS'
-    },
-    'bulk.com': {
-        url: 'https://tidd.ly/43rbsdJ',
-        dummyCode: 'LISA20OVK'
-    },
-    'spacenk.com': {
-        url: 'https://tidd.ly/4dFlWeo',
-        dummyCode: 'WELCOME30GID'
-    },
-    'naduvi.nl': {
-        url: 'https://tidd.ly/3HnUdT9',
-        dummyCode: 'HAPPY52WJ'
-    },
-    'kitchenaid': {
-        url: 'https://tidd.ly/4dwNti2',
-        dummyCode: 'WELCOME30R2P'
-    },
-    'malelions': {
-        url: 'https://tidd.ly/3Z1dr7b',
-        dummyCode: 'MALE5JJ0'
-    },
-    'fotocadeau.nl': {
-        url: 'https://tidd.ly/3Z1dIXL',
-        dummyCode: 'DISKI70'
-    },
-    '123jaloezie.nl': {
-        url: 'https://tidd.ly/3SR4dqy',
-        dummyCode: '123J30FG2'
-    },
-    'lounge by zalando': {
-        url: 'https://tidd.ly/3ZknIvm',
-        dummyCode: 'MARIE5MXP'
-    },
-    'jhpfashion.nl': {
-        url: 'https://tidd.ly/4kaBWGU',
-        dummyCode: 'DISKI10'
-    },
-    'picnic': {
-        url: 'https://tidd.ly/4jkKLxg',
-        dummyCode: 'PICN30TL0'
-    },
-    'amazon': {
-        url: 'https://amzn.to/4lyoE8A',
-        dummyCode: 'SUMMER5SQE'
-    },
-    'tefal': {
-        url: 'https://tidd.ly/44tjrJB',
-        dummyCode: 'TEFA15YU3'
-    },
-    'tennis-point.nl': {
-        url: 'https://tidd.ly/4kB6hPn',
-        dummyCode: 'TENN20E43'
-    },
-    'lampenlicht.nl': {
-        url: 'https://tidd.ly/3Tlo5m2',
-        dummyCode: 'MARIE1089N'
-    },
-    'earkings.nl': {
-        url: 'https://tidd.ly/3UjR75T',
-        dummyCode: 'WELCOME30D5O'
-    },
-    'large.nl': {
-        url: 'https://tidd.ly/3TiNQ6E',
-        dummyCode: 'LARG574V'
-    },
-    'cashbackxl': {
-        url: 'https://www.cashbackxl.nl?share=wouter-c9c3bf',
-        dummyCode: 'geen code nodig'
-    },
-    'dyson': {
-        url: 'https://tidd.ly/4dloiic',
-        dummyCode: 'WELCOME5XME'
-    },
-    'coolblue': {
-        url: 'https://tidd.ly/3GSohGZ',
-        dummyCode: 'COOL30SR8'
-    },
-    'douglas': {
-        url: 'https://tidd.ly/4ldZ0VD',
-        dummyCode: 'DOUG2005X'
-    },
-    'shein': {
-        url: 'https://www.awin1.com/cread.php?awinmid=18055&awinaffid=1870794&ued=https%3A%2F%2Fnl.shein.com%2F',
-        dummyCode: 'SHEI20Y9P'
-    },
-    'emmasleepnl': {
-        url: 'https://tidd.ly/47ACnr9',
-        dummyCode: 'EMMA25YB9'
-    },
-    'ugg': {
-        url: 'https://tidd.ly/4lw3s2q',
-        dummyCode: 'UGG20YBB'
-    },
-    'jeanscentre.nl': {
-        url: 'https://tidd.ly/3GmmSIe',
-        dummyCode: 'WELCOME108U3'
-    },
-    'converse': {
-        url: 'https://tidd.ly/4jEbhCy',
-        dummyCode: 'SOPHIE25JGX'
-    },
-    'skateshop': {
-        url: 'https://clk.tradedoubler.com/click?p=376362&a=3427761&url=https%3A%2F%2Fwww.skateshop.be%2Fnl%2F',
-        dummyCode: 'SKAT10M5V'
-    },
-    'stekkies': {
-        url: 'https://in.stekkies.com/t/t?a=1962471956&as=2091458876&t=2&tk=1',
-        dummyCode: 'LOVELY259AQ'
-    },
-    'lycamobile': {
-        url: 'https://tidd.ly/3YvpKI9',
-        dummyCode: 'LYCA2563B'
-    },
-    'fotogeschenk': {
-        url: 'https://www.fotogeschenk.nl/foto/?tt=642_12_448474_&r=%2F',
-        dummyCode: 'HAPPY30CQR'
-    },
-    'basalbasics.nl': {
-        url: 'https://clk.tradedoubler.com/click?p=345870&a=3427761&url=https%3A%2F%2Fwww.basalbasics.nl%2F',
-        dummyCode: 'BASA302OU'
-    },
-    'hairworldshop.nl': {
-        url: 'https://clk.tradedoubler.com/click?p=358618&a=3427761&url=https%3A%2F%2Fwww.hairworldshop.nl%2F',
-        dummyCode: 'HAIR25ZBE'
-    },
-    'vitamine.shop': {
-        url: 'https://clk.tradedoubler.com/click?p=315858&a=3427761&url=https%3A%2F%2Fvitamine.shop%2F',
-        dummyCode: 'VITA20TZ4'
-    },
-    'mimmti.com': {
-        url: 'https://tc.tradetracker.net/?c=30770&m=12&a=448474&r=&u=%2F',
-        dummyCode: 'MIMM10JHM'
-    },
-    'acrylfoto.nl': {
-        url: 'https://www.acrylfoto.nl/foto/?tt=3380_12_448474_&r=%2F',
-        dummyCode: 'FASHION20T8S'
-    },
-    'namly.nl': {
-        url: 'https://clk.tradedoubler.com/click?p=379967&a=3427761&url=https%3A%2F%2Fwww.namly.nl%2F',
-        dummyCode: 'NAML57VV'
-    },
-    'sixt': {
-        url: 'https://tidd.ly/3H8Oz7y',
-        dummyCode: 'SIXT15W2E'
-    },
-    'iphone-cases.nl': {
-        url: 'https://tidd.ly/44LjD74',
-        dummyCode: 'SHOP25DK2'
-    },
-    'tuinmeubelshop.nl': {
-        url: 'https://tidd.ly/4mlk526',
-        dummyCode: 'TUIN15OI1'
-    },
-    'muchachomalo': {
-        url: 'https://tidd.ly/3YYwvDa',
-        dummyCode: 'LISA25X0P'
-    },
-    'parfumdreams.nl': {
-        url: 'https://tidd.ly/43nW6GR',
-        dummyCode: 'PARF25I8N'
-    },
-    'melanojewelry': {
-        url: 'https://tidd.ly/4mMtHU3',
-        dummyCode: 'MELA15RS8'
-    },
-    'dryze.nl': {
-        url: 'https://tidd.ly/4kc4WPj',
-        dummyCode: 'DRYZ1553S'
-    },
-    'odido zakelijk': {
-        url: 'https://tidd.ly/3H2v7t8',
-        dummyCode: 'SOPHIE10BKH'
-    },
-    'odido thuis': {
-        url: 'https://tidd.ly/4mtzOwf',
-        dummyCode: 'ANNA257M1'
-    },
-    'odido mobiel': {
-        url: 'https://tidd.ly/45nqt2M',
-        dummyCode: 'ODID25JP4'
-    },
-    'vitaepro.nl': {
-        url: 'https://tidd.ly/4ki4LRI',
-        dummyCode: 'SHOP20TH1'
-    },
-    'action': {
-        url: 'https://tidd.ly/4nxwoZW',
-        dummyCode: 'VIP20R32'
-    },
-    'bluetomato': {
-        url: 'https://tidd.ly/4ldkSBs',
-        dummyCode: 'BEAUTY257PX'
-    },
-    'schuurman schoenen': {
-        url: 'https://tidd.ly/3ZXRHtp',
-        dummyCode: 'SCHU15SN9'
-    },
-    '50plusmobiel': {
-        url: 'https://tidd.ly/3TNztXZ',
-        dummyCode: 'SHOPPING5U6K'
-    },
-    'lucovitaal': {
-        url: 'https://tidd.ly/4l8jxfd',
-        dummyCode: 'LUCO257DD'
-    },
-    'guess': {
-        url: 'https://tidd.ly/3I55PuV',
-        dummyCode: 'GUES5WI3'
-    },
-    'happy-size.nl': {
-        url: 'https://tidd.ly/3VAKX1Y',
-        dummyCode: 'HS-15'
-    },
-    'koreanskincare': {
-        url: 'https://tidd.ly/4peUaus',
-        dummyCode: 'KORSK15'
-    },
-    'wildrefill': {
-        url: 'https://tidd.ly/4mUIifD',
-        dummyCode: 'wiegeeftkorting'
-    },
-    'tenways': {
-        url: 'https://tidd.ly/42mKnsj',
-        dummyCode: 'TENWAYS15'
-    },
-    'olivida.nl': {
-        url: 'https://olivida.nl/diski',
-        dummyCode: 'DIKSI10'
-    },
-    'bydreamlash.nl': {
-        url: 'https://bydreamlash.nl?sca_ref=9354637.Pe3nBHQSbeg8',
-        dummyCode: 'EVA15'
-    },
-    'heine': {
-        url: 'https://tidd.ly/46RrzTN',
-        dummyCode: '45569'
-    },
-    'to-be-dressed.nl': {
-        url: 'https://tidd.ly/4n9ETZL',
-        dummyCode: 'DISKI10'
-    },
-    'size': {
-        url: 'https://tidd.ly/4nPrgjn',
-        dummyCode: 'sanx15'
-    },
-    'hema': {
-        url: 'https://partner.hema.nl/c?c=25436&m=12&a=448474&r=&u=%2F',
-        dummyCode: '2025FC'
-    },
-    'mysteryvoetbalbox': {
-        url: '',
-        dummyCode: 'MVBDISKI10%'
-    },
-    'zenhotels': {
-        url: 'https://tidd.ly/3WFvBd0',
-        dummyCode: 'ZENEUR20'
-    },
-    'grundig': {
-        url: 'https://tidd.ly/3J0QUCQ',
-        dummyCode: '15OFF'
-    },
-    'v&d': {
-        url: 'https://www.awin1.com/cread.php?awinmid=64748&awinaffid=1870794',
-        dummyCode: 'DISKI10'
-    },
-    'xiaomi': {
-        url: 'https://tidd.ly/46WW1Ny',
-        dummyCode: 'XIAOMIPAD2025'
-    },
-    'thejewellershop': {
-        url: 'https://tidd.ly/48EXTf7',
-        dummyCode: '6G9UY9NL'
-    },
-    'stronger': {
-        url: 'https://tidd.ly/49dYqon',
-        dummyCode: 'SOCIAL15'
-    },
-    'unitedconsumers': {
-        url: 'https://www.awin1.com/awclick.php?gid=316477&mid=8311&awinaffid=1870794&linkid=4541134&clickref=',
-        dummyCode: 'ZON10'
-    },
-    'goyu': {
-        url: 'https://tidd.ly/3WVuxlk',
-        dummyCode: 'GO10'
-    },
-    'etsy': {
-        url: 'https://tidd.ly/44z3z7O',
-        dummyCode: 'ET-student-5'
-    },
-    'ziggo': {
-        url: 'https://tidd.ly/4o8EtnB',
-        dummyCode: 'zizo10'
-    },
-    'marleyspoon.nl': {
-        url: 'https://tidd.ly/42XIJhl',
-        dummyCode: 'Kleinpepertje'
-    },
-    'vevor': {
-        url: 'https://tidd.ly/3J9uyiC',
-        dummyCode: 'VEVORHOT2'
-    },
-    'odido zakelijk breedband': {
-        url: 'https://tidd.ly/48T1t5s',
-        dummyCode: 'SOPHIE10BB'
-    },
-    'iscooter': {
-        url: 'https://tidd.ly/431ZRm2',
-        dummyCode: 'LARS10V'
-    },
-    'ohcascas amsterdam': {
-        url: 'https://tidd.ly/43JsnJo',
-        dummyCode: 'RESTOCK10'
-    },
-    'cronjager': {
-        url: 'https://tidd.ly/3X1iiDT',
-        dummyCode: 'CRONJOB'
-    },
-    'marie-stella-maris': {
-        url: 'https://tidd.ly/4mD3fvh',
-        dummyCode: 'MSM10'
-    },
-    'overstappen.nl': {
-        url: 'https://tidd.ly/4qrCWuF',
-        dummyCode: 'switch5'
-    },
-    'zorgkiezer': {
-        url: 'https://tidd.ly/3WomNZ9',
-        dummyCode: 'EXTRA5'
-    },
-    'FBTO Zorg': {
-        url: 'https://tidd.ly/43GpzN7',
-        dummyCode: 'Extra5'
-    },
-    'Independer Zorg': {
-        url: 'https://tidd.ly/3Wr9Nly',
-        dummyCode: 'Extra5'
-    },
-    'rowenta': {
-        url: 'https://tidd.ly/434aipc',
-        dummyCode: 'EXTRA10'
-    },
-    'vanbeekumspecerijen': {
-        url: 'https://tidd.ly/4oc3HBD',
-        dummyCode: 'BLACK15'
-    },
-    'dorina': {
-        url: 'https://tidd.ly/4oerzV9',
-        dummyCode: 'EXTRA10'
-    },
-    'yvesrocher': {
-        url: 'https://tidd.ly/4oz5pgz',
-        dummyCode: 'HELLO'
-    },
-    'intergard': {
-        url: 'https://tidd.ly/4oi2AQS',
-        dummyCode: 'EXTRA10'
-    },
-    'milezbracelets': {
-        url: 'https://tidd.ly/4nGulkV',
-        dummyCode: 'EXTRA10'
-    },
-    'yfn': {
-        url: 'https://tidd.ly/4858Ioy',
-        dummyCode: 'EXTRA10'
-    },
-    '8849tech': {
-        url: 'https://tidd.ly/4i90wZf',
-        dummyCode: 'EXTRA10'
-    },
-    'jbl': {
-        url: 'https://tidd.ly/4i7fpv4',
-        dummyCode: 'JBL10'
-    },
-    'printabout': {
-        url: 'https://tidd.ly/49vByB6',
-        dummyCode: 'EXTRA10'
-    },
-    'lampen24': {
-        url: 'https://tidd.ly/4oT4iIJ',
-        dummyCode: 'BLACK25'
-    },
-    'workliving.nl': {
-        url: 'https://tidd.ly/3MfJ4Gr',
-        dummyCode: 'EXTRA10'
-    },
-    'koffievoordeel': {
-        url: 'https://tc.tradetracker.net/?c=25521&m=12&a=448474&r=&u=%2F',
-        dummyCode: 'EXTRA10'
-    },
-    'wijnvoordeel': {
-        url: 'https://tc.tradetracker.net/?c=6520&m=12&a=448474&r=&u=%2F',
-        dummyCode: 'BLACK'
-    },
-    'flexispot': {
-        url: 'https://deals.flexispot.nl/c?c=36652&m=12&a=448474&r=&u=%2F',
-        dummyCode: 'FSN55'
-    },
-    'gymshark': {
-        url: 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
-        dummyCode: 'AFSPORTPOEDER'
-    },
-    '24uomo': {
-        url: 'https://tc.tradetracker.net/?c=37672&m=12&a=448474&r=&u=%2F',
-        dummyCode: '12EXTRA'
-    },
-    'armband.nl': {
-        url: 'https://armband.nl/tt?tt=40313_12_448474_&r=%2F',
-        dummyCode: 'EXTRA10'
-    },
-    'bandanawinkel': {
-        url: 'https://partner.bandanawinkel.nl/c?c=3156&m=12&a=448474&r=&u=%2F',
-        dummyCode: 'BANDA10'
-    },
-    'bigsizeshirts': {
-        url: 'https://partner.bigsizeshirts.com/c?c=421&m=12&a=448474&r=&u=%2F',
-        dummyCode: 'SIZEXL10'
-    },
-    'cosmopolitan': {
-        url: 'https://tc.tradetracker.net/?c=30806&m=12&a=448474&r=&u=',
-        dummyCode: 'COSMO5'
-    },
-    'osloskinlab': {
-        url: 'https://tidd.ly/487Nms4',
-        dummyCode: 'OSL10'
-    },
-    'tiqets': {
-        url: 'https://tidd.ly/4aft6Gf',
-        dummyCode: 'TIQ5'
-    },
-    'mytrip': {
-        url: 'https://tidd.ly/48CwFVP',
-        dummyCode: 'TRIP10'
-    },
-    'michaelkors': {
-        url: 'https://tidd.ly/4ioLw9y',
-        dummyCode: 'MK10'
-    },
-    'banden.nl': {
-        url: 'https://tidd.ly/4psaNly',
-        dummyCode: 'TIRE5'
-    },
-    'horloge.nl': {
-        url: 'https://tidd.ly/4pgdqXW',
-        dummyCode: 'EXTRA5'
-    },
-    'padelmarket': {
-        url: 'https://tidd.ly/487NTdy',
-        dummyCode: 'PAD10'
-    },
-    'sport-korting.nl': {
-        url: 'https://tidd.ly/487x02N',
-        dummyCode: 'SK10'
-    },
-    'plutosport': {
-        url: 'https://tidd.ly/4ixWppW',
-        dummyCode: 'MAUD10'
-    },
-    'awbridal': {
-        url: 'https://tidd.ly/4pyoT55',
-        dummyCode: 'AWB10'
-    },
-    'footpatrol': {
-        url: 'https://tidd.ly/3M1XqKK',
-        dummyCode: 'CYBER20'
-    },
-    'pogodesignshop': {
-        url: 'https://tidd.ly/3Kjh44n',
-        dummyCode: 'POGO10'
-    },
-    'glazen.nl': {
-        url: 'https://tidd.ly/4ivGkkB',
-        dummyCode: 'GLAS10'
-    },
-    'joom': {
-        url: 'https://tidd.ly/3Mmn39f',
-        dummyCode: 'EXTRA10'
-    },
-    'danielwellington': {
-        url: 'https://tidd.ly/4aBGx3t',
-        dummyCode: 'DW10'
-    },
-   'podobrace': {
-        url: 'https://tidd.ly/44oKPaK',
-        dummyCode: 'EXTRA10'
-    },
-   'perfumetrader': {
-        url: 'https://tidd.ly/3Ymd3iR',
-        dummyCode: 'EXTRA10'
-    },
-   'delta fiber': {
-        url: 'https://tidd.ly/4rPjNDh',
-        dummyCode: 'DF10'
-    },
-   'simpel': {
-        url: 'simpel',
-        dummyCode: 'SIM10'
-    },
-   'stiksen': {
-        url: 'https://www.awin1.com/cread.php?awinmid=83167&awinaffid=1870794',
-        dummyCode: 'DISKI10'
-    },
-   'viverelondon': {
-        url: 'https://tidd.ly/45oFpgs',
-        dummyCode: 'VVL10'
-    },
-   'catwalkjunkie': {
-        url: 'https://tidd.ly/4qwWrkN',
-        dummyCode: 'CWJ10'
-    },
-   'rienthelabel': {
-        url: 'https://rienthelabel.com/KORTING-15',
-        dummyCode: 'KORTING-15'
-    },
-   'about you': {
-        url: 'https://www.stylink.it/9ZRYXtG5vyo',
-        dummyCode: 'LUNAN15'
-    },
-    'arket': {
-        url: 'https://www.stylink.it/XQ7qkf5aLl0',
-        dummyCode: 'HELLO15'
-    },
-    'bonprix': {
-        url: 'https://www.stylink.it/5RBXgUwLRVy',
-        dummyCode: 'SEP10'
-    },
-    'bol.com': {
-        url: 'https://partner.bol.com/click/click?p=2&t=url&s=1509486&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fcmp%2Fdagdeal%2F610%2F&name=Dagdeal',
-        dummyCode: 'geen code nodig'
-    },
-    'bershka': {
-        url: 'https://www.stylink.it/24M9kt0LXAb',
-        dummyCode: 'SHOP10'
-    },
-    'caiacosmetics': {
-        url: 'https://www.stylink.it/mby1ohzRaZ6',
-        dummyCode: 'VIP3HEA9'
-    },
-    'carhartt': {
-        url: 'https://www.stylink.it/aG9RNSprv4g',
-        dummyCode: 'SHOP10'
-    },
-    'jdsports': {
-        url: 'https://click.linksynergy.com/deeplink?id=vErUkuRoyhQ&mid=43953&murl=https%3A%2F%2Fwww.jdsports.nl%2F',
-        dummyCode: 'EXTRA10'
-    },
-    'loungeunderwear': {
-        url: 'https://www.stylink.it/zYq3OUP5p7X',
-        dummyCode: 'SELMA10'
-    },
-    'pullandbear': {
-        url: 'https://pzz.to/zxRIfI',
-        dummyCode: 'PB10'
-    },
-    'wefashion': {
-        url: '',
-        dummyCode: 'MAYRAXWE'
-    },
-    'weekday': {
-        url: 'https://www.stylink.it/B0ZlzhNdAAe',
-        dummyCode: 'Sorry25'
-    },
-    'yas': {
-        url: 'https://www.stylink.it/RNGo2t6Q110',
-        dummyCode: 'YSYAS10'
-    },
-    'vakantiepiraten': {
-        url: 'https://www.stylink.it/oPDNeTRbVVo',
-        dummyCode: 'ZON10'
-    },
-    'cos': {
-        url: 'https://www.stylink.it/vYe37UBvyrL',
-        dummyCode: 'EXTRA15'
-    },
-    'desigual': {
-        url: 'https://www.stylink.it/7dOk9iz2B2n',
-        dummyCode: 'DESI10'
-    },
-    'drmartens': {
-        url: 'https://www.stylink.it/B0ZlzhNdkdn',
-        dummyCode: 'DMSMART20'
-    },
-    'isabelbernard': {
-        url: 'https://www.stylink.it/Lz4BRhly9mq',
-        dummyCode: 'LARISSA10'
-    },
-    'kaptenandson': {
-        url: 'https://www.stylink.it/VNx6ltlOrRn',
-        dummyCode: 'Hellvi10'
-    },
-    'loftymanner': {
-        url: 'https://www.stylink.it/G2Pq1hkyZBN',
-        dummyCode: 'LOFTYXJULIA'
-    },
-    'manfield': {
-        url: '',
-        dummyCode: 'MICHELLE15'
-    },
-    'mango': {
-        url: 'https://www.stylink.it/Ojow9izQprv',
-        dummyCode: 'HOME20'
-    },
-    'newbalance': {
-        url: 'https://newbalanceemea.pxf.io/k4Qmm3',
-        dummyCode: 'NBSALE25'
-    },
-    'omoda': {
-        url: 'https://pzz.to/xNL72V',
-        dummyCode: 'NANXOM10'
-    },
-    'pieces': {
-        url: 'https://www.stylink.it/4M1mRHRLAX4',
-        dummyCode: 'ELLE23'
-    },
-    'praxis': {
-        url: 'https://www.stylink.it/VNx6ltlOryl',
-        dummyCode: 'EXTRA10'
-    },
-    'puma': {
-        url: '',
-        dummyCode: 'HOLIDAYS'
-    },
-    'sacha': {
-        url: '',
-        dummyCode: 'ELLE20'
-    },
-    'notino': {
-        url: 'https://www.anrdoezrs.net/click-101641002-12948621',
-        dummyCode: 'EXTRA10'
-    },
-    'home24': {
-        url: 'https://www.stylink.it/gnZ69IgB7B6',
-        dummyCode: 'HOME10'
-    },
-    'mepal': {
-        url: 'https://www.stylink.it/wnG31IJqVnM',
-        dummyCode: 'EXTRA10'
-    },
-    'nameit': {
-        url: 'https://www.stylink.it/00q9BhBwk3p',
-        dummyCode: 'EXTRA20'
-    },
-    'next': {
-        url: 'https://www.stylink.it/Ojow9izQpro',
-        dummyCode: 'NXT10'
-    },
-    'nordicnest': {
-        url: 'https://www.stylink.it/RNGo2t6Q1l0',
-        dummyCode: 'NESTED10'
-    },
-    'peek&cloppenburg': {
-        url: 'https://www.stylink.it/yGz3NSOyQnD',
-        dummyCode: 'EXTRA10'
-    },
-    'suncamp': {
-        url: 'https://www.stylink.it/Lz4BRhly9Xw',
-        dummyCode: 'ZON10'
-    },
-    'underarmour': {
-        url: 'https://www.stylink.it/VNx6ltlOrrl',
-        dummyCode: 'UA10'
-    },
-    'reiss': {
-        url: 'https://www.stylink.it/x063BhOldge',
-        dummyCode: 'EXTRA10'
-    },
-    'mostwanted': {
-        url: 'https://most-wanted-nl.mtpc.se/5924496',
-        dummyCode: 'MW10'
-    },
-    'hollandandbarrett': {
-        url: 'https://tidd.ly/4v4VqC3',
-        dummyCode: 'SHOP15'
-    },
-    'wehkamp': {
-        url: 'https://wehkamp-nl.mtpc.se/5924516',
-        dummyCode: 'EXTRA10'
-    },
-    'cabaulifestyle': {
-        url: 'https://conversions.cabaulifestyle.com/c?c=34848&m=12&a=509848&r=&u=%2Fnl',
-        dummyCode: 'STEVIE'
-    },
-    'xxlnutrition': {
-        url: 'https://xxl-nutrition-nl.mtpc.se/5924520',
-        dummyCode: 'XXLFLEUR15'
-    },
-    'merodacosmetics': {
-        url: 'https://meroda-cosmetics-nl.mtpc.se/5924528',
-        dummyCode: 'EMMA25'
-    },
-    'bijenkorf': {
-        url: 'https://de-bijenkorf-nl.mtpc.se/5924540',
-        dummyCode: 'EXTRA10'
-    },
-    'aimnsportswear': {
-        url: 'https://aimn-nl.mtpc.se/5924548',
-        dummyCode: 'EXTRA25'
-    },
-    'neonail': {
-        url: 'https://neonail-nl.mtpc.se/5924574',
-        dummyCode: 'ESMEEHES10'
-    },
-    'paulaschoice.nl': {
-        url: 'https://paula-s-choice-benelux.mtpc.se/5924577',
-        dummyCode: 'D15-B7KNPFVBMZ'
-    },
-    'smartwatchbanden': {
-        url: 'https://tidd.ly/3ZGkYZc',
-        dummyCode: 'EXTRA10'
-    },
-    'babydrogist': {
-        url: 'https://tidd.ly/4kFQnnX',
-        dummyCode: 'EXTRA15'
-    },
-    'smeg': {
-        url: 'https://tidd.ly/46e9eRj',
-        dummyCode: 'SMEGELLE2025'
-    },
-    'startselect': {
-        url: 'https://tidd.ly/4cuWM3l',
-        dummyCode: 'EXTRA10'
-    },
-    'schaefershop': {
-        url: 'https://tidd.ly/4aGVqjF',
-        dummyCode: 'EXTRA15'
-    },
-    'surebird': {
-        url: 'https://tidd.ly/4qRjoP8',
-        dummyCode: 'EXTRA10'
-    },
-    'jhypes': {
-        url: 'https://tidd.ly/3OUVV24',
-        dummyCode: 'kay10'
-    },
-    'clayandglow': {
-        url: 'https://clayandglow.com/WIEGEEFTKORTINGXGLOW',
-        dummyCode: 'FERENAXGLOW'
-    },
-    'pincsale': {
-        url: 'https://pinc-sale.mtpc.se/5924499',
-        dummyCode: 'EXTRA10'
-    },
-    'nelsonschoenen': {
-        url: 'https://nelson-schoenen.mtpc.se/5924501',
-        dummyCode: 'NS10'
-    },
-    'ofm': {
-        url: '',
-        dummyCode: 'SHOP10'
-    },
-    'plein.nl': {
-        url: 'https://plein-nl-nl.mtpc.se/5924509',
-        dummyCode: 'EXTRA15'
-    },
-    'cultbeauty': {
-        url: 'https://cult-beauty-nl.mtpc.se/5924511',
-        dummyCode: 'CB10'
-    },
-    'clubrepublique': {
-        url: 'https://club-republique-nl.mtpc.se/5924527',
-        dummyCode: 'CRP10'
-    },
-    'msmode': {
-        url: 'https://ms-mode-nl.mtpc.se/5924531',
-        dummyCode: 'EXTRA10'
-    },
-    'easywalker': {
-        url: 'https://easywalker.mtpc.se/5924535',
-        dummyCode: 'WALK10'
-    },
-    'shoesme': {
-        url: '',
-        dummyCode: 'ME10'
-    },
-    'lilatelier': {
-        url: 'https://lil-atelier-nl.mtpc.se/5924538',
-        dummyCode: 'ATL10'
-    },
-    'babysonly': {
-        url: 'https://baby-s-only-nl.mtpc.se/5924543',
-        dummyCode: 'EXTRA10'
-    },
-    'amisamour': {
-        url: 'https://amisamour.mtpc.se/5924549',
-        dummyCode: 'AMOUR15'
-    },
-    'anthropologie': {
-        url: 'https://anthropologie-nl.mtpc.se/5924557',
-        dummyCode: 'EXTRA10'
-    },
-    'posterhome': {
-        url: 'https://posterhome.mtpc.se/5924565',
-        dummyCode: 'POSTER10'
-    },
-    'flinders': {
-        url: 'https://flinders-nl.mtpc.se/5924569',
-        dummyCode: 'EXTRA10'
-    },
-    'akuwoodpenal': {
-        url: 'https://aku-woodpannel.mtpc.se/5924571',
-        dummyCode: 'EXTRA15'
-    },
-    'fotofabriek.nl': {
-        url: 'https://www.fotofabriek.nl/content/referral/index.aspx/?tt=30576_12_448474_&r=%2F',
-        dummyCode: 'NOOR33'
-    },
-    'alpinehearingprotection': {
-        url: 'https://tidd.ly/4rKQpOm',
-        dummyCode: 'ROSANNELIENE5'
-    },
-    'vingino': {
-        url: 'https://tidd.ly/47kdoHN',
-        dummyCode: 'MESSI-EXTRA'
-    },
-    'zadigvoltaire': {
-        url: 'https://fr135.net/c/?si=15679&li=1679315&wi=418827&dl=eu%2Fen%2F',
-        dummyCode: 'ZADIG10'
-    },
-    'mimshoes': {
-        url: 'https://glp8.net/c/?si=20474&li=1868703&wi=418827&dl=en-eu',
-        dummyCode: 'MIMS10'
-    },
-    'mizuno': {
-        url: 'https://jf79.net/c/?si=16474&li=1707525&wi=418827&dl=%2Feu%2Fnl-nl%2Fhome%2F',
-        dummyCode: 'SHOP15'
-    },
-    'wamdenim': {
-        url: 'https://fr135.net/c/?si=15940&li=1688087&wi=418827&ws=&dl=en',
-        dummyCode: 'SHOP10'
-    },
-    'onlyformen': {
-        url: 'https://glp8.net/c/?si=20246&li=1863164&wi=418827&dl=',
-        dummyCode: 'EXTRA10'
-    },
-    'mijnhummeltje': {
-        url: 'https://jf79.net/c/?si=16616&li=1714020&wi=418827&dl=',
-        dummyCode: 'HUM10'
-    },
-    'nolten': {
-        url: '',
-        dummyCode: 'EXTRA15'
-    },
-    'superdry': {
-        url: 'https://rkn3.net/c/?si=14965&li=1650412&wi=418827&dl=',
-        dummyCode: 'EXTRA10'
-    },
-    'vanarendonk': {
-        url: 'https://wgl.io/ii52em5e',
-        dummyCode: 'SHOP15'
-    },
-    'bartogi': {
-        url: 'https://fr135.net/c/?si=15634&li=1676120&wi=418827&dl=',
-        dummyCode: 'SHOPBARTO'
-    },
-    'plein': {
-        url: '',
-        dummyCode: 'SHOP10PLEIN'
-    },
-    'myka': {
-        url: 'https://bdt9.net/c/?si=18346&li=1792658&wi=418827&dl=',
-        dummyCode: 'EXTRA12'
-    },
-    'lureaux': {
-        url: 'https://bdt9.net/c/?si=18357&li=1793240&wi=418827&dl=',
-        dummyCode: 'SHOPLureaux'
-    },
-    'prydligt': {
-        url: 'https://bdt9.net/c/?si=18476&li=1798004&wi=418827&dl=',
-        dummyCode: 'LIGT10'
-    },
-    'eastpak': {
-        url: 'https://glp8.net/c/?si=20076&li=1857675&wi=418827&dl=https%3A%2F%2Feu.eastpak.com%2Fnl-nl',
-        dummyCode: 'EXTRA15'
-    },
-    'ag1': {
-        url: 'https://glp8.net/c/?si=19412&li=1829785&wi=418827&dl=nl-eu',
-        dummyCode: 'SHOP10'
-    },
-    'dierenapotheek': {
-        url: 'https://jf79.net/c/?si=16838&li=1725816&wi=418827&dl=',
-        dummyCode: 'DIER-10'
-    },
-    'internetslagerij': {
-        url: 'https://glp8.net/c/?si=20150&li=1860141&wi=418827&dl=',
-        dummyCode: 'EXTRA10'
-    },
-    'zwilling': {
-        url: 'https://jdt8.net/c/?si=17552&li=1758391&wi=418827&dl=https%3A%2F%2Fwww.zwilling.com%2Fnl%2F',
-        dummyCode: 'EXTRA10'
-    },
-    'glamood': {
-        url: 'https://glp8.net/c/?si=20535&li=1871252&wi=418827&dl=',
-        dummyCode: 'GLAM15'
-    },
-    'petsecur': {
-        url: 'https://fr135.net/c/?si=15431&li=1668064&wi=418827&dl=%2F',
-        dummyCode: 'PETS15'
-    },
-    'ongediertewinkel': {
-        url: 'https://rkn3.net/c/?si=14571&li=1627390&wi=418827&dl=%2F',
-        dummyCode: 'EXTRA10'
-    },
-    'trail': {
-        url: '',
-        dummyCode: 'TRAIL15'
-    },
-    'leukstetickets': {
-        url: 'https://lt45.net/c/?si=15805&li=1684191&wi=418827&dl=',
-        dummyCode: '15LEUK'
-    },
-    'maje': {
-        url: 'https://glp8.net/c/?si=19592&li=1839487&wi=418827&dl=https%3A%2F%2Feu.maje.com%2F%3Fcountry%3DNL',
-        dummyCode: '10MAJE'
-    },
-    'hostinger': {
-        url: 'https://jf79.net/c/?si=16780&li=1722914&wi=418827&dl=nl',
-        dummyCode: 'OFF10'
-    },
-    'levis': {
-        url: '',
-        dummyCode: '501FORYOU'
-    },
-    'littledutch': {
-        url: '',
-        dummyCode: 'DUTCH10'
-    },
-    'acculaders.nl': {
-        url: 'https://lt45.net/c/?si=12933&li=1570313&wi=418827&ws=&dl=',
-        dummyCode: 'ACCU-10'
-    },
-    'tencate1952': {
-        url: 'https://ds1.nl/c/?si=6773&li=1315339&wi=418827&dl=',
-        dummyCode: '1952OFF'
-    },
-    'parfumania': {
-        url: 'https://jf79.net/c/?si=16384&li=1703817&wi=418827&dl=',
-        dummyCode: 'PARFUM-10'
-    },
-    'decantalo': {
-        url: 'https://bdt9.net/c/?si=18645&li=1802463&wi=418827&ws=&dl=nl%2F',
-        dummyCode: 'SHOP15'
-    },
-    'padeldiscount': {
-        url: 'https://bdt9.net/c/?si=19068&li=1819419&wi=418827&dl=%2F',
-        dummyCode: 'EXTRA10'
-    },
-    'parfumado': {
-        url: '',
-        dummyCode: 'MEGAN50'
-    },
-    'vanastenbabysuperstore': {
-        url: '',
-        dummyCode: 'BABY-10'
-    },
-    'fietsparadijs': {
-        url: '',
-        dummyCode: 'SHOPFIETS10'
-    },
-    'skinnydiplondon': {
-        url: 'https://glp8.net/c/?si=20078&li=1857719&wi=418827&dl=%3F_ab%3D0%26_fd%3D0%26_sc%3D1',
-        dummyCode: 'EXTRA10'
-    },
-    'goedkoopstekantoorartikelen': {
-        url: 'https://ds1.nl/c/?si=8191&li=1377583&wi=418827&dl=%2F',
-        dummyCode: 'OFFICE10'
-    },
-    'butlon': {
-        url: 'https://fr135.net/c/?si=15642&li=1676643&wi=418827&ws=&dl=nl%2F',
-        dummyCode: 'BUT15'
-    },
-    'headshop': {
-        url: 'https://jdt8.net/c/?si=17220&li=1743937&wi=418827&dl=',
-        dummyCode: 'SHOPHEAD'
-    },
-    'haarspullen': {
-        url: '',
-        dummyCode: '10OFF'
-    },
-    'stellamccartney': {
-        url: 'https://fr135.net/c/?si=15224&li=1659440&wi=418827&dl=nl%2Fen%2F',
-        dummyCode: 'STELLA-10'
-    },
-    'foodello': {
-        url: '',
-        dummyCode: 'EXTRA10'
-    },
-    'kiwi.com': {
-        url: 'https://glp8.net/c/?si=20714&li=1878051&wi=418827&dl=nl%2F',
-        dummyCode: '10EXTRA'
-    },
-    'lego': {
-        url: '',
-        dummyCode: 'BRICKOFF'
-    },
-    'oakley': {
-        url: 'https://bdt9.net/c/?si=18433&li=1796803&wi=418827&dl=nl-nl',
-        dummyCode: 'THEOAK'
-    },
-    'tuinmeubelwereld': {
-        url: '',
-        dummyCode: 'TUIN10'
-    },
-    'vvvcadeaukaarten': {
-        url: '',
-        dummyCode: 'SARAH'
-    },
-    'joybuy': {
-        url: 'https://tidd.ly/3SFPDFu',
-        dummyCode: 'JOY10'
-    },
-    'salontopper': {
-        url: '',
-        dummyCode: 'TOP10'
-    },
-    'flink': {
-        url: '',
-        dummyCode: 'ANNICKK15'
-    },
-    'theorie.nl': {
-        url: 'https://ds1.nl/c/?si=2320&li=139428&wi=418827&ws=&dl=',
-        dummyCode: 'EXTRA10'
-    },
-    'cookandpan': {
-        url: '',
-        dummyCode: '10NOOM'
-    },
-    'lease.auto': {
-        url: 'https://glp8.net/c/?si=21513&li=1912084&wi=418827&dl=%2F',
-        dummyCode: 'LEASY'
-    },
-    'jwverzekeringen': {
-        url: 'https://partners.jwverzekeringen.nl/c/?si=21167&li=1901301&wi=418827&dl=%2F',
-        dummyCode: 'VZK10'
-    },
-    'houtolie': {
-        url: 'https://bdt9.net/c/?si=18953&li=1815317&wi=418827&dl=%2F',
-        dummyCode: 'OIL15'
-    },
-    'giuseppezanotti': {
-        url: 'https://rkn3.net/c/?si=15019&li=1650848&wi=418827&dl=nl',
-        dummyCode: 'EXTRA10'
-    },
-    'eleonorabonucci': {
-        url: 'https://glp8.net/c/?si=20477&li=1868853&wi=418827&dl=',
-        dummyCode: 'NUCCI15'
-    },
-    'robell': {
-        url: 'https://jdt8.net/c/?si=17901&li=1775255&wi=418827&dl=',
-        dummyCode: 'EXTRA10'
-    },
-    'teveeo': {
-        url: 'https://bdt9.net/c/?si=19052&li=1818922&wi=418827&ws=&dl=en-gb',
-        dummyCode: '10SHOP'
-    },
-    'olijfolieconcurrent': {
-        url: '',
-        dummyCode: 'SHOPOLIVE'
-    },
-    'suntip.nl': {
-        url: 'https://ds1.nl/c/?si=951&li=57956&wi=418827&dl=%2F',
-        dummyCode: 'ZON10'
-    },
-    'bottger': {
-        url: 'https://glp8.net/c/?si=21072&li=1897053&wi=418827&dl=',
-        dummyCode: 'SHOPBOTT'
-    },
-    'paneli': {
-        url: 'https://glp8.net/c/?si=20715&li=1878212&wi=418827&dl=',
-        dummyCode: 'SHOP10'
-    },
-    'vitaminenoprecept': {
-        url: 'https://ds1.nl/c/?si=15876&li=1685786&wi=418827&dl=',
-        dummyCode: 'EXTRA10'
-    },
-    'endclothing': {
-        url: 'https://endclothing.sjv.io/AgPGKj',
-        dummyCode: 'SHOP10'
-    },
-    'decathlon': {
-        url: 'https://decathlon-nl.x8nb.net/PzOWaz',
-        dummyCode: 'SAAR10'
-    },
-    'lenovo': {
-        url: 'https://lenovo.evyy.net/zzxBjO',
-        dummyCode: 'EXTRA10'
-    },
-    'golflefleur': {
-        url: 'https://golf-le-fleur.sjv.io/n4XBn6',
-        dummyCode: 'SWING10'
-    },
-    'shopify': {
-        url: 'https://shopify.pxf.io/dyOERM',
-        dummyCode: 'EXTRA10'
-    },
-    'roseskinco': {
-        url: 'https://roseskinco.pxf.io/qWzBg5',
-        dummyCode: 'SKIN-10'
-    },
-    'primevideo': {
-        url: 'https://primevideo-eu.pxf.io/xJLRnA',
-        dummyCode: 'PRIMEOFF'
-    },
-    'nordvpn': {
-        url: 'https://nordvpn.sjv.io/PzOWKz',
-        dummyCode: 'NORDOFF'
-    },
-    'maxicosi': {
-        url: 'https://doreljuvenile.pxf.io/AgPGmj',
-        dummyCode: 'ELISE10'
-    },
-    'sandandsky': {
-        url: 'https://sand-and-sky.sjv.io/X4mKdo',
-        dummyCode: 'SANDS'
-    },
-    'capcut': {
-        url: 'https://capcutaffiliateprogram.pxf.io/AgPvMRzz',
-        dummyCode: 'CUTOFF'
-    },
-    'coursera': {
-        url: 'https://imp.i384100.net/GbKMdE',
-        dummyCode: 'EXTRA10'
-    },
-    'vrbohotels': {
-        url: 'https://www.kqzyfj.com/click-101641002-14347453',
-        dummyCode: 'HOTEL10'
-    },
-    'skechers': {
-        url: 'https://www.anrdoezrs.net/click-101641002-17230910',
-        dummyCode: 'SNEAK10'
-    },
-    'mondly': {
-        url: 'https://www.jdoqocy.com/click-101641002-17279282',
-        dummyCode: 'wiegeeftkorting15'
-    },
-    'expedia': {
-        url: 'https://www.jdoqocy.com/click-101641002-15108262',
-        dummyCode: '10OFF'
-    },
-    'euroflorist': {
-        url: 'https://clk.tradedoubler.com/click?p=239131&a=3427761&url=https%3A%2F%2Fwww.euroflorist.nl%2Fen',
-        dummyCode: 'FLOWER15'
-    },
-    'naturalslim': {
-        url: 'https://clk.tradedoubler.com/click?p=344232&a=3427761&url=https%3A%2F%2Fnaturalslim.nl%2F',
-        dummyCode: 'SIM10SIM'
-    },
-    'onebioshop': {
-        url: 'https://clk.tradedoubler.com/click?p=392919&a=3427761&url=https%3A%2F%2Fonebioshop.com%2Fnl',
-        dummyCode: 'SHOP10'
-    },
-    'palladium': {
-        url: 'https://clk.tradedoubler.com/click?p=290642&a=3427761&url=https%3A%2F%2Fpalladiumboots.nl%2F',
-        dummyCode: 'SPARKLE10'
-    },
-    'papique': {
-        url: 'https://clk.tradedoubler.com/click?p=393042&a=3427761&url=https%3A%2F%2Fpapique.com%2Fnl',
-        dummyCode: 'EXTRA10'
-    },
-    'qathu': {
-        url: 'https://clk.tradedoubler.com/click?p=393391&a=3427761&url=https%3A%2F%2Fqathu.com%2Fnl',
-        dummyCode: 'GA10'
-    },
-    'swehealth': {
-        url: 'https://clk.tradedoubler.com/click?p=393268&a=3427761&url=https%3A%2F%2Fwww.swehealth.nl%2F',
-        dummyCode: 'EXTRA10'
-    },
-    'mediamarkt': {
-        url: 'https://clk.tradedoubler.com/click?p=262336&a=3476882&url=https%3A%2F%2Fwww.mediamarkt.nl%2Fnl%2F',
-        dummyCode: '10EXTRA'
-    },
-    'oduree.nl': {
-        url: 'https://oduree.nl/discount/DISKI',
-        dummyCode: 'WGK10'
-    },
-    'burga': {
-        url: 'https://burga.sjv.io/zzzOAx',
-        dummyCode: 'AMBERXNL'
-    },
-    'creamyfabrics': {
-        url: 'https://creamyfabrics.com/nl/discount/WIEGEEFTKORTING?redirect=/nl/collections/sale&preview_theme_id=191697584475&one_s=andyyrobe&affid=andyyrobe&pb=0',
-        dummyCode: 'wiegeeftkorting'
-    },
-    'geurwolkje': {
-        url: 'https://www.geurwolkje.nl/INDY40908',
-        dummyCode: 'INDY40908'
-    },
-    'achateshop.com': {
-        url: 'https://www.achate.com/DISKI',
-        dummyCode: 'DISKI'
-    },
-    'ibood': {
-        url: 'https://pzz.to/9wsxiv',
-        dummyCode: 'ACTIE10'
-    },
-//     'snipes': {
-//         url: 'https://tidd.ly/4sWSJSG',
-//         dummyCode: 'SHOP10'
-//     },
-    'theordinary': {
-        url: 'https://tidd.ly/4diAtP5',
-        dummyCode: '10OFF'
-    },
-    'rosaodor': {
-        url: 'https://tidd.ly/47StXL9',
-        dummyCode: '10OFF'
-    },
-    'ahead-nutrition': {
-        url: 'https://tidd.ly/47W13tM',
-        dummyCode: 'IAMIRIS'
-    },
-    'bellobox.nl': {
-        url: 'https://www.bellobox.nl/indyvandenburg',
-        dummyCode: 'DISKI10'
-    },
-    'thegoodroll': {
-        url: 'https://jf79.net/c/?si=16425&li=1705996&wi=418827&dl=',
-        dummyCode: '10OFF'
-    },
-    'daka': {
-        url: '',
-        dummyCode: 'EXTRA10'
-    },
-    'pipoos': {
-        url: '',
-        dummyCode: 'OFF10'
-    },
-    'allsaints': {
-        url: 'https://glp8.net/c/?si=20868&li=1886430&wi=418827&dl=eu%3FglCountry%3DNL%26glCurrency%3DEUR%26CountrySwitcher%3Dtrue',
-        dummyCode: 'SHOP10'
-    },
-    'gereedschapcentrum.nl': {
-        url: 'https://lt45.net/c/?si=11632&li=1516360&wi=418827&dl=',
-        dummyCode: 'ACTIE10'
-    },
-    'degoedkoopsteoutlet': {
-        url: 'https://glp8.net/c/?si=19859&li=1846103&wi=418827&dl=',
-        dummyCode: '10OFF'
-    },
-    'donnay': {
-        url: 'https://rkn3.net/c/?si=14372&li=1618099&wi=418827&dl=',
-        dummyCode: 'EXTRA10'
-    },
-    'beltegoed.nl': {
-        url: '',
-        dummyCode: '10EXTRA'
-    },
-    'weightworld': {
-        url: '',
-        dummyCode: 'CC10EXTRA'
-    },
-    'animigo': {
-        url: 'https://fr135.net/c/?si=15884&li=1685979&wi=418827&dl=',
-        dummyCode: '10OFF'
-    },
-    'sabon': {
-        url: 'https://jf79.net/c/?si=16132&li=1693248&wi=418827&dl=https%3A%2F%2Fnl.sabon.com%2F',
-        dummyCode: 'SHOP10'
-    },
-    'moneybird': {
-        url: 'https://bdt9.net/c/?si=19080&li=1819984&wi=418827&dl=',
-        dummyCode: 'EXTRA10'
-    },
-    'acer': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.acer.com%2Fnl-nl%2F',
-        dummyCode: 'SHOP10'
-    },
-    'babista.nl': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.babista.nl%2F',
-        dummyCode: 'OFF15'
-    },
-    'bestecanvas': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.bestecanvas.nl%2F',
-        dummyCode: 'WELCOME10'
-    },
-    'bjornborg': {
-        url: 'https://to.bjornborg.com/t/t?a=1212697158&as=2091458876&t=2&tk=1',
-        dummyCode: 'LYDIA20'
-    },
-    'buitiqo': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fbuitiqo.nl%2F',
-        dummyCode: '10SHOP'
-    },
-    'canalplus': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.canalplus.nl%2F',
-        dummyCode: '15OFF'
-    },
-    'doreandrose': {
-        url: 'https://www.doreandrose.com/INDY34514',
-        dummyCode: 'INDY34514'
-    },
-    'dreame': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.dreametech.com%2F',
-        dummyCode: 'OFF10'
-    },
-    'glowmode': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fshopglowmode.com%2F',
-        dummyCode: 'WELCOME15'
-    },
-    'goboony': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.goboony.be%2F',
-        dummyCode: 'ACTIE10'
-    },
-//     'hellofresh.nl': {
-//         url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.hellofresh.nl%2F',
-//         dummyCode: '15SHOP'
-//     },
-    'jackery': {
-        url: 'https://itjackery.pxf.io/bk02qg',
-        dummyCode: '10OFF'
-    },
-    'jetpacglobal': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.jetpacglobal.com%2F',
-        dummyCode: '10WELCOME'
-    },
-    'jjshouse': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.jjshouse.com%2Fnl%2F',
-        dummyCode: '15ACTIE'
-    },
-    'journaway': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.journaway.com%2F',
-        dummyCode: 'SHOP10'
-    },
-    'kymocleaning': {
-        url: 'https://partner.kymocleaning.com/c?c=39963&m=0&a=511210&r=&u=',
-        dummyCode: 'OFF15'
-    },
-    'logitech': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.logitech.com%2Fnl-nl%2F',
-        dummyCode: 'WELCOME10'
-    },
-    'marliesdekkers': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.marliesdekkers.com%2Fnl_nl%2F',
-        dummyCode: 'ACTIE15'
-    },
-    'micas': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.shopmicas.com%2F',
-        dummyCode: '10SHOP'
-    },
-    'morenutrition': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.morenutrition.com%2F',
-        dummyCode: '15OFF'
-    },
-    'mothersearth': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.mothersearth.com%2F',
-        dummyCode: 'SHOP15'
-    },
-    'nextory': {
-        url: 'https://wgl.io/tbq9e9l6',
-        dummyCode: 'OFF10'
-    },
-    'oglmove': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Foglmove.com%2F',
-        dummyCode: 'WELCOME15'
-    },
-    'rihoas': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.rihoas.com%2F',
-        dummyCode: 'ACTIE10'
-    },
-    'siroko': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.siroko.com%2Fnl',
-        dummyCode: '15SHOP'
-    },
-    'stylewe': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.stylewe.com%2F',
-        dummyCode: '10OFF'
-    },
-    'tommyteleshopping': {
-        url: 'https://partner.tommyteleshopping.com/c?c=13594&m=0&a=511210&r=&u=',
-        dummyCode: '10WELCOME'
-    },
-    'training-fit.nl': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Ftraining-fit.nl%2F',
-        dummyCode: '15ACTIE'
-    },
-    'trip': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.trip.com%2F',
-        dummyCode: 'SHOP10'
-    },
-    'vbs-hobby.nl': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vbs-hobby.nl%2F',
-        dummyCode: 'OFF15'
-    },
-    'vonroc': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vonroc.nl%2F',
-        dummyCode: 'WELCOME10'
-    },
-    'walkingpad.nl': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.walkingpad.com%2F',
-        dummyCode: 'ACTIE15'
-    },
-    'whitefoxboutique': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.whitefoxboutique.co.uk%2F',
-        dummyCode: '10SHOP'
-    },
-    'yoursurprise': {
-        url: 'https://www.yoursurprise.nl/tradetracker?tt=546_12_448474_&r=%2F',
-        dummyCode: '15OFF'
-    },
-    'flixbus': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.flixbus.nl%2F',
-        dummyCode: 'WELCOME15'
-    },
-    'tripadvisor': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.tripadvisor.nl%2F',
-        dummyCode: 'ACTIE10'
-    },
-    'asus': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.asus.com%2Fnl%2F',
-        dummyCode: 'SHOP15'
-    },
-    'huawei': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fconsumer.huawei.com%2Fnl%2F',
-        dummyCode: 'OFF10'
-    },
-    'oneplus': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.oneplus.com%2Fnl',
-        dummyCode: '10SHOP'
-    },
-    'calvinklein': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.calvinklein.nl%2F',
-        dummyCode: '15OFF'
-    },
-    'groupon': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.groupon.nl%2F',
-        dummyCode: 'ACTIE15'
-    },
-    'ticketmaster': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.ticketmaster.nl%2F',
-        dummyCode: 'WELCOME10'
-    },
-    '24s': {
-        url: 'https://smyi.me/03lZg',
-        dummyCode: 'SHOP10'
-    },
-    'ador': {
-        url: 'https://smyi.me/023XJ',
-        dummyCode: '10SHOP'
-    },
-    'aktiesport': {
-        url: 'https://smyi.me/00Cab',
-        dummyCode: 'OFF10'
-    },
-    'albertheijn': {
-        url: 'https://pzz.to/WJk1bf',
-        dummyCode: '10OFF'
-    },
-    'alohas': {
-        url: 'https://smyi.me/00GPy',
-        dummyCode: 'ACTIE10'
-    },
-    'assem': {
-        url: 'https://pzz.to/xciGjX',
-        dummyCode: '10ACTIE'
-    },
-    'beautyplaza': {
-        url: 'https://partner.beautyplaza.com/c?c=40139&m=12&a=448474&r=&u=',
-        dummyCode: 'EXTRA10'
-    },
-    'ben': {
-        url: 'https://tidd.ly/3QR9bWM',
-        dummyCode: '10EXTRA'
-    },
-    'blackroll': {
-        url: 'https://tidd.ly/42kxFdu',
-        dummyCode: 'SHOP15'
-    },
-    'coofandy': {
-        url: 'https://tidd.ly/4dbeszM',
-        dummyCode: '15SHOP'
-    },
-    'dgmoutlet': {
-        url: 'https://tidd.ly/4tEELVv',
-        dummyCode: 'OFF15'
-    },
-    'drukwerknodig': {
-        url: 'https://www.drukwerknodig.nl/content/shopping/index.aspx/?tt=30553_0_511210_&r=',
-        dummyCode: '15OFF'
-    },
-    'efteling': {
-        url: 'https://tc.tradetracker.net/?c=25801&m=0&a=511210&r=&u=',
-        dummyCode: 'ACTIE15'
-    },
-    'freddelabretoniere': {
-        url: 'https://pzz.to/PuNxCd',
-        dummyCode: '15ACTIE'
-    },
-    'freechoice': {
-        url: 'https://clk.tradedoubler.com/click?p=315858&a=3427761&url=https%3A%2F%2Fvitamine.shop%2F',
-        dummyCode: 'EXTRA15'
-    },
-    'frenkiesfashion': {
-        url: 'https://tidd.ly/42SNtUV',
-        dummyCode: '15EXTRA'
-    },
-    'gstar': {
-        url: 'https://pzz.to/3q5WHL',
-        dummyCode: 'SHOP10'
-    },
-    'hondensupplement': {
-        url: 'https://tidd.ly/4f7QBDH',
-        dummyCode: '10SHOP'
-    },
-    'ilovespeelgoed': {
-        url: 'https://pzz.to/lCsvko',
-        dummyCode: 'OFF10'
-    },
-    'kleertjescom': {
-        url: 'https://pzz.to/Fyhhms',
-        dummyCode: '10OFF'
-    },
-    'knivesandtools': {
-        url: 'https://tidd.ly/4ux2OGz',
-        dummyCode: 'ACTIE10'
-    },
-    'loccitane': {
-        url: 'https://pzz.to/Fyhhms',
-        dummyCode: '10ACTIE'
-    },
-    'lyko': {
-        url: 'https://ion.lyko.com/t/t?a=1536994461&as=2091458876&t=2&tk=1',
-        dummyCode: 'EXTRA10'
-    },
-    'maevenart': {
-        url: 'https://clk.tradedoubler.com/click?p=373837&a=3427761&url=https%3A%2F%2Fwww.maevenart.com%2Fen',
-        dummyCode: '10EXTRA'
-    },
-    'marcinbane': {
-        url: 'https://tidd.ly/4d9FMi2',
-        dummyCode: 'SHOP15'
-    },
-    'matchu': {
-        url: 'https://tidd.ly/4tpGYnB',
-        dummyCode: '15SHOP'
-    },
-    'nsconsumenten': {
-        url: 'https://pzz.to/n3khM8',
-        dummyCode: 'OFF15'
-    },
-    'oneill': {
-        url: 'https://pzz.to/OvikPF',
-        dummyCode: '15OFF'
-    },
-    'ownesim': {
-        url: 'https://tidd.ly/4de2zJy',
-        dummyCode: 'ACTIE15'
-    },
-    'parfumerie': {
-        url: 'https://pzz.to/dLSOh9',
-        dummyCode: '15ACTIE'
-    },
-    'parfumswinkel': {
-        url: 'https://pzz.to/Q3g8vM',
-        dummyCode: 'EXTRA15'
-    },
-    'philipshue': {
-        url: 'https://clk.tradedoubler.com/click?p=354238&a=3476882&url=https%3A%2F%2Fwww.philips-hue.com%2Fnl-nl',
-        dummyCode: '15EXTRA'
-    },
-    'plnktn': {
-        url: 'https://tidd.ly/42gWiI3',
-        dummyCode: 'SHOP10'
-    },
-    'raizzed': {
-        url: 'https://tidd.ly/4uzkgKA',
-        dummyCode: '10SHOP'
-    },
-    'ralphlauren': {
-        url: 'https://pzz.to/pV3lz-',
-        dummyCode: 'OFF10'
-    },
-    'rayban': {
-        url: 'https://pzz.to/4FBNco',
-        dummyCode: '10OFF'
-    },
-    'soliver': {
-        url: 'https://tidd.ly/3Pnu37w',
-        dummyCode: 'ACTIE10'
-    },
-    'sissyboy': {
-        url: '',
-        dummyCode: '10ACTIE'
-    },
-    'sneakin': {
-        url: 'https://tidd.ly/4u4kgTa',
-        dummyCode: 'EXTRA10'
-    },
-    'spartoo': {
-        url: 'https://pzz.to/O0mbmG',
-        dummyCode: '10EXTRA'
-    },
-    'teva': {
-        url: 'https://pzz.to/s77Lz3',
-        dummyCode: 'SHOP15'
-    },
-    'thephonelab': {
-        url: 'https://tidd.ly/4d9xJBw',
-        dummyCode: '15SHOP'
-    },
-    'trendzdameskleding': {
-        url: 'https://tidd.ly/3QXqdT0',
-        dummyCode: 'OFF15'
-    },
-    'urbanoutfitters': {
-        url: 'https://smyi.me/008nt',
-        dummyCode: '15OFF'
-    },
-    'valerion': {
-        url: 'https://tidd.ly/4weKsfd',
-        dummyCode: 'ACTIE15'
-    },
-    'wavzsupplementen': {
-        url: 'https://tidd.ly/4wg0JQU',
-        dummyCode: '15ACTIE'
-    },
-    'xpluswear': {
-        url: 'https://glp8.net/c/?si=20417&li=1866882&wi=418827&dl=%2F',
-        dummyCode: 'EXTRA15'
-    },
-    'yoozyfashion': {
-        url: 'https://tidd.ly/4thiP2b',
-        dummyCode: '15EXTRA'
-    },
-    'youroutdoorstore': {
-        url: 'https://tidd.ly/4nebJKH',
-        dummyCode: 'SHOP10'
-    },
-    'yoursclothing': {
-        url: 'https://pzz.to/2ogTx0',
-        dummyCode: '10SHOP'
-    },
-    'ziengs': {
-        url: 'https://pzz.to/hRA52n',
-        dummyCode: 'OFF10'
-    },
-    'zinzi': {
-        url: 'https://pzz.to/hRA52n',
-        dummyCode: '10OFF'
-    },
-    'zippit': {
-        url: 'https://tidd.ly/4eyF8go',
-        dummyCode: 'ACTIE10'
-    },
-    'conrad': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.conrad.nl%2F',
-        dummyCode: 'SHOP10'
-    },
-    'galaxus': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.galaxus.nl%2F',
-        dummyCode: '10OFF'
-    },
-    'samsonite': {
-        url: 'https://tidd.ly/4wr08eK',
-        dummyCode: 'EXTRA10'
-    },
-    'lebara': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.lebara.nl%2F',
-        dummyCode: 'ACTIE10'
-    },
-    'simyo': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.simyo.nl%2F',
-        dummyCode: 'WELCOME10'
-    },
-    'youfone': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.youfone.nl%2F',
-        dummyCode: 'OFF15'
-    },
-    'vattenfall': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vattenfall.nl%2F',
-        dummyCode: '15OFF'
-    },
-    'q-park': {
-        url: 'https://tc.tradetracker.net/?c=22543&m=0&a=511210&r=&u=',
-        dummyCode: '10SHOP'
-    },
-    'nh-hotels': {
-        url: 'https://tc.tradetracker.net/?c=37646&m=0&a=511210&r=&u=',
-        dummyCode: 'ACTIE15'
-    },
-    'leonardohotels': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.leonardo-hotels.nl%2F',
-        dummyCode: '10EXTRA'
-    },
-    'budgetair': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.budgetair.nl%2F',
-        dummyCode: 'SHOP15'
-    },
-    'vliegwinkel': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vliegwinkel.nl%2F',
-        dummyCode: 'WELCOME15'
-    },
-    'kaspersky': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.kaspersky.nl%2F',
-        dummyCode: 'OFF10'
-    },
-    'oralb': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.oralb.nl%2F',
-        dummyCode: '15SHOP'
-    },
-    'aeg': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.aeg.nl%2F',
-        dummyCode: '10ACTIE'
-    },
-    'vivara': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vivara.nl%2F',
-        dummyCode: 'SHOP10'
-    },
-    'inglot': {
-        url: 'https://deal.inglot.nl/c?c=39306&m=0&a=511210&r=&u=',
-        dummyCode: '10OFF'
-    },
-    'flaconi': {
-        url: 'https://tidd.ly/44Gxb2o',
-        dummyCode: 'EXTRA10'
-    },
-    'peterhahn': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.peterhahn.nl%2F',
-        dummyCode: 'ACTIE10'
-    },
-    'tomtailor': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.tom-tailor.nl%2F',
-        dummyCode: 'WELCOME10'
-    },
-    'vrijbuiter': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vrijbuiter.nl%2F',
-        dummyCode: 'OFF15'
-    },
-    'naturecan': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.naturecan.nl%2F',
-        dummyCode: '15OFF'
-    },
-    'proshop': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.proshop.nl%2F',
-        dummyCode: '10SHOP'
-    },
-    'dolfinarium': {
-        url: 'https://tc.tradetracker.net/?c=23457&m=0&a=511210&r=&u=',
-        dummyCode: 'ACTIE15'
-    },
-    'duinrell': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.duinrell.nl%2F',
-        dummyCode: '10EXTRA'
-    },
-    'paagman': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.paagman.nl%2F',
-        dummyCode: 'SHOP15'
-    },
-    'visiondirect': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.visiondirect.nl%2F',
-        dummyCode: 'WELCOME15'
-    },
-    'lentiamo': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.lentiamo.nl%2F',
-        dummyCode: 'OFF10'
-    },
-    'mondaine': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.mondaine.nl%2F',
-        dummyCode: '15SHOP'
-    },
-    'vertbaudet': {
-        url: 'https://tc.tradetracker.net/?c=33198&m=0&a=511210&r=&u=',
-        dummyCode: '10ACTIE'
-    },
-    'vikingdirect': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vikingdirect.nl%2F',
-        dummyCode: 'SHOP10'
-    },
-    'sembo': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.sembo.nl%2F',
-        dummyCode: '10OFF'
-    },
-    'travelcircus': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.travelcircus.nl%2F',
-        dummyCode: 'EXTRA10'
-    },
-    'posters': {
-        url: 'https://partner.posters.nl/c?c=39673&m=0&a=511210&r=&u=',
-        dummyCode: 'ACTIE10'
-    },
-    'inktweb': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.inktweb.nl%2F',
-        dummyCode: 'WELCOME10'
-    },
-    'refurbished': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.refurbished.nl%2F',
-        dummyCode: 'OFF15'
-    },
-    'heydude': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.heydude.nl%2F',
-        dummyCode: '15OFF'
-    },
-    'kswiss': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.kswiss.nl%2F',
-        dummyCode: '10SHOP'
-    },
-    'panamajack': {
-        url: 'https://partner.panamajack.nl/c?c=40537&m=0&a=511210&r=&u=',
-        dummyCode: 'ACTIE15'
-    },
-    'powerpeers': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.powerpeers.nl%2F',
-        dummyCode: '10EXTRA'
-    },
-    'yogashop': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.yogashop.nl%2F',
-        dummyCode: 'SHOP15'
-    },
-    'valmano': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.valmano.nl%2F',
-        dummyCode: 'WELCOME15'
-    },
-    'armani': {
-        url: 'https://track.flexlinkspro.com/g.ashx?foid=156085.110106133.1011111835&trid=1498147.245206&foc=16&fot=9999&fos=6',
-        dummyCode: '10OFF'
-    },
-    'cleanprofs': {
-        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.29101.3109732&trid=1498147.246231&foc=16&fot=9999&fos=6',
-        dummyCode: 'EXTRA10'
-    },
-    'hostnet': {
-        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.21189.4611686018427605232&trid=1498147.245395&foc=16&fot=9999&fos=6',
-        dummyCode: 'ACTIE10'
-    },
-    'lusini': {
-        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.22612.4611686018427605688&trid=1498147.245644&foc=16&fot=9999&fos=6',
-        dummyCode: 'WELCOME10'
-    },
-    'onthatass': {
-        url: 'https://track.flexlinkspro.com/g.ashx?foid=156364.353259.25914658&trid=1498147.239294&foc=16&fot=9999&fos=6',
-        dummyCode: 'OFF15'
-    },
-    'rebuy': {
-        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.12860.4611686018427605238&trid=1498147.245575&foc=16&fot=9999&fos=6',
-        dummyCode: '15OFF'
-    },
-    'sanitaironline': {
-        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.86283.4611686018427605717&trid=1498147.246297&foc=16&fot=9999&fos=6',
-        dummyCode: '10SHOP'
-    },
-    'stanley': {
-        url: 'https://track.flexlinkspro.com/g.ashx?foid=156099.18601.818601&trid=1498147.225570&foc=16&fot=9999&fos=6',
-        dummyCode: 'ACTIE15'
-    },
-    'zavvi': {
-        url: 'https://track.flexlinkspro.com/g.ashx?foid=156178.8664.4611686018427605518&trid=1498147.209275&foc=16&fot=9999&fos=6',
-        dummyCode: '10EXTRA'
-    },
-    'esn': {
-        url: 'https://nl.esn.com/discount/sportpoeder?redirect=/collections/bestseller',
-        dummyCode: 'SPORTPOEDER'
-    },
-    'aybl': {
-        url: 'https://nl.aybl.com/discount/sportpoeder',
-        dummyCode: 'sportpoeder'
-    },
-    'atmooz.com': {
-        url: 'https://atmooz.com/DISKI10',
-        dummyCode: 'DISKI10'
-    },
-    'prettylittlething': {
-        url: 'https://tidd.ly/4e6Fr00',
-        dummyCode: 'UK12ALL'
-    },
-    'myjewellery': {
-        url: 'https://www.my-jewellery.com/',
-        dummyCode: 'HOUSTON20'
-    },
-    'elvou': {
-        url: 'https://elvou.com/ELISA',
-        dummyCode: 'ELISA'
-    },
-    'dutchies.com': {
-        url: 'http://dutchies.com/',
-        dummyCode: 'BO15'
-    },
-    'fashiontiger.nl': {
-        url: 'https://fashiontiger.nl/',
-        dummyCode: 'HITIGER10'
-    },
-    'bloomon': {
-        url: 'https://bloomwild.prf.hn/click/camref:1011l5Fj67/destination:https%3A%2F%2Fwww.bloomon.nl%2F',
-        dummyCode: 'bloom37'
-    },
-    'bellaandduke': {
-        url: 'https://tidd.ly/4xLF83M',
-        dummyCode: 'BD10'
-    },
-    'isabelmarant': {
-        url: 'https://bdt9.net/c/?si=18138&li=1785243&wi=418827&dl=en-nl%3Fsrsltid%3DAfmBOopOFxxEisxItbMOWek0rLj1D0ebFo686MdhiSmpfe7VCAxZ6cpJ',
-        dummyCode: 'SHOP15'
-    },
-    'cider': {
-        url: 'https://fxo.co/JDoH',
-        dummyCode: 'NOAXX15'
-    },
-    'alectobaby': {
-        url: 'https://partner.alectobaby.nl/c?c=37230&m=0&a=511210&r=&u=',
-        dummyCode: 'DEBBIE15'
-    },
-    'amicicosmetics': {
-        url: 'https://amicicosmetics.com/cosmetics/?tt=40338_0_511210_&r=',
-        dummyCode: 'musthave'
-    },
-    'badjasparadijs': {
-        url: 'https://www.badjasparadijs.nl/tradetracker/?tt=1820_0_448474_&r=',
-        dummyCode: 'blissofmel15'
-    },
-    'bodyandfit.com': {
-        url: 'https://partner.bodyandfit.com/c?c=11113&m=0&a=511210&r=&u=',
-        dummyCode: 'FINN'
-    },
-    'buvanha': {
-        url: 'https://partner.buvanha.nl/c?c=35152&m=0&a=511210&r=&u=',
-        dummyCode: 'maisondemanon15'
-    },
-    'depindakaaswinkel': {
-        url: 'https://partner.depindakaaswinkel.nl/c?c=33306&m=0&a=511210&r=&u=',
-        dummyCode: 'MARIKE25'
-    },
-    'desktronic': {
-        url: 'https://partner.desktronic.nl/c?c=39661&m=0&a=511210&r=&u=',
-        dummyCode: 'GOUDENHAP'
-    },
-    'flamengolife': {
-        url: 'https://tc.tradetracker.net/?c=37561&m=0&a=511210&r=&u=',
-        dummyCode: 'CATHELIJNE'
-    },
-    'greengypsyspices': {
-        url: 'https://www.greengypsyspices.com/poeder/?tt=35863_0_511210_&r=',
-        dummyCode: 'Jill10'
-    },
-    'hellochair': {
-        url: 'https://deals.hellochair.nl/c?c=33374&m=0&a=511210&r=&u=',
-        dummyCode: 'HELLOROMI15'
-    },
-    'pillowbuddies': {
-        url: 'https://partner.pillowbuddies.nl/c?c=35852&m=0&a=511210&r=&u=',
-        dummyCode: 'TROY15'
-    },
-    'repeatcashmere': {
-        url: 'https://tc.tradetracker.net/?c=19243&m=0&a=448474&r=&u=',
-        dummyCode: 'LINDA26'
-    },
-    'tallowcosmetics': {
-        url: 'https://partner.tallowcosmetics.com/c?c=40809&m=0&a=511210&r=&u=',
-        dummyCode: 'lotteger10'
-    },
-    'vitaminfit.eu': {
-        url: 'https://www.vitaminfit.eu/tracking/tradetracker/redirect/?tt=36825_0_511210_&r=',
-        dummyCode: 'babybird10'
-    },
-    'vuurkorfwinkel': {
-        url: 'https://deals.vuurkorfwinkel.nl/c?c=38631&m=0&a=511210&r=&u=',
-        dummyCode: 'HUIZE15'
-    },
-    'yfood': {
-        url: 'https://tc.tradetracker.net/?c=32811&m=0&a=511210&r=&u=',
-        dummyCode: 'TESSA-INSTA'
-    },
-    'flowsteamofficial': {
-        url: 'https://tidd.ly/4wX67rJ',
-        dummyCode: 'DAHLES'
-    },
-    'jako': {
-        url: 'https://wgl.io/qlp3af1d',
-        dummyCode: 'SHOP10'
-    },
-    'bymax': {
-        url: 'https://wgl.io/rj7asog3',
-        dummyCode: 'ACTIE15'
-    },
-    'clinicdress': {
-        url: 'https://wgl.io/d0d0omkd',
-        dummyCode: 'ACTIE10'
-    },
-    'livom': {
-        url: 'https://wgl.io/vb4t0th1',
-        dummyCode: 'SHOP15'
-    },
-    'asbascomputers': {
-        url: 'https://wgl.io/bt3cqldb',
-        dummyCode: 'COMP10'
-    },
-    'maxbadkamers': {
-        url: 'https://wgl.io/3j1fj29s',
-        dummyCode: 'SHOP10'
-    },
-    'personalsurprise': {
-        url: 'https://wgl.io/rqhl1942',
-        dummyCode: 'ACTIE10'
-    },
-    'produo': {
-        url: 'https://wgl.io/8pkq6ag8',
-        dummyCode: 'SHOP15'
-    },
-    'sneaxx': {
-        url: 'https://wgl.io/oer4qmqa',
-        dummyCode: '10OFF'
-    },
-    'testjegezondheid': {
-        url: 'https://wgl.io/6bm927ab',
-        dummyCode: 'ACTIE10'
-    },
+  private affiliateLinks: {[key: string]: string} = {
+    'bylashbabe': 'https://bylashbabe.com?sca_ref=3638091.TQRuyJNRG1',
+    'myproteinnl': 'https://tidd.ly/3Dvhdyg',
+    'smartphonehoesjes.nl': 'https://tidd.ly/3FRwREQ',
+    'veromoda': 'https://www.stylink.it/6MNk0HeXDDA',
+    'ginatricot': 'https://clk.tradedoubler.com/click?p=397652&a=3486306&url=https%3A%2F%2Fwww.ginatricot.com%2Fnl',
+    'hunkemoller': 'https://tidd.ly/4j17AXp',
+    'thuisbezorgd': 'https://tidd.ly/4jpALTJ',
+    'footlocker': 'https://tidd.ly/3G2Kxgs',
+    'ninjakitchen': 'https://tidd.ly/4fd62ue',
+    'samsung': 'https://tidd.ly/4taXxUp',
+    'yesstyle': 'https://www.yesstyle.com/en/home.html?rco=YESGIRL23&utm_term=YESGIRL23&utm_medium=Influencer&utm_source=dynamic&mcg=influencer',
+    'asos': 'https://www.stylink.it/RNGo2t6QZeV',
+    'stevemadden': 'https://www.stylink.it/yGz3NSOyQvD',
+    'lookfantastic': 'https://www.awin1.com/cread.php?awinmid=15785&awinaffid=1870794&ued=https%3A%2F%2Fwww.lookfantastic.nl%2Fc%2Foffers%2Feu-exclusions%2Faffiliates%2Fflat%2F',
+    'h&m': 'https://pzz.to/sga4OL',
+    'westwing': 'https://www.stylink.it/NxJO0I67aak',
+    'aliexpress': 'https://tidd.ly/3J3ARnG',
+    'adidas': 'https://tidd.ly/4iTlN7Q',
+    'only': 'https://www.stylink.it/ZDBMzIpz4yY',
+    'nike': 'https://www.stylink.it/Ojow9izQX90',
+    'prozis': 'https://prozis.com/NfHG',
+    'stylevana': 'https://tidd.ly/4dsPX0F',
+    'temu': 'https://temu.to/m/u0p32ew176i',
+    'easytoys': 'https://www.stylink.it/wnG31IJq3q4',
+    'iciparisxl': 'https://tidd.ly/4lMFsJA',
+    'yehwang_wholesale': 'https://bit.ly/43fOjKa',
+    'ullapopken.nl': 'https://tidd.ly/4mmCMCH',
+    'maletasgreenwich': 'https://tidd.ly/4lPQy0v',
+    'voghion': 'https://tidd.ly/3Ep876s',
+    'shirttuning.nl': 'https://tidd.ly/4lAMjp6',
+    'street-one.nl': 'https://tidd.ly/44fnr0c',
+    'zooplus.nl': 'https://tidd.ly/44NnZKP',
+    'cecil': 'https://tidd.ly/3Sb7l06',
+    'stradivarius': 'https://tidd.ly/3YTQORZ',
+    'greetz.nl': 'https://click.linksynergy.com/deeplink?id=vErUkuRoyhQ&mid=53875&murl=https%3A%2F%2Fwww.greetz.nl%2Fnl%2F',
+    'albelli': 'https://tidd.ly/4ms3olS',
+    'otrium': 'https://tidd.ly/3FpcLSm',
+    'zelesta.nl': 'https://zelesta-cpc-nl.mtpc.se/6289058',
+    'smartphoto.nl': 'https://www.smartphoto.nl/foto_tt?tt=4903_12_448474_&r=%2F',
+    'secretsales.nl': 'https://tidd.ly/43Atcoa',
+    'keepitsneaker': 'https://tidd.ly/4deFHcA',
+    'fashionette': '',
+    'vidaxl': 'https://tidd.ly/42PSPRQ',
+    'charlottetilbury': 'https://friends.charlottetilbury.com/s/wiegeeftkorting',
+    'boohoo': 'https://tidd.ly/3ZsqrTt',
+    'boohooman': 'https://tidd.ly/3GZs30J',
+    'bstn.com': 'https://tidd.ly/3FgECUP',
+    'sharkclean.nl': 'https://tidd.ly/4fd62ue',
+    'prenatal': 'https://tidd.ly/43lmYHH',
+    'wish.com': 'https://click.linksynergy.com/deeplink?id=q0MVTK*mZVE&mid=53194&murl=https%3A%2F%2Fwww.wish.com%2Fnl',
+    'mvolo.nl': 'https://tidd.ly/3H0Mw5m',
+    'bulk.com': 'https://tidd.ly/43rbsdJ',
+    'spacenk.com': 'https://tidd.ly/4dFlWeo',
+    'naduvi.nl': 'https://tidd.ly/3HnUdT9',
+    'kitchenaid': 'https://tidd.ly/4dwNti2',
+    'malelions': 'https://tidd.ly/3Z1dr7b',
+    'fotocadeau.nl': 'https://tidd.ly/3Z1dIXL',
+    '123jaloezie.nl': 'https://tidd.ly/3SR4dqy',
+    'lounge by zalando': 'https://tidd.ly/3ZknIvm',
+    'jhpfashion.nl': 'https://tidd.ly/4kaBWGU',
+    'picnic': 'https://tidd.ly/4jkKLxg',
+    'amazon': 'https://amzn.to/4lyoE8A',
+    'tefal': 'https://tidd.ly/44tjrJB',
+    'tennis-point.nl': 'https://tidd.ly/4kB6hPn',
+    'lampenlicht.nl': 'https://tidd.ly/3Tlo5m2',
+    'earkings.nl': 'https://tidd.ly/3UjR75T',
+    'large.nl': 'https://tidd.ly/3TiNQ6E',
+    'cashbackxl': 'https://www.cashbackxl.nl?share=wouter-c9c3bf',
+    'dyson': 'https://tidd.ly/4dloiic',
+    'coolblue': 'https://tidd.ly/3GSohGZ',
+    'douglas': 'https://tidd.ly/4ldZ0VD',
+    'shein': 'https://www.awin1.com/cread.php?awinmid=18055&awinaffid=1870794&ued=https%3A%2F%2Fnl.shein.com%2F',
+    'emmasleepnl': 'https://tidd.ly/47ACnr9',
+    'ugg': 'https://tidd.ly/4lw3s2q',
+    'jeanscentre.nl': 'https://tidd.ly/3GmmSIe',
+    'converse': 'https://tidd.ly/4jEbhCy',
+    'skateshop': 'https://clk.tradedoubler.com/click?p=376362&a=3427761&url=https%3A%2F%2Fwww.skateshop.be%2Fnl%2F',
+    'stekkies': 'https://in.stekkies.com/t/t?a=1962471956&as=2091458876&t=2&tk=1',
+    'lycamobile': 'https://tidd.ly/3YvpKI9',
+    'fotogeschenk': 'https://www.fotogeschenk.nl/foto/?tt=642_12_448474_&r=%2F',
+    'basalbasics.nl': 'https://clk.tradedoubler.com/click?p=345870&a=3427761&url=https%3A%2F%2Fwww.basalbasics.nl%2F',
+    'hairworldshop.nl': 'https://clk.tradedoubler.com/click?p=358618&a=3427761&url=https%3A%2F%2Fwww.hairworldshop.nl%2F',
+    'vitamine.shop': 'https://clk.tradedoubler.com/click?p=315858&a=3427761&url=https%3A%2F%2Fvitamine.shop%2F',
+    'mimmti.com': 'https://tc.tradetracker.net/?c=30770&m=12&a=448474&r=&u=%2F',
+    'acrylfoto.nl': 'https://www.acrylfoto.nl/foto/?tt=3380_12_448474_&r=%2F',
+    'namly.nl': 'https://clk.tradedoubler.com/click?p=379967&a=3427761&url=https%3A%2F%2Fwww.namly.nl%2F',
+    'sixt': 'https://tidd.ly/3H8Oz7y',
+    'iphone-cases.nl': 'https://tidd.ly/44LjD74',
+    'tuinmeubelshop.nl': 'https://tidd.ly/4mlk526',
+    'muchachomalo': 'https://tidd.ly/3YYwvDa',
+    'parfumdreams.nl': 'https://tidd.ly/43nW6GR',
+    'melanojewelry': 'https://tidd.ly/4mMtHU3',
+    'dryze.nl': 'https://tidd.ly/4kc4WPj',
+    'odido zakelijk': 'https://tidd.ly/3H2v7t8',
+    'odido thuis': 'https://tidd.ly/4mtzOwf',
+    'odido mobiel': 'https://tidd.ly/45nqt2M',
+    'vitaepro.nl': 'https://tidd.ly/4ki4LRI',
+    'action': 'https://tidd.ly/4nxwoZW',
+    'bluetomato': 'https://tidd.ly/4ldkSBs',
+    'schuurman schoenen': 'https://tidd.ly/3ZXRHtp',
+    '50plusmobiel': 'https://tidd.ly/3TNztXZ',
+    'lucovitaal': 'https://tidd.ly/4l8jxfd',
+    'guess': 'https://tidd.ly/3I55PuV',
+    'happy-size.nl': 'https://tidd.ly/3VAKX1Y',
+    'koreanskincare': 'https://tidd.ly/4peUaus',
+    'wildrefill': 'https://tidd.ly/4mUIifD',
+    'tenways': 'https://tidd.ly/42mKnsj',
+    'olivida.nl': 'https://olivida.nl/diski',
+    'bydreamlash.nl': 'https://bydreamlash.nl?sca_ref=9354637.Pe3nBHQSbeg8',
+    'heine': 'https://tidd.ly/46RrzTN',
+    'to-be-dressed.nl': 'https://tidd.ly/4n9ETZL',
+    'size': 'https://tidd.ly/4nPrgjn',
+    'hema': 'https://partner.hema.nl/c?c=25436&m=12&a=448474&r=&u=%2F',
+    'mysteryvoetbalbox': '',
+    'zenhotels': 'https://tidd.ly/3WFvBd0',
+    'grundig': 'https://tidd.ly/3J0QUCQ',
+    'v&d': 'https://www.awin1.com/cread.php?awinmid=64748&awinaffid=1870794',
+    'xiaomi': 'https://tidd.ly/46WW1Ny',
+    'thejewellershop': 'https://tidd.ly/48EXTf7',
+    'stronger': 'https://tidd.ly/49dYqon',
+    'unitedconsumers': 'https://www.awin1.com/awclick.php?gid=316477&mid=8311&awinaffid=1870794&linkid=4541134&clickref=',
+    'goyu': 'https://tidd.ly/3WVuxlk',
+    'etsy': 'https://tidd.ly/44z3z7O',
+    'ziggo': 'https://tidd.ly/4o8EtnB',
+    'marleyspoon.nl': 'https://tidd.ly/42XIJhl',
+    'vevor': 'https://tidd.ly/3J9uyiC',
+    'odido zakelijk breedband': 'https://tidd.ly/48T1t5s',
+    'iscooter': 'https://tidd.ly/431ZRm2',
+    'ohcascas amsterdam': 'https://tidd.ly/43JsnJo',
+    'cronjager': 'https://tidd.ly/3X1iiDT',
+    'marie-stella-maris': 'https://tidd.ly/4mD3fvh',
+    'overstappen.nl': 'https://tidd.ly/4qrCWuF',
+    'zorgkiezer': 'https://tidd.ly/3WomNZ9',
+    'FBTO Zorg': 'https://tidd.ly/43GpzN7',
+    'Independer Zorg': 'https://tidd.ly/3Wr9Nly',
+    'rowenta': 'https://tidd.ly/434aipc',
+    'vanbeekumspecerijen': 'https://tidd.ly/4oc3HBD',
+    'dorina': 'https://tidd.ly/4oerzV9',
+    'yvesrocher': 'https://tidd.ly/4oz5pgz',
+    'intergard': 'https://tidd.ly/4oi2AQS',
+    'milezbracelets': 'https://tidd.ly/4nGulkV',
+    'yfn': 'https://tidd.ly/4858Ioy',
+    '8849tech': 'https://tidd.ly/4i90wZf',
+    'jbl': 'https://tidd.ly/4i7fpv4',
+    'printabout': 'https://tidd.ly/49vByB6',
+    'lampen24': 'https://tidd.ly/4oT4iIJ',
+    'workliving.nl': 'https://tidd.ly/3MfJ4Gr',
+    'koffievoordeel': 'https://tc.tradetracker.net/?c=25521&m=12&a=448474&r=&u=%2F',
+    'wijnvoordeel': 'https://tc.tradetracker.net/?c=6520&m=12&a=448474&r=&u=%2F',
+    'flexispot': 'https://deals.flexispot.nl/c?c=36652&m=12&a=448474&r=&u=%2F',
+    'gymshark': 'https://go.gymshark.com/gp/camref:1100l44hjM/pubref:DISK15',
+    '24uomo': 'https://tc.tradetracker.net/?c=37672&m=12&a=448474&r=&u=%2F',
+    'armband.nl': 'https://armband.nl/tt?tt=40313_12_448474_&r=%2F',
+    'bandanawinkel': 'https://partner.bandanawinkel.nl/c?c=3156&m=12&a=448474&r=&u=%2F',
+    'bigsizeshirts': 'https://partner.bigsizeshirts.com/c?c=421&m=12&a=448474&r=&u=%2F',
+    'cosmopolitan': 'https://tc.tradetracker.net/?c=30806&m=12&a=448474&r=&u=',
+    'osloskinlab': 'https://tidd.ly/487Nms4',
+    'tiqets': 'https://tidd.ly/4aft6Gf',
+    'mytrip': 'https://tidd.ly/48CwFVP',
+    'michaelkors': 'https://tidd.ly/4ioLw9y',
+    'banden.nl': 'https://tidd.ly/4psaNly',
+    'horloge.nl': 'https://tidd.ly/4pgdqXW',
+    'padelmarket': 'https://tidd.ly/487NTdy',
+    'sport-korting.nl': 'https://tidd.ly/487x02N',
+    'plutosport': 'https://tidd.ly/4ixWppW',
+    'awbridal': 'https://tidd.ly/4pyoT55',
+    'footpatrol': 'https://tidd.ly/3M1XqKK',
+    'pogodesignshop': 'https://tidd.ly/3Kjh44n',
+    'glazen.nl': 'https://tidd.ly/4ivGkkB',
+    'joom': 'https://tidd.ly/3Mmn39f',
+    'danielwellington': 'https://tidd.ly/4aBGx3t',
+   'podobrace': 'https://tidd.ly/44oKPaK',
+   'perfumetrader': 'https://tidd.ly/3Ymd3iR',
+   'delta fiber': 'https://tidd.ly/4rPjNDh',
+   'simpel': 'simpel',
+   'stiksen': 'https://www.awin1.com/cread.php?awinmid=83167&awinaffid=1870794',
+   'viverelondon': 'https://tidd.ly/45oFpgs',
+   'catwalkjunkie': 'https://tidd.ly/4qwWrkN',
+   'rienthelabel': 'https://rienthelabel.com/KORTING-15',
+   'about you': 'https://www.stylink.it/9ZRYXtG5vyo',
+    'arket': 'https://www.stylink.it/XQ7qkf5aLl0',
+    'bonprix': 'https://www.stylink.it/5RBXgUwLRVy',
+    'bol.com': 'https://partner.bol.com/click/click?p=2&t=url&s=1509486&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fcmp%2Fdagdeal%2F610%2F&name=Dagdeal',
+    'bershka': 'https://www.stylink.it/24M9kt0LXAb',
+    'caiacosmetics': 'https://www.stylink.it/mby1ohzRaZ6',
+    'carhartt': 'https://www.stylink.it/aG9RNSprv4g',
+    'jdsports': 'https://click.linksynergy.com/deeplink?id=vErUkuRoyhQ&mid=43953&murl=https%3A%2F%2Fwww.jdsports.nl%2F',
+    'loungeunderwear': 'https://www.stylink.it/zYq3OUP5p7X',
+    'pullandbear': 'https://pzz.to/zxRIfI',
+    'wefashion': '',
+    'weekday': 'https://www.stylink.it/B0ZlzhNdAAe',
+    'yas': 'https://www.stylink.it/RNGo2t6Q110',
+    'vakantiepiraten': 'https://www.stylink.it/oPDNeTRbVVo',
+    'cos': 'https://www.stylink.it/vYe37UBvyrL',
+    'desigual': 'https://www.stylink.it/7dOk9iz2B2n',
+    'drmartens': 'https://www.stylink.it/B0ZlzhNdkdn',
+    'isabelbernard': 'https://www.stylink.it/Lz4BRhly9mq',
+    'kaptenandson': 'https://www.stylink.it/VNx6ltlOrRn',
+    'loftymanner': 'https://www.stylink.it/G2Pq1hkyZBN',
+    'manfield': '',
+    'mango': 'https://www.stylink.it/Ojow9izQprv',
+    'newbalance': 'https://newbalanceemea.pxf.io/k4Qmm3',
+    'omoda': 'https://pzz.to/xNL72V',
+    'pieces': 'https://www.stylink.it/4M1mRHRLAX4',
+    'praxis': 'https://www.stylink.it/VNx6ltlOryl',
+    'puma': '',
+    'sacha': '',
+    'notino': 'https://www.anrdoezrs.net/click-101641002-12948621',
+    'home24': 'https://www.stylink.it/gnZ69IgB7B6',
+    'mepal': 'https://www.stylink.it/wnG31IJqVnM',
+    'nameit': 'https://www.stylink.it/00q9BhBwk3p',
+    'next': 'https://www.stylink.it/Ojow9izQpro',
+    'nordicnest': 'https://www.stylink.it/RNGo2t6Q1l0',
+    'peek&cloppenburg': 'https://www.stylink.it/yGz3NSOyQnD',
+    'suncamp': 'https://www.stylink.it/Lz4BRhly9Xw',
+    'underarmour': 'https://www.stylink.it/VNx6ltlOrrl',
+    'reiss': 'https://www.stylink.it/x063BhOldge',
+    'mostwanted': 'https://most-wanted-nl.mtpc.se/5924496',
+    'hollandandbarrett': 'https://tidd.ly/4v4VqC3',
+    'wehkamp': 'https://wehkamp-nl.mtpc.se/5924516',
+    'cabaulifestyle': 'https://conversions.cabaulifestyle.com/c?c=34848&m=12&a=509848&r=&u=%2Fnl',
+    'xxlnutrition': 'https://xxl-nutrition-nl.mtpc.se/5924520',
+    'merodacosmetics': 'https://meroda-cosmetics-nl.mtpc.se/5924528',
+    'bijenkorf': 'https://de-bijenkorf-nl.mtpc.se/5924540',
+    'aimnsportswear': 'https://aimn-nl.mtpc.se/5924548',
+    'neonail': 'https://neonail-nl.mtpc.se/5924574',
+    'paulaschoice.nl': 'https://paula-s-choice-benelux.mtpc.se/5924577',
+    'smartwatchbanden': 'https://tidd.ly/3ZGkYZc',
+    'babydrogist': 'https://tidd.ly/4kFQnnX',
+    'smeg': 'https://tidd.ly/46e9eRj',
+    'startselect': 'https://tidd.ly/4cuWM3l',
+    'schaefershop': 'https://tidd.ly/4aGVqjF',
+    'surebird': 'https://tidd.ly/4qRjoP8',
+    'jhypes': 'https://tidd.ly/3OUVV24',
+    'clayandglow': 'https://clayandglow.com/WIEGEEFTKORTINGXGLOW',
+    'pincsale': 'https://pinc-sale.mtpc.se/5924499',
+    'nelsonschoenen': 'https://nelson-schoenen.mtpc.se/5924501',
+    'ofm': '',
+    'plein.nl': 'https://plein-nl-nl.mtpc.se/5924509',
+    'cultbeauty': 'https://cult-beauty-nl.mtpc.se/5924511',
+    'clubrepublique': 'https://club-republique-nl.mtpc.se/5924527',
+    'msmode': 'https://ms-mode-nl.mtpc.se/5924531',
+    'easywalker': 'https://easywalker.mtpc.se/5924535',
+    'shoesme': '',
+    'lilatelier': 'https://lil-atelier-nl.mtpc.se/5924538',
+    'babysonly': 'https://baby-s-only-nl.mtpc.se/5924543',
+    'amisamour': 'https://amisamour.mtpc.se/5924549',
+    'anthropologie': 'https://anthropologie-nl.mtpc.se/5924557',
+    'posterhome': 'https://posterhome.mtpc.se/5924565',
+    'flinders': 'https://flinders-nl.mtpc.se/5924569',
+    'akuwoodpenal': 'https://aku-woodpannel.mtpc.se/5924571',
+    'fotofabriek.nl': 'https://www.fotofabriek.nl/content/referral/index.aspx/?tt=30576_12_448474_&r=%2F',
+    'alpinehearingprotection': 'https://tidd.ly/4rKQpOm',
+    'vingino': 'https://tidd.ly/47kdoHN',
+    'zadigvoltaire': 'https://fr135.net/c/?si=15679&li=1679315&wi=418827&dl=eu%2Fen%2F',
+    'mimshoes': 'https://glp8.net/c/?si=20474&li=1868703&wi=418827&dl=en-eu',
+    'mizuno': 'https://jf79.net/c/?si=16474&li=1707525&wi=418827&dl=%2Feu%2Fnl-nl%2Fhome%2F',
+    'wamdenim': 'https://fr135.net/c/?si=15940&li=1688087&wi=418827&ws=&dl=en',
+    'onlyformen': 'https://glp8.net/c/?si=20246&li=1863164&wi=418827&dl=',
+    'mijnhummeltje': 'https://jf79.net/c/?si=16616&li=1714020&wi=418827&dl=',
+    'nolten': '',
+    'superdry': 'https://rkn3.net/c/?si=14965&li=1650412&wi=418827&dl=',
+    'vanarendonk': 'https://wgl.io/ii52em5e',
+    'bartogi': 'https://fr135.net/c/?si=15634&li=1676120&wi=418827&dl=',
+    'plein': '',
+    'myka': 'https://bdt9.net/c/?si=18346&li=1792658&wi=418827&dl=',
+    'lureaux': 'https://bdt9.net/c/?si=18357&li=1793240&wi=418827&dl=',
+    'prydligt': 'https://bdt9.net/c/?si=18476&li=1798004&wi=418827&dl=',
+    'eastpak': 'https://glp8.net/c/?si=20076&li=1857675&wi=418827&dl=https%3A%2F%2Feu.eastpak.com%2Fnl-nl',
+    'ag1': 'https://glp8.net/c/?si=19412&li=1829785&wi=418827&dl=nl-eu',
+    'dierenapotheek': 'https://jf79.net/c/?si=16838&li=1725816&wi=418827&dl=',
+    'internetslagerij': 'https://glp8.net/c/?si=20150&li=1860141&wi=418827&dl=',
+    'zwilling': 'https://jdt8.net/c/?si=17552&li=1758391&wi=418827&dl=https%3A%2F%2Fwww.zwilling.com%2Fnl%2F',
+    'glamood': 'https://glp8.net/c/?si=20535&li=1871252&wi=418827&dl=',
+    'petsecur': 'https://fr135.net/c/?si=15431&li=1668064&wi=418827&dl=%2F',
+    'ongediertewinkel': 'https://rkn3.net/c/?si=14571&li=1627390&wi=418827&dl=%2F',
+    'trail': '',
+    'leukstetickets': 'https://lt45.net/c/?si=15805&li=1684191&wi=418827&dl=',
+    'maje': 'https://glp8.net/c/?si=19592&li=1839487&wi=418827&dl=https%3A%2F%2Feu.maje.com%2F%3Fcountry%3DNL',
+    'hostinger': 'https://jf79.net/c/?si=16780&li=1722914&wi=418827&dl=nl',
+    'levis': '',
+    'littledutch': '',
+    'acculaders.nl': 'https://lt45.net/c/?si=12933&li=1570313&wi=418827&ws=&dl=',
+    'tencate1952': 'https://ds1.nl/c/?si=6773&li=1315339&wi=418827&dl=',
+    'parfumania': 'https://jf79.net/c/?si=16384&li=1703817&wi=418827&dl=',
+    'decantalo': 'https://bdt9.net/c/?si=18645&li=1802463&wi=418827&ws=&dl=nl%2F',
+    'padeldiscount': 'https://bdt9.net/c/?si=19068&li=1819419&wi=418827&dl=%2F',
+    'parfumado': '',
+    'vanastenbabysuperstore': '',
+    'fietsparadijs': '',
+    'skinnydiplondon': 'https://glp8.net/c/?si=20078&li=1857719&wi=418827&dl=%3F_ab%3D0%26_fd%3D0%26_sc%3D1',
+    'goedkoopstekantoorartikelen': 'https://ds1.nl/c/?si=8191&li=1377583&wi=418827&dl=%2F',
+    'butlon': 'https://fr135.net/c/?si=15642&li=1676643&wi=418827&ws=&dl=nl%2F',
+    'headshop': 'https://jdt8.net/c/?si=17220&li=1743937&wi=418827&dl=',
+    'haarspullen': '',
+    'stellamccartney': 'https://fr135.net/c/?si=15224&li=1659440&wi=418827&dl=nl%2Fen%2F',
+    'foodello': '',
+    'kiwi.com': 'https://glp8.net/c/?si=20714&li=1878051&wi=418827&dl=nl%2F',
+    'lego': '',
+    'oakley': 'https://bdt9.net/c/?si=18433&li=1796803&wi=418827&dl=nl-nl',
+    'tuinmeubelwereld': '',
+    'vvvcadeaukaarten': '',
+    'joybuy': 'https://tidd.ly/3SFPDFu',
+    'salontopper': '',
+    'flink': '',
+    'theorie.nl': 'https://ds1.nl/c/?si=2320&li=139428&wi=418827&ws=&dl=',
+    'cookandpan': '',
+    'lease.auto': 'https://glp8.net/c/?si=21513&li=1912084&wi=418827&dl=%2F',
+    'jwverzekeringen': 'https://partners.jwverzekeringen.nl/c/?si=21167&li=1901301&wi=418827&dl=%2F',
+    'houtolie': 'https://bdt9.net/c/?si=18953&li=1815317&wi=418827&dl=%2F',
+    'giuseppezanotti': 'https://rkn3.net/c/?si=15019&li=1650848&wi=418827&dl=nl',
+    'eleonorabonucci': 'https://glp8.net/c/?si=20477&li=1868853&wi=418827&dl=',
+    'robell': 'https://jdt8.net/c/?si=17901&li=1775255&wi=418827&dl=',
+    'teveeo': 'https://bdt9.net/c/?si=19052&li=1818922&wi=418827&ws=&dl=en-gb',
+    'olijfolieconcurrent': '',
+    'suntip.nl': 'https://ds1.nl/c/?si=951&li=57956&wi=418827&dl=%2F',
+    'bottger': 'https://glp8.net/c/?si=21072&li=1897053&wi=418827&dl=',
+    'paneli': 'https://glp8.net/c/?si=20715&li=1878212&wi=418827&dl=',
+    'vitaminenoprecept': 'https://ds1.nl/c/?si=15876&li=1685786&wi=418827&dl=',
+    'endclothing': 'https://endclothing.sjv.io/AgPGKj',
+    'decathlon': 'https://decathlon-nl.x8nb.net/PzOWaz',
+    'lenovo': 'https://lenovo.evyy.net/zzxBjO',
+    'golflefleur': 'https://golf-le-fleur.sjv.io/n4XBn6',
+    'shopify': 'https://shopify.pxf.io/dyOERM',
+    'roseskinco': 'https://roseskinco.pxf.io/qWzBg5',
+    'primevideo': 'https://primevideo-eu.pxf.io/xJLRnA',
+    'nordvpn': 'https://nordvpn.sjv.io/PzOWKz',
+    'maxicosi': 'https://doreljuvenile.pxf.io/AgPGmj',
+    'sandandsky': 'https://sand-and-sky.sjv.io/X4mKdo',
+    'capcut': 'https://capcutaffiliateprogram.pxf.io/AgPvMRzz',
+    'coursera': 'https://imp.i384100.net/GbKMdE',
+    'vrbohotels': 'https://www.kqzyfj.com/click-101641002-14347453',
+    'skechers': 'https://www.anrdoezrs.net/click-101641002-17230910',
+    'mondly': 'https://www.jdoqocy.com/click-101641002-17279282',
+    'expedia': 'https://www.jdoqocy.com/click-101641002-15108262',
+    'euroflorist': 'https://clk.tradedoubler.com/click?p=239131&a=3427761&url=https%3A%2F%2Fwww.euroflorist.nl%2Fen',
+    'naturalslim': 'https://clk.tradedoubler.com/click?p=344232&a=3427761&url=https%3A%2F%2Fnaturalslim.nl%2F',
+    'onebioshop': 'https://clk.tradedoubler.com/click?p=392919&a=3427761&url=https%3A%2F%2Fonebioshop.com%2Fnl',
+    'palladium': 'https://clk.tradedoubler.com/click?p=290642&a=3427761&url=https%3A%2F%2Fpalladiumboots.nl%2F',
+    'papique': 'https://clk.tradedoubler.com/click?p=393042&a=3427761&url=https%3A%2F%2Fpapique.com%2Fnl',
+    'qathu': 'https://clk.tradedoubler.com/click?p=393391&a=3427761&url=https%3A%2F%2Fqathu.com%2Fnl',
+    'swehealth': 'https://clk.tradedoubler.com/click?p=393268&a=3427761&url=https%3A%2F%2Fwww.swehealth.nl%2F',
+    'mediamarkt': 'https://clk.tradedoubler.com/click?p=262336&a=3476882&url=https%3A%2F%2Fwww.mediamarkt.nl%2Fnl%2F',
+    'oduree.nl': 'https://oduree.nl/discount/DISKI',
+    'burga': 'https://burga.sjv.io/zzzOAx',
+    'creamyfabrics': 'https://creamyfabrics.com/nl/discount/WIEGEEFTKORTING?redirect=/nl/collections/sale&preview_theme_id=191697584475&one_s=andyyrobe&affid=andyyrobe&pb=0',
+    'geurwolkje': 'https://www.geurwolkje.nl/INDY40908',
+    'achateshop.com': 'https://www.achate.com/DISKI',
+    'ibood': 'https://pzz.to/9wsxiv',
+//     'snipes': 'https://tidd.ly/4sWSJSG',
+    'theordinary': 'https://tidd.ly/4diAtP5',
+    'rosaodor': 'https://tidd.ly/47StXL9',
+    'ahead-nutrition': 'https://tidd.ly/47W13tM',
+    'bellobox.nl': 'https://www.bellobox.nl/indyvandenburg',
+    'thegoodroll': 'https://jf79.net/c/?si=16425&li=1705996&wi=418827&dl=',
+    'daka': '',
+    'pipoos': '',
+    'allsaints': 'https://glp8.net/c/?si=20868&li=1886430&wi=418827&dl=eu%3FglCountry%3DNL%26glCurrency%3DEUR%26CountrySwitcher%3Dtrue',
+    'gereedschapcentrum.nl': 'https://lt45.net/c/?si=11632&li=1516360&wi=418827&dl=',
+    'degoedkoopsteoutlet': 'https://glp8.net/c/?si=19859&li=1846103&wi=418827&dl=',
+    'donnay': 'https://rkn3.net/c/?si=14372&li=1618099&wi=418827&dl=',
+    'beltegoed.nl': '',
+    'weightworld': '',
+    'animigo': 'https://fr135.net/c/?si=15884&li=1685979&wi=418827&dl=',
+    'sabon': 'https://jf79.net/c/?si=16132&li=1693248&wi=418827&dl=https%3A%2F%2Fnl.sabon.com%2F',
+    'moneybird': 'https://bdt9.net/c/?si=19080&li=1819984&wi=418827&dl=',
+    'acer': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.acer.com%2Fnl-nl%2F',
+    'babista.nl': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.babista.nl%2F',
+    'bestecanvas': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.bestecanvas.nl%2F',
+    'bjornborg': 'https://to.bjornborg.com/t/t?a=1212697158&as=2091458876&t=2&tk=1',
+    'buitiqo': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fbuitiqo.nl%2F',
+    'canalplus': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.canalplus.nl%2F',
+    'doreandrose': 'https://www.doreandrose.com/INDY34514',
+    'dreame': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.dreametech.com%2F',
+    'glowmode': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fshopglowmode.com%2F',
+    'goboony': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.goboony.be%2F',
+//     'hellofresh.nl': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.hellofresh.nl%2F',
+    'jackery': 'https://itjackery.pxf.io/bk02qg',
+    'jetpacglobal': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.jetpacglobal.com%2F',
+    'jjshouse': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.jjshouse.com%2Fnl%2F',
+    'journaway': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.journaway.com%2F',
+    'kymocleaning': 'https://partner.kymocleaning.com/c?c=39963&m=0&a=511210&r=&u=',
+    'logitech': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.logitech.com%2Fnl-nl%2F',
+    'marliesdekkers': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.marliesdekkers.com%2Fnl_nl%2F',
+    'micas': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.shopmicas.com%2F',
+    'morenutrition': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.morenutrition.com%2F',
+    'mothersearth': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.mothersearth.com%2F',
+    'nextory': 'https://wgl.io/tbq9e9l6',
+    'oglmove': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Foglmove.com%2F',
+    'rihoas': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.rihoas.com%2F',
+    'siroko': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.siroko.com%2Fnl',
+    'stylewe': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.stylewe.com%2F',
+    'tommyteleshopping': 'https://partner.tommyteleshopping.com/c?c=13594&m=0&a=511210&r=&u=',
+    'training-fit.nl': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Ftraining-fit.nl%2F',
+    'trip': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fnl.trip.com%2F',
+    'vbs-hobby.nl': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vbs-hobby.nl%2F',
+    'vonroc': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vonroc.nl%2F',
+    'walkingpad.nl': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.walkingpad.com%2F',
+    'whitefoxboutique': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.whitefoxboutique.co.uk%2F',
+    'yoursurprise': 'https://www.yoursurprise.nl/tradetracker?tt=546_12_448474_&r=%2F',
+    'flixbus': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.flixbus.nl%2F',
+    'tripadvisor': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.tripadvisor.nl%2F',
+    'asus': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.asus.com%2Fnl%2F',
+    'huawei': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fconsumer.huawei.com%2Fnl%2F',
+    'oneplus': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.oneplus.com%2Fnl',
+    'calvinklein': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.calvinklein.nl%2F',
+    'groupon': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.groupon.nl%2F',
+    'ticketmaster': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.ticketmaster.nl%2F',
+    '24s': 'https://smyi.me/03lZg',
+    'ador': 'https://smyi.me/023XJ',
+    'aktiesport': 'https://smyi.me/00Cab',
+    'albertheijn': 'https://pzz.to/WJk1bf',
+    'alohas': 'https://smyi.me/00GPy',
+    'assem': 'https://pzz.to/xciGjX',
+    'beautyplaza': 'https://partner.beautyplaza.com/c?c=40139&m=12&a=448474&r=&u=',
+    'ben': 'https://tidd.ly/3QR9bWM',
+    'blackroll': 'https://tidd.ly/42kxFdu',
+    'coofandy': 'https://tidd.ly/4dbeszM',
+    'dgmoutlet': 'https://tidd.ly/4tEELVv',
+    'drukwerknodig': 'https://www.drukwerknodig.nl/content/shopping/index.aspx/?tt=30553_0_511210_&r=',
+    'efteling': 'https://tc.tradetracker.net/?c=25801&m=0&a=511210&r=&u=',
+    'freddelabretoniere': 'https://pzz.to/PuNxCd',
+    'freechoice': 'https://clk.tradedoubler.com/click?p=315858&a=3427761&url=https%3A%2F%2Fvitamine.shop%2F',
+    'frenkiesfashion': 'https://tidd.ly/42SNtUV',
+    'gstar': 'https://pzz.to/3q5WHL',
+    'hondensupplement': 'https://tidd.ly/4f7QBDH',
+    'ilovespeelgoed': 'https://pzz.to/lCsvko',
+    'kleertjescom': 'https://pzz.to/Fyhhms',
+    'knivesandtools': 'https://tidd.ly/4ux2OGz',
+    'loccitane': 'https://pzz.to/Fyhhms',
+    'lyko': 'https://ion.lyko.com/t/t?a=1536994461&as=2091458876&t=2&tk=1',
+    'maevenart': 'https://clk.tradedoubler.com/click?p=373837&a=3427761&url=https%3A%2F%2Fwww.maevenart.com%2Fen',
+    'marcinbane': 'https://tidd.ly/4d9FMi2',
+    'matchu': 'https://tidd.ly/4tpGYnB',
+    'nsconsumenten': 'https://pzz.to/n3khM8',
+    'oneill': 'https://pzz.to/OvikPF',
+    'ownesim': 'https://tidd.ly/4de2zJy',
+    'parfumerie': 'https://pzz.to/dLSOh9',
+    'parfumswinkel': 'https://pzz.to/Q3g8vM',
+    'philipshue': 'https://clk.tradedoubler.com/click?p=354238&a=3476882&url=https%3A%2F%2Fwww.philips-hue.com%2Fnl-nl',
+    'plnktn': 'https://tidd.ly/42gWiI3',
+    'raizzed': 'https://tidd.ly/4uzkgKA',
+    'ralphlauren': 'https://pzz.to/pV3lz-',
+    'rayban': 'https://pzz.to/4FBNco',
+    'soliver': 'https://tidd.ly/3Pnu37w',
+    'sissyboy': '',
+    'sneakin': 'https://tidd.ly/4u4kgTa',
+    'spartoo': 'https://pzz.to/O0mbmG',
+    'teva': 'https://pzz.to/s77Lz3',
+    'thephonelab': 'https://tidd.ly/4d9xJBw',
+    'trendzdameskleding': 'https://tidd.ly/3QXqdT0',
+    'urbanoutfitters': 'https://smyi.me/008nt',
+    'valerion': 'https://tidd.ly/4weKsfd',
+    'wavzsupplementen': 'https://tidd.ly/4wg0JQU',
+    'xpluswear': 'https://glp8.net/c/?si=20417&li=1866882&wi=418827&dl=%2F',
+    'yoozyfashion': 'https://tidd.ly/4thiP2b',
+    'youroutdoorstore': 'https://tidd.ly/4nebJKH',
+    'yoursclothing': 'https://pzz.to/2ogTx0',
+    'ziengs': 'https://pzz.to/hRA52n',
+    'zinzi': 'https://pzz.to/hRA52n',
+    'zippit': 'https://tidd.ly/4eyF8go',
+    'conrad': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.conrad.nl%2F',
+    'galaxus': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.galaxus.nl%2F',
+    'samsonite': 'https://tidd.ly/4wr08eK',
+    'lebara': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.lebara.nl%2F',
+    'simyo': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.simyo.nl%2F',
+    'youfone': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.youfone.nl%2F',
+    'vattenfall': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vattenfall.nl%2F',
+    'q-park': 'https://tc.tradetracker.net/?c=22543&m=0&a=511210&r=&u=',
+    'nh-hotels': 'https://tc.tradetracker.net/?c=37646&m=0&a=511210&r=&u=',
+    'leonardohotels': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.leonardo-hotels.nl%2F',
+    'budgetair': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.budgetair.nl%2F',
+    'vliegwinkel': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vliegwinkel.nl%2F',
+    'kaspersky': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.kaspersky.nl%2F',
+    'oralb': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.oralb.nl%2F',
+    'aeg': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.aeg.nl%2F',
+    'vivara': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vivara.nl%2F',
+    'inglot': 'https://deal.inglot.nl/c?c=39306&m=0&a=511210&r=&u=',
+    'flaconi': 'https://tidd.ly/44Gxb2o',
+    'peterhahn': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.peterhahn.nl%2F',
+    'tomtailor': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.tom-tailor.nl%2F',
+    'vrijbuiter': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vrijbuiter.nl%2F',
+    'naturecan': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.naturecan.nl%2F',
+    'proshop': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.proshop.nl%2F',
+    'dolfinarium': 'https://tc.tradetracker.net/?c=23457&m=0&a=511210&r=&u=',
+    'duinrell': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.duinrell.nl%2F',
+    'paagman': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.paagman.nl%2F',
+    'visiondirect': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.visiondirect.nl%2F',
+    'lentiamo': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.lentiamo.nl%2F',
+    'mondaine': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.mondaine.nl%2F',
+    'vertbaudet': 'https://tc.tradetracker.net/?c=33198&m=0&a=511210&r=&u=',
+    'vikingdirect': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.vikingdirect.nl%2F',
+    'sembo': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.sembo.nl%2F',
+    'travelcircus': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.travelcircus.nl%2F',
+    'posters': 'https://partner.posters.nl/c?c=39673&m=0&a=511210&r=&u=',
+    'inktweb': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.inktweb.nl%2F',
+    'refurbished': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.refurbished.nl%2F',
+    'heydude': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.heydude.nl%2F',
+    'kswiss': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.kswiss.nl%2F',
+    'panamajack': 'https://partner.panamajack.nl/c?c=40537&m=0&a=511210&r=&u=',
+    'powerpeers': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.powerpeers.nl%2F',
+    'yogashop': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.yogashop.nl%2F',
+    'valmano': 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.valmano.nl%2F',
+    'armani': 'https://track.flexlinkspro.com/g.ashx?foid=156085.110106133.1011111835&trid=1498147.245206&foc=16&fot=9999&fos=6',
+    'cleanprofs': 'https://track.flexlinkspro.com/g.ashx?foid=156178.29101.3109732&trid=1498147.246231&foc=16&fot=9999&fos=6',
+    'hostnet': 'https://track.flexlinkspro.com/g.ashx?foid=156178.21189.4611686018427605232&trid=1498147.245395&foc=16&fot=9999&fos=6',
+    'lusini': 'https://track.flexlinkspro.com/g.ashx?foid=156178.22612.4611686018427605688&trid=1498147.245644&foc=16&fot=9999&fos=6',
+    'onthatass': 'https://track.flexlinkspro.com/g.ashx?foid=156364.353259.25914658&trid=1498147.239294&foc=16&fot=9999&fos=6',
+    'rebuy': 'https://track.flexlinkspro.com/g.ashx?foid=156178.12860.4611686018427605238&trid=1498147.245575&foc=16&fot=9999&fos=6',
+    'sanitaironline': 'https://track.flexlinkspro.com/g.ashx?foid=156178.86283.4611686018427605717&trid=1498147.246297&foc=16&fot=9999&fos=6',
+    'stanley': 'https://track.flexlinkspro.com/g.ashx?foid=156099.18601.818601&trid=1498147.225570&foc=16&fot=9999&fos=6',
+    'zavvi': 'https://track.flexlinkspro.com/g.ashx?foid=156178.8664.4611686018427605518&trid=1498147.209275&foc=16&fot=9999&fos=6',
+    'esn': 'https://nl.esn.com/discount/sportpoeder?redirect=/collections/bestseller',
+    'aybl': 'https://nl.aybl.com/discount/sportpoeder',
+    'atmooz.com': 'https://atmooz.com/DISKI10',
+    'prettylittlething': 'https://tidd.ly/4e6Fr00',
+    'myjewellery': 'https://www.my-jewellery.com/',
+    'elvou': 'https://elvou.com/ELISA',
+    'dutchies.com': 'http://dutchies.com/',
+    'fashiontiger.nl': 'https://fashiontiger.nl/',
+    'bloomon': 'https://bloomwild.prf.hn/click/camref:1011l5Fj67/destination:https%3A%2F%2Fwww.bloomon.nl%2F',
+    'bellaandduke': 'https://tidd.ly/4xLF83M',
+    'isabelmarant': 'https://bdt9.net/c/?si=18138&li=1785243&wi=418827&dl=en-nl%3Fsrsltid%3DAfmBOopOFxxEisxItbMOWek0rLj1D0ebFo686MdhiSmpfe7VCAxZ6cpJ',
+    'cider': 'https://fxo.co/JDoH',
+    'alectobaby': 'https://partner.alectobaby.nl/c?c=37230&m=0&a=511210&r=&u=',
+    'amicicosmetics': 'https://amicicosmetics.com/cosmetics/?tt=40338_0_511210_&r=',
+    'badjasparadijs': 'https://www.badjasparadijs.nl/tradetracker/?tt=1820_0_448474_&r=',
+    'bodyandfit.com': 'https://partner.bodyandfit.com/c?c=11113&m=0&a=511210&r=&u=',
+    'buvanha': 'https://partner.buvanha.nl/c?c=35152&m=0&a=511210&r=&u=',
+    'depindakaaswinkel': 'https://partner.depindakaaswinkel.nl/c?c=33306&m=0&a=511210&r=&u=',
+    'desktronic': 'https://partner.desktronic.nl/c?c=39661&m=0&a=511210&r=&u=',
+    'flamengolife': 'https://tc.tradetracker.net/?c=37561&m=0&a=511210&r=&u=',
+    'greengypsyspices': 'https://www.greengypsyspices.com/poeder/?tt=35863_0_511210_&r=',
+    'hellochair': 'https://deals.hellochair.nl/c?c=33374&m=0&a=511210&r=&u=',
+    'pillowbuddies': 'https://partner.pillowbuddies.nl/c?c=35852&m=0&a=511210&r=&u=',
+    'repeatcashmere': 'https://tc.tradetracker.net/?c=19243&m=0&a=448474&r=&u=',
+    'tallowcosmetics': 'https://partner.tallowcosmetics.com/c?c=40809&m=0&a=511210&r=&u=',
+    'vitaminfit.eu': 'https://www.vitaminfit.eu/tracking/tradetracker/redirect/?tt=36825_0_511210_&r=',
+    'vuurkorfwinkel': 'https://deals.vuurkorfwinkel.nl/c?c=38631&m=0&a=511210&r=&u=',
+    'yfood': 'https://tc.tradetracker.net/?c=32811&m=0&a=511210&r=&u=',
+    'flowsteamofficial': 'https://tidd.ly/4wX67rJ',
+    'jako': 'https://wgl.io/qlp3af1d',
+    'bymax': 'https://wgl.io/rj7asog3',
+    'clinicdress': 'https://wgl.io/d0d0omkd',
+    'livom': 'https://wgl.io/vb4t0th1',
+    'asbascomputers': 'https://wgl.io/bt3cqldb',
+    'maxbadkamers': 'https://wgl.io/3j1fj29s',
+    'personalsurprise': 'https://wgl.io/rqhl1942',
+    'produo': 'https://wgl.io/8pkq6ag8',
+    'sneaxx': 'https://wgl.io/oer4qmqa',
+    'testjegezondheid': 'https://wgl.io/6bm927ab',
   };
 
   constructor() { }
@@ -2220,7 +567,7 @@ export class AffiliateLinkService {
       company = parts[0].trim();
     }
 
-    const url = this.affiliateLinks[company]?.url;
+    const url = this.affiliateLinks[company];
 
     if(url === undefined || url.trim() === '') {
       return undefined;

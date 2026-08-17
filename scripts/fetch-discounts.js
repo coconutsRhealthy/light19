@@ -1,9 +1,12 @@
 // Builds src/app/data/discounts.json, the file every page of the site reads.
 //
-// Two inputs:
+// Three inputs:
 //   1. R2 — the live codes, published by diski-input-insta's `node scripts/run-all.js`
 //      and read at runtime by the diski app too. R2 is the source of truth for live codes.
-//   2. Backup codes — a fallback code per shop, for shops whose live codes have been
+//   2. Newsletter rows — for shops with an AFFILIATE LINK and no live code. The page has
+//      a commercial job to do, so it must stay online; it just has no code to show, so it
+//      shows a newsletter sign-up instead of pretending to have one.
+//   3. Backup codes — a fallback code per shop, for shops whose live codes have been
 //      pruned. v2's come from each brand-content JSON's `backupCode`; v1's from the
 //      generated V1_BACKUP_CODES map. A shop gets its backup code injected ONLY if it
 //      has no entry in the feed. A real code always wins.
@@ -41,6 +44,11 @@ const BUILD_INFO_PATH = path.join(ROOT, 'src/app/build-info.ts');
 const V1_INDEX_PATH = path.join(ROOT, 'src/app/company-codes/company-seo-content/index.ts');
 const V1_BACKUP_PATH = path.join(ROOT, 'src/app/company-codes/company-seo-content/backup-codes.json');
 const V2_DATA_DIR = path.join(ROOT, 'src/app/company-codes-v2/brand-content/data');
+const AFFILIATE_SERVICE_PATH = path.join(ROOT, 'src/app/services/affiliate-link.service.ts');
+
+// What a shop with an affiliate link but no live code shows instead of a code. One
+// honest placeholder, not a per-shop value: there is nothing shop-specific to say.
+const NEWSLETTER_CODE = 'aanmelden voor nieuwsbrief';
 
 // The "zzz" column is the influencer handle, blanked out before publishing. It no longer
 // exists in the feed, but the components and fill-routes.js still split on commas by
@@ -103,7 +111,28 @@ async function fetchLiveLines() {
 }
 
 // =========================
-// 2. Backup codes
+// 2. Affiliate shops (the newsletter fallback)
+// =========================
+
+// The slugs that have an affiliate link — the keys of the affiliateLinks map, read with a
+// regex rather than eval'd. The leading `^\s*'` can't match a commented-out entry
+// (`//     'snipes': '...'`), which the file parks a couple of.
+//
+// Returns the keys with their ORIGINAL CASING. A couple of them are capitalised
+// ('FBTO Zorg', 'Independer Zorg') and fill-routes.js takes a slug verbatim, so the case
+// here is the case of the live URL. Lowercasing would silently move those pages to a new
+// URL and 404 the indexed one. Comparisons are done lowercased at the call site instead.
+function readAffiliateSlugs() {
+  const source = fs.readFileSync(AFFILIATE_SERVICE_PATH, 'utf8');
+  const block = source.match(/affiliateLinks[^=]*=\s*\{([\s\S]*?)\n  \};/);
+  if (!block) {
+    throw new Error(`Could not find the affiliateLinks object in ${path.basename(AFFILIATE_SERVICE_PATH)}.`);
+  }
+  return [...block[1].matchAll(/^\s*'([^']+)'\s*:/gm)].map(m => m[1]);
+}
+
+// =========================
+// 3. Backup codes
 // =========================
 
 // v2: every brand-content file carries a backupCode, filled by the content engine.
@@ -144,11 +173,16 @@ function readContentSlugs() {
   return { v1, v2 };
 }
 
-// A backup code likely no longer works, so don't present it as freshly spotted: date it
-// 45–75 days before the build, with the offset derived from the slug so the ~275 backup
-// pages don't all share one templated date. Deterministic — this is the formula the two
-// component fallbacks each used to carry.
-function backupSpotDate(slug, buildDate) {
+// Neither fallback is a freshly-checked offer, so don't date it like one: 45–75 days
+// before the build, with the offset derived from the slug so the fallback pages don't all
+// share one templated date. Deterministic — this is the formula the two component
+// fallbacks each used to carry.
+//
+// The age is load-bearing, not cosmetic. It keeps injected rows out of the homepage's
+// "X nieuwe shops" counter (which counts shops carrying the newest date in the feed) and
+// out of the modal's email gate (which demands an email for anything added in the last 5
+// days). Both fallbacks need that exclusion, so both use this.
+function agedSpotDate(slug, buildDate) {
   let hash = 0;
   for (let i = 0; i < slug.length; i++) hash = (hash * 31 + slug.charCodeAt(i)) >>> 0;
 
@@ -166,7 +200,7 @@ function readBuildDate() {
 }
 
 // =========================
-// 3. Guard: discounts.json must cover every content page
+// 4. Guard: discounts.json must cover every content page
 // =========================
 
 // fill-routes.js derives the whole route + sitemap universe from discounts.json, so a
@@ -192,7 +226,7 @@ function assertEveryContentPageHasCode(slugs, content) {
 }
 
 // =========================
-// 4. Main
+// 5. Main
 // =========================
 
 async function main() {
@@ -200,25 +234,39 @@ async function main() {
   if (!liveLines) return; // fetch failed — keep the committed copy, warning already logged
 
   const liveSlugs = new Set(liveLines.map(line => toSlug(line.split(',')[0])));
+  const buildDate = readBuildDate();
+
+  // An affiliate shop with no live code falls back to the newsletter row — NOT to a backup
+  // code. The point of the affiliate fallback is to keep a page that has a commercial job
+  // to do online without inventing a discount for it, so a backup code here would just
+  // reintroduce the thing we're removing.
+  //
+  // Today this matches nothing: every affiliate shop is in the feed, because
+  // diski-input-insta still fills a dummy code for the ones with no real code. It starts
+  // firing when that step is removed there.
+  const newsletterShops = readAffiliateSlugs().filter(slug => !liveSlugs.has(slug.toLowerCase()));
+  const newsletterLines = newsletterShops.map(
+    slug => `${slug}, ${NEWSLETTER_CODE}, , ${ANON_PLACEHOLDER}, ${agedSpotDate(slug.toLowerCase(), buildDate)}`
+  );
+  const newsletterSlugs = new Set(newsletterShops.map(slug => slug.toLowerCase()));
 
   // v2 wins where a slug has both: if a shop has a v2 brand page, that's the page being
   // served, so its engine-provided backup code is the authoritative one.
   const backups = new Map([...readV1Backups(), ...readV2Backups()]);
 
-  const buildDate = readBuildDate();
   const backupLines = [];
   for (const [slug, backup] of backups) {
-    if (liveSlugs.has(slug)) continue; // a real code always wins
+    if (liveSlugs.has(slug) || newsletterSlugs.has(slug)) continue; // real code, then newsletter
     backupLines.push(
-      `${slug}, ${backup.code}, ${backup.discount}, ${ANON_PLACEHOLDER}, ${backupSpotDate(slug, buildDate)}`
+      `${slug}, ${backup.code}, ${backup.discount}, ${ANON_PLACEHOLDER}, ${agedSpotDate(slug, buildDate)}`
     );
   }
 
-  // Backups go last: the feed is newest-first, and consumers lean on that ordering
+  // Injected rows go last: the feed is newest-first, and consumers lean on that ordering
   // (winkels takes a shop's first occurrence as its latest offer; the homepage reads
-  // discounts[0].date as "last updated"). A backup shop has no other entry by
+  // discounts[0].date as "last updated"). An injected shop has no other entry by
   // definition, so appending can't displace a real code.
-  const lines = [...liveLines, ...backupLines];
+  const lines = [...liveLines, ...backupLines, ...newsletterLines];
 
   const content = readContentSlugs();
   assertEveryContentPageHasCode(new Set(lines.map(line => toSlug(line.split(',')[0]))), content);
@@ -227,7 +275,7 @@ async function main() {
 
   console.log(
     `[fetch-discounts] Wrote ${lines.length} discounts: ` +
-    `${liveLines.length} live + ${backupLines.length} backup ` +
+    `${liveLines.length} live + ${backupLines.length} backup + ${newsletterLines.length} newsletter ` +
     `(covering all ${content.v1.size} v1 + ${content.v2.size} v2 brand pages).`
   );
 }
