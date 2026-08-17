@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AnalyticsEventService } from '../services/analytics-event.service';
 import { VisitorProfileService } from '../services/visitor-profile.service';
 import { DiscountsService } from '../services/discounts.service';
+import { WebshopNameService } from '../services/webshop-name.service';
 import { getShopPromotion, ShopPromotion } from '../data/shop-promotions';
 import { FormsModule } from '@angular/forms';
 import shopUrls from '../data/shop-urls.json';
@@ -110,7 +111,34 @@ export class ModalComponent {
 
   constructor(private analyticsEventService: AnalyticsEventService,
               private visitorProfile: VisitorProfileService,
-              private discountsService: DiscountsService) {}
+              private discountsService: DiscountsService,
+              private names: WebshopNameService) {}
+
+  /**
+   * A shop with no live code gets one shared row in discounts.json carrying this
+   * text instead of a code — see scripts/fetch-discounts.js. There is nothing to
+   * copy, reveal or share, so the modal drops the whole code block for these and
+   * says what to actually do instead.
+   *
+   * Matched on the exact string the build script writes. The feed also contains a
+   * hand-written 'aanmelden nieuwsbrief' row (parfumdreams.nl) with a real 22%
+   * offer; that is deliberately NOT matched — it keeps the normal modal.
+   */
+  static readonly NEWSLETTER_CODE = 'aanmelden voor nieuwsbrief';
+
+  get isNewsletter(): boolean {
+    return (this.discountCode ?? '').trim().toLowerCase() === ModalComponent.NEWSLETTER_CODE;
+  }
+
+  /** Shop name for prose: the curated name where we have one, else the slug capitalised. */
+  get shopDisplayName(): string {
+    const slug = (this._discount?.companySlug ?? '').toLowerCase();
+    const curated = this.names.getWebshopName(slug);
+    if (curated) return curated;
+
+    const raw = String(this._discount?.company ?? slug ?? '').trim();
+    return raw ? raw.charAt(0).toUpperCase() + raw.slice(1) : '';
+  }
 
   getCorrectFormatOfCodeDate(rawCodeDate: string): string {
     var day = rawCodeDate.split("-")[1];

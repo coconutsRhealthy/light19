@@ -150,7 +150,18 @@
             </div>
             }
 
+            <!-- NEWSLETTER FALLBACK — no code exists, so there is nothing to label
+                 "Code", nothing to copy and nothing to share. Just the instruction. -->
+            @if (isNewsletter) {
+            <p class="tw-text-base tw-leading-relaxed tw-text-ink/80">
+                Meld je aan voor de nieuwsbrief van
+                <span class="tw-font-semibold tw-text-ink">{{ shopDisplayName }}</span>
+                en ontvang {{ getCorrectFormatDiscountPercentage(discount.percentage) }} korting op je order.
+            </p>
+            }
+
             <!-- CODE -->
+            @else {
             <div class="tw-flex tw-items-center tw-justify-between">
                 <span class="tw-font-semibold tw-text-ink/60">Code</span>
 
@@ -201,6 +212,7 @@
                 </div>
                 }
             </div>
+            }
 
             <!-- Discount -->
             <div class="tw-flex tw-justify-between tw-text-sm tw-text-ink/70">
