@@ -315,7 +315,7 @@ export class AffiliateLinkService {
         dummyCode: 'SKAT10M5V'
     },
     'stekkies': {
-        url: 'https://in.stekkies.com/t/t?a=1962471956&as=1971143404&t=2&tk=1',
+        url: 'https://in.stekkies.com/t/t?a=1962471956&as=2091458876&t=2&tk=1',
         dummyCode: 'LOVELY259AQ'
     },
     'lycamobile': {
@@ -1055,7 +1055,7 @@ export class AffiliateLinkService {
         dummyCode: 'EXTRA10'
     },
     'vanarendonk': {
-        url: '',
+        url: 'https://wgl.io/ii52em5e',
         dummyCode: 'SHOP15'
     },
     'bartogi': {
@@ -1555,7 +1555,7 @@ export class AffiliateLinkService {
         dummyCode: 'SHOP15'
     },
     'nextory': {
-        url: 'https://go.redirectingat.com/?id=302650X1790655&url=https%3A%2F%2Fwww.nextory.nl%2F',
+        url: 'https://wgl.io/tbq9e9l6',
         dummyCode: 'OFF10'
     },
     'oglmove': {
@@ -1727,7 +1727,7 @@ export class AffiliateLinkService {
         dummyCode: '10ACTIE'
     },
     'lyko': {
-        url: '',
+        url: 'https://ion.lyko.com/t/t?a=1536994461&as=2091458876&t=2&tk=1',
         dummyCode: 'EXTRA10'
     },
     'maevenart': {
@@ -2169,6 +2169,46 @@ export class AffiliateLinkService {
     'flowsteamofficial': {
         url: 'https://tidd.ly/4wX67rJ',
         dummyCode: 'DAHLES'
+    },
+    'jako': {
+        url: 'https://wgl.io/qlp3af1d',
+        dummyCode: 'SHOP10'
+    },
+    'bymax': {
+        url: 'https://wgl.io/rj7asog3',
+        dummyCode: 'ACTIE15'
+    },
+    'clinicdress': {
+        url: 'https://wgl.io/d0d0omkd',
+        dummyCode: 'ACTIE10'
+    },
+    'livom': {
+        url: 'https://wgl.io/vb4t0th1',
+        dummyCode: 'SHOP15'
+    },
+    'asbascomputers': {
+        url: 'https://wgl.io/bt3cqldb',
+        dummyCode: 'COMP10'
+    },
+    'maxbadkamers': {
+        url: 'https://wgl.io/3j1fj29s',
+        dummyCode: 'SHOP10'
+    },
+    'personalsurprise': {
+        url: 'https://wgl.io/rqhl1942',
+        dummyCode: 'ACTIE10'
+    },
+    'produo': {
+        url: 'https://wgl.io/8pkq6ag8',
+        dummyCode: 'SHOP15'
+    },
+    'sneaxx': {
+        url: 'https://wgl.io/oer4qmqa',
+        dummyCode: '10OFF'
+    },
+    'testjegezondheid': {
+        url: 'https://wgl.io/6bm927ab',
+        dummyCode: 'ACTIE10'
     },
   };
 

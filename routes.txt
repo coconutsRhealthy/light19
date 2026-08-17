@@ -25,6 +25,7 @@
 /aeg
 /aelfriceden
 /aelfriceden.com
+/aestheticwolf
 /ag1
 /agradi.official
 /agtronica
@@ -75,6 +76,7 @@
 /aromadiffusing.nl
 /aromatiqueshop.nl
 /artofmats
+/asbascomputers
 /ashleysboutiique
 /asos
 /assem
@@ -211,6 +213,7 @@
 /bylashbabe
 /bylouashop
 /byluvera.nl
+/bymax
 /byrenee.nl
 /cabaia
 /cabaulifestyle
@@ -253,6 +256,7 @@
 /clearsmile
 /clearsmile.nl
 /cleenlab
+/clinicdress
 /closetvanval.nl
 /cloudpillo.nl
 /clovira.creations
@@ -287,7 +291,6 @@
 /cottoncandykids
 /cottonclub
 /coursera
-/cozygirlcandles
 /cozyinterior
 /creamyfabrics
 /createyourhome.nl
@@ -355,6 +358,7 @@
 /dogwithamission
 /dolfinarium
 /dominos
+/domo
 /donchellaclothing
 /donder
 /donnay
@@ -410,7 +414,6 @@
 /elevatedfashion.eu
 /elinerosinajewelry
 /elisestore
-/elite.vodka
 /ellos
 /elsuvon
 /elvou
@@ -423,7 +426,6 @@
 /epplejeck
 /equalite.thelabel
 /ersanails
-/escaperoomzevenhuizen
 /esn
 /essenzahome
 /etos
@@ -512,6 +514,7 @@
 /freciousslowjuice
 /freddelabretoniere
 /freechoice
+/freesoul
 /frenkiesfashion
 /frenkylewisdogcare
 /freyara
@@ -548,8 +551,8 @@
 /glowmode
 /glutespop
 /glutespop.com
-/goated
 /goayo.nl
+/gobananas
 /goboony
 /goedgemerkt
 /goedkoopste-supermarkt
@@ -662,9 +665,9 @@
 /inglot
 /inktweb
 /innercircle
-/innerstate
 /inokastudio
 /insentials.supplements
+/insentialssupplements
 /insta360
 /intergard
 /internetslagerij
@@ -677,6 +680,7 @@
 /ixxi
 /jackery
 /jackysue.official
+/jako
 /jardinvue
 /jbl
 /jdsports
@@ -751,6 +755,7 @@
 /leukstetickets
 /levis
 /lichtenmeubels
+/lieks_home
 /lift.lake
 /lilatelier
 /linda.trui
@@ -761,6 +766,7 @@
 /little_monkeez.nl
 /littledutch
 /livin24
+/livom
 /lizetbeek_shop
 /lkbennett
 /lkswimwear
@@ -778,7 +784,6 @@
 /loragal_eshop
 /lounge by zalando
 /loungeunderwear
-/lovd_store
 /lovebylily
 /lovelysbyheleen
 /lucardi
@@ -796,6 +801,7 @@
 /luxuryescapes
 /luxuryfragrances.nl
 /lycamobile
+/lyfted
 /lyko
 /lzclinics
 /madlady
@@ -827,6 +833,7 @@
 /massivewood_
 /matchu
 /mauihair
+/maxbadkamers
 /maxbenjamin
 /maxicosi
 /mayafreya
@@ -846,6 +853,7 @@
 /mijnhummeltje
 /milezbracelets
 /millarovekamp
+/milrukids
 /mimamsterdam
 /mimmti.com
 /mimshoes
@@ -885,7 +893,6 @@
 /myitalianbracelet
 /myjewellery
 /myka
-/mykinybrandburkini
 /myproteinnl
 /mysample.nl
 /mysteryvoetbalbox
@@ -914,7 +921,6 @@
 /ninjakitchen
 /nkgellak
 /noa.sportsnl
-/noelie
 /nolimithair.nl
 /nolten
 /nomadesim
@@ -947,6 +953,7 @@
 /oliveyoungglobal
 /oliviakate
 /olivida.nl
+/olunaya.official
 /ommerland
 /omoda
 /on
@@ -988,7 +995,6 @@
 /parfumania
 /parfumdreams.nl
 /parfumerie
-/parfumify_official
 /parfumswinkel
 /parisactivewear
 /partydeco.nl
@@ -1000,6 +1006,7 @@
 /peek&cloppenburg
 /peintagone_nl
 /perfumetrader
+/personalsurprise
 /peterhahn
 /petree
 /petsecur
@@ -1044,6 +1051,7 @@
 /primevideo
 /printabout
 /privacy-policy
+/produo
 /proglow
 /proshop
 /proteinicedcoffee
@@ -1078,7 +1086,6 @@
 /repeatcashmere
 /revitaltrax
 /rienthelabel
-/rif010.nl
 /rifcare
 /rihoas
 /ripstar_travel
@@ -1126,6 +1133,7 @@
 /schuurman schoenen
 /schuurman-schoenen
 /scorinliving
+/scorpify
 /scottysdoggoods
 /seamollybikini
 /secretsales
@@ -1143,7 +1151,6 @@
 /shaporashein
 /sharkclean
 /sharkclean.nl
-/sharkninja.nl
 /sheclothes
 /shein
 /shesaidyes_official
@@ -1183,7 +1190,9 @@
 /smeg
 /smplskincare
 /sneakin
+/sneaxx
 /snipes
+/snowworld
 /snuggs
 /softsundays
 /soholife
@@ -1262,7 +1271,7 @@
 /suuksess
 /svibe
 /swapan
-/swapfiets
+/sweetcraving
 /swehealth
 /swiefies
 /swimessentials
@@ -1294,6 +1303,7 @@
 /tenways
 /terstal
 /tessv
+/testjegezondheid
 /teva
 /teveeo
 /teveo
@@ -1413,7 +1423,6 @@
 /vevor
 /vibe
 /vidaxl
-/vigorbuy
 /vikingdirect
 /vildthelabel
 /vimasantorini
@@ -1478,6 +1487,7 @@
 /wizzimo_store
 /wolfpak.official
 /womensbest
+/woodwick
 /woood
 /workliving.nl
 /worthit
@@ -1512,7 +1522,6 @@
 /zaschahair
 /zavvi
 /zazanederland
-/zee.belgium
 /zelesta.nl
 /zenggi
 /zenhotels
@@ -1523,14 +1532,13 @@
 /ziggo
 /ziipbeauty
 /zinzi
-/zinzytoys
 /zippit
 /zizzifashion
+/zoescosmetics
 /zolunalighting
 /zone2club
 /zonneschermdoek.nl
 /zooplus.nl
-/zoorie.com
 /zorgkiezer
 /zumub
 /zwilling
