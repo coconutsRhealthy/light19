@@ -51,6 +51,12 @@ const AFFILIATE_SERVICE_PATH = path.join(ROOT, 'src/app/services/affiliate-link.
 // per-shop value: there is nothing shop-specific to say when you have no offer.
 const NEWSLETTER_CODE = 'aanmelden voor nieuwsbrief';
 
+// Signing up for a shop's newsletter is worth ~10% off a first order almost everywhere,
+// so the row advertises 10% and the card renders "10% korting". Unlike the invented codes
+// this replaced, the number is not derived from anything — it is the standing value of
+// the offer we are actually making, and it is the same for every shop.
+const NEWSLETTER_VALUE = '10';
+
 // The "zzz" column is the influencer handle, blanked out before publishing. It no longer
 // exists in the feed, but the components and fill-routes.js still split on commas by
 // position, so the placeholder has to stay in the line we write.
@@ -236,7 +242,7 @@ async function main() {
     fallbackShops.push(slug);
   }
   const newsletterLines = fallbackShops.map(
-    slug => `${slug}, ${NEWSLETTER_CODE}, , ${ANON_PLACEHOLDER}, ${newsletterDate(buildDate)}`
+    slug => `${slug}, ${NEWSLETTER_CODE}, ${NEWSLETTER_VALUE}, ${ANON_PLACEHOLDER}, ${newsletterDate(buildDate)}`
   );
 
   // Injected rows go last: the feed is newest-first, and consumers lean on that ordering
