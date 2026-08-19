@@ -15,9 +15,20 @@
 <!-- <app-waitlist-bar></app-waitlist-bar> -->
 
 <!-- Only one bar occupies this slot at a time. Two stacked announcement bars
-     would push the navbar off a phone screen, so re-enabling the waitlist bar
-     above means retiring this one. -->
-<app-boodschappen-bar></app-boodschappen-bar>
+     would push the navbar off a phone screen, so re-enabling either bar means
+     retiring the other. -->
+
+<!-- Boodschappen bar taken offline 2026-08-19. Ran 11-18 August from the navbar,
+     so it appeared on every page. It drew 41 clicks against 14.665 sessions —
+     0,28%, and 0,30% of the 7.673 homepage sessions — which did not justify a
+     permanent slot above the navbar on our highest-value page. It was the only
+     real traffic source /goedkoopste-supermarkt had (95 sessions, of which ~17
+     landed directly and 1 came from search), so that page now runs on its SEO
+     alone; the ranking bet is deliberately left to play out on its own.
+     Re-enable by uncommenting this line and the import in navbar.component.ts:
+     the component and its GA events (boodschappen_bar_click,
+     boodschappen_search, boodschappen_product_click) are all still wired up. -->
+<!-- <app-boodschappen-bar></app-boodschappen-bar> -->
 
 <nav class="lg:tw-sticky lg:tw-top-0 tw-z-30 tw-bg-cream/90 tw-backdrop-blur-md tw-border-b tw-border-ink/10 tw-text-ink tw-font-body">
     <div class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-6 lg:tw-px-8">
