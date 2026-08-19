@@ -302,6 +302,7 @@ export const V2_CONTENT_SLUGS: ReadonlySet<string> = new Set([
   'ninjakitchen',
   'nkgellak',
   'nolimithair.nl',
+  'notino',
   'nounthestudio',
   'numsy.nl',
   'oace',
