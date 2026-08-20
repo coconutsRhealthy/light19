@@ -557,7 +557,6 @@ export class AffiliateLinkService {
     'produo': 'https://wgl.io/8pkq6ag8',
     'sneaxx': 'https://wgl.io/oer4qmqa',
     'testjegezondheid': 'https://wgl.io/6bm927ab',
-    'uniqlo': 'https://tidd.ly/4wBqQ3S',
   };
 
   constructor() { }
