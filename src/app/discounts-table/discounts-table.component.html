@@ -37,6 +37,32 @@
     </div>
   </section>
 
+  <!-- ========================= SPONSORED BANNER ========================= -->
+  <!-- Hand-placed campaign banner, same width as the hero/search field above.
+       Artwork is a 970x250 strip: on mobile the box is squeezed to 9/4 and
+       object-cover crops the outer models away, keeping the logo + claim +
+       red bar (which live in the middle ~58% of the source) fully visible.
+       Hidden while searching, like the "Nieuwste codes" header. -->
+  @if (!isSearching) {
+    <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-pt-6 sm:tw-pt-8">
+      <a
+        href="https://www.uniqlo.com/nl/nl/"
+        target="_blank"
+        rel="noopener sponsored"
+        (click)="trackBannerClick('uniqlo')"
+        class="tw-block tw-rounded-2xl tw-overflow-hidden tw-border tw-border-ink/10 tw-shadow-[0_16px_40px_rgba(67,48,46,0.07)] hover:tw-shadow-md tw-transition"
+      >
+        <img
+          src="/banners/uniqlo-back-to-school.webp"
+          alt="Uniqlo — Back to School &amp; Work, tijdelijke aanbiedingen"
+          width="970" height="250"
+          decoding="async"
+          class="tw-w-full tw-aspect-[9/4] sm:tw-aspect-[97/25] tw-object-cover tw-object-center"
+        />
+      </a>
+    </section>
+  }
+
   <!-- Search-aware order: while typing, the "Nieuwste codes" grid (below) jumps
        above these editorial sections, which drop beneath it. Pure CSS order via
        isSearching — no DOM move, reverts instantly when the field is cleared. -->
