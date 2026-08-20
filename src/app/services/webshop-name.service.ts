@@ -27,7 +27,8 @@ export class WebshopNameService {
     'stevemaddeneu': 'Steve Madden',
     'wefashionstories': 'WE Fashion',
     'zonnebrillen.com': 'Zonnebrillen.com',
-    'aliexpress': 'AliExpress'
+    'aliexpress': 'AliExpress',
+    'uniqlo': 'UNIQLO'
   };
 
   constructor() { }
