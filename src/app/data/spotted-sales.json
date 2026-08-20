@@ -7,6 +7,10 @@
   ],
   "24uomo": [
     {
+      "text": "10% korting op eerste bestelling",
+      "date": "2026-08-18"
+    },
+    {
       "text": "Gratis zonnebril t.w.v. €59,95 bij eerste bestelling",
       "date": "2026-06-19"
     }
@@ -89,6 +93,10 @@
   ],
   "adventure.beds": [
     {
+      "text": "8% extra korting met kortingscode ZOMERDEAL",
+      "date": "2026-08-18"
+    },
+    {
       "text": "Tijdelijke actie met gratis levering en montage ter waarde van €149",
       "date": "2026-08-17"
     },
@@ -146,6 +154,10 @@
     }
   ],
   "albelli": [
+    {
+      "text": "35% korting op fotoboeken vanaf €35 met code ZOMERREIS35, t/m 26-08-2026",
+      "date": "2026-08-19"
+    },
     {
       "text": "30% korting op fotoboeken, wanddecoratie en fotocadeaus vanaf €35 met code AUGUSTUS30, t/m 17-08-2026",
       "date": "2026-08-11"
@@ -251,6 +263,10 @@
   ],
   "anthropologie": [
     {
+      "text": "Tot 30% korting op geselecteerde woonproducten, beperkte tijd",
+      "date": "2026-08-20"
+    },
+    {
       "text": "Uitverkoop met kortingen tot 70%",
       "date": "2026-08-17"
     },
@@ -286,6 +302,10 @@
     }
   ],
   "asos": [
+    {
+      "text": "10% extra korting op de hele sale met code EXTRA10, t/m 19 augustus 09:00",
+      "date": "2026-08-18"
+    },
     {
       "text": "Tijdelijke einde zomer korting op nieuwe items zolang de voorraad strekt",
       "date": "2026-08-16"
@@ -431,6 +451,10 @@
   ],
   "bodylab.nl": [
     {
+      "text": "Tot 60% korting tijdens de Summer Sale",
+      "date": "2026-08-18"
+    },
+    {
       "text": "22% korting op alle andere BODYLAB-producten met code SUMMER22",
       "date": "2026-08-02"
     }
@@ -551,6 +575,10 @@
   ],
   "charlottetilbury": [
     {
+      "text": "Tot 45% korting op beauty kits",
+      "date": "2026-08-18"
+    },
+    {
       "text": "Gratis full-size Pillow Talk Lip + Cheek Glow (t.w.v. €49) bij een besteding vanaf €120 voor loyalty-leden, t/m 20 augustus",
       "date": "2026-08-14"
     },
@@ -668,6 +696,10 @@
     }
   ],
   "danielwellington": [
+    {
+      "text": "10% korting op eerste aankoop bij inschrijving",
+      "date": "2026-08-19"
+    },
     {
       "text": "Tot 40% korting, laatste uren van de uitverkoop",
       "date": "2026-08-15"
@@ -813,12 +845,12 @@
   ],
   "eeveveofficial": [
     {
-      "text": "Nieuwe aanbieding met €5 korting",
-      "date": "2026-08-10"
+      "text": "10% korting bij aankoop van een knoeimat samen met een speelmat",
+      "date": "2026-08-19"
     },
     {
-      "text": "10% korting bij aankoop van een knoeimat samen met een speelmat",
-      "date": "2026-08-07"
+      "text": "Nieuwe aanbieding met €5 korting",
+      "date": "2026-08-10"
     },
     {
       "text": "10% korting bij toevoegen van een knoeimat aan je speelmat",
@@ -834,6 +866,10 @@
     }
   ],
   "elevatedfashion.eu": [
+    {
+      "text": "25% korting op alles tijdens de Birthday Sale",
+      "date": "2026-08-18"
+    },
     {
       "text": "Gratis verzending vanaf €100",
       "date": "2026-06-24"
@@ -1059,6 +1095,18 @@
   ],
   "flexispot": [
     {
+      "text": "Extra €100 korting in augustus op speciale 10-jarige jubileumeditie Align",
+      "date": "2026-08-20"
+    },
+    {
+      "text": "100% cashback actie start op 24 augustus om 10:00 uur",
+      "date": "2026-08-19"
+    },
+    {
+      "text": "Tot 50% korting op E7 Plus Max (E7Q) van 20 tot 30 augustus",
+      "date": "2026-08-18"
+    },
+    {
       "text": "Extra korting van 100 euro in augustus op het speciale 10-jarig jubileummodel Align",
       "date": "2026-08-13"
     },
@@ -1165,6 +1213,10 @@
   ],
   "gutsgusto": [
     {
+      "text": "50% korting op de bestseller playsuit in twee kleuren, alleen vandaag",
+      "date": "2026-08-18"
+    },
+    {
       "text": "50% korting op de bestselling co-ord, alleen vandaag",
       "date": "2026-08-17"
     },
@@ -1214,6 +1266,10 @@
     }
   ],
   "haarshop": [
+    {
+      "text": "DonderDagDeal: 50% extra korting op de sale tijdens de Summer Sale, alleen vandaag",
+      "date": "2026-08-20"
+    },
     {
       "text": "15% extra korting op haarmaskers, leave-ins en haartreatments met code SUN, alleen vandaag",
       "date": "2026-08-13"
@@ -1283,6 +1339,10 @@
   ],
   "hellofresh.nl": [
     {
+      "text": "12 maaltijden voor €4,62 per persoon en 6 gratis HKliving-borden ter waarde van €98",
+      "date": "2026-08-17"
+    },
+    {
       "text": "Tot €90 korting op avondeten",
       "date": "2026-06-26"
     }
@@ -1313,7 +1373,17 @@
       "date": "2026-04-21"
     }
   ],
+  "hivefamilyplanner": [
+    {
+      "text": "€50 korting met code BACKTOSCHOOL voor Back to School actie",
+      "date": "2026-08-18"
+    }
+  ],
   "hollandandbarrett": [
+    {
+      "text": "1+1 gratis op sportproducten, van proteinepoeders en elektrolyten tot creatine en energy gels",
+      "date": "2026-08-19"
+    },
     {
       "text": "Tot 60% korting en 2+1 gratis en 1+1 gratis acties tijdens de zomeropruiming",
       "date": "2026-08-12"
@@ -1422,6 +1492,14 @@
     }
   ],
   "iciparisxl": [
+    {
+      "text": "20% korting op bijna alle geuren voor Beauty Members, met code NLD-GEUR20 online, 17 t/m 30 augustus",
+      "date": "2026-08-19"
+    },
+    {
+      "text": "Mix & Match: 25% korting op bijna alles vanaf 2 stuks",
+      "date": "2026-08-17"
+    },
     {
       "text": "€5 kassakorting bij een besteding vanaf €60, alleen op 16 augustus, online en in de app",
       "date": "2026-08-16"
@@ -1697,6 +1775,12 @@
       "date": "2026-07-20"
     }
   ],
+  "kossonutrition.nl": [
+    {
+      "text": "Tot 25% korting op alles tijdens Back to the Gym Sale op 25 augustus om 19:00",
+      "date": "2026-08-17"
+    }
+  ],
   "kpactive": [
     {
       "text": "25% korting tijdens Myron's Birthday Sale",
@@ -1732,6 +1816,10 @@
     }
   ],
   "leolive": [
+    {
+      "text": "Nieuwe actie waarbij je kunt draaien aan een wiel na invullen van je e-mailadres om een cadeau te winnen.",
+      "date": "2026-08-17"
+    },
     {
       "text": "50% korting op strohoeden",
       "date": "2026-07-30"
@@ -1800,6 +1888,10 @@
     }
   ],
   "lookfantastic": [
+    {
+      "text": "30% korting op K-Beauty van onder meer Medicube, LANEIGE, Beauty of Joseon en Anua met code KBEAUTY",
+      "date": "2026-08-18"
+    },
     {
       "text": "Koopzondag: 25% korting op een grote selectie beauty, plus een Sol de Janeiro-cadeau",
       "date": "2026-08-16"
@@ -2087,6 +2179,12 @@
       "date": "2026-08-06"
     }
   ],
+  "maniacnails": [
+    {
+      "text": "Gratis Turtle of nagelknipper bij aankoop van 3 nageldesigns",
+      "date": "2026-08-17"
+    }
+  ],
   "mayafreya": [
     {
       "text": "Maak kans om 3 designs naar keuze te winnen",
@@ -2134,6 +2232,14 @@
     }
   ],
   "micas": [
+    {
+      "text": "Elke draai wint korting: 50%, 15% of $20 korting",
+      "date": "2026-08-20"
+    },
+    {
+      "text": "Einde van seizoen uitverkoop tot 80% korting",
+      "date": "2026-08-19"
+    },
     {
       "text": "Tijdelijke aanbieding: koop 3, krijg 1 gratis",
       "date": "2026-08-13"
@@ -2329,6 +2435,10 @@
   ],
   "ninjakitchen": [
     {
+      "text": "Extra 15% korting vanaf €199 met code SW15 bovenop meer dan 25% korting.",
+      "date": "2026-08-19"
+    },
+    {
       "text": "20% korting op alle skincareproducten met code SKIN20, alleen dit weekend",
       "date": "2026-08-14"
     },
@@ -2345,7 +2455,17 @@
       "date": "2026-04-14"
     }
   ],
+  "nolimithair.nl": [
+    {
+      "text": "15% korting met code SUMMER15 geldig tot 31 augustus",
+      "date": "2026-08-19"
+    }
+  ],
   "notino": [
+    {
+      "text": "Tot 20% zomerkorting op geselecteerde producten, geldig van 17 t/m 23-08-2026",
+      "date": "2026-08-17"
+    },
     {
       "text": "23% nachtkorting op make-up met code night, alleen op 13-08-2026",
       "date": "2026-08-13"
@@ -2645,6 +2765,14 @@
   ],
   "parfumdreams.nl": [
     {
+      "text": "€15 korting in de app en €10 korting op de website bij aanmelding voor de nieuwsbrief",
+      "date": "2026-08-19"
+    },
+    {
+      "text": "Staffelkorting: €6 vanaf €49 met code EUR6, €9 vanaf €69 met EUR9, €14 vanaf €99 met EUR14 en in de app €19 vanaf €129 met EUR19, t/m 19-08-2026",
+      "date": "2026-08-18"
+    },
+    {
       "text": "Fri-yay Beauty Deal: 13% korting op bijna alles met code FRIDAY, ook op veel afgeprijsde artikelen, alleen vandaag",
       "date": "2026-08-14"
     },
@@ -2678,6 +2806,10 @@
     }
   ],
   "paulaschoice.nl": [
+    {
+      "text": "20% korting op 3 mini's plus gratis verzending",
+      "date": "2026-08-20"
+    },
     {
       "text": "20% korting op alles tijdens Friends & Family actie",
       "date": "2026-07-25"
@@ -2823,6 +2955,10 @@
   ],
   "plutosport": [
     {
+      "text": "Tot 60% korting op hockeyschoenen, hockeysticks en accessoires",
+      "date": "2026-08-18"
+    },
+    {
       "text": "Back to School: tot 60% korting op kids schoenen van onder meer Nike, Vans, Asics en Adidas",
       "date": "2026-08-14"
     },
@@ -2849,6 +2985,14 @@
   ],
   "praxis": [
     {
+      "text": "30% korting op binnen- en buitendeuren vanaf €100",
+      "date": "2026-08-17"
+    },
+    {
+      "text": "25% korting op Philips buitenverlichting",
+      "date": "2026-08-17"
+    },
+    {
       "text": "Tot 50% korting op geselecteerde zonwering in de op=opruiming",
       "date": "2026-08-13"
     },
@@ -2867,16 +3011,16 @@
   ],
   "rawnutrition": [
     {
+      "text": "25% korting op je eerste bestelling",
+      "date": "2026-08-18"
+    },
+    {
       "text": "Gratis Cream of Rice bij bestellingen vanaf $35",
       "date": "2026-08-12"
     },
     {
       "text": "Koop 1 pre-workout, krijg 50% korting op de 2e met code RAW",
       "date": "2026-08-11"
-    },
-    {
-      "text": "25% korting op je eerste bestelling",
-      "date": "2026-08-09"
     }
   ],
   "rihoas": [
@@ -3039,6 +3183,10 @@
   ],
   "shoeby": [
     {
+      "text": "Verhoogde korting tot 75% op alle sale artikelen",
+      "date": "2026-08-19"
+    },
+    {
       "text": "Nieuwe sale met kortingen tot 60% op dames-, heren- en kinderkleding",
       "date": "2026-07-15"
     },
@@ -3074,6 +3222,10 @@
     }
   ],
   "siroko": [
+    {
+      "text": "Flash sale met tot 45% korting van 17 augustus 8:00 tot 24 augustus 23:59",
+      "date": "2026-08-17"
+    },
     {
       "text": "Flash sale met tot 70% korting van 10 augustus 8:00 tot 17 augustus 23:59",
       "date": "2026-08-11"
@@ -3211,6 +3363,12 @@
       "date": "2026-04-07"
     }
   ],
+  "sparkleanddream.nl": [
+    {
+      "text": "12% korting met code SUMMER2026",
+      "date": "2026-08-19"
+    }
+  ],
   "street-one.nl": [
     {
       "text": "20% korting voor leden die zich nu registreren",
@@ -3218,6 +3376,14 @@
     }
   ],
   "stronger": [
+    {
+      "text": "20% korting bij aankoop van 2 of meer geselecteerde hardloopproducten, 20 t/m 27 augustus",
+      "date": "2026-08-20"
+    },
+    {
+      "text": "Extra 10% korting tijdens de laatste dagen van de Summer Sale",
+      "date": "2026-08-17"
+    },
     {
       "text": "15% korting op eerste bestelling bij aanmaken account",
       "date": "2026-08-06"
@@ -3248,6 +3414,14 @@
     }
   ],
   "stylekorean": [
+    {
+      "text": "Laatste kans uitverkoop tot 95% korting op huidverzorging, make-up en haar & lichaam",
+      "date": "2026-08-19"
+    },
+    {
+      "text": "20% korting op Green Tea Fresh Sunscreen met code DRASM06-SCG",
+      "date": "2026-08-18"
+    },
     {
       "text": "Dagelijkse $1 aanbieding, elke dag een nieuwe $1 deal",
       "date": "2026-07-20"
@@ -3331,6 +3505,10 @@
   ],
   "tefal": [
     {
+      "text": "25% korting op keramische pannen tot 13 september 2026",
+      "date": "2026-08-18"
+    },
+    {
       "text": "15% korting op Dolci en Freezi ijsmachines met kortingscode WARM15",
       "date": "2026-08-11"
     }
@@ -3365,6 +3543,12 @@
       "date": "2026-06-22"
     }
   ],
+  "thegelexpert": [
+    {
+      "text": "Mix & Match sale geldig tot 23 augustus",
+      "date": "2026-08-19"
+    }
+  ],
   "to-be-dressed.nl": [
     {
       "text": "Zomeruitverkoop met tot 70% korting",
@@ -3396,6 +3580,10 @@
     }
   ],
   "ullapopken.nl": [
+    {
+      "text": "20% korting op jassen met code RAIN20",
+      "date": "2026-08-18"
+    },
     {
       "text": "10% korting op alles plus gratis verzending en 5% extra korting voor Top Members met code WEEKEND",
       "date": "2026-08-14"
@@ -3466,7 +3654,7 @@
   "upfront": [
     {
       "text": "10% korting actie",
-      "date": "2026-07-01"
+      "date": "2026-08-19"
     },
     {
       "text": "De eerste 500 bestellingen op 20 mei om 20:00 krijgen tot €100 terug.",
@@ -3785,6 +3973,10 @@
   ],
   "yoursurprise": [
     {
+      "text": "20% korting op alle cadeaus voor haar, t/m 23 augustus",
+      "date": "2026-08-18"
+    },
+    {
       "text": "25% korting op alle badjassen en kimono's, alleen op 16 augustus",
       "date": "2026-08-16"
     }
@@ -3804,6 +3996,10 @@
     }
   ],
   "zalando": [
+    {
+      "text": "Tot 50% korting op de musthaves van het nieuwe seizoen, t/m 24-08-2026 23:59",
+      "date": "2026-08-19"
+    },
     {
       "text": "Tot 50% meer waarde bij verkoop van je items en ontvang een cadeaubon",
       "date": "2026-08-14"
