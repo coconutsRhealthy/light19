@@ -280,8 +280,9 @@ export class DiscountsTableComponent implements OnInit {
   }
 
   /** The sponsored banner under the search field. Its own GA event so banner
-   *  clicks stay separable from the code cards and the logo strip; the anchor's
-   *  href does the navigating (plain external link, no affiliate redirect). */
+   *  clicks stay separable from the code cards and the logo strip. The affiliate
+   *  link sits on the anchor's href, so the anchor navigates on its own — no
+   *  AffiliateLinkService lookup and no brand-page redirect like the code cards. */
   trackBannerClick(company: string): void {
     this.visitorProfile.trackCompanyClick('company_click_homepage', company);
     this.analyticsEventService.sendEventToGa('HomepageBanner', company);
