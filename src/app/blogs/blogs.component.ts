@@ -40,6 +40,16 @@ export class BlogsComponent {
 
   posts: BlogPost[] = [
     {
+      slug: 'uniqlo-actie-augustus',
+      category: 'Fashion & Style',
+      title: 'UNIQLO actie, onze 5 favoriete pieces met korting',
+      excerpt: 'Van 20 t/m 30 augustus korting op tientallen items. Dit zijn de vijf pieces die wij zelf in ons mandje leggen — samen 24 euro voordeel.',
+      date: 'Augustus 2026',
+      emoji: '🍂',
+      tint: 'tw-bg-butter',
+      image: '/blog/uniqlo-actie-augustus/parka.webp',
+    },
+    {
       slug: 'uniqlo',
       category: 'Fashion & Style',
       title: 'Uniqlo, 5 zomerpieces die je koel houden',

@@ -1,0 +1,177 @@
+<app-navbar></app-navbar>
+
+<main class="tw-font-body tw-text-ink tw-pb-16">
+
+  <!-- HERO -->
+  <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-6 tw-pt-8 sm:tw-pt-12 tw-pb-2">
+    <!-- Breadcrumb -->
+    <nav class="tw-font-body tw-text-sm tw-text-ink/50 tw-mb-6 tw-flex tw-items-center tw-gap-1.5">
+      <a routerLink="/" class="hover:tw-text-link tw-transition-colors tw-no-underline tw-text-ink/50">Diski</a>
+      <span>/</span>
+      <a routerLink="/blogs" class="hover:tw-text-link tw-transition-colors tw-no-underline tw-text-ink/50">Blogs</a>
+      <span>/</span>
+      <span class="tw-text-ink/70">UNIQLO actie augustus</span>
+    </nav>
+
+    <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-link tw-mb-3">
+      Fashion &amp; Style
+    </div>
+
+    <h1 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl lg:tw-text-5xl tw-tracking-tight tw-leading-tight tw-mb-4">
+      UNIQLO actie: onze 5 favoriete pieces met korting
+    </h1>
+
+    <p class="tw-font-body tw-text-lg tw-text-ink/70 tw-leading-relaxed tw-mb-6">
+      De zomer loopt op z'n eind en dat betekent maar één ding: nieuwe outfitjes. 🍂 UNIQLO geeft van <strong class="tw-font-semibold tw-text-ink">20 tot en met 30 augustus</strong> korting op tientallen items, en dat is goed nieuws.
+    </p>
+
+    <!-- Meta -->
+    <div class="tw-flex tw-items-center tw-gap-3 tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/50">
+      <span>Door <strong class="tw-text-ink/70 tw-font-semibold">Diski</strong></span>
+      <span class="tw-w-1 tw-h-1 tw-rounded-full tw-bg-ink/30"></span>
+      <span>Augustus 2026</span>
+      <span class="tw-w-1 tw-h-1 tw-rounded-full tw-bg-ink/30"></span>
+      <span>3 min leestijd</span>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-6 tw-mt-8 tw-text-ink/80 tw-leading-relaxed">
+
+    <!-- INTRO -->
+    <p class="tw-mb-8">
+      UNIQLO blijft namelijk onze favoriete winkel voor goeie kwaliteit en mooie classics die je jaren draagt. Wij doken in de actielijst en dit zijn de vijf pieces die we zelf in ons mandje leggen. Koop je ze alle vijf, dan bespaar je
+      <strong class="tw-font-semibold tw-text-ink">{{ price(totalSaving) }} euro</strong>.
+    </p>
+
+    <!-- DEAL SUMMARY — the three things a reader wants before scrolling -->
+    <div class="tw-grid tw-grid-cols-1 sm:tw-grid-cols-3 tw-gap-3 tw-mb-10">
+      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 tw-text-center">
+        <div class="tw-font-title tw-text-2xl tw-font-bold tw-text-link tw-leading-none">20 t/m 30 aug</div>
+        <div class="tw-text-xs tw-text-ink/55 tw-mt-1">looptijd van de actie</div>
+      </div>
+      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 tw-text-center">
+        <div class="tw-font-title tw-text-2xl tw-font-bold tw-text-link tw-leading-none">Geen code</div>
+        <div class="tw-text-xs tw-text-ink/55 tw-mt-1">korting wordt automatisch verrekend</div>
+      </div>
+      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-4 tw-text-center">
+        <div class="tw-font-title tw-text-2xl tw-font-bold tw-text-link tw-leading-none">€{{ price(totalSaving) }}</div>
+        <div class="tw-text-xs tw-text-ink/55 tw-mt-1">voordeel op alle vijf de pieces</div>
+      </div>
+    </div>
+
+    <!-- PICKS -->
+    <section id="picks" class="tw-mb-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-text-ink tw-mb-2">Onze 5 favorieten uit de actie</h2>
+      <p class="tw-text-ink/55 tw-mb-8">Vijf pieces, elk met een eigen reden om erbij te horen.</p>
+
+      @for (p of picks; track p.num) {
+        <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-overflow-hidden tw-mb-6">
+          <div class="md:tw-flex">
+            <div class="md:tw-w-48 tw-flex-shrink-0 tw-bg-cream tw-flex tw-items-center tw-justify-center tw-p-4">
+              <img [src]="p.image" [alt]="p.alt" loading="lazy" width="240" height="320" class="tw-w-full tw-max-w-[160px] tw-h-auto tw-object-contain tw-rounded-lg">
+            </div>
+            <div class="tw-p-6">
+              <div class="tw-font-label tw-uppercase tw-tracking-label tw-text-[10px] tw-text-ink/45 tw-mb-1">{{ p.num }} van 05</div>
+              <h3 class="tw-font-title tw-font-bold tw-text-lg tw-tracking-tight tw-mb-2">{{ p.name }}</h3>
+
+              <!-- Price: old struck through, new prominent, saving as a badge -->
+              <div class="tw-flex tw-items-center tw-gap-2.5 tw-mb-3 tw-flex-wrap">
+                <span class="tw-text-sm tw-text-ink/45 tw-line-through">€{{ price(p.oldPrice) }}</span>
+                <span class="tw-font-title tw-font-bold tw-text-xl tw-tracking-tight tw-text-ink">€{{ price(p.newPrice) }}</span>
+                <span class="tw-font-label tw-uppercase tw-tracking-label tw-text-[9px] tw-text-ink tw-bg-butter tw-px-2 tw-py-0.5 tw-rounded-full">
+                  €{{ price(p.oldPrice - p.newPrice) }} korting
+                </span>
+              </div>
+
+              <p class="tw-text-ink/70 tw-text-sm tw-mb-4">{{ p.body }}</p>
+
+              <div class="tw-bg-cream tw-border tw-border-ink/10 tw-rounded-lg tw-px-3 tw-py-2 tw-text-xs tw-text-ink/60 tw-mb-4">
+                <strong class="tw-text-ink tw-font-semibold">Tip van de redactie:</strong> {{ p.tip }}
+              </div>
+
+              <!-- Product card 01 doubles as the entry point to the wider outerwear edit -->
+              @if (p.num === '01') {
+                <p class="tw-text-xs tw-text-ink/55 tw-mb-4">
+                  Meer jassen vergelijken? Bekijk de
+                  <a href="https://www.awin1.com/cread.php?awinmid=60911&awinaffid=1870794&campaign=BTSdiski&ued=https%3A%2F%2Fwww.uniqlo.com%2Fnl%2Fnl%2Fwomen%2Fouterwear%2Fblousons"
+                     target="_blank" rel="noopener sponsored" class="tw-underline hover:tw-text-link tw-transition-colors">volledige outerwear collectie van UNIQLO</a>.
+                </p>
+              }
+              @if (p.num === '03') {
+                <p class="tw-text-xs tw-text-ink/55 tw-mb-4">
+                  Bekend uit onze
+                  <a routerLink="/blogs/uniqlo" class="tw-underline hover:tw-text-link tw-transition-colors">AIRism zomereditie</a>.
+                </p>
+              }
+
+              <a [href]="p.link" target="_blank" rel="noopener sponsored" class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-ink hover:tw-opacity-90 tw-text-cream tw-font-semibold tw-text-sm tw-px-4 tw-py-2 tw-rounded-full tw-transition tw-no-underline">
+                Bekijk bij UNIQLO
+                <svg class="tw-w-3.5 tw-h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </section>
+
+    <!-- SLOT -->
+    <section class="tw-mb-10">
+      <p class="tw-mb-4">
+        De actie loopt van 20 tot en met 30 augustus en de korting wordt automatisch verrekend, je hebt dus geen code nodig. Populaire maten zijn snel weg, dus wacht niet tot het laatste weekend.
+      </p>
+      <p class="tw-mb-6">
+        Meer besparen? Check onze <a routerLink="/" class="tw-underline hover:tw-text-link tw-transition-colors">beste deals van vandaag</a>, we spotten dagelijks nieuwe acties van tientallen webshops.
+      </p>
+
+      <!-- Pull quote -->
+      <div class="tw-border-l-4 tw-border-link tw-bg-sky/20 tw-rounded-r-2xl tw-px-5 tw-py-4">
+        <p class="tw-italic tw-text-ink">Geen code, geen gedoe: de actieprijs staat er gewoon al. Het enige wat telt is dat je maat er nog is.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="tw-mb-10">
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-text-ink tw-mb-6">Veelgestelde vragen</h2>
+      <div class="tw-space-y-6">
+        @for (item of faq; track item.q) {
+          <div>
+            <h3 class="tw-font-title tw-font-bold tw-text-lg tw-text-ink tw-mb-2">{{ item.q }}</h3>
+            <p>{{ item.a }}</p>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="tw-bg-ink tw-rounded-3xl tw-p-8 tw-text-cream tw-text-center">
+      <p class="tw-font-label tw-uppercase tw-tracking-label tw-text-[11px] tw-text-cream/70 tw-mb-2">Nog t/m 30 augustus</p>
+      <h2 class="tw-font-title tw-font-bold tw-text-2xl sm:tw-text-3xl tw-tracking-tight tw-mb-2">Bekijk de hele actie bij UNIQLO</h2>
+      <p class="tw-text-cream/85 tw-mb-6">Tientallen items tijdelijk in prijs verlaagd — zonder kortingscode, de actieprijs staat er al.</p>
+      <a
+        href="https://www.awin1.com/cread.php?awinmid=60911&awinaffid=1870794&campaign=BTSdiski&ued=https%3A%2F%2Fwww.uniqlo.com%2Fnl%2Fnl%2Fwomen%2Fouterwear%2Fblousons"
+        target="_blank"
+        rel="noopener sponsored"
+        class="tw-inline-flex tw-items-center tw-gap-2 tw-bg-cream tw-text-ink tw-font-bold tw-px-6 tw-py-3 tw-rounded-full hover:tw-opacity-90 tw-transition tw-no-underline"
+      >
+        Shop de actie bij UNIQLO
+        <svg class="tw-w-4 tw-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </div>
+
+    <!-- Tags -->
+    <div class="tw-mt-8 tw-pt-6 tw-border-t tw-border-ink/10">
+      <p class="tw-text-sm tw-text-ink/55 tw-mb-3">Prijzen en beschikbaarheid kunnen variëren. Kijk op uniqlo.com voor de actuele voorraad en prijzen.</p>
+      <div class="tw-flex tw-gap-2 tw-flex-wrap">
+        <span class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1 tw-text-xs tw-text-ink/55">UNIQLO</span>
+        <span class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1 tw-text-xs tw-text-ink/55">Actie</span>
+        <span class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1 tw-text-xs tw-text-ink/55">Back to school</span>
+        <span class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1 tw-text-xs tw-text-ink/55">Najaarsmode</span>
+        <span class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-full tw-px-2.5 tw-py-1 tw-text-xs tw-text-ink/55">Augustus 2026</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<app-footer></app-footer>

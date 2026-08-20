@@ -81,7 +81,7 @@ fs.writeFileSync(manifestPath, manifest, 'utf8');
 // /blogs/uniqlo ended up never prerendered (serving the homepage <title>) while
 // every article was missing from the sitemap. Add a new article to this one list
 // and it gets both.
-const blogRoutes = ['blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'blogs/uniqlo'];
+const blogRoutes = ['blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'blogs/uniqlo', 'blogs/uniqlo-actie-augustus'];
 
 // discoverRoutes is false, so a route missing from routes.txt is never
 // prerendered and the host falls back to the generic index.html.
