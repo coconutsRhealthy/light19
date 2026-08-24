@@ -195,7 +195,7 @@ export class AffiliateLinkService {
     'jdsports': 'https://click.linksynergy.com/deeplink?id=vErUkuRoyhQ&mid=43953&murl=https%3A%2F%2Fwww.jdsports.nl%2F',
     'loungeunderwear': 'https://www.stylink.it/zYq3OUP5p7X',
     'pullandbear': 'https://pzz.to/zxRIfI',
-    'wefashion': '',
+    'wefashion': 'https://adtr.co/fqu8ia',
     'weekday': 'https://www.stylink.it/B0ZlzhNdAAe',
     'yas': 'https://www.stylink.it/RNGo2t6Q110',
     'vakantiepiraten': 'https://www.stylink.it/oPDNeTRbVVo',
@@ -557,6 +557,7 @@ export class AffiliateLinkService {
     'produo': 'https://wgl.io/8pkq6ag8',
     'sneaxx': 'https://wgl.io/oer4qmqa',
     'testjegezondheid': 'https://wgl.io/6bm927ab',
+    'freshnrebel': 'https://clk.tradedoubler.com/click?p=405531&a=3427761&url=https%3A%2F%2Ffreshnrebel.com%2Fnl',
   };
 
   constructor() { }
