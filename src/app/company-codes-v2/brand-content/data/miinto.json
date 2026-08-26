@@ -1,0 +1,81 @@
+{
+  "slug": "miinto",
+  "name": "Miinto",
+  "heroLede": "Miinto is geen gewone webshop maar een marktplaats: honderden zelfstandige modeboetieks uit heel Europa verkopen er hun voorraad, van luxemerken tot lokale labels. Dat verklaart het brede aanbod én de belangrijkste eigenaardigheid — bestel je bij twee boetieks, dan komen er twee pakketten. Op deze pagina lees je hoe dat werkt.",
+  "about": [
+    "Miinto bundelt het aanbod van onafhankelijke modeboetieks in één etalage. De boetieks houden zelf hun voorraad aan, verpakken en versturen; het platform verzorgt de vindbaarheid en de afhandeling. Daardoor staan er artikelen tussen die grote ketens niet voeren, en kom je soms uitverkochte maten toch nog tegen bij een winkel in een ander land.",
+    "Het assortiment omvat dameskleding, herenkleding, kinderkleding, schoenen, tassen en accessoires, sportkleding en een vintage- en tweedehandshoek. Er zijn naar opgave meer dan 3.000 merken, van luxehuizen als Gucci, Prada en Balenciaga tot kleinere designerlabels die per boetiek verschillen.",
+    "Het marktplaatsmodel heeft praktische gevolgen. Bestel je artikelen bij verschillende boetieks, dan worden die apart verzonden, met eigen levertijden en eigen retourzendingen. Retourneren kan volgens het platform binnen veertien dagen. Omdat voorraad en verzending per verkoper verschillen, is het verstandig om per artikel te kijken vanaf waar het komt."
+  ],
+  "why": [
+    {
+      "h": "Voorraad van honderden boetieks tegelijk",
+      "p": "Een maat die overal uitverkocht is, hangt soms nog bij één winkel in Denemarken of Italië. Dat is precies waar een marktplaats voor dit soort mode nuttig is en een gewone webshop tekortschiet."
+    },
+    {
+      "h": "Meer dan 3.000 merken, luxe naast lokaal",
+      "p": "Van de grote luxehuizen tot designerlabels die per boetiek zijn ingekocht. Je kunt daardoor merken tegenkomen die in Nederland nauwelijks verkrijgbaar zijn."
+    },
+    {
+      "h": "Sale-artikelen uit verschillende landen",
+      "p": "Boetieks prijzen op eigen momenten af, dus de kortingen lopen niet gelijk. In de praktijk betekent dat er vrijwel altijd ergens iets in de uitverkoop hangt."
+    },
+    {
+      "h": "Ook vintage en tweedehands",
+      "p": "Naast nieuwe collecties is er een vintage- en pre-owned hoek. Voor wie duurzamer of goedkoper wil kopen zit dat in dezelfde zoekomgeving."
+    }
+  ],
+  "trending": [
+    "Designerkleding uit boetieksale",
+    "Schoenen en sneakers van luxemerken",
+    "Tassen en accessoires",
+    "Vintage en tweedehands items",
+    "Herenmode van kleinere labels",
+    "Kinderkleding van designermerken"
+  ],
+  "codeInfo": [
+    "Een Miinto kortingscode vul je bij het afrekenen in het kortingsveld in. Belangrijk bij een marktplaats: of een code geldt, kan per boetiek en per artikel verschillen, omdat de verkopers hun eigen prijzen en afprijzingen bepalen. Al afgeprijsde artikelen vallen doorgaans buiten een actie.",
+    "De grootste verborgen kostenpost is niet de code maar de verzending. Bestel je drie artikelen bij drie verschillende boetieks, dan zijn dat drie zendingen met elk hun eigen levertijd en, bij een retour, hun eigen retourzending. Kijk daarom per artikel vanaf welke winkel het komt en probeer te bundelen bij één verkoper.",
+    "Reken bij verkopers buiten de EU op mogelijke invoerkosten, en houd er rekening mee dat de retourtermijn van veertien dagen begint te lopen per zending. Bij artikelen die op verschillende momenten aankomen, lopen die termijnen dus niet gelijk."
+  ],
+  "tips": [
+    {
+      "h": "Bundel je bestelling bij één boetiek",
+      "p": "Meerdere artikelen van dezelfde verkoper komen in één zending, met één levertijd en één eventuele retour. Dat scheelt verzendkosten en een hoop administratie als iets terug moet."
+    },
+    {
+      "h": "Kijk vanaf waar een artikel wordt verzonden",
+      "p": "De levertijd hangt af van het land van de boetiek, en bij verkopers buiten de EU kunnen invoerkosten bijkomen. Dat staat bij het artikel en is bepalender voor je ervaring dan de prijs."
+    },
+    {
+      "h": "Let op de retourtermijn per zending",
+      "p": "Veertien dagen geldt per pakket, niet per bestelling. Komen je artikelen op verschillende dagen aan, dan lopen de termijnen niet gelijk — noteer welke wanneer afloopt."
+    },
+    {
+      "h": "Controleer de maatvoering per merk",
+      "p": "Op een marktplaats staan merken uit verschillende landen met verschillende maatsystemen naast elkaar. Vertrouw op de maattabel van het specifieke merk in plaats van op je gebruikelijke maat."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wat is Miinto precies?",
+      "a": "Een online marktplaats voor mode: honderden onafhankelijke boetieks uit heel Europa verkopen er hun voorraad. De boetieks houden zelf voorraad aan en versturen zelf; het platform brengt vraag en aanbod bij elkaar."
+    },
+    {
+      "q": "Krijg ik alles in één pakket?",
+      "a": "Niet als je bij verschillende boetieks bestelt. Elk artikel wordt verzonden door de winkel die het verkoopt, dus meerdere verkopers betekent meerdere zendingen met eigen levertijden en eigen retourzendingen."
+    },
+    {
+      "q": "Hoe zit het met retourneren?",
+      "a": "Retourneren kan volgens het platform binnen veertien dagen. Die termijn geldt per zending, dus bij artikelen die op verschillende dagen aankomen lopen de termijnen niet gelijk."
+    },
+    {
+      "q": "Welke merken vind ik op Miinto?",
+      "a": "Naar opgave meer dan 3.000, van luxehuizen als Gucci, Prada en Balenciaga tot kleinere designerlabels die per boetiek verschillen. Er is ook een vintage- en tweedehandsafdeling."
+    },
+    {
+      "q": "Hoe werkt een Miinto kortingscode?",
+      "a": "Je vult hem bij het afrekenen in het kortingsveld in, maar of hij geldt kan per boetiek en artikel verschillen — verkopers bepalen hun eigen prijzen en afprijzingen. Al afgeprijsde artikelen vallen doorgaans buiten een actie."
+    }
+  ]
+}

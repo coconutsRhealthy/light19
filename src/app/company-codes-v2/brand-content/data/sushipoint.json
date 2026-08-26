@@ -1,0 +1,81 @@
+{
+  "slug": "sushipoint",
+  "name": "SushiPoint",
+  "heroLede": "SushiPoint is een Nederlandse sushiketen die in ruim 45 steden bezorgt en afhaalt: boxen voor één of meerdere personen, losse rolls en catering voor grotere gezelschappen. Er is een eigen spaarprogramma en een app, en dat is meteen waar het meeste voordeel zit — op deze pagina lees je hoe je er het voordeligst bestelt.",
+  "about": [
+    "SushiPoint werkt met vestigingen in meer dan 45 Nederlandse steden, waaronder Amsterdam, Rotterdam, Utrecht en Eindhoven. Je kunt online bestellen voor bezorging of afhalen, en er is een aparte cateringtak voor kantoren en feesten.",
+    "De kaart draait om samengestelde sushiboxen — de eenvoudigste manier om voor één of meerdere personen te bestellen zonder zelf te puzzelen — aangevuld met losse rolls en specialiteiten zoals Philadelphia rolls, paling-avocado rolls en zalm- en tonijncrackers. Voor een gezelschap zijn de grotere boxen doorgaans voordeliger dan hetzelfde aantal losse stuks.",
+    "Er is een eigen spaarprogramma en apps voor iOS en Android. Net als bij andere bezorgketens loont het om via de eigen kanalen te bestellen in plaats van via een extern platform: daar lopen de eigen acties en het sparen. Kaart, prijzen, bezorggebied en acties verschillen per vestiging, dus controleer ze bij jouw locatie."
+  ],
+  "why": [
+    {
+      "h": "Boxen in plaats van los samenstellen",
+      "p": "Sushi bestellen per stuk loopt snel op en is lastig in te schatten voor een groep. De samengestelde boxen nemen dat werk uit handen en zijn per stuk doorgaans voordeliger dan losse rolls."
+    },
+    {
+      "h": "Dekking in ruim 45 steden",
+      "p": "Met vestigingen door het hele land is bezorging in de meeste stedelijke gebieden mogelijk. Bij sushi is een korte rit bovendien een kwaliteitskwestie, geen bijzaak."
+    },
+    {
+      "h": "Eigen spaarprogramma",
+      "p": "Wie vaker bestelt, bouwt via het spaarprogramma voordeel op. Dat werkt alleen via de eigen kanalen, wat het bestellen via de app structureel gunstiger maakt dan via een extern platform."
+    },
+    {
+      "h": "Catering voor grotere gezelschappen",
+      "p": "Naast reguliere bestellingen is er een cateringtak. Voor een kantoorlunch of een feest is dat een andere prijsopbouw dan tien losse boxen bestellen."
+    }
+  ],
+  "trending": [
+    "Sushiboxen voor één of twee personen",
+    "Grote boxen om te delen",
+    "Philadelphia rolls",
+    "Zalm- en tonijncrackers",
+    "Paling-avocado rolls",
+    "Sushicatering voor kantoor of feest"
+  ],
+  "codeInfo": [
+    "Een SushiPoint kortingscode vul je in bij het afrekenen van je online bestelling. Omdat de keten met vestigingen per stad werkt, geldt een actie niet automatisch overal: controleer of hij bij jouw locatie van toepassing is voordat je erop rekent.",
+    "Het structurele voordeel loopt via het eigen spaarprogramma en de app. Daar staan de eigen acties, en daar loopt het sparen dat je bij een extern bezorgplatform misloopt — waar de prijzen bovendien vaak iets hoger liggen dan bij de keten zelf.",
+    "Bij sushi zit de grootste besparing verder in het formaat van je bestelling. Een grotere box is per stuk vrijwel altijd voordeliger dan dezelfde hoeveelheid los bestellen, en voor een gezelschap is de cateringroute weer anders geprijsd dan losse boxen. Reken die opties tegen elkaar af voordat je een code zoekt."
+  ],
+  "tips": [
+    {
+      "h": "Bestel via de app of de eigen site",
+      "p": "Alleen daar spaar je mee en gelden de eigen acties. Externe bezorgplatforms rekenen doorgaans wat meer en laten je het spaarprogramma mislopen."
+    },
+    {
+      "h": "Kies een box in plaats van losse rolls",
+      "p": "Samengestelde boxen zijn per stuk goedkoper dan hetzelfde aantal losse stukken, en je hoeft niet zelf in te schatten hoeveel je nodig hebt."
+    },
+    {
+      "h": "Vraag naar catering bij meer dan een handvol mensen",
+      "p": "Voor een kantoorlunch of een feest is de cateringtak anders geprijsd dan een stapel losse boxen. Bij grotere aantallen loont het om die route na te vragen."
+    },
+    {
+      "h": "Haal af als je vestiging dichtbij is",
+      "p": "Bij afhalen vervallen bezorgkosten en is de sushi doorgaans op zijn best. Bij een keten met tientallen vestigingen is de kans groot dat er een in de buurt zit."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Waar zit SushiPoint?",
+      "a": "De keten heeft vestigingen in meer dan 45 Nederlandse steden, waaronder Amsterdam, Rotterdam, Utrecht en Eindhoven. Je kunt online bestellen voor bezorging of afhalen."
+    },
+    {
+      "q": "Wat kan ik er bestellen?",
+      "a": "Samengestelde sushiboxen voor één of meerdere personen, losse rolls en specialiteiten zoals Philadelphia rolls, paling-avocado rolls en zalm- en tonijncrackers. Daarnaast is er sushicatering voor grotere gezelschappen."
+    },
+    {
+      "q": "Hoe werkt een SushiPoint kortingscode?",
+      "a": "Je vult de code in bij het afrekenen van je online bestelling. Controleer of de actie bij jouw vestiging geldt, want aanbiedingen en prijzen kunnen per locatie verschillen."
+    },
+    {
+      "q": "Is er een spaarprogramma?",
+      "a": "Ja, er is een eigen spaarprogramma dat via de eigen site en app loopt. Bestel je via een extern bezorgplatform, dan spaar je in de regel niet mee en betaal je vaak iets meer."
+    },
+    {
+      "q": "Wat is voordeliger: losse rolls of een box?",
+      "a": "Een samengestelde box is per stuk doorgaans voordeliger dan dezelfde hoeveelheid losse rolls, en hij neemt het inschatten van hoeveelheden uit handen. Voor grotere gezelschappen is catering weer anders geprijsd."
+    }
+  ]
+}
