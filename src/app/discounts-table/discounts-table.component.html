@@ -37,32 +37,6 @@
     </div>
   </section>
 
-  <!-- ========================= SPONSORED BANNER ========================= -->
-  <!-- Hand-placed campaign banner, same width as the hero/search field above.
-       Artwork is a 970x250 strip: on mobile the box is squeezed to 9/4 and
-       object-cover crops the outer models away, keeping the logo + claim +
-       red bar (which live in the middle ~58% of the source) fully visible.
-       Hidden while searching, like the "Nieuwste codes" header. -->
-  @if (!isSearching) {
-    <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-8 tw-pt-6 sm:tw-pt-8">
-      <a
-        href="https://tidd.ly/4wBqQ3S"
-        target="_blank"
-        rel="noopener sponsored"
-        (click)="trackBannerClick('uniqlo')"
-        class="tw-block tw-rounded-2xl tw-overflow-hidden tw-border tw-border-ink/10 tw-shadow-[0_16px_40px_rgba(67,48,46,0.07)] hover:tw-shadow-md tw-transition"
-      >
-        <img
-          src="/banners/uniqlo-back-to-school.webp"
-          alt="Uniqlo — Back to School &amp; Work, tijdelijke aanbiedingen"
-          width="970" height="250"
-          decoding="async"
-          class="tw-w-full tw-aspect-[9/4] sm:tw-aspect-[97/25] tw-object-cover tw-object-center"
-        />
-      </a>
-    </section>
-  }
-
   <!-- Search-aware order: while typing, the "Nieuwste codes" grid (below) jumps
        above these editorial sections, which drop beneath it. Pure CSS order via
        isSearching — no DOM move, reverts instantly when the field is cleared. -->
@@ -76,17 +50,9 @@
     <section class="tw-max-w-7xl tw-mx-auto tw-px-4 sm:tw-px-8 lg:tw-px-16 tw-pb-10 sm:tw-pb-14">
       <div class="tw-grid tw-grid-cols-3 sm:tw-grid-cols-4 md:tw-grid-cols-6 tw-gap-3">
         @for (b of popularLogoBrands; track b.slug) {
-          <!-- A pinned brand without a page of its own (b.url) links straight out;
-               everything else routes to its brand page as before. -->
-          @if (b.url) {
-            <a [href]="b.url" target="_blank" rel="noopener sponsored" (click)="trackLogoShopClick(b.name)" class="tw-bg-white tw-border tw-border-ink/10 tw-rounded-2xl tw-h-20 sm:tw-h-24 tw-flex tw-items-center tw-justify-center tw-p-3 tw-shadow-[0_8px_24px_rgba(67,48,46,0.05)] tw-no-underline hover:tw-shadow-md tw-transition">
-              <img [src]="b.logo" [alt]="b.name + ' logo'" width="112" height="48" class="tw-max-h-12 tw-max-w-full tw-object-contain" loading="lazy" />
-            </a>
-          } @else {
-            <a [routerLink]="['/' + b.slug + '/']" (click)="trackLogoShopClick(b.name)" class="tw-bg-white tw-border tw-border-ink/10 tw-rounded-2xl tw-h-20 sm:tw-h-24 tw-flex tw-items-center tw-justify-center tw-p-3 tw-shadow-[0_8px_24px_rgba(67,48,46,0.05)] tw-no-underline hover:tw-shadow-md tw-transition">
-              <img [src]="b.logo" [alt]="b.name + ' logo'" width="112" height="48" class="tw-max-h-12 tw-max-w-full tw-object-contain" loading="lazy" />
-            </a>
-          }
+          <a [routerLink]="['/' + b.slug + '/']" (click)="trackLogoShopClick(b.name)" class="tw-bg-white tw-border tw-border-ink/10 tw-rounded-2xl tw-h-20 sm:tw-h-24 tw-flex tw-items-center tw-justify-center tw-p-3 tw-shadow-[0_8px_24px_rgba(67,48,46,0.05)] tw-no-underline hover:tw-shadow-md tw-transition">
+            <img [src]="b.logo" [alt]="b.name + ' logo'" width="112" height="48" class="tw-max-h-12 tw-max-w-full tw-object-contain" loading="lazy" />
+          </a>
         }
       </div>
     </section>

@@ -101,23 +101,10 @@ export class DiscountsTableComponent implements OnInit {
     return this.saleBrandsRaw.map(b => ({ ...b, logo: this.logos[b.key] }));
   }
 
-  /** First unique companies that have a logo — used for the "populaire shops" row.
-   *  `url` is set only for pinned brands that have no brand page of their own; the
-   *  template links those out instead of routing. */
-  get popularLogoBrands(): { name: string; slug: string; logo: string; url?: string }[] {
+  /** First unique companies that have a logo — used for the "populaire shops" row. */
+  get popularLogoBrands(): { name: string; slug: string; logo: string }[] {
     const seen = new Set<string>();
-    const out: { name: string; slug: string; logo: string; url?: string }[] = [];
-
-    // UNIQLO is pinned to the first (top-left) tile. It's a banner-only partner
-    // with no row in discounts.json, so the loop below can never reach it, and it
-    // has no /uniqlo/ page either — hence the external url. Hardcoded on purpose:
-    // faking a discounts entry would spawn a brand page with nothing on it.
-    const pinnedLogo = this.logos['uniqlo'];
-    if (pinnedLogo) {
-      out.push({ name: 'UNIQLO', slug: 'uniqlo', logo: pinnedLogo, url: 'https://tidd.ly/4wBqQ3S' });
-      seen.add('uniqlo');
-    }
-
+    const out: { name: string; slug: string; logo: string }[] = [];
     for (const d of this.discounts) {
       const slug = this.getCompanySlug(d.company);
       if (seen.has(slug)) continue;
@@ -290,15 +277,6 @@ export class DiscountsTableComponent implements OnInit {
   trackLogoShopClick(company: string): void {
     this.visitorProfile.trackCompanyClick('company_click_homepage', company);
     this.analyticsEventService.sendEventToGa('LogoShopHomepage', company);
-  }
-
-  /** The sponsored banner under the search field. Its own GA event so banner
-   *  clicks stay separable from the code cards and the logo strip. The affiliate
-   *  link sits on the anchor's href, so the anchor navigates on its own — no
-   *  AffiliateLinkService lookup and no brand-page redirect like the code cards. */
-  trackBannerClick(company: string): void {
-    this.visitorProfile.trackCompanyClick('company_click_homepage', company);
-    this.analyticsEventService.sendEventToGa('HomepageBanner', company);
   }
 
   onCardClick(discount: Discount, event: MouseEvent) {
