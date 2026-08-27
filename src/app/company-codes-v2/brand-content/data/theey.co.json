@@ -1,0 +1,82 @@
+{
+  "slug": "theey.co",
+  "name": "Theey",
+  "heroLede": "Theey is een Nederlands theemerk dat losse, biologische kruidenmelanges verkoopt rond een doel: Skin, Boost, Focus, Balance of Protection. Geen zakjes met aroma's, maar losse kruiden en vruchten zonder kunstmatige toevoegingen, met een quiz die je naar de blend leidt die bij je past. Op deze pagina lees je hoe het werkt en waar het voordeel zit.",
+  "about": [
+    "Theey voert vijftien-plus theemelanges, geordend op wat ze beogen te ondersteunen — namen als Skin, Boost, Protection, Balance en Focus — aangevuld met smaakgerichte blends als Mango, Exotic, Ginger, Marrakech Mint en Wildberry. Daarnaast zijn er accessoires: theeflessen, thermossen, zeefjes, maatlepeltjes en bewaarblikken.",
+    "Het uitgangspunt is losse thee in plaats van zakjes: biologische kruiden en vruchtstukken, zonder kunstmatige aroma's of overbodige toevoegingen. Dat verklaart ook de accessoires — met losse thee heb je een zeefje of een fles met filter nodig, en die verkoopt het merk erbij.",
+    "Voor wie niet weet waar te beginnen is er een quiz die op basis van je voorkeuren een blend aanraadt. Praktisch: bestellingen vóór 16:00 uur gaan dezelfde dag weg vanuit Nederland, verzending is gratis vanaf €39 en er geldt 30 dagen retourrecht. Een blend kost rond de €14,95; er is een abonnementsvorm met korting op herhaalleveringen. Het merk heeft ruim 1.700 beoordelingen met een gemiddelde van 4,7 op 5."
+  ],
+  "why": [
+    {
+      "h": "Losse kruiden in plaats van zakjes",
+      "p": "Biologische losse thee zonder kunstmatige aroma's zet anders dan een theezakje: meer smaak per kop en je bepaalt zelf de sterkte. Dat is de kern van waarom mensen op losse thee overstappen."
+    },
+    {
+      "h": "Blends met een doel",
+      "p": "De melanges zijn geordend op waar ze voor bedoeld zijn — huid, energie, focus, balans — in plaats van alleen op smaak. Dat maakt kiezen makkelijker dan een schap vol namen zonder richting."
+    },
+    {
+      "h": "Een quiz die de keuze versmalt",
+      "p": "Bij vijftien blends is de eerste aankoop een gok. De quiz filtert op voorkeuren en levert een concreet advies op, wat schelen kan tussen één rake keuze en drie potjes die blijven staan."
+    },
+    {
+      "h": "Abonnement met korting",
+      "p": "Voor thee die je dagelijks drinkt, is een herhaallevering met korting per kop goedkoper dan telkens los bestellen — en je zit nooit zonder."
+    }
+  ],
+  "trending": [
+    "Blends op doel: Skin, Boost, Focus, Balance",
+    "Marrakech Mint en Ginger als klassiekers",
+    "Fruitige blends als Mango en Wildberry",
+    "Theeflessen met filter voor onderweg",
+    "Zeefjes en maatlepeltjes",
+    "Bewaarblikken voor losse thee",
+    "Theequiz als startpunt"
+  ],
+  "codeInfo": [
+    "Een Theey kortingscode vul je bij het afrekenen in het kortingsveld in, waarna het totaal opnieuw wordt berekend. Zoals gebruikelijk geldt zo'n code doorgaans niet op al afgeprijsde artikelen en kun je er één per bestelling gebruiken.",
+    "De vaste route is de nieuwsbrief: aanmelden levert volgens de webshop 10% korting op je eerste bestelling op. Dat is eenmalig, dus bewaar het voor een bestelling waarin je meteen een paar blends of een accessoire meeneemt in plaats van één potje.",
+    "Structureler is het abonnement. Bij thee die je elke dag drinkt, levert een herhaallevering met korting op termijn meer op dan een eenmalige code — en het tilt je bestelling makkelijker over de gratis-verzendgrens van €39."
+  ],
+  "tips": [
+    {
+      "h": "Doe de quiz voor je eerste bestelling",
+      "p": "Bij vijftien blends is blind kiezen zonde van je geld. De quiz versmalt het naar wat bij je voorkeuren past, wat de kans verkleint dat een potje ongebruikt blijft staan."
+    },
+    {
+      "h": "Zet de welkomstkorting op een grotere bestelling",
+      "p": "De 10% via de nieuwsbrief geldt eenmalig. Combineer meteen een paar blends met een zeefje of fles in plaats van hem op één potje van €14,95 te gebruiken."
+    },
+    {
+      "h": "Reken naar €39 toe voor gratis verzending",
+      "p": "Twee of drie blends zitten daar al snel aan. Onder die grens betaal je verzendkosten die bij een product van rond de €15 relatief zwaar wegen."
+    },
+    {
+      "h": "Neem een zeefje of filterfles mee",
+      "p": "Losse thee vraagt om iets om mee te zetten. Als je nog geen zeefje hebt, hoort dat bij je eerste bestelling — anders staat de thee te wachten tot je er alsnog een koopt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wat verkoopt Theey?",
+      "a": "Losse, biologische theemelanges — vijftien-plus blends geordend op doel (Skin, Boost, Protection, Balance, Focus) en op smaak (Mango, Exotic, Ginger, Marrakech Mint, Wildberry) — plus accessoires als theeflessen, thermossen, zeefjes, maatlepeltjes en bewaarblikken."
+    },
+    {
+      "q": "Is het losse thee of zakjes?",
+      "a": "Losse thee: biologische kruiden en vruchtstukken zonder kunstmatige aroma's. Je hebt er dus een zeefje of een fles met filter voor nodig, en die verkoopt het merk erbij."
+    },
+    {
+      "q": "Wat kost een blend?",
+      "a": "Rond de €14,95 per blend. Verzending is gratis vanaf €39, en er is een abonnementsvorm met korting op herhaalleveringen."
+    },
+    {
+      "q": "Hoe krijg ik korting bij Theey?",
+      "a": "Aanmelden voor de nieuwsbrief levert volgens de webshop 10% korting op je eerste bestelling op. Voor wie dagelijks thee drinkt is het abonnement met herhaalkorting op termijn voordeliger dan een eenmalige code."
+    },
+    {
+      "q": "Hoe snel wordt er geleverd?",
+      "a": "Bestellingen vóór 16:00 uur gaan dezelfde dag weg vanuit Nederland. Er geldt 30 dagen retourrecht en achteraf betalen kan via Klarna."
+    }
+  ]
+}
