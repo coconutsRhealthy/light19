@@ -1,0 +1,93 @@
+{
+  "slug": "parkos",
+  "name": "Parkos",
+  "heroLede": "Parkos vergelijkt parkeeraanbieders rond luchthavens: je vult je luchthaven en je reisdata in en ziet welke parkeerterreinen er zijn, met prijs, service en beoordeling naast elkaar. Goedkoper dan officieel parkeren bij de terminal, en gratis annuleren tot 24 uur voor aankomst.",
+  "about": [
+    "Parkos is geen parkeerterrein maar een vergelijker: het platform verzamelt het aanbod van particuliere parkeeraanbieders rond luchthavens en zet dat naast elkaar. Je boekt via Parkos, en de aanbieder zelf verzorgt het parkeren.",
+    "De dekking gaat verder dan Nederland alleen. Naast Schiphol, Eindhoven, Groningen Eelde, Maastricht Aachen en Rotterdam zijn er luchthavens in Duitsland (waaronder Düsseldorf, Frankfurt, Weeze en Keulen), België (Zaventem en Charleroi), Frankrijk (Charles de Gaulle en Orly) en Luxemburg.",
+    "Er zijn verschillende parkeervormen, en dat verschil bepaalt je ervaring meer dan de prijs. Valetparkeren betekent dat iemand je auto bij de terminal overneemt; bij shuttleparkeren zet je hem zelf neer en ga je met een busje. Daarnaast zijn er Park Sleep & Fly (met hotelovernachting), Park & Walk (op loopafstand), Park & Taxi en Park & OV.",
+    "Het boekingsproces duurt volgens het platform zo'n drie minuten, en je kunt tot 24 uur voor aankomst gratis wijzigen of annuleren. Weektarieven lopen sterk uiteen per luchthaven — van rond €24 bij Frankfurt-Hahn tot rond €57 bij Schiphol. De dienst meldt een beoordeling van rond de 8,9 op 10."
+  ],
+  "why": [
+    {
+      "h": "Aanbieders naast elkaar in plaats van één tarief",
+      "p": "Rond een luchthaven zitten meerdere particuliere terreinen met flink verschillende prijzen en service. Een vergelijker maakt dat verschil zichtbaar, wat bij losse aanbieders niet lukt."
+    },
+    {
+      "h": "Structureel goedkoper dan officieel parkeren",
+      "p": "Parkeren bij de terminal zelf is doorgaans de duurste optie. Bij een reis van een week loopt het verschil op tot tientallen euro's, wat bij een vliegvakantie een merkbare post is."
+    },
+    {
+      "h": "Gratis annuleren tot 24 uur vooraf",
+      "p": "Reisplannen veranderen, en bij een vlucht die verschuift wil je niet vastzitten aan een parkeerboeking. Die termijn is ruim genoeg om dat op te vangen."
+    },
+    {
+      "h": "Verschillende parkeervormen",
+      "p": "Valet, shuttle, op loopafstand, met taxi of met ov. Welke past hangt af van hoeveel bagage je hebt, hoe vroeg je vlucht vertrekt en of je met kinderen reist — en dat bepaalt je ervaring meer dan een paar euro prijsverschil."
+    }
+  ],
+  "trending": [
+    "Parkeren bij Schiphol",
+    "Parkeren bij Eindhoven Airport",
+    "Valetparkeren voor vroege vluchten",
+    "Shuttleparkeren als goedkoopste optie",
+    "Park Sleep & Fly met hotelovernachting",
+    "Parkeren bij Düsseldorf en Weeze",
+    "Langparkeren voor een vakantie van twee weken"
+  ],
+  "codeInfo": [
+    "Een Parkos kortingscode voer je in tijdens het boeken, voordat je bevestigt. Controleer daarna of de korting in het overzicht staat — bij parkeren reken je af op een periode, en de prijs die je bevestigt is de prijs die geldt.",
+    "Het grootste verschil maak je echter met de keuze van aanbieder en parkeervorm. Tussen het goedkoopste en het duurste terrein rond dezelfde luchthaven zit vaak een factor twee, en shuttleparkeren is structureel goedkoper dan valet. Die keuze levert meer op dan een code.",
+    "Boek daarnaast vroeg. Rond schoolvakanties raken de goedkoopste terreinen het eerst vol, waardoor je uitwijkt naar duurdere opties of naar de officiële parkeergarage. Bij een vakantie die vaststaat is het parkeren meteen regelen dus verstandiger dan het tot het laatst bewaren."
+  ],
+  "tips": [
+    {
+      "h": "Vergelijk de parkeervorm, niet alleen de prijs",
+      "p": "Valet is duurder maar scheelt tijd en gedoe met bagage; shuttle is goedkoper maar kost een busrit. Met kinderen of een vroege vlucht is dat verschil belangrijker dan tien euro."
+    },
+    {
+      "h": "Boek zodra je vlucht vaststaat",
+      "p": "De goedkoopste terreinen zijn rond vakanties het eerst vol. Met gratis annuleren tot 24 uur vooraf loop je nauwelijks risico door vroeg te boeken."
+    },
+    {
+      "h": "Reken de reistijd naar de terminal mee",
+      "p": "Een goedkoop terrein dat twintig minuten rijden ligt, betekent eerder van huis. Kijk naar de opgegeven transfertijd, niet alleen naar de prijs."
+    },
+    {
+      "h": "Let op de beoordelingen per aanbieder",
+      "p": "Het platform toont scores per terrein. Bij parkeren gaat het mis op ophaaltijden en op de staat waarin je auto terugkomt — precies waar die beoordelingen over gaan."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wat is Parkos?",
+      "a": "Een vergelijker voor parkeren bij luchthavens: het platform zet het aanbod van particuliere parkeeraanbieders naast elkaar met prijs, service en beoordelingen. Je boekt via Parkos; de aanbieder verzorgt het parkeren."
+    },
+    {
+      "q": "Bij welke luchthavens kan ik terecht?",
+      "a": "In Nederland onder meer Schiphol, Eindhoven, Groningen Eelde, Maastricht Aachen en Rotterdam, en daarnaast luchthavens in Duitsland, België, Frankrijk en Luxemburg."
+    },
+    {
+      "q": "Kan ik gratis annuleren?",
+      "a": "Ja, tot 24 uur voor aankomst kun je kosteloos wijzigen of annuleren. Dat maakt vroeg boeken vrijwel risicoloos."
+    },
+    {
+      "q": "Welke parkeervormen zijn er?",
+      "a": "Valetparkeren (iemand neemt je auto over bij de terminal), shuttleparkeren (zelf parkeren met busvervoer), Park Sleep & Fly met hotelovernachting, Park & Walk op loopafstand, Park & Taxi en Park & OV."
+    },
+    {
+      "q": "Is het goedkoper dan officieel parkeren?",
+      "a": "Doorgaans wel: parkeren bij de terminal zelf is meestal de duurste optie. Weektarieven lopen sterk uiteen per luchthaven, van rond €24 bij Frankfurt-Hahn tot rond €57 bij Schiphol."
+    }
+  ],
+  "related": [
+    "q-park",
+    "tui",
+    "oad",
+    "tripper.nl",
+    "landal",
+    "roompot",
+    "hotelspecials",
+    "voordeeluitjes"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "hotelspecials",
+  "name": "HotelSpecials",
+  "heroLede": "HotelSpecials verkoopt hotelarrangementen in plaats van kale kamers: ruim 6.500 aanbiedingen waarin een overnachting is gecombineerd met ontbijt, een diner, wellness of een activiteit. Nederland, België, Duitsland, Frankrijk en Oostenrijk, met kortingen die kunnen oplopen tot rond de 55%.",
+  "about": [
+    "Het platform draait om arrangementen: een verblijf plus iets extra's. In de praktijk gaat het om ontbijt, een meergangendiner, toegang tot een wellnessafdeling, een activiteit als een fietstocht of museumbezoek, of een kamerupgrade. Er staan naar eigen opgave meer dan 6.500 aanbiedingen bij ongeveer evenveel hotels.",
+    "Het bereik is West-Europees: Nederland, België, Duitsland, Frankrijk, Oostenrijk en omliggende landen, van budgethotels tot het luxere segment. Zoeken gaat op bestemming, data en gezelschap, waarna je aanbiedingen vergelijkt en direct boekt.",
+    "Naast het arrangement zelf zijn er tientallen extra's die je kunt bijboeken — van late check-out tot een massage — waarmee je een verblijf verder samenstelt. Dat maakt het meer een configuratie dan een kant-en-klare boeking.",
+    "De positionering is prijsgericht: kortingen tot rond de 55% en constructies als drie nachten voor de prijs van twee. Betalen kan met iDEAL of Wero, zonder creditcard. Annuleringsvoorwaarden verschillen per aanbieding en staan in de voorwaarden bij het specifieke arrangement."
+  ],
+  "why": [
+    {
+      "h": "Arrangement in plaats van kale kamer",
+      "p": "Een overnachting met ontbijt of diner erbij, als één pakket. Voor een weekend weg waarbij je toch uit eten gaat, is dat vaak voordeliger dan alles los boeken — en het scheelt regelen."
+    },
+    {
+      "h": "Ruim 6.500 aanbiedingen",
+      "p": "Een groot aanbod over West-Europa, van budget tot luxe. Doordat het per thema en bestemming doorzoekbaar is, kun je zoeken op het soort weekend dat je wilt in plaats van op een hotel dat je al kent."
+    },
+    {
+      "h": "Extra's om zelf bij te boeken",
+      "p": "Late check-out, een massage of een upgrade zijn los toe te voegen. Zo stel je een verblijf samen in plaats van te kiezen uit vaste pakketten."
+    },
+    {
+      "h": "Betalen zonder creditcard",
+      "p": "iDEAL en Wero worden geaccepteerd. Bij hotelboekingen, waar een creditcard vaak vereist is, is dat een praktisch verschil."
+    }
+  ],
+  "trending": [
+    "Wellnessarrangementen met sauna of spa",
+    "Stedentrips met ontbijt",
+    "Weekend weg met diner inbegrepen",
+    "Drie nachten voor de prijs van twee",
+    "Hotels in Duitsland en België",
+    "Arrangementen met kinderen",
+    "Last-minuteaanbiedingen"
+  ],
+  "codeInfo": [
+    "Een HotelSpecials kortingscode voer je in tijdens het boeken, voordat je bevestigt. Controleer daarna in het overzicht of de korting is verwerkt, want bij arrangementen staan meerdere componenten en eventuele extra's naast elkaar.",
+    "De genoemde kortingen — oplopend tot rond de 55% — zijn berekend ten opzichte van wat het los boeken van dezelfde onderdelen zou kosten. Dat is meestal een reëel voordeel, maar niet altijd: bij een hotel waar je het diner toch niet zou nemen, betaal je voor iets wat je niet gebruikt. Reken dus door wat je werkelijk zou uitgeven.",
+    "Let daarnaast op wat er niet in zit. Toeristenbelasting en parkeren worden doorgaans ter plaatse afgerekend en verschillen sterk per stad. Bij een stedentrip met de auto kan parkeren een aanzienlijke post zijn die de vergelijking tussen twee aanbiedingen omdraait."
+  ],
+  "tips": [
+    {
+      "h": "Reken door wat je écht zou gebruiken",
+      "p": "Een arrangement met diner is alleen voordelig als je dat diner ook zou nemen. Vergelijk het pakket met de kamerprijs plus je eigen verwachte uitgaven, niet met de opgevoerde waarde."
+    },
+    {
+      "h": "Lees de annuleringsvoorwaarden per aanbieding",
+      "p": "Die verschillen per hotel en per arrangement. Bij een boeking die weken vooruit ligt is dat belangrijker dan het kortingspercentage."
+    },
+    {
+      "h": "Vraag naar toeristenbelasting en parkeren",
+      "p": "Beide worden meestal ter plaatse gerekend en zitten niet in de getoonde prijs. In steden kan parkeren tientallen euro's per nacht zijn."
+    },
+    {
+      "h": "Kijk of extra's los goedkoper zijn",
+      "p": "Sommige bijboekbare extra's zijn ter plaatse voordeliger of helemaal niet nodig. Voeg ze pas toe als je zeker weet dat je ze gebruikt."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wat is HotelSpecials?",
+      "a": "Een boekingsplatform voor hotelarrangementen: een overnachting gecombineerd met ontbijt, diner, wellness of een activiteit. Er staan naar eigen opgave meer dan 6.500 aanbiedingen in Nederland, België, Duitsland, Frankrijk, Oostenrijk en omliggende landen."
+    },
+    {
+      "q": "Hoeveel korting krijg ik?",
+      "a": "Het platform noemt kortingen tot rond de 55% en constructies als drie nachten voor de prijs van twee. Die percentages zijn berekend ten opzichte van los boeken, dus reken door wat je werkelijk zou uitgeven."
+    },
+    {
+      "q": "Kan ik betalen zonder creditcard?",
+      "a": "Ja, iDEAL en Wero worden geaccepteerd. Bij hotelboekingen is dat een praktisch verschil met platforms waar een creditcard vereist is."
+    },
+    {
+      "q": "Wat zit er in een arrangement?",
+      "a": "Dat verschilt per aanbieding, maar meestal ontbijt, een meergangendiner, toegang tot wellnessfaciliteiten, een activiteit of een kamerupgrade. Daarnaast kun je losse extra's bijboeken, van late check-out tot een massage."
+    },
+    {
+      "q": "Kan ik annuleren?",
+      "a": "De voorwaarden verschillen per aanbieding en per hotel; ze staan bij het specifieke arrangement. Lees ze door voordat je bevestigt, zeker bij een boeking die ver vooruit ligt."
+    }
+  ],
+  "related": [
+    "voordeeluitjes",
+    "landal",
+    "roompot",
+    "bungalow",
+    "tripper.nl",
+    "centerparcs",
+    "zenhotels",
+    "parkos"
+  ]
+}
