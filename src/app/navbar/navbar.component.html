@@ -48,8 +48,8 @@
             </a>
 
             <!-- Desktop menu -->
-            <!-- gap tightens at lg: eight items + the "Nieuw" badge overflow a
-                 1024px viewport at the roomier xl spacing. -->
+            <!-- gap tightens at lg: eight items overflow a 1024px viewport at the
+                 roomier xl spacing. -->
             <div class="tw-hidden lg:tw-flex tw-items-center lg:tw-gap-5 xl:tw-gap-7">
                 <a routerLink="/"
                    routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
@@ -80,10 +80,9 @@
                      and a category word does not. The slug carries the keyword. -->
                 <a routerLink="/goedkoopste-supermarkt"
                    routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
-                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline tw-flex tw-items-center tw-gap-1.5 tw-whitespace-nowrap"
+                   class="tw-text-ink tw-opacity-70 hover:tw-opacity-100 tw-border-b-2 tw-border-transparent tw-pb-1 tw-transition tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_boodschappen'});">
                     Boodschappen
-                    <span class="tw-bg-butter tw-text-ink tw-font-label tw-text-[9px] tw-font-bold tw-uppercase tw-tracking-label tw-rounded-full tw-pl-1.5 tw-pr-1 tw-py-0.5 tw-leading-none">Nieuw</span>
                 </a>
                 <a routerLink="/top5"
                    routerLinkActive="tw-font-semibold tw-opacity-100 tw-border-sky" [routerLinkActiveOptions]="{ exact: true }"
@@ -156,10 +155,9 @@
                 </a>
                 <a routerLink="/goedkoopste-supermarkt" (click)="toggleMenu()"
                    routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
-                   class="tw-flex tw-items-center tw-gap-2 tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
+                   class="tw-block tw-text-ink tw-rounded-xl tw-px-4 tw-py-2.5 tw-no-underline"
                    onclick="gtag('event', 'navbar', {'event_category': 'Navbar', 'event_label': 'navbar_boodschappen'});">
                     Boodschappen
-                    <span class="tw-bg-butter tw-text-ink tw-font-label tw-text-[9px] tw-font-bold tw-uppercase tw-tracking-label tw-rounded-full tw-pl-1.5 tw-pr-1 tw-py-0.5 tw-leading-none">Nieuw</span>
                 </a>
                 <a routerLink="/top5" (click)="toggleMenu()"
                    routerLinkActive="tw-font-semibold tw-bg-ink/5" [routerLinkActiveOptions]="{ exact: true }"
