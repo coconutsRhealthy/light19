@@ -52,6 +52,9 @@ const SPOTTED_SALES = spottedSalesData as { [slug: string]: { text: string; date
 // A sale spotted within this many days of the build date gets the "Nieuw" badge.
 const SALE_NEW_WINDOW_DAYS = 7;
 
+/** Gina Tricot only — see dropStaleGinatricotCodes(). */
+const GINATRICOT_MAX_CODE_AGE_DAYS = 5;
+
 const MONTHS_NL = [
   'januari', 'februari', 'maart', 'april', 'mei', 'juni',
   'juli', 'augustus', 'september', 'oktober', 'november', 'december'
@@ -344,7 +347,7 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
       })
       .sort((a, b) => b.date.getTime() - a.date.getTime());
 
-    this.regularCodes = parsed;
+    this.regularCodes = this.dropStaleGinatricotCodes(parsed);
     this.affiliateLink = this.affiliateLinkService.getAffiliateLink(this.company);
 
     // Page-level "laatst gecontroleerd" from the baked build date (deterministic, SSR-safe).
@@ -610,6 +613,28 @@ export class CompanyCodesV2Component implements OnInit, OnDestroy, AfterViewInit
   }
 
   // ---- helpers ---------------------------------------------------------------
+
+  /**
+   * Gina Tricot only: its creator codes rotate constantly and the feed has grown
+   * past 100 rows, so the page was almost entirely weeks-dead codes. Keep just the
+   * last GINATRICOT_MAX_CODE_AGE_DAYS days. Every other shop returns unchanged.
+   *
+   * Anchored to BUILD_DATE_ISO, not runtime, for the same reason lastCheckedIso
+   * is — prerender and hydration must agree or the client tears the list down.
+   *
+   * Never empties the list: if nothing is fresh enough the unfiltered set is kept,
+   * so the page can't degrade to "geen codes" on a quiet week.
+   */
+  private dropStaleGinatricotCodes(codes: CodeVM[]): CodeVM[] {
+    if (this.company !== 'ginatricot') return codes;
+
+    const [by, bm, bd] = (BUILD_DATE_ISO || '').split('-').map(Number);
+    if (!by || !bm || !bd) return codes;
+    const cutoff = new Date(by, bm - 1, bd - GINATRICOT_MAX_CODE_AGE_DAYS);
+
+    const fresh = codes.filter(c => c.date.getTime() >= cutoff.getTime());
+    return fresh.length ? fresh : codes;
+  }
 
   private parseDate(monthDay: string, year: number): Date {
     const [mm, dd] = monthDay.split('-').map(Number);
