@@ -134,6 +134,7 @@ export const V2_CONTENT_SLUGS: ReadonlySet<string> = new Set([
   'doreandrose',
   'douglas',
   'dr_blend',
+  'dreaver',
   'drksonline',
   'drmartens',
   'eastpak',
