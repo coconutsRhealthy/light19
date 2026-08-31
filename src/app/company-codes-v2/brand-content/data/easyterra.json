@@ -1,0 +1,93 @@
+{
+  "slug": "easyterra",
+  "name": "EasyTerra",
+  "heroLede": "EasyTerra vergelijkt huurauto's: je vult bestemming, data en leeftijd in en ziet het aanbod van Europcar, Avis, Budget, Enterprise en regionale verhuurders naast elkaar. Actief in meer dan 140 landen, met gratis annuleren tot 48 uur voor aanvang.",
+  "about": [
+    "EasyTerra is een onafhankelijke vergelijker voor autohuur. Het platform verzamelt tarieven van gevestigde verhuurketens en lokale aanbieders en zet die naast elkaar, zodat je niet bij elke maatschappij apart hoeft te kijken.",
+    "De dekking is breed: meer dan 140 landen, met het zwaartepunt op Europese vakantiebestemmingen als Spanje, Portugal, Italië en Griekenland, plus Noord-Amerika en een reeks andere markten. Aan aanbieders gaat het om onder meer Europcar, Avis, Budget en Enterprise naast regionale verhuurders.",
+    "Boeken werkt met bestemming, datum en tijd van ophalen en inleveren, plus de leeftijd van de bestuurder — die laatste is bepalend, omdat jonge bestuurders bij veel verhuurders een toeslag betalen of helemaal niet mogen huren.",
+    "Waar het bij autohuur op vastloopt is de verzekering. Het platform besteedt daar aandacht aan met uitleg over schadedekking en eigen risico, en met een aanduiding voor huurcontracten waarbij dat eigen risico is afgedekt. Gratis annuleren kan tot 48 uur voor aanvang van de huurperiode."
+  ],
+  "why": [
+    {
+      "h": "Verhuurders naast elkaar in plaats van los",
+      "p": "Tarieven voor dezelfde auto op dezelfde locatie lopen sterk uiteen per verhuurder. Een vergelijker maakt dat zichtbaar, wat bij een week huren om tientallen euro's gaat."
+    },
+    {
+      "h": "Uitleg over eigen risico",
+      "p": "Bij autohuur is het eigen risico de grootste verborgen kostenpost: een aanrijding kan honderden euro's kosten ondanks 'all-in'. Het platform legt dat uit en markeert contracten waarbij het is afgedekt."
+    },
+    {
+      "h": "Gratis annuleren tot 48 uur vooraf",
+      "p": "Reisplannen schuiven, en bij een huurauto die aan een vlucht hangt wil je niet vastzitten. Die termijn is ruim genoeg om dat op te vangen."
+    },
+    {
+      "h": "Meer dan 140 landen",
+      "p": "Van Zuid-Europese vakantiebestemmingen tot Noord-Amerika. Voor wie dezelfde manier van boeken wil ongeacht de bestemming, is dat praktischer dan per land een lokale aanbieder zoeken."
+    }
+  ],
+  "trending": [
+    "Huurauto's in Spanje, Portugal en Italië",
+    "Autohuur op Griekse eilanden",
+    "Huurauto bij een vliegveld ophalen",
+    "Autohuur in de Verenigde Staten",
+    "Vergelijken op verzekering en eigen risico",
+    "Langere huurperiodes",
+    "Automaat versus handgeschakeld"
+  ],
+  "codeInfo": [
+    "Een EasyTerra kortingscode voer je in tijdens het boeken, voordat je bevestigt. Bij een vergelijker is een code echter zelden de kern: het aanbod komt van de verhuurders zelf, en het prijsverschil tussen twee aanbieders op dezelfde locatie is doorgaans veel groter dan wat een code oplevert.",
+    "De echte variabele is de verzekering. Een goedkoop tarief met een hoog eigen risico kan bij de balie duurder uitpakken dan een iets duurdere huur waarin dat is afgedekt, omdat verhuurders ter plaatse afkoopverzekeringen aanbieden tegen forse tarieven. Kijk dus naar het totaalplaatje in plaats van naar de dagprijs.",
+    "Let daarnaast op de brandstofregeling en de kilometerlimiet. Vol-vol is doorgaans het gunstigst; regelingen waarbij je een volle tank koopt en leeg inlevert pakken vrijwel altijd duurder uit. Die twee voorwaarden bepalen je eindprijs sterker dan een kortingsactie."
+  ],
+  "tips": [
+    {
+      "h": "Kijk naar het eigen risico, niet naar de dagprijs",
+      "p": "Het goedkoopste tarief heeft vaak het hoogste eigen risico, en dat afkopen bij de balie is duur. Vergelijk wat je bij schade werkelijk kwijt bent."
+    },
+    {
+      "h": "Controleer de brandstofregeling",
+      "p": "Vol ophalen en vol inleveren is doorgaans het gunstigst. Bij regelingen waarbij je een volle tank koopt, betaal je voor brandstof die je niet gebruikt."
+    },
+    {
+      "h": "Vul de bestuurdersleeftijd correct in",
+      "p": "Jonge bestuurders betalen bij veel verhuurders een toeslag of mogen bepaalde categorieën niet huren. Dat achteraf ontdekken bij de balie is een duur probleem."
+    },
+    {
+      "h": "Boek vroeg en annuleer desnoods",
+      "p": "Tarieven stijgen naarmate de datum nadert, en annuleren kan gratis tot 48 uur vooraf. Vroeg vastleggen kost daardoor weinig risico."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Wat is EasyTerra?",
+      "a": "Een onafhankelijke vergelijker voor huurauto's: het platform zet de tarieven van verhuurders als Europcar, Avis, Budget en Enterprise plus regionale aanbieders naast elkaar. Het is actief in meer dan 140 landen."
+    },
+    {
+      "q": "Kan ik gratis annuleren?",
+      "a": "Ja, tot 48 uur voor aanvang van de huurperiode. Dat maakt vroeg boeken — wanneer de tarieven doorgaans lager zijn — vrijwel risicoloos."
+    },
+    {
+      "q": "Waar moet ik op letten bij de verzekering?",
+      "a": "Op het eigen risico. Een goedkoop tarief gaat vaak samen met een hoog eigen risico, dat je bij de balie tegen een fors tarief kunt afkopen. Het platform legt de dekkingen uit en markeert contracten waarbij het eigen risico is afgedekt."
+    },
+    {
+      "q": "Waarom vraagt het om mijn leeftijd?",
+      "a": "Omdat verhuurders voor jonge bestuurders vaak een toeslag rekenen of bepaalde categorieën niet verhuren. Die voorwaarde bepaalt mede welk aanbod je te zien krijgt."
+    },
+    {
+      "q": "Hoe krijg ik de laagste prijs?",
+      "a": "Vooral door aanbieders te vergelijken en op de voorwaarden te letten: eigen risico, brandstofregeling en kilometerlimiet bepalen je eindprijs sterker dan een kortingscode."
+    }
+  ],
+  "related": [
+    "parkos",
+    "tui",
+    "oad",
+    "tripper.nl",
+    "landal",
+    "roompot",
+    "bungalow",
+    "hotelspecials"
+  ]
+}
