@@ -91,6 +91,12 @@
       "date": "2026-04-28"
     }
   ],
+  "achateshop.com": [
+    {
+      "text": "Tot 56% korting plus gratis spray",
+      "date": "2026-08-23"
+    }
+  ],
   "adventure.beds": [
     {
       "text": "8% extra korting met kortingscode ZOMERDEAL",
@@ -145,6 +151,10 @@
   ],
   "akuwoodpenal": [
     {
+      "text": "40% korting op alle wanddecoratie tijdens de zomeruitverkoop",
+      "date": "2026-08-22"
+    },
+    {
       "text": "40% korting op alle wandpanelen tijdens de voetbalzomer",
       "date": "2026-06-15"
     },
@@ -154,6 +164,14 @@
     }
   ],
   "albelli": [
+    {
+      "text": "Zomersale: 35% korting op premium fotoboeken met code EINDAUG35, t/m 07-09-2026",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "30% korting op premium fotoboeken, 25% korting op standaardboeken en wanddecoratie/fotocadeaus vanaf €35 met code LATEZOMER2026 tot 7 september 2026",
+      "date": "2026-08-27"
+    },
     {
       "text": "35% korting op fotoboeken vanaf €35 met code ZOMERREIS35, t/m 26-08-2026",
       "date": "2026-08-19"
@@ -180,6 +198,10 @@
     }
   ],
   "aliexpress": [
+    {
+      "text": "Nieuwe promotie met 50% korting zichtbaar op homepage",
+      "date": "2026-08-27"
+    },
     {
       "text": "Nieuwe promotie met 52% korting zichtbaar op homepage",
       "date": "2026-08-10"
@@ -263,6 +285,14 @@
   ],
   "anthropologie": [
     {
+      "text": "Exclusieve vroege toegang met extra 30% korting op sale, alleen vandaag",
+      "date": "2026-08-26"
+    },
+    {
+      "text": "Extra 20% korting bovenop uitverkoop tot 70% korting, beperkte tijd",
+      "date": "2026-08-25"
+    },
+    {
       "text": "Tot 30% korting op geselecteerde woonproducten, beperkte tijd",
       "date": "2026-08-20"
     },
@@ -302,6 +332,14 @@
     }
   ],
   "asos": [
+    {
+      "text": "20% korting op geselecteerde items met code TREAT, t/m 25 augustus 09:00",
+      "date": "2026-08-24"
+    },
+    {
+      "text": "20% korting op alle Face + Body producten met code STOCKUP, t/m 24 augustus 09:00",
+      "date": "2026-08-22"
+    },
     {
       "text": "10% extra korting op de hele sale met code EXTRA10, t/m 19 augustus 09:00",
       "date": "2026-08-18"
@@ -361,6 +399,12 @@
       "date": "2026-07-09"
     }
   ],
+  "atmooz.com": [
+    {
+      "text": "20% korting op het assortiment",
+      "date": "2026-08-27"
+    }
+  ],
   "aybl": [
     {
       "text": "Tot 60% Off Sitewide",
@@ -379,12 +423,22 @@
   ],
   "begolden": [
     {
+      "text": "20% korting op alles met code ENDOFSUMMER20",
+      "date": "2026-08-24"
+    },
+    {
       "text": "Tot 70% korting tijdens de End of Summer Sale op geselecteerde artikelen",
       "date": "2026-08-17"
     },
     {
       "text": "25% korting op elk 2e artikel met code GOLDEN25",
       "date": "2026-06-21"
+    }
+  ],
+  "berlinerbags": [
+    {
+      "text": "10% korting bij inschrijving voor nieuwsbrief, geldig tot 31 augustus",
+      "date": "2026-08-21"
     }
   ],
   "bershka": [
@@ -400,6 +454,10 @@
     }
   ],
   "bijenkorf": [
+    {
+      "text": "Beauty Adventskalender 2026 met een waarde van €850 voor €159,95, beperkt beschikbaar",
+      "date": "2026-08-27"
+    },
     {
       "text": "Hoge kortingen op exclusieve woonbestsellers",
       "date": "2026-06-03"
@@ -420,6 +478,10 @@
     }
   ],
   "bjornborg": [
+    {
+      "text": "Members Day: 20% korting op ondergoed met code ONDERGOED20, 48 uur geldig",
+      "date": "2026-08-25"
+    },
     {
       "text": "Zomerse uitverkoop met tot 40% korting",
       "date": "2026-06-11"
@@ -485,6 +547,12 @@
       "date": "2026-08-16"
     }
   ],
+  "bubbleplanetexperience": [
+    {
+      "text": "20% korting met kortingscode BYE20UTRECHT, tijdelijk geldig",
+      "date": "2026-08-25"
+    }
+  ],
   "bubbleroom": [
     {
       "text": "Tot 20% korting op zomerlooks",
@@ -506,6 +574,10 @@
     }
   ],
   "burga": [
+    {
+      "text": "Koop 4 telefoonhoesjes, betaal er 2 zonder code",
+      "date": "2026-08-24"
+    },
     {
       "text": "20% korting op alles tijdens de zomersale",
       "date": "2026-05-31"
@@ -574,6 +646,14 @@
     }
   ],
   "charlottetilbury": [
+    {
+      "text": "Charlotte Tilbury x Practical Magic 2: 15% korting op de nieuwe beauty kit en 10% op geselecteerde kits",
+      "date": "2026-08-26"
+    },
+    {
+      "text": "Gratis Super Nudes Lipstick in Supermodel bij een besteding vanaf €120, t/m 25 augustus",
+      "date": "2026-08-20"
+    },
     {
       "text": "Tot 45% korting op beauty kits",
       "date": "2026-08-18"
@@ -651,6 +731,10 @@
   ],
   "colourfulrebel": [
     {
+      "text": "Gratis t-shirt uit de Basic Essentials collectie bij bestelling",
+      "date": "2026-08-21"
+    },
+    {
       "text": "Tot 50% korting op veel stijlen in de sale",
       "date": "2026-08-11"
     },
@@ -660,6 +744,22 @@
     }
   ],
   "coolblue": [
+    {
+      "text": "38% korting op Microsoft Surface Pro 11",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "Extra €50 studentenkorting op Lenovo IdeaPad Slim 3 15IRH10",
+      "date": "2026-08-26"
+    },
+    {
+      "text": "15% korting op Acer Chromebook Plus 514",
+      "date": "2026-08-25"
+    },
+    {
+      "text": "Korting op Lenovo ThinkPad E16 G3 IAL, van €1599 voor €1549",
+      "date": "2026-08-21"
+    },
     {
       "text": "Tijdelijke aanbieding voor Apple AirTag 2 (4-Pack) met sleutelhanger, op=op deal",
       "date": "2026-05-31"
@@ -757,6 +857,18 @@
       "date": "2026-04-29"
     }
   ],
+  "dogwithamission": [
+    {
+      "text": "€5 korting op eerste bestelling bij aanmelding",
+      "date": "2026-08-27"
+    }
+  ],
+  "donder": [
+    {
+      "text": "Koop 3 velvet pakken en t-shirts, betaal er 2",
+      "date": "2026-08-24"
+    }
+  ],
   "doreandrose": [
     {
       "text": "Mid-season uitverkoop met tot 40% korting op bundels",
@@ -764,6 +876,14 @@
     }
   ],
   "douglas": [
+    {
+      "text": "Shopping Night: 25% korting op alles vanaf €25 voor Beauty Card-members, alleen op 25 augustus tot 23:59",
+      "date": "2026-08-25"
+    },
+    {
+      "text": "20% korting op bijna alles vanaf €25 voor Beauty Card-members, met de persoonlijke code uit je Douglas-mail, 21 t/m 23 augustus",
+      "date": "2026-08-21"
+    },
     {
       "text": "15% korting op alle haarverzorging bij aankoop vanaf €19",
       "date": "2026-08-07"
@@ -845,12 +965,12 @@
   ],
   "eeveveofficial": [
     {
-      "text": "10% korting bij aankoop van een knoeimat samen met een speelmat",
-      "date": "2026-08-19"
+      "text": "Nieuwe aanbieding met €5 korting",
+      "date": "2026-08-20"
     },
     {
-      "text": "Nieuwe aanbieding met €5 korting",
-      "date": "2026-08-10"
+      "text": "10% korting bij aankoop van een knoeimat samen met een speelmat",
+      "date": "2026-08-19"
     },
     {
       "text": "10% korting bij toevoegen van een knoeimat aan je speelmat",
@@ -866,6 +986,10 @@
     }
   ],
   "elevatedfashion.eu": [
+    {
+      "text": "10% korting met code ONEYEAR en gratis hoesje bij besteding vanaf €50",
+      "date": "2026-08-25"
+    },
     {
       "text": "25% korting op alles tijdens de Birthday Sale",
       "date": "2026-08-18"
@@ -943,6 +1067,14 @@
   ],
   "everready.nl": [
     {
+      "text": "Maak kans op de Golden Ticket met een speciale actie",
+      "date": "2026-08-23"
+    },
+    {
+      "text": "3-pack deodorant aanbieding voor €18,95",
+      "date": "2026-08-21"
+    },
+    {
       "text": "3-pack deodorant aanbieding voor €20,95",
       "date": "2026-08-12"
     }
@@ -958,6 +1090,10 @@
     }
   ],
   "evryjewels": [
+    {
+      "text": "Tot 95% korting op de hele site tijdens de End of Summer Blowout",
+      "date": "2026-08-22"
+    },
     {
       "text": "Producten vanaf $3,99 met extra 40% korting, automatisch toegepast, beperkte tijd",
       "date": "2026-08-15"
@@ -980,6 +1116,10 @@
     }
   ],
   "fashionette": [
+    {
+      "text": "20% extra korting op schoenen",
+      "date": "2026-08-25"
+    },
     {
       "text": "10% extra korting op geselecteerde sale items met code DEAL10",
       "date": "2026-08-07"
@@ -1145,6 +1285,10 @@
   ],
   "fuelyourbody": [
     {
+      "text": "3+1 gratis op 2 nieuwe Orzo's, alleen deze week",
+      "date": "2026-08-24"
+    },
+    {
       "text": "15% korting deze week op de try-out box voor nieuwe klanten",
       "date": "2026-08-16"
     }
@@ -1213,6 +1357,14 @@
   ],
   "gutsgusto": [
     {
+      "text": "30% tot 70% korting op alle sale-items, met veel nieuwe stijlen toegevoegd",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "Stapelkorting: 10% bij 1 item, 15% bij 2 items en 20% vanaf 3 items, ook op sale",
+      "date": "2026-08-24"
+    },
+    {
       "text": "50% korting op de bestseller playsuit in twee kleuren, alleen vandaag",
       "date": "2026-08-18"
     },
@@ -1266,6 +1418,10 @@
     }
   ],
   "haarshop": [
+    {
+      "text": "€5 korting vanaf €50 met code CADEAU5, plus een gratis Biosilk Therapy 67 ml vanaf €80, 25 t/m 27 augustus",
+      "date": "2026-08-25"
+    },
     {
       "text": "DonderDagDeal: 50% extra korting op de sale tijdens de Summer Sale, alleen vandaag",
       "date": "2026-08-20"
@@ -1349,6 +1505,26 @@
   ],
   "hema": [
     {
+      "text": "15% korting op bijna alles met een HEMA pas",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "50% korting op roze tompoucen",
+      "date": "2026-08-25"
+    },
+    {
+      "text": "10% extra korting op alles in je mandje vanaf €25, alleen vanavond tot 23:59",
+      "date": "2026-08-23"
+    },
+    {
+      "text": "30% korting op voedselopbergers en voorraadpotten",
+      "date": "2026-08-23"
+    },
+    {
+      "text": "Laatste kans: 30% korting op fietsaccessoires",
+      "date": "2026-08-22"
+    },
+    {
       "text": "20% korting op bijna alles vanaf €20, alleen op 16 augustus tot 23:59",
       "date": "2026-08-16"
     },
@@ -1380,6 +1556,10 @@
     }
   ],
   "hollandandbarrett": [
+    {
+      "text": "Tweede product 50% korting op beauty deals",
+      "date": "2026-08-22"
+    },
     {
       "text": "1+1 gratis op sportproducten, van proteinepoeders en elektrolyten tot creatine en energy gels",
       "date": "2026-08-19"
@@ -1493,6 +1673,14 @@
   ],
   "iciparisxl": [
     {
+      "text": "SHOPPING NIGHT: 25% korting op bijna alles vanaf €25, alleen op 26 augustus van 18:00 tot 23:59",
+      "date": "2026-08-26"
+    },
+    {
+      "text": "SHOPPING DAY: 25% korting op bijna alles vanaf €25, alleen op 23 augustus",
+      "date": "2026-08-23"
+    },
+    {
       "text": "20% korting op bijna alle geuren voor Beauty Members, met code NLD-GEUR20 online, 17 t/m 30 augustus",
       "date": "2026-08-19"
     },
@@ -1539,6 +1727,10 @@
   ],
   "idealofsweden": [
     {
+      "text": "Club Weekend: 30% korting op alles voor leden, plus een gratis Fine Wine Pearl wristlet bij de eerste 300 hoesjebestellingen",
+      "date": "2026-08-27"
+    },
+    {
       "text": "30-50% korting op bestsellers",
       "date": "2026-07-30"
     },
@@ -1570,6 +1762,10 @@
     }
   ],
   "insentials.supplements": [
+    {
+      "text": "Gratis Smart Vitamins For Her bij aankoop van een pack of routine, geldig van 20/08 tot 2/09",
+      "date": "2026-08-20"
+    },
     {
       "text": "Tijdelijke korting op Metabolic Burn REE shots, nu €122,50 in plaats van €150",
       "date": "2026-08-09"
@@ -1637,6 +1833,10 @@
   ],
   "jeuliajewelry": [
     {
+      "text": "Gratis tattoo stickers bij aankoop",
+      "date": "2026-08-25"
+    },
+    {
       "text": "12e verjaardag actie: BOGO 40% korting met code Jeulia",
       "date": "2026-08-13"
     },
@@ -1691,6 +1891,10 @@
   ],
   "kaptenandson": [
     {
+      "text": "Tot 50% korting tijdens de aankomende verjaardagssale",
+      "date": "2026-08-25"
+    },
+    {
       "text": "Gratis drinkfles bij Back to Work actie",
       "date": "2026-08-08"
     },
@@ -1715,6 +1919,10 @@
   ],
   "kenwood": [
     {
+      "text": "20% korting met code BACK20 voor snellere voorbereiding en minder stress",
+      "date": "2026-08-26"
+    },
+    {
       "text": "Tot 30% korting op best beoordeelde Kenwood-favorieten",
       "date": "2026-08-10"
     },
@@ -1732,6 +1940,14 @@
     }
   ],
   "kidsdepartment": [
+    {
+      "text": "Nieuwe final sale met 60% korting",
+      "date": "2026-08-24"
+    },
+    {
+      "text": "Tijdelijke flash sale met 70% korting op winter- en zomercollectie",
+      "date": "2026-08-23"
+    },
     {
       "text": "15% extra korting tijdelijk beschikbaar",
       "date": "2026-07-26"
@@ -1771,6 +1987,10 @@
   ],
   "koro.com": [
     {
+      "text": "Nieuwe promotie met 10% korting zichtbaar op de homepage",
+      "date": "2026-08-22"
+    },
+    {
       "text": "Tot 50% korting vanwege magazijnopruiming",
       "date": "2026-07-20"
     }
@@ -1804,6 +2024,14 @@
     }
   ],
   "lampen24": [
+    {
+      "text": "Extra korting van 10% vanaf €99 en 13% vanaf €159 met code FINALE",
+      "date": "2026-08-26"
+    },
+    {
+      "text": "Extra korting tot 16% vanaf bepaalde bestelbedragen met code FLASH",
+      "date": "2026-08-24"
+    },
     {
       "text": "Extra 10% korting vanaf €99 en 13% vanaf €159 met code ZOMER",
       "date": "2026-07-13"
@@ -1888,6 +2116,22 @@
     }
   ],
   "lookfantastic": [
+    {
+      "text": "25% korting plus 5% extra op make-up en parfum van Armani met code ARMANI5, alleen vandaag",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "30% korting op een grote selectie beautyproducten, alleen vanavond met code AVOND",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "30% korting plus 10% extra op La Roche-Posay met code LRP10, waaronder Toleriane, Anthelios en Cicaplast",
+      "date": "2026-08-26"
+    },
+    {
+      "text": "22% korting op Premium Beauty van onder meer YSL, Armani, Laura Mercier en Aesop met code SHOP",
+      "date": "2026-08-20"
+    },
     {
       "text": "30% korting op K-Beauty van onder meer Medicube, LANEIGE, Beauty of Joseon en Anua met code KBEAUTY",
       "date": "2026-08-18"
@@ -2001,6 +2245,14 @@
   ],
   "loragal": [
     {
+      "text": "Korting van $10, $30 of $50 bij bestellingen boven $100, $200 of $300 met codes VA10, VA30 en VA50",
+      "date": "2026-08-22"
+    },
+    {
+      "text": "Jaarlijkse uitverkoop met tot 60% korting",
+      "date": "2026-08-21"
+    },
+    {
       "text": "Besparen van $100 bij besteding vanaf $100 met code VA10",
       "date": "2026-07-29"
     },
@@ -2038,6 +2290,22 @@
     }
   ],
   "lucardi": [
+    {
+      "text": "40% korting op alle 9 karaat sieraden, geldig op 27 en 28 augustus",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "SHOPPING NIGHT: 25% korting op alles, van 25 augustus 17:00 t/m 26 augustus 08:59 in de webshop",
+      "date": "2026-08-25"
+    },
+    {
+      "text": "Koop 2, krijg 1 gratis aanbieding, mix en match mogelijk",
+      "date": "2026-08-24"
+    },
+    {
+      "text": "20% korting op alles tijdens Shopping Day",
+      "date": "2026-08-23"
+    },
     {
       "text": "Koop 2, krijg 1 gratis",
       "date": "2026-08-10"
@@ -2133,6 +2401,14 @@
   ],
   "lyko": [
     {
+      "text": "Exclusieve aanbieding: Lumene-adventskalender nu beschikbaar, alleen bij Lyko",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "Tot 30% korting op beautyfavorieten voor de herfst, geldig tot zondag",
+      "date": "2026-08-26"
+    },
+    {
       "text": "25% korting op MAC producten",
       "date": "2026-08-04"
     },
@@ -2181,6 +2457,10 @@
   ],
   "maniacnails": [
     {
+      "text": "Birthday Sale: tot 40% korting",
+      "date": "2026-08-24"
+    },
+    {
       "text": "Gratis Turtle of nagelknipper bij aankoop van 3 nageldesigns",
       "date": "2026-08-17"
     }
@@ -2211,6 +2491,12 @@
       "date": "2026-04-11"
     }
   ],
+  "melanojewelry": [
+    {
+      "text": "Nieuwe sale items met kortingen tot 50%",
+      "date": "2026-08-21"
+    }
+  ],
   "merakitech": [
     {
       "text": "€105 aan cadeaus bij elke Meraki aankoop",
@@ -2219,6 +2505,12 @@
     {
       "text": "Tijdelijke mid-year aanbieding: bespaar €300",
       "date": "2026-06-19"
+    }
+  ],
+  "merkmeisjeskleding": [
+    {
+      "text": "Uitverkoop met kortingen tot 70%",
+      "date": "2026-08-20"
     }
   ],
   "merodacosmetics": [
@@ -2254,6 +2546,10 @@
     }
   ],
   "mimamsterdam": [
+    {
+      "text": "20% korting op de MIM-collectie",
+      "date": "2026-08-24"
+    },
     {
       "text": "1+1 gratis, tijdelijke actie",
       "date": "2026-08-07"
@@ -2308,6 +2604,14 @@
     }
   ],
   "myjewellery": [
+    {
+      "text": "Gratis gouden ketting bij besteding vanaf €50 ter viering van 15 jaar",
+      "date": "2026-08-24"
+    },
+    {
+      "text": "€15 extra korting bij aankoop van 2 sale-kledingitems in de boutiques, t/m 23 augustus",
+      "date": "2026-08-20"
+    },
     {
       "text": "50% korting op alle sale-artikelen tijdens de Summer Sale",
       "date": "2026-08-04"
@@ -2425,6 +2729,10 @@
   ],
   "nelsonschoenen": [
     {
+      "text": "20% korting op kinderschoenen voor het nieuwe schooljaar",
+      "date": "2026-08-26"
+    },
+    {
       "text": "Sale-korting verhoogd naar 40% op alle sale-items voor dames en kids",
       "date": "2026-08-15"
     },
@@ -2434,6 +2742,14 @@
     }
   ],
   "ninjakitchen": [
+    {
+      "text": "Members only: 20% korting op de Ninja SLUSHi met code SLUSH20, alleen vandaag",
+      "date": "2026-08-23"
+    },
+    {
+      "text": "Members only: Ninja CREAMi Deluxe 10-in-1 ijsmachine voor €195 met code NC195, alleen dit weekend",
+      "date": "2026-08-21"
+    },
     {
       "text": "Extra 15% korting vanaf €199 met code SW15 bovenop meer dan 25% korting.",
       "date": "2026-08-19"
@@ -2463,6 +2779,10 @@
   ],
   "notino": [
     {
+      "text": "15% korting op je hele bestelling met code hotdeal, 24 t/m 30-08-2026",
+      "date": "2026-08-24"
+    },
+    {
       "text": "Tot 20% zomerkorting op geselecteerde producten, geldig van 17 t/m 23-08-2026",
       "date": "2026-08-17"
     },
@@ -2491,6 +2811,10 @@
   ],
   "olcaygulsenbeauty": [
     {
+      "text": "30% korting op reguliere producten & bundles tijdens Back to work sale",
+      "date": "2026-08-25"
+    },
+    {
       "text": "Gratis Jacquard Make-up Case bij aankoop van Weekend Bag of OGB Voyager",
       "date": "2026-08-14"
     },
@@ -2504,6 +2828,14 @@
     }
   ],
   "oliviakate": [
+    {
+      "text": "20% korting op alle tops en blouses met code TOPDEAL20",
+      "date": "2026-08-21"
+    },
+    {
+      "text": "Final Summer Sale verhoogd naar tot 60% korting",
+      "date": "2026-08-20"
+    },
     {
       "text": "20% korting op The Sport Edit met code SPORT20",
       "date": "2026-08-13"
@@ -2622,7 +2954,7 @@
   "osock_performance": [
     {
       "text": "Direct 20% korting op je aankoop",
-      "date": "2026-07-09"
+      "date": "2026-08-26"
     },
     {
       "text": "Direct 20% korting op aankoop na invullen reden compressiesokken",
@@ -2640,6 +2972,10 @@
     }
   ],
   "otrium": [
+    {
+      "text": "Extra 25% korting op zomeritems tijdens de summer clearance",
+      "date": "2026-08-24"
+    },
     {
       "text": "Laatste dag Summer Sale: tot 85% korting plus 20% extra op alle sale-items met code SALE, t/m 16-08-2026",
       "date": "2026-08-16"
@@ -2749,6 +3085,10 @@
   ],
   "padelmarket": [
     {
+      "text": "50% korting op het tweede artikel bij kleding en schoenen",
+      "date": "2026-08-28"
+    },
+    {
       "text": "50% korting op het tweede artikel",
       "date": "2026-08-09"
     },
@@ -2764,6 +3104,26 @@
     }
   ],
   "parfumdreams.nl": [
+    {
+      "text": "8% korting op parfum met code SCENT of 14% op make-up, skincare en haarverzorging met code CARE",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "15% korting op aanbiedingen en bestsellers met code SUPER, geen minimale bestelwaarde, alleen vandaag",
+      "date": "2026-08-25"
+    },
+    {
+      "text": "11% korting op bijna alles met code SAVE, ook bovenop afgeprijsde producten, geen minimale bestelwaarde, t/m 24-08-2026",
+      "date": "2026-08-23"
+    },
+    {
+      "text": "Private Shopping Day: €12 korting vanaf €79 met code EUR12, alleen vandaag",
+      "date": "2026-08-22"
+    },
+    {
+      "text": "9% extra korting op bijna alles met code SPECIAL, ook op afgeprijsde artikelen, geen minimale bestelwaarde, alleen vandaag",
+      "date": "2026-08-20"
+    },
     {
       "text": "€15 korting in de app en €10 korting op de website bij aanmelding voor de nieuwsbrief",
       "date": "2026-08-19"
@@ -2840,6 +3200,10 @@
     }
   ],
   "photowall_sweden": [
+    {
+      "text": "15% korting op al het behang voor kleine ruimtes",
+      "date": "2026-08-21"
+    },
     {
       "text": "20% korting plus 5% extra korting op alle kinderbehang met code BKID5",
       "date": "2026-08-12"
@@ -2945,6 +3309,10 @@
   ],
   "plussupermarkt": [
     {
+      "text": "Pepsi, Sisi en 7Up voor 1 euro per fles",
+      "date": "2026-08-26"
+    },
+    {
       "text": "50% korting op Beemster kaassalade en tapenade",
       "date": "2026-07-15"
     },
@@ -2954,6 +3322,10 @@
     }
   ],
   "plutosport": [
+    {
+      "text": "Tot 50% korting op voetbalschoenen, kleding en scheenbeschermers voor het nieuwe seizoen",
+      "date": "2026-08-25"
+    },
     {
       "text": "Tot 60% korting op hockeyschoenen, hockeysticks en accessoires",
       "date": "2026-08-18"
@@ -2984,6 +3356,22 @@
     }
   ],
   "praxis": [
+    {
+      "text": "Weekendactie: tot 40% korting op wandpanelen, van 28 t/m 30 augustus",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "30% korting op raamdecoratie",
+      "date": "2026-08-24"
+    },
+    {
+      "text": "35% korting op kleurmuurverf van Histor, Perfection en Renaulac vanaf €25, ook op mengverf",
+      "date": "2026-08-21"
+    },
+    {
+      "text": "Zante loungeset van €799 voor €499 in de op=opruiming",
+      "date": "2026-08-20"
+    },
     {
       "text": "30% korting op binnen- en buitendeuren vanaf €100",
       "date": "2026-08-17"
@@ -3024,6 +3412,10 @@
     }
   ],
   "rihoas": [
+    {
+      "text": "Koop 1, krijg 2e 30% korting met code Web30; koop 2, krijg 3e 50% korting met code Web50",
+      "date": "2026-08-23"
+    },
     {
       "text": "Nieuwe promotie: draai aan het rad voor korting tot 20%.",
       "date": "2026-08-16"
@@ -3079,6 +3471,10 @@
   ],
   "sacha": [
     {
+      "text": "Final sale: tot 70% korting, de laatste styles zijn extra afgeprijsd",
+      "date": "2026-08-20"
+    },
+    {
       "text": "10% extra kassakorting bovenop de sale tot 60%, automatisch verrekend in je winkelmandje",
       "date": "2026-07-30"
     }
@@ -3090,6 +3486,10 @@
     }
   ],
   "samiol.com": [
+    {
+      "text": "Koop 1, krijg 2e 30% korting met code CAMPUS30; $25 korting bij bestellingen boven $120 met code CAMPUS25",
+      "date": "2026-08-26"
+    },
     {
       "text": "Koop 1, krijg 2e 25% korting met code beach25 en $20 korting bij bestellingen boven $120 met code beach20",
       "date": "2026-07-10"
@@ -3121,6 +3521,18 @@
     {
       "text": "25% korting op alles plus een gratis cadeau tijdens de Mid-Year Reset",
       "date": "2026-07-16"
+    }
+  ],
+  "schaefershop": [
+    {
+      "text": "Nieuwe promotie met 30% korting",
+      "date": "2026-08-24"
+    }
+  ],
+  "scuffers": [
+    {
+      "text": "Laatste kans op Summer Sales",
+      "date": "2026-08-21"
     }
   ],
   "sellpy": [
@@ -3183,6 +3595,10 @@
   ],
   "shoeby": [
     {
+      "text": "25% korting op alle kids jeans",
+      "date": "2026-08-22"
+    },
+    {
       "text": "Verhoogde korting tot 75% op alle sale artikelen",
       "date": "2026-08-19"
     },
@@ -3213,6 +3629,10 @@
   ],
   "silksilky_official": [
     {
+      "text": "Labor Day actie: tot 50% korting",
+      "date": "2026-08-26"
+    },
+    {
       "text": "50% korting op het derde kledingstuk voor dames",
       "date": "2026-07-15"
     },
@@ -3222,6 +3642,10 @@
     }
   ],
   "siroko": [
+    {
+      "text": "Flash sale tot 60% korting van 24 augustus 8:00 tot 31 augustus 23:59",
+      "date": "2026-08-25"
+    },
     {
       "text": "Flash sale met tot 45% korting van 17 augustus 8:00 tot 24 augustus 23:59",
       "date": "2026-08-17"
@@ -3271,7 +3695,17 @@
       "date": "2026-07-08"
     }
   ],
+  "skinnydiplondon": [
+    {
+      "text": "Draai aan het rad en win een korting tot 25% of een andere prijs",
+      "date": "2026-08-26"
+    }
+  ],
   "smartphonehoesjes.nl": [
+    {
+      "text": "20% korting op het hele assortiment met code ZZD20, t/m 6 september 2026",
+      "date": "2026-08-25"
+    },
     {
       "text": "15% korting op geselecteerd Back to Work assortiment met code BACKTOWORK15",
       "date": "2026-08-10"
@@ -3294,6 +3728,10 @@
     }
   ],
   "smashedlemon": [
+    {
+      "text": "10% korting bij inschrijving voor de nieuwe wintercollectie",
+      "date": "2026-08-20"
+    },
     {
       "text": "50% korting sale actie",
       "date": "2026-08-08"
@@ -3449,6 +3887,14 @@
   ],
   "stylewe": [
     {
+      "text": "Einde-zomer uitverkoop met stijlen vanaf $9,99 en tot 70% korting",
+      "date": "2026-08-21"
+    },
+    {
+      "text": "Tot 30% korting op nieuwe collectie",
+      "date": "2026-08-20"
+    },
+    {
       "text": "Korting van $60 bij besteding van $300, $25 bij $200 en $10 bij $100, geen code nodig, actie loopt tot 20/08/2026",
       "date": "2026-08-14"
     },
@@ -3525,6 +3971,10 @@
   ],
   "terstal": [
     {
+      "text": "Vandaag 5 euro korting op jongens jeans, korting wordt automatisch verrekend",
+      "date": "2026-08-26"
+    },
+    {
       "text": "Sale met kortingen tot 50%",
       "date": "2026-06-19"
     },
@@ -3571,6 +4021,10 @@
   ],
   "trendcarpet": [
     {
+      "text": "15% extra korting op alles met code SALE15 tijdens de End of Season Sale",
+      "date": "2026-08-24"
+    },
+    {
       "text": "15% extra korting op geselecteerde producten tijdelijk",
       "date": "2026-08-04"
     },
@@ -3579,7 +4033,21 @@
       "date": "2026-08-03"
     }
   ],
+  "twistshakebaby": [
+    {
+      "text": "Herfstuitverkoop met kortingen tot 60%",
+      "date": "2026-08-27"
+    }
+  ],
   "ullapopken.nl": [
+    {
+      "text": "10% korting op alles met code 25755",
+      "date": "2026-08-26"
+    },
+    {
+      "text": "25% korting op alle broeken bij aankoop van 2 of meer met code PANTS25",
+      "date": "2026-08-21"
+    },
     {
       "text": "20% korting op jassen met code RAIN20",
       "date": "2026-08-18"
@@ -3643,6 +4111,10 @@
   ],
   "uniqlo": [
     {
+      "text": "Tijdelijke aanbiedingen geldig tot en met 30 augustus",
+      "date": "2026-08-20"
+    },
+    {
       "text": "Tijdelijke aanbiedingen tijdens het Arigato Festival van 28 mei tot 3 juni",
       "date": "2026-06-02"
     },
@@ -3652,6 +4124,10 @@
     }
   ],
   "upfront": [
+    {
+      "text": "Tot 50% korting op de zomeropruiming",
+      "date": "2026-08-27"
+    },
     {
       "text": "10% korting actie",
       "date": "2026-08-19"
@@ -3677,6 +4153,10 @@
   ],
   "urbanoutfitters": [
     {
+      "text": "20% korting voor leden met code VIP",
+      "date": "2026-08-25"
+    },
+    {
       "text": "Tot 50% korting op geselecteerde artikelen",
       "date": "2026-06-16"
     },
@@ -3700,6 +4180,10 @@
     }
   ],
   "veromoda": [
+    {
+      "text": "15% korting op alles voor VERO MODA Club-leden met code VMGIFT15, een maand geldig",
+      "date": "2026-08-22"
+    },
     {
       "text": "Kans maken op maximaal 25% korting op jeans via krasactie, alleen in de app",
       "date": "2026-08-11"
@@ -3811,6 +4295,12 @@
       "date": "2026-04-23"
     }
   ],
+  "wefashion": [
+    {
+      "text": "Final sale: 10% extra korting op sale met code SS2610PC voor members, 21 t/m 23 augustus",
+      "date": "2026-08-21"
+    }
+  ],
   "wehkamp": [
     {
       "text": "Tot 70% korting plus 20% extra korting op fashion in de final sale",
@@ -3897,6 +4387,14 @@
   ],
   "womensbest": [
     {
+      "text": "Best verkochte artikelen vanaf €9,99",
+      "date": "2026-08-25"
+    },
+    {
+      "text": "Koop 3 nutrition producten, betaal er 2",
+      "date": "2026-08-24"
+    },
+    {
       "text": "Leggings vanaf €14,99 en shorts vanaf €9,99 met een tijdslimiet",
       "date": "2026-08-10"
     },
@@ -3961,6 +4459,12 @@
       "date": "2026-03-22"
     }
   ],
+  "xxlnutrition": [
+    {
+      "text": "Beyond Your Limits Week: tot 30% korting, t/m 30 augustus",
+      "date": "2026-08-24"
+    }
+  ],
   "youngla": [
     {
       "text": "15% korting bij inschrijving op nieuwsbrief",
@@ -3973,6 +4477,18 @@
   ],
   "yoursurprise": [
     {
+      "text": "20% korting op alle fotocadeaus",
+      "date": "2026-08-27"
+    },
+    {
+      "text": "25% korting op geselecteerde chocoladecadeaus, alleen op 25 augustus",
+      "date": "2026-08-25"
+    },
+    {
+      "text": "20% korting op alle kinder- en babycadeaus, alleen vandaag",
+      "date": "2026-08-23"
+    },
+    {
       "text": "20% korting op alle cadeaus voor haar, t/m 23 augustus",
       "date": "2026-08-18"
     },
@@ -3982,6 +4498,10 @@
     }
   ],
   "yvesrocher": [
+    {
+      "text": "2+1 gratis op alle haarproducten",
+      "date": "2026-08-25"
+    },
     {
       "text": "Nieuwe collectie Iconische Monoï vanaf €3,99",
       "date": "2026-08-12"
@@ -3996,6 +4516,10 @@
     }
   ],
   "zalando": [
+    {
+      "text": "20% korting op veel beautyproducten met code DAILYGLOW, vanaf €30, t/m 27-08-2026",
+      "date": "2026-08-25"
+    },
     {
       "text": "Tot 50% korting op de musthaves van het nieuwe seizoen, t/m 24-08-2026 23:59",
       "date": "2026-08-19"
@@ -4058,6 +4582,10 @@
     }
   ],
   "zelesta.nl": [
+    {
+      "text": "Teddy Deals vanaf €39,95",
+      "date": "2026-08-21"
+    },
     {
       "text": "Koop 1 Zelesta, krijg 1 gratis",
       "date": "2026-05-27"

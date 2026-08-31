@@ -5,6 +5,7 @@
 /24uomo
 /3bearsporridge
 /4endurance
+/4seizoenentuinmeubelen
 /4shine.nl
 /50plusmobiel
 /7oclock.de
@@ -64,7 +65,6 @@
 /anthropologie
 /anwbwinkel
 /apercueyewear
-/applesandbananasofficial
 /archy
 /aresgymclothing
 /arket
@@ -88,12 +88,14 @@
 /aurgan.nl
 /aurisa
 /authenticbeautyconcept
+/autovibe.nl
 /autowrapnl
 /avaewear
 /avondmakers
 /awbridal
 /aybl
 /azbarbecue
+/azulmundonl
 /b.extra
 /babeside
 /babiem
@@ -102,6 +104,7 @@
 /babyinbeeld
 /babysonly
 /backtothefuture_vintage
+/backtoyouchallenge
 /badjasparadijs
 /bajestudio
 /bakedoats
@@ -112,6 +115,7 @@
 /basalbasics.nl
 /bataviastad.nl
 /bbdebiestraatseweide
+/bcc.nl
 /beachresortpuntwest
 /bearswithbenefits
 /beautyplaza
@@ -143,6 +147,7 @@
 /bigsizeshirts
 /bijenkorf
 /bijoubrigitte
+/bijoubybritt
 /bikeflip
 /biotechusa
 /bissel
@@ -167,6 +172,7 @@
 /bluegroundhomes
 /bluetomato
 /blumill.nl
+/bodyandfit_nlteveo
 /bodyandfit.com
 /bodylab.nl
 /boerschappen
@@ -178,6 +184,8 @@
 /boohooman
 /bookbeat
 /boomba
+/boombrush
+/bootman.nl
 /boshuisjemaisondubois
 /bottger
 /bozasieraden
@@ -219,6 +227,7 @@
 /byluvera.nl
 /bymax
 /byrenee.nl
+/ca
 /cabaia
 /cabaulifestyle
 /caiacosmetics
@@ -236,16 +245,21 @@
 /catwalkjunkie
 /cavalluna.nl
 /cecil
+/centerparcs
+/cewe
 /cfab
 /chador
 /chagou
 /chalkbuddyuk
 /charlottetilbury
 /charmia
+/cheermyrun
 /chenoabeauty.nl
 /cherystyle.nl
 /chocoladebezorgd
 /choiceofjoy
+/christianartworkshop
+/chronext.nl
 /chunkyflavour
 /ciaobonnie
 /cider
@@ -266,10 +280,10 @@
 /clovira.creations
 /clubrepublique
 /cluse
-/cnsupplements
 /cocktailzak
 /cocunat
 /code-delen
+/collectivefestivalmgmt
 /colliegoud
 /colorbestie.app
 /colorescience
@@ -291,13 +305,13 @@
 /cos
 /coseystudio
 /cosmopolitan
-/costes
 /cottoncandykids
 /coursera
 /cozyinterior
 /creamyfabrics
 /createyourhome.nl
 /crisp
+/crispcrisp_nl
 /cronjager
 /crosleyradio.eu
 /cs_thelabel
@@ -310,6 +324,7 @@
 /cusbclo
 /custtom.nl
 /cyell.com
+/dabbleandco
 /dadelfactory
 /dagihair
 /daka
@@ -326,14 +341,17 @@
 /degeleflamingo
 /degoedkoopsteoutlet
 /deinterieurplakkers
+/dekbeddiscounter
 /delampfabriek.nl
 /deleca.nl
 /deleistert
 /deleukstetaartenshop
 /deley
 /delonghi
+/deloox
 /delta fiber
 /delta-fiber
+/deonlinedrogist
 /depindakaaswinkel
 /deplay
 /deplay.nl
@@ -349,7 +367,9 @@
 /detovertuin
 /dfyne
 /dgmoutlet
+/dhl
 /dierenapotheek
+/difrax
 /digierastorage
 /dikkedame.com
 /dilling
@@ -370,7 +390,6 @@
 /dothelabel
 /douglas
 /dr_blend
-/dragonpharma_latino
 /dreame
 /dreamydog
 /dreamydogsofficial
@@ -378,6 +397,7 @@
 /drhauschka.nl
 /drksonline
 /drmartens
+/droomie.nl
 /drukwerknodig
 /dryze.nl
 /dualoa
@@ -409,6 +429,7 @@
 /efteling
 /egglamp.nl
 /ekkovision
+/ekomenu
 /elavatesuperfoods
 /elementre
 /eleonorabonucci
@@ -431,6 +452,7 @@
 /essenzahome
 /etos
 /etsy
+/eurofietsen.nl
 /euroflorist
 /eurowheelz
 /evecurls
@@ -459,6 +481,7 @@
 /fashionomi
 /fashiontiger.nl
 /fashionwebshop
+/fatdaddy.nl
 /fatmoose
 /faume
 /FBTO Zorg
@@ -481,6 +504,7 @@
 /fit20nl
 /fitage.com
 /fithlon
+/fitjeans
 /fitmeals
 /fitmeals.nl
 /fitpiggy.nl
@@ -517,13 +541,16 @@
 /freesoul
 /frenkiesfashion
 /frenkylewisdogcare
+/freshnrebel
 /freyara
 /friends-of.nl
 /frmtegelwerk
 /fuelyourbody
+/furpets
 /furrygoodiez
 /fusecommunity
 /futbeaul
+/gadero.nl
 /galaxus
 /garmundo
 /garmundo.nl
@@ -566,6 +593,8 @@
 /goodevas.com
 /goodweigh
 /goodweigh.nl
+/gopinqoutlet
+/gorillasports.nl
 /gotbag
 /goudlief.nl
 /goyu
@@ -637,8 +666,11 @@
 /homarycom
 /home24
 /homefitnesscode
+/hondenshop.nl
 /hondensupplement
 /horloge.nl
+/horrenmax
+/horseflex.nl
 /hostinger
 /hostnet
 /hotelstacherhof
@@ -657,6 +689,7 @@
 /iciparisxl
 /idealofsweden
 /iherb
+/ikea
 /ikrafood.nl
 /ilayci.official
 /ilovespeelgoed
@@ -666,22 +699,24 @@
 /inglot
 /inktweb
 /innercircle
-/inokastudio
 /insentials.supplements
 /insentialssupplements
 /insta360
 /intergard
 /internetslagerij
+/intertoys
 /invitationtoimagine
 /iphone-cases.nl
 /irisbeautysalon
 /isabelbernard
 /isabelmarant
 /iscooter
+/isupcenter.nl
 /ixxi
 /jackery
 /jackysue.official
 /jako
+/japandrop
 /jardinvue
 /jbl
 /jdsports
@@ -693,9 +728,12 @@
 /jhypes
 /jippiejeej.be
 /jjshouse
+/joanneswebshop.nl
 /joom
 /jorcustom
+/jotex
 /journaway
+/journiprint
 /joybuy
 /juuniek
 /jwverzekeringen
@@ -712,6 +750,7 @@
 /kidsdeco.nl
 /kidsdepartment
 /kiehls
+/kik
 /kikomilano
 /killerbodyfood
 /kitchenaid
@@ -730,6 +769,7 @@
 /kswiss
 /kudlworld
 /kwakzalversports
+/kwantum
 /kymocleaning
 /lakkiegellak
 /laluunbaby
@@ -747,7 +787,9 @@
 /leentjebymikabaxa
 /legionathletics
 /lego
+/lennoxlynn_
 /lenovo
+/lensmart
 /lentiamo
 /leolive
 /leonardohotels
@@ -756,6 +798,7 @@
 /leukstetickets
 /levis
 /lichtenmeubels
+/lidl
 /lieks_home
 /lift.lake
 /lilatelier
@@ -789,9 +832,10 @@
 /lovelysbyheleen
 /lucovitaal
 /lumanbrands
+/lumeworks
 /luminoranl
+/lumistar
 /lumoa.nl
-/lunaswimwear
 /lunere
 /lureaux
 /lusini
@@ -803,7 +847,7 @@
 /lycamobile
 /lyfted
 /lyko
-/lzclinics
+/madeformoments
 /madlady
 /madurodam
 /mae
@@ -848,8 +892,10 @@
 /merkmeisjeskleding
 /merodacosmetics
 /metcynthiaopreis
+/miamily_official
 /micas
 /michaelkors
+/miinto
 /mijnhummeltje
 /milezbracelets
 /millarovekamp
@@ -864,6 +910,7 @@
 /mizuno
 /mkbmshop
 /mkbmshopkillerbodyfood
+/mobiel.nl
 /mockberg
 /modofashion.nl
 /moisecare
@@ -873,6 +920,7 @@
 /mondly
 /moneybird
 /moodzdesign
+/mooieplinten.nl
 /moostloved
 /moostwanted
 /moovvmore.nl
@@ -881,6 +929,7 @@
 /mostwanted
 /mothersearth
 /mpactivewear
+/mrfris.official
 /mrstarskyamsterdam
 /msmode
 /muchachomalo
@@ -902,6 +951,8 @@
 /nameit
 /namimatcha
 /namly.nl
+/nanniesatnight
+/naobibabyofficial
 /natracare
 /naturalslim
 /naturecan
@@ -912,6 +963,7 @@
 /neonail
 /neva_living_
 /newbalance
+/newyorkpizza
 /next
 /nextextreme
 /nextory
@@ -925,6 +977,7 @@
 /nomadesim
 /nordicnest
 /nordvpn
+/norsan
 /notino
 /nounthestudio
 /novify.nl
@@ -948,7 +1001,6 @@
 /ohklassy
 /olcaygulsenbeauty
 /olijfolieconcurrent
-/oliveyoungglobal
 /oliviakate
 /olivida.nl
 /olunaya.official
@@ -956,6 +1008,7 @@
 /omoda
 /on
 /onceuponapp
+/one2track
 /onebioshop
 /oneill
 /oneplus
@@ -970,6 +1023,7 @@
 /opulairejewelry
 /oralb
 /orangebag
+/orangefit
 /organicbasics
 /osatohome
 /osloskinlab
@@ -1000,15 +1054,16 @@
 /paulaschoice.nl
 /paulvalentine
 /pawness_dog_essentials
+/peachtights
 /peek&cloppenburg
 /peintagone_nl
+/perfectionprotein
 /perfumetrader
 /personalsurprise
 /peterhahn
 /petree
 /petsecur
 /philips
-/philips lumea
 /philipshue
 /photowall_sweden
 /picnic
@@ -1033,6 +1088,7 @@
 /poelmanbrands
 /pogodesignshop
 /pol3dstudio
+/polyluma
 /posterhome
 /posters
 /posterstore
@@ -1045,6 +1101,7 @@
 /prikbord
 /primevideo
 /printabout
+/prisma.watch
 /privacy-policy
 /produo
 /proglow
@@ -1058,6 +1115,8 @@
 /purebyme
 /purebyzizo.nl
 /puritybase
+/puuur-interiors.nl
+/pvcvloeren.nl
 /q-park
 /qallolifestyle
 /qathu
@@ -1084,6 +1143,7 @@
 /rihoas
 /ripstar_travel
 /ripsvintage
+/rituals
 /robell
 /rockerz
 /rocksdiscount
@@ -1118,6 +1178,7 @@
 /sandandsky
 /sanitaironline
 /sansbeaute.nl
+/sapje
 /saralune
 /scapino
 /scentech.eu
@@ -1151,13 +1212,16 @@
 /shirttuning.nl
 /shoeby
 /shoesme
+/shokz_benelux
 /shopatlot
 /shopify
+/showernizr
 /si-biza
 /sieradenbydiana
 /silabrows
 /silkelegancemanon
 /silksilky_official
+/silvermoonnl
 /simbiosis
 /simpel
 /simyo
@@ -1172,7 +1236,9 @@
 /skinnydiplondon
 /skintemporarytattoos
 /skrub
+/slimster.nl
 /slingershop
+/smart_peptides
 /smartphonehoesjes.nl
 /smartphoto
 /smartphoto.nl
@@ -1205,6 +1271,7 @@
 /squla
 /stanley
 /startselect
+/stayokay
 /stayokayhostels
 /steamone
 /steamstory
@@ -1259,10 +1326,12 @@
 /surebird
 /surfblend
 /surfercat
+/sushipoint
 /suuksess
 /svhuidinstituut
 /svibe
 /swapan
+/swapfiets
 /sweetcraving
 /swehealth
 /swiefies
@@ -1299,10 +1368,12 @@
 /teva
 /teveeo
 /teveo
+/theactivemodesty
 /thebrandfelice
 /thecollectorthehague
 /theconfidenceconcept
 /theey
+/theey.co
 /thefarm
 /thefarmpaintmaterials
 /thegelexpert
@@ -1316,8 +1387,8 @@
 /thephonelab
 /theposterclub
 /thestorewoerden
-/thestreetfoodclub
 /theusualsocial
+/thewildflowerclub
 /thewinkdrip
 /thieu.lab
 /thingsilikethingsilove
@@ -1337,6 +1408,7 @@
 /tommyteleshopping
 /tomtailor
 /top5
+/topbloemen
 /topoframe.nl
 /toutvintageshop
 /tractive
@@ -1353,6 +1425,7 @@
 /tripper.nl
 /troispommeshome
 /ttdathletics
+/tui
 /tuinmeubelland
 /tuinmeubelshop.nl
 /tuinmeubelwereld
@@ -1373,10 +1446,12 @@
 /ultimatetravel
 /ultrahuman_ring
 /ultrahuman-ring
+/unbleachednl
 /underarmour
 /understatementunderwear
 /uniekliedje.nl
 /unikq
+/uniquewateronthardersbv
 /unisa
 /unitedconsumers
 /unwind
@@ -1385,6 +1460,7 @@
 /upway
 /upway.nl
 /urbanoutfitters
+/urbanovafest
 /useframes
 /uwantisell
 /v&d
@@ -1399,10 +1475,12 @@
 /vanastenbabysuperstore
 /vanbeekumspecerijen
 /vanbeton
+/vandyck
 /vattenfall
 /vbs-hobby
 /vbs-hobby.nl
 /vd
+/vdgarde.nl
 /veganboost
 /velluto
 /velostore
@@ -1430,11 +1508,11 @@
 /vitamineshop
 /vitaminfit
 /vitaminfit.eu
+/vitastrong_belgium
 /vivara
 /vivazero
 /viverelondon
 /vliegwinkel
-/vloer.nu
 /vlr
 /voghion
 /volero.nl
@@ -1445,16 +1523,17 @@
 /vulpesbabycare
 /vuurkorfwinkel
 /vvvcadeaukaarten
+/wabimatcha
 /walkingpad.nl
 /wallfield
 /wamdenim
+/wastoren
 /wastoren.nl
 /waterdrop
 /wavenestsurfcamp
 /wavytalkofficial
 /wavzsupplementen
 /weare_zombie
-/wearedynter
 /weargalvier
 /weekday
 /wefashion
@@ -1463,6 +1542,7 @@
 /wellis
 /wellnessrave
 /welovetheplanet
+/welvaere.nl
 /werkaandemuur
 /wesmyle
 /westwing
@@ -1471,7 +1551,6 @@
 /wijnvoordeel
 /wildrefill
 /winkels
-/winkeltjevolgeluk
 /wish.com
 /withlovewrapped
 /wizzimo_store
@@ -1480,6 +1559,7 @@
 /woodwick
 /workliving.nl
 /worthit
+/xenos
 /xiaomi
 /xlash
 /xoxowildhearts
