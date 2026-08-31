@@ -1,0 +1,97 @@
+{
+  "slug": "q-park",
+  "name": "Q-Park",
+  "heroLede": "Q-Park exploiteert parkeergarages door heel Nederland, met vooraf reserveren als belangrijkste voordeel: online boeken is doorgaans goedkoper dan het tarief bij de slagboom. Daarnaast zijn er abonnementen, Park+Fly voor de luchthaven, Park+Ride bij stations en ruim 1.800 laadpunten. Op deze pagina lees je hoe je er het voordeligst parkeert.",
+  "about": [
+    "Q-Park beheert parkeergarages en straatparkeerplaatsen in de grote Nederlandse steden — Amsterdam, Rotterdam, Den Haag, Utrecht en Maastricht onder meer — en is daarnaast actief in België, Duitsland, Frankrijk en andere Europese landen. Je kunt er per keer parkeren, maar het aanbod is breder dan dat.",
+    "Online reserveren is de kern. Je vult locatie, aankomst en vertrek in en ziet welke garages beschikbaar zijn tegen welk tarief. Dat gereserveerde tarief ligt doorgaans onder wat je bij binnenrijden zonder reservering betaalt — bij een dag in de stad of een avond uit is dat verschil aanzienlijk.",
+    "Naast dagtickets zijn er abonnementen voor wie regelmatig op dezelfde plek parkeert, Park+Fly-pakketten voor luchthavenparkeren, Park+Ride bij treinstations als goedkoper alternatief voor de binnenstad, en parkeren rond evenementen. Voor elektrische auto's zijn er meer dan 1.800 laadpunten in de garages.",
+    "Praktisch werkt het met kentekenherkenning: de slagboom opent bij aankomst en de sessie start en stopt automatisch. Via de Q-Park-app vervallen bovendien de transactiekosten bij garages en het merendeel van het straatparkeren. Betalen kan met iDEAL, Bancontact, creditcard en PayPal."
+  ],
+  "why": [
+    {
+      "h": "Vooraf reserveren is goedkoper dan de slagboom",
+      "p": "Het online tarief ligt doorgaans onder het reguliere tarief bij binnenrijden. Bij een dag in de stad loopt dat verschil op tot een aanzienlijk bedrag, en het is de enige echt structurele besparing bij parkeren."
+    },
+    {
+      "h": "Kentekenherkenning in plaats van tickets",
+      "p": "De slagboom opent bij aankomst en de sessie stopt automatisch bij vertrek. Geen ticket kwijtraken, geen rij bij de betaalautomaat — bij drukke garages scheelt dat merkbaar tijd."
+    },
+    {
+      "h": "Park+Ride als alternatief voor de binnenstad",
+      "p": "Parkeren bij een station en met het openbaar vervoer doorreizen is doorgaans een fractie van de prijs van een binnenstadsgarage. Voor een dag winkelen of een afspraak in het centrum is dat de goedkoopste route."
+    },
+    {
+      "h": "Ruim 1.800 laadpunten",
+      "p": "Laden terwijl je geparkeerd staat, in plaats van een aparte stop maken. Voor elektrische rijders is dat een reden om garage te kiezen op laadmogelijkheid in plaats van alleen op prijs."
+    },
+    {
+      "h": "Geen transactiekosten via de app",
+      "p": "Bij gebruik van de app vervallen de transactiekosten bij garages en het meeste straatparkeren. Bij korte parkeersessies is dat relatief een groot deel van de rekening."
+    }
+  ],
+  "trending": [
+    "Vooraf reserveren voor een dag in de stad",
+    "Park+Fly bij Schiphol en andere luchthavens",
+    "Park+Ride bij treinstations",
+    "Parkeerabonnementen voor forenzen",
+    "Parkeren rond evenementen",
+    "Laden tijdens het parkeren",
+    "Parkeren in Amsterdam, Rotterdam en Utrecht"
+  ],
+  "codeInfo": [
+    "Een Q-Park kortingscode voer je in tijdens het reserveren, voordat je de boeking afrondt. Controleer daarna of de korting in het overzicht staat: bij parkeren reken je vaak af op basis van een tijdvak, en de prijs die je bevestigt is de prijs die geldt.",
+    "Het grootste voordeel bij parkeren komt echter niet uit een code maar uit vooraf reserveren. Het onlinetarief ligt doorgaans onder het tarief bij de slagboom, en dat verschil is bij een hele dag groter dan wat een kortingsactie oplevert.",
+    "Kijk daarnaast naar de vorm van parkeren. Een abonnement is goedkoper dan losse dagen als je regelmatig op dezelfde plek staat, Park+Ride is goedkoper dan een binnenstadsgarage, en via de app vervallen de transactiekosten. Die keuzes samen bepalen je prijs veel sterker dan een code."
+  ],
+  "tips": [
+    {
+      "h": "Reserveer vooraf in plaats van binnenrijden",
+      "p": "Het onlinetarief ligt doorgaans onder het tarief bij de slagboom. Dat is de betrouwbaarste besparing bij parkeren en vraagt alleen dat je een paar minuten vooruit plant."
+    },
+    {
+      "h": "Overweeg Park+Ride bij een dag in het centrum",
+      "p": "Parkeren bij een station en met het ov doorreizen is vaak een fractie van de prijs van een binnenstadsgarage. Bij een dag winkelen of een museumbezoek weegt de extra reistijd daar meestal ruim tegenop."
+    },
+    {
+      "h": "Gebruik de app om transactiekosten te vermijden",
+      "p": "Via de app vervallen die kosten bij garages en het meeste straatparkeren. Bij korte sessies is dat verhoudingsgewijs veel."
+    },
+    {
+      "h": "Neem een abonnement als je vaak op dezelfde plek staat",
+      "p": "Voor forenzen of vaste bezoekers is een maandabonnement doorgaans goedkoper dan losse dagen. Reken je aantal parkeerdagen per maand door voordat je blijft losbetalen."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is vooraf reserveren goedkoper?",
+      "a": "Doorgaans wel: het onlinetarief ligt onder het reguliere tarief dat je bij binnenrijden betaalt. Bij een hele dag parkeren is dat verschil aanzienlijk, en het is de meest betrouwbare manier om bij Q-Park te besparen."
+    },
+    {
+      "q": "Welke soorten parkeren biedt Q-Park?",
+      "a": "Losse dagtickets via reservering, abonnementen voor wie regelmatig op dezelfde plek staat, Park+Fly voor luchthavenparkeren, Park+Ride bij treinstations en parkeren rond evenementen. Daarnaast zijn er ruim 1.800 laadpunten voor elektrische auto's."
+    },
+    {
+      "q": "Hoe werkt de toegang tot de garage?",
+      "a": "Met kentekenherkenning: de slagboom opent bij aankomst en de parkeersessie start en stopt automatisch. Je hoeft dus geen ticket te trekken of bij een automaat af te rekenen."
+    },
+    {
+      "q": "Hoe gebruik ik een Q-Park kortingscode?",
+      "a": "Je voert de code in tijdens het reserveren, voordat je de boeking bevestigt. Controleer of de korting in het prijsoverzicht is verwerkt; de prijs die je bevestigt is de prijs die geldt."
+    },
+    {
+      "q": "In welke steden zit Q-Park?",
+      "a": "In de grote Nederlandse steden, waaronder Amsterdam, Rotterdam, Den Haag, Utrecht en Maastricht, en daarnaast in België, Duitsland, Frankrijk en andere Europese landen."
+    }
+  ],
+  "related": [
+    "tripper.nl",
+    "tui",
+    "landal",
+    "centerparcs",
+    "oad",
+    "efteling",
+    "nh-hotels",
+    "zenhotels"
+  ]
+}
