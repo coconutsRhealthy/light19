@@ -31,8 +31,7 @@
 // happens to match nothing. It would start matching the moment a malformed row
 // with no company name reached discounts.json, and render a nameless card.
 export const PINNED_SLUGS: string[] = [
-    'douglas',
-    'lounge by zalando'
+    'lookfantastic'
 ];
 
 // The shop that gets the rail's single SALE slot. Empty string = pick
