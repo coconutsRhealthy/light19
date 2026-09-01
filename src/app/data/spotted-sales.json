@@ -57,6 +57,10 @@
   ],
   "about-you": [
     {
+      "text": "Laatste dagen van de zomer: kortingen tot 60%",
+      "date": "2026-08-29"
+    },
+    {
       "text": "Eind zomeraanbieding met kortingen tot 60%",
       "date": "2026-08-08"
     },
@@ -164,6 +168,10 @@
     }
   ],
   "albelli": [
+    {
+      "text": "30% korting op wanddecoratie en gepersonaliseerde fotocadeaus met code EINDAUG35, t/m 07-09-2026",
+      "date": "2026-08-30"
+    },
     {
       "text": "Zomersale: 35% korting op premium fotoboeken met code EINDAUG35, t/m 07-09-2026",
       "date": "2026-08-27"
@@ -332,6 +340,10 @@
     }
   ],
   "asos": [
+    {
+      "text": "20% korting op alle Face + Body producten met code STOCKUP, t/m 31 augustus 09:00",
+      "date": "2026-08-29"
+    },
     {
       "text": "20% korting op geselecteerde items met code TREAT, t/m 25 augustus 09:00",
       "date": "2026-08-24"
@@ -575,6 +587,10 @@
   ],
   "burga": [
     {
+      "text": "20% korting op alles als einde van de zomer actie",
+      "date": "2026-08-30"
+    },
+    {
       "text": "Koop 4 telefoonhoesjes, betaal er 2 zonder code",
       "date": "2026-08-24"
     },
@@ -647,6 +663,14 @@
   ],
   "charlottetilbury": [
     {
+      "text": "10% korting op de nieuwe AIRbrush Flawless Perfect, Correct + Blur set",
+      "date": "2026-08-29"
+    },
+    {
+      "text": "Gratis mini Pillow Talk Push Up Lashes mascara en mini AIRbrush Flawless Setting Spray vanaf €100, plus een gratis full-size Brow Fix vanaf €150, t/m 3 september",
+      "date": "2026-08-28"
+    },
+    {
       "text": "Charlotte Tilbury x Practical Magic 2: 15% korting op de nieuwe beauty kit en 10% op geselecteerde kits",
       "date": "2026-08-26"
     },
@@ -696,6 +720,10 @@
     }
   ],
   "cider": [
+    {
+      "text": "Tot 70% korting tijdens Cider Club Weekend",
+      "date": "2026-08-28"
+    },
     {
       "text": "20% korting met code SALE2026 tijdens laatste zomeruitverkoop",
       "date": "2026-07-01"
@@ -781,6 +809,10 @@
   ],
   "cottonclub": [
     {
+      "text": "Gratis denim tas bij aankoop van minimaal €100 aan denim artikelen",
+      "date": "2026-08-28"
+    },
+    {
       "text": "Gratis festival sjaal bij aankoop vanaf €39,95 aan festival items",
       "date": "2026-05-01"
     }
@@ -817,6 +849,12 @@
     {
       "text": "Deze week £20 korting op hormoontest inclusief consult met NHS-getrainde klinisch specialist",
       "date": "2026-07-01"
+    }
+  ],
+  "decathlon": [
+    {
+      "text": "Memberweekend: €5 korting op je volgende aankoop",
+      "date": "2026-08-28"
     }
   ],
   "deloox": [
@@ -1061,6 +1099,10 @@
   ],
   "everdrop": [
     {
+      "text": "Magazijnsale met tot 50% korting",
+      "date": "2026-08-30"
+    },
+    {
       "text": "Summer Sale met kortingen tot 25%",
       "date": "2026-06-29"
     }
@@ -1235,6 +1277,14 @@
   ],
   "flexispot": [
     {
+      "text": "Tijdelijke korting van €170 op E7 PRO, actie eindigt 30 augustus",
+      "date": "2026-08-30"
+    },
+    {
+      "text": "Tot €270 korting op E7 Plus Max & Apollo, laatste week actie",
+      "date": "2026-08-29"
+    },
+    {
       "text": "Extra €100 korting in augustus op speciale 10-jarige jubileumeditie Align",
       "date": "2026-08-20"
     },
@@ -1356,6 +1406,10 @@
     }
   ],
   "gutsgusto": [
+    {
+      "text": "20% korting op alle jumpsuits en sets, t/m zondag 30 augustus, online en in de winkels",
+      "date": "2026-08-29"
+    },
     {
       "text": "30% tot 70% korting op alle sale-items, met veel nieuwe stijlen toegevoegd",
       "date": "2026-08-27"
@@ -1505,6 +1559,22 @@
   ],
   "hema": [
     {
+      "text": "2+1 gratis op picardie- en dubbelwandige glazen",
+      "date": "2026-08-29"
+    },
+    {
+      "text": "30% korting op Tefal-pannen met keramische anti-aanbaklaag",
+      "date": "2026-08-29"
+    },
+    {
+      "text": "1+1 gratis op navulbare lipsticks, oogschaduws en poeders",
+      "date": "2026-08-29"
+    },
+    {
+      "text": "1+1 gratis op kledinghangers en kledingopbergers",
+      "date": "2026-08-29"
+    },
+    {
       "text": "15% korting op bijna alles met een HEMA pas",
       "date": "2026-08-27"
     },
@@ -1556,6 +1626,10 @@
     }
   ],
   "hollandandbarrett": [
+    {
+      "text": "1+1 gratis op shampoos en conditioners van Urtekram",
+      "date": "2026-08-28"
+    },
     {
       "text": "Tweede product 50% korting op beauty deals",
       "date": "2026-08-22"
@@ -1673,6 +1747,18 @@
   ],
   "iciparisxl": [
     {
+      "text": "20% korting op bijna alle geuren, van 31 augustus t/m 27 september, in de winkels, op iciparisxl.nl en in de app",
+      "date": "2026-08-31"
+    },
+    {
+      "text": "35% korting op bijna alle mascara's",
+      "date": "2026-08-31"
+    },
+    {
+      "text": "Gratis SENSAI hoofdhuid- en haarmassageborstel bij aankoop van twee SENSAI-producten waarvan één haarproduct",
+      "date": "2026-08-31"
+    },
+    {
       "text": "SHOPPING NIGHT: 25% korting op bijna alles vanaf €25, alleen op 26 augustus van 18:00 tot 23:59",
       "date": "2026-08-26"
     },
@@ -1749,6 +1835,12 @@
     {
       "text": "3 voor 2 op alles",
       "date": "2026-04-15"
+    }
+  ],
+  "ikea": [
+    {
+      "text": "Tot 50% korting actie",
+      "date": "2026-08-30"
     }
   ],
   "indya": [
@@ -1832,6 +1924,10 @@
     }
   ],
   "jeuliajewelry": [
+    {
+      "text": "Tot 50% korting tijdens Jeulia Day Sparkle actie",
+      "date": "2026-08-29"
+    },
     {
       "text": "Gratis tattoo stickers bij aankoop",
       "date": "2026-08-25"
@@ -2117,6 +2213,10 @@
   ],
   "lookfantastic": [
     {
+      "text": "25% korting op Beauty of Joseon",
+      "date": "2026-08-28"
+    },
+    {
       "text": "25% korting plus 5% extra op make-up en parfum van Armani met code ARMANI5, alleen vandaag",
       "date": "2026-08-27"
     },
@@ -2401,6 +2501,10 @@
   ],
   "lyko": [
     {
+      "text": "50% korting op COSRX producten, actie geldt 24 uur",
+      "date": "2026-08-30"
+    },
+    {
       "text": "Exclusieve aanbieding: Lumene-adventskalender nu beschikbaar, alleen bij Lyko",
       "date": "2026-08-27"
     },
@@ -2515,6 +2619,10 @@
   ],
   "merodacosmetics": [
     {
+      "text": "20% korting met code SUNNY20 tijdens de einde zomer sale",
+      "date": "2026-08-28"
+    },
+    {
       "text": "20% korting met code SUNNY20 tijdens zomersale",
       "date": "2026-06-26"
     },
@@ -2604,6 +2712,10 @@
     }
   ],
   "myjewellery": [
+    {
+      "text": "25-hour sale: alle sale-items onder €25, 25 uur geldig",
+      "date": "2026-08-31"
+    },
     {
       "text": "Gratis gouden ketting bij besteding vanaf €50 ter viering van 15 jaar",
       "date": "2026-08-24"
@@ -2743,6 +2855,10 @@
   ],
   "ninjakitchen": [
     {
+      "text": "Members only: Shark CryoGlow LED-lichttherapie voor €249 met code CRYO249",
+      "date": "2026-08-29"
+    },
+    {
       "text": "Members only: 20% korting op de Ninja SLUSHi met code SLUSH20, alleen vandaag",
       "date": "2026-08-23"
     },
@@ -2829,6 +2945,10 @@
   ],
   "oliviakate": [
     {
+      "text": "20% korting op alle shorts, skorts en playsuits met code WEEKENDDEAL",
+      "date": "2026-08-28"
+    },
+    {
       "text": "20% korting op alle tops en blouses met code TOPDEAL20",
       "date": "2026-08-21"
     },
@@ -2899,6 +3019,12 @@
     {
       "text": "Spring Deals: selected items now reduced",
       "date": "2026-04-02"
+    }
+  ],
+  "onceuponapp": [
+    {
+      "text": "26% korting met code SAVE26 geldig tot 6 september",
+      "date": "2026-08-30"
     }
   ],
   "only": [
@@ -3104,6 +3230,10 @@
     }
   ],
   "parfumdreams.nl": [
+    {
+      "text": "End of Month Deal: €13 korting vanaf €89 met code EUR13, t/m 30-08-2026",
+      "date": "2026-08-29"
+    },
     {
       "text": "8% korting op parfum met code SCENT of 14% op make-up, skincare en haarverzorging met code CARE",
       "date": "2026-08-27"
@@ -3322,6 +3452,10 @@
     }
   ],
   "plutosport": [
+    {
+      "text": "Tot 60% korting op back to school essentials: kleding, sneakers, gymkleding en rugzakken",
+      "date": "2026-08-28"
+    },
     {
       "text": "Tot 50% korting op voetbalschoenen, kleding en scheenbeschermers voor het nieuwe seizoen",
       "date": "2026-08-25"
@@ -3670,6 +3804,10 @@
     }
   ],
   "sissyboy": [
+    {
+      "text": "Final Sale: tot 50% korting plus 15% extra kassakorting, automatisch verrekend",
+      "date": "2026-08-29"
+    },
     {
       "text": "Sale tot 50% korting, met 15% extra kassakorting vanaf 2 fashion sale-items",
       "date": "2026-08-12"
@@ -4181,6 +4319,10 @@
   ],
   "veromoda": [
     {
+      "text": "25% korting op alle jeans voor VERO MODA Club-leden, t/m 1 september 10:00",
+      "date": "2026-08-30"
+    },
+    {
       "text": "15% korting op alles voor VERO MODA Club-leden met code VMGIFT15, een maand geldig",
       "date": "2026-08-22"
     },
@@ -4386,6 +4528,10 @@
     }
   ],
   "womensbest": [
+    {
+      "text": "Extra korting bij besteding vanaf €60, oplopend tot 20% bij €100",
+      "date": "2026-08-28"
+    },
     {
       "text": "Best verkochte artikelen vanaf €9,99",
       "date": "2026-08-25"
