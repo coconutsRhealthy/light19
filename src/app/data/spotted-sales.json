@@ -207,6 +207,10 @@
   ],
   "aliexpress": [
     {
+      "text": "Kortingscodes voor €63, €45 en €30 korting bij bestellingen vanaf respectievelijk €499, €359 en €239",
+      "date": "2026-09-01"
+    },
+    {
       "text": "Nieuwe promotie met 50% korting zichtbaar op homepage",
       "date": "2026-08-27"
     },
@@ -827,6 +831,12 @@
       "date": "2026-06-06"
     }
   ],
+  "cultbeauty": [
+    {
+      "text": "20% korting op bijna alles plus extra 10% korting met code TREAT",
+      "date": "2026-09-01"
+    }
+  ],
   "danielwellington": [
     {
       "text": "10% korting op eerste aankoop bij inschrijving",
@@ -1407,6 +1417,10 @@
   ],
   "gutsgusto": [
     {
+      "text": "Minstens 20% korting op de collectie van Leonacathrina, online en in de winkels",
+      "date": "2026-08-31"
+    },
+    {
       "text": "20% korting op alle jumpsuits en sets, t/m zondag 30 augustus, online en in de winkels",
       "date": "2026-08-29"
     },
@@ -1626,6 +1640,10 @@
     }
   ],
   "hollandandbarrett": [
+    {
+      "text": "35% korting op de supplementen van Orthica",
+      "date": "2026-08-31"
+    },
     {
       "text": "1+1 gratis op shampoos en conditioners van Urtekram",
       "date": "2026-08-28"
@@ -1975,6 +1993,12 @@
       "date": "2026-07-07"
     }
   ],
+  "jotex": [
+    {
+      "text": "20% korting bij aankoop vanaf €200 met code 424965",
+      "date": "2026-08-31"
+    }
+  ],
   "journaway": [
     {
       "text": "Twee voor de prijs van één aanbieding voor reizen naar Japan",
@@ -2212,6 +2236,10 @@
     }
   ],
   "lookfantastic": [
+    {
+      "text": "30% korting op Kerastase plus 5% extra met code KERA5",
+      "date": "2026-08-31"
+    },
     {
       "text": "25% korting op Beauty of Joseon",
       "date": "2026-08-28"
@@ -2895,6 +2923,14 @@
   ],
   "notino": [
     {
+      "text": "Notino Shopping Days: tot 33% korting, extra voordelig in de app, van 31-08 t/m 13-09-2026",
+      "date": "2026-08-31"
+    },
+    {
+      "text": "Tot 20% korting plus twee cadeaus naar keuze bij aankoop van twee haarproducten van Kerastase, L'Oreal Professionnel, Redken, Matrix, Biolage of Shu Uemura",
+      "date": "2026-08-31"
+    },
+    {
       "text": "15% korting op je hele bestelling met code hotdeal, 24 t/m 30-08-2026",
       "date": "2026-08-24"
     },
@@ -3098,6 +3134,10 @@
     }
   ],
   "otrium": [
+    {
+      "text": "10% extra korting op geselecteerde items bij Back to rhythm",
+      "date": "2026-09-01"
+    },
     {
       "text": "Extra 25% korting op zomeritems tijdens de summer clearance",
       "date": "2026-08-24"
@@ -3331,6 +3371,10 @@
   ],
   "photowall_sweden": [
     {
+      "text": "3 gratis proefmonsters aanvragen",
+      "date": "2026-08-31"
+    },
+    {
       "text": "15% korting op al het behang voor kleine ruimtes",
       "date": "2026-08-21"
     },
@@ -3490,6 +3534,26 @@
     }
   ],
   "praxis": [
+    {
+      "text": "30% korting op behang vanaf €25",
+      "date": "2026-08-31"
+    },
+    {
+      "text": "25% korting op buitenbeits en -lak, ook op mengverf, vanaf €25",
+      "date": "2026-08-31"
+    },
+    {
+      "text": "20% korting op Solid Superia tuinhuizen vanaf €599",
+      "date": "2026-08-31"
+    },
+    {
+      "text": "1+1 gratis op de Eufy binnencamera C210, op=op",
+      "date": "2026-08-31"
+    },
+    {
+      "text": "Avasco stellingkast Optima 148x80x40 cm van €37,99 voor €19,99",
+      "date": "2026-08-31"
+    },
     {
       "text": "Weekendactie: tot 40% korting op wandpanelen, van 28 t/m 30 augustus",
       "date": "2026-08-27"
@@ -3907,6 +3971,10 @@
   ],
   "sophiamae": [
     {
+      "text": "Cadeau bij aankopen vanaf €70: Artemis geurkaars midi, beperkte tijd",
+      "date": "2026-09-01"
+    },
+    {
       "text": "Cadeau: Lip Glaze Soft Lavender bij aankopen vanaf €80, beperkte tijd",
       "date": "2026-07-20"
     },
@@ -4089,6 +4157,10 @@
   ],
   "tefal": [
     {
+      "text": "€100 korting op EverSharp RVS 6-delige messenset met code FLASHDEAL",
+      "date": "2026-09-01"
+    },
+    {
       "text": "25% korting op keramische pannen tot 13 september 2026",
       "date": "2026-08-18"
     },
@@ -4169,6 +4241,12 @@
     {
       "text": "15% extra korting op alles met code SUMMER15",
       "date": "2026-08-03"
+    }
+  ],
+  "tuinmeubelshop.nl": [
+    {
+      "text": "Kortingen tot 70% in het magazijnverhuisdeals",
+      "date": "2026-08-31"
     }
   ],
   "twistshakebaby": [
