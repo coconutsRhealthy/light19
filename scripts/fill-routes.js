@@ -85,7 +85,13 @@ const blogRoutes = ['blogs', 'blogs/space-nk', 'blogs/lookfantastic', 'blogs/uni
 
 // discoverRoutes is false, so a route missing from routes.txt is never
 // prerendered and the host falls back to the generic index.html.
-const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'goedkoopste-supermarkt', 'prikbord', ...blogRoutes, 'code-delen', ''];
+// Prerendered but NOT in the sitemap below: the app-store / legal pages carry a
+// robots noindex, so submitting them for indexing would contradict the page. They
+// still must exist as real prerendered HTML — Google's Play review fetches
+// /account-verwijderen and a page that falls through to the homepage is a rejection.
+const noindexRoutes = ['actievoorwaarden', 'account-verwijderen'];
+
+const utilityRoutes = ['winkels', 'contact', 'top5', 'privacy-policy', 'blackfriday', 'goedkoopste-supermarkt', 'prikbord', ...blogRoutes, ...noindexRoutes, 'code-delen', ''];
 
 const sortedPages = Array.from(discountSlugs).sort((a, b) => a.localeCompare(b));
 

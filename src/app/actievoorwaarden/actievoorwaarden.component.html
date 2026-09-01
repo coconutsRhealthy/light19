@@ -1,0 +1,105 @@
+<app-navbar></app-navbar>
+
+<main class="tw-font-body tw-text-ink tw-pb-16">
+
+  <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-6 tw-pt-8 sm:tw-pt-12">
+
+    <nav class="tw-font-body tw-text-sm tw-text-ink/50 tw-mb-6 tw-flex tw-items-center tw-gap-1.5">
+      <a routerLink="/" class="hover:tw-text-link tw-transition-colors tw-no-underline tw-text-ink/50">Diski</a>
+      <span>/</span>
+      <span class="tw-text-ink/70">Actievoorwaarden</span>
+    </nav>
+
+    <h1 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl tw-tracking-tight tw-leading-tight tw-mb-3">
+      Actievoorwaarden — "Nodig vrienden uit" (diski-app)
+    </h1>
+
+    <p class="tw-font-body tw-text-sm tw-text-ink/55 tw-italic tw-mb-8">
+      Laatst bijgewerkt: [datum invullen]
+    </p>
+
+    <div class="tw-text-ink/80 tw-leading-relaxed">
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">1. Organisator</h2>
+      <p class="tw-mb-6">
+        Deze actie wordt georganiseerd door LWPH Media, Welnastraat 317, 1096 GJ Amsterdam,
+        KvK 98974386 ("diski"). Vragen over de actie? Mail
+        <a [href]="email ? 'mailto:' + email : null" class="tw-text-link hover:tw-underline">{{ email || 'ons e-mailadres' }}</a>.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">2. Wat je kunt winnen</h2>
+      <p class="tw-mb-6">
+        Elke week verloten wij één prijs van €100, uit te betalen per bankoverschrijving.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">3. Wie mag meedoen</h2>
+      <p class="tw-mb-6">
+        Iedereen van 18 jaar of ouder met een woonadres in Nederland en een geldig
+        diski-account. Medewerkers van LWPH Media en hun directe familieleden zijn
+        uitgesloten van deelname.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">4. Hoe je meedoet</h2>
+      <ol class="tw-list-decimal tw-pl-6 tw-mb-4 tw-space-y-1">
+        <li>Open de diski-app en ga naar Profiel → Nodig vrienden uit.</li>
+        <li>Tik op "Deel je uitnodiging" en stuur je persoonlijke uitnodiging naar iemand.</li>
+      </ol>
+      <p class="tw-mb-6">
+        Wie in een kalenderweek (maandag tot en met zondag) minimaal één uitnodiging deelt,
+        doet die week mee aan de trekking. Deelname is gratis: je hoeft niets te kopen en er
+        zijn geen kosten aan verbonden. Meerdere keren delen in dezelfde week vergroot je
+        kans niet.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">5. Trekking en bekendmaking</h2>
+      <p class="tw-mb-6">
+        De trekking vindt plaats op [dag invullen, bijvoorbeeld: de eerste werkdag na afloop
+        van de week] door willekeurige selectie uit alle deelnemers van die week. De winnaar
+        krijgt binnen 5 werkdagen bericht op het e-mailadres van zijn of haar diski-account.
+        Reageert de winnaar niet binnen 14 dagen, dan vervalt de prijs en wordt een nieuwe
+        winnaar getrokken. Over de uitslag kan niet worden gecorrespondeerd.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">6. Uitkering van de prijs</h2>
+      <p class="tw-mb-6">
+        De prijs wordt binnen 14 dagen na bevestiging overgemaakt. De prijs is niet
+        inwisselbaar voor andere goederen of diensten en niet overdraagbaar.
+        Kansspelbelasting is bij dit prijsbedrag niet van toepassing; mochten daar toch
+        heffingen over verschuldigd zijn, dan komen die voor rekening van de organisator.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">7. Je gegevens</h2>
+      <p class="tw-mb-6">
+        Voor deze actie leggen wij vast dát je je uitnodiging hebt gedeeld, gekoppeld aan je
+        diski-account. Win je, dan gebruiken we je e-mailadres om contact op te nemen en je
+        bankgegevens uitsluitend om de prijs uit te betalen; die bewaren we niet langer dan
+        nodig voor de betaling en de administratie. Meer hierover in onze
+        <a routerLink="/privacy-policy" class="tw-text-link hover:tw-underline">privacyverklaring</a>.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">8. Overige bepalingen</h2>
+      <p class="tw-mb-4">
+        Wij mogen deelnemers uitsluiten bij misbruik, fraude of pogingen het systeem te
+        manipuleren, bijvoorbeeld door nep-accounts aan te maken. Wij kunnen deze actie op
+        elk moment aanpassen of beëindigen; dat kondigen wij aan in de app of op deze pagina.
+        Op deze actie is Nederlands recht van toepassing. Wij handelen conform de Gedragscode
+        promotionele kansspelen 2014.
+      </p>
+      <p class="tw-mb-6">
+        Klachten over deze actie kun je sturen naar
+        <a [href]="email ? 'mailto:' + email : null" class="tw-text-link hover:tw-underline">{{ email || 'ons e-mailadres' }}</a>.
+        We reageren binnen 5 werkdagen.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">9. Apple en Google</h2>
+      <p class="tw-mb-6">
+        Deze actie wordt op geen enkele wijze gesponsord, ondersteund of georganiseerd door
+        Apple Inc. of Google LLC, en staat los van hen. Zij zijn niet betrokken bij de actie
+        en dragen er geen verantwoordelijkheid voor.
+      </p>
+
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,104 @@
+<app-navbar></app-navbar>
+
+<main class="tw-font-body tw-text-ink tw-pb-16">
+
+  <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-6 tw-pt-8 sm:tw-pt-12">
+
+    <nav class="tw-font-body tw-text-sm tw-text-ink/50 tw-mb-6 tw-flex tw-items-center tw-gap-1.5">
+      <a routerLink="/" class="hover:tw-text-link tw-transition-colors tw-no-underline tw-text-ink/50">Diski</a>
+      <span>/</span>
+      <span class="tw-text-ink/70">Account verwijderen</span>
+    </nav>
+
+    <h1 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl tw-tracking-tight tw-leading-tight tw-mb-8">
+      Account of gegevens verwijderen bij diski
+    </h1>
+
+    <div class="tw-text-ink/80 tw-leading-relaxed">
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Alleen bepaalde gegevens verwijderen</h2>
+      <p class="tw-mb-4">
+        Je hoeft niet je hele account te verwijderen om specifieke gegevens kwijt te raken.
+        Dit kan direct in de diski-app:
+      </p>
+      <ul class="tw-list-disc tw-pl-6 tw-mb-4 tw-space-y-2">
+        <li>
+          <strong class="tw-font-semibold tw-text-ink">Een merk niet meer volgen:</strong>
+          ga naar Profiel → Mijn Merken en zet de schakelaar uit. Je volg-voorkeur voor dat
+          merk verdwijnt meteen.
+        </li>
+        <li>
+          <strong class="tw-font-semibold tw-text-ink">Een opgeslagen code of sale verwijderen:</strong>
+          tik nogmaals op het bladwijzer-icoon bij die code of sale.
+        </li>
+        <li>
+          <strong class="tw-font-semibold tw-text-ink">Andere gegevens</strong>
+          (bijvoorbeeld je geslacht, geboortedatum of het antwoord op de shoppersvraag):
+          mail <a [href]="email ? 'mailto:' + email : null" class="tw-text-link hover:tw-underline">{{ email || 'ons e-mailadres' }}</a>
+          met wat je verwijderd wilt hebben. We verwerken dit binnen 5 werkdagen.
+        </li>
+      </ul>
+      <p class="tw-mb-6">
+        Deze wijzigingen zijn direct en definitief. We bewaren geen kopie en er geldt geen
+        aanvullende bewaartermijn.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Je account volledig verwijderen</h2>
+
+      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-5 sm:tw-p-6 tw-mb-4">
+        <h3 class="tw-font-title tw-font-bold tw-text-lg tw-tracking-tight tw-text-ink tw-mb-3">Optie 1 — In de app (direct)</h3>
+        <ol class="tw-list-decimal tw-pl-6 tw-space-y-1 tw-mb-3">
+          <li>Open de diski-app en log in.</li>
+          <li>Ga naar Profiel → Verwijder account.</li>
+          <li>Bevestig.</li>
+        </ol>
+        <p class="tw-mb-0">Je gegevens worden dan onmiddellijk en definitief gewist.</p>
+      </div>
+
+      <div class="tw-bg-panel tw-border tw-border-ink/10 tw-rounded-2xl tw-p-5 sm:tw-p-6 tw-mb-6">
+        <h3 class="tw-font-title tw-font-bold tw-text-lg tw-tracking-tight tw-text-ink tw-mb-3">Optie 2 — Zonder de app (per e-mail)</h3>
+        <p class="tw-mb-0">
+          Heb je de app niet meer, of lukt inloggen niet? Mail ons vanaf het e-mailadres van
+          je account naar
+          <a [href]="email ? 'mailto:' + email + '?subject=Account%20verwijderen' : null" class="tw-text-link hover:tw-underline">{{ email || 'ons e-mailadres' }}</a>
+          met als onderwerp "Account verwijderen". We verwerken je verzoek binnen 5 werkdagen
+          en bevestigen per e-mail zodra alles is gewist.
+        </p>
+      </div>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Wat er wordt verwijderd</h2>
+      <ul class="tw-list-disc tw-pl-6 tw-mb-6 tw-space-y-1">
+        <li>Je accountgegevens: e-mailadres, naam en — als je die hebt opgegeven — geslacht, geboortedatum en shopperstype</li>
+        <li>De merken en categorieën die je volgt</li>
+        <li>Je opgeslagen codes en sales</li>
+        <li>Je notificatievoorkeuren en de pushregistratie van je toestellen</li>
+        <li>Alle gebruiksgegevens die aan jouw account of aan je toestellen gekoppeld zijn: welke merken je bekeek, welke codes je kopieerde, waar je op zocht, sessieduur en eventuele foutmeldingen</li>
+      </ul>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Wat er niet wordt verwijderd</h2>
+      <p class="tw-mb-6">
+        Heb je via "Code indienen" een kortingscode ingestuurd die op het prikbord staat, dan
+        blijft die code zichtbaar — hij hoort bij de community, niet bij jouw profiel. Vulde
+        je daarbij je naam in en wil je die weg? Mail
+        <a [href]="email ? 'mailto:' + email : null" class="tw-text-link hover:tw-underline">{{ email || 'ons e-mailadres' }}</a>,
+        dan halen we de vermelding eruit.
+      </p>
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Bewaartermijn</h2>
+      <p class="tw-mb-4">
+        Verwijder je je account in de app, dan worden je gegevens direct gewist: geen
+        wachttijd, geen bewaarde back-up. Bij een verzoek per e-mail gebeurt dat uiterlijk
+        binnen 5 werkdagen. Daarna bewaren we geen enkel gegeven van je account — er is geen
+        archief en geen aanvullende bewaartermijn.
+      </p>
+      <p class="tw-mb-6">
+        Verwijderen kan niet ongedaan worden gemaakt. Meer over hoe we met je gegevens omgaan
+        lees je in onze
+        <a routerLink="/privacy-policy" class="tw-text-link hover:tw-underline">privacyverklaring</a>.
+      </p>
+
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

@@ -1,157 +1,141 @@
 <app-navbar></app-navbar>
 
-<div class="tw-max-w-3xl tw-mx-auto tw-px-4 tw-py-10 tw-text-gray-800">
-    <h1 class="tw-text-3xl tw-font-semibold tw-mb-6">Privacyverklaring</h1>
+<main class="tw-font-body tw-text-ink tw-pb-16">
 
-    <p class="tw-mb-4">
+  <section class="tw-max-w-3xl tw-mx-auto tw-px-4 sm:tw-px-6 tw-pt-8 sm:tw-pt-12">
+
+    <h1 class="tw-font-title tw-font-bold tw-text-3xl sm:tw-text-4xl tw-tracking-tight tw-leading-tight tw-mb-3">
+      Privacyverklaring
+    </h1>
+
+    <p class="tw-font-body tw-text-sm tw-text-ink/55 tw-italic tw-mb-8">
+      Laatst bijgewerkt: 31 augustus 2026
+    </p>
+
+    <div class="tw-text-ink/80 tw-leading-relaxed">
+
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Wie is verantwoordelijk?</h2>
+      <p class="tw-mb-6">
         LWPH Media, gevestigd aan Welnastraat 317, 1096 GJ Amsterdam, is verantwoordelijk
-        voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.
-    </p>
+        voor de verwerking van persoonsgegevens op diski.nl en in de diski-app. Vragen? Mail
+        naar <a [href]="email ? 'mailto:' + email : null" class="tw-text-link hover:tw-underline">{{ email || 'ons e-mailadres' }}</a>.
+      </p>
 
-    <p class="tw-mb-6 tw-text-sm tw-text-gray-500 tw-italic">
-        Laatst bijgewerkt: 8 juli 2026
-    </p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Welke gegevens verwerken we in de app?</h2>
+      <p class="tw-mb-4">
+        Bij het aanmaken van een account: je e-mailadres en voornaam (log je in met Google of
+        Apple, dan ontvangen we die van hen). Optioneel, als je ze tijdens het instellen
+        deelt: geslacht, geboortedatum en je antwoord op de vraag wat voor shopper je bent —
+        alle drie kun je overslaan.
+      </p>
+      <p class="tw-mb-6">
+        Daarnaast verwerken we: de merken en categorieën die je volgt, je opgeslagen codes en
+        sales, je notificatievoorkeuren, je taalinstelling (Nederlands of Engels, zodat
+        meldingen in jouw taal komen) en een pushmeldings-token van je toestel zodat we je
+        meldingen kunnen sturen.
+      </p>
 
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Contactgegevens</h2>
-    <p class="tw-mb-6 tw-leading-relaxed">
-        Website:
-        <a href="https://diski.nl/" target="_blank" class="tw-text-blue-600 hover:tw-underline">
-            https://diski.nl/
-        </a><br />
-        Adres: Welnastraat 317, 1096 GJ Amsterdam<br />
-        Telefoon: +31 6 81024622<br />
-        Verantwoordelijke: LWPH Media<br />
-        E-mail:
-        <a href="mailto:info@diski.nl" class="tw-text-blue-600 hover:tw-underline">
-            info&#64;diski.nl
-        </a>
-    </p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Gebruiksgegevens (analytics)</h2>
+      <p class="tw-mb-4">
+        Om de app te verbeteren en je relevantere deals te tonen, meten we hoe de app wordt
+        gebruikt: welke merken je bekijkt, welke codes je kopieert, waar je op zoekt, hoe
+        lang een sessie duurt en of de app is gecrasht (foutmeldingen, zonder persoonlijke
+        inhoud). Deze gegevens gaan naar onze eigen server en zijn gekoppeld aan je toestel —
+        en aan je account als je bent ingelogd.
+      </p>
+      <div class="tw-border-l-4 tw-border-link tw-bg-sky/20 tw-rounded-r-2xl tw-px-5 tw-py-4 tw-mb-6">
+        <p class="tw-mb-0">
+          <strong class="tw-font-semibold tw-text-ink">Belangrijk:</strong> dit is volledig
+          first-party. De app bevat geen advertentie-, analytics- of trackingsoftware van
+          derden (geen Google Analytics, geen Firebase, geen Sentry, geen advertentienetwerken).
+          Je gegevens verlaten onze systemen niet en we gebruiken ze niet om je over andere
+          apps of websites te volgen.
+        </p>
+      </div>
 
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Persoonsgegevens die wij verwerken</h2>
-    <p class="tw-mb-4">
-        LWPH Media verwerkt je persoonsgegevens doordat je gebruik maakt van onze diensten
-        en/of omdat je deze gegevens zelf aan ons verstrekt.
-    </p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Prikbord en ingezonden codes</h2>
+      <p class="tw-mb-6">
+        Dien je via "Code indienen" een kortingscode in, dan verschijnt die op het openbare
+        prikbord in de app: de webshop, de code, de korting en — als je die invulde — je naam
+        zijn dan zichtbaar voor andere gebruikers. Vul je naam niet in als je dat niet wilt.
+        Meld je iets ongepasts (lang indrukken → Melden), dan beoordelen wij dat en
+        verwijderen we de inzending waar nodig.
+      </p>
 
-    <p class="tw-mb-2">Hieronder vind je een overzicht van de persoonsgegevens die wij verwerken:</p>
-    <ul class="tw-list-disc tw-pl-6 tw-mb-6">
-        <li>E-mailadres</li>
-        <li>Gedragsgegevens, zoals bezochte pagina's, aangeklikte webshops en zoekopdrachten op onze website</li>
-    </ul>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Vrienden uitnodigen (winactie)</h2>
+      <p class="tw-mb-6">
+        Doe je mee aan "Nodig vrienden uit", dan registreren we dat je je persoonlijke
+        uitnodiging hebt gedeeld — dat bepaalt of je meedingt in de wekelijkse trekking. De
+        <a routerLink="/actievoorwaarden" class="tw-text-link hover:tw-underline">actievoorwaarden</a>
+        staan op diski.nl/actievoorwaarden.
+      </p>
 
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Doelen van gegevensverwerking</h2>
-    <p class="tw-mb-4">Wij verwerken je persoonsgegevens voor de volgende doeleinden:</p>
-    <ul class="tw-list-disc tw-pl-6 tw-mb-6">
-        <li>Je te kunnen e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren</li>
-        <li>Het personaliseren van onze communicatie op basis van je surfgedrag op diski.nl, zoals bezochte pagina's en aangeklikte webshops</li>
-        <li>Het delen van gerichte marketingdata met zorgvuldig geselecteerde partners, uitsluitend indien je hiervoor uitdrukkelijk toestemming hebt gegeven</li>
-    </ul>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Waarvoor gebruiken we je gegevens?</h2>
+      <p class="tw-mb-6">
+        Om je account te laten werken op al je apparaten, om je deals te tonen die bij je
+        passen, om je een melding te sturen wanneer een merk dat jij volgt iets nieuws heeft
+        (maximaal één bundelmelding per dag; per merk instelbaar of volledig uit te
+        schakelen), en om de app te verbeteren op basis van hoe hij gebruikt wordt. We
+        gebruiken je gegevens niet voor advertenties van derden en verkopen ze nooit.
+      </p>
 
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Delen van persoonsgegevens met derden</h2>
-    <p class="tw-mb-4 tw-leading-relaxed">
-        LWPH Media kan persoonsgegevens — waaronder je e-mailadres en gedragsgegevens — delen met
-        derden, waaronder advertentieplatformen (zoals sociale-mediaplatformen), advertentiepartners
-        en merken, uitsluitend indien je hiervoor uitdrukkelijk toestemming hebt gegeven. Deze
-        toestemming vragen wij op het moment van gegevensverzameling via een opt-in. Je kunt je
-        toestemming op elk moment intrekken.
-    </p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Waar staan je gegevens?</h2>
+      <p class="tw-mb-6">
+        Je gegevens worden opgeslagen binnen de Europese Unie (bij onze verwerker Supabase).
+        Alle verkeer tussen de app en onze servers is versleuteld (HTTPS). Wij sluiten met
+        verwerkers passende verwerkersovereenkomsten.
+      </p>
 
-    <p class="tw-mb-4 tw-leading-relaxed">
-        Met partijen waarmee wij gegevens delen sluiten wij passende overeenkomsten om eenzelfde
-        niveau van beveiliging en vertrouwelijkheid van je gegevens te waarborgen. Dit is een
-        verwerkersovereenkomst wanneer een partij uitsluitend in onze opdracht gegevens verwerkt,
-        of een overeenkomst inzake gezamenlijke verwerkingsverantwoordelijkheid wanneer een partij
-        (zoals een advertentieplatform) de gegevens mede voor eigen doeleinden verwerkt.
-    </p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Delen met derden</h2>
+      <p class="tw-mb-6">
+        We delen je persoonsgegevens niet met derden, tenzij je daar uitdrukkelijk toestemming
+        voor hebt gegeven of dit wettelijk verplicht is. Als je via een code of sale naar een
+        webshop gaat, verlaat je onze dienst (de link opent in je browser) en gelden daar de
+        voorwaarden en privacyverklaring van die webshop. Sommige shop-links zijn
+        affiliate-links; de webshop weet dan dat je via diski kwam, maar ontvangt geen
+        persoonsgegevens van ons.
+      </p>
 
-    <p class="tw-mb-6 tw-leading-relaxed">
-        <strong class="tw-font-semibold">Doorgifte buiten de EER.</strong>
-        Sommige van deze partijen zijn gevestigd buiten de Europese Economische Ruimte, bijvoorbeeld
-        in de Verenigde Staten. In dat geval zorgen wij voor passende waarborgen, zoals de
-        standaardcontractbepalingen (Standard Contractual Clauses) van de Europese Commissie of
-        deelname van de betreffende partij aan het EU-U.S. Data Privacy Framework.
-    </p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Hoe lang bewaren we je gegevens?</h2>
+      <p class="tw-mb-6">
+        Niet langer dan nodig. Je gegevens blijven bewaard zolang je account actief is.
+        Verwijder je je account, dan wissen we je profielgegevens, je volg- en opslaggegevens,
+        je pushregistratie én de gebruiksgegevens van jouw account en toestellen.
+      </p>
 
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Bijzondere en/of gevoelige persoonsgegevens</h2>
-    <p class="tw-mb-6 tw-leading-relaxed">
-        Onze website en/of dienst heeft niet de intentie gegevens te verzamelen over websitebezoekers
-        die jonger zijn dan 16 jaar, tenzij ze toestemming hebben van ouders of voogd. Wij kunnen echter
-        niet controleren of een bezoeker ouder dan 16 is. Wij raden ouders dan ook aan betrokken te zijn
-        bij de online activiteiten van hun kinderen. Als je er van overtuigd bent dat wij zonder die
-        toestemming persoonlijke gegevens hebben verzameld over een minderjarige, neem dan contact met
-        ons op via
-        <a href="mailto:info@diski.nl" class="tw-text-blue-600 hover:tw-underline">
-            info&#64;diski.nl
-        </a>.
-    </p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Account verwijderen</h2>
+      <p class="tw-mb-6">
+        Je kunt je account op elk moment verwijderen in de app via Profiel → Verwijder
+        account, of door een e-mail te sturen naar
+        <a [href]="email ? 'mailto:' + email : null" class="tw-text-link hover:tw-underline">{{ email || 'ons e-mailadres' }}</a>
+        vanaf het e-mailadres van je account. Zie ook
+        <a routerLink="/account-verwijderen" class="tw-text-link hover:tw-underline">account verwijderen</a>.
+      </p>
 
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Geautomatiseerde besluitvorming</h2>
-    <p class="tw-mb-6">LWPH Media maakt geen gebruik van geautomatiseerde besluitvorming.</p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Jouw rechten</h2>
+      <p class="tw-mb-6">
+        Je hebt het recht om je gegevens in te zien, te corrigeren of te laten verwijderen, en
+        om eerder gegeven toestemming in te trekken. Mail naar
+        <a [href]="email ? 'mailto:' + email : null" class="tw-text-link hover:tw-underline">{{ email || 'ons e-mailadres' }}</a>
+        en we regelen het. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens.
+      </p>
 
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Bewaartermijn persoonsgegevens</h2>
-    <p class="tw-mb-6">
-        LWPH Media bewaart je persoonsgegevens niet langer dan strikt noodzakelijk is om de doelen
-        te realiseren waarvoor je gegevens worden verzameld. Gegevens worden bewaard zolang je actief
-        gebruikmaakt van onze diensten, tenzij je eerder verzoekt om verwijdering.
-    </p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Jonger dan 16?</h2>
+      <p class="tw-mb-6">
+        Onze dienst is niet gericht op kinderen onder de 16 zonder toestemming van ouders of
+        voogd. Denk je dat we zonder die toestemming gegevens van een minderjarige hebben
+        verzameld? Mail dan naar
+        <a [href]="email ? 'mailto:' + email : null" class="tw-text-link hover:tw-underline">{{ email || 'ons e-mailadres' }}</a>.
+      </p>
 
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Cookies en lokale opslag</h2>
-    <p class="tw-mb-4 tw-leading-relaxed">
-        Diski.nl maakt gebruik van lokale opslag (localStorage) in je browser om je surfgedrag bij te
-        houden, zoals bezochte pagina's, aangeklikte webshops en zoekopdrachten. Deze gegevens blijven
-        lokaal op je apparaat opgeslagen en worden pas naar ons verstuurd op het moment dat je je
-        e-mailadres met ons deelt en akkoord gaat met deze privacyverklaring. Daarna kunnen deze
-        gegevens periodiek worden bijgewerkt om je profiel actueel te houden.
-    </p>
-    <p class="tw-mb-6 tw-leading-relaxed">
-        Daarnaast maken wij gebruik van analytische cookies (Google Analytics) om het gebruik van onze
-        website te meten. Wij gebruiken geen marketing- of trackingcookies van derden. Mocht dit in de
-        toekomst veranderen, dan passen wij deze privacyverklaring aan en vragen wij, waar vereist,
-        vooraf je toestemming.
-    </p>
+      <h2 class="tw-font-title tw-font-bold tw-text-xl sm:tw-text-2xl tw-tracking-tight tw-text-ink tw-mt-8 tw-mb-3">Wijzigingen</h2>
+      <p class="tw-mb-6">
+        We kunnen deze verklaring aanpassen. De actuele versie staat altijd op
+        diski.nl/privacy-policy/ en in de app onder Profiel → Privacy &amp; Veiligheid.
+      </p>
 
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Gegevens inzien, aanpassen of verwijderen</h2>
-    <p class="tw-mb-4">
-        Je hebt het recht om je persoonsgegevens in te zien, te corrigeren of te verwijderen.
-        Daarnaast heb je het recht om je toestemming in te trekken of bezwaar te maken tegen
-        de verwerking van je persoonsgegevens.
-    </p>
-
-    <p class="tw-mb-4">
-        Je kunt een verzoek sturen naar
-        <a href="mailto:info@diski.nl" class="tw-text-blue-600 hover:tw-underline">
-            info&#64;diski.nl
-        </a>.
-    </p>
-
-    <p class="tw-mb-4">
-        We reageren zo snel mogelijk, maar in ieder geval binnen vier weken.
-    </p>
-
-    <p class="tw-mb-6">
-        Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens:
-        <a
-                href="https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegevens/tip-ons"
-                target="_blank"
-                class="tw-text-blue-600 hover:tw-underline"
-        >
-            autoriteitpersoonsgegevens.nl
-        </a>
-    </p>
-
-    <h2 class="tw-text-xl tw-font-semibold tw-mt-8 tw-mb-3">Beveiliging van persoonsgegevens</h2>
-    <p class="tw-mb-6">
-        LWPH Media neemt passende technische en organisatorische maatregelen om misbruik, verlies en
-        onbevoegde toegang tot je persoonsgegevens te voorkomen. Neem contact op via
-        <a href="mailto:info@diski.nl" class="tw-text-blue-600 hover:tw-underline">
-            info&#64;diski.nl
-        </a>
-        als je twijfels hebt over de beveiliging van je gegevens.
-    </p>
-
-    <p class="tw-text-sm tw-text-gray-500">
-        LWPH Media • KvK 98974386 • BTW NL868728196B01
-    </p>
-</div>
+    </div>
+  </section>
+</main>
 
 <app-footer></app-footer>
