@@ -1,6 +1,7 @@
 DISCOUNTS ARCHITECTURE — how codes get onto diski.nl
 ====================================================
-Last updated: 2026-07-13 (after the first full production run through the pipeline)
+Last updated: 2026-09-01 (shops.json added; the dummy/backup-code sections rewritten
+— they described mechanisms that no longer exist)
 
 !! USE NODE 22. Your shell's default node is too old — the pipeline will die with
 !! "process.loadEnvFile is not a function". Both repos:
@@ -8,9 +9,9 @@ Last updated: 2026-07-13 (after the first full production run through the pipeli
 !! light19's build has always needed it; run-all.js needs it now too, because it
 !! fetches over the network.
 
-(The counts in this document — 3281 codes, 275 backup, 1488 pages — are whatever
-they happened to be on the day it was written. They move every run. Don't treat
-them as targets.)
+(The counts in this document — 2774 codes, 897 newsletter rows, 1230 pages — are
+whatever they happened to be on the day it was written. They move every run. Don't
+treat them as targets.)
 
 
 THE ONE-PARAGRAPH VERSION
@@ -18,10 +19,12 @@ THE ONE-PARAGRAPH VERSION
 Discount codes live in Cloudflare R2. They are published there by the
 diski-input-insta repo, and read from there by two consumers: the diski app (at
 runtime) and light19 (at build time). light19 turns that feed into
-src/app/data/discounts.json, topping it up with a "backup code" for any shop whose
-live codes have been pruned. Every part of the website reads that one file. A page
-exists on diski.nl if, and only if, it has an entry in it.
+src/app/data/discounts.json, topping it up with a NEWSLETTER ROW for any shop that
+has earned a page but has no live code. Every part of the website reads that one
+file. A page exists on diski.nl if, and only if, it has an entry in it.
 
+light19 also PUBLISHES one feed of its own: shops.json, the list of shops that have
+a page. That exists for the app, which cannot work that list out for itself.
 
 THE PIPELINE, END TO END
 ------------------------
@@ -29,178 +32,129 @@ THE PIPELINE, END TO END
   [diski-input-insta]  (private, the master data)
       src/assets/discounts.json          <- YOU EDIT THIS. Column 4 = influencer handle.
              |
-             |  node scripts/run-all.js          (NODE 22)
-             |    1. add-dummy-codes.js  — every affiliate partner with no code gets
-             |                             its dummyCode from affiliate-link.service.ts
-             |    2. anonymize.js        — blanks column 4 to "zzz"
-             |    3. get-missing-companies.js — self-check: any affiliate partner still
-             |                             with no code? Should always print []
-             |    4. publish-discounts-to-r2.js  <-- uploads
+             |  node scripts/run-all.js          (NODE 22, asks for confirmation)
+             |    publish-discounts-to-r2.js — parses the master, applies the code
+             |    allowlist, puts our own code on top per shop, uploads. That is the
+             |    whole job: the dummy-code and anonymize steps are GONE (see below).
              v
-  [Cloudflare R2]  bucket "promotions", key "discounts.json"
-      https://pub-a3be569620e4415b916e737210363aee.r2.dev/discounts.json
-      Public. Clean JSON. THE SOURCE OF TRUTH FOR LIVE CODES.
+  [Cloudflare R2]  bucket "promotions"
+      discounts.json   <- codes, published by diski-input-insta
+      shops.json       <- pages, published by LIGHT19 (this repo)
+      https://pub-a3be569620e4415b916e737210363aee.r2.dev/<key>
              |
              +---------------------------+
              |                           |
              v                           v
   [diski app]                   [light19]  npm run build:prod
-   fetches at runtime            scripts/fetch-discounts.js
-                                   - fetches the R2 feed
+   reads BOTH feeds live         scripts/fetch-discounts.js
+   and unions them                 - fetches discounts.json
                                    - converts to the legacy line format
-                                   - INJECTS backup codes (see below)
+                                   - INJECTS newsletter rows (see below)
                                    - writes src/app/data/discounts.json
+                                 scripts/publish-shops-to-r2.js
+                                   - uploads shops.json for the app
                                         |
                                         v
-                                 everything else reads that file
+                                 everything else reads discounts.json
 
 
-THE PUBLISHED FEED (what's in R2)
----------------------------------
+THE PUBLISHED FEEDS (what's in R2)
+----------------------------------
+discounts.json — real codes only. 2774 rows across 767 shops.
   {
-    "generated": "2026-07-12T14:26:46.297Z",
-    "count": 3281,
+    "generated": "2026-09-01T09:10:44.426Z",
+    "count": 2774,
     "discounts": [
       { "shop": "loavies", "code": "LOTTE20", "value": "20", "added": "2026-07-10" },
       { "shop": "footlocker", "code": "FL10", "value": "10", "added": "2026-07-08",
-        "condition": "new app user" },
-      ...
+        "condition": "new app user" }
     ]
   }
 
-Clean objects. No influencer handles. Dates have a real year. The "(condition)"
-suffix is split out of the shop name into its own field.
+shops.json — which shops have a page, and why. 1230 rows.
+  {
+    "generated": "2026-09-01T09:43:39.804Z",
+    "count": 1230,
+    "shops": [
+      { "shop": "hunkemoller", "affiliate": "https://tidd.ly/4j17AXp", "page": "v2" },
+      { "shop": "volero.nl", "page": "v1" }
+    ]
+  }
 
-SAFETY: publish-discounts-to-r2.js reads discounts_anon.json and NOTHING ELSE, and
-refuses to upload if any row still carries a real influencer handle where "zzz"
-should be. The master and the handles never leave diski-input-insta.
+Clean objects. No influencer handles. `shop` is the lowercased slug in both — the
+join key every consumer uses.
 
-Credentials: diski-input-insta/.env (gitignored) — R2_ACCOUNT_ID / R2_ACCESS_KEY /
-R2_SECRET_KEY, copied from claude_diski_data/.env. The publisher has zero npm
-dependencies (SigV4 signed with node:crypto), because that repo's Angular 10
-dependency tree can't take an `npm install`.
-
-
-discounts.json IN LIGHT19 (the file the whole site reads)
----------------------------------------------------------
-Format is unchanged from before — a JSON array of comma-joined strings:
-
-    "footlocker (new app user), FL10, 10, zzz, 07-08"
-     \_______ company ______/  code  val  zzz  date
-
-The "zzz" is the blanked influencer column. It's dead, but every consumer still
-splits on commas by position, so the placeholder stays.
-
-IT IS A GENERATED ARTIFACT. Hand-editing it does nothing — the next build
-overwrites it. Codes are edited in diski-input-insta. It stays committed so builds
-are reproducible and work offline: if R2 is unreachable, fetch-discounts.js warns
-and keeps the last known-good copy rather than shipping a site with no codes.
-
-Contents after a build:
-    3281 live codes    (from R2)
-  +  275 backup codes  (injected — see below)
-  = 3556 lines
+SAFETY (codes): the published schema simply has no field for the influencer handle.
+parseLine reads columns 1, 2, 3 and 5 and drops the rest, so no handle can reach R2
+by construction. The old anonymize step and its guard were removed once the payload
+was verified byte-identical with and without them.
 
 
-TWO FALLBACKS — DO NOT CONFUSE THEM
------------------------------------
-There are TWO independent "the shop has no code" fallbacks, in two different repos,
-and they fire in sequence. Getting these mixed up will make you predict the wrong
-thing (it did, the first time we ran this for real).
+ONE FALLBACK: NEWSLETTER ROWS
+-----------------------------
+A shop that has earned a page but has no live code gets one row in discounts.json:
 
-  1. DUMMY CODES — diski-input-insta, scripts/dummy_codes/add-dummy-codes.js
-     For shops that have an AFFILIATE LINK but no influencer code in the master.
-     The code comes from light19's affiliate-link.service.ts (`dummyCode` per shop).
-     They are added BEFORE anonymize, so they end up in the published R2 feed as
-     ordinary LIVE CODES — downstream, nothing can tell them apart from a real one.
-     Rationale: an affiliate partner with no code on its page is lost revenue.
+    hunkemoller, aanmelden voor nieuwsbrief, 10, zzz, 08-25
 
-  2. BACKUP CODES — light19, scripts/fetch-discounts.js
-     For shops that have a BRAND PAGE but no entry in the feed at all. Injected at
-     build time with an aged date (see below).
+The modal matches that exact string (modal.component.ts, NEWSLETTER_CODE), drops the
+whole code block — there is nothing to copy, reveal or share — and says what to do
+instead, keeping the "Naar winkel" button on the affiliate link. Two things earn a
+page: an affiliate link, or brand content (v1 or v2). 897 rows today.
 
-So a shop only reaches the backup-code stage if it has NEITHER an influencer code
-NOR a dummy code — i.e. it's not an affiliate partner.
+THERE USED TO BE TWO INVENTED FALLBACKS, and they are both gone. diski-input-insta
+filled a "dummy code" for affiliate partners with none; each brand page carried a
+"backupCode" (its last real code, an archived one, or — for ~89 shops — a code
+synthesised out of {ACTIE,OFF,SHOP} x {10,15}). Both reached the site as ordinary
+codes, so a visitor could not tell an invented code from a real one, and neither
+could we. The guarantee they provided was right; inventing a discount to provide it
+was not. With them went add-dummy-codes.js, the dummyCode fields, backup-codes.json,
+and the hardcoded cross-repo eval() of affiliate-link.service.ts by absolute path —
+which was the most fragile joint in the whole pipeline.
 
-Worked example from the 2026-07-13 run. Six shops were pruned from the master:
-bellobox.nl, heine, neonail, mijnhummeltje, babista.nl, fotocadeau.nl. NONE of them
-got a backup code — they all have affiliate links, so add-dummy-codes.js caught them
-first and they're still in the feed as live codes (bellobox.nl -> DISKI10,
-heine -> 45569, neonail -> ESMEEHES10). Only the five shops with no affiliate link
-(volero.nl, fithlon, gastonluga, opberghoekje.nl, ultrahuman_ring) fell through to a
-backup code.
-
-CROSS-REPO COUPLING (fragile, worth knowing): both add-dummy-codes.js and
-get-missing-companies.js read light19's affiliate-link.service.ts by HARDCODED
-ABSOLUTE PATH and eval() the affiliateLinks object out of it:
-
-    /Users/LennartMac/Documents/Projects/light19/src/app/services/affiliate-link.service.ts
-
-So diski-input-insta depends on light19 living at exactly that path on this machine.
-Move a folder, or run it elsewhere, and the dummy-code step breaks. This is the most
-fragile joint in the whole pipeline.
+THE DATE ON A NEWSLETTER ROW — the build date minus 7 days, one shared date for all
+of them. A sign-up doesn't expire, so the date could honestly be the build date, but
+two consumers read recency as a signal and both would misread it:
+  1. The homepage counts every shop carrying the NEWEST date as a "nieuwe shop".
+     Build-dated rows would announce ~897 new shops on every build.
+  2. The modal's email gate demands an email for anything added in the last 5 days.
+     A row with no code must never sit behind that.
+A week clears both, and cannot collide: codes reach the feed every two to three days.
 
 
-PLANNED: KILL THE DUMMY-CODE MECHANISM (not possible yet)
----------------------------------------------------------
-The end state is ONE fallback, not two. A dummyCode exists so an affiliate partner's
-page is never empty — which is exactly what a backup code already does. Once every
-affiliate partner has a brand page, dummyCode is redundant and the whole mechanism
-goes: add-dummy-codes.js, the dummyCode fields in affiliate-link.service.ts, AND the
-hardcoded cross-repo eval above.
+SHOPS.JSON — THE FEED THIS REPO PUBLISHES
+-----------------------------------------
+scripts/publish-shops-to-r2.js, step 3 of build:prod. Both it and fetch-discounts.js
+read the set from scripts/shop-universe.js, which is the single definition of "what
+earns a page" — two copies of that logic would drift.
 
-WHY NOT YET (measured 2026-07-13):
-    525  affiliate partners have a dummyCode
-    259  of them already have a v1/v2 brand page
-    266  have NO brand page  <-- the blocker
+WHY IT EXISTS. The app reads the codes feed, so it saw 767 shops while the site had
+1230 pages. It cannot compute the difference: 414 of those shops have brand content
+and no affiliate link, and both facts live only in this repo. Those shops did not
+exist in the app at all — not in search, not in the shop list, and not in the follow
+manager, which is exactly where a shop that has nothing right now is worth following.
 
-Careful — those 266 shops DO have pages today, but ONLY because their dummy code puts
-them in discounts.json, and a page exists iff it's in discounts.json. Their pages have
-no editorial content; the dummy code is the only thing holding them up. Delete
-dummyCode today and you don't just lose a fallback code, you DELETE 266 PAGES.
+IT CARRIES FACTS, NOT COPY. No newsletter text, no 10%. That is this site's answer to
+"no code"; the app gives a different one (the newsletter CTA behind the affiliate
+click-out where there is a link to fire, a follow where there isn't). Publishing the
+row shape instead would put `aanmelden voor nieuwsbrief, 10` in a feed where a naive
+consumer renders it as "10% korting" for a shop with no offer — the exact trap the
+dummy and backup codes fell into.
 
-SEQUENCE:
-  1. Give those 266 shops v2 brand content (content engine; v1 is frozen).
-  2. Each new brand page ships with a backupCode — that covers the "never an empty
-     page" job dummyCode was doing.
-  3. THEN delete the dummy-code mechanism. Two fallbacks collapse into one, and the
-     fragile cross-repo path disappears with it.
+IT IS ALSO THE AFFILIATE FEED. Every row carries the link, which retires the app's
+INFRA-2 stopgap: it used to regex affiliate-link.service.ts off raw.githubusercontent
+on branch `new_diski_look`, and a branch rename would have silently unmonetised every
+tap in a released build.
 
+CREDENTIALS. light19/.env needs R2_ACCOUNT_ID / R2_ACCESS_KEY / R2_SECRET_KEY — the
+same three diski-input-insta uses. THIS IS THE FIRST THING IN THIS REPO THAT WRITES
+to the bucket; everything else only reads it.
 
-BACKUP CODES
-------------
-A shop whose live codes have been pruned still has a page, and that page still
-needs a working code on it. That's what a backup code is.
-
-WHERE THE DATA LIVES (unchanged, still the source of truth):
-  - v2: each brand-content file's `backupCode` field
-        src/app/company-codes-v2/brand-content/data/{slug}.json
-        Written by the content engine (pipeline/enrich_backup_codes.py).
-  - v1: src/app/company-codes/company-seo-content/backup-codes.json
-        578 entries, slug -> {code, discount}. Generated once by
-        scripts/populate-v1-backup-codes.js (v1 is frozen).
-
-HOW THEY GET USED:
-fetch-discounts.js injects a shop's backup code into discounts.json IF AND ONLY IF
-the R2 feed has no entry for that shop. A real code always wins. Injected lines are
-appended AFTER the live codes, because consumers rely on the feed being newest-first
-(/winkels takes a shop's first occurrence as its latest offer; the homepage reads
-discounts[0].date as "last updated").
-
-THE DATE ON A BACKUP CODE — 45 to 75 days before the build, with the exact offset
-derived from hashing the slug. This is NOT cosmetic. Three things depend on it:
-
-  1. Honesty. A backup code probably doesn't work anymore, so the page doesn't
-     claim it was freshly checked.
-  2. It keeps backup codes OUT of the homepage's "X nieuwe shops" counter, which
-     counts shops carrying the newest date in the feed.
-  3. It keeps backup codes OUT of the modal's email gate, which demands an email
-     before revealing any code added in the last 5 days. Putting a probably-dead
-     code behind a lead-gen wall would be the worst possible thing to gate.
-
-The hash (rather than one fixed date) means the ~275 backup pages don't all show
-one identical templated "gespot op" date. It's deterministic, so prerender and
-browser hydration agree.
+NON-FATAL BY DESIGN. Missing credentials or a failed upload warn and the build
+continues. The website does not read this feed — it reads its own generated
+discounts.json — so failing a site build over an app feed would be the wrong trade.
+The one thing that DOES fail the build is shop-universe.js not being able to parse
+the affiliate service or the content dirs, because fetch-discounts.js reads the same
+set and the site is then about to be wrong too.
 
 
 PAGE EXISTENCE — ONE RULE
@@ -210,7 +164,7 @@ PAGE EXISTENCE — ONE RULE
 scripts/fill-routes.js builds routes.txt and sitemap.xml straight from that file.
 It used to compute a three-way union (discounts ∪ v1 content ∪ v2 content), because
 back then a pruned shop's code was applied inside the component and discounts.json
-never learned the shop existed. Now that backup codes are injected into the file
+never learned the shop existed. Now that newsletter rows are injected into the file
 itself, every content page has an entry there by construction, and the union
 collapsed to its first term.
 
@@ -222,8 +176,9 @@ data/{slug}.json file IS being live on v2.
 THE GUARD. That rule is now load-bearing: a content page missing from discounts.json
 would simply not exist — no route, no page, silently. So fetch-discounts.js FAILS THE
 BUILD, naming the shop, if any v1 or v2 brand page ends up with neither a live code
-nor a backup code. A brand page with no code is a content bug, not something to paper
-over. (Before, the union would have quietly kept such a page online.)
+nor a newsletter row. That should be impossible — the fallback covers every content
+slug by construction — so the guard is there to keep it structural rather than
+assumed. (Before, the union would have quietly kept such a page online.)
 
 
 WHO READS discounts.json
@@ -238,7 +193,7 @@ The service (services/discounts.service.ts) statically imports the file, so it i
 BUNDLED, not fetched at runtime. That is deliberate: the codes must be in the
 prerendered HTML or Google never sees them.
 
-THIS IS WHY BACKUP CODES ARE INJECTED INTO THE DATA RATHER THAN APPLIED IN A
+THIS IS WHY THE FALLBACK IS INJECTED INTO THE DATA RATHER THAN APPLIED IN A
 COMPONENT. They used to be applied inside the two brand-page components, at render
 time. The page got its code — but discounts.json never learned the shop existed, so
 the homepage table, /winkels, the search, and other pages' related-shops grids all
@@ -253,14 +208,18 @@ BUILD ORDER (npm run build:prod)
 --------------------------------
   1. stamp-build.js          writes BUILD_DATE_ISO into src/app/build-info.ts
                              MUST be first — fetch-discounts.js needs it to date
-                             backup codes, and the pages stamp themselves with it.
-  2. fetch-discounts.js      R2 feed + injected backup codes -> discounts.json
+                             newsletter rows, and the pages stamp themselves with it.
+  2. fetch-discounts.js      R2 codes feed + injected newsletter rows -> discounts.json
                              MUST be before fill-routes.js, which reads that file.
-  3. fill-routes.js          routes.txt, sitemap.xml, v2-content-slugs.ts
-  4. generate-spotted-sales.js
-  5. generate-shop-urls.js
-  6. ng build --configuration production   (prerenders ~1499 routes)
-  7. set-canonicals.js
+  3. publish-shops-to-r2.js  uploads shops.json for the app. Reads nothing the later
+                             steps write, so its position is not load-bearing — but it
+                             sits next to fetch-discounts.js because they share
+                             shop-universe.js. Never fatal.
+  4. fill-routes.js          routes.txt, sitemap.xml, v2-content-slugs.ts
+  5. generate-spotted-sales.js
+  6. generate-shop-urls.js
+  7. ng build --configuration production   (prerenders ~1499 routes)
+  8. set-canonicals.js
 
 
 DAY-TO-DAY: HOW DO I ...
@@ -268,8 +227,9 @@ DAY-TO-DAY: HOW DO I ...
 ADD OR CHANGE A CODE
   Edit diski-input-insta/src/assets/discounts.json, then:
       cd diski-input-insta && node scripts/run-all.js
-  That fills dummy codes, anonymizes, and publishes to R2. The app sees it
-  immediately. The website sees it on its next build.
+  It asks for confirmation, applies the code allowlist, puts our own code on top per
+  shop, and publishes to R2. The app sees it immediately. The website sees it on its
+  next build.
 
   Dry run (does everything except the upload):
       node scripts/run-all.js --dry-run
@@ -282,31 +242,39 @@ REFRESH CODES FOR LOCAL DEV
   disk. To pull fresh data first:
       node scripts/fetch-discounts.js && npm start
 
-CHANGE A BACKUP CODE
-  v2: edit backupCode in brand-content/data/{slug}.json
-  v1: edit src/app/company-codes/company-seo-content/backup-codes.json
-  Takes effect on the next build.
+PUBLISH SHOPS.JSON WITHOUT A FULL BUILD
+      node scripts/publish-shops-to-r2.js
+      node scripts/publish-shops-to-r2.js --dry-run
+      node scripts/publish-shops-to-r2.js --dry-run --out /tmp/shops.json
+  Needs R2_ACCOUNT_ID / R2_ACCESS_KEY / R2_SECRET_KEY in light19/.env. Without them
+  it prints the counts, warns, and exits 0.
 
 ADD A NEW V2 BRAND PAGE
-  Drop a data/{slug}.json file in. It goes live on v2 automatically. But it MUST
-  have a backupCode unless the shop already has live codes — otherwise the build
-  fails with a message naming it. That's deliberate.
+  Drop a data/{slug}.json file in. It goes live on v2 automatically, and it gets a
+  newsletter row on the next build if the shop has no live code — no backupCode field
+  to fill in any more.
 
-THE BUILD FAILED WITH "brand page(s) have neither a live code nor a backup code"
-  Exactly what it says: that shop would get no route and vanish from the site. Add
-  a backupCode to its brand-content file (v2) or to backup-codes.json (v1).
+THE BUILD FAILED WITH "brand page(s) got no row in discounts.json"
+  The fallback loop has a hole — every content slug should get a row by construction.
+  Check scripts/shop-universe.js against the content directories; the shop named would
+  otherwise get no route and vanish from the site.
 
 READ THE OUTPUT OF A RUN
   fetch-discounts.js prints e.g.
-      Wrote 3532 discounts: 3253 live + 279 backup (covering all 578 v1 + 409 v2)
-  Watch the BACKUP number between runs. It going UP means shops lost their last live
-  code and fell back (their pages stay, they stay findable). It going DOWN means a
-  backup shop got a real code again and was promoted into the live block.
+      Wrote 3671 discounts: 2774 live + 897 newsletter (covering all 576 v1 + 569 v2)
+  Watch the NEWSLETTER number between runs. It going UP means shops lost their last
+  live code and fell back (their pages stay, they stay findable). It going DOWN means
+  a shop got a real code again and was promoted into the live block.
+
+  publish-shops-to-r2.js prints e.g.
+      1230 shops, 74 KB (576 with an affiliate link, 969 with brand content)
+  That first number should only move when brand content or the affiliate map changes,
+  never when codes come and go — it is a statement about this repo, not about R2.
 
   routes.txt going DOWN is normal and correct when a CODE-ONLY shop (no v1/v2
   content) loses its last code: there is nothing left to put on a page, so the page
   goes. Those URLs will start 404ing and will show up in Search Console. A shop WITH
-  content never disappears — it falls back to its backup code instead.
+  content never disappears — it falls back to a newsletter row instead.
 
 
 GOTCHAS
@@ -318,6 +286,9 @@ GOTCHAS
   If you want the site fresher, trigger a rebuild when R2 is written.
 - Publishing must stay the LAST step of run-all.js — it ships whatever the earlier
   steps produced.
-- The R2 feed contains NO backup codes. They are a website-only concept. If the app
-  should show them too, that's a deliberate decision to make, not an accident to
-  discover.
+- The codes feed contains NO newsletter rows, and shops.json contains NO codes or
+  copy. Keep it that way: the moment a placeholder is shaped like a code, a consumer
+  renders it as one. That is how the dummy and backup codes went wrong.
+- shops.json is only as fresh as the last WEBSITE BUILD. That is fine by
+  construction — it describes what the website has — but it means a brand page added
+  today reaches the app on the next deploy, not immediately.

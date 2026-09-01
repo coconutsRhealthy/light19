@@ -38,14 +38,12 @@
 
 const fs = require('fs');
 const path = require('path');
+const { buildUniverse, readContentSlugs } = require('./shop-universe');
 
 const ROOT = path.join(__dirname, '..');
 const FEED_URL = 'https://pub-a3be569620e4415b916e737210363aee.r2.dev/discounts.json';
 const OUT_PATH = path.join(ROOT, 'src/app/data/discounts.json');
 const BUILD_INFO_PATH = path.join(ROOT, 'src/app/build-info.ts');
-const V1_INDEX_PATH = path.join(ROOT, 'src/app/company-codes/company-seo-content/index.ts');
-const V2_DATA_DIR = path.join(ROOT, 'src/app/company-codes-v2/brand-content/data');
-const AFFILIATE_SERVICE_PATH = path.join(ROOT, 'src/app/services/affiliate-link.service.ts');
 
 // What a shop with no live code shows instead of a code. One honest placeholder, not a
 // per-shop value: there is nothing shop-specific to say when you have no offer.
@@ -118,42 +116,16 @@ async function fetchLiveLines() {
 }
 
 // =========================
-// 2. Affiliate shops
+// 2. Which shops have earned a page
 // =========================
 
-// The slugs that have an affiliate link — the keys of the affiliateLinks map, read with a
-// regex rather than eval'd. The leading `^\s*'` can't match a commented-out entry
-// (`//     'snipes': '...'`), which the file parks a couple of.
-//
-// Returns the keys with their ORIGINAL CASING. A couple of them are capitalised
-// ('FBTO Zorg', 'Independer Zorg') and fill-routes.js takes a slug verbatim, so the case
-// here is the case of the live URL. Lowercasing would silently move those pages to a new
-// URL and 404 the indexed one. Comparisons are done lowercased at the call site instead.
-function readAffiliateSlugs() {
-  const source = fs.readFileSync(AFFILIATE_SERVICE_PATH, 'utf8');
-  const block = source.match(/affiliateLinks[^=]*=\s*\{([\s\S]*?)\n  \};/);
-  if (!block) {
-    throw new Error(`Could not find the affiliateLinks object in ${path.basename(AFFILIATE_SERVICE_PATH)}.`);
-  }
-  return [...block[1].matchAll(/^\s*'([^']+)'\s*:/gm)].map(m => m[1]);
-}
+// Both readers now live in shop-universe.js, because publish-shops-to-r2.js needs
+// exactly the same set and two copies of this logic would drift. See that file for
+// what earns a page and why the casing matters.
 
 // =========================
-// 3. Brand pages
+// 3. Dating an injected row
 // =========================
-
-// The slugs that have a brand page. For v1 the authoritative slug is the switch label in
-// index.ts, not the filename (`case 'about you'` -> ./about-you). For v2 the filename IS
-// the slug.
-function readContentSlugs() {
-  const v1 = new Set(
-    [...fs.readFileSync(V1_INDEX_PATH, 'utf8').matchAll(/case\s+'([^']+)':/g)].map(m => m[1].toLowerCase())
-  );
-  const v2 = new Set(
-    fs.readdirSync(V2_DATA_DIR).filter(f => f.endsWith('.json')).map(f => f.replace(/\.json$/, '').toLowerCase())
-  );
-  return { v1, v2 };
-}
 
 // A newsletter sign-up doesn't expire, so unlike the invented codes this replaced, its
 // date could honestly be the build date. It is a week earlier instead, because two
@@ -233,14 +205,13 @@ async function main() {
   // Affiliate slugs keep their original casing, because that is the live URL
   // ('FBTO Zorg'). Content slugs are lowercased, which is the casing their backup-code
   // rows used before this replaced them, so no URL moves. Affiliate first, so it wins a tie.
-  const fallbackShops = [];
-  const fallbackSlugs = new Set();
-  for (const slug of [...readAffiliateSlugs(), ...content.v1, ...content.v2]) {
-    const key = slug.toLowerCase();
-    if (liveSlugs.has(key) || fallbackSlugs.has(key)) continue;
-    fallbackSlugs.add(key);
-    fallbackShops.push(slug);
-  }
+  // buildUniverse() already dedupes on the lowercased key and puts affiliate entries
+  // first, so all that is left here is the subtraction: a shop with a live code needs
+  // no newsletter row.
+  const fallbackShops = buildUniverse()
+    .filter(entry => !liveSlugs.has(entry.key))
+    .map(entry => entry.slug);
+
   const newsletterLines = fallbackShops.map(
     slug => `${slug}, ${NEWSLETTER_CODE}, ${NEWSLETTER_VALUE}, ${ANON_PLACEHOLDER}, ${newsletterDate(buildDate)}`
   );
